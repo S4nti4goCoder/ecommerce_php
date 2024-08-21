@@ -1,3 +1,6 @@
 <?php
 
-echo "<h1>Hola soy el index</h1>";
+require_once "controllers/controller.template.php";
+
+$index = new TemplateController();
+$index->index();
