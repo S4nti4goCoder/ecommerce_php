@@ -1,10 +1,50 @@
 <!-- Navbar -->
-<nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
-    <div class="container">
-        <a href="<?php echo $path ?>views/assets/js/index3.html" class="navbar-brand">
-            <img src="<?php echo $path ?>views/assets/img/adminlte/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-            <span class="brand-text font-weight-light">AdminLTE 3</span>
-        </a>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-lg-2 mt-1">
+            <div class="d-flex justify-content-center">
+                <a href="<?php echo $path ?>views/assets/js/index3.html" class="navbar-brand">
+                    <img src="<?php echo $path ?>views/assets/img/template/logo.png" class="brand-image img-fluid py-3 px-5 p-lg-0 pe-lg-3">
+                </a>
+            </div>
+        </div>
+        <div class="col-12 col-lg-7 col-xl-8 mt-1 px-3 px-lg-0">
+            <a class="nav-link float-start" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+            <div class="dropdown px-1 float-start" style="background: #47BAC1; color: white">
+                <a id="dropdownSubMenu1" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Categorias</a>
+                <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
+
+                    <!-- Level two dropdown-->
+                    <li class="dropdown-submenu dropdown-hover">
+                        <a id="dropdownSubMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Hover for action</a>
+                        <ul aria-labelledby="dropdownSubMenu2" class="dropdown-menu border-0 shadow">
+                            <li>
+                                <a tabindex="-1" href="#" class="dropdown-item">level 2</a>
+                            </li>
+
+                            <!-- Level three dropdown-->
+                            <li class="dropdown-submenu">
+                                <a id="dropdownSubMenu3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">level 2</a>
+                                <ul aria-labelledby="dropdownSubMenu3" class="dropdown-menu border-0 shadow">
+                                    <li><a href="#" class="dropdown-item">3rd level</a></li>
+                                    <li><a href="#" class="dropdown-item">3rd level</a></li>
+                                </ul>
+                            </li>
+                            <!-- End Level three -->
+
+                            <li><a href="#" class="dropdown-item">level 2</a></li>
+                            <li><a href="#" class="dropdown-item">level 2</a></li>
+                        </ul>
+                    </li>
+                    <!-- End Level two -->
+                </ul>
+            </div>
+        </div>
+        <div class="col-12 col-lg-3 col-xl-2 mt-1 px-3 px-lg-0">
+
+        </div>
+
+
 
         <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -14,7 +54,7 @@
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+
                 </li>
                 <li class="nav-item">
                     <a href="index3.html" class="nav-link">Home</a>
@@ -22,39 +62,7 @@
                 <li class="nav-item">
                     <a href="#" class="nav-link">Contact</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Dropdown</a>
-                    <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
-                        <li><a href="#" class="dropdown-item">Some action </a></li>
-                        <li><a href="#" class="dropdown-item">Some other action</a></li>
 
-                        <li class="dropdown-divider"></li>
-
-                        <!-- Level two dropdown-->
-                        <li class="dropdown-submenu dropdown-hover">
-                            <a id="dropdownSubMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Hover for action</a>
-                            <ul aria-labelledby="dropdownSubMenu2" class="dropdown-menu border-0 shadow">
-                                <li>
-                                    <a tabindex="-1" href="#" class="dropdown-item">level 2</a>
-                                </li>
-
-                                <!-- Level three dropdown-->
-                                <li class="dropdown-submenu">
-                                    <a id="dropdownSubMenu3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">level 2</a>
-                                    <ul aria-labelledby="dropdownSubMenu3" class="dropdown-menu border-0 shadow">
-                                        <li><a href="#" class="dropdown-item">3rd level</a></li>
-                                        <li><a href="#" class="dropdown-item">3rd level</a></li>
-                                    </ul>
-                                </li>
-                                <!-- End Level three -->
-
-                                <li><a href="#" class="dropdown-item">level 2</a></li>
-                                <li><a href="#" class="dropdown-item">level 2</a></li>
-                            </ul>
-                        </li>
-                        <!-- End Level two -->
-                    </ul>
-                </li>
             </ul>
 
             <!-- SEARCH FORM -->
@@ -164,5 +172,5 @@
             </li>
         </ul>
     </div>
-</nav>
+</div>
 <!-- /.navbar -->

@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="p-2">
-                <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-center small">
                     <div class="p-2">
                         <a href="#" class="text-white">
                             Ingresar
