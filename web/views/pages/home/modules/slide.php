@@ -10,7 +10,7 @@
                     <div class="slideText" style="top: 20%; left:10%; width:40%;">
                         <h1 class="text-uppercase" style="color: #333;">Lorem Ipsum</h1>
                         <h2 class="text-uppercase" style="color: #777;">Lorem ipsum dolor sit</h2>
-                        <h2 class="text-uppercase" style="color: #888;">Lorem ipsum dolor sit</h2>
+                        <h3 class="text-uppercase" style="color: #888;">Lorem ipsum dolor sit</h3>
                         <a href="#">
                             <button class="my-lg-3 btn text-uppercase templateColor border-0">
                                 VER PRODUCTO
@@ -26,7 +26,7 @@
                     <div class="slideText" style="top: 20%; right: 15%; width: 40%;">
                         <h1 class="text-uppercase" style="color: #fff;">Lorem Ipsum</h1>
                         <h2 class="text-uppercase" style="color: #fff;">Lorem ipsum dolor sit</h2>
-                        <h2 class="text-uppercase" style="color: #fff;">Lorem ipsum dolor sit</h2>
+                        <h3 class="text-uppercase" style="color: #fff;">Lorem ipsum dolor sit</h3>
                         <a href="#">
                             <button class="my-lg-3 btn text-uppercase templateColor border-0">
                                 VER PRODUCTO
@@ -40,15 +40,20 @@
             </li>
         </ul>
     </div>
-    <a class="prev" href="#">
+    <a class="prev d-none d-lg-block" href="#">
         <i class="fas fa-angle-left text-white px-3 py-5 rounded-right" style="background:rgba(0,0,0,.5);"></i>
     </a>
     <link rel="stylesheet" href="<?php echo $path ?>views/assets/css/template/template.css">
-    <a class="next" href="#">
+    <a class="next d-none d-lg-block" href="#">
         <i class="fas fa-angle-right text-white px-3 py-5 rounded-left" style="background:rgba(0,0,0,.5);"></i>
     </a>
-    <div class="controller">
+    <div class="controller py-2">
         <div class="indicate-area"></div>
     </div>
+</div>
+<div class="d-flex justify-content-center">
+    <a id="btnSlide" class="btn border-0 rounded-0 templateColor py-2" style="width: 200px;">
+        <i class="fa fa-angle-up"></i>
+    </a>
 </div>
 <script src="<?php echo $path ?>views/assets/js/slide/slide.js"></script>
