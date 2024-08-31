@@ -31,9 +31,10 @@ a:active {
   color: white;
 }
 
-.templateColor:hover {
+.templateColor:hover,
+a.templateColor {
   background: #0e94ff;
-  color: white;
+  color: white !important;
 }
 
 .main-footer {
