@@ -41,6 +41,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- JDSlider -->
     <script src="<?php echo $path ?>views/assets/js/plugins/jdSlider/jdSlider.js"></script>
+    <!-- Knob -->
+    <script src="<?php echo $path ?>views/assets/js/plugins/knob/knob.js"></script>
 </head>
 
 <body class="hold-transition sidebar-collapse layout-top-nav">
