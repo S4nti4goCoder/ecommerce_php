@@ -18,7 +18,22 @@ if ($template->status == 200) {
     //Redireccionar a página 500
 }
 
-echo '<pre>'; print_r($template->icon_template); echo '</pre>';
+/* Datos en Arreglo */
+$keywords = null;
+
+foreach (json_decode($template->keywords_template, true) as $key => $value) {
+    $keywords .= $value . ", ";
+}
+$keywords = substr($keywords, 0, -2);
+
+/* Datos en Objeto */
+$fontFamily = json_decode($template->fonts_template)->fontFamily;
+$fontBody = json_decode($template->fonts_template)->fontBody;
+$fontSlide = json_decode($template->fonts_template)->fontSlide;
+
+/* Datos en JSON */
+$topColor = json_decode($template->colors_template)[0]->top;
+$templateColor = json_decode($template->colors_template)[1]->template;
 
 ?>
 
@@ -35,13 +50,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <title><?php echo $template->title_template ?></title>
 
     <meta name="description" content="<?php echo $template->description_template ?>">
+    <meta name="keywords" content="<?php echo $keywords ?>">
 
     <link rel="icon" href="<?php echo $path ?>views/assets/img/template/<?php echo $template->id_template ?>/<?php echo $template->icon_template ?>">
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <?php echo urldecode($fontFamily) ?>
 
     <!-- CSS -->
     <!-- Font Awesome Icons -->
@@ -55,6 +69,30 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="<?php echo $path ?>views/assets/css/plugins/adminlte/adminlte.min.css">
     <link rel="stylesheet" href="<?php echo $path ?>views/assets/css/template/template.css">
     <link rel="stylesheet" href="<?php echo $path ?>views/assets/css/products/products.css">
+
+    <style>
+        body {
+            font-family: '<?php echo $fontBody ?>', sans-serif;
+        }
+
+        .slideOpt h1,
+        .slideOpt h2,
+        .slideOpt h3 {
+            font-family: '<?php echo $fontSlide ?>', sans-serif;
+        }
+
+        .topColor {
+            background: <?php echo $topColor->background ?>;
+            color: <?php echo $topColor->color ?>;
+        }
+
+        .templateColor,
+        .templateColor:hover,
+        a.templateColor {
+            background: <?php echo $templateColor->background ?> !important;
+            color: <?php echo $templateColor->color ?> !important;
+        }
+    </style>
 
     <!-- JS -->
     <!-- jQuery -->
