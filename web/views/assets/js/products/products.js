@@ -15,7 +15,9 @@ $(document).on("click", ".btnView", function () {
   }
 
   btnType.each(function (i) {
-    $(btnType[i]).removeClass("bg-white");
+    if ($(btnType[i]).attr("attr-index") == index) {
+      $(btnType[i]).removeClass("bg-white");
+    }
   });
   $(this).addClass("bg-white");
 });
