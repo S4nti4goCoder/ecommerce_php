@@ -55,6 +55,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </div>
     <!-- REQUIRED SCRIPTS -->
     <script src="<?php echo $path ?>views/assets/js/plugins/adminlte/adminlte.min.js"></script>
+    <script src="<?php echo $path ?>views/assets/js/products/products.js"></script>
 </body>
 
 </html>
