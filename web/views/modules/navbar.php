@@ -9,7 +9,9 @@
             </div>
         </div>
         <div class="col-12 col-lg-7 col-xl-8 mt-1 px-3 px-lg-0">
-            <a class="nav-link float-start" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+            <?php if (isset($_SESSION["admin"])): ?>
+                <a class="nav-link float-start" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                <?php endif ?>
             <div class="dropdown px-1 float-start templateColor">
                 <a id="dropdownSubMenu1" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle text-uppercase"><span class="d-lg-block d-none">Categorias<i class="ps-lg-2 fas fa-th-list"></i></span>
                     <span class="d-lg-none d-block"><i class="fas fa-th-list"></i></span></a>
