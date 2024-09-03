@@ -6,3 +6,6 @@ if (!isset($_SESSION["admin"])) {
 } else {
     include "tablero/tablero.php";
 }
+?>
+
+<script src="<?php echo $path ?>views/assets/js/forms/forms.js"></script>

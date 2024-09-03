@@ -6,22 +6,31 @@
                 <h3><b>Administradores</b></h3>
             </div>
             <div class="card-body">
-                <form method="post">
+                <?php
+                require_once "controllers/admins.controller.php";
+                $login = new AdminsController();
+                $login->login();
+                ?>
+                <form method="post" class="needs-validation" novalidate>
                     <div class="input-group mb-3">
-                        <input type="email" class="form-control" placeholder="Correo electrónico" name="loginAdminEmail">
+                        <input onchange="validateJS(event, 'email')" type="email" class="form-control" placeholder="Correo electrónico" name="loginAdminEmail" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
                             </div>
                         </div>
+                        <div class="valid-feedback"></div>
+                        <div class="invalid-feedback">Por favor, rellene esta casilla de formulario</div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Contraseña" name="loginAdminPass">
+                        <input type="password" class="form-control" placeholder="Contraseña" name="loginAdminPass" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
                             </div>
                         </div>
+                        <div class="valid-feedback"></div>
+                        <div class="invalid-feedback">Por favor, rellene esta casilla de formulario</div>
                     </div>
                     <div class="row">
                         <div class="col-8">
@@ -35,11 +44,6 @@
                         <div class="col-4">
                             <button type="submit" class="btn btn-default templateColor btn-block">Ingresar</button>
                         </div>
-                        <?php
-                        require_once "controllers/admins.controller.php";
-                        $login = new AdminsController();
-                        $login->login();
-                        ?>
                     </div>
                 </form>
                 <p class="mb-1">
