@@ -93,10 +93,12 @@ class AdminsController
 
                         $subject = 'Solicitud de nueva contraseña - Ecommerce';
                         $email = $_POST["resetPassword"];
-                        $message = 'Su nueva contraseña: ' . $newPassword;
+                        $title = 'SOLICITUD DE NUEVA CONTRASEÑA';
+                        $message = '<h4 style="font-weight: 100; color: #999; padding: 0px 20px"><strong>Su nueva contraseña: ' . $newPassword . '</strong></h4>
+                        <h4 style="font-weight: 100; color: #999; padding: 0px 20px;">Ingrese nuevamente al sitio con esta contraseña y recuerde cambiarla en el panel de perfil de usuario</h4>';
                         $link = TemplateController::path() . 'admin';
 
-                        $sendEmail = TemplateController::sendEmail($subject, $email, $message, $link);
+                        $sendEmail = TemplateController::sendEmail($subject, $email, $title, $message, $link);
 
                         if ($sendEmail == "ok") {
                             echo '<script>
@@ -108,7 +110,7 @@ class AdminsController
                             echo '<script>
                             fncFormatInputs();
                             matPreloader("off");
-                            fncNotie("error", "'.$sendEmail.'");
+                            fncNotie("error", "' . $sendEmail . '");
                             </script>';
                         }
                     }
