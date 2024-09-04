@@ -47,7 +47,7 @@
                     </div>
                 </form>
                 <p class="mb-1">
-                    <a href="forgot-password.html">He olvidado mi contraseña</a>
+                    <a href="#resetPassword" data-bs-toggle="modal">¿Ha olvidado su contraseña?</a>
                 </p>
             </div>
             <!-- /.card-body -->
@@ -55,4 +55,45 @@
         <!-- /.card -->
     </div>
     <!-- /.login-box -->
+</div>
+<!-- The Modal -->
+<div class="modal" id="resetPassword">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">¿Olvidaste tu contraseña?</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <p class="login-box-msg">¿Olvidaste tu contrasena? Aquí puedes solicitar una nueva.</p>
+                <form method="post">
+                    <div class="input-group mb-3">
+                        <input onchange="validateJS(event, 'email')" type="email" class="form-control" placeholder="Correo electrónico" name="resetPassword" required>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                            </div>
+                        </div>
+                        <div class="valid-feedback"></div>
+                        <div class="invalid-feedback">Por favor, rellene esta casilla de formulario</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-default templateColor btn-block py-2">Restablecer</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+
+        </div>
+    </div>
 </div>
