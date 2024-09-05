@@ -24,7 +24,18 @@ $template = CurlController::request($url, $method, $fields);
 if ($template->status == 200) {
     $template = $template->results[0];
 } else {
-    //Redireccionar a página 500
+    echo '<!DOCTYPE html>
+            <html lang="en">
+            <head>
+            <link rel="stylesheet" href="' . $path . 'views/assets/css/plugins/adminlte/adminlte.min.css">
+            </head>
+            <body class="hold-transition sidebar-collapse layout-top-nav">
+            <div class="wrapper">';
+    include "pages/500/500.php";
+    echo    '</div>
+            </body>
+            </html>';
+    return;
 }
 
 /* Datos en Arreglo */
@@ -142,6 +153,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 $routesArray[0] == "salir"
             ) {
                 include "pages/" . $routesArray[0] . "/" . $routesArray[0] . ".php";
+            } else {
+                include "pages/404/404.php";
             }
         } else {
             include "pages/home/home.php";
