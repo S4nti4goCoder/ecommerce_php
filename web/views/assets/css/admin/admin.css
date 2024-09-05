@@ -1,3 +1,21 @@
-.login-page, .register-page{
-    height: 70vh !important;
+[class*=sidebar-dark-] {
+    background-color: #000000 !important;
+}
+
+.login-page,
+.register-page {
+  height: 70vh !important;
+}
+
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active,
+.sidebar-light-primary .nav-sidebar > .nav-item > .nav-link.active {
+  background-color: #00a6fb !important;
+  color: #fff !important;
+}
+
+[class*="sidebar-dark-"] .nav-treeview > .nav-item > .nav-link.active,
+[class*="sidebar-dark-"] .nav-treeview > .nav-item > .nav-link.active:focus,
+[class*="sidebar-dark"] .nav-treeview > .nav-item > .nav-link.active:hover {
+  background-color: #0466c8 !important;
+  color: #fff !important;
 }
