@@ -37,11 +37,11 @@ class TemplateController
         $mail->msgHTML('<div style="width: 100%; background: #eee; position: relative; font-family: sans-serif; padding-top: 40px; padding-bottom: 40px;">
         <div style="position: relative; margin: auto; width: 600px; background: white; padding: 20px;">
             <center>
-                <img src="'.TemplateController::path().'/views/assets/img/template/1/logo.png" style="padding: 20px; width: 30%;">
-                <h3 style="font-weight: 100; color: #999;">'.$title.'</h3>
+                <img src="' . TemplateController::path() . '/views/assets/img/template/1/logo.png" style="padding: 20px; width: 30%;">
+                <h3 style="font-weight: 100; color: #999;">' . $title . '</h3>
                 <hr style="border: 1px solid #ccc; width: 80%;">
-                '.$message.'
-                <a href="'.$link.'" target="_blank" style="text-decoration: none;">
+                ' . $message . '
+                <a href="' . $link . '" target="_blank" style="text-decoration: none;">
                     <div style="line-height: 25px; background: #000; width: 60%; padding: 10px; color: white; border-radius: 5px;">Haz clic aquí</div>
                 </a>
                 <br>
@@ -59,5 +59,14 @@ class TemplateController
         } else {
             return "ok";
         }
+    }
+    //Funcion para Limpiar HTML
+    static public function htmlClean($code)
+    {
+        $search = array('/\>[^\S ]+/s', '/[^\S ]+\</s', '/(\s)+/s');
+        $replace = array('>', '<', '\\1');
+        $code = preg_replace($search, $replace, $code);
+        $code = str_replace("> <", "><", $code);
+        return $code;
     }
 }

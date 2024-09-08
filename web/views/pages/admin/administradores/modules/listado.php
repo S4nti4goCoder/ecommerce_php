@@ -27,11 +27,11 @@
                             <td>2024-09-06 2:20:20</td>
                             <td>
                                 <div class="btn-group">
-                                    <a href="" class="btn btn-warning border-0 mr-2 btn-sm  px-3">
-                                        <i class="fas fa-edit" style="color: white;"></i>
+                                    <a href="" class="btn bg-warning border-0 mr-2 btn-sm px-3">
+                                        <i class="fas fa-edit text-white"></i>
                                     </a>
-                                    <a href="" class="btn btn-danger border-0 mr-2  btn-sm  px-3">
-                                        <i class="fas fa-trash-alt" style="color: white;"></i>
+                                    <a href="" class="btn bg-danger border-0 mr-2  btn-sm px-3">
+                                        <i class="fas fa-trash-alt text-white"></i>
                                     </a>
                                 </div>
                             </td>
