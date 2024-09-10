@@ -32,7 +32,7 @@ function fncSweetAlert(type, text, url) {
           text: text,
         }).then((result) => {
           if (result.value) {
-            window.open(url, "top");
+            window.open(url, "_top");
           }
         });
       }
@@ -51,7 +51,7 @@ function fncSweetAlert(type, text, url) {
           text: text,
         }).then((result) => {
           if (result.value) {
-            window.open(url, "top");
+            window.open(url, "_top");
           }
         });
       }
