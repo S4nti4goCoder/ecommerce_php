@@ -30,7 +30,7 @@
                                 <div class="card-body">
                                     <div class="form-group pb-3">
                                         <label for="name_admin">Nombre <sup class="text-danger font-weight-bold">*</sup></label>
-                                        <input type="text" class="form-control" placeholder="Ingresar el nombre" id="name_admin" name="name_admin" required>
+                                        <input type="text" class="form-control" placeholder="Ingresar el nombre" id="name_admin" name="name_admin" onchange="validateJS(event, 'text')" required>
                                         <div class="valid-feedback"></div>
                                         <div class="invalid-feedback">Por favor llena este campo correctamente.</div>
                                     </div>
@@ -52,13 +52,13 @@
                                 <div class="card-body">
                                     <div class="form-group pb-3">
                                         <label for="email_admin">Correo electrónico <sup class="text-danger font-weight-bold">*</sup></label>
-                                        <input type="email" class="form-control" placeholder="Ingresar el Correo electrónico" id="email_admin" name="email_admin" required>
+                                        <input type="email" class="form-control" placeholder="Ingresar el Correo electrónico" id="email_admin" name="email_admin" onchange="validateJS(event, 'email')" required>
                                         <div class="valid-feedback"></div>
                                         <div class="invalid-feedback">Por favor llena este campo correctamente.</div>
                                     </div>
                                     <div class="form-group pb-3">
                                         <label for="password_admin">Contraseña <sup class="text-danger font-weight-bold">*</sup></label>
-                                        <input type="password" class="form-control" placeholder="Ingresar la contraseña" id="password_admin" name="password_admin" required>
+                                        <input type="password" class="form-control" placeholder="Ingresar la contraseña" id="password_admin" name="password_admin" onchange="validateJS(event, 'password')" required>
                                         <div class="valid-feedback"></div>
                                         <div class="invalid-feedback">Por favor llena este campo correctamente.</div>
                                     </div>
