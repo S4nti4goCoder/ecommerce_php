@@ -11,6 +11,7 @@ class AdminsController
                     fncSweetAlert("loading", "", "");
             </script>';
             if (preg_match('/^[.a-zA-Z0-9_]+([.][.a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["loginAdminEmail"])) {
+
                 $url = "admins?login=true&suffix=admin";
                 $method = "POST";
                 $fields = array(
@@ -134,46 +135,99 @@ class AdminsController
             </script>';
 
             if (
-                preg_match('/^[.a-zA-Z0-9_]+([.][.a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["email_admin"]) &&
-                preg_match('/^[A-Za-zñÑáéíóúÁÉÍÓÚ ]{1,}$/', $_POST["name_admin"]) &&
-                preg_match('/^[*\\$\\!\\¡\\?\\¿\\.\\_\\#\\-\\0-9A-Za-z]{1,}$/', $_POST["password_admin"])
+                preg_match('/^[.a-zA-Z0-9_]+([.][.a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["email_admin"])
+                && preg_match('/^[A-Za-zñÑáéíóúÁÉÍÓÚ ]{1,}$/', $_POST["name_admin"])
             ) {
 
-                $crypt = crypt($_POST["password_admin"], '$2a$07$azybxcags23425sdg23sdfhsd$');
+                if (isset($_POST["idAdmin"])) {
 
-                $url = "admins?token=" . $_SESSION["admin"]->token_admin . "&table=admins&suffix=admin";
-                $method = "POST";
+                    if ($_POST["password_admin"] != "") {
+                        if (preg_match('/^[*\\$\\!\\¡\\?\\¿\\.\\_\\#\\-\\0-9A-Za-z]{1,}$/', $_POST["password_admin"])) {
 
-                $fields = array(
-                    "name_admin" => trim(TemplateController::capitalize($_POST["name_admin"])),
-                    "email_admin" => $_POST["email_admin"],
-                    "rol_admin" => $_POST["rol_admin"],
-                    "password_admin" => $crypt,
-                    "date_created_admin" => date("Y-m-d"),
-                );
+                            $crypt = crypt($_POST["password_admin"], '$2a$07$azybxcags23425sdg23sdfhsd$');
+                        } else {
+                            echo '<script>
+                            fncFormatInputs();
+				            fncMatPreloader("off");
+				            fncToastr("error","La contraseña no puede llevar ciertos caracteres especiales");
+				            </script>';
+                        }
+                    } else {
+                        $crypt = $_POST["oldPassword"];
+                    }
+                    $url = "admins?id=" . base64_decode($_POST["idAdmin"]) . "&nameId=id_admin&token=" . $_SESSION["admin"]->token_admin . "&table=admins&suffix=admin";
+                    $method = "PUT";
+                    $fields = "name_admin=" . trim(TemplateController::capitalize($_POST["name_admin"])) . "&email_admin=" . $_POST["email_admin"] . "&rol_admin=" . $_POST["rol_admin"] . "&password_admin=" . $crypt;
 
-                $createData = CurlController::request($url, $method, $fields);
+                    $updateData = CurlController::request($url, $method, $fields);
 
-                if ($createData->status == 200) {
-                    echo '<script>
+                    if ($updateData->status == 200) {
+                        echo '<script>
 				    fncMatPreloader("off");
                     fncFormatInputs();
-				    fncSweetAlert("success","Sus datos han sido creados con éxito","/admin/administradores");
+				    fncSweetAlert("success","Sus datos han sido actualizados con éxito","/admin/administradores");
 				    </script>';
-                } else {
-                    if ($createData->status == 303) {
-                        echo '<script>
+                    } else {
+                        if ($updateData->status == 303) {
+                            echo '<script>
                         fncFormatInputs();
 				        fncMatPreloader("off");
 				        fncToastr("error","Token expirado, vuelva a iniciar sesión","/salir");
-				        fncToastr("error","' . $createData->results . '");
 				        </script>';
-                    } else {
-                        echo '<script>
+                        } else {
+                            echo '<script>
                         fncFormatInputs();
 				        fncMatPreloader("off");
 				        fncToastr("error","Ocurrió un error mientras se guardaban los datos, intente de nuevo");
 				        </script>';
+                        }
+                    }
+                } else {
+
+                    if (preg_match('/^[*\\$\\!\\¡\\?\\¿\\.\\_\\#\\-\\0-9A-Za-z]{1,}$/', $_POST["password_admin"])) {
+
+                        $crypt = crypt($_POST["password_admin"], '$2a$07$azybxcags23425sdg23sdfhsd$');
+                    } else {
+                        echo '<script>
+                        fncFormatInputs();
+                        fncMatPreloader("off");
+                        fncToastr("error","La contraseña no puede llevar ciertos caracteres especiales");
+                        </script>';
+                    }
+
+                    $url = "admins?token=" . $_SESSION["admin"]->token_admin . "&table=admins&suffix=admin";
+                    $method = "POST";
+
+                    $fields = array(
+                        "name_admin" => trim(TemplateController::capitalize($_POST["name_admin"])),
+                        "email_admin" => $_POST["email_admin"],
+                        "rol_admin" => $_POST["rol_admin"],
+                        "password_admin" => $crypt,
+                        "date_created_admin" => date("Y-m-d")
+                    );
+
+                    $createData = CurlController::request($url, $method, $fields);
+
+                    if ($createData->status == 200) {
+                        echo '<script>
+				        fncMatPreloader("off");
+                        fncFormatInputs();
+				        fncSweetAlert("success","Sus datos han sido creados con éxito","/admin/administradores");
+				        </script>';
+                    } else {
+                        if ($createData->status == 303) {
+                            echo '<script>
+                            fncFormatInputs();
+				            fncMatPreloader("off");
+				            fncToastr("error","Token expirado, vuelva a iniciar sesión","/salir");
+				            </script>';
+                        } else {
+                            echo '<script>
+                            fncFormatInputs();
+				            fncMatPreloader("off");
+				            fncToastr("error","Ocurrió un error mientras se guardaban los datos, intente de nuevo");
+				            </script>';
+                        }
                     }
                 }
             } else {

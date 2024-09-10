@@ -1,12 +1,37 @@
+<?php
+if (isset($_GET["admin"])) {
+    $select = "id_admin,name_admin,email_admin,password_admin,rol_admin";
+    $url = "admins?linkTo=id_admin&equalTo=" . base64_decode($_GET["admin"]);
+    $method = "GET";
+    $fields = array();
+
+    $admin = CurlController::request($url, $method, $fields);
+    if ($admin->status == 200) {
+        $admin = $admin->results[0];
+    } else {
+        $admin = null;
+    }
+} else {
+    $admin = null;
+}
+?>
 <div class="content">
     <div class="container">
         <div class="card">
             <form method="post" class="needs-validation" novalidate>
+                <?php if (!empty($admin)): ?>
+                    <input type="hidden" name="idAdmin" value="<?php echo base64_encode($admin->id_admin) ?>">
+                    <input type="hidden" name="oldPassword" value="<?php echo $admin->password_admin ?>">
+                <?php endif ?>
                 <div class="card-header">
                     <div class="container">
                         <div class="row">
                             <div class="col-12 col-lg-6 text-center text-lg-left">
-                                <h4>Agregar Administrador</h4>
+                                <?php if (!empty($admin)): ?>
+                                    <h4>Editar Administrador</h4>
+                                <?php else: ?>
+                                    <h4>Agregar Administrador</h4>
+                                <?php endif ?>
                             </div>
                             <div class="col-12 col-lg-6 mt-2 d-none d-lg-block">
                                 <button type="submit" class="btn border-0 bg-success float-right py-2 px-3 btn-sm">Guardar Información</button>
@@ -35,7 +60,7 @@
                                 <div class="card-body">
                                     <div class="form-group pb-3">
                                         <label for="name_admin">Nombre <sup class="text-danger font-weight-bold">*</sup></label>
-                                        <input type="text" class="form-control" placeholder="Ingresar el nombre" id="name_admin" name="name_admin" onchange="validateJS(event, 'text')" required>
+                                        <input type="text" class="form-control" placeholder="Ingresar el nombre" id="name_admin" name="name_admin" onchange="validateJS(event, 'text')" value="<?php if (!empty($admin)): ?><?php echo $admin->name_admin ?><?php endif ?>" required>
                                         <div class="valid-feedback"></div>
                                         <div class="invalid-feedback">Por favor llena este campo correctamente.</div>
                                     </div>
@@ -43,8 +68,8 @@
                                         <label for="rol_admin">Rol <sup class="text-danger font-weight-bold">*</sup></label>
                                         <select name="rol_admin" id="rol_admin" class="form-control" required>
                                             <option value="">Elija Rol</option>
-                                            <option value="admin">Administrador</option>
-                                            <option value="editor">Editor</option>
+                                            <option value="admin" <?php if (!empty($admin) && $admin->rol_admin == "admin"): ?>selected<?php endif ?>>Administrador</option>
+                                            <option value="editor" <?php if (!empty($admin) && $admin->rol_admin == "editor"): ?>selected<?php endif ?>>Editor</option>
                                         </select>
                                         <div class="valid-feedback"></div>
                                         <div class="invalid-feedback">Por favor llena este campo correctamente.</div>
@@ -57,13 +82,13 @@
                                 <div class="card-body">
                                     <div class="form-group pb-3">
                                         <label for="email_admin">Correo electrónico <sup class="text-danger font-weight-bold">*</sup></label>
-                                        <input type="email" class="form-control" placeholder="Ingresar el Correo electrónico" id="email_admin" name="email_admin" onchange="validateJS(event, 'email')" required>
+                                        <input type="email" class="form-control" placeholder="Ingresar el Correo electrónico" id="email_admin" name="email_admin" onchange="validateJS(event, 'email')" value="<?php if (!empty($admin)): ?><?php echo $admin->email_admin ?><?php endif ?>" required>
                                         <div class="valid-feedback"></div>
                                         <div class="invalid-feedback">Por favor llena este campo correctamente.</div>
                                     </div>
                                     <div class="form-group pb-3">
                                         <label for="password_admin">Contraseña <sup class="text-danger font-weight-bold">*</sup></label>
-                                        <input type="password" class="form-control" placeholder="Ingresar la contraseña" id="password_admin" name="password_admin" onchange="validateJS(event, 'password')" required>
+                                        <input type="password" class="form-control" placeholder="Ingresar la contraseña" id="password_admin" name="password_admin" onchange="validateJS(event, 'password')" <?php if (empty($admin)): ?> required <?php endif ?>>
                                         <div class="valid-feedback"></div>
                                         <div class="invalid-feedback">Por favor llena este campo correctamente.</div>
                                     </div>

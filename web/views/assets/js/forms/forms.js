@@ -52,7 +52,7 @@ function validateJS(event, type) {
     }
   }
   if (type == "password") {
-    var pattern = /^[*\\$\\!\\¡\\¿\\?\\.\\_\\#\\-\\A-Za-z0-9]{1,}$/;
+    var pattern = /^[*\\$\\!\\¡\\¿\\?\\.\\_\\#\\-\\0-9A-Za-z]{1,}$/;
     if (!pattern.test(event.target.value)) {
       $(event.target)
         .parent()

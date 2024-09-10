@@ -80,7 +80,7 @@ class DatatableController
                 $rol_admin = $value->rol_admin;
                 $date_updated_admin = $value->date_updated_admin;
                 $actions = "<div class='btn-group'>
-                                <a href='' class='btn bg-warning border-0 mr-2 btn-sm px-3'>
+                                <a href='/admin/administradores/gestion?admin=" . base64_encode($value->id_admin) . "' class='btn bg-warning border-0 mr-2 btn-sm px-3'>
                                     <i class='fas fa-edit text-white'></i>
                                 </a>
                                 <a href='' class='btn bg-danger border-0 mr-2  btn-sm px-3'>
