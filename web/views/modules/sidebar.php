@@ -80,7 +80,7 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-shopping-bag"></i>
                         <p>
-                            Productos
+                            Inventario
                             <i class="right fas fa-angle-left"></i>
                             <span class="right badge badge-primary mr-1">5</span>
                         </p>
@@ -99,9 +99,9 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/inventario" class="nav-link <?php if (!empty($routesArray[1]) && $routesArray[1] == "inventario"): ?> active<?php endif ?>">
+                            <a href="/admin/productos" class="nav-link <?php if (!empty($routesArray[1]) && $routesArray[1] == "productos"): ?> active<?php endif ?>">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Inventario</p>
+                                <p>Productos</p>
                             </a>
                         </li>
                         <li class="nav-item">

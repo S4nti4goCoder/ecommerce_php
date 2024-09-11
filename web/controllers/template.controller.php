@@ -71,8 +71,18 @@ class TemplateController
     }
 
     //Función para mayúscula inicial
-    static public function capitalize($value){
+    static public function capitalize($value)
+    {
         $value = mb_convert_case($value, MB_CASE_TITLE, "UTF-8");
+        return $value;
+    }
+
+    //Función para mayúscula inicial
+    static public function reduceText($value, $limit)
+    {
+        if (strlen($value) > $limit) {
+            $value = substr($value, 0, $limit) . "...";
+        }
         return $value;
     }
 }

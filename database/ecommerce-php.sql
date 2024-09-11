@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-09-2024 a las 09:35:29
+-- Tiempo de generación: 11-09-2024 a las 20:01:11
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -44,7 +44,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id_admin`, `rol_admin`, `name_admin`, `email_admin`, `password_admin`, `token_admin`, `token_exp_admin`, `date_created_admin`, `date_updated_admin`) VALUES
-(1, 'admin', 'Jose Tienda', 'admin@ecommerce.com', '$2a$07$azybxcags23425sdg23sdeanQZqjaf6Birm2NvcYTNtJw24CsO5uq', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MjUyNjIzNDksImV4cCI6MTcyNTM0ODc0OSwiZGF0YSI6eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBlY29tbWVyY2UuY29tIn19.VlRsvSUeMC-xWWY0SvrOCWACa5IPwuTyTDKG5cIbMmI', '1725348749', '2024-09-01', '2024-09-02 07:32:29');
+(1, 'admin', 'Jose Tienda', 'admin@ecommerce.com', '$2a$07$azybxcags23425sdg23sdeanQZqjaf6Birm2NvcYTNtJw24CsO5uq', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MjYwNzE5MjcsImV4cCI6MTcyNjE1ODMyNywiZGF0YSI6eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBlY29tbWVyY2UuY29tIn19.Z2NWu_PQFxxUL8ZDNZ7V5QSzib0jQu1Isk4m0F_nP8o', '1726158327', '2024-09-01', '2024-09-11 17:04:15');
 
 -- --------------------------------------------------------
 
@@ -55,6 +55,15 @@ INSERT INTO `admins` (`id_admin`, `rol_admin`, `name_admin`, `email_admin`, `pas
 CREATE TABLE `categories` (
   `id_category` int(11) NOT NULL,
   `name_category` text DEFAULT NULL,
+  `url_category` text DEFAULT NULL,
+  `icon_category` text DEFAULT NULL,
+  `image_category` text DEFAULT NULL,
+  `description_category` text DEFAULT NULL,
+  `keywords_category` text DEFAULT NULL,
+  `subcategories_category` int(11) DEFAULT 0,
+  `products_category` int(11) DEFAULT 0,
+  `views_Category` int(11) DEFAULT 0,
+  `status_category` int(11) DEFAULT 1,
   `date_created_category` date DEFAULT NULL,
   `date_updated_category` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
@@ -194,7 +203,7 @@ ALTER TABLE `templates`
 -- AUTO_INCREMENT de la tabla `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `categories`
