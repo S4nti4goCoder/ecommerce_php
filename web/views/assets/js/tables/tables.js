@@ -47,3 +47,55 @@ $("#tables").DataTable({
     },
   },
 });
+
+//Eliminar item
+
+$(document).on("click", ".deleteItem", function () {
+  var idItem = $(this).attr("idItem");
+  var table = $(this).attr("table");
+  var column = $(this).attr("column");
+  var rol = $(this).attr("rol");
+
+  fncSweetAlert("confirm", "¿Está seguro de eliminar este item?", "").then(
+    (resp) => {
+      if (resp) {
+        fncMatPreloader("on");
+        fncSweetAlert("loading", "", "");
+        if (rol == "admin") {
+          var token = localStorage.getItem("token-admin");
+          var url = "/ajax/delete-admin.ajax.php";
+        }
+        var data = new FormData();
+        data.append("token", token);
+        data.append("table", table);
+        data.append("id", idItem);
+        data.append("nameId", "id_" + column);
+
+        $.ajax({
+          url: url,
+          method: "POST",
+          data: data,
+          contentType: false,
+          cache: false,
+          processData: false,
+          success: function (response) {
+            if (response == 200) {
+              fncMatPreloader("off");
+              fncToastr(
+                "success",
+                "El item ha sido borrado correctamente",
+                location.reload()
+              );
+            } else if (response == "no-borrar") {
+              fncMatPreloader("off");
+              fncToastr("warning", "Este item no se puede borrar");
+            } else {
+              fncMatPreloader("off");
+              fncToastr("Error", "Este item no se pudo borrar");
+            }
+          },
+        });
+      }
+    }
+  );
+});

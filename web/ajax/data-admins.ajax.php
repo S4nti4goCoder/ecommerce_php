@@ -83,9 +83,9 @@ class DatatableController
                                 <a href='/admin/administradores/gestion?admin=" . base64_encode($value->id_admin) . "' class='btn bg-warning border-0 mr-2 btn-sm px-3'>
                                     <i class='fas fa-edit text-white'></i>
                                 </a>
-                                <a href='' class='btn bg-danger border-0 mr-2  btn-sm px-3'>
+                                <button href='' class='btn bg-danger border-0 mr-2  btn-sm px-3 deleteItem' rol='admin' table='admins' column='admin' idItem='" . base64_encode($value->id_admin) . "'>
                                     <i class='fas fa-trash-alt text-white'></i>
-                                </a>
+                                </button>
                             </div>";
                 $actions = TemplateController::htmlClean($actions);
                 $dataJson .= '{

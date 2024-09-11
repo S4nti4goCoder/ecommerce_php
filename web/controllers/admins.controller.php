@@ -22,6 +22,7 @@ class AdminsController
                 if ($login->status == 200) {
                     $_SESSION["admin"] = $login->results[0];
                     echo '<script>
+                        localStorage.setItem("token-admin", "' . $login->results[0]->token_admin . '")
                         location.reload();
                     </script>';
                 } else {

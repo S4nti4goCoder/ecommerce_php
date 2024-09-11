@@ -64,6 +64,23 @@ function fncSweetAlert(type, text, url) {
       });
       Swal.showLoading();
       break;
+
+    case "confirm":
+      return new Promise((resolve) => {
+        Swal.fire({
+          text: text,
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          cancelButtonText: "No",
+          confirmButtonText: "Si, continuar!",
+        }).then(function (result) {
+          resolve(result.value);
+        });
+      });
+
+      break;
   }
 }
 
