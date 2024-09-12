@@ -25,6 +25,54 @@
   );
 })();
 
+// Función para validar datos repetidos
+function validateDataRepeat(event, type) {
+  if (type == "category") {
+    var table = "categories";
+    var linkTo = "name_category";
+  }
+  var value = event.target.value;
+
+  var data = new FormData();
+  data.append("table", table);
+  data.append("equalTo", value);
+  data.append("linkTo", linkTo);
+
+  $.ajax({
+    url: "/ajax/forms.ajax.php",
+    method: "POST",
+    data: data,
+    contentType: false,
+    cache: false,
+    processData: false,
+    success: function (response) {
+      if (response == 404) {
+        validateJS(event, "complete");
+        createUrl(event, "url_category");
+      }
+    },
+  });
+}
+
+// Función para crear Url's
+function createUrl(event, input) {
+  var value = event.target.value;
+  value = value.toLowerCase();
+  value = value.replace(
+    /[#\\;\\$\\&\\%\\=\\(\\)\\:\\,\\'\\"\\.\\¿\\¡\\!\\?\\]/g,
+    ""
+  );
+  value = value.replace(/[ ]/g, "-");
+  value = value.replace(/[á]/g, "a");
+  value = value.replace(/[é]/g, "e");
+  value = value.replace(/[í]/g, "i");
+  value = value.replace(/[ó]/g, "o");
+  value = value.replace(/[ú]/g, "u");
+  value = value.replace(/[ñ]/g, "n");
+
+  $('[name="' + input + '"]').val(value);
+}
+
 // Función para validar formularios
 function validateJS(event, type) {
   $(event.target).parent().addClass("was-validated");
@@ -99,3 +147,30 @@ function getEmail() {
   }
 }
 getEmail();
+
+//Cambio de icono para la categoria
+function addIcon(event) {
+  $("#myIcon").show();
+  $(document).ready(function () {
+    $(".myInputIcon").on("keyup", function () {
+      var value = $(this).val().toLowerCase();
+
+      $(".btnChangeIcon").filter(function () {
+        $(this).toggle($(this).attr("mode").toLowerCase().indexOf(value) > -1);
+      });
+    });
+  });
+  $(document).on("click", ".btnChangeIcon", function (e) {
+    e.preventDefault();
+    $(".iconView").html(`<i class="` + $(this).attr("mode") + `"></i>`);
+    $(event.target).val($(this).attr("mode"));
+    $("#myIcon").hide();
+  });
+}
+
+$(document).on("click", '[data-bs-dismiss="modal"]', function () {
+  var modal = $(".modal");
+  modal.each((i) => {
+    $(modal[i]).hide();
+  });
+});

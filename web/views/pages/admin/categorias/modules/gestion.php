@@ -45,7 +45,7 @@
                                             type="text"
                                             class="form-control"
                                             placeholder="Ingresar el título" id="name_category" name="name_category"
-                                            onchange="validateJS(event, 'text')"
+                                            onchange="validateDataRepeat(event, 'category')"
                                             required>
 
                                         <div class="valid-feedback"></div>
@@ -75,7 +75,7 @@
                                     <div class="form-group pb-3">
                                         <label for="icon_category">Icono <sup class="text-danger font-weight-bold">*</sup></label>
                                         <div class="input-group">
-                                            <span class="input-group-text">
+                                            <span class="input-group-text iconView">
                                                 <i class="fas fa-shopping-bag"></i>
                                             </span>
                                             <input
@@ -83,6 +83,8 @@
                                                 class="form-control"
                                                 id="icon_category"
                                                 name="icon_category"
+                                                onfocus="addIcon(event)"
+                                                value="fas fa-shopping-bag"
                                                 required>
 
                                             <div class="valid-feedback"></div>
@@ -182,6 +184,39 @@
                     </div>
                 </div> -->
             </form>
+        </div>
+    </div>
+</div>
+
+<!-- ====================================
+Modal con libreria de iconos
+==================================== -->
+<div class="modal" id="myIcon">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Cambiar Icono</h4>
+                <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body mx-3">
+                <input type="text" class="form-control mt-4 mb-3 myInputIcon" placeholder="Buscar Icono">
+                <?php
+                $data = file_get_contents($path . "views/assets/json/fontawesome.json");
+                $icons = json_decode($data);
+                ?>
+                <div
+                    class="row row-cols-1 row-cols-sm-2 row-cols-md-4 py-3"
+                    style="overflow-y: scroll; overflow-x: hidden; height:400px">
+                    <?php foreach ($icons as $key => $value): ?>
+                        <div class="col text-center py-4 btn btnChangeIcon" mode="<?php echo $value  ?>">
+                            <i class="<?php echo $value ?> fa-2x"></i>
+                        </div>
+                    <?php endforeach ?>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white btn-sm" data-bs-dismiss="modal">Salir</button>
+            </div>
         </div>
     </div>
 </div>
