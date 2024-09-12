@@ -1,26 +1,54 @@
-$("#tables").DataTable({
-  responsive: true,
-  aLengthMenu: [
-    [10, 25, 50, 100],
-    [10, 25, 50, 100],
-  ],
-  order: [[0, "desc"]],
-  lengthChange: true,
-  autoWidth: false,
-  processing: true,
-  serverSide: true,
-  ajax: {
-    url: $("#urlPath").val() + "ajax/data-admins.ajax.php",
-    type: "POST",
-  },
-  columns: [
+//Tabla para administradores
+if ($(".adminsTable").length > 0) {
+  var url = "/ajax/data-admins.ajax.php";
+  var columns = [
     { data: "id_admin" },
     { data: "name_admin" },
     { data: "email_admin" },
     { data: "rol_admin" },
     { data: "date_updated_admin" },
     { data: "actions", orderable: false, searchable: false },
+  ];
+  var order = [0, "desc"];
+}
+
+//Tabla para categorias
+if ($(".categoriesTable").length > 0) {
+  var url = "/ajax/data-categories.ajax.php";
+  var columns = [
+    { data: "id_category" },
+    { data: "status_category" },
+    { data: "name_category" },
+    { data: "url_category" },
+    { data: "image_category" },
+    { data: "description_category" },
+    { data: "keywords_category" },
+    { data: "subcategories_category" },
+    { data: "products_category" },
+    { data: "views_category" },
+    { data: "date_updated_admin" },
+    { data: "actions", orderable: false, searchable: false },
+  ];
+  var order = [0, "desc"];
+}
+
+//Configuracion global DataTable
+$("#tables").DataTable({
+  responsive: true,
+  aLengthMenu: [
+    [10, 25, 50, 100],
+    [10, 25, 50, 100],
   ],
+  order: [order],
+  lengthChange: true,
+  autoWidth: false,
+  processing: true,
+  serverSide: true,
+  ajax: {
+    url: url,
+    type: "POST",
+  },
+  columns: columns,
   language: {
     sProcessing: "Procesando...",
     sLengthMenu: "Mostrar _MENU_ registros",

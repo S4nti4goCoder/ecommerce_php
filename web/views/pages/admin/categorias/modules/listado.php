@@ -7,7 +7,7 @@
                 </h3>
             </div>
             <div class="card-body">
-                <table id="tables" class="table table-bordered table-striped">
+                <table id="tables" class="table table-bordered table-striped categoriesTable">
                     <thead>
                         <tr>
                             <th>#</th>

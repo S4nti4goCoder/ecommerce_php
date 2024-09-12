@@ -15,9 +15,9 @@ class DatatableController
             $orderType = $_POST["order"][0]["dir"]; //Obtener el orden ASC o DESC.
             $start = $_POST["start"]; //Indicador de primer registro de paginacion.
             $length = $_POST["length"]; // Indicador de la longitud de la paginacion.
-            
+
             //El total de registros de la data
-            $url = "admins?select=id_admin";
+            $url = "categories?select=id_category";
             $method = "GET";
             $fields = array();
 
@@ -33,15 +33,15 @@ class DatatableController
                     "data": []}';
                 return;
             }
-            $select = "id_admin,rol_admin,name_admin,email_admin,date_updated_admin";
+            $select = "*";
 
             //Busqueda de datos
             if (!empty($_POST['search']['value'])) {
                 if (preg_match('/^[0-9A-Za-zñÑáéíóú ]{1,}$/', $_POST['search']['value'])) {
-                    $linkTo = ["name_admin", "email_admin", "rol_admin"];
+                    $linkTo = ["name_category", "url_category", "description_category", "keywords_category", "date_updated_category"];
                     $search = str_replace(" ", "_", $_POST['search']['value']);
                     foreach ($linkTo as $key => $value) {
-                        $url = "admins?select=" . $select . "&linkTo=" . $value . "&search=" . $search . "&orderBy=" . $orderBy . "&orderMode=" . $orderType . "&startAt=" . $start . "&endAt=" . $length;
+                        $url = "categories?select=" . $select . "&linkTo=" . $value . "&search=" . $search . "&orderBy=" . $orderBy . "&orderMode=" . $orderType . "&startAt=" . $start . "&endAt=" . $length;
 
                         $data = CurlController::request($url, $method, $fields)->results;
 
@@ -57,15 +57,15 @@ class DatatableController
                     }
                 } else {
                     echo '{
-                        "Draw": 1,
-                        "recordsTotal": 0,
-                        "recordsFiltered": 0,
-                        "data": []}';
+                    "Draw": 1,
+                    "recordsTotal": 0,
+                    "recordsFiltered": 0,
+                    "data": []}';
                     return;
                 }
             } else {
                 //Seleccionar datos
-                $url = "admins?select=" . $select . "&orderBy=" . $orderBy . "&orderMode=" . $orderType . "&startAt=" . $start . "&endAt=" . $length;
+                $url = "categories?select=" . $select . "&orderBy=" . $orderBy . "&orderMode=" . $orderType . "&startAt=" . $start . "&endAt=" . $length;
                 $data = CurlController::request($url, $method, $fields)->results;
                 $recordsFiltered = $totalData;
             }
@@ -87,26 +87,41 @@ class DatatableController
                 "recordsFiltered": ' . $recordsFiltered . ',
                 "data": [';
             foreach ($data as $key => $value) {
+                //STATUS
+                $status_category = $value->status_category;
+                //TEXTOS
 
-                $name_admin = $value->name_admin;
-                $email_admin = $value->email_admin;
-                $rol_admin = $value->rol_admin;
-                $date_updated_admin = $value->date_updated_admin;
+                $name_category = $value->name_category;
+                $url_category = $value->url_category;
+                $image_category = $value->image_category;
+                $description_category = $value->description_category;
+                $keywords_category = $value->keywords_category;
+                $subcategories_category = $value->subcategories_category;
+                $products_category = $value->products_category;
+                $views_category = $value->views_category;
+                $date_updated_category = $value->date_updated_category;
+
                 $actions = "<div class='btn-group'>
-                                <a href='/admin/administradores/gestion?admin=" . base64_encode($value->id_admin) . "' class='btn bg-warning border-0 mr-2 btn-sm px-3'>
+                                <a href='/admin/categorias/gestion?admin=" . base64_encode($value->id_category) . "' class='btn bg-warning border-0 mr-2 btn-sm px-3'>
                                     <i class='fas fa-edit text-white'></i>
                                 </a>
-                                <button href='' class='btn bg-danger border-0 mr-2  btn-sm px-3 deleteItem' rol='admin' table='admins' column='admin' idItem='" . base64_encode($value->id_admin) . "'>
+                                <button href='' class='btn bg-danger border-0 mr-2  btn-sm px-3 deleteItem' rol='admin' table='categories' column='category' idItem='" . base64_encode($value->id_category) . "'>
                                     <i class='fas fa-trash-alt text-white'></i>
                                 </button>
                             </div>";
                 $actions = TemplateController::htmlClean($actions);
                 $dataJson .= '{
-                        "id_admin":"' . ($start + $key + 1) . '",
-                        "name_admin":"' . $name_admin . '",
-                        "email_admin":"' . $email_admin . '",
-                        "rol_admin":"' . $rol_admin . '",
-                        "date_updated_admin":"' . $date_updated_admin . '",
+                        "id_category":"' . ($start + $key + 1) . '",
+                        "status_category":"' . ($status_category) . '",
+                        "name_category":"' . ($name_category) . '",
+                        "url_category":"' . ($url_category) . '",
+                        "image_category":"' . ($image_category) . '",
+                        "description_category":"' . ($description_category) . '",
+                        "keywords_category":"' . ($keywords_category) . '",
+                        "subcategories_category":"' . ($subcategories_category) . '",
+                        "products_category":"' . ($products_category) . '",
+                        "views_category":"' . ($views_category) . '",
+                        "date_updated_category":"' . ($date_updated_category) . '",
                         "actions":"' . $actions . '"
                     },';
             }
