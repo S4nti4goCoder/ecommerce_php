@@ -108,7 +108,15 @@
                                     ==================================== -->
                                     <div class="form-group pb-3">
                                         <label for="description_category">Descripción<sup class="text-danger font-weight-bold">*</sup></label>
-                                        <textarea rows="9" class="form-control mb-3" placeholder="Ingresar la descripción" id="description_category" name="description_category" required></textarea>
+                                        <textarea
+                                            rows="9"
+                                            class="form-control mb-3"
+                                            placeholder="Ingresar la descripción"
+                                            id="description_category"
+                                            name="description_category"
+                                            onchange="validateJS(event,'complete')"
+                                            required>
+                                        </textarea>
                                         <div class="valid-feedback"></div>
                                         <div class="invalid-feedback">Por favor llena este campo correctamente.</div>
                                     </div>
@@ -121,9 +129,11 @@
                                         <input
                                             type="text"
                                             class="form-control tags-input"
+                                            data-role="tagsinput"
                                             placeholder="Ingresar las palabras clave"
                                             id="keywords_category"
                                             name="keywords_category"
+                                            onchange="validateJS(event, 'complete')"
                                             required>
                                         <div class="valid-feedback"></div>
                                         <div class="invalid-feedback">Por favor llena este campo correctamente.</div>
@@ -140,7 +150,7 @@
                                     <div class="form-group pb-3 text-center">
                                         <label class="pb-3 float-left">Imagen de la categoría<sup class="text-danger"></sup></label>
                                         <label for="image_category">
-                                            <img src="/views/assets/img/categories/default/default-image.jpg" class="img-fluid">
+                                            <img src="/views/assets/img/categories/default/default-image.jpg" class="img-fluid changeImage">
                                             <p class="help-block small mt-3">Dimensiones recomendadas: 1000 x 600 pixeles | Peso Max. 2MB | Formato: PNG o JPG</p>
                                         </label>
                                         <div class="custom-file">
@@ -150,6 +160,7 @@
                                                 name="image_category"
                                                 accept="image/*"
                                                 maxSize="2000000"
+                                                onchange="validateImageJS(event, 'changeImage')"
                                                 required>
                                             <div class="valid-feedback"></div>
                                             <div class="invalid-feedback">Por favor llena este campo correctamente.</div>

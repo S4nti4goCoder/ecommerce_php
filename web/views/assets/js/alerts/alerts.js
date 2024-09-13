@@ -81,10 +81,14 @@ function fncSweetAlert(type, text, url) {
       });
 
       break;
+
+    case "close":
+      Swal.close();
+    break;
   }
 }
 
-/* Alerta SweetAlert */
+/* Alerta Toast */
 function fncToastr(type, text) {
   var Toast = Swal.mixin({
     toast: true,

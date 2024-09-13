@@ -174,3 +174,48 @@ $(document).on("click", '[data-bs-dismiss="modal"]', function () {
     $(modal[i]).hide();
   });
 });
+
+//Tags Input
+if ($(".tags-input").length > 0) {
+  $(".tags-input").tagsinput({
+    maxTags: 5,
+  });
+}
+
+//Validamos imagen
+function validateImageJS(event, tagImg) {
+  fncSweetAlert("loading", "", "");
+  var image = event.target.files[0];
+  if (image == undefined) {
+    fncSweetAlert("close", "", "");
+    return;
+  }
+  //Validamos el formato
+  if (
+    image["type"] !== "image/jpeg" &&
+    image["type"] !== "image/png" &&
+    image["type"] !== "image/gif"
+  ) {
+    fncSweetAlert(
+      "error",
+      "La imagen debe estar en formato JPG, GIF O PNG.",
+      null
+    );
+    return;
+  }
+  //Validamos el tamaño
+  else if (image["size"] > 2000000) {
+    fncSweetAlert("error", "La imagen debe ser superior a 2MB", null);
+    return;
+  }
+  //Mostramos la imagen temporal
+  else {
+    var data = new FileReader();
+    data.readAsDataURL(image);
+    $(data).on("load", function (event) {
+      var path = event.target.result;
+      fncSweetAlert("close", "", "");
+      $("." + tagImg).attr("src", path);
+    });
+  }
+}
