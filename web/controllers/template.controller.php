@@ -85,4 +85,64 @@ class TemplateController
         }
         return $value;
     }
+
+    //Función para almacenar imágenes
+    static public function saveImage($image, $folder, $name, $width, $height)
+    {
+        if (isset($image["tmp_name"]) && !empty($image["tmp_name"])) {
+
+            //Configuramos la ruta del directorio donde se guardará la imagen
+            $directory = strtolower("views/" . $folder);
+
+            //Preguntamos primero si no existe el directorio, para crearlo
+            if (!file_exists($directory)) {
+                mkdir($directory, 0755);
+            }
+
+            //Capturar ancho y alto original de la imagen
+            list($lastWidth, $lastHeight) = getimagesize($image["tmp_name"]);
+
+            if ($lastWidth < $width || $lastHeight < $height) {
+                $lastWidth = $width;
+                $lastHeight = $height;
+            }
+
+            //De acuerdo al tipo de imagen aplicamos las funciones por defecto
+            if ($image["type"] == "image/jpeg") {
+                //Definimos nombre del archivo
+                $newName = $name . '.jpg';
+                //Definimos el destino donde queremos guardar el archivo
+                $folderPath = $directory . '/' . $newName;
+                //Crear una copia de la imagen
+                $start = imagecreatefromjpeg($image["tmp_name"]);
+                //Instrucciones para aplicar a la imagen definitiva
+                $end = imagecreatetruecolor($width, $height);
+                imagecopyresized($end, $start, 0, 0, 0, 0, $width, $height, $lastWidth, $lastHeight);
+                imagejpeg($end, $folderPath);
+            }
+            if ($image["type"] == "image/png") {
+                //Definimos nombre del archivo
+                $newName = $name . '.png';
+                //Definimos el destino donde queremos guardar el archivo
+                $folderPath = $directory . '/' . $newName;
+                //Crear una copia de la imagen
+                $start = imagecreatefrompng($image["tmp_name"]);
+                //Instrucciones para aplicar a la imagen definitiva
+                $end = imagecreatetruecolor($width, $height);
+                imagealphablending($end, FALSE);
+                imagesavealpha($end, TRUE);
+                imagecopyresampled($end, $start, 0, 0, 0, 0, $width, $height, $lastWidth, $lastHeight);
+                imagepng($end, $folderPath);
+            }
+            if ($image["type"] == "image/gif") {
+                $newName = $name . '.gif';
+                $folderPath = $directory . '/' . $newName;
+                move_uploaded_file($image["tmp_name"], $folderPath);
+            }
+
+            return $newName;
+        } else {
+            return "error";
+        }
+    }
 }

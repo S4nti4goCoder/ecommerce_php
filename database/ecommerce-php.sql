@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-09-2024 a las 20:01:11
+-- Tiempo de generación: 19-09-2024 a las 01:57:23
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -44,7 +44,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id_admin`, `rol_admin`, `name_admin`, `email_admin`, `password_admin`, `token_admin`, `token_exp_admin`, `date_created_admin`, `date_updated_admin`) VALUES
-(1, 'admin', 'Jose Tienda', 'admin@ecommerce.com', '$2a$07$azybxcags23425sdg23sdeanQZqjaf6Birm2NvcYTNtJw24CsO5uq', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MjYwNzE5MjcsImV4cCI6MTcyNjE1ODMyNywiZGF0YSI6eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBlY29tbWVyY2UuY29tIn19.Z2NWu_PQFxxUL8ZDNZ7V5QSzib0jQu1Isk4m0F_nP8o', '1726158327', '2024-09-01', '2024-09-11 17:04:15');
+(1, 'admin', 'Jose Tienda', 'admin@ecommerce.com', '$2a$07$azybxcags23425sdg23sdeanQZqjaf6Birm2NvcYTNtJw24CsO5uq', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MjY2OTMxODMsImV4cCI6MTcyNjc3OTU4MywiZGF0YSI6eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBlY29tbWVyY2UuY29tIn19.9D_6rU-pJa0CKpjczWU3y3Ats9Ujqt0rpjEqIHvRY0k', '1726779583', '2024-09-01', '2024-09-18 20:59:43');
 
 -- --------------------------------------------------------
 
@@ -62,11 +62,21 @@ CREATE TABLE `categories` (
   `keywords_category` text DEFAULT NULL,
   `subcategories_category` int(11) DEFAULT 0,
   `products_category` int(11) DEFAULT 0,
-  `views_Category` int(11) DEFAULT 0,
+  `views_category` int(11) DEFAULT 0,
   `status_category` int(11) DEFAULT 1,
   `date_created_category` date DEFAULT NULL,
   `date_updated_category` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Volcado de datos para la tabla `categories`
+--
+
+INSERT INTO `categories` (`id_category`, `name_category`, `url_category`, `icon_category`, `image_category`, `description_category`, `keywords_category`, `subcategories_category`, `products_category`, `views_category`, `status_category`, `date_created_category`, `date_updated_category`) VALUES
+(1, 'Ropa', 'ropa', 'fas fa-tshirt', 'ropa.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at dapibus urna. Morbi sit amet eros ut lacus sollicitudin blandit. Ut eget maximus dui, in luctus dolor.', 'ropa,camisas,pantalones,blusas,faldas', 0, 0, 0, 1, '2024-09-19', '2024-09-18 23:00:18'),
+(2, 'Calzado', 'calzado', 'fas fa-shoe-prints', 'calzado.jpg', 'Curabitur eget volutpat ligula. Nunc auctor volutpat odio, sit amet sodales metus imperdiet id. Quisque odio dui, vehicula quis enim non, pharetra malesuada eros. Proin rutrum odio quis ligula porttitor semper.', 'calzado,tennis,chanclas,sandalias', 0, 0, 0, 1, '2024-09-19', '2024-09-18 23:53:06'),
+(3, 'Tecnología', 'tecnologia', 'fas fa-laptop', 'tecnologia.jpg', 'Sed a placerat risus, in vestibulum augue. Vivamus ultrices augue a fringilla consequat. Nulla laoreet sollicitudin auctor. Cras posuere turpis eget lacus vulputate, ac dignissim tortor auctor.', 'pc,postatil,ordenador,servidor', 0, 0, 0, 1, '2024-09-19', '2024-09-18 23:54:56'),
+(4, 'Cursos', 'cursos', 'fas fa-graduation-cap', 'cursos.jpg', 'Donec nec neque consequat, viverra metus vel, condimentum felis. Etiam tristique, ipsum at euismod elementum, tellus turpis tristique erat, sed suscipit nibh massa vitae lacus. Nulla nisi ante, pharetra in maximus id, dignissim sit amet nulla. Cras facilisis mauris lacinia velit tincidunt, sed posuere orci faucibus.', 'cursos,tutorias,enseñanzas,virtualidad', 0, 0, 0, 1, '2024-09-19', '2024-09-18 23:56:26');
 
 -- --------------------------------------------------------
 
@@ -209,7 +219,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id_category` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_category` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `products`

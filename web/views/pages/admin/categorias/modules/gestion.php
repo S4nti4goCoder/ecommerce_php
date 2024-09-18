@@ -1,7 +1,7 @@
 <div class="content pb-5">
     <div class="container">
         <div class="card">
-            <form method="post" class="needs-validation" novalidate>
+            <form method="post" class="needs-validation" novalidate enctype="multipart/form-data">
                 <div class="card-header">
                     <div class="container">
                         <div class="row">
@@ -156,6 +156,7 @@
                                         <div class="custom-file">
                                             <input
                                                 type="file"
+                                                class="custom-file-input"
                                                 id="image_category"
                                                 name="image_category"
                                                 accept="image/*"

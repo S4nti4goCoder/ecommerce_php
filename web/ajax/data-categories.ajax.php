@@ -88,17 +88,35 @@ class DatatableController
                 "data": [';
             foreach ($data as $key => $value) {
                 //STATUS
-                $status_category = $value->status_category;
-                //TEXTOS
+                if ($value->status_category == 1) {
+                    $status_category = "<input type='checkbox' data-size='mini' data-bootstrap-switch data-off-color='danger' data-on-color='dark' checked='true'>";
+                } else {
+                    $status_category = "<input type='checkbox' data-size='mini' data-bootstrap-switch data-off-color='danger' data-on-color='dark'>";
+                }
 
+                //TEXTOS
                 $name_category = $value->name_category;
-                $url_category = $value->url_category;
-                $image_category = $value->image_category;
-                $description_category = $value->description_category;
-                $keywords_category = $value->keywords_category;
+
+                $url_category = "<a href='/" . $value->url_category . "' target='_blank' class='badge badge-light px-3 py-1 border rounded-pill'>/" . $value->url_category . "</a>";
+
+                $image_category = "<img src='/views/assets/img/categories/" . $value->url_category . "/" . $value->image_category . "' class='img-thumbnail rounded'>";
+
+                $description_category = templateController::reduceText($value->description_category, 25);
+
+                $keywords_category = "";
+
+                $keywordsArray = explode(",", $value->keywords_category);
+
+                foreach ($keywordsArray as $index => $item) {
+                    $keywords_category .= "<span class='badge badge-primary rounded-pill px-3 py-1'>" . $item . "</span>";
+                }
+
                 $subcategories_category = $value->subcategories_category;
+
                 $products_category = $value->products_category;
-                $views_category = $value->views_category;
+
+                $views_category = "<span class='badge badge-primary rounded-pill px-3 py-1'><i class='fas fa-eye'></i> " . $value->views_category . "</span>";
+
                 $date_updated_category = $value->date_updated_category;
 
                 $actions = "<div class='btn-group'>
