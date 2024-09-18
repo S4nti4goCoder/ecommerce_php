@@ -1,4 +1,4 @@
-<div class="content">
+<div class="content pb-5">
     <div class="container">
         <div class="card">
             <form method="post" class="needs-validation" novalidate>

@@ -77,7 +77,7 @@ class TemplateController
         return $value;
     }
 
-    //Función para mayúscula inicial
+    //Función reducir texto
     static public function reduceText($value, $limit)
     {
         if (strlen($value) > $limit) {

@@ -26,7 +26,7 @@ if ($(".categoriesTable").length > 0) {
     { data: "subcategories_category" },
     { data: "products_category" },
     { data: "views_category" },
-    { data: "date_updated_admin" },
+    { data: "date_updated_category" },
     { data: "actions", orderable: false, searchable: false },
   ];
   var order = [0, "desc"];
