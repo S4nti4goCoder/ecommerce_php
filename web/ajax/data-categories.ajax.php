@@ -120,7 +120,7 @@ class DatatableController
                 $date_updated_category = $value->date_updated_category;
 
                 $actions = "<div class='btn-group'>
-                                <a href='/admin/categorias/gestion?admin=" . base64_encode($value->id_category) . "' class='btn bg-warning border-0 mr-2 btn-sm px-3'>
+                                <a href='/admin/categorias/gestion?category=" . base64_encode($value->id_category) . "' class='btn bg-warning border-0 mr-2 btn-sm px-3'>
                                     <i class='fas fa-edit text-white'></i>
                                 </a>
                                 <button href='' class='btn bg-danger border-0 mr-2  btn-sm px-3 deleteItem' rol='admin' table='categories' column='category' idItem='" . base64_encode($value->id_category) . "'>

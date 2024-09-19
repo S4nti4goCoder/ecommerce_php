@@ -1,7 +1,28 @@
+<?php
+if (isset($_GET["category"])) {
+    $select = "id_category,name_category,url_category,icon_category,image_category,description_category,keywords_category";
+    $url = "categories?linkTo=id_category&equalTo=" . base64_decode($_GET["category"]) . "&select=" . $select;
+    $method = "GET";
+    $fields = array();
+
+    $category = CurlController::request($url, $method, $fields);
+    if ($category->status == 200) {
+        $category = $category->results[0];
+    } else {
+        $category = null;
+    }
+} else {
+    $category = null;
+}
+?>
+
 <div class="content pb-5">
     <div class="container">
         <div class="card">
             <form method="post" class="needs-validation" novalidate enctype="multipart/form-data">
+                <?php if (!empty($category)): ?>
+                    <input type="hidden" name="idCategory" value="<?php echo base64_encode($category->id_category) ?>">
+                <?php endif ?>
                 <div class="card-header">
                     <div class="container">
                         <div class="row">
@@ -46,6 +67,8 @@
                                             class="form-control"
                                             placeholder="Ingresar el título" id="name_category" name="name_category"
                                             onchange="validateDataRepeat(event, 'category')"
+                                            <?php if (!empty($category)): ?> readonly <?php endif ?>
+                                            value="<?php if (!empty($category)): ?><?php echo $category->name_category ?><?php endif ?>"
                                             required>
 
                                         <div class="valid-feedback"></div>
@@ -62,6 +85,7 @@
                                             class="form-control"
                                             id="url_category"
                                             name="url_category"
+                                            value="<?php if (!empty($category)): ?><?php echo $category->url_category ?><?php endif ?>"
                                             readonly
                                             required>
 
@@ -76,7 +100,7 @@
                                         <label for="icon_category">Icono <sup class="text-danger font-weight-bold">*</sup></label>
                                         <div class="input-group">
                                             <span class="input-group-text iconView">
-                                                <i class="fas fa-shopping-bag"></i>
+                                                <i class="<?php if (!empty($category)): ?><?php echo $category->icon_category ?><?php else: ?>fas fa-shopping-bag<?php endif ?>"></i>
                                             </span>
                                             <input
                                                 type="text"
@@ -84,7 +108,7 @@
                                                 id="icon_category"
                                                 name="icon_category"
                                                 onfocus="addIcon(event)"
-                                                value="fas fa-shopping-bag"
+                                                value="<?php if (!empty($category)): ?><?php echo $category->icon_category ?><?php else: ?>fas fa-shopping-bag<?php endif ?>"
                                                 required>
 
                                             <div class="valid-feedback"></div>
@@ -116,6 +140,7 @@
                                             name="description_category"
                                             onchange="validateJS(event,'complete')"
                                             required>
+                                            <?php if (!empty($category)): ?><?php echo $category->description_category ?><?php endif ?>
                                         </textarea>
                                         <div class="valid-feedback"></div>
                                         <div class="invalid-feedback">Por favor llena este campo correctamente.</div>
@@ -134,6 +159,7 @@
                                             id="keywords_category"
                                             name="keywords_category"
                                             onchange="validateJS(event, 'complete')"
+                                            value="<?php if (!empty($category)): ?><?php echo $category->keywords_category ?><?php endif ?>"
                                             required>
                                         <div class="valid-feedback"></div>
                                         <div class="invalid-feedback">Por favor llena este campo correctamente.</div>
@@ -150,7 +176,12 @@
                                     <div class="form-group pb-3 text-center">
                                         <label class="pb-3 float-left">Imagen de la categoría<sup class="text-danger"></sup></label>
                                         <label for="image_category">
-                                            <img src="/views/assets/img/categories/default/default-image.jpg" class="img-fluid changeImage">
+                                            <?php if (!empty($category)): ?>
+                                                <input type="hidden" value="<?php echo $category->image_category ?>" name="old_image_category">
+                                                <img src="/views/assets/img/categories/<?php echo $category->url_category ?>/<?php echo $category->image_category ?>" class="img-fluid changeImage">
+                                            <?php else: ?>
+                                                <img src="/views/assets/img/categories/default/default-image.jpg" class="img-fluid changeImage">
+                                            <?php endif ?>
                                             <p class="help-block small mt-3">Dimensiones recomendadas: 1000 x 600 pixeles | Peso Max. 2MB | Formato: PNG o JPG</p>
                                         </label>
                                         <div class="custom-file">
@@ -162,7 +193,9 @@
                                                 accept="image/*"
                                                 maxSize="2000000"
                                                 onchange="validateImageJS(event, 'changeImage')"
-                                                required>
+                                                <?php if (empty($category)): ?>
+                                                required
+                                                <?php endif ?>>
                                             <div class="valid-feedback"></div>
                                             <div class="invalid-feedback">Por favor llena este campo correctamente.</div>
 
