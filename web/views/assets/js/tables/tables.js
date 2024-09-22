@@ -115,8 +115,16 @@ $(document).on("click", ".deleteItem", function () {
                 location.reload()
               );
             } else if (response == "no-borrar") {
-              fncMatPreloader("off");
-              fncToastr("warning", "Este item no se puede borrar");
+              if (table == "categories") {
+                fncMatPreloader("off");
+                fncToastr(
+                  "warning",
+                  "Este item no se puede borrar porque tiene subcategorías vinculadas"
+                );
+              } else {
+                fncMatPreloader("off");
+                fncToastr("warning", "Este item no se puede borrar");
+              }
             } else {
               fncMatPreloader("off");
               fncToastr("Error", "Este item no se pudo borrar");
