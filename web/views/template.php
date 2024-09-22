@@ -158,6 +158,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="<?php echo $path ?>views/assets/js/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
     <script src="<?php echo $path ?>views/assets/js/plugins/datatables-buttons/js/buttons.print.min.js"></script>
     <script src="<?php echo $path ?>views/assets/js/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+    <!-- Bootstrap Switch -->
+    <script src="<?php echo $path ?>views/assets/js/plugins/bootstrap-switch/bootstrap-switch.min.js"></script>
 </head>
 
 <body class="hold-transition sidebar-collapse layout-top-nav">

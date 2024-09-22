@@ -135,3 +135,10 @@ $(document).on("click", ".deleteItem", function () {
     }
   );
 });
+
+//Suiche
+$("#tables").on("draw.dt", function () {
+  $("input[data-bootstrap-switch]").each(function () {
+    $(this).bootstrapSwitch();
+  });
+});
