@@ -37,6 +37,27 @@ class DeleteController
             rmdir("../views/assets/img/categories/" . $dataItem->url_category);
         }
 
+        if ($this->table == "subcategories") {
+            $select = "url_subcategory,image_subcategory,products_subcategory";
+            $url = "subcategories?linkTo=id_subcategory&equalTo=" . base64_decode($this->id) . "&select=" . $select;
+            $method = "GET";
+            $fields = array();
+
+            $dataItem = CurlController::request($url, $method, $fields)->results[0];
+
+            //No borrar subcategoría si tiene productos vinculados
+            if ($dataItem->products_subcategory > 0) {
+                echo "no-borrar";
+                return;
+            }
+
+            //Borrar imagen
+            unlink("../views/assets/img/subcategories/" . $dataItem->url_subcategory . "/" . $dataItem->image_subcategory);
+
+            //Borrar directorio
+            rmdir("../views/assets/img/subcategories/" . $dataItem->url_subcategory);
+        }
+
         $url = $this->table . "?id=" . base64_decode($this->id) . "&nameId=" . $this->nameId . "&token=" . $this->token . "&table=admins&suffix=admin";
         $method = "DELETE";
         $fields = array();

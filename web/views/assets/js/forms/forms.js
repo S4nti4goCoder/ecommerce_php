@@ -31,6 +31,10 @@ function validateDataRepeat(event, type) {
     var table = "categories";
     var linkTo = "name_category";
   }
+  if (type == "subcategory") {
+    var table = "subcategories";
+    var linkTo = "name_subcategory";
+  }
   var value = event.target.value;
 
   var data = new FormData();
@@ -48,15 +52,19 @@ function validateDataRepeat(event, type) {
     success: function (response) {
       if (response == 404) {
         validateJS(event, "complete");
-        createUrl(event, "url_category");
-
+        if (type == "category") {
+          createUrl(event, "url_category");
+        }
+        if (type == "subcategory") {
+          createUrl(event, "url_subcategory");
+        }
         $(".metaTitle").html(value);
       } else {
         $(event.target).parent().addClass("was-validated");
         $(event.target)
           .parent()
           .children(".invalid-feedback")
-          .html("El nombre de la categoría ya existe en la base de datos");
+          .html("El nombre ya existe en la base de datos");
 
         event.target.value = "";
         return;

@@ -46,7 +46,7 @@ if ($(".subcategoriesTable").length > 0) {
     { data: "name_category" },
     { data: "products_subcategory" },
     { data: "views_subcategory" },
-    { data: "date_subupdated_subcategory" },
+    { data: "date_updated_subcategory" },
     { data: "actions", orderable: false, searchable: false },
   ];
   var order = [0, "desc"];
@@ -140,6 +140,12 @@ $(document).on("click", ".deleteItem", function () {
                   "warning",
                   "Este item no se puede borrar porque tiene subcategorías vinculadas"
                 );
+              } else if (table == "subcategories") {
+                fncMatPreloader("off");
+                fncToastr(
+                  "warning",
+                  "Este item no se puede borrar porque tiene productos vinculados"
+                );
               } else {
                 fncMatPreloader("off");
                 fncToastr("warning", "Este item no se puede borrar");
@@ -190,7 +196,7 @@ $("#tables").on("draw.dt", function () {
             if (response == 200) {
               fncMatPreloader("off");
               fncToastr("success", "El item ha sido actualizado correctamente");
-            }else{
+            } else {
               fncMatPreloader("off");
               fncToastr("Error", "Este item no se pudo actualizar");
             }

@@ -33,7 +33,8 @@ class DatatableController
                     "data": []}';
                 return;
             }
-            $select = "*";
+
+            $select = "id_subcategory,status_subcategory,name_subcategory,url_subcategory,image_subcategory,description_subcategory,keywords_subcategory,name_category,products_subcategory,views_subcategory,date_updated_subcategory";
 
             //Busqueda de datos
             if (!empty($_POST['search']['value'])) {
@@ -69,7 +70,6 @@ class DatatableController
                 $data = CurlController::request($url, $method, $fields)->results;
                 $recordsFiltered = $totalData;
             }
-
             //Cuando la data viene vacia
             if (empty($data)) {
                 echo '{
