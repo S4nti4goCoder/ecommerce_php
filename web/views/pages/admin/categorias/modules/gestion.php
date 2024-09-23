@@ -127,9 +127,10 @@ if (isset($_GET["category"])) {
                         <div class="col">
                             <div class="card">
                                 <div class="card-body">
-                                    <!-- ====================================
-                                    Descripción de la categoría
-                                    ==================================== -->
+                                    <!--=====================================
+									Descripción de la categoría
+									======================================-->
+
                                     <div class="form-group pb-3">
                                         <label for="description_category">Descripción<sup class="text-danger font-weight-bold">*</sup></label>
                                         <textarea
@@ -139,10 +140,8 @@ if (isset($_GET["category"])) {
                                             id="description_category"
                                             name="description_category"
                                             onchange="validateJS(event,'complete')"
-                                            required>
-                                            <?php if (!empty($category)): ?><?php echo $category->description_category ?><?php endif ?>
-                                        </textarea>
-                                        <div class="valid-feedback"></div>
+                                            required><?php if (!empty($category)): ?><?php echo $category->description_category ?><?php endif ?></textarea>
+                                        <div class="valid-feedback">Válido.</div>
                                         <div class="invalid-feedback">Por favor llena este campo correctamente.</div>
                                     </div>
 
@@ -158,7 +157,7 @@ if (isset($_GET["category"])) {
                                             placeholder="Ingresar las palabras clave"
                                             id="keywords_category"
                                             name="keywords_category"
-                                            onchange="validateJS(event, 'complete')"
+                                            onchange="validateJS(event, 'complete-tags')"
                                             value="<?php if (!empty($category)): ?><?php echo $category->keywords_category ?><?php endif ?>"
                                             required>
                                         <div class="valid-feedback"></div>
@@ -206,8 +205,85 @@ if (isset($_GET["category"])) {
                             </div>
                         </div>
                     </div>
+
+                    <!-- ====================================
+                    TERCER BLOQUE
+                    ==================================== -->
+                    <div class="row row-cols-1 pt-2">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body col-md-6 offset-md-3">
+                                    <!-- ====================================
+                                    Visor metadatos
+                                    ==================================== -->
+                                    <div class="form-group pb-3 text-center">
+                                        <label>Visor Metadatos</label>
+                                        <div class="d-flex justify-content-center">
+                                            <div class="card">
+                                                <div class="card-body">
+
+                                                    <!-- ====================================
+                                                    Visor imagen
+                                                    ==================================== -->
+
+                                                    <figure class="mb-2">
+                                                        <?php if (!empty($category)): ?>
+                                                            <img src="/views/assets/img/categories/<?php echo $category->url_category ?>/<?php echo $category->image_category ?>" class="img-fluid metaImg" style="width:100%">
+                                                        <?php else: ?>
+                                                            <img src="/views/assets/img/categories/default/default-image.jpg" class="img-fluid metaImg" style="width:100%">
+                                                        <?php endif ?>
+                                                    </figure>
+
+                                                    <!-- ====================================
+                                                    Visor titulo
+                                                    ==================================== -->
+                                                    <h6 class="text-left text-primary mb-1 metaTitle">
+                                                        <?php if (!empty($category)): ?>
+                                                            <?php echo $category->name_category ?>
+                                                        <?php else: ?>
+                                                            Lorem ipsum dolor sit
+                                                        <?php endif ?>
+                                                    </h6>
+
+                                                    <!-- ====================================
+                                                    Visor URL
+                                                    ==================================== -->
+                                                    <p class="text-left text-success small mb-1">
+                                                        <?php echo $path ?><span class="metaUrl"><?php if (!empty($category)): ?><?php echo $category->url_category ?><?php else: ?>lorem<?php endif ?>
+                                                        </span>
+                                                    </p>
+
+                                                    <!-- ====================================
+                                                    Visor Descripción
+                                                    ==================================== -->
+                                                    <p class="text-left small mb-1 metaDescription">
+                                                        <?php if (!empty($category)): ?>
+                                                            <?php echo $category->description_category ?>
+                                                        <?php else: ?>
+                                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus impedit ipsam obcaecati voluptas unde error quod odit ad sapiente vitae.
+                                                        <?php endif ?>
+                                                    </p>
+
+                                                    <!-- ====================================
+                                                    Visor Palabras claves
+                                                    ==================================== -->
+                                                    <p class="small text-left text-secondary metaTags">
+                                                        <?php if (!empty($category)): ?>
+                                                            <?php echo $category->keywords_category ?>
+                                                        <?php else: ?>
+                                                            lorem, ipsum, dolor, sit
+                                                        <?php endif ?>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- <div class="card-footer">
+                <div class="card-footer">
                     <div class="container">
                         <div class="row">
                             <div class="col-12 col-lg-6 text-center text-lg-left mt-lg-3">
@@ -227,7 +303,7 @@ if (isset($_GET["category"])) {
                             </div>
                         </div>
                     </div>
-                </div> -->
+                </div>
             </form>
         </div>
     </div>

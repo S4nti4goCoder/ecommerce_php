@@ -49,6 +49,17 @@ function validateDataRepeat(event, type) {
       if (response == 404) {
         validateJS(event, "complete");
         createUrl(event, "url_category");
+
+        $(".metaTitle").html(value);
+      } else {
+        $(event.target).parent().addClass("was-validated");
+        $(event.target)
+          .parent()
+          .children(".invalid-feedback")
+          .html("El nombre de la categoría ya existe en la base de datos");
+
+        event.target.value = "";
+        return;
       }
     },
   });
@@ -71,6 +82,7 @@ function createUrl(event, input) {
   value = value.replace(/[ñ]/g, "n");
 
   $('[name="' + input + '"]').val(value);
+  $(".metaUrl").html(value);
 }
 
 // Función para validar formularios
@@ -120,6 +132,22 @@ function validateJS(event, type) {
         .html("La entrada tiene errores de caracteres especiales");
       event.target.value = "";
       return;
+    } else {
+      $(".metaDescription").html(event.target.value);
+    }
+  }
+  if (type == "complete-tags") {
+    var pattern =
+      /^[-\\(\\)\\=\\%\\&\\$\\;\\_\\*\\"\\'\\#\\?\\¿\\!\\¡\\:\\,\\.\\/\\0-9a-zA-ZñÑáéíóúÁÉÍÓÚ ]{1,}$/;
+    if (!pattern.test(event.target.value)) {
+      $(event.target)
+        .parent()
+        .children(".invalid-feedback")
+        .html("La entrada tiene errores de caracteres especiales");
+      event.target.value = "";
+      return;
+    } else {
+      $(".metaTags").html(event.target.value);
     }
   }
 }
@@ -208,6 +236,7 @@ function validateImageJS(event, tagImg) {
     fncSweetAlert("error", "La imagen debe ser superior a 2MB", null);
     return;
   }
+
   //Mostramos la imagen temporal
   else {
     var data = new FileReader();
@@ -216,6 +245,7 @@ function validateImageJS(event, tagImg) {
       var path = event.target.result;
       fncSweetAlert("close", "", "");
       $("." + tagImg).attr("src", path);
+      $(".metaImg").attr("src", path);
     });
   }
 }
