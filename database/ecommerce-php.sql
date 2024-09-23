@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-09-2024 a las 01:57:23
+-- Tiempo de generación: 23-09-2024 a las 07:10:14
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -44,7 +44,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id_admin`, `rol_admin`, `name_admin`, `email_admin`, `password_admin`, `token_admin`, `token_exp_admin`, `date_created_admin`, `date_updated_admin`) VALUES
-(1, 'admin', 'Jose Tienda', 'admin@ecommerce.com', '$2a$07$azybxcags23425sdg23sdeanQZqjaf6Birm2NvcYTNtJw24CsO5uq', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MjY2OTMxODMsImV4cCI6MTcyNjc3OTU4MywiZGF0YSI6eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBlY29tbWVyY2UuY29tIn19.9D_6rU-pJa0CKpjczWU3y3Ats9Ujqt0rpjEqIHvRY0k', '1726779583', '2024-09-01', '2024-09-18 20:59:43');
+(1, 'admin', 'Jose Tienda', 'admin@ecommerce.com', '$2a$07$azybxcags23425sdg23sdeanQZqjaf6Birm2NvcYTNtJw24CsO5uq', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MjcwNTUzODEsImV4cCI6MTcyNzE0MTc4MSwiZGF0YSI6eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBlY29tbWVyY2UuY29tIn19.JfmKKeIADgw3dTatq9YB0BkPymBqFbe5Lr2cH0QUgFw', '1727141781', '2024-09-01', '2024-09-23 01:36:21');
 
 -- --------------------------------------------------------
 
@@ -73,10 +73,10 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id_category`, `name_category`, `url_category`, `icon_category`, `image_category`, `description_category`, `keywords_category`, `subcategories_category`, `products_category`, `views_category`, `status_category`, `date_created_category`, `date_updated_category`) VALUES
-(1, 'Ropa', 'ropa', 'fas fa-tshirt', 'ropa.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at dapibus urna. Morbi sit amet eros ut lacus sollicitudin blandit. Ut eget maximus dui, in luctus dolor.', 'ropa,camisas,pantalones,blusas,faldas', 0, 0, 0, 1, '2024-09-19', '2024-09-18 23:00:18'),
-(2, 'Calzado', 'calzado', 'fas fa-shoe-prints', 'calzado.jpg', 'Curabitur eget volutpat ligula. Nunc auctor volutpat odio, sit amet sodales metus imperdiet id. Quisque odio dui, vehicula quis enim non, pharetra malesuada eros. Proin rutrum odio quis ligula porttitor semper.', 'calzado,tennis,chanclas,sandalias', 0, 0, 0, 1, '2024-09-19', '2024-09-18 23:53:06'),
-(3, 'Tecnología', 'tecnologia', 'fas fa-laptop', 'tecnologia.jpg', 'Sed a placerat risus, in vestibulum augue. Vivamus ultrices augue a fringilla consequat. Nulla laoreet sollicitudin auctor. Cras posuere turpis eget lacus vulputate, ac dignissim tortor auctor.', 'pc,postatil,ordenador,servidor', 0, 0, 0, 1, '2024-09-19', '2024-09-18 23:54:56'),
-(4, 'Cursos', 'cursos', 'fas fa-graduation-cap', 'cursos.jpg', 'Donec nec neque consequat, viverra metus vel, condimentum felis. Etiam tristique, ipsum at euismod elementum, tellus turpis tristique erat, sed suscipit nibh massa vitae lacus. Nulla nisi ante, pharetra in maximus id, dignissim sit amet nulla. Cras facilisis mauris lacinia velit tincidunt, sed posuere orci faucibus.', 'cursos,tutorias,enseñanzas,virtualidad', 0, 0, 0, 1, '2024-09-19', '2024-09-18 23:56:26');
+(1, 'Ropa', 'ropa', 'fas fa-tshirt', 'ropa.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet lorem vulputate, viverra quam id, sollicitudin diam. Cras ultrices in sapien quis eleifend.', 'ropa,camisas,pantalones,blusas,faldas', 0, 0, 0, 1, '2024-09-20', '2024-09-23 01:35:38'),
+(2, 'Calzado', 'calzado', 'fas fa-shoe-prints', 'calzado.jpg', 'Maecenas gravida arcu id convallis mollis. Nullam egestas libero est, a rutrum odio sagittis eget. Phasellus mattis, libero at placerat sagittis, massa dui scelerisque lacus, in condimentum mi felis id enim.', 'calzado,tennis,chanclas,sandalias', 0, 0, 0, 1, '2024-09-20', '2024-09-23 01:36:33'),
+(5, 'Tecnología', 'tecnologia', 'fas fa-laptop', 'tecnologia.jpg', 'Phasellus mattis, ante quis euismod dapibus, est tellus tincidunt augue, sit amet malesuada felis metus ut libero. Etiam bibendum nibh nec volutpat maximus. Ut bibendum suscipit ligula ac congue.', 'pc,portatil,ordenador,servidor', 0, 0, 0, 1, '2024-09-23', '2024-09-23 01:38:14'),
+(6, 'Cursos', 'cursos', 'fas fa-graduation-cap', 'cursos.jpg', 'In dictum id velit in dapibus. Phasellus bibendum elementum massa at blandit. Sed at est eget arcu congue pulvinar id ac sem. Pellentesque pretium ac massa sed mollis. Donec sagittis varius risus ut pulvinar.', 'cursos,tutorias,tutoriales,virtualidad', 0, 0, 0, 1, '2024-09-23', '2024-09-23 03:56:57');
 
 -- --------------------------------------------------------
 
@@ -129,6 +129,13 @@ CREATE TABLE `subcategories` (
   `id_subcategory` int(11) NOT NULL,
   `id_category_subcategory` int(11) NOT NULL DEFAULT 0,
   `name_subcategory` text DEFAULT NULL,
+  `url_subcategory` text DEFAULT NULL,
+  `image_subcategory` text DEFAULT NULL,
+  `description_subcategory` text DEFAULT NULL,
+  `keywords_subcategory` text DEFAULT NULL,
+  `products_subcategory` int(11) NOT NULL DEFAULT 0,
+  `views_subcategory` int(11) NOT NULL DEFAULT 0,
+  `status_subcategory` int(11) NOT NULL DEFAULT 1,
   `date_created_subcategory` date DEFAULT NULL,
   `date_updated_subcategory` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
@@ -219,7 +226,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id_category` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_category` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `products`

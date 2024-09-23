@@ -32,6 +32,26 @@ if ($(".categoriesTable").length > 0) {
   var order = [0, "desc"];
 }
 
+//Tabla para subcategorias
+if ($(".subcategoriesTable").length > 0) {
+  var url = "/ajax/data-subcategories.ajax.php";
+  var columns = [
+    { data: "id_subcategory" },
+    { data: "status_subcategory" },
+    { data: "name_subcategory" },
+    { data: "url_subcategory" },
+    { data: "image_subcategory" },
+    { data: "description_subcategory" },
+    { data: "keywords_subcategory" },
+    { data: "name_category" },
+    { data: "products_subcategory" },
+    { data: "views_subcategory" },
+    { data: "date_subupdated_subcategory" },
+    { data: "actions", orderable: false, searchable: false },
+  ];
+  var order = [0, "desc"];
+}
+
 //Configuracion global DataTable
 $("#tables").DataTable({
   responsive: true,
@@ -77,7 +97,6 @@ $("#tables").DataTable({
 });
 
 //Eliminar item
-
 $(document).on("click", ".deleteItem", function () {
   var idItem = $(this).attr("idItem");
   var table = $(this).attr("table");
