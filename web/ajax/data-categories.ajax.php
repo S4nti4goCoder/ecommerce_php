@@ -89,9 +89,9 @@ class DatatableController
             foreach ($data as $key => $value) {
                 //STATUS
                 if ($value->status_category == 1) {
-                    $status_category = "<input type='checkbox' data-size='mini' data-bootstrap-switch data-off-color='danger' data-on-color='primary' checked='true'>";
+                    $status_category = "<input type='checkbox' data-size='mini' data-bootstrap-switch data-off-color='danger' data-on-color='primary' checked='true' idItem='" . base64_encode($value->id_category) . "' table='categories' column='category'>";
                 } else {
-                    $status_category = "<input type='checkbox' data-size='mini' data-bootstrap-switch data-off-color='danger' data-on-color='primary'>";
+                    $status_category = "<input type='checkbox' data-size='mini' data-bootstrap-switch data-off-color='danger' data-on-color='primary' idItem='" . base64_encode($value->id_category) . "' table='categories' column='category'>";
                 }
 
                 //TEXTOS
