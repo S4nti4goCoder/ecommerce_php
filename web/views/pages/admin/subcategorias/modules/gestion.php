@@ -61,7 +61,7 @@ if (isset($_GET["subcategory"])) {
                                      Seleccionar la categoría
                                      ==================================== -->
                                     <div class="form-group pb-3">
-                                        <label for="id_subcategory_subcategory">Seleccionar Categoría<sup class="text-danger">*</sup></label>
+                                        <label for="id_category_subcategory">Seleccionar Categoría<sup class="text-danger">*</sup></label>
                                         <?php
                                         $url = "categories?select=id_category,name_category";
                                         $method = "GET";

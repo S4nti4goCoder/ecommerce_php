@@ -35,6 +35,10 @@ function validateDataRepeat(event, type) {
     var table = "subcategories";
     var linkTo = "name_subcategory";
   }
+  if (type == "product") {
+    var table = "products";
+    var linkTo = "name_product";
+  }
   var value = event.target.value;
 
   var data = new FormData();
@@ -52,12 +56,7 @@ function validateDataRepeat(event, type) {
     success: function (response) {
       if (response == 404) {
         validateJS(event, "complete");
-        if (type == "category") {
-          createUrl(event, "url_category");
-        }
-        if (type == "subcategory") {
-          createUrl(event, "url_subcategory");
-        }
+        createUrl(event, "url_" + type);
         $(".metaTitle").html(value);
       } else {
         $(event.target).parent().addClass("was-validated");
@@ -90,7 +89,7 @@ function createUrl(event, input) {
   value = value.replace(/[ñ]/g, "n");
 
   $('[name="' + input + '"]').val(value);
-  $(".metaUrl").html(value);
+  $(".metaURL").html(value);
 }
 
 // Función para validar formularios
@@ -256,4 +255,40 @@ function validateImageJS(event, tagImg) {
       $(".metaImg").attr("src", path);
     });
   }
+}
+
+//Traer subcategorias de acuerdo a la categoría seleccionada
+function changeCategory(event) {
+  $("#id_subcategory_product").html(
+    `<option value="">Selecciona Subcategoría</option>`
+  );
+
+  var idCategory = event.target.value;
+
+  var data = new FormData();
+  data.append("idCategory", idCategory);
+
+  $.ajax({
+    url: "/ajax/forms.ajax.php",
+    method: "POST",
+    data: data,
+    contentType: false,
+    cache: false,
+    processData: false,
+    success: function (response) {
+      if (JSON.parse(response).length > 0) {
+        JSON.parse(response).forEach((v) => {
+          $("#id_subcategory_product").append(
+            `
+            <option value="` +
+              v.id_subcategory +
+              `">` +
+              v.name_subcategory +
+              `</option>
+          `
+          );
+        });
+      }
+    },
+  });
 }

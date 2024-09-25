@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-09-2024 a las 19:57:00
+-- Tiempo de generación: 25-09-2024 a las 08:12:18
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -44,7 +44,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id_admin`, `rol_admin`, `name_admin`, `email_admin`, `password_admin`, `token_admin`, `token_exp_admin`, `date_created_admin`, `date_updated_admin`) VALUES
-(1, 'admin', 'Jose Tienda', 'admin@ecommerce.com', '$2a$07$azybxcags23425sdg23sdeanQZqjaf6Birm2NvcYTNtJw24CsO5uq', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MjcxNDgzNjIsImV4cCI6MTcyNzIzNDc2MiwiZGF0YSI6eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBlY29tbWVyY2UuY29tIn19.01_LBMVYBeeA4ukogfwlmTaeCNbRtFDrFt3XjoFzOUI', '1727234762', '2024-09-01', '2024-09-24 03:26:02');
+(1, 'admin', 'Jose Tienda', 'admin@ecommerce.com', '$2a$07$azybxcags23425sdg23sdeanQZqjaf6Birm2NvcYTNtJw24CsO5uq', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MjcyMzIyOTUsImV4cCI6MTcyNzMxODY5NSwiZGF0YSI6eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBlY29tbWVyY2UuY29tIn19.LJdL0IijSzQyEYbfboJKR6Az-hmen9WdyCl9NmQd0f4', '1727318695', '2024-09-01', '2024-09-25 02:44:55');
 
 -- --------------------------------------------------------
 
@@ -89,9 +89,22 @@ CREATE TABLE `products` (
   `id_category_product` int(11) NOT NULL DEFAULT 0,
   `id_subcategory_product` int(11) NOT NULL DEFAULT 0,
   `name_product` text DEFAULT NULL,
+  `url_product` text DEFAULT NULL,
+  `image_product` text DEFAULT NULL,
+  `description_product` text DEFAULT NULL,
+  `keywords_product` text DEFAULT NULL,
+  `views_product` int(11) NOT NULL DEFAULT 0,
+  `status_product` int(11) NOT NULL DEFAULT 1,
   `date_created_product` date DEFAULT NULL,
   `date_updated_product` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Volcado de datos para la tabla `products`
+--
+
+INSERT INTO `products` (`id_product`, `id_category_product`, `id_subcategory_product`, `name_product`, `url_product`, `image_product`, `description_product`, `keywords_product`, `views_product`, `status_product`, `date_created_product`, `date_updated_product`) VALUES
+(1, 1, 1, 'Conjunto 1 Ropa Dama 1', 'conjunto-1-ropa-dama-1', 'conjunto-1-ropa-dama-1.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tincidunt tortor in risus cursus, at semper metus dictum.', 'ropa,dama,lorem,ipsum', 0, 1, '2024-09-25', '2024-09-25 06:02:40');
 
 -- --------------------------------------------------------
 
@@ -253,7 +266,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `socials`
