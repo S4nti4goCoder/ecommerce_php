@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-09-2024 a las 08:12:18
+-- Tiempo de generación: 28-09-2024 a las 08:14:53
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -44,7 +44,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id_admin`, `rol_admin`, `name_admin`, `email_admin`, `password_admin`, `token_admin`, `token_exp_admin`, `date_created_admin`, `date_updated_admin`) VALUES
-(1, 'admin', 'Jose Tienda', 'admin@ecommerce.com', '$2a$07$azybxcags23425sdg23sdeanQZqjaf6Birm2NvcYTNtJw24CsO5uq', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MjcyMzIyOTUsImV4cCI6MTcyNzMxODY5NSwiZGF0YSI6eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBlY29tbWVyY2UuY29tIn19.LJdL0IijSzQyEYbfboJKR6Az-hmen9WdyCl9NmQd0f4', '1727318695', '2024-09-01', '2024-09-25 02:44:55');
+(1, 'admin', 'Jose Tienda', 'admin@ecommerce.com', '$2a$07$azybxcags23425sdg23sdeanQZqjaf6Birm2NvcYTNtJw24CsO5uq', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3Mjc1MDExNjYsImV4cCI6MTcyNzU4NzU2NiwiZGF0YSI6eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBlY29tbWVyY2UuY29tIn19.w6ECuage3fqzpHAQmM55MWxarqOwXPej2KsUXRo2yKI', '1727587566', '2024-09-01', '2024-09-28 05:26:06');
 
 -- --------------------------------------------------------
 
@@ -73,8 +73,8 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id_category`, `name_category`, `url_category`, `icon_category`, `image_category`, `description_category`, `keywords_category`, `subcategories_category`, `products_category`, `views_category`, `status_category`, `date_created_category`, `date_updated_category`) VALUES
-(1, 'Ropa', 'ropa', 'fas fa-tshirt', 'ropa.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'ropa,camisas,pantalones,blusas,faldas', 0, 0, 0, 1, '2024-09-24', '2024-09-23 23:35:35'),
-(2, 'Calzado', 'calzado', 'fas fa-shoe-prints', 'calzado.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'calzado,tennis,chanclas,sandalias', 0, 0, 0, 1, '2024-09-24', '2024-09-23 23:36:21'),
+(1, 'Ropa', 'ropa', 'fas fa-tshirt', 'ropa.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'ropa,camisas,pantalones,blusas,faldas', 0, 0, 0, 1, '2024-09-24', '2024-09-26 19:33:50'),
+(2, 'Calzado', 'calzado', 'fas fa-shoe-prints', 'calzado.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'calzado,tennis,chanclas,sandalias', 0, 0, 0, 1, '2024-09-24', '2024-09-26 19:33:55'),
 (3, 'Tecnología', 'tecnologia', 'fas fa-laptop', 'tecnologia.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'pc,portatil,ordenador,servidor', 0, 0, 0, 1, '2024-09-24', '2024-09-23 23:37:00'),
 (4, 'Cursos', 'cursos', 'fas fa-graduation-cap', 'cursos.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'cursos,tutorias,enseñanzas,virtualidad', 0, 0, 0, 1, '2024-09-24', '2024-09-23 23:37:43');
 
@@ -104,7 +104,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id_product`, `id_category_product`, `id_subcategory_product`, `name_product`, `url_product`, `image_product`, `description_product`, `keywords_product`, `views_product`, `status_product`, `date_created_product`, `date_updated_product`) VALUES
-(1, 1, 1, 'Conjunto 1 Ropa Dama 1', 'conjunto-1-ropa-dama-1', 'conjunto-1-ropa-dama-1.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tincidunt tortor in risus cursus, at semper metus dictum.', 'ropa,dama,lorem,ipsum', 0, 1, '2024-09-25', '2024-09-25 06:02:40');
+(1, 1, 1, 'Conjunto 1 Ropa Dama 1', 'conjunto-1-ropa-dama-1', 'conjunto-1-ropa-dama-1.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tincidunt tortor in risus cursus, at semper metus dictum.', 'ropa,dama,lorem,ipsum', 0, 1, '2024-09-25', '2024-09-28 06:10:06');
 
 -- --------------------------------------------------------
 
@@ -158,11 +158,11 @@ CREATE TABLE `subcategories` (
 --
 
 INSERT INTO `subcategories` (`id_subcategory`, `id_category_subcategory`, `name_subcategory`, `url_subcategory`, `image_subcategory`, `description_subcategory`, `keywords_subcategory`, `products_subcategory`, `views_subcategory`, `status_subcategory`, `date_created_subcategory`, `date_updated_subcategory`) VALUES
-(1, 1, 'Ropa Para Dama', 'ropa-para-dama', 'ropa-para-dama.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'ropa,lorem,ipsum', 0, 0, 1, '2024-09-24', '2024-09-23 23:38:57'),
+(1, 1, 'Ropa Para Dama', 'ropa-para-dama', 'ropa-para-dama.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'ropa,lorem,ipsum', 0, 0, 1, '2024-09-24', '2024-09-26 19:33:36'),
 (2, 1, 'Ropa Para Hombre', 'ropa-para-hombre', 'ropa-para-hombre.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'ropa,lorem,ipsum', 0, 0, 1, '2024-09-24', '2024-09-23 23:39:40'),
 (3, 1, 'Ropa Deportiva', 'ropa-deportiva', 'ropa-deportiva.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'ropa,lorem,ipsum', 0, 0, 1, '2024-09-24', '2024-09-23 23:40:03'),
 (4, 1, 'Ropa Infantil', 'ropa-infantil', 'ropa-infantil.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'ropa,lorem,ipsum', 0, 0, 1, '2024-09-24', '2024-09-23 23:40:33'),
-(5, 2, 'Calzado Para Dama', 'calzado-para-dama', 'calzado-para-dama.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'calzado,lorem,ipsum', 0, 0, 1, '2024-09-24', '2024-09-23 23:41:50'),
+(5, 2, 'Calzado Para Dama', 'calzado-para-dama', 'calzado-para-dama.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'calzado,lorem,ipsum', 0, 0, 1, '2024-09-24', '2024-09-26 19:33:40'),
 (6, 2, 'Calzado Para Hombre', 'calzado-para-hombre', 'calzado-para-hombre.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'calzado,lorem,ipsum', 0, 0, 1, '2024-09-24', '2024-09-23 23:42:12'),
 (7, 2, 'Calzado Deportivo', 'calzado-deportivo', 'calzado-deportivo.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'calzado,lorem,ipsum', 0, 0, 1, '2024-09-24', '2024-09-23 23:42:33'),
 (8, 2, 'Calzado Infantil', 'calzado-infantil', 'calzado-infantil.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'calzado,lorem,ipsum', 0, 0, 1, '2024-09-24', '2024-09-23 23:42:57'),
@@ -172,7 +172,8 @@ INSERT INTO `subcategories` (`id_subcategory`, `id_category_subcategory`, `name_
 (12, 4, 'Desarrollo Web', 'desarrollo-web', 'desarrollo-web.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'cursos,lorem,ipsum', 0, 0, 1, '2024-09-24', '2024-09-23 23:45:14'),
 (13, 4, 'Aplicaciones Móviles', 'aplicaciones-moviles', 'aplicaciones-moviles.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'cursos,lorem,ipsum', 0, 0, 1, '2024-09-24', '2024-09-23 23:45:33'),
 (14, 4, 'Diseño Gráfico', 'diseno-grafico', 'diseno-grafico.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'cursos,lorem,ipsum', 0, 0, 1, '2024-09-24', '2024-09-23 23:45:54'),
-(15, 4, 'Marketing Digital', 'marketing-digital', 'marketing-digital.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'cursos,lorem,ipsum', 0, 0, 1, '2024-09-24', '2024-09-23 23:46:13');
+(15, 4, 'Marketing Digital', 'marketing-digital', 'marketing-digital.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'cursos,lorem,ipsum', 0, 0, 1, '2024-09-24', '2024-09-23 23:46:13'),
+(16, 3, 'Computadoras', 'computadoras', 'computadoras.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus turpis laoreet venenatis molestie.', 'tecnologia,lorem,ipsum', 0, 0, 1, '2024-09-26', '2024-09-26 04:58:13');
 
 -- --------------------------------------------------------
 
@@ -266,7 +267,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `socials`
@@ -278,7 +279,7 @@ ALTER TABLE `socials`
 -- AUTO_INCREMENT de la tabla `subcategories`
 --
 ALTER TABLE `subcategories`
-  MODIFY `id_subcategory` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_subcategory` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `templates`
