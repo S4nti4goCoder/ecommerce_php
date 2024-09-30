@@ -38,7 +38,7 @@ class DeleteController
         }
 
         if ($this->table == "subcategories") {
-            $select = "url_subcategory,image_subcategory,products_subcategory";
+            $select = "url_subcategory,image_subcategory,products_subcategory,id_category_subcategory";
             $url = "subcategories?linkTo=id_subcategory&equalTo=" . base64_decode($this->id) . "&select=" . $select;
             $method = "GET";
             $fields = array();
@@ -56,6 +56,78 @@ class DeleteController
 
             //Borrar directorio
             rmdir("../views/assets/img/subcategories/" . $dataItem->url_subcategory);
+
+            /*=============================================
+            Quitar subcategoria vinculado a categoria
+            =============================================*/
+
+            $url = "categories?equalTo=" . $dataItem->id_category_subcategory . "&linkTo=id_category&select=subcategories_category";
+            $method = "GET";
+            $fields = array();
+
+            $subcategories_category = CurlController::request($url, $method, $fields)->results[0]->subcategories_category;
+
+            $url = "categories?id=" . $dataItem->id_category_subcategory . "&nameId=id_category&token=" . $this->token . "&table=admins&suffix=admin";
+            $method = "PUT";
+
+            $fields = "subcategories_category=" . ($subcategories_category - 1);
+
+            $updateCategory = CurlController::request($url, $method, $fields);
+        }
+
+        if ($this->table == "products") {
+            $select = "url_product,image_product,id_category_product,id_subcategory_product";
+            $url = "products?linkTo=id_product&equalTo=" . base64_decode($this->id) . "&select=" . $select;
+            $method = "GET";
+            $fields = array();
+
+            $dataItem = CurlController::request($url, $method, $fields)->results[0];
+
+            /*=============================================
+            Borrar Imagen
+            =============================================*/
+
+            unlink("../views/assets/img/products/" . $dataItem->url_product . "/" . $dataItem->image_product);
+
+            /*=============================================
+            Borrar Directorio
+            =============================================*/
+
+            rmdir("../views/assets/img/products/" . $dataItem->url_product);
+
+            /*=============================================
+            Quitar producto vinculado a categoria
+            =============================================*/
+
+            $url = "categories?equalTo=" . $dataItem->id_category_product . "&linkTo=id_category&select=products_category";
+            $method = "GET";
+            $fields = array();
+
+            $products_category = CurlController::request($url, $method, $fields)->results[0]->products_category;
+
+            $url = "categories?id=" . $dataItem->id_category_product . "&nameId=id_category&token=" . $this->token . "&table=admins&suffix=admin";
+            $method = "PUT";
+
+            $fields = "products_category=" . ($products_category - 1);
+
+            $updateCategory = CurlController::request($url, $method, $fields);
+
+            /*=============================================
+            Quitar producto vinculado a subcategoria
+            =============================================*/
+
+            $url = "subcategories?equalTo=" . $dataItem->id_subcategory_product . "&linkTo=id_subcategory&select=products_subcategory";
+            $method = "GET";
+            $fields = array();
+
+            $products_subcategory = CurlController::request($url, $method, $fields)->results[0]->products_subcategory;
+
+            $url = "subcategories?id=" . $dataItem->id_subcategory_product . "&nameId=id_subcategory&token=" . $this->token . "&table=admins&suffix=admin";
+            $method = "PUT";
+
+            $fields = "products_subcategory=" . ($products_subcategory - 1);
+
+            $updateSubcategory = CurlController::request($url, $method, $fields);
         }
 
         $url = $this->table . "?id=" . base64_decode($this->id) . "&nameId=" . $this->nameId . "&token=" . $this->token . "&table=admins&suffix=admin";
