@@ -89,7 +89,7 @@ function createUrl(event, input) {
   value = value.replace(/[ñ]/g, "n");
 
   $('[name="' + input + '"]').val(value);
-  $(".metaURL").html(value);
+  $(".metaUrl").html(value);
 }
 
 // Función para validar formularios

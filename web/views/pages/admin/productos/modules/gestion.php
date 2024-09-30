@@ -61,6 +61,9 @@ if (isset($_GET["product"])) {
                                      Seleccionar la categoría
                                      ==================================== -->
                                     <div class="form-group pb-3">
+                                        <?php if (!empty($product)): ?>
+                                            <input type="hidden" name="old_id_category_product" value="<?php echo base64_encode($product->id_category_product) ?>">
+                                        <?php endif ?>
                                         <label for="id_category_product">Seleccionar Categoría<sup class="text-danger">*</sup></label>
                                         <?php
                                         $url = "categories?select=id_category,name_category";
@@ -91,6 +94,9 @@ if (isset($_GET["product"])) {
                                      Seleccionar la subcategoría
                                      ==================================== -->
                                     <div class="form-group pb-3">
+                                        <?php if (!empty($product)): ?>
+                                            <input type="hidden" name="old_id_subcategory_product" value="<?php echo base64_encode($product->id_subcategory_product) ?>">
+                                        <?php endif ?>
                                         <label for="id_subcategory_product">Seleccionar Subcategoría<sup class="text-danger">*</sup></label>
                                         <select
                                             class="custom-select"
@@ -280,7 +286,7 @@ if (isset($_GET["product"])) {
                                                     Visor URL
                                                     ==================================== -->
                                                     <p class="text-left text-success small mb-1">
-                                                        <?php echo $path ?><span class="metaURL"><?php if (!empty($product)): ?><?php echo $product->url_product ?><?php else: ?>lorem<?php endif ?>
+                                                        <?php echo $path ?><span class="metaUrl"><?php if (!empty($product)): ?><?php echo $product->url_product ?><?php else: ?>lorem<?php endif ?>
                                                         </span>
                                                     </p>
 

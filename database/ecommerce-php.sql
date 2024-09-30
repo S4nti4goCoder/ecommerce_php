@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-09-2024 a las 08:14:53
+-- Tiempo de generación: 30-09-2024 a las 23:04:48
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -44,7 +44,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id_admin`, `rol_admin`, `name_admin`, `email_admin`, `password_admin`, `token_admin`, `token_exp_admin`, `date_created_admin`, `date_updated_admin`) VALUES
-(1, 'admin', 'Jose Tienda', 'admin@ecommerce.com', '$2a$07$azybxcags23425sdg23sdeanQZqjaf6Birm2NvcYTNtJw24CsO5uq', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3Mjc1MDExNjYsImV4cCI6MTcyNzU4NzU2NiwiZGF0YSI6eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBlY29tbWVyY2UuY29tIn19.w6ECuage3fqzpHAQmM55MWxarqOwXPej2KsUXRo2yKI', '1727587566', '2024-09-01', '2024-09-28 05:26:06');
+(1, 'admin', 'Jose Tienda', 'admin@ecommerce.com', '$2a$07$azybxcags23425sdg23sdeanQZqjaf6Birm2NvcYTNtJw24CsO5uq', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3Mjc3MjU1NjMsImV4cCI6MTcyNzgxMTk2MywiZGF0YSI6eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBlY29tbWVyY2UuY29tIn19.bmUWaRL5BZrWa9gXjz66oakJOhxJSbcV8-paCkQawgk', '1727811963', '2024-09-01', '2024-09-30 19:46:03');
 
 -- --------------------------------------------------------
 
@@ -73,10 +73,10 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id_category`, `name_category`, `url_category`, `icon_category`, `image_category`, `description_category`, `keywords_category`, `subcategories_category`, `products_category`, `views_category`, `status_category`, `date_created_category`, `date_updated_category`) VALUES
-(1, 'Ropa', 'ropa', 'fas fa-tshirt', 'ropa.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'ropa,camisas,pantalones,blusas,faldas', 0, 0, 0, 1, '2024-09-24', '2024-09-26 19:33:50'),
-(2, 'Calzado', 'calzado', 'fas fa-shoe-prints', 'calzado.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'calzado,tennis,chanclas,sandalias', 0, 0, 0, 1, '2024-09-24', '2024-09-26 19:33:55'),
-(3, 'Tecnología', 'tecnologia', 'fas fa-laptop', 'tecnologia.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'pc,portatil,ordenador,servidor', 0, 0, 0, 1, '2024-09-24', '2024-09-23 23:37:00'),
-(4, 'Cursos', 'cursos', 'fas fa-graduation-cap', 'cursos.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'cursos,tutorias,enseñanzas,virtualidad', 0, 0, 0, 1, '2024-09-24', '2024-09-23 23:37:43');
+(1, 'Ropa', 'ropa', 'fas fa-tshirt', 'ropa.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'ropa,camisas,pantalones,blusas,faldas', 4, 1, 0, 1, '2024-09-30', '2024-09-30 20:50:11'),
+(2, 'Calzado', 'calzado', 'fas fa-shoe-prints', 'calzado.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'calzado,tennis,chanclas,sandalias', 4, 1, 0, 1, '2024-09-30', '2024-09-30 20:50:11'),
+(3, 'Tecnología', 'tecnologia', 'fas fa-laptop', 'tecnologia.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'pc,portatil,ordenador,servidor', 4, 0, 0, 1, '2024-09-30', '2024-09-30 20:36:15'),
+(4, 'Cursos', 'cursos', 'fas fa-graduation-cap', 'cursos.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'cursos,tutorias,enseñanzas,virtualidad', 5, 0, 0, 1, '2024-09-30', '2024-09-30 20:43:00');
 
 -- --------------------------------------------------------
 
@@ -104,7 +104,8 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id_product`, `id_category_product`, `id_subcategory_product`, `name_product`, `url_product`, `image_product`, `description_product`, `keywords_product`, `views_product`, `status_product`, `date_created_product`, `date_updated_product`) VALUES
-(1, 1, 1, 'Conjunto 1 Ropa Dama 1', 'conjunto-1-ropa-dama-1', 'conjunto-1-ropa-dama-1.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tincidunt tortor in risus cursus, at semper metus dictum.', 'ropa,dama,lorem,ipsum', 0, 1, '2024-09-25', '2024-09-28 06:10:06');
+(1, 1, 1, 'Conjunto 1 Ropa Dama 1', 'conjunto-1-ropa-dama-1', 'conjunto-1-ropa-dama-1.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'ropa,dama,lorem,ipsum', 0, 1, '2024-09-30', '2024-09-30 20:47:58'),
+(2, 2, 5, 'Par 1 Calzado Dama 1', 'par-1-calzado-dama-1', 'par-1-calzado-dama-1.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'calzado,dama,lorem,ipsum', 0, 1, '2024-09-30', '2024-09-30 20:50:11');
 
 -- --------------------------------------------------------
 
@@ -158,22 +159,23 @@ CREATE TABLE `subcategories` (
 --
 
 INSERT INTO `subcategories` (`id_subcategory`, `id_category_subcategory`, `name_subcategory`, `url_subcategory`, `image_subcategory`, `description_subcategory`, `keywords_subcategory`, `products_subcategory`, `views_subcategory`, `status_subcategory`, `date_created_subcategory`, `date_updated_subcategory`) VALUES
-(1, 1, 'Ropa Para Dama', 'ropa-para-dama', 'ropa-para-dama.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'ropa,lorem,ipsum', 0, 0, 1, '2024-09-24', '2024-09-26 19:33:36'),
-(2, 1, 'Ropa Para Hombre', 'ropa-para-hombre', 'ropa-para-hombre.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'ropa,lorem,ipsum', 0, 0, 1, '2024-09-24', '2024-09-23 23:39:40'),
-(3, 1, 'Ropa Deportiva', 'ropa-deportiva', 'ropa-deportiva.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'ropa,lorem,ipsum', 0, 0, 1, '2024-09-24', '2024-09-23 23:40:03'),
-(4, 1, 'Ropa Infantil', 'ropa-infantil', 'ropa-infantil.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'ropa,lorem,ipsum', 0, 0, 1, '2024-09-24', '2024-09-23 23:40:33'),
-(5, 2, 'Calzado Para Dama', 'calzado-para-dama', 'calzado-para-dama.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'calzado,lorem,ipsum', 0, 0, 1, '2024-09-24', '2024-09-26 19:33:40'),
-(6, 2, 'Calzado Para Hombre', 'calzado-para-hombre', 'calzado-para-hombre.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'calzado,lorem,ipsum', 0, 0, 1, '2024-09-24', '2024-09-23 23:42:12'),
-(7, 2, 'Calzado Deportivo', 'calzado-deportivo', 'calzado-deportivo.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'calzado,lorem,ipsum', 0, 0, 1, '2024-09-24', '2024-09-23 23:42:33'),
-(8, 2, 'Calzado Infantil', 'calzado-infantil', 'calzado-infantil.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'calzado,lorem,ipsum', 0, 0, 1, '2024-09-24', '2024-09-23 23:42:57'),
-(9, 3, 'Télefonos Móvil', 'telefonos-movil', 'telefonos-movil.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'tecnologia,lorem,ipsum', 0, 0, 1, '2024-09-24', '2024-09-23 23:43:41'),
-(10, 3, 'Tabletas Electrónicas', 'tabletas-electronicas', 'tabletas-electronicas.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'tecnologia,lorem,ipsum', 0, 0, 1, '2024-09-24', '2024-09-23 23:44:08'),
-(11, 3, 'Auriculares', 'auriculares', 'auriculares.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'tecnologia,lorem,ipsum', 0, 0, 1, '2024-09-24', '2024-09-23 23:44:38'),
-(12, 4, 'Desarrollo Web', 'desarrollo-web', 'desarrollo-web.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'cursos,lorem,ipsum', 0, 0, 1, '2024-09-24', '2024-09-23 23:45:14'),
-(13, 4, 'Aplicaciones Móviles', 'aplicaciones-moviles', 'aplicaciones-moviles.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'cursos,lorem,ipsum', 0, 0, 1, '2024-09-24', '2024-09-23 23:45:33'),
-(14, 4, 'Diseño Gráfico', 'diseno-grafico', 'diseno-grafico.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'cursos,lorem,ipsum', 0, 0, 1, '2024-09-24', '2024-09-23 23:45:54'),
-(15, 4, 'Marketing Digital', 'marketing-digital', 'marketing-digital.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sem scelerisque, faucibus sapien et, efficitur odio.', 'cursos,lorem,ipsum', 0, 0, 1, '2024-09-24', '2024-09-23 23:46:13'),
-(16, 3, 'Computadoras', 'computadoras', 'computadoras.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus turpis laoreet venenatis molestie.', 'tecnologia,lorem,ipsum', 0, 0, 1, '2024-09-26', '2024-09-26 04:58:13');
+(1, 1, 'Ropa Para Dama', 'ropa-para-dama', 'ropa-para-dama.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'ropa,lorem,ipsum', 1, 0, 1, '2024-09-30', '2024-09-30 20:50:11'),
+(2, 1, 'Ropa Para Hombre', 'ropa-para-hombre', 'ropa-para-hombre.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'ropa,lorem,ipsum', 0, 0, 1, '2024-09-30', '2024-09-30 20:30:14'),
+(3, 1, 'Ropa Deportiva', 'ropa-deportiva', 'ropa-deportiva.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'ropa,lorem,ipsum', 0, 0, 1, '2024-09-30', '2024-09-30 20:30:43'),
+(4, 1, 'Ropa Infantil', 'ropa-infantil', 'ropa-infantil.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'ropa,lorem,ipsum', 0, 0, 1, '2024-09-30', '2024-09-30 20:31:10'),
+(5, 2, 'Calzado Para Dama', 'calzado-para-dama', 'calzado-para-dama.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'calzado,lorem,ipsum', 1, 0, 1, '2024-09-30', '2024-09-30 20:50:11'),
+(6, 2, 'Calzado Para Hombre', 'calzado-para-hombre', 'calzado-para-hombre.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'calzado,lorem,ipsum', 0, 0, 1, '2024-09-30', '2024-09-30 20:32:34'),
+(7, 2, 'Calzado Deportivo', 'calzado-deportivo', 'calzado-deportivo.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'calzado,lorem,ipsum', 0, 0, 1, '2024-09-30', '2024-09-30 20:32:56'),
+(8, 2, 'Calzado Infantil', 'calzado-infantil', 'calzado-infantil.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'calzado,lorem,ipsum', 0, 0, 1, '2024-09-30', '2024-09-30 20:33:32'),
+(9, 3, 'Télefonos Móvil', 'telefonos-movil', 'telefonos-movil.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'tecnologia,lorem,ipsum', 0, 0, 1, '2024-09-30', '2024-09-30 20:34:48'),
+(10, 3, 'Tabletas Electrónicas', 'tabletas-electronicas', 'tabletas-electronicas.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'tecnologia,lorem,ipsum', 0, 0, 1, '2024-09-30', '2024-09-30 20:35:11'),
+(11, 3, 'Auriculares', 'auriculares', 'auriculares.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'tecnologia,lorem,ipsum', 0, 0, 1, '2024-09-30', '2024-09-30 20:35:52'),
+(12, 3, 'Computadoras', 'computadoras', 'computadoras.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'tecnologia,lorem,ipsum', 0, 0, 1, '2024-09-30', '2024-09-30 20:36:15'),
+(13, 4, 'Desarrollo Web', 'desarrollo-web', 'desarrollo-web.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'cursos,lorem,ipsum', 0, 0, 1, '2024-09-30', '2024-09-30 20:37:56'),
+(14, 4, 'Aplicaciones Móviles', 'aplicaciones-moviles', 'aplicaciones-moviles.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'cursos,lorem,ipsum', 0, 0, 1, '2024-09-30', '2024-09-30 20:38:43'),
+(15, 4, 'Diseño Gráfico', 'diseno-grafico', 'diseno-grafico.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'cursos,lorem,ipsum', 0, 0, 1, '2024-09-30', '2024-09-30 20:39:26'),
+(16, 4, 'Marketing Digital', 'marketing-digital', 'marketing-digital.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'cursos,lorem,ipsum', 0, 0, 1, '2024-09-30', '2024-09-30 20:40:07'),
+(17, 4, 'Prueba', 'prueba', 'prueba.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'prueba,lorem,ipsum', 0, 0, 1, '2024-09-30', '2024-09-30 20:43:00');
 
 -- --------------------------------------------------------
 
@@ -279,7 +281,7 @@ ALTER TABLE `socials`
 -- AUTO_INCREMENT de la tabla `subcategories`
 --
 ALTER TABLE `subcategories`
-  MODIFY `id_subcategory` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_subcategory` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `templates`

@@ -130,7 +130,6 @@ if (isset($_GET["category"])) {
                                     <!--=====================================
 									Descripción de la categoría
 									======================================-->
-
                                     <div class="form-group pb-3">
                                         <label for="description_category">Descripción<sup class="text-danger font-weight-bold">*</sup></label>
                                         <textarea
@@ -225,7 +224,6 @@ if (isset($_GET["category"])) {
                                                     <!-- ====================================
                                                     Visor imagen
                                                     ==================================== -->
-
                                                     <figure class="mb-2">
                                                         <?php if (!empty($category)): ?>
                                                             <img src="/views/assets/img/categories/<?php echo $category->url_category ?>/<?php echo $category->image_category ?>" class="img-fluid metaImg" style="width:100%">
@@ -249,8 +247,7 @@ if (isset($_GET["category"])) {
                                                     Visor URL
                                                     ==================================== -->
                                                     <p class="text-left text-success small mb-1">
-                                                        <?php echo $path ?><span class="metaUrl"><?php if (!empty($category)): ?><?php echo $category->url_category ?><?php else: ?>lorem<?php endif ?>
-                                                        </span>
+                                                        <?php echo $path ?><span class="metaUrl"><?php if (!empty($category)): ?><?php echo $category->url_category ?><?php else: ?>lorem<?php endif ?></span>
                                                     </p>
 
                                                     <!-- ====================================
