@@ -4,6 +4,7 @@ require_once "../controllers/curl.controller.php";
 
 class StatusController
 {
+
     public $token;
     public $table;
     public $id;
@@ -12,12 +13,11 @@ class StatusController
 
     public function ajaxStatus()
     {
+
         $url = $this->table . "?id=" . base64_decode($this->id) . "&nameId=id_" . $this->column . "&token=" . $this->token . "&table=admins&suffix=admin";
         $method = "PUT";
         $fields = "status_" . $this->column . "=" . $this->status;
-
         $status = CurlController::request($url, $method, $fields);
-        
         echo $status->status;
     }
 }

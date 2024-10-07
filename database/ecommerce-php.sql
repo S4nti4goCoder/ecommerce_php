@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-10-2024 a las 00:47:47
+-- Tiempo de generación: 07-10-2024 a las 08:27:43
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -44,7 +44,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id_admin`, `rol_admin`, `name_admin`, `email_admin`, `password_admin`, `token_admin`, `token_exp_admin`, `date_created_admin`, `date_updated_admin`) VALUES
-(1, 'admin', 'Jose Tienda', 'admin@ecommerce.com', '$2a$07$azybxcags23425sdg23sdeanQZqjaf6Birm2NvcYTNtJw24CsO5uq', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3Mjc3MjU1NjMsImV4cCI6MTcyNzgxMTk2MywiZGF0YSI6eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBlY29tbWVyY2UuY29tIn19.bmUWaRL5BZrWa9gXjz66oakJOhxJSbcV8-paCkQawgk', '1727811963', '2024-09-01', '2024-09-30 19:46:03');
+(1, 'admin', 'Jose Tienda', 'admin@ecommerce.com', '$2a$07$azybxcags23425sdg23sdeanQZqjaf6Birm2NvcYTNtJw24CsO5uq', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MjgyNjkwMzQsImV4cCI6MTcyODM1NTQzNCwiZGF0YSI6eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBlY29tbWVyY2UuY29tIn19.r8XuOH10f_oL_ggBTjKSuFU9hy9oJTI974iiv98-qNU', '1728355434', '2024-09-01', '2024-10-07 02:43:54');
 
 -- --------------------------------------------------------
 
@@ -76,7 +76,7 @@ INSERT INTO `categories` (`id_category`, `name_category`, `url_category`, `icon_
 (1, 'Ropa', 'ropa', 'fas fa-tshirt', 'ropa.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'ropa,camisas,pantalones,blusas,faldas', 4, 1, 0, 1, '2024-09-30', '2024-09-30 22:46:01'),
 (2, 'Calzado', 'calzado', 'fas fa-shoe-prints', 'calzado.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'calzado,tennis,chanclas,sandalias', 4, 0, 0, 1, '2024-09-30', '2024-09-30 22:37:44'),
 (3, 'Tecnología', 'tecnologia', 'fas fa-laptop', 'tecnologia.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'pc,portatil,ordenador,servidor', 4, 0, 0, 1, '2024-09-30', '2024-09-30 20:36:15'),
-(4, 'Cursos', 'cursos', 'fas fa-graduation-cap', 'cursos.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'cursos,tutorias,enseñanzas,virtualidad', 5, 0, 0, 1, '2024-09-30', '2024-09-30 20:43:00');
+(4, 'Cursos', 'cursos', 'fas fa-graduation-cap', 'cursos.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'cursos,tutorias,enseñanzas,virtualidad', 5, 0, 0, 1, '2024-09-30', '2024-10-06 18:56:23');
 
 -- --------------------------------------------------------
 
@@ -93,6 +93,7 @@ CREATE TABLE `products` (
   `image_product` text DEFAULT NULL,
   `description_product` text DEFAULT NULL,
   `keywords_product` text DEFAULT NULL,
+  `info_product` longtext DEFAULT NULL,
   `views_product` int(11) NOT NULL DEFAULT 0,
   `status_product` int(11) NOT NULL DEFAULT 1,
   `date_created_product` date DEFAULT NULL,
@@ -103,8 +104,8 @@ CREATE TABLE `products` (
 -- Volcado de datos para la tabla `products`
 --
 
-INSERT INTO `products` (`id_product`, `id_category_product`, `id_subcategory_product`, `name_product`, `url_product`, `image_product`, `description_product`, `keywords_product`, `views_product`, `status_product`, `date_created_product`, `date_updated_product`) VALUES
-(1, 1, 1, 'Conjunto 1 Ropa Dama 1', 'conjunto-1-ropa-dama-1', 'conjunto-1-ropa-dama-1.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'ropa,dama,lorem,ipsum', 0, 1, '2024-10-01', '2024-09-30 22:46:01');
+INSERT INTO `products` (`id_product`, `id_category_product`, `id_subcategory_product`, `name_product`, `url_product`, `image_product`, `description_product`, `keywords_product`, `info_product`, `views_product`, `status_product`, `date_created_product`, `date_updated_product`) VALUES
+(1, 1, 1, 'Conjunto 1 Ropa Dama 1', 'conjunto-1-ropa-dama-1', 'conjunto-1-ropa-dama-1.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'ropa,dama,lorem,ipsum', NULL, 0, 1, '2024-10-01', '2024-10-07 02:44:02');
 
 -- --------------------------------------------------------
 
@@ -174,7 +175,7 @@ INSERT INTO `subcategories` (`id_subcategory`, `id_category_subcategory`, `name_
 (14, 4, 'Aplicaciones Móviles', 'aplicaciones-moviles', 'aplicaciones-moviles.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'cursos,lorem,ipsum', 0, 0, 1, '2024-09-30', '2024-09-30 20:38:43'),
 (15, 4, 'Diseño Gráfico', 'diseno-grafico', 'diseno-grafico.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'cursos,lorem,ipsum', 0, 0, 1, '2024-09-30', '2024-09-30 20:39:26'),
 (16, 4, 'Marketing Digital', 'marketing-digital', 'marketing-digital.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'cursos,lorem,ipsum', 0, 0, 1, '2024-09-30', '2024-09-30 20:40:07'),
-(17, 4, 'Prueba', 'prueba', 'prueba.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'prueba,lorem,ipsum', 0, 0, 1, '2024-09-30', '2024-09-30 20:43:00');
+(17, 4, 'Prueba', 'prueba', 'prueba.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'prueba,lorem,ipsum', 0, 0, 1, '2024-09-30', '2024-10-06 18:55:23');
 
 -- --------------------------------------------------------
 

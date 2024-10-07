@@ -292,3 +292,20 @@ function changeCategory(event) {
     },
   });
 }
+
+//summernote
+if ($(".summernote").length > 0) {
+  $(".summernote").summernote({
+    minHeight: 500,
+    prettifyHtml: false,
+    followingToolbar: true,
+    toolbar: [
+      ["misc", ["codeview", "undo", "redo"]],
+      ["style", ["bold", "italic", "underline", "clear"]],
+      ["para", ["style", "ul", "ol", "paragraph", "height"]],
+      ["fontsize", ["fontsize"]],
+      ["color", ["color"]],
+      ["insert", ["link", "picture", "hr", "video", "table", "emoji"]],
+    ],
+  });
+}

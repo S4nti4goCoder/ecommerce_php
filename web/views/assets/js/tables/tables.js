@@ -181,7 +181,9 @@ $(document).on("click", ".deleteItem", function () {
   );
 });
 
-//Suiche
+/*=============================================
+Suiche
+=============================================*/ 
 $("#tables").on("draw.dt", function () {
   $("input[data-bootstrap-switch]").each(function () {
     $(this).bootstrapSwitch({
@@ -198,6 +200,7 @@ $("#tables").on("draw.dt", function () {
         }
 
         var token = localStorage.getItem("token-admin");
+
         var data = new FormData();
         data.append("token", token);
         data.append("table", table);
@@ -218,7 +221,7 @@ $("#tables").on("draw.dt", function () {
               fncToastr("success", "El item ha sido actualizado correctamente");
             } else {
               fncMatPreloader("off");
-              fncToastr("Error", "Este item no se pudo actualizar");
+              fncToastr("error", "Este item no se pudo actualizar");
             }
           },
         });
