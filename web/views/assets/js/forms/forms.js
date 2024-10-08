@@ -309,3 +309,13 @@ if ($(".summernote").length > 0) {
     ],
   });
 }
+//Acicionar fondo blanco al toolbar de summernote
+if ($(".note-toolbar").length > 0) {
+  $(".note-toolbar").addClass("bg-white");
+
+  //Adicionar iconos al toolbar de summernote
+  $(".emoji-picker").removeClass("fa-smile-o");
+  $(".emoji-picker").addClass("fa-smile");
+
+  $("[aria-label='More Color']").html(`<i class="fas fa-caret-down"></i>`);
+}
