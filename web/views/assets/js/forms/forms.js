@@ -299,6 +299,13 @@ if ($(".summernote").length > 0) {
     minHeight: 500,
     prettifyHtml: false,
     followingToolbar: true,
+    codemirror: {
+      //codemirror options
+      mode: "application/xml",
+      styleActiveLine: true,
+      lineNumbers: true,
+      lineWrapping: true,
+    },
     toolbar: [
       ["misc", ["codeview", "undo", "redo"]],
       ["style", ["bold", "italic", "underline", "clear"]],
