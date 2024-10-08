@@ -307,6 +307,14 @@ if ($(".summernote").length > 0) {
       ["color", ["color"]],
       ["insert", ["link", "picture", "hr", "video", "table", "emoji"]],
     ],
+    callbacks: {
+      onImageUpload: function (files) {
+        fncSweetAlert("loading", "Cargando imagen...", "");
+        for (var i = 0; i < files.length; i++) {
+          upload(files[i]);
+        }
+      },
+    },
   });
 }
 //Acicionar fondo blanco al toolbar de summernote
@@ -318,4 +326,49 @@ if ($(".note-toolbar").length > 0) {
   $(".emoji-picker").addClass("fa-smile");
 
   $("[aria-label='More Color']").html(`<i class="fas fa-caret-down"></i>`);
+}
+
+//Subir imagen al servidor
+function upload(file) {
+  var data = new FormData();
+  data.append("file", file, file.name);
+
+  $.ajax({
+    url: "/ajax/upload.ajax.php",
+    method: "POST",
+    data: data,
+    contentType: false,
+    cache: false,
+    processData: false,
+    success: function (response) {
+      fncSweetAlert("close", null, null);
+
+      switch (response) {
+        case "size":
+          fncNotie(3, "Error: la imagen debe pesar menos de 10MB");
+          return;
+          break;
+        case "type":
+          fncNotie(3, "Error: la imagen debe ser formato JPG, PNG o GIF");
+          return;
+          break;
+        case "process":
+          fncNotie(3, "Error en el proceso de subir la imagen");
+          return;
+          break;
+      }
+      $(".summernote").summernote("insertImage", response, function ($image) {
+        $image.attr("class", "img-fluid");
+        $image.css("width", "100%");
+      });
+      console.log("response: ", response);
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+      console.log("jqXHR", jqXHR);
+      if (response == "type") {
+        fncNotie(3, textStatus + " " + errorThrown);
+        return;
+      }
+    },
+  });
 }
