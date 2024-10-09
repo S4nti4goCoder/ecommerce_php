@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-10-2024 a las 08:27:43
+-- Tiempo de generación: 09-10-2024 a las 06:56:04
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -44,7 +44,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id_admin`, `rol_admin`, `name_admin`, `email_admin`, `password_admin`, `token_admin`, `token_exp_admin`, `date_created_admin`, `date_updated_admin`) VALUES
-(1, 'admin', 'Jose Tienda', 'admin@ecommerce.com', '$2a$07$azybxcags23425sdg23sdeanQZqjaf6Birm2NvcYTNtJw24CsO5uq', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MjgyNjkwMzQsImV4cCI6MTcyODM1NTQzNCwiZGF0YSI6eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBlY29tbWVyY2UuY29tIn19.r8XuOH10f_oL_ggBTjKSuFU9hy9oJTI974iiv98-qNU', '1728355434', '2024-09-01', '2024-10-07 02:43:54');
+(1, 'admin', 'Jose Tienda', 'admin@ecommerce.com', '$2a$07$azybxcags23425sdg23sdeanQZqjaf6Birm2NvcYTNtJw24CsO5uq', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3Mjg0NDY4NjYsImV4cCI6MTcyODUzMzI2NiwiZGF0YSI6eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBlY29tbWVyY2UuY29tIn19.V4PMDIVWRMV-fvAQDqgENaEqgDlmpoAsIB3tz1QaUoI', '1728533266', '2024-09-01', '2024-10-09 04:07:46');
 
 -- --------------------------------------------------------
 
@@ -73,7 +73,7 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id_category`, `name_category`, `url_category`, `icon_category`, `image_category`, `description_category`, `keywords_category`, `subcategories_category`, `products_category`, `views_category`, `status_category`, `date_created_category`, `date_updated_category`) VALUES
-(1, 'Ropa', 'ropa', 'fas fa-tshirt', 'ropa.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'ropa,camisas,pantalones,blusas,faldas', 4, 1, 0, 1, '2024-09-30', '2024-09-30 22:46:01'),
+(1, 'Ropa', 'ropa', 'fas fa-tshirt', 'ropa.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'ropa,camisas,pantalones,blusas,faldas', 4, 1, 0, 1, '2024-09-30', '2024-10-09 04:48:13'),
 (2, 'Calzado', 'calzado', 'fas fa-shoe-prints', 'calzado.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'calzado,tennis,chanclas,sandalias', 4, 0, 0, 1, '2024-09-30', '2024-09-30 22:37:44'),
 (3, 'Tecnología', 'tecnologia', 'fas fa-laptop', 'tecnologia.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'pc,portatil,ordenador,servidor', 4, 0, 0, 1, '2024-09-30', '2024-09-30 20:36:15'),
 (4, 'Cursos', 'cursos', 'fas fa-graduation-cap', 'cursos.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'cursos,tutorias,enseñanzas,virtualidad', 5, 0, 0, 1, '2024-09-30', '2024-10-06 18:56:23');
@@ -105,7 +105,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id_product`, `id_category_product`, `id_subcategory_product`, `name_product`, `url_product`, `image_product`, `description_product`, `keywords_product`, `info_product`, `views_product`, `status_product`, `date_created_product`, `date_updated_product`) VALUES
-(1, 1, 1, 'Conjunto 1 Ropa Dama 1', 'conjunto-1-ropa-dama-1', 'conjunto-1-ropa-dama-1.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'ropa,dama,lorem,ipsum', NULL, 0, 1, '2024-10-01', '2024-10-07 02:44:02');
+(1, 1, 1, 'Conjunto 1 Ropa Dama 1', 'conjunto-1-ropa-dama-1', 'conjunto-1-ropa-dama-1.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'ropa,dama,lorem,ipsum', '<p><img src=\"/views/assets/css/plugins/summernote/img/blank.gif\" class=\"img\" style=\"display:inline-block;width:25px;height:25px;background:url(\'/views/assets/css/plugins/summernote/img/emoji_spritesheet_0.png\') -250px -150px no-repeat;background-size:675px 175px;\" alt=\":heart:\"><span style=\"color: rgb(0, 0, 0); font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 14px; text-align: justify;\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec viverra leo. Nullam mollis orci ante, gravida vestibulum diam rhoncus at. Donec viverra suscipit lobortis.</span><img src=\"/views/assets/css/plugins/summernote/img/blank.gif\" class=\"img\" style=\"display:inline-block;width:25px;height:25px;background:url(\'/views/assets/css/plugins/summernote/img/emoji_spritesheet_0.png\') -75px -75px no-repeat;background-size:675px 175px;\" alt=\":see_no_evil:\"><span style=\"color: rgb(0, 0, 0); font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 14px; text-align: justify;\"> </span></p><p><img src=\"/views/assets/img/temp/6593501123.jpg\" style=\"width: 100%;\" class=\"img-fluid\"><span style=\"color: rgb(0, 0, 0); font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 14px; text-align: justify;\"><br></span></p><p><span style=\"color: rgb(0, 0, 0); font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 14px; text-align: justify;\"><b>Vivamus tristique tincidunt nulla, sed accumsan purus pellentesque eget. Sed blandit est a blandit ullamcorper. Duis ut felis sit amet lacus ullamcorper commodo nec non elit. </b></span></p><p><span style=\"color: rgb(0, 0, 0); font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 14px; text-align: justify;\"><br></span></p><p><span style=\"color: rgb(0, 0, 0); font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 14px; text-align: justify;\">Suspendisse tempor erat sed risus consequat, sit amet consectetur magna vehicula. Nam nec mauris eu nisl facilisis lobortis consectetur at tellus. Integer non eleifend massa.</span>                                                                                                                                                                            </p>', 0, 1, '2024-10-01', '2024-10-09 04:48:12');
 
 -- --------------------------------------------------------
 
@@ -159,7 +159,7 @@ CREATE TABLE `subcategories` (
 --
 
 INSERT INTO `subcategories` (`id_subcategory`, `id_category_subcategory`, `name_subcategory`, `url_subcategory`, `image_subcategory`, `description_subcategory`, `keywords_subcategory`, `products_subcategory`, `views_subcategory`, `status_subcategory`, `date_created_subcategory`, `date_updated_subcategory`) VALUES
-(1, 1, 'Ropa Para Dama', 'ropa-para-dama', 'ropa-para-dama.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'ropa,lorem,ipsum', 1, 0, 1, '2024-09-30', '2024-09-30 22:46:01'),
+(1, 1, 'Ropa Para Dama', 'ropa-para-dama', 'ropa-para-dama.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'ropa,lorem,ipsum', 1, 0, 1, '2024-09-30', '2024-10-09 04:48:13'),
 (2, 1, 'Ropa Para Hombre', 'ropa-para-hombre', 'ropa-para-hombre.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'ropa,lorem,ipsum', 0, 0, 1, '2024-09-30', '2024-09-30 20:30:14'),
 (3, 1, 'Ropa Deportiva', 'ropa-deportiva', 'ropa-deportiva.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'ropa,lorem,ipsum', 0, 0, 1, '2024-09-30', '2024-09-30 20:30:43'),
 (4, 1, 'Ropa Infantil', 'ropa-infantil', 'ropa-infantil.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet erat quis varius finibus. Maecenas dignissim maximus ligula ac dignissim. Maecenas ac ex at ipsum ultricies pulvinar.', 'ropa,lorem,ipsum', 0, 0, 1, '2024-09-30', '2024-09-30 20:31:10'),
