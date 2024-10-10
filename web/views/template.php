@@ -101,6 +101,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="<?php echo $path ?>views/assets/css/plugins/summernote/emoji.css">
     <!-- Codemirror -->
     <link rel="stylesheet" href="<?php echo $path ?>views/assets/css/plugins/codemirror/codemirror.min.css">
+    <!-- Dropzone -->
+    <link rel="stylesheet" href="<?php echo $path ?>views/assets/css/plugins/dropzone/dropzone.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?php echo $path ?>views/assets/css/plugins/adminlte/adminlte.min.css">
     <link rel="stylesheet" href="<?php echo $path ?>views/assets/css/template/template.css">
@@ -183,6 +185,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="<?php echo $path ?>views/assets/js/plugins/codemirror/codemirror.min.js"></script>
     <script src="<?php echo $path ?>views/assets/js/plugins/codemirror/xml.min.js"></script>
     <script src="<?php echo $path ?>views/assets/js/plugins/codemirror/formatting.min.js"></script>
+    <!-- Dropzone -->
+    <script src="<?php echo $path ?>views/assets/js/plugins/dropzone/dropzone.js"></script>
 </head>
 
 <body class="hold-transition sidebar-collapse layout-top-nav">

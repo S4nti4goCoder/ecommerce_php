@@ -30,7 +30,7 @@ if (isset($_GET["product"])) {
                                 <h4>Agregar Producto</h4>
                             </div>
                             <div class="col-12 col-lg-6 mt-2 d-none d-lg-block">
-                                <button type="submit" class="btn border-0 bg-success float-right py-2 px-3 btn-sm">Guardar Información</button>
+                                <button type="submit" class="btn border-0 bg-success float-right py-2 px-3 btn-sm saveBtn">Guardar Información</button>
                                 <a href="/admin/productos" class="btn btn-default float-right py-2 px-3 btn-sm mr-2">Regresar</a>
                             </div>
                             <div class="col-12 text-center d-flex justify-content-center mt-2 d-block d-lg-none">
@@ -38,7 +38,7 @@ if (isset($_GET["product"])) {
                                     <a href="/admin/productos" class="btn btn-default py-2 px-3 btn-sm mr-2">Regresar</a>
                                 </div>
                                 <div>
-                                    <button type="submit" class="btn border-0 bg-success py-2 px-3 btn-sm ">Guardar Información</button>
+                                    <button type="submit" class="btn border-0 bg-success py-2 px-3 btn-sm saveBtn">Guardar Información</button>
                                 </div>
                             </div>
                         </div>
@@ -309,13 +309,20 @@ if (isset($_GET["product"])) {
                                             <!-- ====================================
                                             Galería del producto
                                             ==================================== -->
-                                            <div class="mb-3">
+                                            <div class="dropzone mb-3">
 
                                                 <!-- ====================================
                                             Plugin Dropzone
                                             ==================================== -->
-
+                                                <!-- <div class="dz-preview dz-file-preview">
+                                                    <div class="dz-image"></div>
+                                                    <a class="dz-remove" data-sz-remove></a>
+                                                </div> -->
+                                                <div class="dz-message">
+                                                    Arrastra tus imágenes acá, tamaño máximo 400px * 450px
+                                                </div>
                                             </div>
+                                            <input type="hidden" name="galleryProduct" class="galleryProduct">
 
                                             <!-- ====================================
                                             Insertar video Youtube
@@ -480,7 +487,7 @@ if (isset($_GET["product"])) {
                                 <label class="font-weight-light"><sup class="text-danger">*</sup>Campos obligatorios</label>
                             </div>
                             <div class="col-12 col-lg-6 mt-2 d-none d-lg-block">
-                                <button type="submit" class="btn border-0 bg-success float-right py-2 px-3 btn-sm">Guardar Información</button>
+                                <button type="submit" class="btn border-0 bg-success float-right py-2 px-3 btn-sm saveBtn">Guardar Información</button>
                                 <a href="/admin/categorias" class="btn btn-default float-right py-2 px-3 btn-sm mr-2">Regresar</a>
                             </div>
                             <div class="col-12 text-center d-flex justify-content-center mt-2 d-block d-lg-none">
@@ -488,7 +495,7 @@ if (isset($_GET["product"])) {
                                     <a href="/admin/categorias" class="btn btn-default py-2 px-3 btn-sm mr-2">Regresar</a>
                                 </div>
                                 <div>
-                                    <button type="submit" class="btn border-0 bg-success py-2 px-3 btn-sm ">Guardar Información</button>
+                                    <button type="submit" class="btn border-0 bg-success py-2 px-3 btn-sm saveBtn">Guardar Información</button>
                                 </div>
                             </div>
                         </div>
