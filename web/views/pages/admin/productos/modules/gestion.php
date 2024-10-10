@@ -309,7 +309,7 @@ if (isset($_GET["product"])) {
                                             <!-- ====================================
                                             Galería del producto
                                             ==================================== -->
-                                            <div class="dropzone mb-3">
+                                            <div class="dropzone dropzone_1 mb-3">
 
                                                 <!-- ====================================
                                             Plugin Dropzone
@@ -322,7 +322,8 @@ if (isset($_GET["product"])) {
                                                     Arrastra tus imágenes acá, tamaño máximo 400px * 450px
                                                 </div>
                                             </div>
-                                            <input type="hidden" name="galleryProduct" class="galleryProduct">
+
+                                            <input type="hidden" name="galleryProduct_1" class="galleryProduct_1">
 
                                             <!-- ====================================
                                             Insertar video Youtube
@@ -335,8 +336,10 @@ if (isset($_GET["product"])) {
                                                     type="text"
                                                     class="form-control"
                                                     name="videoPRoduct_1"
-                                                    placeholder="Ingresa la URL de Youtube">
+                                                    placeholder="Ingresa la URL de Youtube"
+                                                    onchange="changeVideo(event, 1)">
                                             </div>
+                                            <iframe width="100%" height="280" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="mb-3 iframeYoutube_1" style="display: none"></iframe>
                                         </div>
                                         <div class="col">
 
