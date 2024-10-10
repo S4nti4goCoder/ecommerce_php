@@ -47,7 +47,6 @@ class ProductsController
                 /*=============================================
 				Quitar producto vinculado a categoria
 				=============================================*/
-
                 $url = "categories?equalTo=" . base64_decode($_POST["old_id_category_product"]) . "&linkTo=id_category&select=products_category";
                 $method = "GET";
                 $fields = array();
@@ -64,7 +63,6 @@ class ProductsController
                 /*=============================================
 				Agregar producto vinculado a categoria
 				=============================================*/
-
                 $url = "categories?equalTo=" . $_POST["id_category_product"] . "&linkTo=id_category&select=products_category";
                 $method = "GET";
                 $fields = array();
@@ -81,7 +79,6 @@ class ProductsController
                 /*=============================================
 				Quitar producto vinculado a subcategoria
 				=============================================*/
-
                 $url = "subcategories?equalTo=" . base64_decode($_POST["old_id_subcategory_product"]) . "&linkTo=id_subcategory&select=products_subcategory";
                 $method = "GET";
                 $fields = array();
@@ -98,7 +95,6 @@ class ProductsController
                 /*=============================================
 				Agregar producto vinculado a subcategoria
 				=============================================*/
-
                 $url = "subcategories?equalTo=" . $_POST["id_subcategory_product"] . "&linkTo=id_subcategory&select=products_subcategory";
                 $method = "GET";
                 $fields = array();
@@ -112,8 +108,51 @@ class ProductsController
 
                 $updateSubcategory = CurlController::request($url, $method, $fields);
 
+                /*=============================================
+				Variantes
+				=============================================*/
+                if ($_POST["type_variant_1"] == "gallery") {
+                    $galleryProduct = array();
+                    $galleryCount = 0;
+                    if (!empty($_POST["galleryProduct_1"])) {
+                        foreach (json_decode($_POST["galleryProduct_1"], true) as $key => $value) {
+                            $galleryCount++;
+                            $image["tmp_name"] = $value["file"];
+                            $image["type"] = $value["type"];
+                            $image["mode"] = "base64";
+                            $folder = "assets/img/products/" . $_POST["url_product"];
+                            $name = mt_rand(10000, 99999);
+                            $width = $value["width"];
+                            $height = $value["height"];
+                            $saveImageGallery = TemplateController::saveImage($image, $folder, $name, $width, $height);
+                            array_push($galleryProduct, $saveImageGallery);
+                            if (count(json_decode($_POST["galleryProduct_1"], true)) == $galleryCount) {
+                                $media_variant = json_encode($galleryProduct);
+                            }
+                        }
+                    }
+                }
+                //Campos de las variantes
+                $fields = array(
+                    "id_product_variant" => $_POST["idProduct"],
+                    "type_variant" => $_POST["type_variant_1"],
+                    "media_variant" => $media_variant,
+                    "description_variant" => $_POST["description_variant_1"],
+                    "cost_variant" => $_POST["cost_variant_1"],
+                    "price_variant" => $_POST["price_variant_1"],
+                    "offer_variant" => $_POST["offer_variant_1"],
+                    "end_offer_variant" => $_POST["date_variant_1"],
+                    "stock_variant" => $_POST["stock_variant_!"],
+                    "date_created_variant" => date("Y-m-d")
+                );
+                $url = "variants?token=" . $_SESSION["admin"]->token_admin . "&table=admins&suffix=admin";
+                $method = "POST";
+
+                $createVariant = CurlController::request($url, $method, $fields);
+
                 if (
                     $updateData->status == 200 &&
+                    $createVariant->status == 200 &&
                     $updateOldCategory->status == 200 &&
                     $updateCategory->status == 200 &&
                     $updateOldSubcategory->status == 200 &&
