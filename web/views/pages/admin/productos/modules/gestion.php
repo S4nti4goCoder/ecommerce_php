@@ -335,7 +335,7 @@ if (isset($_GET["product"])) {
                                                 <input
                                                     type="text"
                                                     class="form-control"
-                                                    name="videoPRoduct_1"
+                                                    name="videoProduct_1"
                                                     placeholder="Ingresa la URL de Youtube"
                                                     onchange="changeVideo(event, 1)">
                                             </div>

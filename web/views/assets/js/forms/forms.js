@@ -384,12 +384,12 @@ function upload(file) {
 function changeVariant(event, item) {
   if (event.target.value == "video") {
     $(".inputVideo_" + item).show();
-    $(".iframeYoutube_" +item).show();
+    $(".iframeYoutube_" + item).show();
     $(".dropzone_" + item).hide();
     $(".galleryProduct_" + item).hide();
   } else {
     $(".inputVideo_" + item).hide();
-    $("iframeYoutube_" +item).hide();
+    $(".iframeYoutube_" + item).hide();
     $(".dropzone_" + item).show();
     $(".galleryProduct_" + item).show();
   }
