@@ -364,6 +364,22 @@ if (isset($_GET["product"])) {
 
                                                         <input type="hidden" name="deleteGalleryProduct_<?php echo ($key + 1) ?>" class="deleteGalleryProduct_<?php echo ($key + 1) ?>" value='[]'>
 
+                                                        <!-- ====================================
+                                                        Insertar video Youtube
+                                                        ==================================== -->
+                                                        <div class="input-group mb-3 inputVideo_<?php echo ($key + 1) ?>" style="display: none">
+                                                            <span class="input-group-text">
+                                                                <i class="fas fa-clipboard-list"></i>
+                                                            </span>
+                                                            <input
+                                                                type="text"
+                                                                class="form-control"
+                                                                name="videoProduct_<?php echo ($key + 1) ?>"
+                                                                placeholder="Ingresa la URL de Youtube"
+                                                                onchange="changeVideo(event, 1)">
+                                                        </div>
+                                                        <iframe width="100%" height="280" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="mb-3 iframeYoutube_<?php echo ($key + 1) ?>" style="display: none"></iframe>
+
                                                     <?php else: ?>
 
                                                         <!-- ====================================
@@ -390,6 +406,21 @@ if (isset($_GET["product"])) {
                                                         ?>
 
                                                         <iframe width="100%" height="280" src="https://www.youtube.com/embed/<?php echo $idYoutube ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="mb-3 iframeYoutube_<?php echo ($key + 1) ?>"></iframe>
+
+                                                        <!-- ====================================
+                                                        Galería del producto
+                                                        ==================================== -->
+                                                        <div class="dropzone dropzone_<?php echo ($key + 1) ?> mb-3" style="display: none">
+
+                                                            <!-- ====================================
+                                                            Plugin Dropzone
+                                                            ==================================== -->
+                                                            <div class="dz-message">
+                                                                Arrastra tus imágenes acá, tamaño máximo 400px * 450px
+                                                            </div>
+                                                        </div>
+
+                                                        <input type="hidden" name="galleryProduct_<?php echo ($key + 1) ?>" class="galleryProduct_<?php echo ($key + 1) ?>" style="display: none">
 
                                                     <?php endif ?>
 
@@ -500,8 +531,8 @@ if (isset($_GET["product"])) {
                                         <div class="row row-cols-1 row-cols-md-2">
                                             <div class="col">
                                                 <!-- ====================================
-                                            Tipo de variante
-                                            ==================================== -->
+                                                Tipo de variante
+                                                ==================================== -->
                                                 <div class="form-group">
                                                     <select
                                                         class="custom-select"
@@ -513,17 +544,13 @@ if (isset($_GET["product"])) {
                                                 </div>
 
                                                 <!-- ====================================
-                                            Galería del producto
-                                            ==================================== -->
+                                                Galería del producto
+                                                ==================================== -->
                                                 <div class="dropzone dropzone_1 mb-3">
 
                                                     <!-- ====================================
-                                            Plugin Dropzone
-                                            ==================================== -->
-                                                    <!-- <div class="dz-preview dz-file-preview">
-                                                    <div class="dz-image"></div>
-                                                    <a class="dz-remove" data-sz-remove></a>
-                                                </div> -->
+                                                    Plugin Dropzone
+                                                    ==================================== -->
                                                     <div class="dz-message">
                                                         Arrastra tus imágenes acá, tamaño máximo 400px * 450px
                                                     </div>
@@ -532,8 +559,8 @@ if (isset($_GET["product"])) {
                                                 <input type="hidden" name="galleryProduct_1" class="galleryProduct_1">
 
                                                 <!-- ====================================
-                                            Insertar video Youtube
-                                            ==================================== -->
+                                                Insertar video Youtube
+                                                ==================================== -->
                                                 <div class="input-group mb-3 inputVideo_1" style="display: none">
                                                     <span class="input-group-text">
                                                         <i class="fas fa-clipboard-list"></i>
@@ -550,8 +577,8 @@ if (isset($_GET["product"])) {
                                             <div class="col">
 
                                                 <!-- ====================================
-                                            Descripción de la variante
-                                            ==================================== -->
+                                                Descripción de la variante
+                                                ==================================== -->
                                                 <div class="input-group mb-3">
                                                     <span class="input-group-text">
                                                         <i class="fas fa-clipboard-list"></i>
@@ -560,8 +587,8 @@ if (isset($_GET["product"])) {
                                                 </div>
 
                                                 <!-- ====================================
-                                            Costo de la variante
-                                            ==================================== -->
+                                                Costo de la variante
+                                                ==================================== -->
                                                 <div class="input-group mb-3">
                                                     <span class="input-group-text">
                                                         <i class="fas fa-hand-holding-usd"></i>
@@ -570,8 +597,8 @@ if (isset($_GET["product"])) {
                                                 </div>
 
                                                 <!-- ====================================
-                                            Precio de la variante
-                                            ==================================== -->
+                                                Precio de la variante
+                                                ==================================== -->
                                                 <div class="input-group mb-3">
                                                     <span class="input-group-text">
                                                         <i class="fas fa-funnel-dollar"></i>
@@ -580,8 +607,8 @@ if (isset($_GET["product"])) {
                                                 </div>
 
                                                 <!-- ====================================
-                                            Oferta de la variante
-                                            ==================================== -->
+                                                Oferta de la variante
+                                                ==================================== -->
                                                 <div class="input-group mb-3">
                                                     <span class="input-group-text">
                                                         <i class="fas fa-tag"></i>
@@ -590,16 +617,16 @@ if (isset($_GET["product"])) {
                                                 </div>
 
                                                 <!-- ====================================
-                                            Fin de oferta de la variante
-                                            ==================================== -->
+                                                Fin de oferta de la variante
+                                                ==================================== -->
                                                 <div class="input-group mb-3">
                                                     <span class="input-group-text">Fin del descuento</span>
                                                     <input type="date" class="form-control" name="date_variant_1">
                                                 </div>
 
                                                 <!-- ====================================
-                                            Stock de la variante
-                                            ==================================== -->
+                                                Stock de la variante
+                                                ==================================== -->
                                                 <div class="input-group mb-3">
                                                     <span class="input-group-text">
                                                         <i class="fas fa-list"></i>
