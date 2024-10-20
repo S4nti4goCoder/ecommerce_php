@@ -459,3 +459,28 @@ function changeVideo(event, item) {
     "https://www.youtube.com/embed/" + idYoutube
   );
 }
+
+//Edición de Galeria
+
+var arrayFilesEdit = Array();
+var arrayFilesDelete = Array();
+
+function removeGallery(elem, item) {
+  $(elem).parent().remove();
+
+  var index = JSON.parse($(".galleryOldProduct_" + item).val()).indexOf(
+    $(elem).attr("remove")
+  );
+
+  arrayFilesEdit = JSON.parse($(".galleryOldProduct_" + item).val());
+
+  arrayFilesEdit.splice(index, 1);
+
+  $(".galleryOldProduct_" + item).val(JSON.stringify(arrayFilesEdit));
+
+  arrayFilesDelete = JSON.parse($(".deleteGalleryProduct_" + item).val());
+
+  arrayFilesDelete.push($(elem).attr("remove"));
+
+  $(".deleteGalleryProduct_" + item).val(JSON.stringify(arrayFilesDelete));
+}

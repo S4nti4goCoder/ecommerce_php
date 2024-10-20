@@ -346,7 +346,9 @@ if (isset($_GET["product"])) {
                                                                     <div class="dz-image">
                                                                         <img class="img-fluid" src="<?php echo "/views/assets/img/products/" . $product->url_product . "/" . $item ?>">
                                                                     </div>
-                                                                    <a class="dz-remove" data-sz-remove></a>
+                                                                    <a class="dz-remove" data-dz-remove remove="<?php echo $item ?>" onclick="removeGallery(this, <?php echo ($key + 1) ?>)">
+                                                                        Eliminar foto
+                                                                    </a>
                                                                 </div>
 
                                                             <?php endforeach ?>
@@ -358,12 +360,16 @@ if (isset($_GET["product"])) {
 
                                                         <input type="hidden" name="galleryProduct_<?php echo ($key + 1) ?>" class="galleryProduct_<?php echo ($key + 1) ?>">
 
+                                                        <input type="hidden" name="galleryOldProduct_<?php echo ($key + 1) ?>" class="galleryOldProduct_<?php echo ($key + 1) ?>" value='<?php echo $value->media_variant ?>'>
+
+                                                        <input type="hidden" name="deleteGalleryProduct_<?php echo ($key + 1) ?>" class="deleteGalleryProduct_<?php echo ($key + 1) ?>" value='[]'>
+
                                                     <?php else: ?>
 
                                                         <!-- ====================================
                                                         Insertar video Youtube
                                                         ==================================== -->
-                                                        <div class="input-group mb-3 inputVideo_<?php echo ($key + 1) ?>" style="display: none">
+                                                        <div class="input-group mb-3 inputVideo_<?php echo ($key + 1) ?>">
                                                             <span class="input-group-text">
                                                                 <i class="fas fa-clipboard-list"></i>
                                                             </span>
@@ -375,7 +381,15 @@ if (isset($_GET["product"])) {
                                                                 value="<?php echo $value->media_variant ?>"
                                                                 onchange="changeVideo(event, <?php echo ($key + 1) ?>)">
                                                         </div>
-                                                        <iframe width="100%" height="280" src="https://www.youtube.com/embed/<?php echo end(explode("/", $value->media_variant)) ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="mb-3 iframeYoutube_<?php echo ($key + 1) ?>" style="display: none"></iframe>
+
+                                                        <?php
+
+                                                        $idYoutube = explode("/", $value->media_variant);
+                                                        $idYoutube = end($idYoutube);
+
+                                                        ?>
+
+                                                        <iframe width="100%" height="280" src="https://www.youtube.com/embed/<?php echo $idYoutube ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="mb-3 iframeYoutube_<?php echo ($key + 1) ?>"></iframe>
 
                                                     <?php endif ?>
 
@@ -389,11 +403,11 @@ if (isset($_GET["product"])) {
                                                         <span class="input-group-text">
                                                             <i class="fas fa-clipboard-list"></i>
                                                         </span>
-                                                        <input 
-                                                        type="text" 
-                                                        class="form-control" 
-                                                        name="description_variant_<?php echo ($key + 1) ?>" placeholder="Descripción: Color Negro, talla S, Material Goma"
-                                                        value="<?php echo $value->description_variant ?>">
+                                                        <input
+                                                            type="text"
+                                                            class="form-control"
+                                                            name="description_variant_<?php echo ($key + 1) ?>" placeholder="Descripción: Color Negro, talla S, Material Goma"
+                                                            value="<?php echo $value->description_variant ?>">
                                                     </div>
 
                                                     <!-- ====================================
@@ -403,12 +417,12 @@ if (isset($_GET["product"])) {
                                                         <span class="input-group-text">
                                                             <i class="fas fa-hand-holding-usd"></i>
                                                         </span>
-                                                        <input 
-                                                        type="number" 
-                                                        step="any" 
-                                                        class="form-control" 
-                                                        name="cost_variant_<?php echo ($key + 1) ?>" placeholder="Costo de compra"
-                                                        value="<?php echo $value->cost_variant ?>">
+                                                        <input
+                                                            type="number"
+                                                            step="any"
+                                                            class="form-control"
+                                                            name="cost_variant_<?php echo ($key + 1) ?>" placeholder="Costo de compra"
+                                                            value="<?php echo $value->cost_variant ?>">
                                                     </div>
 
                                                     <!-- ====================================
@@ -418,12 +432,12 @@ if (isset($_GET["product"])) {
                                                         <span class="input-group-text">
                                                             <i class="fas fa-funnel-dollar"></i>
                                                         </span>
-                                                        <input 
-                                                        type="number" 
-                                                        step="any" 
-                                                        class="form-control" 
-                                                        name="price_variant_<?php echo ($key + 1) ?>" placeholder="Precio de venta"
-                                                        value="<?php echo $value->price_variant ?>">
+                                                        <input
+                                                            type="number"
+                                                            step="any"
+                                                            class="form-control"
+                                                            name="price_variant_<?php echo ($key + 1) ?>" placeholder="Precio de venta"
+                                                            value="<?php echo $value->price_variant ?>">
                                                     </div>
 
                                                     <!-- ====================================
@@ -433,12 +447,12 @@ if (isset($_GET["product"])) {
                                                         <span class="input-group-text">
                                                             <i class="fas fa-tag"></i>
                                                         </span>
-                                                        <input 
-                                                        type="number" 
-                                                        step="any" 
-                                                        class="form-control" 
-                                                        name="offer_variant_<?php echo ($key + 1) ?>" placeholder="Precio de descuento"
-                                                        value="<?php echo $value->offer_variant ?>">
+                                                        <input
+                                                            type="number"
+                                                            step="any"
+                                                            class="form-control"
+                                                            name="offer_variant_<?php echo ($key + 1) ?>" placeholder="Precio de descuento"
+                                                            value="<?php echo $value->offer_variant ?>">
                                                     </div>
 
                                                     <!-- ====================================
@@ -446,11 +460,11 @@ if (isset($_GET["product"])) {
                                                     ==================================== -->
                                                     <div class="input-group mb-3">
                                                         <span class="input-group-text">Fin del descuento</span>
-                                                        <input 
-                                                        type="date" 
-                                                        class="form-control" 
-                                                        name="date_variant_<?php echo ($key + 1) ?>"
-                                                        value="<?php echo $value->end_offer_variant ?>">
+                                                        <input
+                                                            type="date"
+                                                            class="form-control"
+                                                            name="date_variant_<?php echo ($key + 1) ?>"
+                                                            value="<?php echo $value->end_offer_variant ?>">
                                                     </div>
 
                                                     <!-- ====================================
@@ -460,11 +474,11 @@ if (isset($_GET["product"])) {
                                                         <span class="input-group-text">
                                                             <i class="fas fa-list"></i>
                                                         </span>
-                                                        <input 
-                                                        type="number" 
-                                                        class="form-control" 
-                                                        name="stock_variant_<?php echo ($key + 1) ?>" placeholder="Stock disponible"
-                                                        value="<?php echo $value->stock_variant ?>">
+                                                        <input
+                                                            type="number"
+                                                            class="form-control"
+                                                            name="stock_variant_<?php echo ($key + 1) ?>" placeholder="Stock disponible"
+                                                            value="<?php echo $value->stock_variant ?>">
                                                     </div>
                                                 </div>
                                             </div>
