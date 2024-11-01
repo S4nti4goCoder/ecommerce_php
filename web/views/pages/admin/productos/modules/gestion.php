@@ -277,7 +277,7 @@ if (isset($_GET["product"])) {
                     CUARTO BLOQUE
                     ==================================== -->
                     <div class="row row-cols-1 pt-2 variantList">
-                        <div class="col variantCount">
+                        <div class="col">
                             <div class="card">
                                 <div class="card-body">
 
@@ -310,7 +310,7 @@ if (isset($_GET["product"])) {
                                             <!-- ====================================
                                             Variantes
                                             ==================================== -->
-                                            <div class="card">
+                                            <div class="card variantCount">
                                                 <div class="card-body">
                                                     <div class="form-group">
                                                         <div class="d-flex justify-content-between">
@@ -321,7 +321,7 @@ if (isset($_GET["product"])) {
                                                                 </div>
                                                             <?php else: ?>
                                                                 <div>
-                                                                    <button type="button" class="btn btn-default btn-sm rounded-pill px-3 quitVariant"><i class="fas fa-times fa-xs"></i> Quitar variante</button>
+                                                                    <button type="button" class="btn btn-default btn-sm rounded-pill px-3 deleteVariant" idVariant="<?php echo base64_encode($value->id_variant) ?>"><i class="fas fa-times fa-xs"></i> Quitar variante</button>
                                                                 </div>
                                                             <?php endif ?>
                                                         </div>

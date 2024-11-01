@@ -130,6 +130,26 @@ class DeleteController
             $updateSubcategory = CurlController::request($url, $method, $fields);
         }
 
+        if ($this->table == "variants") {
+            $select = "type_variant,media_variant,url_product";
+            $url = "relations?rel=variants,products&type=variant,product&linkTo=id_variant&equalTo=" . base64_decode($this->id) . "&select=" . $select;
+            $method = "GET";
+            $fields = array();
+
+            $dataItem = CurlController::request($url, $method, $fields)->results[0];
+
+            /*=============================================
+            Borrar todas las Imagenes de la galería
+            =============================================*/
+            if ($dataItem->type_variant == "gallery") {
+
+                foreach (json_decode($dataItem->media_variant) as $file) {
+
+                    unlink('../views/assets/img/products/' . $dataItem->url_product . '/' . $file);
+                }
+            }
+        }
+
         $url = $this->table . "?id=" . base64_decode($this->id) . "&nameId=" . $this->nameId . "&token=" . $this->token . "&table=admins&suffix=admin";
         $method = "DELETE";
         $fields = array();
