@@ -297,6 +297,9 @@ if (isset($_GET["product"])) {
                                         }
 
                                         ?>
+
+                                    <?php else: $variants = array(); ?>
+
                                     <?php endif ?>
 
                                     <?php if (count($variants) > 0): ?>
@@ -305,7 +308,7 @@ if (isset($_GET["product"])) {
 
                                         <?php foreach ($variants as $key => $value): ?>
 
-                                            <input type="hidden" name="idVariant_<?php echo ($key + 1) ?>" value="<?php echo $value->id_variant ?>">
+                                            <input type="hidden" class="idVariant" name="idVariant_<?php echo ($key + 1) ?>" value="<?php echo $value->id_variant ?>">
 
                                             <!-- ====================================
                                             Variantes
@@ -321,7 +324,7 @@ if (isset($_GET["product"])) {
                                                                 </div>
                                                             <?php else: ?>
                                                                 <div>
-                                                                    <button type="button" class="btn btn-default btn-sm rounded-pill px-3 deleteVariant" idVariant="<?php echo base64_encode($value->id_variant) ?>"><i class="fas fa-times fa-xs"></i> Quitar variante</button>
+                                                                    <button type="button" class="btn btn-default btn-sm rounded-pill px-3 deleteVariant" idVariant="<?php echo base64_encode($value->id_variant) ?>"><i class="fas fa-times fa-xs"></i> Quitar esta variante</button>
                                                                 </div>
                                                             <?php endif ?>
                                                         </div>
@@ -540,7 +543,7 @@ if (isset($_GET["product"])) {
                                             <div class="d-flex justify-content-between">
                                                 <label for="info_product">Variante 1<sup class="text-danger">*</sup></label>
                                                 <div>
-                                                    <button type="button" class="btn btn-default btn-sm rounded-pill px-3"><i class="fas fa-plus fa-xs"></i> Agregar otra variante</button>
+                                                    <button type="button" class="btn btn-default btn-sm rounded-pill px-3 addVariant"><i class="fas fa-plus fa-xs"></i> Agregar otra variante</button>
                                                 </div>
                                             </div>
                                         </div>
