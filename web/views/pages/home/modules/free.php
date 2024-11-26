@@ -1,3 +1,23 @@
+<?php
+
+$select = "name_product,url_product,type_variant,media_variant,date_created_product";
+$url = "relations?rel=variants,products&type=variant,product&linkTo=price_variant&equalTo=0&startAt=0&endAt=4&orderBy=id_variant&orderMode=DESC&select=" . $select;
+$method = "GET";
+$fields = array();
+
+$freeProducts = CurlController::request($url, $method, $fields);
+if ($freeProducts->status == 200) {
+    $freeProducts = $freeProducts->results;
+} else {
+    $freeProducts = array();
+}
+
+if (count($freeProducts) == 0) {
+    return;
+}
+
+?>
+
 <div class="container-fluid bg-light border">
     <div class="container clearfix">
         <div class="btn-group float-end p-2">
@@ -25,104 +45,47 @@
         <hr style="color: #666">
         <!-- GRID -->
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 pt-3 pb-4 grid-1">
-            <div class="col px-3 py-2 py-lg-0">
-                <a href="#">
-                    <figure class="imgProduct">
-                        <img src="<?php echo $path ?>views/assets/img/products/accesorios/1/accesorio01.jpg" class="img-fluid">
-                    </figure>
-                    <h5><small class="text-uppercase text-muted">Collar de Diamantes</small></h5>
-                </a>
-                <h6>
-                    <span class="badge badgeNew text-uppercase mt-1 p-2">Nuevo</span>
-                </h6>
-                <div class="clearfix">
-                    <h5 class="float-start text-uppercase text-muted">
-                        <del class="small" style="color:#bbb">COP $29.000</del> Gratis
-                    </h5>
-                    <span class="float-end">
-                        <div class="btn-group btn-group-sm">
-                            <button type="button" class="btn btn-light border">
-                                <i class="fas fa-heart"></i>
-                            </button>
-                            <button type="button" class="btn btn-light border">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                        </div>
-                    </span>
+            <?php foreach ($freeProducts as $key => $value): ?>
+                <div class="col px-3 py-2 py-lg-0">
+                    <a href="/<?php echo $value->url_product ?>">
+                        <figure class="imgProduct">
+                            <?php if ($value->type_variant == "gallery"): ?>
+                                <img src="<?php echo $path ?>views/assets/img/products/<?php echo $value->url_product ?>/<?php echo json_decode($value->media_variant)[0] ?>" class="img-fluid">
+                            <?php else: $arrayYT = explode("/", $value->media_variant) ?>
+                                <img src="http://img.youtube.com/vi/<?php echo end($arrayYT) ?>/maxresdefault.jpg" class="img-fluid bg-light">
+                            <?php endif ?>
+                        </figure>
+                        <h5><small class="text-uppercase text-muted"><?php echo $value->name_product ?></small></h5>
+                    </a>
+                    <h6>
+                        <?php
+
+                        $date1 = new DateTime($value->date_created_product);
+                        $date2 = new DateTime(date("Y-m-d"));
+                        $diff = $date1->diff($date2);
+
+                        ?>
+                        <?php if ($diff->days < 30): ?>
+                            <span class="badge badgeNew text-uppercase mt-1 p-2">Nuevo</span>
+                        <?php endif ?>
+                    </h6>
+                    <div class="clearfix">
+                        <h5 class="float-start text-uppercase text-muted">
+                            Gratis
+                        </h5>
+                        <span class="float-end">
+                            <div class="btn-group btn-group-sm">
+                                <button type="button" class="btn btn-light border">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <button type="button" class="btn btn-light border" onclick="location.href='/<?php echo $value->url_product ?>'">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </span>
+                    </div>
                 </div>
-            </div>
-            <div class="col px-3 py-2 py-lg-0">
-                <a href="#">
-                    <figure class="imgProduct">
-                        <img src="<?php echo $path ?>views/assets/img/products/accesorios/2/accesorio02.jpg" class="img-fluid">
-                    </figure>
-                    <h5><small class="text-uppercase text-muted">Bolso deportivo gris</small></h5>
-                </a>
-                <h6>
-                    <span class="badge badgeNew text-uppercase mt-1 p-2">Nuevo</span>
-                </h6>
-                <div class="clearfix">
-                    <h5 class="float-start text-uppercase text-muted"><del class="small" style="color:#bbb">COP $29.000</del> Gratis</h5>
-                    <span class="float-end">
-                        <div class="btn-group btn-group-sm">
-                            <button type="button" class="btn btn-light border">
-                                <i class="fas fa-heart"></i>
-                            </button>
-                            <button type="button" class="btn btn-light border">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                        </div>
-                    </span>
-                </div>
-            </div>
-            <div class="col px-3 py-2 py-lg-0">
-                <a href="#">
-                    <figure class="imgProduct">
-                        <img src="<?php echo $path ?>views/assets/img/products/accesorios/3/accesorio03.jpg" class="img-fluid">
-                    </figure>
-                    <h5><small class="text-uppercase text-muted">Bolso militar</small></h5>
-                </a>
-                <h6>
-                    <span class="badge badgeNew text-uppercase mt-1 p-2">Nuevo</span>
-                </h6>
-                <div class="clearfix">
-                    <h5 class="float-start text-uppercase text-muted"><del class="small" style="color:#bbb">COP $29.000</del> Gratis</h5>
-                    <span class="float-end">
-                        <div class="btn-group btn-group-sm">
-                            <button type="button" class="btn btn-light border">
-                                <i class="fas fa-heart"></i>
-                            </button>
-                            <button type="button" class="btn btn-light border">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                        </div>
-                    </span>
-                </div>
-            </div>
-            <div class="col px-3 py-2 py-lg-0">
-                <a href="#">
-                    <figure class="imgProduct">
-                        <img src="<?php echo $path ?>views/assets/img/products/accesorios/4/accesorio04.jpg" class="img-fluid">
-                    </figure>
-                    <h5><small class="text-uppercase text-muted">Pulsera de diamantes</small></h5>
-                </a>
-                <h6>
-                    <span class="badge badgeNew text-uppercase mt-1 p-2">Nuevo</span>
-                </h6>
-                <div class="clearfix">
-                    <h5 class="float-start text-uppercase text-muted"><del class="small" style="color:#bbb">COP $29.000</del> Gratis</h5>
-                    <span class="float-end">
-                        <div class="btn-group btn-group-sm">
-                            <button type="button" class="btn btn-light border">
-                                <i class="fas fa-heart"></i>
-                            </button>
-                            <button type="button" class="btn btn-light border">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                        </div>
-                    </span>
-                </div>
-            </div>
+            <?php endforeach ?>
         </div>
         <!-- LIST -->
         <div class="row list-1" style="display: none">

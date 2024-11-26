@@ -302,11 +302,11 @@ if (isset($_GET["subcategory"])) {
                             </div>
                             <div class="col-12 col-lg-6 mt-2 d-none d-lg-block">
                                 <button type="submit" class="btn border-0 bg-success float-right py-2 px-3 btn-sm">Guardar Información</button>
-                                <a href="/admin/categorias" class="btn btn-default float-right py-2 px-3 btn-sm mr-2">Regresar</a>
+                                <a href="/admin/subcategorias" class="btn btn-default float-right py-2 px-3 btn-sm mr-2">Regresar</a>
                             </div>
                             <div class="col-12 text-center d-flex justify-content-center mt-2 d-block d-lg-none">
                                 <div>
-                                    <a href="/admin/categorias" class="btn btn-default py-2 px-3 btn-sm mr-2">Regresar</a>
+                                    <a href="/admin/subcategorias" class="btn btn-default py-2 px-3 btn-sm mr-2">Regresar</a>
                                 </div>
                                 <div>
                                     <button type="submit" class="btn border-0 bg-success py-2 px-3 btn-sm ">Guardar Información</button>
