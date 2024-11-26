@@ -1,6 +1,6 @@
 <?php
 
-$select = "name_product,url_product,type_variant,media_variant,date_created_product";
+$select = "name_product,url_product,type_variant,media_variant,date_created_product,stock_variant";
 $url = "relations?rel=variants,products&type=variant,product&linkTo=price_variant&equalTo=0&startAt=0&endAt=4&orderBy=id_variant&orderMode=DESC&select=" . $select;
 $method = "GET";
 $fields = array();
@@ -55,9 +55,11 @@ if (count($freeProducts) == 0) {
                                 <img src="http://img.youtube.com/vi/<?php echo end($arrayYT) ?>/maxresdefault.jpg" class="img-fluid bg-light">
                             <?php endif ?>
                         </figure>
-                        <h5><small class="text-uppercase text-muted"><?php echo $value->name_product ?></small></h5>
+                        <h5>
+                            <small class="text-uppercase text-muted"><?php echo $value->name_product ?></small>
+                        </h5>
                     </a>
-                    <h6>
+                    <p class="small">
                         <?php
 
                         $date1 = new DateTime($value->date_created_product);
@@ -66,9 +68,12 @@ if (count($freeProducts) == 0) {
 
                         ?>
                         <?php if ($diff->days < 30): ?>
-                            <span class="badge badgeNew text-uppercase mt-1 p-2">Nuevo</span>
+                            <span class="badge badgeNew text-uppercase mt-1 p-2 badge-pill">Nuevo</span>
                         <?php endif ?>
-                    </h6>
+                        <?php if ($value->stock_variant == 0 && $value->type_variant == "gallery"): ?>
+                            <span class="badge bg-dark text-uppercase text-white mt-1 p-2 badge-pill">No tiene stock</span>
+                        <?php endif ?>
+                    </p>
                     <div class="clearfix">
                         <h5 class="float-start text-uppercase text-muted">
                             Gratis
