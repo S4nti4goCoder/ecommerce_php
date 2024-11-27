@@ -172,7 +172,7 @@ $(document).on("click", ".deleteItem", function () {
               }
             } else {
               fncMatPreloader("off");
-              fncToastr("Error", "Este item no se pudo borrar");
+              fncToastr("error", "Este item no se pudo borrar");
             }
           },
         });

@@ -205,7 +205,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
             ) {
                 include "pages/" . $routesArray[0] . "/" . $routesArray[0] . ".php";
             } else {
-                include "pages/404/404.php";
+                //Buscar coincidencia url - categoria
+                $url = "categories?linkTo=url_category&equalTo=" . $routesArray[0] . "&select=url_category";
+                $category = CurlController::request($url, $method, $fields);
+                if ($category->status == 200) {
+                    include "pages/products/products.php";
+                } else {
+                    include "pages/404/404.php";
+                }
             }
         } else {
             include "pages/home/home.php";
