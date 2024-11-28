@@ -14,7 +14,7 @@ class Connection
 
 		$infoDB = array(
 
-			"database" => "ecommerce-php",
+			"database" => "ecommerce_db_php",
 			"user" => "root",
 			"pass" => ""
 

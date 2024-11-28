@@ -21,3 +21,35 @@ $(document).on("click", ".btnView", function () {
   });
   $(this).addClass("bg-white");
 });
+
+/* Paginación */
+var target = $(".pagination");
+if (target.length > 0) {
+  target.each(function () {
+    var el = $(this),
+      totalPages = el.data("total-pages");
+    urlPages = el.data("url-page");
+    currentPage = el.data("current-page");
+    el.twbsPagination({
+      totalPages: totalPages,
+      startPage: currentPage,
+      visiblePages: 3,
+      first: '<i class="fas fa-angle-double-left"></i>',
+      last: '<i class="fas fa-angle-double-right"></i>',
+      prev: '<i class="fas fa-angle-left"></i>',
+      next: '<i class="fas fa-angle-right"></i>',
+      onPageClick: function (event, page) {
+        if (page == 1) {
+          $(".page-item.first").css({ color: "#aaa" });
+          $(".page-item.prev").css({ color: "#aaa" });
+        }
+        if (page == totalPages) {
+          $(".page-item.next").css({ color: "#aaa" });
+          $(".page-item.last").css({ color: "#aaa" });
+        }
+      },
+    }).on("page", function (event, page) {
+      window.location = "/" + urlPages + "/" + page;
+    });
+  });
+}

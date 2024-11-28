@@ -187,6 +187,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="<?php echo $path ?>views/assets/js/plugins/codemirror/formatting.min.js"></script>
     <!-- Dropzone -->
     <script src="<?php echo $path ?>views/assets/js/plugins/dropzone/dropzone.js"></script>
+    <!-- pagination -->
+    <script src="<?php echo $path ?>views/assets/js/plugins/twbs-pagination/twbs-pagination.min.js"></script>
 </head>
 
 <body class="hold-transition sidebar-collapse layout-top-nav">

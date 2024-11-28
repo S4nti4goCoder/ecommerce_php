@@ -1,16 +1,36 @@
 <?php
 
+//Config de la paginación
+$endAt = 12;
+
+if (isset($routesArray[1]) && !empty($routesArray[1])) {
+    $startAt = ($routesArray[1] - 1) * $endAt;
+    $currentPage = $routesArray[1];
+} else {
+    $startAt = 0;
+    $currentPage = 1;
+}
+
+//Traemos productos relacionados con categorias
+$url = "relations?rel=products,categories&type=product,category&linkTo=url_category&equalTo=" . $routesArray[0] . "&select=id_product";
+$totalProducts = CurlController::request($url, $method, $fields)->total;
+
+if ($startAt > $totalProducts) {
+    echo '<script>
+	      window.location = "/404";
+	    </script>';
+}
+
 $select = "id_product,name_product,url_product,description_product";
-$url = "relations?rel=products,categories&type=product,category&linkTo=url_category&equalTo=" . $routesArray[0] . "&select=" . $select;
+$url = "relations?rel=products,categories&type=product,category&linkTo=url_category&equalTo=" . $routesArray[0] . "&select=" . $select . "&startAt=" . $startAt . "&endAt=" . $endAt . "&orderBy=id_product&orderMode=DESC";
 $method = "GET";
 $fields = array();
 
 $products = CurlController::request($url, $method, $fields);
-
 if ($products->status == 200) {
     $products = $products->results;
 } else {
-    //Anulaos ingreso al catalogo
+    //Anulamos ingreso al catalogo
 }
 //Traemos la primera variante de los productos
 if (!empty($products)) {
@@ -161,6 +181,16 @@ if (!empty($products)) {
                     </div>
                 </div>
             <?php endforeach ?>
+        </div>
+        <!-- PAGINACIÓN -->
+        <div class="d-flex justify-content-center mt-3 mb-5">
+            <div class="cont-pagination">
+                <ul
+                    class="pagination"
+                    data-total-pages="<?php echo ceil($totalProducts / $endAt) ?>"
+                    data-url-page="<?php echo $routesArray[0] ?>"
+                    data-current-page="<?php echo $currentPage ?>"></ul>
+            </div>
         </div>
     </div>
 </div>
