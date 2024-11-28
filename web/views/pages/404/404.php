@@ -10,6 +10,7 @@
                         Mientras tanto, puedes <a href="/"><strong>regresar a la página de inicio</strong></a>.
                     <p>
                 </div>
+            </div>
         </section>
     </div>
 </div>

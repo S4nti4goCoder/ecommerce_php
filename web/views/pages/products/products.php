@@ -13,25 +13,52 @@ if (isset($routesArray[1]) && !empty($routesArray[1])) {
 
 //Traemos productos relacionados con categorias
 $url = "relations?rel=products,categories&type=product,category&linkTo=url_category&equalTo=" . $routesArray[0] . "&select=id_product";
-$totalProducts = CurlController::request($url, $method, $fields)->total;
+$totalProducts = CurlController::request($url, $method, $fields);
 
-if ($startAt > $totalProducts) {
-    echo '<script>
+if ($totalProducts->status == 200) {
+
+    $totalProducts = $totalProducts->total;
+
+    if ($startAt > $totalProducts) {
+        echo '<script>
 	      window.location = "/404";
 	    </script>';
-}
+    }
 
-$select = "id_product,name_product,url_product,description_product";
-$url = "relations?rel=products,categories&type=product,category&linkTo=url_category&equalTo=" . $routesArray[0] . "&select=" . $select . "&startAt=" . $startAt . "&endAt=" . $endAt . "&orderBy=id_product&orderMode=DESC";
-$method = "GET";
-$fields = array();
+    $select = "id_product,name_product,url_product,description_product";
+    $url = "relations?rel=products,categories&type=product,category&linkTo=url_category&equalTo=" . $routesArray[0] . "&select=" . $select . "&startAt=" . $startAt . "&endAt=" . $endAt . "&orderBy=id_product&orderMode=DESC";
+    $method = "GET";
+    $fields = array();
 
-$products = CurlController::request($url, $method, $fields);
-if ($products->status == 200) {
-    $products = $products->results;
+    $products = CurlController::request($url, $method, $fields)->results;
 } else {
-    //Anulamos ingreso al catalogo
+
+    //Traemos productos relacionados con subcategorias
+    $url = "relations?rel=products,subcategories&type=product,subcategory&linkTo=url_subcategory&equalTo=" . $routesArray[0] . "&select=id_product";
+    $totalProducts = CurlController::request($url, $method, $fields);
+
+    if ($totalProducts->status == 200) {
+
+        $totalProducts = $totalProducts->total;
+
+        if ($startAt > $totalProducts) {
+            echo '<script>
+	      window.location = "/404";
+	    </script>';
+        }
+
+        $select = "id_product,name_product,url_product,description_product";
+        $url = "relations?rel=products,subcategories&type=product,subcategory&linkTo=url_subcategory&equalTo=" . $routesArray[0] . "&select=" . $select . "&startAt=" . $startAt . "&endAt=" . $endAt . "&orderBy=id_product&orderMode=DESC";
+        $method = "GET";
+        $fields = array();
+
+        $products = CurlController::request($url, $method, $fields)->results;
+    } else {
+        //Anulamos ingreso al catalogo
+        $products = array();
+    }
 }
+
 //Traemos la primera variante de los productos
 if (!empty($products)) {
     foreach ($products as $key => $value) {
@@ -53,76 +80,98 @@ if (!empty($products)) {
 
 <div class="container-fluid bg-light border">
     <div class="container clearfix">
-        <div class="btn-group float-end p-2">
-            <button class="btn btn-default btnView bg-white" attr-type="grid" attr-index="2">
-                <i class="fas fa-th fa-xs pe-1"></i>
-                <span class="col-xs-0 float-end small mt-1">GRID</span>
-            </button>
-            <button class="btn btn-default btnView" attr-type="list" attr-index="2">
-                <i class="fas fa-list fa-xs pe-1"></i>
-                <span class="col-xs-0 float-end small mt-1">LIST</span>
-            </button>
+        <div class="btn-group float-end <?php if (!empty($products)): ?> p-2 <?php else: ?>  <?php endif ?>">
+            <?php if (!empty($products)): ?>
+                <button class="btn btn-default btnView bg-white" attr-type="grid" attr-index="2">
+                    <i class="fas fa-th fa-xs pe-1"></i>
+                    <span class="col-xs-0 float-end small mt-1">GRID</span>
+                </button>
+                <button class="btn btn-default btnView" attr-type="list" attr-index="2">
+                    <i class="fas fa-list fa-xs pe-1"></i>
+                    <span class="col-xs-0 float-end small mt-1">LIST</span>
+                </button>
+            <?php endif ?>
         </div>
     </div>
 </div>
+
 <div class="container-fluid bg-white">
     <div class="container">
         <!-- GRID -->
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 pt-3 pb-4 grid-2">
-            <?php foreach ($products as $key => $value): ?>
-                <div class="col px-3 py-2 py-3">
-                    <a href="/<?php echo $value->url_product ?>">
-                        <figure class="imgProduct">
-                            <?php if ($value->type_variant == "gallery"): ?>
-                                <img src="<?php echo $path ?>views/assets/img/products/<?php echo $value->url_product ?>/<?php echo json_decode($value->media_variant)[0] ?>" class="img-fluid">
-                            <?php else: $arrayYT = explode("/", $value->media_variant) ?>
-                                <img src="http://img.youtube.com/vi/<?php echo end($arrayYT) ?>/maxresdefault.jpg" class="img-fluid bg-light">
+        <?php if (!empty($products)): ?>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 pt-3 pb-4 grid-2">
+                <?php foreach ($products as $key => $value): ?>
+                    <div class="col px-3 py-2 py-3">
+                        <a href="/<?php echo $value->url_product ?>">
+                            <figure class="imgProduct">
+                                <?php if ($value->type_variant == "gallery"): ?>
+                                    <img src="<?php echo $path ?>views/assets/img/products/<?php echo $value->url_product ?>/<?php echo json_decode($value->media_variant)[0] ?>" class="img-fluid">
+                                <?php else: $arrayYT = explode("/", $value->media_variant) ?>
+                                    <img src="http://img.youtube.com/vi/<?php echo end($arrayYT) ?>/maxresdefault.jpg" class="img-fluid bg-light">
+                                <?php endif ?>
+                            </figure>
+                            <h5>
+                                <small class="text-uppercase text-muted"><?php echo $value->name_product ?></small>
+                            </h5>
+                        </a>
+                        <p class="small">
+                            <?php
+
+                            $date1 = new DateTime($value->date_created_variant);
+                            $date2 = new DateTime(date("Y-m-d"));
+                            $diff = $date1->diff($date2);
+
+                            ?>
+                            <?php if ($diff->days < 30): ?>
+                                <span class="badge badgeNew text-uppercase mt-1 p-2 badge-pill">Nuevo</span>
                             <?php endif ?>
-                        </figure>
-                        <h5>
-                            <small class="text-uppercase text-muted"><?php echo $value->name_product ?></small>
-                        </h5>
-                    </a>
-                    <p class="small">
-                        <?php
-
-                        $date1 = new DateTime($value->date_created_variant);
-                        $date2 = new DateTime(date("Y-m-d"));
-                        $diff = $date1->diff($date2);
-
-                        ?>
-                        <?php if ($diff->days < 30): ?>
-                            <span class="badge badgeNew text-uppercase mt-1 p-2 badge-pill">Nuevo</span>
-                        <?php endif ?>
-                        <?php if ($value->offer_variant > 0): ?>
-                            <span class="badge bg-danger text-uppercase text-white mt-1 p-2 badge-pill">¡En oferta!</span>
-                        <?php endif ?>
-                        <?php if ($value->stock_variant == 0 && $value->type_variant == "gallery"): ?>
-                            <span class="badge bg-dark text-uppercase text-white mt-1 p-2 badge-pill">No tiene stock</span>
-                        <?php endif ?>
-                    </p>
-                    <div class="clearfix">
-                        <h5 class="float-start text-uppercase text-muted">
                             <?php if ($value->offer_variant > 0): ?>
-                                <del class="small" style="color:#bbb">COP $<?php echo $value->price_variant ?></del> $<?php echo $value->offer_variant ?>
-                            <?php else: ?>
-                                $<?php echo $value->price_variant ?>
+                                <span class="badge bg-danger text-uppercase text-white mt-1 p-2 badge-pill">¡En oferta!</span>
                             <?php endif ?>
-                        </h5>
-                        <span class="float-end">
-                            <div class="btn-group btn-group-sm">
-                                <button type="button" class="btn btn-light border">
-                                    <i class="fas fa-heart"></i>
-                                </button>
-                                <button type="button" class="btn btn-light border" onclick="location.href='/<?php echo $value->url_product ?>'">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </div>
-                        </span>
+                            <?php if ($value->stock_variant == 0 && $value->type_variant == "gallery"): ?>
+                                <span class="badge bg-dark text-uppercase text-white mt-1 p-2 badge-pill">No tiene stock</span>
+                            <?php endif ?>
+                        </p>
+                        <div class="clearfix">
+                            <h5 class="float-start text-uppercase text-muted">
+                                <?php if ($value->offer_variant > 0): ?>
+                                    <del class="small" style="color:#bbb">COP $<?php echo $value->price_variant ?></del> $<?php echo $value->offer_variant ?>
+                                <?php else: ?>
+                                    $<?php echo $value->price_variant ?>
+                                <?php endif ?>
+                            </h5>
+                            <span class="float-end">
+                                <div class="btn-group btn-group-sm">
+                                    <button type="button" class="btn btn-light border">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-light border" onclick="location.href='/<?php echo $value->url_product ?>'">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </span>
+                        </div>
                     </div>
+                <?php endforeach ?>
+            </div>
+        <?php else: ?>
+            <div class="login-page page-error bg-white">
+                <div class="login-box bg-white">
+                    <section class="content pb-5">
+                        <div class="error-page">
+                            <h2 class="headline text-default templateColor rounded"><i class="fas fa-shopping-cart px-4 text-white"></i></h2>
+                            <div class="error-content">
+                                <h3><i class="fas fa-exclamation-triangle text-default bg-light p-1"></i> Oops! No hay productos por ahora.</h3>
+                                <p>
+                                    No pudimos encontrar los productos que estás buscando.
+                                    <a href="/"><strong>regresar a la página de inicio</strong></a>.
+                                <p>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-            <?php endforeach ?>
-        </div>
+            </div>
+        <?php endif ?>
         <!-- LIST -->
         <div class="row list-2" style="display:none">
             <?php foreach ($products as $key => $value): ?>

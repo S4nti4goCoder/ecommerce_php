@@ -213,7 +213,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 if ($category->status == 200) {
                     include "pages/products/products.php";
                 } else {
-                    include "pages/404/404.php";
+                    //Buscar coincidencia url - subcategoria
+                    $url = "subcategories?linkTo=url_subcategory&equalTo=" . $routesArray[0] . "&select=url_subcategory";
+                    $subcategory = CurlController::request($url, $method, $fields);
+                    if ($subcategory->status == 200) {
+                        include "pages/products/products.php";
+                    } else {
+                        include "pages/404/404.php";
+                    }
                 }
             }
         } else {
