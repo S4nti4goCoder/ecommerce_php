@@ -36,7 +36,7 @@ if (count($salesProducts) == 0) {
         <div class="clearfix pt-3 pb-0 px-2">
             <h4 class="float-start text-uppercase pt-2">Artículos más vendidos</h4>
             <span class="float-end">
-                <a href="#" class="btn btn-default templateColor">
+                <a href="/most-sold" class="btn btn-default templateColor">
                     <small>VER MÁS <i class="fas fa-chevron-right"></i></small>
                 </a>
             </span>

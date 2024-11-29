@@ -1,5 +1,5 @@
 <div class="login-page page-error bg-white">
-    <div class="login-box bg-white">
+    <div class="login-box bg-white d-flex justify-content-center">
         <section class="content">
             <div class="error-page">
                 <h2 class="headline text-default" style="color: #00a6fb;"> 404</h2>
