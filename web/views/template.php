@@ -201,6 +201,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             include "modules/sidebar.php";
         }
         if (!empty($routesArray[0])) {
+            //Filtro de lista blanca
             if (
                 $routesArray[0] == "admin" ||
                 $routesArray[0] == "salir" ||
@@ -208,46 +209,53 @@ scratch. This page gets rid of all links and provides the needed markup only.
             ) {
                 include "pages/" . $routesArray[0] . "/" . $routesArray[0] . ".php";
             } else {
-                //Buscar coincidencia url - categoria
-                $url = "categories?linkTo=url_category&equalTo=" . $routesArray[0] . "&select=url_category";
-                $category = CurlController::request($url, $method, $fields);
-                if ($category->status == 200) {
-                    include "pages/products/products.php";
+                //Buscar coincidencia url - producto
+                $url = "products?linkTo=url_product&equalTo=" . $routesArray[0] . "&select=url_product";
+                $product = CurlController::request($url, $method, $fields);
+                if ($product->status == 200) {
+                    include "pages/product/product.php";
                 } else {
-                    //Buscar coincidencia url - subcategoria
-                    $url = "subcategories?linkTo=url_subcategory&equalTo=" . $routesArray[0] . "&select=url_subcategory";
-                    $subcategory = CurlController::request($url, $method, $fields);
-                    if ($subcategory->status == 200) {
+                    //Buscar coincidencia url - categoria
+                    $url = "categories?linkTo=url_category&equalTo=" . $routesArray[0] . "&select=url_category";
+                    $category = CurlController::request($url, $method, $fields);
+                    if ($category->status == 200) {
                         include "pages/products/products.php";
                     } else {
-                        if (
-                            //Filtro de productos gratuitos y demas
-                            $routesArray[0] == "free" ||
-                            $routesArray[0] == "most-seen" ||
-                            $routesArray[0] == "most-sold"
-                        ) {
+                        //Buscar coincidencia url - subcategoria
+                        $url = "subcategories?linkTo=url_subcategory&equalTo=" . $routesArray[0] . "&select=url_subcategory";
+                        $subcategory = CurlController::request($url, $method, $fields);
+                        if ($subcategory->status == 200) {
                             include "pages/products/products.php";
                         } else {
-                            //Filtro de busqueda
-                            $linkTo = ["name_product", "keywords_product", "name_category", "keywords_category", "name_subcategory", "keywords_subcategory"];
-                            $totalSearch = 0;
+                            if (
+                                //Filtro de productos gratuitos y demas
+                                $routesArray[0] == "free" ||
+                                $routesArray[0] == "most-seen" ||
+                                $routesArray[0] == "most-sold"
+                            ) {
+                                include "pages/products/products.php";
+                            } else {
+                                //Filtro de busqueda
+                                $linkTo = ["name_product", "keywords_product", "name_category", "keywords_category", "name_subcategory", "keywords_subcategory"];
+                                $totalSearch = 0;
 
-                            foreach ($linkTo as $key => $value) {
-                                $totalSearch++;
-                                $url = "relations?rel=products,subcategories,categories&type=product,subcategory,category&linkTo=" . $value . "&search=" . $routesArray[0] . "&select=id_product";
-                                $search = CurlController::request($url, $method, $fields);
-                                if ($search->status == 200) {
-                                    include "pages/products/products.php";
-                                    break;
+                                foreach ($linkTo as $key => $value) {
+                                    $totalSearch++;
+                                    $url = "relations?rel=products,subcategories,categories&type=product,subcategory,category&linkTo=" . $value . "&search=" . $routesArray[0] . "&select=id_product";
+                                    $search = CurlController::request($url, $method, $fields);
+                                    if ($search->status == 200) {
+                                        include "pages/products/products.php";
+                                        break;
+                                    } //Finaliza filtro de busqueda
                                 }
-                            }
-                            if ($totalSearch == count($linkTo)) {
-                                include "pages/404/404.php";
-                            }
-                        }
-                    }
-                }
-            }
+                                if ($totalSearch == count($linkTo)) {
+                                    include "pages/404/404.php";
+                                }
+                            } //Finaliza filtro de productos gratuitos y demas
+                        } //Finaliza filtro de url subcategorias
+                    } //Finaliza filtro de url categorias
+                } //Finaliza filtro de url productos
+            } //Finaliza filtro de la lista blanca
         } else {
             include "pages/home/home.php";
         }
