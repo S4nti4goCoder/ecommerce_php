@@ -75,11 +75,9 @@ function validateDataRepeat(event, type) {
 // Función para crear Url's
 function createUrl(event, input) {
   var value = event.target.value;
+
   value = value.toLowerCase();
-  value = value.replace(
-    /[#\\;\\$\\&\\%\\=\\(\\)\\:\\,\\'\\"\\.\\¿\\¡\\!\\?\\]/g,
-    ""
-  );
+  value = value.replace(/[#\\;\\$\\&\\%\\=\\(\\)\\:\\,\\'\\"\\.\\¿\\¡\\!\\?\\]/g,"");
   value = value.replace(/[ ]/g, "-");
   value = value.replace(/[á]/g, "a");
   value = value.replace(/[é]/g, "e");
@@ -447,7 +445,7 @@ function initDropzone(item) {
           $(".idVariant").length == 0
         ) {
           fncToastr("error", "La galería no puede estar vacía");
-        } else{
+        } else {
           myDropzone.processQueue();
         }
       });
