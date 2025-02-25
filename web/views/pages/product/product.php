@@ -31,28 +31,30 @@ if (!empty($product)) {
         <div class="row row-cols-1 row-cols-md-2">
             <!-- Bloque galeria o video -->
             <div class="col">
-                <?php if ($product->variants[0]->type_variant == "gallery"): ?>
-                    <div id="slider" class="flexslider">
-                        <ul class="slides">
-                            <?php foreach (json_decode($product->variants[0]->media_variant) as $key => $value): ?>
-                                <li>
-                                    <img src="/views/assets/img/products/<?php echo $product->url_product ?>/<?php echo $value ?>" class="img-thumbnail">
-                                </li>
-                            <?php endforeach ?>
-                        </ul>
-                    </div>
-                    <div id="carousel" class="flexslider">
-                        <ul class="slides">
-                            <?php foreach (json_decode($product->variants[0]->media_variant) as $key => $value): ?>
-                                <li>
-                                    <img src="/views/assets/img/products/<?php echo $product->url_product ?>/<?php echo $value ?>" class="img-thumbnail">
-                                </li>
-                            <?php endforeach ?>
-                        </ul>
-                    </div>
-                <?php else: $video = explode("/", $product->variants[0]->media_variant); ?>
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/<?php echo end($video) ?>" title="Youtube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                <?php endif ?>
+                <figure class="blockMedia">
+                    <?php if ($product->variants[0]->type_variant == "gallery"): ?>
+                        <div id="slider" class="flexslider" style="margin-bottom:-4px">
+                            <ul class="slides">
+                                <?php foreach (json_decode($product->variants[0]->media_variant) as $key => $value): ?>
+                                    <li>
+                                        <img src="/views/assets/img/products/<?php echo $product->url_product ?>/<?php echo $value ?>" class="img-thumbnail">
+                                    </li>
+                                <?php endforeach ?>
+                            </ul>
+                        </div>
+                        <div id="carousel" class="flexslider">
+                            <ul class="slides">
+                                <?php foreach (json_decode($product->variants[0]->media_variant) as $key => $value): ?>
+                                    <li>
+                                        <img src="/views/assets/img/products/<?php echo $product->url_product ?>/<?php echo $value ?>" class="img-thumbnail">
+                                    </li>
+                                <?php endforeach ?>
+                            </ul>
+                        </div>
+                    <?php else: $video = explode("/", $product->variants[0]->media_variant); ?>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/<?php echo end($video) ?>" title="Youtube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <?php endif ?>
+                </figure>
             </div>
             <!-- Bloque info del producto -->
             <div class="col">
@@ -68,7 +70,15 @@ if (!empty($product)) {
                             <label class="form-check-label" for="radio_<?php echo $key ?>">
                                 <h4 class="text-center border rounded-pill py-2 px-4 btn bg-light">
                                     <div class="form-check font-weight-bold">
-                                        <input type="radio" class="form-check-input" id="radio_<?php echo $key ?>" value="option_<?php echo $key ?>" name="optradio" <?php if ($key == 0): ?>checked<?php endif ?>>
+                                        <input
+                                            type="radio"
+                                            class="form-check-input changeVariant"
+                                            variant='<?php echo json_encode($product->variants[$key]) ?>'
+                                            url="<?php echo $product->url_product ?>"
+                                            id="radio_<?php echo $key ?>"
+                                            value="option_<?php echo $key ?>"
+                                            name="optradio"
+                                            <?php if ($key == 0): ?>checked<?php endif ?>>
                                         <?php echo $value->description_variant ?>
                                     </div>
                                 </h4>
