@@ -32,9 +32,24 @@ if (!empty($product)) {
             <!-- Bloque galeria o video -->
             <div class="col">
                 <?php if ($product->variants[0]->type_variant == "gallery"): ?>
-                    <figure>
-                        <img src="/views/assets/img/products/<?php echo $product->url_product ?>/<?php echo json_decode($product->variants[0]->media_variant)[0] ?>" class="w-100 img-thumbnail">
-                    </figure>
+                    <div id="slider" class="flexslider">
+                        <ul class="slides">
+                            <?php foreach (json_decode($product->variants[0]->media_variant) as $key => $value): ?>
+                                <li>
+                                    <img src="/views/assets/img/products/<?php echo $product->url_product ?>/<?php echo $value ?>" class="img-thumbnail">
+                                </li>
+                            <?php endforeach ?>
+                        </ul>
+                    </div>
+                    <div id="carousel" class="flexslider">
+                        <ul class="slides">
+                            <?php foreach (json_decode($product->variants[0]->media_variant) as $key => $value): ?>
+                                <li>
+                                    <img src="/views/assets/img/products/<?php echo $product->url_product ?>/<?php echo $value ?>" class="img-thumbnail">
+                                </li>
+                            <?php endforeach ?>
+                        </ul>
+                    </div>
                 <?php else: $video = explode("/", $product->variants[0]->media_variant); ?>
                     <iframe width="100%" height="315" src="https://www.youtube.com/embed/<?php echo end($video) ?>" title="Youtube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 <?php endif ?>
@@ -83,5 +98,5 @@ if (!empty($product)) {
         </div>
     </div>
 </div>
-</div>
-</div>
+
+<script src="<?php echo $path ?>views/assets/js/product/product.js"></script>
