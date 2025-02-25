@@ -60,3 +60,28 @@ $(document).on("change", ".changeVariant", function () {
     });
   }
 });
+
+/*=============================================
+Aplicar Sticky al bloque Media
+=============================================*/
+if (window.matchMedia("(min-width:768px)").matches) {
+  var sticky = new Sticky(".blockMedia");
+  var topMedia = $(".blockMedia").offset().top;
+
+  $(window).scroll(function (event) {
+    var scrollTop = $(window).scrollTop();
+    var footerTop = $(".footerBlock").offset().top;
+    var blockMedia = $(".blockMedia").height();
+
+    if (scrollTop > footerTop - blockMedia) {
+      $(".blockMedia")[0].sticky.active = false;
+
+      $(".blockMedia").css({
+        position: "relative",
+        left: "0px",
+      });
+    } else {
+      $(".blockMedia")[0].sticky.active = true;
+    }
+  });
+}

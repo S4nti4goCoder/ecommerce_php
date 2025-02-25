@@ -1,4 +1,4 @@
-<div class="container-fluid bg-dark small">
+<div class="container-fluid bg-dark small footerBlock">
     <div class="container py-5 text-light">
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
             <div class="col row">
