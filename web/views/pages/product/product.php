@@ -62,7 +62,25 @@ if (!empty($product)) {
                 <h1 class="d-none d-md-block text-center">
                     <?php echo $product->name_product ?>
                 </h1>
-
+                <!-- Precio y oferta -->
+                <?php if ($product->variants[0]->offer_variant > 0): ?>
+                    <div class="blockPrice">
+                        <h5 class="my-3 text-center font-weight-bold text-danger">¡Aprovecha la PROMO y llévalo a un increíble precio!<br>↓↓↓</h5>
+                        <h3 class="text-center">ANTES <s>$<?php echo number_format($product->variants[0]->price_variant, 2) ?></s></h3>
+                        <h3 class="text-center">
+                            <span class="text-success pt-4">AHORA $<?php echo number_format($product->variants[0]->offer_variant, 2) ?> </span>
+                            <span class="ml-2 px-2 p-1 small rounded-pill" style="font-size: 16px; position:relative; top:-4px; border:2px solid #000 !important">
+                                AHORRE $<?php echo number_format(($product->variants[0]->offer_variant - $product->variants[0]->price_variant), 2) ?>
+                            </span>
+                        </h3>
+                    </div>
+                <?php else: ?>
+                    <div class="blockPrice">
+                        <h2 class="text-center">
+                            <span class="text-success pt-4">$<?php echo number_format($product->variants[0]->price_variant, 2) ?></span>
+                        </h2>
+                    </div>
+                <?php endif ?>
                 <!-- Variantes -->
                 <?php if (count($product->variants) > 1): ?>
                     <div class="my-4">

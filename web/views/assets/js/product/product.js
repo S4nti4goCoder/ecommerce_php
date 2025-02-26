@@ -59,6 +59,38 @@ $(document).on("change", ".changeVariant", function () {
       }
     });
   }
+  
+  /*=============================================
+  Cambiar precio
+  =============================================*/
+  if (variant.offer_variant > 0) {
+    $(".blockPrice").html(`
+      <h5 class="my-3 text-center font-weight-bold text-danger">¡Aprovecha la PROMO y llévalo a un increíble precio!<br>↓↓↓</h5>
+
+			<h3 class="text-center">ANTES 
+				<s>$${Number(variant.price_variant).toFixed(2)}</s>
+			</h3>
+
+			<h3 class="text-center">
+				<span class="text-success pt-4">AHORA ${Number(variant.offer_variant).toFixed(
+          2
+        )}</span>
+				<span class="ml-2 px-2 p-1 small rounded-pill" 
+				style="font-size: 16px; position:relative; top:-4px; border:2px solid #000 !important">
+					AHORRE $${(
+            Number(variant.offer_variant) - Number(variant.price_variant)
+          ).toFixed(2)}			
+				</span>
+			</h3>
+    `);
+  } else {
+    $(".blockPrice").html(`
+
+      <h2 class="text-center"><span class="text-success pt-4">$${Number(
+        variant.price_variant
+      ).toFixed(2)}</span></h2>  
+   `);
+  }
 });
 
 /*=============================================
@@ -75,10 +107,10 @@ if (window.matchMedia("(min-width:768px)").matches) {
 
     if (scrollTop > footerTop - blockMedia) {
       $(".blockMedia")[0].sticky.active = false;
-
       $(".blockMedia").css({
         position: "relative",
         left: "0px",
+        top: footerTop - (blockMedia + topMedia) + "px",
       });
     } else {
       $(".blockMedia")[0].sticky.active = true;
