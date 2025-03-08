@@ -59,7 +59,7 @@ $(document).on("change", ".changeVariant", function () {
       }
     });
   }
-  
+
   /*=============================================
   Cambiar precio
   =============================================*/
@@ -90,6 +90,29 @@ $(document).on("change", ".changeVariant", function () {
         variant.price_variant
       ).toFixed(2)}</span></h2>  
    `);
+  }
+
+  /*=============================================
+  Cambiar fecha de finalización oferta
+  =============================================*/
+  if (variant.offer_variant > 0) {
+    $(".countdown").show();
+    if (variant.end_offer_variant != "0000-00-00") {
+      $(".countdown").attr("ddate", variant.end_offer_variant);
+      countDown();
+    } else {
+      $(".countdown").attr(
+        "ddate",
+        new Date().getFullYear() +
+          "-" +
+          new Date().getMonth() +
+          "-" +
+          new Date().getDay()
+      );
+      countDown();
+    }
+  } else {
+    $(".countdown").hide();
   }
 });
 

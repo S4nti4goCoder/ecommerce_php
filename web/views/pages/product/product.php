@@ -74,6 +74,31 @@ if (!empty($product)) {
                             </span>
                         </h3>
                     </div>
+
+                    <!-- Descontador de tiempo -->
+                    <div
+                        class="container-fluid countdown"
+                        dsize="col-12"
+                        dlanguage="es"
+                        dtimezone="America/Bogota"
+                        ddate="<?php if ($product->variants[0]->end_offer_variant != "0000-00-00"): ?><?php echo $product->variants[0]->end_offer_variant ?><?php else: ?><?php echo date("Y-m-d") ?><?php endif ?> 00:00"
+                        dbackground="#009B9D"
+                        ddigitscolor="#333"
+                        dunitscolor="#333"
+                        dcycle="1"
+                        style="position:relative;">
+                        <div class="container">
+                            <div class="row">
+                                <div class="sizeCountdown col">
+                                    <h5 class="medium colorText text-dark text-center font-weight-light">
+                                        En poco tiempo esta oferta termina</h5>
+                                    <iframe class="frame-countdown w-100" src="" frameborder="0" scrolling="no"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script src="<?php echo $path ?>views/assets/js/plugins/countdown/countdown.min.js"></script>
+
                 <?php else: ?>
                     <div class="blockPrice">
                         <h2 class="text-center">
