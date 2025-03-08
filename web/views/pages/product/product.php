@@ -31,6 +31,15 @@ if (!empty($product)) {
     <hr style="color: #000;">
     <div class="container py-4">
         <div class="row row-cols-1 row-cols-md-2">
+
+            <!-- Título Producto Móvil -->
+            <h1 class="d-block d-md-none text-center">
+                <?php echo $product->name_product ?><br>
+                <?php for ($i = 0; $i < 5; $i++): ?>
+                    <span class="text-warning">★</span>
+                <?php endfor ?>
+            </h1>
+
             <!-- Bloque galeria o video -->
             <div class="col">
                 <figure class="blockMedia">
@@ -44,7 +53,7 @@ if (!empty($product)) {
                                 <?php endforeach ?>
                             </ul>
                         </div>
-                        <div id="carousel" class="flexslider">
+                        <div id="carousel" class="flexslider d-none d-md-block">
                             <ul class="slides">
                                 <?php foreach (json_decode($product->variants[0]->media_variant) as $key => $value): ?>
                                     <li>

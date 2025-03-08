@@ -37,6 +37,8 @@ $(document).on("change", ".changeVariant", function () {
     Cambiar la galeria de imagenes
     =============================================*/
   if (variant.type_variant == "gallery") {
+    $(".blockQuantity").show();
+    $(".pulseAnimation").parent().addClass("col-md-9");
     $(".blockMedia").html(`
         <div id="slider" class="flexslider" style="margin-bottom:-4px">
             <ul class="slides"></ul>
@@ -58,6 +60,18 @@ $(document).on("change", ".changeVariant", function () {
         activateFlexSlider();
       }
     });
+  }
+
+  /*=============================================
+    Cambiar el video
+    =============================================*/
+  if (variant.type_variant == "video") {
+    $(".blockQuantity").hide();
+    $(".pulseAnimation").parent().removeClass("col-md-9");
+    var idVideo = variant.media_variant.split("/").pop();
+    $(".blockMedia").html(`
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/${idVideo}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    `);
   }
 
   /*=============================================
@@ -167,3 +181,17 @@ if (window.matchMedia("(min-width:768px)").matches) {
     }
   });
 }
+
+/*=============================================
+Aumentar y disminuir la cantidad
+=============================================*/
+$(".btnInc").click(function () {
+  if ($(this).attr("type") == "btnMin") {
+    if (Number($(".showQuantity").val()) > 1) {
+      $(".showQuantity").val(Number($(".showQuantity").val()) - 1);
+    }
+  }
+  if ($(this).attr("type") == "btnMax") {
+    $(".showQuantity").val(Number($(".showQuantity").val()) + 1);
+  }
+});
