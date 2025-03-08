@@ -114,6 +114,33 @@ $(document).on("change", ".changeVariant", function () {
   } else {
     $(".countdown").hide();
   }
+
+  /*=============================================
+  Cambiar stock
+  =============================================*/
+  if (variant.stock_variant > 0) {
+    $(".blockStock").html(`
+  			<p class="text-center lead font-weight-bold">🔥 ¡Sólo ${variant.stock_variant} unidades disponibles! 🔥</p>
+				<div class="progress">
+				  <div class="progress-bar bg-danger" style="width:30%"></div>
+				</div>
+	  `);
+  } else {
+    function numeroAleatorio(min, max) {
+      return Math.round(Math.random() * (max - min) + min);
+    }
+    var sales = numeroAleatorio(300, 500);
+    var stock = numeroAleatorio(10, 20);
+    $(".blockStock").html(`
+				<p class="text-center lead font-weight-bold">
+				🔥 ¡${sales} vendidos - Sólo ${stock} unidades disponibles! 🔥 </p>
+				<div class="progress">
+			  		<div class="progress-bar bg-danger" style="width:${
+              (stock * 100) / (sales / 5)
+            }%"></div>
+				</div>
+		`);
+  }
 });
 
 /*=============================================

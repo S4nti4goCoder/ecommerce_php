@@ -25,6 +25,8 @@ if (!empty($product)) {
 
 ?>
 
+<link rel="stylesheet" href="<?php echo $path ?>views/assets/css/product/product.css">
+
 <div class="container-fluid bg-white">
     <hr style="color: #000;">
     <div class="container py-4">
@@ -61,6 +63,10 @@ if (!empty($product)) {
                 <!-- Titulo -->
                 <h1 class="d-none d-md-block text-center">
                     <?php echo $product->name_product ?>
+                    <br>
+                    <?php for ($i = 0; $i < 5; $i++): ?>
+                        <span class="text-warning">★</span>
+                    <?php endfor ?>
                 </h1>
                 <!-- Precio y oferta -->
                 <?php if ($product->variants[0]->offer_variant > 0): ?>
@@ -130,18 +136,50 @@ if (!empty($product)) {
                     </div>
                 <?php endif ?>
 
-                <!-- Boton de compra -->
-                <div class="row my-4">
-                    <div class="col-12 col-md-3">
-                        <div class="input-group mb-3 mt-2">
-                            <span class="input-group-text btnInc" type="btnMin"><i class="fas fa-minus"></i></span>
-                            <input type="number" class="form-control text-center showQuantity" onwheel="return false;" value="1">
-                            <span class="input-group-text btnInc" type="btnMin"><i class="fas fa-plus"></i></span>
+                <!-- Stock -->
+                <?php if ($product->variants[0]->stock_variant == 0): ?>
+                    <?php
+                    $sales = rand(300, 500);
+                    $stock = rand(10, 20);
+                    ?>
+                    <div class="blockStock">
+                        <p class="text-center lead font-weight-bold">
+                            🔥 ¡<?php echo $sales ?> vendidos - Sólo <?php echo $stock ?> unidades disponibles! 🔥 </p>
+                        <div class="progress">
+                            <div class="progress-bar bg-danger" style="width:<?php echo $stock * 100 / ($sales / 5) ?>%"></div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-9">
-                        <button class="btn btn-dark btn-block font-weight-bold py-3">¡AGREGAR AL CARRITO!</button>
+                <?php else: ?>
+                    <div class="blockStock">
+                        <p class="text-center lead font-weight-bold">🔥 ¡Sólo <?php echo $product->variants[0]->stock_variant ?> unidades disponibles! 🔥</p>
+                        <div class="progress">
+                            <div class="progress-bar bg-danger" style="width:30%"></div>
+                        </div>
                     </div>
+                <?php endif ?>
+
+                <!-- Boton de compra -->
+                <div class="row my-4">
+                    <?php if ($product->variants[0]->type_variant == "gallery"): ?>
+                        <div class="col-12 col-md-3 blockQuantity">
+                            <div class="input-group mb-3 mt-2">
+                                <span class="input-group-text btnInc" type="btnMin">
+                                    <i class="fas fa-minus"></i>
+                                </span>
+                                <input type="number" class="form-control text-center showQuantity" onwheel="return false;" value="1">
+                                <span class="input-group-text btnInc" type="btnMax">
+                                    <i class="fas fa-plus"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-9">
+                            <button class="btn btn-dark btn-block font-weight-bold py-3 pulseAnimation">¡AGREGAR AL CARRITO!</button>
+                        </div>
+                    <?php else: ?>
+                        <div class="col-12">
+                            <button class="btn btn-dark btn-block font-weight-bold py-3 pulseAnimation">¡AGREGAR AL CARRITO!</button>
+                        </div>
+                    <?php endif ?>
                 </div>
                 <!-- Descripcion del producto -->
                 <div class="text-center">
