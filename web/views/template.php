@@ -270,6 +270,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             include "pages/home/home.php";
         }
         include "modules/footer.php";
+        include "modules/modals.php";
         ?>
     </div>
     <!-- REQUIRED SCRIPTS -->
