@@ -18,6 +18,7 @@ class UsersController
                 /*=============================================
 				Registro de Usuarios
 				=============================================*/
+                $confirm_user = TemplateController::genPassword(20);
                 $url = "users?register=true&suffix=user";
                 $method = "POST";
                 $fields = array(
@@ -26,16 +27,38 @@ class UsersController
                     "password_user" => $_POST["password_user"],
                     "method_user" => "directo",
                     "verification_user" => 0,
-                    "confirm_user" => TemplateController::genPassword(20),
+                    "confirm_user" => $confirm_user,
                     "date_created_user" => date("Y-m-d")
                 );
                 $register = CurlController::request($url, $method, $fields);
                 if ($register->status == 200) {
-                    echo '<script>
+                    /*=============================================
+					Enviamos correo de confirmación
+					=============================================*/
+                    $subject = 'Registro - Ecommerce';
+                    $email = $_POST["email_user"];
+                    $title = 'CONFIRMAR CORREO ELECTRÓNICO';
+                    $message = '<h4 style="font-weight: 100; color:#999; padding:0px 20px">Dar clic en el siguiente botón para confirmar su correo electrónico y activar su cuenta</h4>';
+                    $link = TemplateController::path() . '?confirm=' . $confirm_user;
+                    $sendEmail = TemplateController::sendEmail($subject, $email, $title, $message, $link);
+                    if ($sendEmail == "ok") {
+
+                        echo '<script>
+
 								fncFormatInputs();
 								fncMatPreloader("off");
 								fncToastr("success", "Su cuenta ha sido creada, revisa tu correo electrónico para activar tu cuenta");
-					</script>';
+
+							</script>
+						';
+                    } else {
+                        echo '<script>
+							fncFormatInputs();
+							fncMatPreloader("off");
+							fncNotie("error", "' . $sendEmail . '");
+							</script>
+						';
+                    }
                 }
             } else {
                 echo '<div class="alert alert-danger mt-3">Error de sintaxis en los campos</div>
