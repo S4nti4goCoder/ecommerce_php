@@ -39,6 +39,10 @@ function validateDataRepeat(event, type) {
     var table = "products";
     var linkTo = "name_product";
   }
+  if (type == "email") {
+    var table = "users";
+    var linkTo = "email_user";
+  }
   var value = event.target.value;
 
   var data = new FormData();
@@ -55,15 +59,19 @@ function validateDataRepeat(event, type) {
     processData: false,
     success: function (response) {
       if (response == 404) {
-        validateJS(event, "complete");
-        createUrl(event, "url_" + type);
-        $(".metaTitle").html(value);
+        if (type == "email") {
+          validateJS(event, "email");
+        } else {
+          validateJS(event, "complete");
+          createUrl(event, "url_" + type);
+          $(".metaTitle").html(value);
+        }
       } else {
         $(event.target).parent().addClass("was-validated");
         $(event.target)
           .parent()
           .children(".invalid-feedback")
-          .html("El nombre ya existe en la base de datos");
+          .html("El registro ya existe en la base de datos");
 
         event.target.value = "";
         return;
@@ -77,7 +85,10 @@ function createUrl(event, input) {
   var value = event.target.value;
 
   value = value.toLowerCase();
-  value = value.replace(/[#\\;\\$\\&\\%\\=\\(\\)\\:\\,\\'\\"\\.\\¿\\¡\\!\\?\\]/g,"");
+  value = value.replace(
+    /[#\\;\\$\\&\\%\\=\\(\\)\\:\\,\\'\\"\\.\\¿\\¡\\!\\?\\]/g,
+    ""
+  );
   value = value.replace(/[ ]/g, "-");
   value = value.replace(/[á]/g, "a");
   value = value.replace(/[é]/g, "e");

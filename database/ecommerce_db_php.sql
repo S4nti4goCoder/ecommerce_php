@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-03-2025 a las 02:14:01
+-- Tiempo de generación: 14-03-2025 a las 06:14:15
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -256,6 +256,38 @@ INSERT INTO `templates` (`id_template`, `logo_template`, `icon_template`, `cover
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `users`
+--
+
+CREATE TABLE `users` (
+  `id_user` int(11) NOT NULL,
+  `name_user` text DEFAULT NULL,
+  `email_user` text DEFAULT NULL,
+  `password_user` text DEFAULT NULL,
+  `token_user` text DEFAULT NULL,
+  `token_exp_user` text DEFAULT NULL,
+  `method_user` text DEFAULT NULL,
+  `verification_user` int(11) NOT NULL DEFAULT 0,
+  `confirm_user` text DEFAULT NULL,
+  `country_user` text DEFAULT NULL,
+  `department_user` text DEFAULT NULL,
+  `city_user` text DEFAULT NULL,
+  `address_user` text DEFAULT NULL,
+  `phone_user` text DEFAULT NULL,
+  `date_created_user` date DEFAULT NULL,
+  `date_updated_user` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `users`
+--
+
+INSERT INTO `users` (`id_user`, `name_user`, `email_user`, `password_user`, `token_user`, `token_exp_user`, `method_user`, `verification_user`, `confirm_user`, `country_user`, `department_user`, `city_user`, `address_user`, `phone_user`, `date_created_user`, `date_updated_user`) VALUES
+(1, 'Santiago Quintero', 'quintiagogarciadev@gmail.com', '$2a$07$azybxcags23425sdg23sdeanQZqjaf6Birm2NvcYTNtJw24CsO5uq', NULL, NULL, 'directo', 0, 'd2bqyt73ovnfwzcu5h81', NULL, NULL, NULL, NULL, NULL, '2025-03-14', '2025-03-14 05:12:39');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `variants`
 --
 
@@ -314,7 +346,7 @@ INSERT INTO `variants` (`id_variant`, `id_product_variant`, `type_variant`, `med
 (34, 14, 'gallery', '[\"84223.jpg\",\"93685.jpg\"]', 'Conjunto Beige', 100, 200, '150', '0000-00-00', 100, '2024-11-26', '2024-11-26 01:01:45'),
 (35, 14, 'gallery', '[\"37363.jpg\",\"40882.jpg\"]', 'Conjunto Azul', 100, 200, '150', '0000-00-00', 100, '2024-11-26', '2024-11-26 01:01:46'),
 (36, 15, 'gallery', '[\"36604.jpg\",\"70236.jpg\"]', 'Conjunto Azul', 100, 200, '150', '0000-00-00', 100, '2024-11-26', '2025-03-08 00:56:26'),
-(37, 15, 'gallery', '[\"14735.jpg\",\"62813.jpg\"]', 'Conjunto Blanco', 100, 180, '140', '2025-03-08', 0, '2024-11-26', '2025-03-08 00:57:42'),
+(37, 15, 'gallery', '[\"14735.jpg\",\"62813.jpg\"]', 'Conjunto Blanco', 100, 180, '140', '2025-03-08', 0, '2024-11-26', '2025-03-08 02:52:03'),
 (38, 15, 'gallery', '[\"77206.jpg\",\"36148.jpg\"]', 'Conjunto Beige', 100, 210, '180', '0000-00-00', 30, '2024-11-26', '2025-03-08 00:57:59'),
 (39, 16, 'gallery', '[\"33576.jpg\",\"98293.jpg\"]', 'Conjunto Beige', 100, 200, '150', '0000-00-00', 100, '2024-11-26', '2024-11-26 01:21:26'),
 (40, 16, 'gallery', '[\"33782.jpg\",\"13081.jpg\"]', 'Conjunto Blanco', 100, 200, '150', '0000-00-00', 100, '2024-11-26', '2024-11-26 01:21:26'),
@@ -398,6 +430,12 @@ ALTER TABLE `templates`
   ADD PRIMARY KEY (`id_template`);
 
 --
+-- Indices de la tabla `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id_user`);
+
+--
 -- Indices de la tabla `variants`
 --
 ALTER TABLE `variants`
@@ -443,6 +481,12 @@ ALTER TABLE `subcategories`
 --
 ALTER TABLE `templates`
   MODIFY `id_template` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `users`
+--
+ALTER TABLE `users`
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `variants`

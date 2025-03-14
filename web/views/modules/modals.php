@@ -177,6 +177,11 @@ MODAL INGRESO AL SISTEMA
                         <a href="#resetPasswordUser" data-bs-toggle="modal">¿Olvidaste la Contraseña? Haz clic aquí</a>
                     </p>
                     <button class="btn btn-block bg-default templateColor">Ingresar</button>
+                    <?php
+                    require_once "controllers/users.controller.php";
+                    $register = new UsersController();
+                    $register->register();
+                    ?>
                 </form>
             </div>
             <!-- Modal footer -->
