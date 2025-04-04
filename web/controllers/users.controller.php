@@ -71,4 +71,53 @@ class UsersController
             }
         }
     }
+
+    /*=============================================
+	Ingreso de usuarios
+	=============================================*/
+    public function login()
+    {
+        if (isset($_POST["login_email_user"])) {
+            echo '<script>
+				fncMatPreloader("on");
+				fncSweetAlert("loading", "procesando...", "");
+			</script>';
+            if (preg_match('/^[.a-zA-Z0-9_]+([.][.a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["login_email_user"])) {
+                $url = "users?login=true&suffix=user";
+                $method = "POST";
+                $fields = array(
+                    "email_user" => $_POST["login_email_user"],
+                    "password_user" => $_POST["login_password_user"]
+                );
+                $login = CurlController::request($url, $method, $fields);
+                if ($login->status == 200) {
+                    $_SESSION["user"] = $login->results[0];
+                     echo '<script>
+                     	localStorage.setItem("token-user", "'. $login->results[0]->token_user.'")
+                     	window.location="'.TemplateController::urlRedirect().'"
+                    </script>';
+                } else {
+                    $error = null;
+                    if ($login->results == "Wrong email") {
+                        $error = "Correo o Contraseña incorrectos";
+                    } else {
+                        $error = "Correo o Contraseña incorrectos";
+                    }
+                    echo '<div class="alert alert-danger mt-3">Error al ingresar: ' . $error . '</div>
+					<script>
+						fncToastr("error","Error al ingresar: ' . $error . '");
+						fncMatPreloader("off");
+						fncFormatInputs();
+					</script>';
+                }
+            } else {
+                echo '<div class="alert alert-danger mt-3">Error de sintaxis en los campos</div>
+				<script>
+				    fncToastr("error","Error de sintaxis en los campos");
+					fncMatPreloader("off");
+					fncFormatInputs();
+				</script>';
+            }
+        }
+    }
 }

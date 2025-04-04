@@ -179,8 +179,8 @@ MODAL INGRESO AL SISTEMA
                     <button class="btn btn-block bg-default templateColor">Ingresar</button>
                     <?php
                     require_once "controllers/users.controller.php";
-                    $register = new UsersController();
-                    $register->register();
+                    $login = new UsersController();
+                    $login->login();
                     ?>
                 </form>
             </div>
