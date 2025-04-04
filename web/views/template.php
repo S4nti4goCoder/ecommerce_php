@@ -243,6 +243,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             //Filtro de lista blanca
             if (
                 $routesArray[0] == "admin" ||
+                $routesArray[0] == "perfil" ||
                 $routesArray[0] == "salir" ||
                 $routesArray[0] == "no-found"
             ) {
