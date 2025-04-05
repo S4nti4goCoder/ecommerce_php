@@ -630,3 +630,10 @@ Agregar codigo telefónico
 function changeCountry(event) {
   $(".dialCode").html(event.target.value.split("_")[1]);
 }
+
+/*=============================================
+Activar select 2
+=============================================*/
+if ($(".select2").length > 0) {
+  $(".select2").select2();
+}

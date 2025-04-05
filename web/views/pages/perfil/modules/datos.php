@@ -152,7 +152,7 @@
                             <textarea
                                 class="form-control p-2"
                                 id="address"
-                                rows="3"
+                                rows="1"
                                 onchange="validateJS(event,'complete')"
                                 name="address_user"><?php echo $_SESSION["user"]->address_user ?></textarea>
                         </div>
