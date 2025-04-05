@@ -193,3 +193,4 @@ MODAL INGRESO AL SISTEMA
         </div>
     </div>
 </div>
+<script src="<?php echo $path ?>views/assets/js/forms/forms.js"></script>

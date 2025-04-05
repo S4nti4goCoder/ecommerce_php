@@ -13,6 +13,11 @@
                 </div>
             </div>
         </div>
+        <?php
+        require_once "controllers/users.controller.php";
+        $modify = new UsersController();
+        $modify->modify();
+        ?>
         <div class="row row-cols-1 row-cols-md-2">
             <div class="col">
                 <div class="card">
@@ -130,7 +135,9 @@
                                     type="text"
                                     class="form-control"
                                     id="phone"
-                                    value="<?php echo $_SESSION["user"]->phone_user ?>"
+                                    value="<?php if ($_SESSION["user"]->phone_user != null) {
+                                                echo explode("_", $_SESSION["user"]->phone_user)[1];
+                                            } ?>"
                                     name="phone_user"
                                     required
                                     data-inputmask="'mask': ['999-999-9999']"

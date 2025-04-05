@@ -166,4 +166,45 @@ class UsersController
             }
         }
     }
+
+    /*=============================================
+	Modificar datos de usuarios
+	=============================================*/
+    public function modify()
+    {
+        if (isset($_POST["country_user"])) {
+            echo '<script>
+				fncMatPreloader("on");
+				fncSweetAlert("loading", "procesando...", "");
+			</script>';
+            $password_user;
+
+            if (!empty($_POST["password_user"])) {
+                $password_user = crypt($_POST["password_user"], '$2a$07$azybxcags23425sdg23sdfhsd$');
+
+                $fields = "name_user=" . TemplateController::capitalize(trim($_POST["name_user"])) . "&password_user=" . $password_user . "&country_user=" . explode("_", $_POST["country_user"])[0] . "&department_user=" . TemplateController::capitalize(trim($_POST["department_user"])) . "&city_user=" . TemplateController::capitalize(trim($_POST["city_user"])) . "&address_user=" . trim(urlencode($_POST["address_user"])) . "&phone_user=" . str_replace("+", "", explode("_", $_POST["country_user"])[1]) . "_" . str_replace("-", "", $_POST["phone_user"]);
+            } else {
+                $fields = "name_user=" . TemplateController::capitalize(trim($_POST["name_user"])) . "&country_user=" . explode("_", $_POST["country_user"])[0] . "&department_user=" . TemplateController::capitalize(trim($_POST["department_user"])) . "&city_user=" . TemplateController::capitalize(trim($_POST["city_user"])) . "&address_user=" . trim(urlencode($_POST["address_user"])) . "&phone_user=" . str_replace("+", "", explode("_", $_POST["country_user"])[1]) . "_" . str_replace("-", "", $_POST["phone_user"]);
+            }
+
+            $url = "users?id=" . $_SESSION["user"]->id_user . "&nameId=id_user&token=" . $_SESSION["user"]->token_user . "&table=users&suffix=user";
+            $method = "PUT";
+
+            $modify = CurlController::request($url, $method, $fields);
+
+            if ($modify->status == 200) {
+                $_SESSION["user"]->name_user = TemplateController::capitalize(trim($_POST["name_user"]));
+                $_SESSION["user"]->country_user = explode("_", $_POST["country_user"])[0];
+                $_SESSION["user"]->department_user = TemplateController::capitalize(trim($_POST["department_user"]));
+                $_SESSION["user"]->city_user = TemplateController::capitalize(trim($_POST["city_user"]));
+                $_SESSION["user"]->address_user = trim($_POST["address_user"]);
+                $_SESSION["user"]->phone_user = str_replace("+", "", explode("_", $_POST["country_user"])[1]) . "_" . str_replace("-", "", $_POST["phone_user"]);
+                echo '<script>
+						fncFormatInputs();
+						fncMatPreloader("off");
+						fncToastr("success", "Se han actualizado tus datos");
+					</script>';
+            }
+        }
+    }
 }
