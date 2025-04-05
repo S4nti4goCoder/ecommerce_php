@@ -591,7 +591,9 @@ $(document).on("click", ".addVariant", function () {
   initDropzone(variantItem);
 });
 
-//Quitar Variante
+/*=============================================
+Quitar Variante
+=============================================*/
 $(document).on("click", ".deleteVariant", function () {
   $(this).parent().parent().parent().parent().parent().remove();
 
@@ -621,3 +623,10 @@ $(document).on("click", ".deleteVariant", function () {
     });
   }
 });
+
+/*=============================================
+Agregar codigo telefónico
+=============================================*/
+function changeCountry(event) {
+  $(".dialCode").html(event.target.value.split("_")[1]);
+}

@@ -69,15 +69,26 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="mb-3 mt-3">
+                            <?php
+                            $data = file_get_contents("views/assets/json/countries.json");
+                            $countries = json_decode($data, true);
+                            ?>
                             <label for="country" class="form-label">País:</label>
-                            <input
-                                type="text"
-                                class="form-control"
+                            <select
                                 id="country"
-                                value="<?php echo $_SESSION["user"]->country_user ?>"
+                                class="form-control select2"
                                 name="country_user"
-                                onchange="validateJS(event,'text')"
-                                required>
+                                onchange="changeCountry(event)">
+                                <?php if ($_SESSION["user"]->country_user != null): ?>
+                                    <option value="<?php echo $_SESSION["user"]->country_user ?>_<?php echo explode("_", $_SESSION["user"]->phone_user)[0] ?>"><?php echo $_SESSION["user"]->country_user ?></option>
+                                <?php else: ?>
+                                    <option value="">Seleccionar País</option>
+                                    <?php foreach ($countries as $key => $value): ?>
+                                        <option value="<?php echo $value["name"] ?>_<?php echo $value["dial_code"] ?>"><?php echo $value["name"] ?></option>
+                                    <?php endforeach ?>
+                                <?php endif ?>
+                            </select>
+
                             <div class="valid-feedback">Válido.</div>
                             <div class="invalid-feedback">Por favor llena este campo correctamente.</div>
                         </div>
@@ -109,17 +120,24 @@
                         </div>
                         <div class="mb-3 mt-3">
                             <label for="phone" class="form-label">Número celular:</label>
-                            <input
-                                type="text"
-                                class="form-control"
-                                id="phone"
-                                value="<?php echo $_SESSION["user"]->phone_user ?>"
-                                name="phone_user"
-                                required
-                                data-inputmask="'mask': ['999-999-9999']"
-                                data-mask>
-                            <div class="valid-feedback">Válido.</div>
-                            <div class="invalid-feedback">Por favor llena este campo correctamente.</div>
+                            <div class="input-group">
+                                <?php if ($_SESSION["user"]->phone_user != null): ?>
+                                    <span class="input-group-text dialCode">+<?php echo explode("_", $_SESSION["user"]->phone_user)[0] ?></span>
+                                <?php else: ?>
+                                    <span class="input-group-text dialCode">+00</span>
+                                <?php endif ?>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="phone"
+                                    value="<?php echo $_SESSION["user"]->phone_user ?>"
+                                    name="phone_user"
+                                    required
+                                    data-inputmask="'mask': ['999-999-9999']"
+                                    data-mask>
+                                <div class="valid-feedback">Válido.</div>
+                                <div class="invalid-feedback">Por favor llena este campo correctamente.</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -144,3 +162,4 @@
         </div>
     </form>
 </div>
+<script src="<?php echo $path ?>views/assets/js/forms/forms.js"></script>
