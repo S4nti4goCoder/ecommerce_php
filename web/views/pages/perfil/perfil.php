@@ -31,7 +31,7 @@
         </ul>
         <div class="tab-content border-bottom border-left border-right">
             <div class="tab-pane container active" id="data">
-                Acá van los datos
+                <?php include "modules/datos.php" ?>
             </div>
             <div class="tab-pane container fade" id="favorite">
                 Acá van los productos favoritos
