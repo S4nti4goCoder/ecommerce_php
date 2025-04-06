@@ -22,7 +22,7 @@ MODAL CREAR CUENTA
                     REGISTRO CON GOOGLE
                     ======================================-->
                     <div class="col-12 text-center p-0 rounded-0">
-                        <a href="#">
+                        <a href="<?php echo $path ?>google?urlRedirect=<?php echo TemplateController::urlRedirect() ?>">
                             <p class="py-3 google mx-2">
                                 <i class="fab fa-google mr-3"></i>
                                 Registro con Google
@@ -116,7 +116,7 @@ MODAL INGRESO AL SISTEMA
                     INGRESO CON GOOGLE
                     ======================================-->
                     <div class="col-12 text-center p-0 rounded-0">
-                        <a href="#">
+                        <a href="<?php echo $path ?>google?urlRedirect=<?php echo TemplateController::urlRedirect() ?>">
                             <p class="py-3 google mx-2">
                                 <i class="fab fa-google mr-3"></i>
                                 Registro con Google

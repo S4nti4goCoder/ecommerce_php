@@ -1,20 +1,54 @@
 <?php
-/* Iniciar variables de sesión */
+
+/*=============================================
+Iniciar variables de sesión
+=============================================*/
 ob_start();
 session_start();
 
-/* Variable Path */
+/*=============================================
+Variable Path
+=============================================*/
 $path = TemplateController::path();
 
-/* Capturar las rutas de la URL */
+/*=============================================
+Capturar las rutas de la URL
+=============================================*/
 $routesArray = explode("/", $_SERVER["REQUEST_URI"]);
 array_shift($routesArray);
+
+/*=============================================
+Cuando utilizamos localhost
+=============================================*/
+if ($_SERVER["SERVER_NAME"] == "localhost") {
+
+    $routesArray = array_slice($routesArray, 2);
+    $path = $path . "ecommerce_php/web/";
+    // echo '<pre>'; print_r($routesArray); echo '</pre>';
+
+}
 
 foreach ($routesArray as $key => $value) {
     $routesArray[$key] = explode("?", $value)[0];
 }
 
-/* Solicitud GET de Template */
+/*=============================================
+Registro - Google
+=============================================*/
+if (!empty($routesArray[0])) {
+    if ($routesArray[0] == "google") {
+        require_once "controllers/users.controller.php";
+        if (isset($_GET["urlRedirect"])) {
+            $response = UsersController::socialConnect($routesArray[0], $_GET["urlRedirect"]);
+        } else {
+            $response = UsersController::socialConnect($routesArray[0], null);
+        }
+    }
+}
+
+/*=============================================
+Solicitud GET de Template
+=============================================*/
 $url = "templates?linkTo=active_template&equalTo=ok";
 $method = "GET";
 $fields = array();

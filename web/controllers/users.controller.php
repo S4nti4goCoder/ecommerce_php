@@ -277,4 +277,114 @@ class UsersController
             }
         }
     }
+
+    /*=============================================
+	Conexión con redes sociales
+	=============================================*/
+    static public function socialConnect($type, $urlRedirect)
+    {
+        if ($type == "google") {
+
+            /*=============================================
+			Conexión con google
+			=============================================*/
+            $client = new Google\Client();
+            $client->setAuthConfig('views/assets/json/client_secret.json');
+            $client->setScopes(['profile', 'email']);
+            $client->setRedirectUri('http://ecommerce.com/google');
+            $fullUrl = $client->createAuthUrl();
+
+            /*=============================================
+			Redireccionamos nuestro sitio hacia Google
+			=============================================*/
+            if (!isset($_GET["code"])) {
+                if ($urlRedirect != null) {
+                    setcookie("urlRedirect", $urlRedirect, time() + 30 * 24 * 60 * 60);
+                }
+                echo '<script>
+					window.location = "' . $fullUrl . '";
+				</script>';
+            } else {
+
+                /*=============================================
+				Solicitamos access token de google
+				=============================================*/
+                $token = $client->fetchAccessTokenWithAuthCode($_GET["code"]);
+                $_SESSION["id_token_google"] = $token;
+                $client->setAccessToken($token);
+
+                /*=============================================
+				Recibimos datos de google en un array
+				=============================================*/
+                if ($client->getAccessToken()) {
+                    $userData = $client->verifyIdToken();
+                    if (!empty($userData)) {
+                        if (isset($_COOKIE["urlRedirect"])) {
+                            $redirect = $_COOKIE["urlRedirect"];
+                        } else {
+                            $redirect = TemplateController::urlRedirect();
+                        }
+
+                        /*=============================================
+						Preguntamos si el usuario ya está registrado en nuestra base de datos
+						=============================================*/
+                        $url = "users?linkTo=email_user&equalTo=" . $userData["email"];
+                        $method = "GET";
+                        $fields = array();
+
+                        $user = CurlController::request($url, $method, $fields);
+
+                        /*=============================================
+						si el usuario no está registrado
+						=============================================*/
+                        if ($user->status != 200) {
+                            $url = "users?register=true&suffix=user";
+                            $method = "POST";
+                            $fields = array(
+                                "name_user" => $userData["given_name"] . " " . $userData["family_name"],
+                                "email_user"  => $userData["email"],
+                                "method_user" => "google",
+                                "verification_user" => 1,
+                                "date_created_user" => date("Y-m-d")
+
+                            );
+
+                            $register = CurlController::request($url, $method, $fields);
+                            if ($register->status == 200) {
+                                $url = "users?linkTo=email_user&equalTo=" . $userData["email"];
+                                $method = "GET";
+                                $fields = array();
+                                $login = CurlController::request($url, $method, $fields);
+                                if ($login->status == 200) {
+                                    $_SESSION["user"] = $login->results[0];
+                                    echo '<script>									
+										localStorage.setItem("token-user", "' . $login->results[0]->token_user . '")
+										window.location="' . $redirect . '"
+									</script>';
+                                }
+                            }
+
+                        /*=============================================
+						si el usuario ya está registrado
+						=============================================*/
+                        } else {
+                            if ($user->results[0]->method_user != "google") {
+                                echo '<script>
+									fncFormatInputs();
+									fncMatPreloader("off");
+									fncSweetAlert("error", "Su correo electrónico ya está registrado con el método de ingreso ' . $user->results[0]->method_user . '","' . $redirect . '");
+								</script>';
+                                return;
+                            }
+                            $_SESSION["user"] = $user->results[0];
+                            echo '<script>					
+								localStorage.setItem("token-user", "' . $user->results[0]->token_user . '")
+								window.location="' . $redirect . '"
+							</script>';
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
