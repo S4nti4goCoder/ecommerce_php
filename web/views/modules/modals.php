@@ -17,30 +17,20 @@ MODAL CREAR CUENTA
             </div>
             <!-- Modal body -->
             <div class="modal-body">
-                <div class="row row-cols-1 row-cols-sm-2">
-                    <!--=====================================
-                    REGISTRO FACEBOOK
-                    ======================================-->
-                    <div class="col-sm-6 col-xs-12 text-center p-0 rounded-0">
-                        <a href="#">
-                            <p class="py-3 facebook mx-2">
-                                <i class="fab fa-facebook-f mr-3"></i>
-                                Registro con Facebook
-                            </p>
-                        </a>
-                    </div>
+                <div class="row">
                     <!--=====================================
                     REGISTRO CON GOOGLE
                     ======================================-->
-                    <div class="col-sm-6 col-xs-12 text-center p-0 rounded-0">
+                    <div class="col-12 text-center p-0 rounded-0">
                         <a href="#">
                             <p class="py-3 google mx-2">
-                                <i class="fab fa-facebook-f mr-3"></i>
+                                <i class="fab fa-google mr-3"></i>
                                 Registro con Google
                             </p>
                         </a>
                     </div>
                 </div>
+                <hr class="p-0 mb-3" style="margin:0; border:1px solid #999">
                 <hr class="p-0 mb-3" style="margin:0; border:1px solid #999">
                 <!--=====================================
                 FORMULARIO DE REGISTRO DIRECTO
@@ -121,26 +111,15 @@ MODAL INGRESO AL SISTEMA
             </div>
             <!-- Modal body -->
             <div class="modal-body">
-                <div class="row row-cols-1 row-cols-sm-2">
-                    <!--=====================================
-                    INGRESO FACEBOOK
-                    ======================================-->
-                    <div class="col-sm-6 col-xs-12 text-center p-0 rounded-0">
-                        <a href="#">
-                            <p class="py-3 facebook mx-2">
-                                <i class="fab fa-facebook-f  mr-3"></i>
-                                Ingreso con Facebook
-                            </p>
-                        </a>
-                    </div>
+                <div class="row">
                     <!--=====================================
                     INGRESO CON GOOGLE
                     ======================================-->
-                    <div class="col-sm-6 col-xs-12 text-center p-0 rounded-0">
+                    <div class="col-12 text-center p-0 rounded-0">
                         <a href="#">
                             <p class="py-3 google mx-2">
-                                <i class="fab fa-facebook-f mr-3"></i>
-                                Ingreso con Google
+                                <i class="fab fa-google mr-3"></i>
+                                Registro con Google
                             </p>
                         </a>
                     </div>
@@ -190,6 +169,57 @@ MODAL INGRESO AL SISTEMA
                     <a href="#register" class="ml-1 btn btn-dark btn-sm text-white" data-bs-toggle="modal" style="color:white !important">Crear Cuenta</a>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+<!-- The Modal -->
+<div class="modal" id="resetPasswordUser">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Recuperar la contraseña</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+                <p class="login-box-msg">¿Olvidaste tu contraseña? Aquí puedes solicitar una nueva.</p>
+                <form method="post">
+                    <div class="input-group mb-3">
+                        <input
+                            onchange="validateJS(event,'email')"
+                            type="email"
+                            class="form-control"
+                            placeholder="Email"
+                            name="resetPassword"
+                            required>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                            </div>
+                        </div>
+                        <div class="valid-feedback">Válido.</div>
+                        <div class="invalid-feedback">Campo inválido.</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-default templateColor btn-block py-2">Recibir nueva contraseña</button>
+                        </div>
+                    </div>
+
+                    <?php
+                    require_once "controllers/users.controller.php";
+                    $reset = new UsersController();
+                    $reset->resetPassword();
+                    ?>
+
+                </form>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+
         </div>
     </div>
 </div>
