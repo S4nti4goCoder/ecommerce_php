@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-04-2025 a las 08:04:02
+-- Tiempo de generación: 08-04-2025 a las 00:09:04
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -92,16 +92,6 @@ CREATE TABLE `favorites` (
   `date_created_favorite` date DEFAULT NULL,
   `date_updated_favorite` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Volcado de datos para la tabla `favorites`
---
-
-INSERT INTO `favorites` (`id_favorite`, `id_user_favorite`, `id_product_favorite`, `date_created_favorite`, `date_updated_favorite`) VALUES
-(3, 2, 22, '2025-04-07', '2025-04-07 05:22:02'),
-(4, 2, 40, '2025-04-07', '2025-04-07 05:22:19'),
-(5, 2, 17, '2025-04-07', '2025-04-07 05:45:20'),
-(7, 2, 16, '2025-04-07', '2025-04-07 05:47:41');
 
 -- --------------------------------------------------------
 
@@ -308,7 +298,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id_user`, `name_user`, `email_user`, `password_user`, `token_user`, `token_exp_user`, `method_user`, `verification_user`, `confirm_user`, `country_user`, `department_user`, `city_user`, `address_user`, `phone_user`, `date_created_user`, `date_updated_user`) VALUES
 (1, 'Santiago Quintero', 'quintiagogarciadev@gmail.com', '$2a$07$azybxcags23425sdg23sdeanQZqjaf6Birm2NvcYTNtJw24CsO5uq', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDQwMDI1NjcsImV4cCI6MTc0NDA4ODk2NywiZGF0YSI6eyJpZCI6MSwiZW1haWwiOiJxdWludGlhZ29nYXJjaWFkZXZAZ21haWwuY29tIn19._CgY5MIjxZ-G_yAWCdX2bfpnHrAMDbnO0V16cxVhIKU', '1744088967', 'directo', 1, 'cq7n3as6fj20dgzkxyu9', 'Colombia', 'Cundinamarca', 'Bogotá', 'Carrera 14 # 56-17', '57_3154488668', '2025-03-14', '2025-04-07 05:11:25'),
-(2, 'Santiago David Garcia Quintero', 'santiagoquintero.softdev.code@gmail.com', NULL, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDQwMDI3MDYsImV4cCI6MTc0NDA4OTEwNiwiZGF0YSI6eyJpZCI6MiwiZW1haWwiOiJzYW50aWFnb3F1aW50ZXJvLnNvZnRkZXYuY29kZUBnbWFpbC5jb20ifX0.7mpoubRIePaQ_WwZdxFEumBobYKjkzmun-3vpxn3X20', '1744089106', 'google', 1, NULL, NULL, NULL, NULL, NULL, NULL, '2025-04-06', '2025-04-07 06:03:40');
+(2, 'Santiago David Garcia Quintero', 'santiagoquintero.softdev.code@gmail.com', NULL, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDQwNjI0NDIsImV4cCI6MTc0NDE0ODg0MiwiZGF0YSI6eyJpZCI6MiwiZW1haWwiOiJzYW50aWFnb3F1aW50ZXJvLnNvZnRkZXYuY29kZUBnbWFpbC5jb20ifX0.1QJFz5Kcxn6UIgv3m-u6GXjWZd2d3net3YnnZUkxpfQ', '1744148842', 'google', 1, NULL, NULL, NULL, NULL, NULL, NULL, '2025-04-06', '2025-04-07 22:08:16');
 
 -- --------------------------------------------------------
 
@@ -493,7 +483,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT de la tabla `favorites`
 --
 ALTER TABLE `favorites`
-  MODIFY `id_favorite` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_favorite` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `products`

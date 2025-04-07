@@ -84,7 +84,8 @@ if(!empty($favorites)){
                                 <button
                                     type="button"
                                     class="btn btn-light border-0 remFavorite"
-                                    idFavorite="<?php echo $value->id_favorite  ?>">
+                                    idFavorite="<?php echo $value->id_favorite  ?>"
+                                    pageFavorite="yes">
                                     Quitar de favoritos
                                 </button>
                                 <a class="btn btn-primary templateColor border-0" href="/<?php echo $value->url_product ?>">
