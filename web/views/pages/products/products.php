@@ -372,8 +372,22 @@ if (!empty($products) && !isset($products[0]->check_variant)) {
                             </h5>
                             <span class="float-end">
                                 <div class="btn-group btn-group-sm">
-                                    <button type="button" class="btn btn-light border">
-                                        <i class="fas fa-heart"></i>
+                                    <!--============================================
+								    FAVORITOS
+								    ============================================-->
+                                    <button
+                                        type="button"
+                                        class="btn btn-light border 
+								        <?php if (isset($_SESSION["user"]) && $value->id_favorite == 0): ?> addFavorite <?php endif ?>
+								        <?php if (isset($_SESSION["user"]) && $value->id_favorite > 0): ?> remFavorite <?php endif ?>"
+                                        <?php if (!isset($_SESSION["user"])): ?> data-bs-toggle="modal" data-bs-target="#login" <?php endif ?>
+                                        idProduct="<?php echo $value->id_product ?>"
+                                        idFavorite="<?php echo $value->id_favorite ?>">
+                                        <?php if ($value->id_favorite > 0): ?>
+                                            <i class="fas fa-heart" style="color:#dc3545"></i>
+                                        <?php else: ?>
+                                            <i class="fas fa-heart"></i>
+                                        <?php endif ?>
                                     </button>
                                     <button type="button" class="btn btn-light border" onclick="location.href='/<?php echo $value->url_product ?>'">
                                         <i class="fas fa-eye"></i>
