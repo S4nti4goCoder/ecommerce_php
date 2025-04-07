@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-04-2025 a las 05:14:03
+-- Tiempo de generación: 07-04-2025 a las 06:31:46
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -78,6 +78,27 @@ INSERT INTO `categories` (`id_category`, `name_category`, `url_category`, `icon_
 (3, 'Tecnología', 'tecnologia', 'fas fa-laptop', 'tecnologia.jpg', 'Nullam commodo elementum ante at volutpat. Nullam mauris enim, pretium a elit eu, venenatis tempus justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean fringilla, orci sed tincidunt aliquam, magna magna scelerisque augue, quis tristique ipsum lacus sed urna. Nunc eleifend cursus diam, id congue velit dapibus quis. Etiam commodo viverra erat, sed condimentum orci pharetra et. Vivamus gravida magna non magna faucibus maximus. Suspendisse ut pellentesque turpis. Quisque convallis pellentesque erat, vel pulvinar ex ultricies quis.', 'pc,portatil,ordenador,servidor', 4, 0, 0, 1, '2024-11-26', '2024-11-26 00:22:15'),
 (4, 'Cursos', 'cursos', 'fas fa-graduation-cap', 'cursos.jpg', 'Praesent dapibus sapien ante. Praesent eleifend lectus et ligula consequat facilisis. Nullam luctus felis quam, sit amet vehicula nisi ullamcorper et. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque neque diam, eleifend et mauris non, sollicitudin iaculis tellus. Pellentesque quis fringilla felis, eu gravida quam. Nunc ullamcorper nisl quam. Morbi sapien nisl, hendrerit at gravida eget, suscipit vel ligula.', 'cursos,tutorias,tutoriales,virtualidad', 4, 18, 0, 1, '2024-11-26', '2024-11-26 02:30:59'),
 (5, 'Accesorios', 'accesorios', 'fas fa-anchor', 'accesorios.jpg', 'Nullam auctor eget dolor a sollicitudin. Quisque dictum turpis facilisis ipsum efficitur, euismod auctor justo rutrum. Sed pellentesque, lorem ut tincidunt auctor, diam mauris cursus sapien, vel interdum arcu erat eu arcu. Donec vulputate quis risus ac sollicitudin. Curabitur lacinia nunc lorem, et consequat turpis sollicitudin vel. Duis dui justo, laoreet eu arcu a, pharetra volutpat justo. Pellentesque sollicitudin porttitor elementum. Cras luctus molestie imperdiet. Fusce dictum vestibulum est, eget efficitur ligula volutpat quis. Etiam vel vehicula diam. Aenean elit dui, blandit at enim quis, dictum consequat turpis. Pellentesque sagittis sem ut blandit tristique. Aenean nec nunc tempus, commodo sem vitae, lobortis ipsum.', 'accesorios,lorem,ipsum', 1, 4, 0, 1, '2024-11-26', '2024-11-26 02:36:42');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `favorites`
+--
+
+CREATE TABLE `favorites` (
+  `id_favorite` int(11) NOT NULL,
+  `id_user_favorite` int(11) NOT NULL DEFAULT 0,
+  `id_product_favorite` int(11) NOT NULL DEFAULT 0,
+  `date_created_favorite` date DEFAULT NULL,
+  `date_updated_favorite` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Volcado de datos para la tabla `favorites`
+--
+
+INSERT INTO `favorites` (`id_favorite`, `id_user_favorite`, `id_product_favorite`, `date_created_favorite`, `date_updated_favorite`) VALUES
+(1, 2, 18, '2025-04-07', '2025-04-07 04:31:03');
 
 -- --------------------------------------------------------
 
@@ -284,7 +305,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id_user`, `name_user`, `email_user`, `password_user`, `token_user`, `token_exp_user`, `method_user`, `verification_user`, `confirm_user`, `country_user`, `department_user`, `city_user`, `address_user`, `phone_user`, `date_created_user`, `date_updated_user`) VALUES
 (1, 'Santiago Quintero', 'quintiagogarciadev@gmail.com', '$2a$07$azybxcags23425sdg23sdeanQZqjaf6Birm2NvcYTNtJw24CsO5uq', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDM5OTQ3MzUsImV4cCI6MTc0NDA4MTEzNSwiZGF0YSI6eyJpZCI6MSwiZW1haWwiOiJxdWludGlhZ29nYXJjaWFkZXZAZ21haWwuY29tIn19.839u5TVuFPulbt3PcQnlOJe7UWZTc2oCFf56AMht7oU', '1744081135', 'directo', 1, 'cq7n3as6fj20dgzkxyu9', 'Colombia', 'Cundinamarca', 'Bogotá', 'Carrera 14 # 56-17', '57_3154488668', '2025-03-14', '2025-04-07 03:01:25'),
-(2, 'Santiago David Garcia Quintero', 'santiagoquintero.softdev.code@gmail.com', NULL, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDM5OTU1NzAsImV4cCI6MTc0NDA4MTk3MCwiZGF0YSI6eyJpZCI6MiwiZW1haWwiOiJzYW50aWFnb3F1aW50ZXJvLnNvZnRkZXYuY29kZUBnbWFpbC5jb20ifX0.ijgNQ3wd33J6DT6Y2mrp2KemkmYyhtLH3q7PXwPFCyE', '1744081970', 'google', 1, NULL, NULL, NULL, NULL, NULL, NULL, '2025-04-06', '2025-04-07 03:12:51');
+(2, 'Santiago David Garcia Quintero', 'santiagoquintero.softdev.code@gmail.com', NULL, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDM5OTkzMjMsImV4cCI6MTc0NDA4NTcyMywiZGF0YSI6eyJpZCI6MiwiZW1haWwiOiJzYW50aWFnb3F1aW50ZXJvLnNvZnRkZXYuY29kZUBnbWFpbC5jb20ifX0.igmiVdlejwb06NeH30V-YBDMjgvleARjyO6oqZmM9JQ', '1744085723', 'google', 1, NULL, NULL, NULL, NULL, NULL, NULL, '2025-04-06', '2025-04-07 04:30:57');
 
 -- --------------------------------------------------------
 
@@ -404,6 +425,12 @@ ALTER TABLE `categories`
   ADD PRIMARY KEY (`id_category`);
 
 --
+-- Indices de la tabla `favorites`
+--
+ALTER TABLE `favorites`
+  ADD PRIMARY KEY (`id_favorite`);
+
+--
 -- Indices de la tabla `products`
 --
 ALTER TABLE `products`
@@ -458,6 +485,12 @@ ALTER TABLE `admins`
 --
 ALTER TABLE `categories`
   MODIFY `id_category` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `favorites`
+--
+ALTER TABLE `favorites`
+  MODIFY `id_favorite` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `products`

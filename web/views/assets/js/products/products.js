@@ -54,7 +54,9 @@ if (target.length > 0) {
   });
 }
 
-//Funcion para buscar productos
+/*=============================================
+Función para buscar productos
+=============================================*/
 $(document).on("click", ".btnSearch", function () {
   var value = $(this)
     .parent()
@@ -78,7 +80,9 @@ $(document).on("click", ".btnSearch", function () {
   window.location = "/" + value;
 });
 
-//Funcion para buscar productos con tecla ENTER
+/*=============================================
+Función para buscar productos con tecla ENTER
+=============================================*/
 $(".inputSearch").keyup(function (event) {
   event.preventDefault();
   if (event.keyCode == 13 && $(".inputSearch").val() != "") {
@@ -97,4 +101,35 @@ $(".inputSearch").keyup(function (event) {
 
     window.location = "/" + value;
   }
+});
+
+/*=============================================
+Adicionar a favoritos
+=============================================*/
+$(document).on("click", ".addFavorite", function () {
+  var idProduct = $(this).attr("idProduct");
+  var elem = $(this);
+
+  var data = new FormData();
+  data.append("token", localStorage.getItem("token-user"));
+  data.append("idProduct", idProduct);
+  $.ajax({
+    url: "/ajax/forms.ajax.php",
+    method: "POST",
+    data: data,
+    contentType: false,
+    cache: false,
+    processData: false,
+    success: function (response) {
+      if (JSON.parse(response).comment == "The process was successful") {
+        $(elem).attr("idFavorite", JSON.parse(response).lastId);
+        $(elem).removeClass("addFavorite");
+        $(elem).children("i").css({ color: "#dc3545" });
+        fncToastr(
+          "success",
+          "El producto ha sido agregado a su lista de favoritos"
+        );
+      }
+    },
+  });
 });

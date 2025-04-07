@@ -30,6 +30,33 @@ class FormsController
         $data = CurlController::request($url, $method, $fields)->results;
         echo json_encode($data);
     }
+
+    /*=============================================
+    Adicionar favoritos en base de datos
+    =============================================*/
+    public $idProduct;
+    public $token;
+    public function addFavorites()
+    {
+        $select = "id_user";
+        $url = "users?linkTo=token_user&equalTo=" . $this->token . "&select=" . $select;
+        $method = "GET";
+        $fields = array();
+        $data = CurlController::request($url, $method, $fields);
+        if ($data->status == 200) {
+            $url = "favorites?token=" . $this->token . "&table=users&suffix=user";
+            $method = "POST";
+            $fields = array(
+                "id_user_favorite" => $data->results[0]->id_user,
+                "id_product_favorite" => $this->idProduct,
+                "date_created_favorite" => date("Y-m-d")
+            );
+            $addFavorite = CurlController::request($url, $method, $fields);
+            if ($addFavorite->status == 200) {
+                echo json_encode($addFavorite->results);
+            }
+        }
+    }
 }
 
 if (isset($_POST["table"])) {
@@ -44,4 +71,11 @@ if (isset($_POST["idCategory"])) {
     $data = new FormsController();
     $data->idCategory = $_POST["idCategory"];
     $data->listSubcategories();
+}
+
+if (isset($_POST["idProduct"])) {
+    $addFavorites = new FormsController();
+    $addFavorites->token = $_POST["token"];
+    $addFavorites->idProduct = $_POST["idProduct"];
+    $addFavorites->addFavorites();
 }
