@@ -1,6 +1,6 @@
 <?php
 
-$select = "name_product,url_product,type_variant,media_variant,date_created_product,stock_variant,description_product";
+$select = "id_product,name_product,url_product,type_variant,media_variant,date_created_product,stock_variant,description_product";
 $url = "relations?rel=variants,products&type=variant,product&linkTo=price_variant&equalTo=0&startAt=0&endAt=4&orderBy=id_variant&orderMode=DESC&select=" . $select;
 $method = "GET";
 $fields = array();
@@ -14,6 +14,26 @@ if ($freeProducts->status == 200) {
 
 if (count($freeProducts) == 0) {
     return;
+}
+
+/*=============================================
+Traemos si existe favoritos
+=============================================*/
+if (!empty($freeProducts)) {
+    foreach ($freeProducts as $key => $value) {
+        if (isset($_SESSION["user"])) {
+            $select = "id_favorite";
+            $url = "favorites?linkTo=id_product_favorite,id_user_favorite&equalTo=" . $value->id_product . "," . $_SESSION["user"]->id_user . "&select=" . $select;
+            $favorite = CurlController::request($url, $method, $fields);
+            if ($favorite->status == 200) {
+                $freeProducts[$key]->id_favorite = $favorite->results[0]->id_favorite;
+            } else {
+                $freeProducts[$key]->id_favorite = 0;
+            }
+        } else {
+            $freeProducts[$key]->id_favorite = 0;
+        }
+    }
 }
 
 ?>
@@ -79,8 +99,23 @@ if (count($freeProducts) == 0) {
                         </h5>
                         <span class="float-end">
                             <div class="btn-group btn-group-sm">
-                                <button type="button" class="btn btn-light border">
-                                    <i class="fas fa-heart"></i>
+                                <!--============================================
+								FAVORITOS
+								============================================-->
+                                <button
+                                    type="button"
+                                    class="btn btn-light border 
+								    <?php if (isset($_SESSION["user"]) && $value->id_favorite == 0): ?> addFavorite <?php endif ?>
+								    <?php if (isset($_SESSION["user"]) && $value->id_favorite > 0): ?> remFavorite <?php endif ?>"
+                                    <?php if (!isset($_SESSION["user"])): ?> data-bs-toggle="modal" data-bs-target="#login" <?php endif ?>
+                                    idProduct="<?php echo $value->id_product ?>"
+                                    idFavorite="<?php echo $value->id_favorite ?>"
+                                    pageFavorite="no">
+                                    <?php if ($value->id_favorite > 0): ?>
+                                        <i class="fas fa-heart" style="color:#dc3545"></i>
+                                    <?php else: ?>
+                                        <i class="fas fa-heart"></i>
+                                    <?php endif ?>
                                 </button>
                                 <button type="button" class="btn btn-light border" onclick="location.href='/<?php echo $value->url_product ?>'">
                                     <i class="fas fa-eye"></i>
@@ -128,8 +163,23 @@ if (count($freeProducts) == 0) {
                             <h5 class="float-start text-uppercase text-muted"><small>Gratis</small></h5>
                             <span class="float-end">
                                 <div class="btn-group btn-group-sm">
-                                    <button type="button" class="btn btn-light border">
-                                        <i class="fas fa-heart"></i>
+                                    <!--============================================
+								    FAVORITOS
+								    ============================================-->
+                                    <button
+                                        type="button"
+                                        class="btn btn-light border 
+								        <?php if (isset($_SESSION["user"]) && $value->id_favorite == 0): ?> addFavorite <?php endif ?>
+								        <?php if (isset($_SESSION["user"]) && $value->id_favorite > 0): ?> remFavorite <?php endif ?>"
+                                        <?php if (!isset($_SESSION["user"])): ?> data-bs-toggle="modal" data-bs-target="#login" <?php endif ?>
+                                        idProduct="<?php echo $value->id_product ?>"
+                                        idFavorite="<?php echo $value->id_favorite ?>"
+                                        pageFavorite="no">
+                                        <?php if ($value->id_favorite > 0): ?>
+                                            <i class="fas fa-heart" style="color:#dc3545"></i>
+                                        <?php else: ?>
+                                            <i class="fas fa-heart"></i>
+                                        <?php endif ?>
                                     </button>
                                     <button type="button" class="btn btn-light border" onclick="location.href='/<?php echo $value->url_product ?>'">
                                         <i class="fas fa-eye"></i>

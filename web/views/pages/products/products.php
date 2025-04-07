@@ -61,14 +61,13 @@ if ($totalProducts->status == 200) {
 
             if ($totalProducts->status == 200) {
                 $totalProducts = $totalProducts->total;
-
                 if ($startAt > $totalProducts) {
                     echo '<script>
-              window.location = "/404";
-            </script>';
+                        window.location = "/404";
+                    </script>';
                 }
 
-                $select = "name_product,url_product,type_variant,media_variant,date_created_product,stock_variant,description_product,offer_variant,price_variant";
+                $select = "id_product,name_product,url_product,type_variant,media_variant,date_created_product,stock_variant,description_product,offer_variant,price_variant";
                 $url = "relations?rel=variants,products&type=variant,product&linkTo=price_variant&equalTo=0&startAt=" . $startAt . "&endAt=" . $endAt . "&orderBy=id_variant&orderMode=DESC&select=" . $select;
                 $method = "GET";
                 $fields = array();
@@ -95,7 +94,7 @@ if ($totalProducts->status == 200) {
             </script>';
                 }
 
-                $select = "name_product,url_product,type_variant,media_variant,date_created_product,stock_variant,description_product,offer_variant,price_variant";
+                $select = "id_product,name_product,url_product,type_variant,media_variant,date_created_product,stock_variant,description_product,offer_variant,price_variant";
                 $url = "relations?rel=variants,products&type=variant,product&linkTo=views_product&between1=1&between2=1000&startAt=" . $startAt . "&endAt=" . $endAt . "&orderBy=id_variant&orderMode=DESC&select=" . $select;
                 $method = "GET";
                 $fields = array();
@@ -121,7 +120,7 @@ if ($totalProducts->status == 200) {
                     </script>';
                 }
 
-                $select = "name_product,url_product,type_variant,media_variant,date_created_product,stock_variant,description_product,offer_variant,price_variant";
+                $select = "id_product,name_product,url_product,type_variant,media_variant,date_created_product,stock_variant,description_product,offer_variant,price_variant";
                 $url = "relations?rel=variants,products&type=variant,product&linkTo=sales_product&between1=1&between2=1000&startAt=" . $startAt . "&endAt=" . $endAt . "&orderBy=id_variant&orderMode=DESC&select=" . $select;
                 $method = "GET";
                 $fields = array();
@@ -169,23 +168,23 @@ if ($totalProducts->status == 200) {
 /*===================================================================================
 Traemos la primera variante de los productos y si existen favoritos para ese producto
 ===================================================================================*/
-if (!empty($products) && !isset($products[0]->check_variant)) {
+if (!empty($products)) {
     foreach ($products as $key => $value) {
 
         /*=============================================
 		Traemos la primera variante
 		=============================================*/
-        $select = "type_variant,media_variant,price_variant,offer_variant,end_offer_variant,stock_variant";
-        $url = "variants?linkTo=id_product_variant&equalTo=" . $value->id_product . "&select=" . $select;
-        $variant = CurlController::request($url, $method, $fields)->results[0];
-
-        $products[$key]->type_variant = $variant->type_variant;
-        $products[$key]->media_variant = $variant->media_variant;
-        $products[$key]->price_variant = $variant->price_variant;
-        $products[$key]->offer_variant = $variant->offer_variant;
-        $products[$key]->end_offer_variant = $variant->end_offer_variant;
-        $products[$key]->stock_variant = $variant->stock_variant;
-
+        if (!isset($products[0]->check_variant)) {
+            $select = "type_variant,media_variant,price_variant,offer_variant,end_offer_variant,stock_variant";
+            $url = "variants?linkTo=id_product_variant&equalTo=" . $value->id_product . "&select=" . $select;
+            $variant = CurlController::request($url, $method, $fields)->results[0];
+            $products[$key]->type_variant = $variant->type_variant;
+            $products[$key]->media_variant = $variant->media_variant;
+            $products[$key]->price_variant = $variant->price_variant;
+            $products[$key]->offer_variant = $variant->offer_variant;
+            $products[$key]->end_offer_variant = $variant->end_offer_variant;
+            $products[$key]->stock_variant = $variant->stock_variant;
+        }
         /*=============================================
 	    Traemos la primera variante
 	    =============================================*/

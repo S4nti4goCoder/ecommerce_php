@@ -1,6 +1,6 @@
 <?php
 
-$select = "name_product,url_product,type_variant,media_variant,date_created_product,price_variant,offer_variant,end_offer_variant,stock_variant,views_product,description_product";
+$select = "id_product,name_product,url_product,type_variant,media_variant,date_created_product,price_variant,offer_variant,end_offer_variant,stock_variant,views_product,description_product";
 $url = "relations?rel=variants,products&type=variant,product&linkTo=sales_product&between1=1&between2=1000&startAt=0&endAt=4&orderBy=sales_product&orderMode=DESC&select=" . $select;
 $method = "GET";
 $fields = array();
@@ -14,6 +14,27 @@ if ($salesProducts->status == 200) {
 
 if (count($salesProducts) == 0) {
     return;
+}
+
+/*=============================================
+Traemos si existe favoritos
+=============================================*/
+
+if (!empty($salesProducts)) {
+    foreach ($salesProducts as $key => $value) {
+        if (isset($_SESSION["user"])) {
+            $select = "id_favorite";
+            $url = "favorites?linkTo=id_product_favorite,id_user_favorite&equalTo=" . $value->id_product . "," . $_SESSION["user"]->id_user . "&select=" . $select;
+            $favorite = CurlController::request($url, $method, $fields);
+            if ($favorite->status == 200) {
+                $salesProducts[$key]->id_favorite = $favorite->results[0]->id_favorite;
+            } else {
+                $salesProducts[$key]->id_favorite = 0;
+            }
+        } else {
+            $salesProducts[$key]->id_favorite = 0;
+        }
+    }
 }
 
 ?>
@@ -44,7 +65,7 @@ if (count($salesProducts) == 0) {
         <hr style="color: #666">
         <!-- GRID -->
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 pt-3 pb-4 grid-3">
-        <?php foreach ($salesProducts as $key => $value): ?>
+            <?php foreach ($salesProducts as $key => $value): ?>
                 <div class="col px-3 py-2 py-lg-0">
                     <a href="/<?php echo $value->url_product ?>">
                         <figure class="imgProduct">
@@ -86,8 +107,20 @@ if (count($salesProducts) == 0) {
                         </h5>
                         <span class="float-end">
                             <div class="btn-group btn-group-sm">
-                                <button type="button" class="btn btn-light border">
-                                    <i class="fas fa-heart"></i>
+                                <button
+                                    type="button"
+                                    class="btn btn-light border 
+									<?php if (isset($_SESSION["user"]) && $value->id_favorite == 0): ?> addFavorite <?php endif ?>
+									<?php if (isset($_SESSION["user"]) && $value->id_favorite > 0): ?> remFavorite <?php endif ?>"
+                                    <?php if (!isset($_SESSION["user"])): ?> data-bs-toggle="modal" data-bs-target="#login" <?php endif ?>
+                                    idProduct="<?php echo $value->id_product ?>"
+                                    idFavorite="<?php echo $value->id_favorite ?>"
+                                    pageFavorite="no">
+                                    <?php if ($value->id_favorite > 0): ?>
+                                        <i class="fas fa-heart" style="color:#dc3545"></i>
+                                    <?php else: ?>
+                                        <i class="fas fa-heart"></i>
+                                    <?php endif ?>
                                 </button>
                                 <button type="button" class="btn btn-light border" onclick="location.href='/<?php echo $value->url_product ?>'">
                                     <i class="fas fa-eye"></i>
@@ -100,7 +133,7 @@ if (count($salesProducts) == 0) {
         </div>
         <!-- LIST -->
         <div class="row list-3" style="display: none">
-        <?php foreach ($salesProducts as $key => $value): ?>
+            <?php foreach ($salesProducts as $key => $value): ?>
                 <div class="media border-bottom px-3 pt-4 pb-3 pb-lg-2">
                     <a href="/<?php echo $value->url_product ?>">
                         <figure class="imgProduct">
@@ -144,8 +177,20 @@ if (count($salesProducts) == 0) {
                             </h5>
                             <span class="float-end">
                                 <div class="btn-group btn-group-sm">
-                                    <button type="button" class="btn btn-light border">
-                                        <i class="fas fa-heart"></i>
+                                    <button
+                                        type="button"
+                                        class="btn btn-light border 
+									    <?php if (isset($_SESSION["user"]) && $value->id_favorite == 0): ?> addFavorite <?php endif ?>
+									    <?php if (isset($_SESSION["user"]) && $value->id_favorite > 0): ?> remFavorite <?php endif ?>"
+                                        <?php if (!isset($_SESSION["user"])): ?> data-bs-toggle="modal" data-bs-target="#login" <?php endif ?>
+                                        idProduct="<?php echo $value->id_product ?>"
+                                        idFavorite="<?php echo $value->id_favorite ?>"
+                                        pageFavorite="no">
+                                        <?php if ($value->id_favorite > 0): ?>
+                                            <i class="fas fa-heart" style="color:#dc3545"></i>
+                                        <?php else: ?>
+                                            <i class="fas fa-heart"></i>
+                                        <?php endif ?>
                                     </button>
                                     <button type="button" class="btn btn-light border" onclick="location.href='/<?php echo $value->url_product ?>'">
                                         <i class="fas fa-eye"></i>

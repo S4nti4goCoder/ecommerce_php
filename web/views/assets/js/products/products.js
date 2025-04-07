@@ -109,6 +109,7 @@ Adicionar a favoritos
 $(document).on("click", ".addFavorite", function () {
   var idProduct = $(this).attr("idProduct");
   var elem = $(this);
+  $(elem).children("i").css({ color: "#dc3545" });
 
   var data = new FormData();
   data.append("token", localStorage.getItem("token-user"));
@@ -125,7 +126,6 @@ $(document).on("click", ".addFavorite", function () {
         $(elem).attr("idFavorite", JSON.parse(response).lastId);
         $(elem).removeClass("addFavorite");
         $(elem).addClass("remFavorite");
-        $(elem).children("i").css({ color: "#dc3545" });
         fncToastr(
           "success",
           "El producto ha sido agregado a su lista de favoritos"
@@ -141,6 +141,7 @@ Quitar de favoritos
 $(document).on("click", ".remFavorite", function () {
   var idFavorite = $(this).attr("idFavorite");
   var elem = $(this);
+  $(elem).children("i").css({ color: "#000" });
 
   var pageFavorite = $(this).attr("pageFavorite");
   if (pageFavorite == "yes") {
@@ -183,7 +184,6 @@ $(document).on("click", ".remFavorite", function () {
         }
         $(elem).addClass("addFavorite");
         $(elem).removeClass("remFavorite");
-        $(elem).children("i").css({ color: "#000" });
         fncToastr(
           "success",
           "El producto ha sido removido de su lista de favoritos"
