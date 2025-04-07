@@ -346,7 +346,6 @@ class UsersController
                                 "method_user" => "google",
                                 "verification_user" => 1,
                                 "date_created_user" => date("Y-m-d")
-
                             );
 
                             $register = CurlController::request($url, $method, $fields);
@@ -364,7 +363,7 @@ class UsersController
                                 }
                             }
 
-                        /*=============================================
+                            /*=============================================
 						si el usuario ya está registrado
 						=============================================*/
                         } else {
@@ -376,11 +375,20 @@ class UsersController
 								</script>';
                                 return;
                             }
-                            $_SESSION["user"] = $user->results[0];
-                            echo '<script>					
-								localStorage.setItem("token-user", "' . $user->results[0]->token_user . '")
-								window.location="' . $redirect . '"
-							</script>';
+                            $url = "users?login=true&suffix=user";
+                            $method = "POST";
+                            $fields = array(
+                                "email_user" => $user->results[0]->email_user,
+                                "password_user" => ""
+                            );
+                            $login = CurlController::request($url, $method, $fields);
+                            if ($login->status == 200) {
+                                $_SESSION["user"] = $login->results[0];
+                                echo '<script>									
+										localStorage.setItem("token-user", "' . $login->results[0]->token_user . '")
+										window.location="' . $redirect . '"
+								</script>';
+                            }
                         }
                     }
                 }
