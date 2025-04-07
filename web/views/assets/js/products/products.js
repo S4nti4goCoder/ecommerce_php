@@ -124,10 +124,42 @@ $(document).on("click", ".addFavorite", function () {
       if (JSON.parse(response).comment == "The process was successful") {
         $(elem).attr("idFavorite", JSON.parse(response).lastId);
         $(elem).removeClass("addFavorite");
+        $(elem).addClass("remFavorite");
         $(elem).children("i").css({ color: "#dc3545" });
         fncToastr(
           "success",
           "El producto ha sido agregado a su lista de favoritos"
+        );
+      }
+    },
+  });
+});
+
+/*=============================================
+Quitar de favoritos
+=============================================*/
+$(document).on("click", ".remFavorite", function () {
+  var idFavorite = $(this).attr("idFavorite");
+  var elem = $(this);
+  
+  var data = new FormData();
+  data.append("token", localStorage.getItem("token-user"));
+  data.append("idFavorite", idFavorite);
+  $.ajax({
+    url: "/ajax/forms.ajax.php",
+    method: "POST",
+    data: data,
+    contentType: false,
+    cache: false,
+    processData: false,
+    success: function (response) {
+      if (response == 200) {
+        $(elem).addClass("addFavorite");
+        $(elem).removeClass("remFavorite");
+        $(elem).children("i").css({ color: "#000" });
+        fncToastr(
+          "success",
+          "El producto ha sido removido de su lista de favoritos"
         );
       }
     },

@@ -57,6 +57,19 @@ class FormsController
             }
         }
     }
+
+    /*=============================================
+    Remover favoritos en base de datos
+    =============================================*/
+    public $idFavorite;
+    public function remFavorite()
+    {
+        $url = "favorites?id=" . $this->idFavorite . "&nameId=id_favorite&token=" . $this->token . "&table=users&suffix=user";
+        $method = "DELETE";
+        $fields = array();
+        $remFavorite = CurlController::request($url, $method, $fields);
+        echo $remFavorite->status;
+    }
 }
 
 if (isset($_POST["table"])) {
@@ -78,4 +91,11 @@ if (isset($_POST["idProduct"])) {
     $addFavorites->token = $_POST["token"];
     $addFavorites->idProduct = $_POST["idProduct"];
     $addFavorites->addFavorites();
+}
+
+if (isset($_POST["idFavorite"])) {
+    $remFavorites = new FormsController();
+    $remFavorites->token = $_POST["token"];
+    $remFavorites->idFavorite = $_POST["idFavorite"];
+    $remFavorites->remFavorite();
 }

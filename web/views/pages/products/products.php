@@ -166,9 +166,15 @@ if ($totalProducts->status == 200) {
     }
 }
 
-//Traemos la primera variante de los productos
+/*===================================================================================
+Traemos la primera variante de los productos y si existen favoritos para ese producto
+===================================================================================*/
 if (!empty($products) && !isset($products[0]->check_variant)) {
     foreach ($products as $key => $value) {
+
+        /*=============================================
+		Traemos la primera variante
+		=============================================*/
         $select = "type_variant,media_variant,price_variant,offer_variant,end_offer_variant,stock_variant";
         $url = "variants?linkTo=id_product_variant&equalTo=" . $value->id_product . "&select=" . $select;
         $variant = CurlController::request($url, $method, $fields)->results[0];
@@ -179,6 +185,22 @@ if (!empty($products) && !isset($products[0]->check_variant)) {
         $products[$key]->offer_variant = $variant->offer_variant;
         $products[$key]->end_offer_variant = $variant->end_offer_variant;
         $products[$key]->stock_variant = $variant->stock_variant;
+
+        /*=============================================
+	    Traemos la primera variante
+	    =============================================*/
+        if (isset($_SESSION["user"])) {
+            $select = "id_favorite";
+            $url = "favorites?linkTo=id_product_favorite,id_user_favorite&equalTo=" . $value->id_product . "," . $_SESSION["user"]->id_user . "&select=" . $select;
+            $favorite = CurlController::request($url, $method, $fields);
+            if ($favorite->status == 200) {
+                $products[$key]->id_favorite = $favorite->results[0]->id_favorite;
+            } else {
+                $products[$key]->id_favorite = 0;
+            }
+        } else {
+            $products[$key]->id_favorite = 0;
+        }
     }
 }
 
@@ -283,12 +305,16 @@ if (!empty($products) && !isset($products[0]->check_variant)) {
                                 <button
                                     type="button"
                                     class="btn btn-light border 
-								    <?php if (isset($_SESSION["user"])): ?> addFavorite <?php endif ?>"
+								    <?php if (isset($_SESSION["user"]) && $value->id_favorite == 0): ?> addFavorite <?php endif ?>
+								    <?php if (isset($_SESSION["user"]) && $value->id_favorite > 0): ?> remFavorite <?php endif ?>"
                                     <?php if (!isset($_SESSION["user"])): ?> data-bs-toggle="modal" data-bs-target="#login" <?php endif ?>
                                     idProduct="<?php echo $value->id_product ?>"
-                                    idFavorite="<?php echo $value->id_favorite ?>"
-                                    pageFavorite="no">
-                                    <i class="fas fa-heart"></i>
+                                    idFavorite="<?php echo $value->id_favorite ?>">
+                                    <?php if ($value->id_favorite > 0): ?>
+                                        <i class="fas fa-heart" style="color:#dc3545"></i>
+                                    <?php else: ?>
+                                        <i class="fas fa-heart"></i>
+                                    <?php endif ?>
                                 </button>
 
                                 <button type="button" class="btn btn-light border" onclick="location.href='/<?php echo $value->url_product ?>'">
