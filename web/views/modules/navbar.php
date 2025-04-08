@@ -110,7 +110,7 @@ if (isset($_SESSION["user"])) {
         </div>
         <div class="col-12 col-lg-3 col-xl-2 mt-1 px-3 px-lg-0">
             <div class="my-2 my-lg-0 d-flex justify-content-center">
-                <a href="#">
+                <a href="/carrito">
                     <button class="bt btn-default float-start rounded-0 border-0 py-2 px-3 templateColor">
                         <i class="fa fa-shopping-cart"></i>
                     </button>

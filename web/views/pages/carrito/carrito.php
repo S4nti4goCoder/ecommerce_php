@@ -28,7 +28,7 @@ Carrito de compras
             </div>
         </div>
 
-        <?php if (!empty($carts)): ?>
+        <?php if (!empty($carts)): $totalCart = 0 ?>
             <div class="card-body" id="bodyCart">
                 <?php foreach ($carts as $key => $value): ?>
                     <?php if ($key > 0): ?>
@@ -110,8 +110,41 @@ Carrito de compras
                                 ?>
                             </span>
                         </div>
+
+                        <!--==========================================
+                        QUITAR ELEMENTOS
+                        ===========================================-->
+                        <div class="d-none d-lg-block col-lg-1 text-center mt-3">
+                            <button class="btn btn-light btn-sm border remCart" key="<?php echo $key ?>" idCart="<?php echo $value->id_cart ?>"><i class="fa fa-trash"></i></button>
+                        </div>
+                        <div class="d-block d-lg-none">
+                            <button class="btn btn-light btn-sm border remCart" key="<?php echo $key ?>" idCart="<?php echo $value->id_cart ?>" style="position:absolute; top:0px; right:0px"><i class="fa fa-trash"></i></button>
+                        </div>
                     </div>
+
+                    <?php
+                    if ($value->offer_variant > 0) {
+                        $totalCart += $value->quantity_cart * $value->offer_variant;
+                    } else {
+                        $totalCart += $value->quantity_cart * $value->price_variant;
+                    }
+                    ?>
                 <?php endforeach ?>
+            </div>
+
+            <!--==========================================
+            TOTAL
+            ===========================================-->
+            <div class="card-footer bg-light">
+                <div class="row">
+                    <div class="col-3 col-lg-9 text-right font-weight-bold">TOTAL:</div>
+                    <div class="col-3 col-lg-2 text-center font-weight-bold">
+                        $<span class="totalCart"><?php echo number_format($totalCart, 2) ?></span>
+                    </div>
+                    <div class="col-6 col-lg-1 text-center">
+                        <a href="/checkout" class="btn btn-default templateColor border-0 px-3 pulseAnimation">Pagar</a>
+                    </div>
+                </div>
             </div>
         <?php else: ?>
             <div class="card-body ">
