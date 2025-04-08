@@ -98,8 +98,8 @@ $(document).on("click", ".remCart", function () {
               var total = 0;
 
               /*=============================================
-		      Actualizar el total
-		      =============================================*/
+		          Actualizar el total
+		          =============================================*/
               if ($(".subtotalCart").length > 0) {
                 var subtotalCart = $(".subtotalCart");
                 subtotalCart.each((i) => {
@@ -109,8 +109,8 @@ $(document).on("click", ".remCart", function () {
               }
 
               /*=============================================
-			  Actualizamos la cesta
-			  =============================================*/
+			        Actualizamos la cesta
+			        =============================================*/
               var showQuantity = $(".showQuantity");
               var shoppingBasket = 0;
 
@@ -122,8 +122,8 @@ $(document).on("click", ".remCart", function () {
               $("#totalShop").html(total.toFixed(2));
 
               /*=============================================
-			  Cuando eliminamos el último producto
-			  =============================================*/
+			        Cuando eliminamos el último producto
+			        =============================================*/
               if ($(".remCart").length == 0) {
                 $("#bodyCart").html(`
                         <div class="login-page page-error bg-white">
