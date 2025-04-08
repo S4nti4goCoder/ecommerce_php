@@ -39,7 +39,35 @@ class PaymentsController
                             $totalCart += $value->offer_variant * $value->quantity_cart;
                         }
                     }
-                    echo '<pre>'; print_r($totalCart); echo '</pre>';
+
+                    $ref = TemplateController::genCodec(1000);
+
+                    /*=============================================
+					Pasarela de pagos de PayPal
+					=============================================*/
+                    if ($_POST["optradio"] == "paypal") {
+                        echo '<script>
+                            window.location ="' . TemplateController::path() . 'thanks?ref=' . $ref . '"
+                        </script>';
+                    }
+
+                    /*=============================================
+					Pasarela de pagos de D-Local Go
+					=============================================*/
+                    if ($_POST["optradio"] == "dlocal") {
+                        echo '<script>
+                            window.location ="' . TemplateController::path() . 'thanks?ref=' . $ref . '"
+                        </script>';
+                    }
+
+                    /*=============================================
+					Pasarela de pagos de Mercado Pago
+					=============================================*/
+                    if ($_POST["optradio"] == "mercado_pago") {
+                        echo '<script>
+                            window.location ="' . TemplateController::path() . 'thanks?ref=' . $ref . '"
+                        </script>';
+                    }
                 }
             }
         }

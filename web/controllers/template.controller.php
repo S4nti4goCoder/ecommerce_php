@@ -157,10 +157,10 @@ class TemplateController
             return "error";
         }
     }
-    
-    /*=============================================
-	Función para generar texto aleatorio
-	=============================================*/
+
+    /*===================================================
+	Función para generar códigos alfanuméricos aleatorios
+	===================================================*/
     static public function genPassword($length)
     {
         $password = "";
@@ -172,11 +172,21 @@ class TemplateController
     /*=============================================
 	Función para redireccionar al mismo lugar
 	=============================================*/
-	static public function urlRedirect(){
-		if(!empty($_SERVER["HTTPS"]) && ("on" == $_SERVER["HTTPS"])){
-			return "https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-		}else{
-			return "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-		}
-	}
+    static public function urlRedirect()
+    {
+        if (!empty($_SERVER["HTTPS"]) && ("on" == $_SERVER["HTTPS"])) {
+            return "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+        } else {
+            return "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+        }
+    }
+
+    /*=============================================
+	Función para generar códigos numéricos aleatorios
+	=============================================*/
+    static public function genCodec($length)
+    {
+        $codec = rand(1 * $length, (10 * $length) - 1) . Time();
+        return $codec;
+    }
 }
