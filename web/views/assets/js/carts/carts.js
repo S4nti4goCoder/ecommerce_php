@@ -69,62 +69,63 @@ $(document).on("click", ".btnInc", function () {
       }
     },
   });
+});
 
-  /*=============================================
-  Quitar del carrito de compras
-  =============================================*/
-  $(document).on("click", ".remCart", function () {
-    fncSweetAlert("confirm", "¿Está seguro de borrar este item?", "").then(
-      (resp) => {
-        if (resp) {
-          var key = $(this).attr("key");
-          $(".hr_" + key).remove();
-          $(this).parent().parent().remove();
+/*=============================================
+Quitar del carrito de compras
+=============================================*/
+$(document).on("click", ".remCart", function () {
+  fncSweetAlert("confirm", "¿Está seguro de borrar este item?", "").then(
+    (resp) => {
+      if (resp) {
+        var key = $(this).attr("key");
+        $(".hr_" + key).remove();
+        $(this).parent().parent().remove();
 
-          var idCart = $(this).attr("idCart");
-          var data = new FormData();
-          data.append("token", localStorage.getItem("token-user"));
-          data.append("idCartDelete", idCart);
-          $.ajax({
-            url: "/ajax/forms.ajax.php",
-            method: "POST",
-            data: data,
-            contentType: false,
-            cache: false,
-            processData: false,
-            success: function (response) {
-              if (response == 200) {
-                var total = 0;
+        var idCart = $(this).attr("idCart");
+        var data = new FormData();
+        data.append("token", localStorage.getItem("token-user"));
+        data.append("idCartDelete", idCart);
+        $.ajax({
+          url: "/ajax/forms.ajax.php",
+          method: "POST",
+          data: data,
+          contentType: false,
+          cache: false,
+          processData: false,
+          success: function (response) {
+            if (response == 200) {
+              var total = 0;
 
-                /*=============================================
-		        Actualizar el total
-		        =============================================*/
-                if ($(".subtotalCart").length > 0) {
-                  var subtotalCart = $(".subtotalCart");
-                  subtotalCart.each((i) => {
-                    total += Number($(subtotalCart[i]).html());
-                  });
-                  $(".totalCart").html(total.toFixed(2));
-                }
-
-                /*=============================================
-				Actualizamos la cesta
-				=============================================*/
-                var showQuantity = $(".showQuantity");
-                var shoppingBasket = 0;
-
-                showQuantity.each((i) => {
-                  shoppingBasket += Number($(showQuantity[i]).val());
+              /*=============================================
+		      Actualizar el total
+		      =============================================*/
+              if ($(".subtotalCart").length > 0) {
+                var subtotalCart = $(".subtotalCart");
+                subtotalCart.each((i) => {
+                  total += Number($(subtotalCart[i]).html());
                 });
+                $(".totalCart").html(total.toFixed(2));
+              }
 
-                $("#shoppingBasket").html(shoppingBasket);
-                $("#totalShop").html(total.toFixed(2));
+              /*=============================================
+			  Actualizamos la cesta
+			  =============================================*/
+              var showQuantity = $(".showQuantity");
+              var shoppingBasket = 0;
 
-                /*=============================================
-				Cuando eliminamos el último producto
-				=============================================*/
-                if ($(".remCart").length == 0) {
-                  $("#bodyCart").html(`
+              showQuantity.each((i) => {
+                shoppingBasket += Number($(showQuantity[i]).val());
+              });
+
+              $("#shoppingBasket").html(shoppingBasket);
+              $("#totalShop").html(total.toFixed(2));
+
+              /*=============================================
+			  Cuando eliminamos el último producto
+			  =============================================*/
+              if ($(".remCart").length == 0) {
+                $("#bodyCart").html(`
                         <div class="login-page page-error bg-white">
                             <div class="login-box bg-white  d-flex justify-content-center">
                                 <section class="content pb-5">
@@ -143,17 +144,16 @@ $(document).on("click", ".btnInc", function () {
                             </div>
                         </div>
                     `);
-                  $(".card-footer").remove();
-                }
-                fncToastr(
-                  "success",
-                  "El producto ha sido removido de su carrito de compras"
-                );
+                $(".card-footer").remove();
               }
-            },
-          });
-        }
+              fncToastr(
+                "success",
+                "El producto ha sido removido de su carrito de compras"
+              );
+            }
+          },
+        });
       }
-    );
-  });
+    }
+  );
 });
