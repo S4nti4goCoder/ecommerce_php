@@ -70,6 +70,35 @@ class FormsController
         $remFavorite = CurlController::request($url, $method, $fields);
         echo $remFavorite->status;
     }
+
+    /*=============================================
+    Adicionar al carrito de compras en base de datos
+    =============================================*/
+    public $idProductCart;
+    public $idVariantCart;
+    public $quantityCart;
+    public function addCart()
+    {
+        $select = "id_user";
+        $url = "users?linkTo=token_user&equalTo=" . $this->token . "&select=" . $select;
+        $method = "GET";
+        $fields = array();
+
+        $data = CurlController::request($url, $method, $fields);
+        if ($data->status == 200) {
+            $url = "carts?token=" . $this->token . "&table=users&suffix=user";
+            $method = "POST";
+            $fields = array(
+                "id_user_cart" => $data->results[0]->id_user,
+                "id_product_cart" => $this->idProductCart,
+                "id_variant_cart" => $this->idVariantCart,
+                "quantity_cart" => $this->quantityCart,
+                "date_created_cart" => date("Y-m-d")
+            );
+            $addCart = CurlController::request($url, $method, $fields);
+            echo $addCart->status;
+        }
+    }
 }
 
 if (isset($_POST["table"])) {
@@ -98,4 +127,13 @@ if (isset($_POST["idFavorite"])) {
     $remFavorites->token = $_POST["token"];
     $remFavorites->idFavorite = $_POST["idFavorite"];
     $remFavorites->remFavorite();
+}
+
+if (isset($_POST["idProductCart"])) {
+    $addCart = new FormsController();
+    $addCart->token = $_POST["token"];
+    $addCart->idProductCart = $_POST["idProductCart"];
+    $addCart->idVariantCart = $_POST["idVariantCart"];
+    $addCart->quantityCart = $_POST["quantityCart"];
+    $addCart->addCart();
 }

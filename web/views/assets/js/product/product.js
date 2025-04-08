@@ -114,13 +114,13 @@ $(document).on("change", ".changeVariant", function () {
       $(".countdown").attr("ddate", variant.end_offer_variant);
       countDown();
     } else {
+      var day = new Date().getDate();
+      day = ("0" + day).slice(-2);
+      var month = new Date().getMonth() + 1;
+      month = ("0" + month).slice(-2);
       $(".countdown").attr(
         "ddate",
-        new Date().getFullYear() +
-          "-" +
-          new Date().getMonth() +
-          "-" +
-          new Date().getDay()
+        new Date().getFullYear() + "-" + month + "-" + day
       );
       countDown();
     }
@@ -221,9 +221,28 @@ Agregar al carrito de compras
 =============================================*/
 $(document).on("click", ".addCart", function () {
   var idProduct = $(this).attr("idProduct");
-  console.log("idProduct: ", idProduct);
   var idVariant = $(this).attr("idVariant");
-  console.log("idVariant: ", idVariant);
   var quantity = $(this).attr("quantity");
-  console.log("quantity: ", quantity);
+
+  var data = new FormData();
+  data.append("token", localStorage.getItem("token-user"));
+  data.append("idProductCart", idProduct);
+  data.append("idVariantCart", idVariant);
+  data.append("quantityCart", quantity);
+  $.ajax({
+    url: "/ajax/forms.ajax.php",
+    method: "POST",
+    data: data,
+    contentType: false,
+    cache: false,
+    processData: false,
+    success: function (response) {
+      if (response == 200) {
+        fncToastr(
+          "success",
+          "El producto ha sido agregado al carrito de compras"
+        );
+      }
+    },
+  });
 });
