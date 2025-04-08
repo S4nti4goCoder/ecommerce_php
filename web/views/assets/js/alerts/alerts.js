@@ -1,12 +1,15 @@
-/* Formatear envio de formulario lado sevidor */
-
+/*=============================================
+Formatear envío de formulario lado servidor
+=============================================*/
 function fncFormatInputs() {
   if (window.history.replaceState) {
     window.history.replaceState(null, null, window.location.href);
   }
 }
 
-/* Alerta Notie */
+/*=============================================
+Alerta Notie
+=============================================*/
 function fncNotie(type, text) {
   notie.alert({
     type: type,
@@ -15,7 +18,9 @@ function fncNotie(type, text) {
   });
 }
 
-/* Alerta SweetAlert */
+/*=============================================
+Alerta SweetAlert
+=============================================*/
 function fncSweetAlert(type, text, url) {
   switch (type) {
     case "error":
@@ -79,16 +84,26 @@ function fncSweetAlert(type, text, url) {
           resolve(result.value);
         });
       });
-
       break;
 
     case "close":
       Swal.close();
-    break;
+      break;
+
+    case "footer":
+      Swal.fire({
+        icon: "success",
+        title: text,
+        confirmButtonText: "¡Continuar comprando!",
+        footer: '<a href="' + url + '">Ir al carrito de compras</a>',
+      });
+      break;
   }
 }
 
-/* Alerta Toast */
+/*=============================================
+Alerta Toast
+=============================================*/
 function fncToastr(type, text) {
   var Toast = Swal.mixin({
     toast: true,
@@ -107,7 +122,9 @@ function fncToastr(type, text) {
   });
 }
 
-/* Alerta Linea Precarga */
+/*=============================================
+Alerta Línea Precarga
+=============================================*/
 function fncMatPreloader(type) {
   var preloader = new $.materialPreloader({
     position: "top",
