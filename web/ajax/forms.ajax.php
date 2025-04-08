@@ -113,6 +113,19 @@ class FormsController
         $updateCart = CurlController::request($url, $method, $fields);
         echo $updateCart->status;
     }
+
+    /*=============================================
+    Remover carrito en base de datos
+    =============================================*/
+    public $idCartDelete;
+    public function remCart()
+    {
+        $url = "carts?id=" . $this->idCartDelete . "&nameId=id_cart&token=" . $this->token . "&table=users&suffix=user";
+        $method = "DELETE";
+        $fields = array();
+        $remCart = CurlController::request($url, $method, $fields);
+        echo $remCart->status;
+    }
 }
 
 if (isset($_POST["table"])) {
@@ -158,4 +171,11 @@ if (isset($_POST["idCartUpdate"])) {
     $updateCart->idCartUpdate = $_POST["idCartUpdate"];
     $updateCart->quantityCartUpdate = $_POST["quantityCartUpdate"];
     $updateCart->updateCart();
+}
+
+if (isset($_POST["idCartDelete"])) {
+    $remCart = new FormsController();
+    $remCart->token = $_POST["token"];
+    $remCart->idCartDelete = $_POST["idCartDelete"];
+    $remCart->remCart();
 }

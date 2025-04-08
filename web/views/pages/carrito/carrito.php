@@ -115,13 +115,12 @@ Carrito de compras
                         QUITAR ELEMENTOS
                         ===========================================-->
                         <div class="d-none d-lg-block col-lg-1 text-center mt-3">
-                            <button class="btn btn-light btn-sm border remCart" key="<?php echo $key ?>" idCart="<?php echo $value->id_cart ?>"><i class="fa fa-trash"></i></button>
+                            <button class="btn btn-light btn-sm border remCart" key="<?php echo $key ?>" idCart="<?php echo $value->id_cart ?>"><i class="fas fa-trash"></i></button>
                         </div>
                         <div class="d-block d-lg-none">
-                            <button class="btn btn-light btn-sm border remCart" key="<?php echo $key ?>" idCart="<?php echo $value->id_cart ?>" style="position:absolute; top:0px; right:0px"><i class="fa fa-trash"></i></button>
+                            <button class="btn btn-light btn-sm border remCart" key="<?php echo $key ?>" idCart="<?php echo $value->id_cart ?>" style="position:absolute; top:0px; right:0px"><i class="fas fa-trash"></i></button>
                         </div>
                     </div>
-
                     <?php
                     if ($value->offer_variant > 0) {
                         $totalCart += $value->quantity_cart * $value->offer_variant;
