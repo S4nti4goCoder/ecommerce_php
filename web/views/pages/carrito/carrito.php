@@ -154,3 +154,4 @@ Carrito de compras
 
     </div>
 </div>
+<script src="<?php echo $path ?>views/assets/js/carts/carts.js"></script>
