@@ -162,11 +162,11 @@ $(document).on("change", ".changeVariant", function () {
     var addCart = $(".addCart");
     addCart.each((i) => {
       $(addCart[i]).attr("idVariant", variant.id_variant);
-      // if (variant.offer_variant > 0) {
-      //   $(addCart[i]).attr("priceVariant", variant.offer_variant);
-      // } else {
-      //   $(addCart[i]).attr("priceVariant", variant.price_variant);
-      // }
+      if (variant.offer_variant > 0) {
+        $(addCart[i]).attr("priceVariant", variant.offer_variant);
+      } else {
+        $(addCart[i]).attr("priceVariant", variant.price_variant);
+      }
     });
   }
 });
@@ -223,6 +223,7 @@ $(document).on("click", ".addCart", function () {
   var idProduct = $(this).attr("idProduct");
   var idVariant = $(this).attr("idVariant");
   var quantity = $(this).attr("quantity");
+  var priceVariant = $(this).attr("priceVariant");
 
   var data = new FormData();
   data.append("token", localStorage.getItem("token-user"));
@@ -238,7 +239,20 @@ $(document).on("click", ".addCart", function () {
     processData: false,
     success: function (response) {
       if (response == 200) {
-        fncSweetAlert("footer", "Producto agregado a tu carrito de compras", "/carrito");
+        var shoppingBasket = $("#shoppingBasket").html();
+        var totalShop = $("#totalShop").html();
+
+        $("#shoppingBasket").html(Number(shoppingBasket) + Number(quantity));
+        $("#totalShop").html(
+          (Number(totalShop) + Number(quantity) * Number(priceVariant)).toFixed(
+            2
+          )
+        );
+        fncSweetAlert(
+          "footer",
+          "Producto agregado a tu carrito de compras",
+          "/carrito"
+        );
       }
     },
   });

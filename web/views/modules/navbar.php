@@ -1,5 +1,8 @@
 <?php
 
+/*=============================================
+Categorías
+=============================================*/
 $select = "id_category,name_category,url_category,icon_category";
 $url = "categories?select=" . $select;
 $method = "GET";
@@ -11,6 +14,24 @@ if ($dataCategories->status == 200) {
     $dataCategories = $dataCategories->results;
 } else {
     $dataCategories = array();
+}
+
+/*=============================================
+Carrito de compras
+=============================================*/
+if (isset($_SESSION["user"])) {
+    $select = "id_cart,url_product,type_variant,media_variant,name_product,description_variant,quantity_cart,offer_variant,price_variant";
+    $url = "relations?rel=carts,variants,products&type=cart,variant,product&linkTo=id_user_cart&equalTo=" . $_SESSION["user"]->id_user . "&select=" . $select;
+    $method = "GET";
+    $fields = array();
+    $carts = CurlController::request($url, $method, $fields);
+    if ($carts->status == 200) {
+        $carts = $carts->results;
+    } else {
+        $carts = array();
+    }
+} else {
+    $carts = array();
 }
 
 ?>
@@ -95,7 +116,23 @@ if ($dataCategories->status == 200) {
                     </button>
                 </a>
                 <div class="small border float-start ps-2 pe-2 w-100">
-                    TU CESTA <span>0</span><br> COP $<span>0</span>
+
+                    <?php
+                    $shoppingBasket = 0;
+                    $totalShop = 0;
+                    if (!empty($carts)) {
+                        foreach ($carts as $key => $value) {
+                            $shoppingBasket += $value->quantity_cart;
+                            if ($value->offer_variant > 0) {
+                                $totalShop += $value->quantity_cart * $value->offer_variant;
+                            } else {
+                                $totalShop += $value->quantity_cart * $value->price_variant;
+                            }
+                        }
+                    }
+                    ?>
+
+                    TU CESTA <span id="shoppingBasket"><?php echo $shoppingBasket ?></span><br> USD $<span id="totalShop"><?php echo number_format($totalShop, 2) ?></span>
                 </div>
             </div>
         </div>

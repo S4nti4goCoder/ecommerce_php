@@ -188,18 +188,26 @@ if (!empty($product)) {
                         </div>
                         <div class="col-12 col-md-9">
                             <button
-                                class="btn btn-dark btn-block font-weight-bold py-3 pulseAnimation
-                                <?php if (isset($_SESSION["user"])): ?> addCart <?php endif ?>"
+                                class="btn btn-dark btn-block font-weight-bold py-3 pulseAnimation 
+							<?php if (isset($_SESSION["user"])): ?> addCart <?php endif ?>"
                                 <?php if (!isset($_SESSION["user"])): ?>data-bs-toggle="modal" data-bs-target="#login" <?php endif ?>
                                 idProduct="<?php echo $product->id_product ?>"
                                 idVariant="<?php echo $product->variants[0]->id_variant ?>"
-                                quantity="1">
-                                ¡AGREGAR AL CARRITO!
+                                priceVariant="<?php if ($product->variants[0]->offer_variant > 0): ?><?php echo $product->variants[0]->offer_variant ?><?php else: ?><?php echo $product->variants[0]->price_variant ?><?php endif ?>"
+                                quantity="1">¡AGREGAR AL CARRITO!
                             </button>
                         </div>
                     <?php else: ?>
                         <div class="col-12">
-                            <button class="btn btn-dark btn-block font-weight-bold py-3 pulseAnimation">¡AGREGAR AL CARRITO!</button>
+                            <button
+                                class="btn btn-dark btn-block font-weight-bold py-3 pulseAnimation 
+							    <?php if (isset($_SESSION["user"])): ?> addCart <?php endif ?>"
+                                <?php if (!isset($_SESSION["user"])): ?>data-bs-toggle="modal" data-bs-target="#login" <?php endif ?>
+                                idProduct="<?php echo $product->id_product ?>"
+                                idVariant="<?php echo $product->variants[0]->id_variant ?>"
+                                priceVariant="<?php if ($product->variants[0]->offer_variant > 0): ?><?php echo $product->variants[0]->offer_variant ?><?php else: ?><?php echo $product->variants[0]->price_variant ?><?php endif ?>"
+                                quantity="1">¡AGREGAR AL CARRITO!
+                            </button>
                         </div>
                     <?php endif ?>
                 </div>
