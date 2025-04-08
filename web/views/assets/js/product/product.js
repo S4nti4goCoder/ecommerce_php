@@ -31,7 +31,6 @@ Cambiar variante
 $(document).on("change", ".changeVariant", function () {
   var variant = JSON.parse($(this).attr("variant"));
   var url = $(this).attr("url");
-  console.log("variant: ", variant);
 
   /*=============================================
     Cambiar la galeria de imagenes
@@ -155,6 +154,21 @@ $(document).on("change", ".changeVariant", function () {
 				</div>
 		`);
   }
+
+  /*=============================================
+  Agregar ID de variante al botón addCart
+  =============================================*/
+  if ($(".addCart").length > 0) {
+    var addCart = $(".addCart");
+    addCart.each((i) => {
+      $(addCart[i]).attr("idVariant", variant.id_variant);
+      // if (variant.offer_variant > 0) {
+      //   $(addCart[i]).attr("priceVariant", variant.offer_variant);
+      // } else {
+      //   $(addCart[i]).attr("priceVariant", variant.price_variant);
+      // }
+    });
+  }
 });
 
 /*=============================================
@@ -194,4 +208,22 @@ $(".btnInc").click(function () {
   if ($(this).attr("type") == "btnMax") {
     $(".showQuantity").val(Number($(".showQuantity").val()) + 1);
   }
+  if ($(".addCart").length > 0) {
+    var addCart = $(".addCart");
+    addCart.each((i) => {
+      $(addCart[i]).attr("quantity", $(".showQuantity").val());
+    });
+  }
+});
+
+/*=============================================
+Agregar al carrito de compras
+=============================================*/
+$(document).on("click", ".addCart", function () {
+  var idProduct = $(this).attr("idProduct");
+  console.log("idProduct: ", idProduct);
+  var idVariant = $(this).attr("idVariant");
+  console.log("idVariant: ", idVariant);
+  var quantity = $(this).attr("quantity");
+  console.log("quantity: ", quantity);
 });

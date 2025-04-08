@@ -170,7 +170,9 @@ if (!empty($product)) {
                     </div>
                 <?php endif ?>
 
-                <!-- Boton de compra -->
+                <!--=====================================
+				Botón de compra
+				======================================-->
                 <div class="row my-4">
                     <?php if ($product->variants[0]->type_variant == "gallery"): ?>
                         <div class="col-12 col-md-3 blockQuantity">
@@ -185,7 +187,15 @@ if (!empty($product)) {
                             </div>
                         </div>
                         <div class="col-12 col-md-9">
-                            <button class="btn btn-dark btn-block font-weight-bold py-3 pulseAnimation">¡AGREGAR AL CARRITO!</button>
+                            <button
+                                class="btn btn-dark btn-block font-weight-bold py-3 pulseAnimation
+                                <?php if (isset($_SESSION["user"])): ?> addCart <?php endif ?>"
+                                <?php if (!isset($_SESSION["user"])): ?>data-bs-toggle="modal" data-bs-target="#login" <?php endif ?>
+                                idProduct="<?php echo $product->id_product ?>"
+                                idVariant="<?php echo $product->variants[0]->id_variant ?>"
+                                quantity="1">
+                                ¡AGREGAR AL CARRITO!
+                            </button>
                         </div>
                     <?php else: ?>
                         <div class="col-12">
