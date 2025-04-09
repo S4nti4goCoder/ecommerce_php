@@ -71,3 +71,8 @@
         </div>
     <?php endif ?>
 </div>
+<?php if (isset($_SESSION["user"])): ?>
+    <a href="/perfil/shopping" class="mt-4 btn btn-default btn-block templateColor border-0 rounded py-2 text-uppercase">Ir a mis compras</a>
+<?php else: ?>
+    <a href="#login" class="mt-4 btn btn-default btn-block templateColor border-0 rounded py-2 text-uppercase" data-bs-toggle="modal">Ir a mis compras</a>
+<?php endif ?>
