@@ -1,6 +1,29 @@
 <?php
 
 if (isset($_GET["ref"])) {
+    $status = "pending";
+
+    /*=============================================
+    Consultar referencia
+    =============================================*/
+    $url = "carts?linkTo=ref_cart&equalTo=" . $_GET["ref"];
+    $method = "GET";
+    $fields = array();
+
+    $refs = CurlController::request($url, $method, $fields);
+    if ($refs->status == 200) {
+
+        /*=============================================
+        Validar el pago con PayPal
+        =============================================*/
+        if ($refs->results[0]->method_cart == "paypal") {
+            $url = "v2/checkout/orders/" . $refs->results[0]->order_cart;
+            $paypal = CurlController::paypal($url, $method, $fields);
+            if ($paypal->status == "APPROVED") {
+                $status = "ok";
+            }
+        }
+    }
 } else {
     echo '<script>
         window.location = "' . $path . '404";

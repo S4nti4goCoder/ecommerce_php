@@ -5,7 +5,6 @@ $method = "GET";
 $fields = array();
 
 $user = CurlController::request($url, $method, $fields)->results[0];
-$status = "ok";
 
 ?>
 
