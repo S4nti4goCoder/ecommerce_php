@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-04-2025 a las 02:44:20
+-- Tiempo de generación: 09-04-2025 a las 20:06:43
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -65,15 +65,6 @@ CREATE TABLE `carts` (
   `date_updated_cart` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
---
--- Volcado de datos para la tabla `carts`
---
-
-INSERT INTO `carts` (`id_cart`, `id_user_cart`, `id_product_cart`, `id_variant_cart`, `quantity_cart`, `ref_cart`, `order_cart`, `method_cart`, `date_created_cart`, `date_updated_cart`) VALUES
-(1, 2, 20, 47, 3, '41031744159180', '2SS94385JY536852A', 'paypal', '2025-04-08', '2025-04-09 00:39:43'),
-(2, 2, 18, 43, 1, '41031744159180', '2SS94385JY536852A', 'paypal', '2025-04-08', '2025-04-09 00:39:43'),
-(4, 2, 40, 71, 1, '41031744159180', '2SS94385JY536852A', 'paypal', '2025-04-08', '2025-04-09 00:39:43');
-
 -- --------------------------------------------------------
 
 --
@@ -128,6 +119,40 @@ CREATE TABLE `favorites` (
 INSERT INTO `favorites` (`id_favorite`, `id_user_favorite`, `id_product_favorite`, `date_created_favorite`, `date_updated_favorite`) VALUES
 (20, 2, 43, '2025-04-08', '2025-04-07 23:33:40'),
 (21, 2, 22, '2025-04-08', '2025-04-07 23:33:51');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `orders`
+--
+
+CREATE TABLE `orders` (
+  `id_order` int(11) NOT NULL,
+  `id_user_order` int(11) NOT NULL DEFAULT 0,
+  `id_product_order` int(11) NOT NULL DEFAULT 0,
+  `id_variant_order` int(11) NOT NULL DEFAULT 0,
+  `quantity_order` int(11) NOT NULL DEFAULT 0,
+  `ref_order` text DEFAULT NULL,
+  `number_order` text DEFAULT NULL,
+  `method_order` text DEFAULT NULL,
+  `warranty_order` int(11) NOT NULL DEFAULT 0,
+  `process_order` int(11) NOT NULL DEFAULT 0,
+  `track_order` text DEFAULT NULL,
+  `start_date_order` date DEFAULT NULL,
+  `medium_date_order` date DEFAULT NULL,
+  `end_date_order` date DEFAULT NULL,
+  `date_created_order` date DEFAULT NULL,
+  `date_updated_order` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Volcado de datos para la tabla `orders`
+--
+
+INSERT INTO `orders` (`id_order`, `id_user_order`, `id_product_order`, `id_variant_order`, `quantity_order`, `ref_order`, `number_order`, `method_order`, `warranty_order`, `process_order`, `track_order`, `start_date_order`, `medium_date_order`, `end_date_order`, `date_created_order`, `date_updated_order`) VALUES
+(1, 2, 20, 47, 3, '37771744221025', '2VA982435L633424C', 'paypal', 7, 0, NULL, '2025-04-09', NULL, NULL, '2025-04-09', '2025-04-09 17:51:29'),
+(2, 2, 18, 43, 1, '37771744221025', '2VA982435L633424C', 'paypal', 7, 0, NULL, '2025-04-09', NULL, NULL, '2025-04-09', '2025-04-09 17:51:29'),
+(3, 2, 40, 71, 1, '37771744221025', '2VA982435L633424C', 'paypal', 7, 0, NULL, '2025-04-09', NULL, NULL, '2025-04-09', '2025-04-09 17:51:29');
 
 -- --------------------------------------------------------
 
@@ -334,7 +359,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id_user`, `name_user`, `email_user`, `password_user`, `token_user`, `token_exp_user`, `method_user`, `verification_user`, `confirm_user`, `country_user`, `department_user`, `city_user`, `address_user`, `phone_user`, `date_created_user`, `date_updated_user`) VALUES
 (1, 'Santiago Quintero', 'quintiagogarciadev@gmail.com', '$2a$07$azybxcags23425sdg23sdeanQZqjaf6Birm2NvcYTNtJw24CsO5uq', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDQwMDI1NjcsImV4cCI6MTc0NDA4ODk2NywiZGF0YSI6eyJpZCI6MSwiZW1haWwiOiJxdWludGlhZ29nYXJjaWFkZXZAZ21haWwuY29tIn19._CgY5MIjxZ-G_yAWCdX2bfpnHrAMDbnO0V16cxVhIKU', '1744088967', 'directo', 1, 'cq7n3as6fj20dgzkxyu9', 'Colombia', 'Cundinamarca', 'Bogotá', 'Carrera 14 # 56-17', '57_3154488668', '2025-03-14', '2025-04-07 05:11:25'),
-(2, 'Santiago David Garcia Quintero', 'santiagoquintero.softdev.code@gmail.com', NULL, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDQxNDQ1NjgsImV4cCI6MTc0NDIzMDk2OCwiZGF0YSI6eyJpZCI6MiwiZW1haWwiOiJzYW50aWFnb3F1aW50ZXJvLnNvZnRkZXYuY29kZUBnbWFpbC5jb20ifX0.CD7LSdDpWG7_3w-Bi7hhS_HJ7-MVQQJLb62hfWXa2Eo', '1744230968', 'google', 1, NULL, 'Colombia', 'Cundinamarca', 'Bogotá', 'Calle 34 # 45 64', '57_3171248892', '2025-04-06', '2025-04-09 00:40:15');
+(2, 'Santiago David Garcia Quintero', 'santiagoquintero.softdev.code@gmail.com', NULL, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDQyMTc0NjUsImV4cCI6MTc0NDMwMzg2NSwiZGF0YSI6eyJpZCI6MiwiZW1haWwiOiJzYW50aWFnb3F1aW50ZXJvLnNvZnRkZXYuY29kZUBnbWFpbC5jb20ifX0.6T3dvnN-p8THF7FTk4DY9I4ZTA4nMzocSC2gF2A_YFo', '1744303865', 'google', 1, NULL, 'Colombia', 'Cundinamarca', 'Bogotá', 'Calle 34 ', '57_3171248892', '2025-04-06', '2025-04-09 18:02:23');
 
 -- --------------------------------------------------------
 
@@ -468,6 +493,12 @@ ALTER TABLE `favorites`
   ADD KEY `id_user_favorite` (`id_user_favorite`);
 
 --
+-- Indices de la tabla `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id_order`);
+
+--
 -- Indices de la tabla `products`
 --
 ALTER TABLE `products`
@@ -534,6 +565,12 @@ ALTER TABLE `categories`
 --
 ALTER TABLE `favorites`
   MODIFY `id_favorite` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT de la tabla `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `products`

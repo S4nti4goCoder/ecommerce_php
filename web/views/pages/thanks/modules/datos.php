@@ -1,9 +1,14 @@
 <?php
 
-$url = "users?linkTo=id_user&equalTo=".$_SESSION["user"]->id_user;
+if (isset($carts[0]->id_user_cart)) {
+    $idUser = $carts[0]->id_user_cart;
+} else {
+    $idUser = $carts[0]->id_user_order;
+}
+
+$url = "users?linkTo=id_user&equalTo=" . $idUser;
 $method = "GET";
 $fields = array();
-
 $user = CurlController::request($url, $method, $fields)->results[0];
 
 ?>
@@ -26,6 +31,7 @@ $user = CurlController::request($url, $method, $fields)->results[0];
         <?php endif ?>
     </div>
 </div>
+
 <div class="mx-2 mt-3 p-2 rounded border bg-white">
     <div class="mt-3"> Detalles del pedido</div>
     <div class="row row-cols-1 row-cols-sm-2 px-2">
@@ -40,8 +46,15 @@ $user = CurlController::request($url, $method, $fields)->results[0];
             <p class="small m-0 p-0"><?php echo $user->phone_user ?></p>
         </div>
         <div class="col my-3">
+            <?php
+            if (isset($carts[0]->method_cart)) {
+                $methodCart = $carts[0]->method_cart;
+            } else {
+                $methodCart = $carts[0]->method_order;
+            }
+            ?>
             <p class="small m-0 p-0"><strong>Método de pago</strong></p>
-            <p class="small m-0 p-0">Pasarela de pagos</p>
+            <p class="small m-0 p-0">Pasarela de pagos <span class="text-uppercase"><?php echo $methodCart ?></span></p>
         </div>
     </div>
 </div>

@@ -6,22 +6,81 @@ if (isset($_GET["ref"])) {
     /*=============================================
     Consultar referencia
     =============================================*/
-    $url = "carts?linkTo=ref_cart&equalTo=" . $_GET["ref"];
+    // $url = "carts?linkTo=ref_cart&equalTo=".$_GET["ref"];
+    $url = "relations?rel=carts,variants,products&type=cart,variant,product&linkTo=ref_cart&equalTo=" . $_GET["ref"];
     $method = "GET";
     $fields = array();
 
-    $refs = CurlController::request($url, $method, $fields);
-    if ($refs->status == 200) {
+    // $refs = CurlController::request($url,$method,$fields);
+    $carts = CurlController::request($url, $method, $fields);
+    if ($carts->status == 200) {
+        $carts = $carts->results;
 
         /*=============================================
         Validar el pago con PayPal
         =============================================*/
-        if ($refs->results[0]->method_cart == "paypal") {
-            $url = "v2/checkout/orders/" . $refs->results[0]->order_cart;
+        if ($carts[0]->method_cart == "paypal") {
+            $url = "v2/checkout/orders/" . $carts[0]->order_cart;
             $paypal = CurlController::paypal($url, $method, $fields);
             if ($paypal->status == "APPROVED") {
                 $status = "ok";
             }
+        }
+
+        /*==================================================
+        Crear órdenes de compra y eliminar datos del carrito
+        ==================================================*/
+        if ($status == "ok") {
+            $count = 0;
+            foreach ($carts as $key => $value) {
+                $url = "orders?token=" . $_SESSION["user"]->token_user . "&table=users&suffix=user";
+                $method = 'POST';
+                $fields = array(
+                    "id_user_order" => $value->id_user_cart,
+                    "id_product_order" => $value->id_product_cart,
+                    "id_variant_order" => $value->id_variant_cart,
+                    "quantity_order" => $value->quantity_cart,
+                    "ref_order" => $value->ref_cart,
+                    "number_order" => $value->order_cart,
+                    "method_order" => $value->method_cart,
+                    "warranty_order" => 7,
+                    "start_date_order" => date("Y-m-d"),
+                    "date_created_order" => date("Y-m-d")
+                );
+
+                $orders = CurlController::request($url, $method, $fields);
+                if ($orders->status == 200) {
+                    $url = "carts?id=" . $value->id_cart . "&nameId=id_cart&token=" . $_SESSION["user"]->token_user . "&table=users&suffix=user";
+                    $method = "DELETE";
+                    $fields = array();
+                    $deleteCart = CurlController::request($url, $method, $fields);
+                    $count++;
+                    if ($count == count($carts)) {
+
+                        /*====================================================
+                        Enviamos correo electrónico de confirmación del pedido
+                        ====================================================*/
+                    }
+                }
+            }
+        }
+    } else {
+
+        /*=============================================
+        Traer órdenes de compra
+        =============================================*/
+        $url = "relations?rel=orders,variants,products&type=order,variant,product&linkTo=ref_order&equalTo=" . $_GET["ref"];
+        $method = "GET";
+        $fields = array();
+
+        $carts = CurlController::request($url, $method, $fields);
+        if ($carts->status == 200) {
+            $carts = $carts->results;
+            $status = "ok";
+        } else {
+            echo '<script>
+                window.location = "' . $path . '404";
+            </script>';
         }
     }
 } else {

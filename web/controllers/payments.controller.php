@@ -9,6 +9,10 @@ class PaymentsController
     public function payment()
     {
         if (isset($_POST["optradio"])) {
+            echo '<script>
+				fncMatPreloader("on");
+				fncSweetAlert("loading", "procesando para pagar...", "");
+			</script>';
 
             /*=============================================
     		Actualizar datos de usario en bd
@@ -91,24 +95,6 @@ class PaymentsController
                                 }
                             }
                         }
-                    }
-
-                    /*=============================================
-					Pasarela de pagos de D-Local Go
-					=============================================*/
-                    if ($_POST["optradio"] == "dlocal") {
-                        echo '<script>
-                            window.location ="' . TemplateController::path() . 'thanks?ref=' . $ref . '"
-                        </script>';
-                    }
-
-                    /*=============================================
-					Pasarela de pagos de Mercado Pago
-					=============================================*/
-                    if ($_POST["optradio"] == "mercado_pago") {
-                        echo '<script>
-                            window.location ="' . TemplateController::path() . 'thanks?ref=' . $ref . '"
-                        </script>';
                     }
                 }
             }
