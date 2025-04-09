@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-04-2025 a las 23:40:03
+-- Tiempo de generación: 09-04-2025 a las 02:44:20
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -70,9 +70,9 @@ CREATE TABLE `carts` (
 --
 
 INSERT INTO `carts` (`id_cart`, `id_user_cart`, `id_product_cart`, `id_variant_cart`, `quantity_cart`, `ref_cart`, `order_cart`, `method_cart`, `date_created_cart`, `date_updated_cart`) VALUES
-(1, 2, 20, 47, 3, NULL, NULL, NULL, '2025-04-08', '2025-04-08 20:36:21'),
-(2, 2, 18, 43, 1, NULL, NULL, NULL, '2025-04-08', '2025-04-08 05:11:27'),
-(4, 2, 40, 71, 1, NULL, NULL, NULL, '2025-04-08', '2025-04-08 05:12:37');
+(1, 2, 20, 47, 3, '41031744159180', '2SS94385JY536852A', 'paypal', '2025-04-08', '2025-04-09 00:39:43'),
+(2, 2, 18, 43, 1, '41031744159180', '2SS94385JY536852A', 'paypal', '2025-04-08', '2025-04-09 00:39:43'),
+(4, 2, 40, 71, 1, '41031744159180', '2SS94385JY536852A', 'paypal', '2025-04-08', '2025-04-09 00:39:43');
 
 -- --------------------------------------------------------
 
@@ -334,7 +334,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id_user`, `name_user`, `email_user`, `password_user`, `token_user`, `token_exp_user`, `method_user`, `verification_user`, `confirm_user`, `country_user`, `department_user`, `city_user`, `address_user`, `phone_user`, `date_created_user`, `date_updated_user`) VALUES
 (1, 'Santiago Quintero', 'quintiagogarciadev@gmail.com', '$2a$07$azybxcags23425sdg23sdeanQZqjaf6Birm2NvcYTNtJw24CsO5uq', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDQwMDI1NjcsImV4cCI6MTc0NDA4ODk2NywiZGF0YSI6eyJpZCI6MSwiZW1haWwiOiJxdWludGlhZ29nYXJjaWFkZXZAZ21haWwuY29tIn19._CgY5MIjxZ-G_yAWCdX2bfpnHrAMDbnO0V16cxVhIKU', '1744088967', 'directo', 1, 'cq7n3as6fj20dgzkxyu9', 'Colombia', 'Cundinamarca', 'Bogotá', 'Carrera 14 # 56-17', '57_3154488668', '2025-03-14', '2025-04-07 05:11:25'),
-(2, 'Santiago David Garcia Quintero', 'santiagoquintero.softdev.code@gmail.com', NULL, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDQxNDQ1NjgsImV4cCI6MTc0NDIzMDk2OCwiZGF0YSI6eyJpZCI6MiwiZW1haWwiOiJzYW50aWFnb3F1aW50ZXJvLnNvZnRkZXYuY29kZUBnbWFpbC5jb20ifX0.CD7LSdDpWG7_3w-Bi7hhS_HJ7-MVQQJLb62hfWXa2Eo', '1744230968', 'google', 1, NULL, 'Colombia', 'Cundinamarca', 'Bogotá', 'Calle 34 # 45 64', '57_3171248892', '2025-04-06', '2025-04-08 21:38:39');
+(2, 'Santiago David Garcia Quintero', 'santiagoquintero.softdev.code@gmail.com', NULL, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDQxNDQ1NjgsImV4cCI6MTc0NDIzMDk2OCwiZGF0YSI6eyJpZCI6MiwiZW1haWwiOiJzYW50aWFnb3F1aW50ZXJvLnNvZnRkZXYuY29kZUBnbWFpbC5jb20ifX0.CD7LSdDpWG7_3w-Bi7hhS_HJ7-MVQQJLb62hfWXa2Eo', '1744230968', 'google', 1, NULL, 'Colombia', 'Cundinamarca', 'Bogotá', 'Calle 34 # 45 64', '57_3171248892', '2025-04-06', '2025-04-09 00:40:15');
 
 -- --------------------------------------------------------
 

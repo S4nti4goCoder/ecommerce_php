@@ -40,15 +40,57 @@ class PaymentsController
                         }
                     }
 
+                    echo '<pre>';
+                    print_r($totalCart);
+                    echo '</pre>';
                     $ref = TemplateController::genCodec(1000);
 
                     /*=============================================
 					Pasarela de pagos de PayPal
 					=============================================*/
                     if ($_POST["optradio"] == "paypal") {
-                        echo '<script>
-                            window.location ="' . TemplateController::path() . 'thanks?ref=' . $ref . '"
-                        </script>';
+                        $url = "v2/checkout/orders";
+                        $method = "POST";
+                        $fields = '{
+                            "intent": "CAPTURE",
+                            "purchase_units": [
+                              {
+                                "reference_id": "' . $ref . '",
+                                "amount": {
+                                  "currency_code": "USD",
+                                  "value": "' . $totalCart . '"
+                                }
+                              }
+                            ],
+                            "payment_source": {
+                              "paypal": {
+                                "experience_context": {
+                                  "payment_method_preference": "IMMEDIATE_PAYMENT_REQUIRED",
+                                  "user_action": "PAY_NOW",
+                                  "return_url": "' . TemplateController::path() . 'thanks?ref=' . $ref . '",
+                                  "cancel_url": "' . TemplateController::path() . 'checkout"
+                                }
+                              }
+                            }
+                          }';
+
+                        $paypal = CurlController::paypal($url, $method, $fields);
+                        if ($paypal->status == "PAYER_ACTION_REQUIRED") {
+                            $count = 0;
+                            foreach ($carts as $key => $value) {
+                                $url = "carts?id=" . $value->id_cart . "&nameId=id_cart&token=" . $_SESSION["user"]->token_user . "&table=users&suffix=user";
+                                $method = "PUT";
+                                $fields = "ref_cart=" . $ref . "&order_cart=" . $paypal->id . "&method_cart=" . $_POST["optradio"];
+
+                                $updateCart = CurlController::request($url, $method, $fields);
+                                $count++;
+                                if ($count == count($carts)) {
+                                    echo '<script>
+										window.location ="' . $paypal->links[1]->href . '"
+									</script>';
+                                }
+                            }
+                        }
                     }
 
                     /*=============================================
