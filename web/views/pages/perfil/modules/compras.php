@@ -50,6 +50,19 @@ if ($shopping->status == 200) {
                                 }
                                 ?>
                             </h4>
+                            <?php if ($value->type_variant == "gallery" && $value->process_order > 1): ?>
+                                <div class="d-flex mt-4">
+                                    <?php
+                                    if ($value->end_date_order != null) {
+                                        $deliveryDate = date($value->end_date_order);
+                                        $warrantyDate = date("Y-m-d", strtotime($deliveryDate . "+ " . $value->warranty_order . " days"));
+                                    }
+                                    ?>
+                                    <?php if ($warrantyDate >= date("Y-m-d")): ?>
+                                        <div class="mr-1 py-2 px-3 bg-warning rounded-pill small">Fecha límite garantía: <?php echo TemplateController::formatDate(1, $warrantyDate) ?></div>
+                                    <?php endif ?>
+                                </div>
+                            <?php endif ?>
                         </div>
                         <div class="col">
 
@@ -91,6 +104,19 @@ if ($shopping->status == 200) {
                                     <a href="/aprendizaje/<?php echo $value->url_product ?>" class="btn btn-default border-0 templateColor float-end rounded-pill px-4" style="color:white !important">Ir al curso</a>
                                     <div class="clearfix"></div>
                                 </div>
+                                <?php if ($value->type_variant != "gallery"): ?>
+                                    <div class="float-end my-3">
+                                        <?php
+                                        if ($value->start_date_order != null) {
+                                            $deliveryDate = date($value->start_date_order);
+                                            $warrantyDate = date("Y-m-d", strtotime($deliveryDate . "+ " . $value->warranty_order . " days"));
+                                        }
+                                        ?>
+                                        <?php if ($warrantyDate >= date("Y-m-d")): ?>
+                                            <span class="ml-1 py-2 px-3 bg-warning rounded-pill small">Fecha límite reembolso: <?php echo TemplateController::formatDate(1, $warrantyDate) ?></span>
+                                        <?php endif ?>
+                                    </div>
+                                <?php endif ?>
                             <?php endif ?>
 
                         </div>
