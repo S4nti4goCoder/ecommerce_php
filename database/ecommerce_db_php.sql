@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-04-2025 a las 05:01:29
+-- Tiempo de generación: 11-04-2025 a las 01:52:14
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -44,7 +44,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id_admin`, `rol_admin`, `name_admin`, `email_admin`, `password_admin`, `token_admin`, `token_exp_admin`, `date_created_admin`, `date_updated_admin`) VALUES
-(1, 'admin', 'Jose Tienda', 'admin@ecommerce.com', '$2a$07$azybxcags23425sdg23sdeanQZqjaf6Birm2NvcYTNtJw24CsO5uq', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDA0NTY1NzgsImV4cCI6MTc0MDU0Mjk3OCwiZGF0YSI6eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBlY29tbWVyY2UuY29tIn19.Dtd0mYKcY8njrqOWbF9dWm7d7onLjJK0H81qM9ntJc0', '1740542978', '2024-09-01', '2025-02-25 04:09:38');
+(1, 'admin', 'Jose Tienda', 'admin@ecommerce.com', '$2a$07$azybxcags23425sdg23sdeanQZqjaf6Birm2NvcYTNtJw24CsO5uq', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDQzMTczMzIsImV4cCI6MTc0NDQwMzczMiwiZGF0YSI6eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBlY29tbWVyY2UuY29tIn19.jjHTBeWPu3RsMiF22UGrXA3ZCnOAAc2g21GiC2tgUl0', '1744403732', '2024-09-01', '2025-04-10 23:51:21');
 
 -- --------------------------------------------------------
 
@@ -327,8 +327,9 @@ CREATE TABLE `templates` (
 --
 
 INSERT INTO `templates` (`id_template`, `logo_template`, `icon_template`, `cover_template`, `title_template`, `description_template`, `keywords_template`, `fonts_template`, `colors_template`, `active_template`, `date_created_template`, `date_updated_template`) VALUES
-(1, 'logo.png', 'icono.png', 'cover.jpg', 'Sistema Ecommerce', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae diam accumsan, semper mi sit amet, maximus lectus. Mauris a ipsum venenatis.', '[\"ecommerce\", \"comcercio electrónico\", \"moda\", \"sistemas\"]', '{\"fontFamily\":\"%3Clink%20rel%3D%22preconnect%22%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%22%3E%0A%20%20%20%20%3Clink%20rel%3D%22preconnect%22%20href%3D%22https%3A%2F%2Ffonts.gstatic.com%22%20crossorigin%3E%0A%20%20%20%20%3Clink%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DUbuntu%2BCondensed%26family%3DUbuntu%3Aital%2Cwght%400%2C300%3B0%2C400%3B0%2C500%3B0%2C700%3B1%2C300%3B1%2C400%3B1%2C500%3B1%2C700%26display%3Dswap%22%20rel%3D%22stylesheet%22%3E\",\"fontBody\":\"Ubuntu\",\"fontSlide\":\"Ubuntu Condensed\"}', '[{\"top\":{\"background\":\"black\",\"color\":\"white\"}},{\"template\":{\"background\":\"#00a6fb\",\"color\":\"white\"}}]', 'ok', '2024-09-01', '2024-09-01 21:36:30'),
-(2, 'logo.png', 'icono.png', 'cover.jpg', 'Sistema Ecommerce', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae diam accumsan, semper mi sit amet, maximus lectus. Mauris a ipsum venenatis.', '[\"ecommerce\", \"comcercio electrónico\", \"moda\", \"sistemas\"]', '{\"fontFamily\":\"%3Clink%20rel%3D%22preconnect%22%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%22%3E%0A%3Clink%20rel%3D%22preconnect%22%20href%3D%22https%3A%2F%2Ffonts.gstatic.com%22%20crossorigin%3E%0A%3Clink%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DMontserrat%3Aital%2Cwght%400%2C100..900%3B1%2C100..900%26display%3Dswap%22%20rel%3D%22stylesheet%22%3E\",\"fontBody\":\"Montserrat\",\"fontSlide\":\"Montserrat\"}', '[{\"top\":{\"background\":\"#03f9b6\",\"color\":\"black\"}},{\"template\":{\"background\":\"#c147b5\",\"color\":\"white\"}}]', NULL, '2024-09-01', '2024-09-01 21:36:27');
+(1, 'logo.png', 'icono.png', 'cover.jpg', 'Sistema Ecommerce', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae diam accumsan, semper mi sit amet, maximus lectus. Mauris a ipsum venenatis.', 'ecommerce,comcercio electrónico,moda,sistemas', '{\"fontFamily\":\"%3Clink%20rel%3D%22preconnect%22%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%22%3E%0A%20%20%20%20%3Clink%20rel%3D%22preconnect%22%20href%3D%22https%3A%2F%2Ffonts.gstatic.com%22%20crossorigin%3E%0A%20%20%20%20%3Clink%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DUbuntu%2BCondensed%26family%3DUbuntu%3Aital%2Cwght%400%2C300%3B0%2C400%3B0%2C500%3B0%2C700%3B1%2C300%3B1%2C400%3B1%2C500%3B1%2C700%26display%3Dswap%22%20rel%3D%22stylesheet%22%3E\",\"fontBody\":\"Ubuntu\",\"fontSlide\":\"Ubuntu Condensed\"}', '[{\"top\":{\"background\":\"black\",\"color\":\"white\"}},{\"template\":{\"background\":\"#00a6fb\",\"color\":\"white\"}}]', 'ok', '2024-09-01', '2025-04-10 23:51:20'),
+(2, 'logo.png', 'icono.png', 'cover.jpg', 'Sistema Ecommerce', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae diam accumsan, semper mi sit amet, maximus lectus. Mauris a ipsum venenatis.', 'ecommerce,comcercio electrónico,moda,sistemas', '{\"fontFamily\":\"%3Clink%20rel%3D%22preconnect%22%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%22%3E%0A%3Clink%20rel%3D%22preconnect%22%20href%3D%22https%3A%2F%2Ffonts.gstatic.com%22%20crossorigin%3E%0A%3Clink%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DMontserrat%3Aital%2Cwght%400%2C100..900%3B1%2C100..900%26display%3Dswap%22%20rel%3D%22stylesheet%22%3E\",\"fontBody\":\"Montserrat\",\"fontSlide\":\"Montserrat\"}', '[{\"top\":{\"background\":\"#03f9b6\",\"color\":\"black\"}},{\"template\":{\"background\":\"#c147b5\",\"color\":\"white\"}}]', 'Null', '2024-09-01', '2025-04-10 23:47:43'),
+(3, 'logo.png', 'icono.png', 'cover.jpg', 'Ecommerce Navidad', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a elit vitae tortor sollicitudin dignissim. Aliquam ac tincidunt dui. Donec et purus vehicula', 'navidad,fiestas,regalos,bonos,descuentos', '{\"fontFamily\":\"%3Clink%20rel%3D%22preconnect%22%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%22%3E%0A%3Clink%20rel%3D%22preconnect%22%20href%3D%22https%3A%2F%2Ffonts.gstatic.com%22%20crossorigin%3E%0A%3Clink%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DNational%2BPark%3Awght%40200..800%26display%3Dswap%22%20rel%3D%22stylesheet%22%3E\",\"fontBody\":\"National Park\",\"fontSlide\":\"National Park\"}', '[{\"top\":{\"background\":\"#0b5d09\",\"color\":\"#ffffff\"}},{\"template\":{\"background\":\"#620909\",\"color\":\"#ffffff\"}}]', 'Null', '2025-04-10', '2025-04-10 23:51:20');
 
 -- --------------------------------------------------------
 
@@ -360,8 +361,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_user`, `name_user`, `email_user`, `password_user`, `token_user`, `token_exp_user`, `method_user`, `verification_user`, `confirm_user`, `country_user`, `department_user`, `city_user`, `address_user`, `phone_user`, `date_created_user`, `date_updated_user`) VALUES
-(1, 'Santiago Quintero', 'quintiagogarciadev@gmail.com', '$2a$07$azybxcags23425sdg23sdeanQZqjaf6Birm2NvcYTNtJw24CsO5uq', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDQyNTM5MDUsImV4cCI6MTc0NDM0MDMwNSwiZGF0YSI6eyJpZCI6MSwiZW1haWwiOiJxdWludGlhZ29nYXJjaWFkZXZAZ21haWwuY29tIn19.MymZACBZpegmB-iHL1XiI5vhJmoXzWSywHMCAQ6fApk', '1744340305', 'directo', 1, 'cq7n3as6fj20dgzkxyu9', 'Colombia', 'Cundinamarca', 'Bogotá', 'Carrera 57', '57_3154488668', '2025-03-14', '2025-04-10 03:00:49'),
-(2, 'Santiago David Garcia Quintero', 'santiagoquintero.softdev.code@gmail.com', NULL, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDQyNDQxMDUsImV4cCI6MTc0NDMzMDUwNSwiZGF0YSI6eyJpZCI6MiwiZW1haWwiOiJzYW50aWFnb3F1aW50ZXJvLnNvZnRkZXYuY29kZUBnbWFpbC5jb20ifX0.3Arkl8b4SiSJyKCsfrnKirS9gbkhChqyrCYPKtfpN7I', '1744330505', 'google', 1, NULL, 'Colombia', 'Cundinamarca', 'Bogotá', 'Calle 34 ', '57_3171248892', '2025-04-06', '2025-04-10 02:25:22');
+(1, 'Santiago Quintero', 'quintiagogarciadev@gmail.com', '$2a$07$azybxcags23425sdg23sdeanQZqjaf6Birm2NvcYTNtJw24CsO5uq', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDQyNTQyMDksImV4cCI6MTc0NDM0MDYwOSwiZGF0YSI6eyJpZCI6MSwiZW1haWwiOiJxdWludGlhZ29nYXJjaWFkZXZAZ21haWwuY29tIn19.uuaPMJQCS6xpBpEH6R54-B00HLItj6xAcj_tFPdnWN0', '1744340609', 'directo', 1, 'cq7n3as6fj20dgzkxyu9', 'Colombia', 'Cundinamarca', 'Bogotá', 'Carrera 57', '57_3154488668', '2025-03-14', '2025-04-10 03:11:05'),
+(2, 'Santiago David Garcia Quintero', 'santiagoquintero.softdev.code@gmail.com', NULL, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDQyNjQ4NjksImV4cCI6MTc0NDM1MTI2OSwiZGF0YSI6eyJpZCI6MiwiZW1haWwiOiJzYW50aWFnb3F1aW50ZXJvLnNvZnRkZXYuY29kZUBnbWFpbC5jb20ifX0.qV7v-Co1RSRrbeKswz2fNcVI3tRoMbX7sUO-kSElxa8', '1744351269', 'google', 1, NULL, 'Colombia', 'Cundinamarca', 'Bogotá', 'Calle 34 ', '57_3171248892', '2025-04-06', '2025-04-10 06:01:27');
 
 -- --------------------------------------------------------
 
@@ -554,7 +555,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT de la tabla `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `categories`
@@ -596,7 +597,7 @@ ALTER TABLE `subcategories`
 -- AUTO_INCREMENT de la tabla `templates`
 --
 ALTER TABLE `templates`
-  MODIFY `id_template` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_template` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `users`

@@ -90,20 +90,21 @@ if ($template->status == 200) {
     return;
 }
 
-/* Datos en Arreglo */
-$keywords = null;
+/*=============================================
+Datos en Arreglo
+=============================================*/
+$keywords = $template->keywords_template;
 
-foreach (json_decode($template->keywords_template, true) as $key => $value) {
-    $keywords .= $value . ", ";
-}
-$keywords = substr($keywords, 0, -2);
-
-/* Datos en Objeto */
+/*=============================================
+Datos en Objeto
+=============================================*/
 $fontFamily = json_decode($template->fonts_template)->fontFamily;
 $fontBody = json_decode($template->fonts_template)->fontBody;
 $fontSlide = json_decode($template->fonts_template)->fontSlide;
 
-/* Datos en JSON */
+/*=============================================
+Datos en JSON
+=============================================*/
 $topColor = json_decode($template->colors_template)[0]->top;
 $templateColor = json_decode($template->colors_template)[1]->template;
 
