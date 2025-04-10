@@ -311,6 +311,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 $routesArray[0] == "carrito" ||
                 $routesArray[0] == "checkout" ||
                 $routesArray[0] == "thanks" ||
+                $routesArray[0] == "aprendizaje" ||
                 $routesArray[0] == "no-found"
             ) {
                 include "pages/" . $routesArray[0] . "/" . $routesArray[0] . ".php";

@@ -86,9 +86,11 @@ if ($shopping->status == 200) {
                                         </li>
                                     </ul>
                                 </div>
-
                             <?php else: ?>
-
+                                <div class="mt-3">
+                                    <a href="/aprendizaje/<?php echo $value->url_product ?>" class="btn btn-default border-0 templateColor float-end rounded-pill px-4" style="color:white !important">Ir al curso</a>
+                                    <div class="clearfix"></div>
+                                </div>
                             <?php endif ?>
 
                         </div>
