@@ -21,7 +21,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>					
+                        <!-- <tr>					
 							<td>1</td>
 							<td>
 								<div class="form-check">
@@ -44,7 +44,7 @@
 									</a>
 								</div>
 							</td>
-						</tr>
+						</tr> -->
                     </tbody>
                 </table>
             </div>

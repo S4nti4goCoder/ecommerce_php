@@ -1,4 +1,6 @@
-//Tabla para administradores
+/*=============================================
+Tabla para administradores
+=============================================*/
 if ($(".adminsTable").length > 0) {
   var url = "/ajax/data-admins.ajax.php";
   var columns = [
@@ -12,7 +14,27 @@ if ($(".adminsTable").length > 0) {
   var order = [0, "desc"];
 }
 
-//Tabla para categorias
+/*=============================================
+Tabla para plantillas
+=============================================*/
+if ($(".templatesTable").length > 0) {
+  var url = "/ajax/data-templates.ajax.php";
+  var columns = [
+    { data: "id_template" },
+    { data: "active_template" },
+    { data: "logo_template" },
+    { data: "icon_template" },
+    { data: "cover_template" },
+    { data: "title_template" },
+    { data: "description_template" },
+    { data: "actions", orderable: false, searchable: false },
+  ];
+  var order = [0, "desc"];
+}
+
+/*=============================================
+Tabla para categorias
+=============================================*/
 if ($(".categoriesTable").length > 0) {
   var url = "/ajax/data-categories.ajax.php";
   var columns = [
@@ -32,7 +54,9 @@ if ($(".categoriesTable").length > 0) {
   var order = [0, "desc"];
 }
 
-//Tabla para subcategorias
+/*=============================================
+Tabla para subcategorias
+=============================================*/
 if ($(".subcategoriesTable").length > 0) {
   var url = "/ajax/data-subcategories.ajax.php";
   var columns = [
@@ -52,7 +76,9 @@ if ($(".subcategoriesTable").length > 0) {
   var order = [0, "desc"];
 }
 
-//Tabla para productos
+/*=============================================
+Tabla para productos
+=============================================*/
 if ($(".productsTable").length > 0) {
   var url = "/ajax/data-products.ajax.php";
   var columns = [
@@ -72,7 +98,9 @@ if ($(".productsTable").length > 0) {
   var order = [0, "desc"];
 }
 
-//Configuracion global DataTable
+/*=============================================
+Configuración global Datatable
+=============================================*/
 $("#tables").DataTable({
   responsive: true,
   aLengthMenu: [
@@ -116,7 +144,9 @@ $("#tables").DataTable({
   },
 });
 
-//Eliminar item
+/*=============================================
+Eliminar item
+=============================================*/
 $(document).on("click", ".deleteItem", function () {
   var idItem = $(this).attr("idItem");
   var table = $(this).attr("table");
@@ -183,7 +213,7 @@ $(document).on("click", ".deleteItem", function () {
 
 /*=============================================
 Suiche
-=============================================*/ 
+=============================================*/
 $("#tables").on("draw.dt", function () {
   $("input[data-bootstrap-switch]").each(function () {
     $(this).bootstrapSwitch({
