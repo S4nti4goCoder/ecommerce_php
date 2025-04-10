@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-04-2025 a las 20:06:43
+-- Tiempo de generación: 10-04-2025 a las 02:01:21
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -150,8 +150,8 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id_order`, `id_user_order`, `id_product_order`, `id_variant_order`, `quantity_order`, `ref_order`, `number_order`, `method_order`, `warranty_order`, `process_order`, `track_order`, `start_date_order`, `medium_date_order`, `end_date_order`, `date_created_order`, `date_updated_order`) VALUES
-(1, 2, 20, 47, 3, '37771744221025', '2VA982435L633424C', 'paypal', 7, 0, NULL, '2025-04-09', NULL, NULL, '2025-04-09', '2025-04-09 17:51:29'),
-(2, 2, 18, 43, 1, '37771744221025', '2VA982435L633424C', 'paypal', 7, 0, NULL, '2025-04-09', NULL, NULL, '2025-04-09', '2025-04-09 17:51:29'),
+(1, 2, 20, 47, 3, '37771744221025', '2VA982435L633424C', 'paypal', 7, 2, '3254234', '2025-04-09', '2025-04-10', '2025-04-11', '2025-04-09', '2025-04-10 00:00:28'),
+(2, 2, 18, 43, 1, '37771744221025', '2VA982435L633424C', 'paypal', 7, 2, '2343246', '2025-04-09', '2025-04-10', '2025-04-11', '2025-04-09', '2025-04-10 00:00:32'),
 (3, 2, 40, 71, 1, '37771744221025', '2VA982435L633424C', 'paypal', 7, 0, NULL, '2025-04-09', NULL, NULL, '2025-04-09', '2025-04-09 17:51:29');
 
 -- --------------------------------------------------------
@@ -359,7 +359,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id_user`, `name_user`, `email_user`, `password_user`, `token_user`, `token_exp_user`, `method_user`, `verification_user`, `confirm_user`, `country_user`, `department_user`, `city_user`, `address_user`, `phone_user`, `date_created_user`, `date_updated_user`) VALUES
 (1, 'Santiago Quintero', 'quintiagogarciadev@gmail.com', '$2a$07$azybxcags23425sdg23sdeanQZqjaf6Birm2NvcYTNtJw24CsO5uq', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDQwMDI1NjcsImV4cCI6MTc0NDA4ODk2NywiZGF0YSI6eyJpZCI6MSwiZW1haWwiOiJxdWludGlhZ29nYXJjaWFkZXZAZ21haWwuY29tIn19._CgY5MIjxZ-G_yAWCdX2bfpnHrAMDbnO0V16cxVhIKU', '1744088967', 'directo', 1, 'cq7n3as6fj20dgzkxyu9', 'Colombia', 'Cundinamarca', 'Bogotá', 'Carrera 14 # 56-17', '57_3154488668', '2025-03-14', '2025-04-07 05:11:25'),
-(2, 'Santiago David Garcia Quintero', 'santiagoquintero.softdev.code@gmail.com', NULL, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDQyMTc0NjUsImV4cCI6MTc0NDMwMzg2NSwiZGF0YSI6eyJpZCI6MiwiZW1haWwiOiJzYW50aWFnb3F1aW50ZXJvLnNvZnRkZXYuY29kZUBnbWFpbC5jb20ifX0.6T3dvnN-p8THF7FTk4DY9I4ZTA4nMzocSC2gF2A_YFo', '1744303865', 'google', 1, NULL, 'Colombia', 'Cundinamarca', 'Bogotá', 'Calle 34 ', '57_3171248892', '2025-04-06', '2025-04-09 18:02:23');
+(2, 'Santiago David Garcia Quintero', 'santiagoquintero.softdev.code@gmail.com', NULL, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDQyMzk5MDEsImV4cCI6MTc0NDMyNjMwMSwiZGF0YSI6eyJpZCI6MiwiZW1haWwiOiJzYW50aWFnb3F1aW50ZXJvLnNvZnRkZXYuY29kZUBnbWFpbC5jb20ifX0.bxV6FIYCc7hScSThwJCcIGmIg3HUsc80OxSxOEDb86A', '1744326301', 'google', 1, NULL, 'Colombia', 'Cundinamarca', 'Bogotá', 'Calle 34 ', '57_3171248892', '2025-04-06', '2025-04-10 00:00:35');
 
 -- --------------------------------------------------------
 

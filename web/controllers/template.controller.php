@@ -189,4 +189,47 @@ class TemplateController
         $codec = rand(1 * $length, (10 * $length) - 1) . Time();
         return $codec;
     }
+
+    /*=============================================
+	Convertidor de moneda
+	=============================================*/
+
+    static public function exchange($type)
+    {
+        $data = file_get_contents("http://www.geoplugin.net/json.gp");
+        if (json_decode($data)->geoplugin_status == 200) {
+            if ($type == "currency") {
+                return json_decode($data)->geoplugin_currencyConverter;
+            }
+            if ($type == "country") {
+                return json_decode($data)->geoplugin_countryName;
+            }
+            if ($type == "ip") {
+                return json_decode($data)->geoplugin_request;
+            }
+            if ($type == "timezone") {
+                return json_decode($data)->geoplugin_timezone;
+            }
+        } else {
+            return "error";
+        }
+    }
+
+    /*=============================================
+	Función para dar formato a las fechas
+	=============================================*/
+    static public function formatDate($type, $value)
+    {
+        date_default_timezone_set(TemplateController::exchange("timezone"));
+        setlocale(LC_TIME, 'es_VE.UTF-8', 'esp'); //Para traer dias y meses en español
+        if ($type == 1) {
+            return strftime("%d %B, %Y", strtotime($value));
+        }
+        if ($type == 2) {
+            return strftime("%b %Y", strtotime($value));
+        }
+        if ($type == 3) {
+            return strftime("%d - %m - %Y", strtotime($value));
+        }
+    }
 }
