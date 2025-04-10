@@ -6,12 +6,10 @@ if (isset($_GET["ref"])) {
     /*=============================================
     Consultar referencia
     =============================================*/
-    // $url = "carts?linkTo=ref_cart&equalTo=".$_GET["ref"];
     $url = "relations?rel=carts,variants,products&type=cart,variant,product&linkTo=ref_cart&equalTo=" . $_GET["ref"];
     $method = "GET";
     $fields = array();
 
-    // $refs = CurlController::request($url,$method,$fields);
     $carts = CurlController::request($url, $method, $fields);
     if ($carts->status == 200) {
         $carts = $carts->results;

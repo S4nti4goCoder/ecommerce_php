@@ -21,7 +21,9 @@ class TemplateController
         }
     }
 
-    /*Función para enviar correos electrónicos*/
+    /*=============================================
+	Función para enviar correos electrónicos
+	=============================================*/
     static public function sendEmail($subject, $email, $title, $message, $link)
     {
         date_default_timezone_set("America/Bogota");
@@ -32,6 +34,9 @@ class TemplateController
         $mail->isMail();
         $mail->UseSendmailOptions = 0;
         $mail->setFrom("noreply@ecommerce.com", "Ecommerce");
+        if ($email == null) {
+            $email = "admin@ecommerce.com";
+        }
         $mail->Subject = $subject;
         $mail->addAddress($email);
         $mail->msgHTML('<div style="width: 100%; background: #eee; position: relative; font-family: sans-serif; padding-top: 40px; padding-bottom: 40px;">

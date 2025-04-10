@@ -44,10 +44,18 @@ class PaymentsController
                         }
                     }
 
-                    echo '<pre>';
-                    print_r($totalCart);
-                    echo '</pre>';
                     $ref = TemplateController::genCodec(1000);
+
+                    /*=============================================
+					Notificación por email al vendedor
+					=============================================*/
+                    $subject = "Recibirá un pago de $" . number_format($totalCart, 2) . " a través de" . $_POST["optradio"];
+                    $email = null;
+                    $title = "Referencia del pago " . $ref;
+                    $message = "<h4>¡Recibirá un pago de $" . number_format($totalCart, 2) . "!</h4><h5>De " . TemplateController::capitalize(trim($_POST["name_user"])) . ", celular: " . str_replace("+", "", explode("_", $_POST["country_user"])[1]) . "_" . str_replace("-", "", $_POST["phone_user"]) . ", " . TemplateController::capitalize(trim($_POST["city_user"])) . " - " . TemplateController::capitalize(trim($_POST["department_user"])) . ". Del producto: " . $carts[0]->name_product . "</h5>";
+                    $link = TemplateController::path() . 'thanks?ref=' . $ref;
+
+                    TemplateController::sendEmail($subject, $email, $title, $message, $link);
 
                     /*=============================================
 					Pasarela de pagos de PayPal
