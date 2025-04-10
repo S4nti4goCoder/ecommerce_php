@@ -58,6 +58,13 @@ if (isset($_GET["ref"])) {
                         /*====================================================
                         Enviamos correo electrónico de confirmación del pedido
                         ====================================================*/
+                        $subject = "Su compra con la tienda Ecommerce ha sido confirmada";
+                        $email = $_SESSION["user"]->email_user;
+                        $title = "Referencia del pago " . $_GET["ref"];
+                        $message = "<h4>La compra del producto " . $carts[0]->name_product . " ha sido confirmada y comenzará el proceso de envío</h4>";
+                        $link = TemplateController::path() . 'thanks?ref=' . $_GET["ref"];
+
+                        TemplateController::sendEmail($subject, $email, $title, $message, $link);
                     }
                 }
             }
