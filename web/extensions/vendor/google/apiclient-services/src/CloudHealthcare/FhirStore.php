@@ -20,14 +20,10 @@ namespace Google\Service\CloudHealthcare;
 class FhirStore extends \Google\Collection
 {
   protected $collection_key = 'streamConfigs';
-  protected $bulkExportGcsDestinationType = BulkExportGcsDestination::class;
-  protected $bulkExportGcsDestinationDataType = '';
   /**
    * @var string
    */
   public $complexDataTypeReferenceParsing;
-  protected $consentConfigType = ConsentConfig::class;
-  protected $consentConfigDataType = '';
   /**
    * @var bool
    */
@@ -52,12 +48,28 @@ class FhirStore extends \Google\Collection
    * @var string
    */
   public $name;
+  /**
+   * @var NotificationConfig
+   */
+  public $notificationConfig;
   protected $notificationConfigType = NotificationConfig::class;
   protected $notificationConfigDataType = '';
+  /**
+   * @var FhirNotificationConfig[]
+   */
+  public $notificationConfigs;
   protected $notificationConfigsType = FhirNotificationConfig::class;
   protected $notificationConfigsDataType = 'array';
+  /**
+   * @var StreamConfig[]
+   */
+  public $streamConfigs;
   protected $streamConfigsType = StreamConfig::class;
   protected $streamConfigsDataType = 'array';
+  /**
+   * @var ValidationConfig
+   */
+  public $validationConfig;
   protected $validationConfigType = ValidationConfig::class;
   protected $validationConfigDataType = '';
   /**
@@ -65,20 +77,6 @@ class FhirStore extends \Google\Collection
    */
   public $version;
 
-  /**
-   * @param BulkExportGcsDestination
-   */
-  public function setBulkExportGcsDestination(BulkExportGcsDestination $bulkExportGcsDestination)
-  {
-    $this->bulkExportGcsDestination = $bulkExportGcsDestination;
-  }
-  /**
-   * @return BulkExportGcsDestination
-   */
-  public function getBulkExportGcsDestination()
-  {
-    return $this->bulkExportGcsDestination;
-  }
   /**
    * @param string
    */
@@ -92,20 +90,6 @@ class FhirStore extends \Google\Collection
   public function getComplexDataTypeReferenceParsing()
   {
     return $this->complexDataTypeReferenceParsing;
-  }
-  /**
-   * @param ConsentConfig
-   */
-  public function setConsentConfig(ConsentConfig $consentConfig)
-  {
-    $this->consentConfig = $consentConfig;
-  }
-  /**
-   * @return ConsentConfig
-   */
-  public function getConsentConfig()
-  {
-    return $this->consentConfig;
   }
   /**
    * @param bool

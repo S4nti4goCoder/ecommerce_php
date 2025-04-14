@@ -19,7 +19,7 @@ namespace Google\Service\Bigquery;
 
 class JobStatistics4 extends \Google\Collection
 {
-  protected $collection_key = 'timeline';
+  protected $collection_key = 'destinationUriFileCounts';
   /**
    * @var string[]
    */
@@ -28,8 +28,6 @@ class JobStatistics4 extends \Google\Collection
    * @var string
    */
   public $inputBytes;
-  protected $timelineType = QueryTimelineSample::class;
-  protected $timelineDataType = 'array';
 
   /**
    * @param string[]
@@ -58,20 +56,6 @@ class JobStatistics4 extends \Google\Collection
   public function getInputBytes()
   {
     return $this->inputBytes;
-  }
-  /**
-   * @param QueryTimelineSample[]
-   */
-  public function setTimeline($timeline)
-  {
-    $this->timeline = $timeline;
-  }
-  /**
-   * @return QueryTimelineSample[]
-   */
-  public function getTimeline()
-  {
-    return $this->timeline;
   }
 }
 

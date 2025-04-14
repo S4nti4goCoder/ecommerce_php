@@ -19,53 +19,41 @@ namespace Google\Service\Aiplatform;
 
 class GoogleCloudAiplatformV1Part extends \Google\Model
 {
-  protected $codeExecutionResultType = GoogleCloudAiplatformV1CodeExecutionResult::class;
-  protected $codeExecutionResultDataType = '';
-  protected $executableCodeType = GoogleCloudAiplatformV1ExecutableCode::class;
-  protected $executableCodeDataType = '';
+  /**
+   * @var GoogleCloudAiplatformV1FileData
+   */
+  public $fileData;
   protected $fileDataType = GoogleCloudAiplatformV1FileData::class;
   protected $fileDataDataType = '';
+  /**
+   * @var GoogleCloudAiplatformV1FunctionCall
+   */
+  public $functionCall;
   protected $functionCallType = GoogleCloudAiplatformV1FunctionCall::class;
   protected $functionCallDataType = '';
+  /**
+   * @var GoogleCloudAiplatformV1FunctionResponse
+   */
+  public $functionResponse;
   protected $functionResponseType = GoogleCloudAiplatformV1FunctionResponse::class;
   protected $functionResponseDataType = '';
+  /**
+   * @var GoogleCloudAiplatformV1Blob
+   */
+  public $inlineData;
   protected $inlineDataType = GoogleCloudAiplatformV1Blob::class;
   protected $inlineDataDataType = '';
   /**
    * @var string
    */
   public $text;
+  /**
+   * @var GoogleCloudAiplatformV1VideoMetadata
+   */
+  public $videoMetadata;
   protected $videoMetadataType = GoogleCloudAiplatformV1VideoMetadata::class;
   protected $videoMetadataDataType = '';
 
-  /**
-   * @param GoogleCloudAiplatformV1CodeExecutionResult
-   */
-  public function setCodeExecutionResult(GoogleCloudAiplatformV1CodeExecutionResult $codeExecutionResult)
-  {
-    $this->codeExecutionResult = $codeExecutionResult;
-  }
-  /**
-   * @return GoogleCloudAiplatformV1CodeExecutionResult
-   */
-  public function getCodeExecutionResult()
-  {
-    return $this->codeExecutionResult;
-  }
-  /**
-   * @param GoogleCloudAiplatformV1ExecutableCode
-   */
-  public function setExecutableCode(GoogleCloudAiplatformV1ExecutableCode $executableCode)
-  {
-    $this->executableCode = $executableCode;
-  }
-  /**
-   * @return GoogleCloudAiplatformV1ExecutableCode
-   */
-  public function getExecutableCode()
-  {
-    return $this->executableCode;
-  }
   /**
    * @param GoogleCloudAiplatformV1FileData
    */

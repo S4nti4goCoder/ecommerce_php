@@ -36,7 +36,6 @@ class AdvertiserGroups extends \Google\Service\Resource
    * @param string $profileId User profile ID associated with this request.
    * @param string $id Advertiser group ID.
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function delete($profileId, $id, $optParams = [])
   {
@@ -51,7 +50,6 @@ class AdvertiserGroups extends \Google\Service\Resource
    * @param string $id Advertiser group ID.
    * @param array $optParams Optional parameters.
    * @return AdvertiserGroup
-   * @throws \Google\Service\Exception
    */
   public function get($profileId, $id, $optParams = [])
   {
@@ -66,7 +64,6 @@ class AdvertiserGroups extends \Google\Service\Resource
    * @param AdvertiserGroup $postBody
    * @param array $optParams Optional parameters.
    * @return AdvertiserGroup
-   * @throws \Google\Service\Exception
    */
   public function insert($profileId, AdvertiserGroup $postBody, $optParams = [])
   {
@@ -95,7 +92,6 @@ class AdvertiserGroups extends \Google\Service\Resource
    * @opt_param string sortField Field by which to sort the list.
    * @opt_param string sortOrder Order of sorted results.
    * @return AdvertiserGroupsListResponse
-   * @throws \Google\Service\Exception
    */
   public function listAdvertiserGroups($profileId, $optParams = [])
   {
@@ -112,7 +108,6 @@ class AdvertiserGroups extends \Google\Service\Resource
    * @param AdvertiserGroup $postBody
    * @param array $optParams Optional parameters.
    * @return AdvertiserGroup
-   * @throws \Google\Service\Exception
    */
   public function patch($profileId, $id, AdvertiserGroup $postBody, $optParams = [])
   {
@@ -127,7 +122,6 @@ class AdvertiserGroups extends \Google\Service\Resource
    * @param AdvertiserGroup $postBody
    * @param array $optParams Optional parameters.
    * @return AdvertiserGroup
-   * @throws \Google\Service\Exception
    */
   public function update($profileId, AdvertiserGroup $postBody, $optParams = [])
   {

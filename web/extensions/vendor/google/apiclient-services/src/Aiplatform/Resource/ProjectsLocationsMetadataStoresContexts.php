@@ -50,7 +50,6 @@ class ProjectsLocationsMetadataStoresContexts extends \Google\Service\Resource
    * @param GoogleCloudAiplatformV1AddContextArtifactsAndExecutionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudAiplatformV1AddContextArtifactsAndExecutionsResponse
-   * @throws \Google\Service\Exception
    */
   public function addContextArtifactsAndExecutions($context, GoogleCloudAiplatformV1AddContextArtifactsAndExecutionsRequest $postBody, $optParams = [])
   {
@@ -71,7 +70,6 @@ class ProjectsLocationsMetadataStoresContexts extends \Google\Service\Resource
    * @param GoogleCloudAiplatformV1AddContextChildrenRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudAiplatformV1AddContextChildrenResponse
-   * @throws \Google\Service\Exception
    */
   public function addContextChildren($context, GoogleCloudAiplatformV1AddContextChildrenRequest $postBody, $optParams = [])
   {
@@ -96,7 +94,6 @@ class ProjectsLocationsMetadataStoresContexts extends \Google\Service\Resource
    * MetadataStore. (Otherwise the request will fail with ALREADY_EXISTS, or
    * PERMISSION_DENIED if the caller can't view the preexisting Context.)
    * @return GoogleCloudAiplatformV1Context
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudAiplatformV1Context $postBody, $optParams = [])
   {
@@ -118,7 +115,6 @@ class ProjectsLocationsMetadataStoresContexts extends \Google\Service\Resource
    * @opt_param bool force The force deletion semantics is still undefined. Users
    * should not use this field.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -134,7 +130,6 @@ class ProjectsLocationsMetadataStoresContexts extends \Google\Service\Resource
    * e}/contexts/{context}`
    * @param array $optParams Optional parameters.
    * @return GoogleCloudAiplatformV1Context
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -184,7 +179,6 @@ class ProjectsLocationsMetadataStoresContexts extends \Google\Service\Resource
    * provided the page token. (Otherwise the request will fail with
    * INVALID_ARGUMENT error.)
    * @return GoogleCloudAiplatformV1ListContextsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsMetadataStoresContexts($parent, $optParams = [])
   {
@@ -204,7 +198,6 @@ class ProjectsLocationsMetadataStoresContexts extends \Google\Service\Resource
    * @opt_param string updateMask Optional. A FieldMask indicating which fields
    * should be updated.
    * @return GoogleCloudAiplatformV1Context
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleCloudAiplatformV1Context $postBody, $optParams = [])
   {
@@ -221,7 +214,6 @@ class ProjectsLocationsMetadataStoresContexts extends \Google\Service\Resource
    * @param GoogleCloudAiplatformV1PurgeContextsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function purge($parent, GoogleCloudAiplatformV1PurgeContextsRequest $postBody, $optParams = [])
   {
@@ -242,7 +234,6 @@ class ProjectsLocationsMetadataStoresContexts extends \Google\Service\Resource
    * returned for the Context exceeds 1000.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudAiplatformV1LineageSubgraph
-   * @throws \Google\Service\Exception
    */
   public function queryContextLineageSubgraph($context, $optParams = [])
   {
@@ -261,7 +252,6 @@ class ProjectsLocationsMetadataStoresContexts extends \Google\Service\Resource
    * @param GoogleCloudAiplatformV1RemoveContextChildrenRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudAiplatformV1RemoveContextChildrenResponse
-   * @throws \Google\Service\Exception
    */
   public function removeContextChildren($context, GoogleCloudAiplatformV1RemoveContextChildrenRequest $postBody, $optParams = [])
   {

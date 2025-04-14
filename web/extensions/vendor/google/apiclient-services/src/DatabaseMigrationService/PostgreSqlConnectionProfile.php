@@ -30,10 +30,6 @@ class PostgreSqlConnectionProfile extends \Google\Model
   /**
    * @var string
    */
-  public $database;
-  /**
-   * @var string
-   */
   public $host;
   /**
    * @var string
@@ -51,10 +47,22 @@ class PostgreSqlConnectionProfile extends \Google\Model
    * @var int
    */
   public $port;
+  /**
+   * @var PrivateServiceConnectConnectivity
+   */
+  public $privateServiceConnectConnectivity;
   protected $privateServiceConnectConnectivityType = PrivateServiceConnectConnectivity::class;
   protected $privateServiceConnectConnectivityDataType = '';
+  /**
+   * @var SslConfig
+   */
+  public $ssl;
   protected $sslType = SslConfig::class;
   protected $sslDataType = '';
+  /**
+   * @var StaticIpConnectivity
+   */
+  public $staticIpConnectivity;
   protected $staticIpConnectivityType = StaticIpConnectivity::class;
   protected $staticIpConnectivityDataType = '';
   /**
@@ -89,20 +97,6 @@ class PostgreSqlConnectionProfile extends \Google\Model
   public function getCloudSqlId()
   {
     return $this->cloudSqlId;
-  }
-  /**
-   * @param string
-   */
-  public function setDatabase($database)
-  {
-    $this->database = $database;
-  }
-  /**
-   * @return string
-   */
-  public function getDatabase()
-  {
-    return $this->database;
   }
   /**
    * @param string

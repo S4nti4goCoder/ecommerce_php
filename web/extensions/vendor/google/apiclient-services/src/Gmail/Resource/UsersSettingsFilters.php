@@ -39,7 +39,6 @@ class UsersSettingsFilters extends \Google\Service\Resource
    * @param Filter $postBody
    * @param array $optParams Optional parameters.
    * @return Filter
-   * @throws \Google\Service\Exception
    */
   public function create($userId, Filter $postBody, $optParams = [])
   {
@@ -54,7 +53,6 @@ class UsersSettingsFilters extends \Google\Service\Resource
    * used to indicate the authenticated user.
    * @param string $id The ID of the filter to be deleted.
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function delete($userId, $id, $optParams = [])
   {
@@ -70,7 +68,6 @@ class UsersSettingsFilters extends \Google\Service\Resource
    * @param string $id The ID of the filter to be fetched.
    * @param array $optParams Optional parameters.
    * @return Filter
-   * @throws \Google\Service\Exception
    */
   public function get($userId, $id, $optParams = [])
   {
@@ -85,7 +82,6 @@ class UsersSettingsFilters extends \Google\Service\Resource
    * used to indicate the authenticated user.
    * @param array $optParams Optional parameters.
    * @return ListFiltersResponse
-   * @throws \Google\Service\Exception
    */
   public function listUsersSettingsFilters($userId, $optParams = [])
   {

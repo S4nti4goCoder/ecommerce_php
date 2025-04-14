@@ -19,12 +19,20 @@ namespace Google\Service\BigtableAdmin;
 
 class Cluster extends \Google\Model
 {
+  /**
+   * @var ClusterConfig
+   */
+  public $clusterConfig;
   protected $clusterConfigType = ClusterConfig::class;
   protected $clusterConfigDataType = '';
   /**
    * @var string
    */
   public $defaultStorageType;
+  /**
+   * @var EncryptionConfig
+   */
+  public $encryptionConfig;
   protected $encryptionConfigType = EncryptionConfig::class;
   protected $encryptionConfigDataType = '';
   /**
@@ -35,10 +43,6 @@ class Cluster extends \Google\Model
    * @var string
    */
   public $name;
-  /**
-   * @var string
-   */
-  public $nodeScalingFactor;
   /**
    * @var int
    */
@@ -117,20 +121,6 @@ class Cluster extends \Google\Model
   public function getName()
   {
     return $this->name;
-  }
-  /**
-   * @param string
-   */
-  public function setNodeScalingFactor($nodeScalingFactor)
-  {
-    $this->nodeScalingFactor = $nodeScalingFactor;
-  }
-  /**
-   * @return string
-   */
-  public function getNodeScalingFactor()
-  {
-    return $this->nodeScalingFactor;
   }
   /**
    * @param int

@@ -17,10 +17,10 @@
 
 namespace Google\Service\DiscoveryEngine\Resource;
 
-use Google\Service\DiscoveryEngine\GoogleCloudDiscoveryengineV1Conversation;
-use Google\Service\DiscoveryEngine\GoogleCloudDiscoveryengineV1ConverseConversationRequest;
-use Google\Service\DiscoveryEngine\GoogleCloudDiscoveryengineV1ConverseConversationResponse;
-use Google\Service\DiscoveryEngine\GoogleCloudDiscoveryengineV1ListConversationsResponse;
+use Google\Service\DiscoveryEngine\GoogleCloudDiscoveryengineV1betaConversation;
+use Google\Service\DiscoveryEngine\GoogleCloudDiscoveryengineV1betaConverseConversationRequest;
+use Google\Service\DiscoveryEngine\GoogleCloudDiscoveryengineV1betaConverseConversationResponse;
+use Google\Service\DiscoveryEngine\GoogleCloudDiscoveryengineV1betaListConversationsResponse;
 use Google\Service\DiscoveryEngine\GoogleProtobufEmpty;
 
 /**
@@ -37,50 +37,48 @@ class ProjectsLocationsCollectionsDataStoresConversations extends \Google\Servic
    * Converses a conversation. (conversations.converse)
    *
    * @param string $name Required. The resource name of the Conversation to get.
-   * Format: `projects/{project}/locations/{location}/collections/{collection}/dat
-   * aStores/{data_store_id}/conversations/{conversation_id}`. Use `projects/{proj
-   * ect}/locations/{location}/collections/{collection}/dataStores/{data_store_id}
-   * /conversations/-` to activate auto session mode, which automatically creates
-   * a new conversation inside a ConverseConversation session.
-   * @param GoogleCloudDiscoveryengineV1ConverseConversationRequest $postBody
+   * Format: `projects/{project_number}/locations/{location_id}/collections/{colle
+   * ction}/dataStores/{data_store_id}/conversations/{conversation_id}`. Use `proj
+   * ects/{project_number}/locations/{location_id}/collections/{collection}/dataSt
+   * ores/{data_store_id}/conversations/-` to activate auto session mode, which
+   * automatically creates a new conversation inside a ConverseConversation
+   * session.
+   * @param GoogleCloudDiscoveryengineV1betaConverseConversationRequest $postBody
    * @param array $optParams Optional parameters.
-   * @return GoogleCloudDiscoveryengineV1ConverseConversationResponse
-   * @throws \Google\Service\Exception
+   * @return GoogleCloudDiscoveryengineV1betaConverseConversationResponse
    */
-  public function converse($name, GoogleCloudDiscoveryengineV1ConverseConversationRequest $postBody, $optParams = [])
+  public function converse($name, GoogleCloudDiscoveryengineV1betaConverseConversationRequest $postBody, $optParams = [])
   {
     $params = ['name' => $name, 'postBody' => $postBody];
     $params = array_merge($params, $optParams);
-    return $this->call('converse', [$params], GoogleCloudDiscoveryengineV1ConverseConversationResponse::class);
+    return $this->call('converse', [$params], GoogleCloudDiscoveryengineV1betaConverseConversationResponse::class);
   }
   /**
    * Creates a Conversation. If the Conversation to create already exists, an
    * ALREADY_EXISTS error is returned. (conversations.create)
    *
    * @param string $parent Required. Full resource name of parent data store.
-   * Format: `projects/{project}/locations/{location}/collections/{collection}/dat
-   * aStores/{data_store_id}`
-   * @param GoogleCloudDiscoveryengineV1Conversation $postBody
+   * Format: `projects/{project_number}/locations/{location_id}/collections/{colle
+   * ction}/dataStores/{data_store_id}`
+   * @param GoogleCloudDiscoveryengineV1betaConversation $postBody
    * @param array $optParams Optional parameters.
-   * @return GoogleCloudDiscoveryengineV1Conversation
-   * @throws \Google\Service\Exception
+   * @return GoogleCloudDiscoveryengineV1betaConversation
    */
-  public function create($parent, GoogleCloudDiscoveryengineV1Conversation $postBody, $optParams = [])
+  public function create($parent, GoogleCloudDiscoveryengineV1betaConversation $postBody, $optParams = [])
   {
     $params = ['parent' => $parent, 'postBody' => $postBody];
     $params = array_merge($params, $optParams);
-    return $this->call('create', [$params], GoogleCloudDiscoveryengineV1Conversation::class);
+    return $this->call('create', [$params], GoogleCloudDiscoveryengineV1betaConversation::class);
   }
   /**
    * Deletes a Conversation. If the Conversation to delete does not exist, a
    * NOT_FOUND error is returned. (conversations.delete)
    *
    * @param string $name Required. The resource name of the Conversation to
-   * delete. Format: `projects/{project}/locations/{location}/collections/{collect
-   * ion}/dataStores/{data_store_id}/conversations/{conversation_id}`
+   * delete. Format: `projects/{project_number}/locations/{location_id}/collection
+   * s/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -92,25 +90,24 @@ class ProjectsLocationsCollectionsDataStoresConversations extends \Google\Servic
    * Gets a Conversation. (conversations.get)
    *
    * @param string $name Required. The resource name of the Conversation to get.
-   * Format: `projects/{project}/locations/{location}/collections/{collection}/dat
-   * aStores/{data_store_id}/conversations/{conversation_id}`
+   * Format: `projects/{project_number}/locations/{location_id}/collections/{colle
+   * ction}/dataStores/{data_store_id}/conversations/{conversation_id}`
    * @param array $optParams Optional parameters.
-   * @return GoogleCloudDiscoveryengineV1Conversation
-   * @throws \Google\Service\Exception
+   * @return GoogleCloudDiscoveryengineV1betaConversation
    */
   public function get($name, $optParams = [])
   {
     $params = ['name' => $name];
     $params = array_merge($params, $optParams);
-    return $this->call('get', [$params], GoogleCloudDiscoveryengineV1Conversation::class);
+    return $this->call('get', [$params], GoogleCloudDiscoveryengineV1betaConversation::class);
   }
   /**
    * Lists all Conversations by their parent DataStore.
    * (conversations.listProjectsLocationsCollectionsDataStoresConversations)
    *
    * @param string $parent Required. The data store resource name. Format: `projec
-   * ts/{project}/locations/{location}/collections/{collection}/dataStores/{data_s
-   * tore_id}`
+   * ts/{project_number}/locations/{location_id}/collections/{collection}/dataStor
+   * es/{data_store_id}`
    * @param array $optParams Optional parameters.
    *
    * @opt_param string filter A filter to apply on the list results. The supported
@@ -123,37 +120,35 @@ class ProjectsLocationsCollectionsDataStoresConversations extends \Google\Servic
    * defaults to 50. Max allowed value is 1000.
    * @opt_param string pageToken A page token, received from a previous
    * `ListConversations` call. Provide this to retrieve the subsequent page.
-   * @return GoogleCloudDiscoveryengineV1ListConversationsResponse
-   * @throws \Google\Service\Exception
+   * @return GoogleCloudDiscoveryengineV1betaListConversationsResponse
    */
   public function listProjectsLocationsCollectionsDataStoresConversations($parent, $optParams = [])
   {
     $params = ['parent' => $parent];
     $params = array_merge($params, $optParams);
-    return $this->call('list', [$params], GoogleCloudDiscoveryengineV1ListConversationsResponse::class);
+    return $this->call('list', [$params], GoogleCloudDiscoveryengineV1betaListConversationsResponse::class);
   }
   /**
    * Updates a Conversation. Conversation action type cannot be changed. If the
    * Conversation to update does not exist, a NOT_FOUND error is returned.
    * (conversations.patch)
    *
-   * @param string $name Immutable. Fully qualified name `projects/{project}/locat
-   * ions/global/collections/{collection}/dataStore/conversations` or `projects/{p
-   * roject}/locations/global/collections/{collection}/engines/conversations`.
-   * @param GoogleCloudDiscoveryengineV1Conversation $postBody
+   * @param string $name Immutable. Fully qualified name
+   * `project/locations/global/collections/{collection}/dataStore/conversations`
+   * or `project/locations/global/collections/{collection}/engines/conversations`.
+   * @param GoogleCloudDiscoveryengineV1betaConversation $postBody
    * @param array $optParams Optional parameters.
    *
    * @opt_param string updateMask Indicates which fields in the provided
-   * Conversation to update. The following are NOT supported: * Conversation.name
+   * Conversation to update. The following are NOT supported: * conversation.name
    * If not set or empty, all supported fields are updated.
-   * @return GoogleCloudDiscoveryengineV1Conversation
-   * @throws \Google\Service\Exception
+   * @return GoogleCloudDiscoveryengineV1betaConversation
    */
-  public function patch($name, GoogleCloudDiscoveryengineV1Conversation $postBody, $optParams = [])
+  public function patch($name, GoogleCloudDiscoveryengineV1betaConversation $postBody, $optParams = [])
   {
     $params = ['name' => $name, 'postBody' => $postBody];
     $params = array_merge($params, $optParams);
-    return $this->call('patch', [$params], GoogleCloudDiscoveryengineV1Conversation::class);
+    return $this->call('patch', [$params], GoogleCloudDiscoveryengineV1betaConversation::class);
   }
 }
 

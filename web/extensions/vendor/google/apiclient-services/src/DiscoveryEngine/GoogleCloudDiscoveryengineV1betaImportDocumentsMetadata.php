@@ -34,10 +34,6 @@ class GoogleCloudDiscoveryengineV1betaImportDocumentsMetadata extends \Google\Mo
   /**
    * @var string
    */
-  public $totalCount;
-  /**
-   * @var string
-   */
   public $updateTime;
 
   /**
@@ -81,20 +77,6 @@ class GoogleCloudDiscoveryengineV1betaImportDocumentsMetadata extends \Google\Mo
   public function getSuccessCount()
   {
     return $this->successCount;
-  }
-  /**
-   * @param string
-   */
-  public function setTotalCount($totalCount)
-  {
-    $this->totalCount = $totalCount;
-  }
-  /**
-   * @return string
-   */
-  public function getTotalCount()
-  {
-    return $this->totalCount;
   }
   /**
    * @param string

@@ -38,7 +38,6 @@ class CreativeFieldValues extends \Google\Service\Resource
    * value.
    * @param string $id Creative Field Value ID
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function delete($profileId, $creativeFieldId, $id, $optParams = [])
   {
@@ -55,7 +54,6 @@ class CreativeFieldValues extends \Google\Service\Resource
    * @param string $id Creative Field Value ID
    * @param array $optParams Optional parameters.
    * @return CreativeFieldValue
-   * @throws \Google\Service\Exception
    */
   public function get($profileId, $creativeFieldId, $id, $optParams = [])
   {
@@ -72,7 +70,6 @@ class CreativeFieldValues extends \Google\Service\Resource
    * @param CreativeFieldValue $postBody
    * @param array $optParams Optional parameters.
    * @return CreativeFieldValue
-   * @throws \Google\Service\Exception
    */
   public function insert($profileId, $creativeFieldId, CreativeFieldValue $postBody, $optParams = [])
   {
@@ -98,7 +95,6 @@ class CreativeFieldValues extends \Google\Service\Resource
    * @opt_param string sortField Field by which to sort the list.
    * @opt_param string sortOrder Order of sorted results.
    * @return CreativeFieldValuesListResponse
-   * @throws \Google\Service\Exception
    */
   public function listCreativeFieldValues($profileId, $creativeFieldId, $optParams = [])
   {
@@ -116,7 +112,6 @@ class CreativeFieldValues extends \Google\Service\Resource
    * @param CreativeFieldValue $postBody
    * @param array $optParams Optional parameters.
    * @return CreativeFieldValue
-   * @throws \Google\Service\Exception
    */
   public function patch($profileId, $creativeFieldId, $id, CreativeFieldValue $postBody, $optParams = [])
   {
@@ -133,7 +128,6 @@ class CreativeFieldValues extends \Google\Service\Resource
    * @param CreativeFieldValue $postBody
    * @param array $optParams Optional parameters.
    * @return CreativeFieldValue
-   * @throws \Google\Service\Exception
    */
   public function update($profileId, $creativeFieldId, CreativeFieldValue $postBody, $optParams = [])
   {

@@ -20,35 +20,35 @@ namespace Google\Service\ContainerAnalysis;
 class ContaineranalysisGoogleDevtoolsCloudbuildV1Artifacts extends \Google\Collection
 {
   protected $collection_key = 'pythonPackages';
-  protected $goModulesType = ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsGoModule::class;
-  protected $goModulesDataType = 'array';
   /**
    * @var string[]
    */
   public $images;
+  /**
+   * @var ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsMavenArtifact[]
+   */
+  public $mavenArtifacts;
   protected $mavenArtifactsType = ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsMavenArtifact::class;
   protected $mavenArtifactsDataType = 'array';
+  /**
+   * @var ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsNpmPackage[]
+   */
+  public $npmPackages;
   protected $npmPackagesType = ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsNpmPackage::class;
   protected $npmPackagesDataType = 'array';
+  /**
+   * @var ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsArtifactObjects
+   */
+  public $objects;
   protected $objectsType = ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsArtifactObjects::class;
   protected $objectsDataType = '';
+  /**
+   * @var ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsPythonPackage[]
+   */
+  public $pythonPackages;
   protected $pythonPackagesType = ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsPythonPackage::class;
   protected $pythonPackagesDataType = 'array';
 
-  /**
-   * @param ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsGoModule[]
-   */
-  public function setGoModules($goModules)
-  {
-    $this->goModules = $goModules;
-  }
-  /**
-   * @return ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsGoModule[]
-   */
-  public function getGoModules()
-  {
-    return $this->goModules;
-  }
   /**
    * @param string[]
    */

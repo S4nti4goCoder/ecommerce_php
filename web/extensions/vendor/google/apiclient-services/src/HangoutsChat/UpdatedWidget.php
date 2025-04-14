@@ -19,6 +19,10 @@ namespace Google\Service\HangoutsChat;
 
 class UpdatedWidget extends \Google\Model
 {
+  /**
+   * @var SelectionItems
+   */
+  public $suggestions;
   protected $suggestionsType = SelectionItems::class;
   protected $suggestionsDataType = '';
   /**

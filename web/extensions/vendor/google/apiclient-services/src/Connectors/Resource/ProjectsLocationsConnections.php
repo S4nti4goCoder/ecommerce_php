@@ -44,7 +44,6 @@ class ProjectsLocationsConnections extends \Google\Service\Resource
    * @param string $name
    * @param array $optParams Optional parameters.
    * @return CheckReadinessResponse
-   * @throws \Google\Service\Exception
    */
   public function checkReadiness($name, $optParams = [])
   {
@@ -62,7 +61,6 @@ class ProjectsLocationsConnections extends \Google\Service\Resource
    * @param string $name
    * @param array $optParams Optional parameters.
    * @return CheckStatusResponse
-   * @throws \Google\Service\Exception
    */
   public function checkStatus($name, $optParams = [])
   {
@@ -79,7 +77,6 @@ class ProjectsLocationsConnections extends \Google\Service\Resource
    * @param ExchangeAuthCodeRequest $postBody
    * @param array $optParams Optional parameters.
    * @return ExchangeAuthCodeResponse
-   * @throws \Google\Service\Exception
    */
   public function exchangeAuthCode($name, ExchangeAuthCodeRequest $postBody, $optParams = [])
   {
@@ -98,7 +95,6 @@ class ProjectsLocationsConnections extends \Google\Service\Resource
    * @param ExecuteSqlQueryRequest $postBody
    * @param array $optParams Optional parameters.
    * @return ExecuteSqlQueryResponse
-   * @throws \Google\Service\Exception
    */
   public function executeSqlQuery($connection, ExecuteSqlQueryRequest $postBody, $optParams = [])
   {
@@ -115,7 +111,6 @@ class ProjectsLocationsConnections extends \Google\Service\Resource
    * @param RefreshAccessTokenRequest $postBody
    * @param array $optParams Optional parameters.
    * @return RefreshAccessTokenResponse
-   * @throws \Google\Service\Exception
    */
   public function refreshAccessToken($name, RefreshAccessTokenRequest $postBody, $optParams = [])
   {

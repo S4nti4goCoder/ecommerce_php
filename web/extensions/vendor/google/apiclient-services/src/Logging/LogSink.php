@@ -20,6 +20,10 @@ namespace Google\Service\Logging;
 class LogSink extends \Google\Collection
 {
   protected $collection_key = 'exclusions';
+  /**
+   * @var BigQueryOptions
+   */
+  public $bigqueryOptions;
   protected $bigqueryOptionsType = BigQueryOptions::class;
   protected $bigqueryOptionsDataType = '';
   /**
@@ -38,6 +42,10 @@ class LogSink extends \Google\Collection
    * @var bool
    */
   public $disabled;
+  /**
+   * @var LogExclusion[]
+   */
+  public $exclusions;
   protected $exclusionsType = LogExclusion::class;
   protected $exclusionsDataType = 'array';
   /**
@@ -49,10 +57,6 @@ class LogSink extends \Google\Collection
    */
   public $includeChildren;
   /**
-   * @var bool
-   */
-  public $interceptChildren;
-  /**
    * @var string
    */
   public $name;
@@ -60,10 +64,6 @@ class LogSink extends \Google\Collection
    * @var string
    */
   public $outputVersionFormat;
-  /**
-   * @var string
-   */
-  public $resourceName;
   /**
    * @var string
    */
@@ -186,20 +186,6 @@ class LogSink extends \Google\Collection
     return $this->includeChildren;
   }
   /**
-   * @param bool
-   */
-  public function setInterceptChildren($interceptChildren)
-  {
-    $this->interceptChildren = $interceptChildren;
-  }
-  /**
-   * @return bool
-   */
-  public function getInterceptChildren()
-  {
-    return $this->interceptChildren;
-  }
-  /**
    * @param string
    */
   public function setName($name)
@@ -226,20 +212,6 @@ class LogSink extends \Google\Collection
   public function getOutputVersionFormat()
   {
     return $this->outputVersionFormat;
-  }
-  /**
-   * @param string
-   */
-  public function setResourceName($resourceName)
-  {
-    $this->resourceName = $resourceName;
-  }
-  /**
-   * @return string
-   */
-  public function getResourceName()
-  {
-    return $this->resourceName;
   }
   /**
    * @param string

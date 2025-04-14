@@ -19,6 +19,10 @@ namespace Google\Service\Walletobjects;
 
 class FlightHeader extends \Google\Model
 {
+  /**
+   * @var FlightCarrier
+   */
+  public $carrier;
   protected $carrierType = FlightCarrier::class;
   protected $carrierDataType = '';
   /**
@@ -33,6 +37,10 @@ class FlightHeader extends \Google\Model
    * @var string
    */
   public $kind;
+  /**
+   * @var FlightCarrier
+   */
+  public $operatingCarrier;
   protected $operatingCarrierType = FlightCarrier::class;
   protected $operatingCarrierDataType = '';
   /**

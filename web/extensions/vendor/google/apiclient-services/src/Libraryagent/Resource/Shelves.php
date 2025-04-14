@@ -36,7 +36,6 @@ class Shelves extends \Google\Service\Resource
    * @param string $name Required. The name of the shelf to retrieve.
    * @param array $optParams Optional parameters.
    * @return GoogleExampleLibraryagentV1Shelf
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -58,7 +57,6 @@ class Shelves extends \Google\Service\Resource
    * ListShelvesResponse.next_page_token returned from the previous call to
    * `ListShelves` method.
    * @return GoogleExampleLibraryagentV1ListShelvesResponse
-   * @throws \Google\Service\Exception
    */
   public function listShelves($optParams = [])
   {

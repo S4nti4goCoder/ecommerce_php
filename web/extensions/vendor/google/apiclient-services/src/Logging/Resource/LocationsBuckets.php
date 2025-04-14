@@ -45,10 +45,8 @@ class LocationsBuckets extends \Google\Service\Resource
    *
    * @opt_param string bucketId Required. A client-assigned identifier such as
    * "my-bucket". Identifiers are limited to 100 characters and can include only
-   * letters, digits, underscores, hyphens, and periods. Bucket identifiers must
-   * start with an alphanumeric character.
+   * letters, digits, underscores, hyphens, and periods.
    * @return LogBucket
-   * @throws \Google\Service\Exception
    */
   public function create($parent, LogBucket $postBody, $optParams = [])
   {
@@ -69,10 +67,8 @@ class LocationsBuckets extends \Google\Service\Resource
    *
    * @opt_param string bucketId Required. A client-assigned identifier such as
    * "my-bucket". Identifiers are limited to 100 characters and can include only
-   * letters, digits, underscores, hyphens, and periods. Bucket identifiers must
-   * start with an alphanumeric character.
+   * letters, digits, underscores, hyphens, and periods.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function createAsync($parent, LogBucket $postBody, $optParams = [])
   {
@@ -93,7 +89,6 @@ class LocationsBuckets extends \Google\Service\Resource
    * example:"projects/my-project/locations/global/buckets/my-bucket"
    * @param array $optParams Optional parameters.
    * @return LoggingEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -112,7 +107,6 @@ class LocationsBuckets extends \Google\Service\Resource
    * example:"projects/my-project/locations/global/buckets/my-bucket"
    * @param array $optParams Optional parameters.
    * @return LogBucket
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -140,7 +134,6 @@ class LocationsBuckets extends \Google\Service\Resource
    * the value of nextPageToken from the previous response. The values of other
    * method parameters should be identical to those in the previous call.
    * @return ListBucketsResponse
-   * @throws \Google\Service\Exception
    */
   public function listLocationsBuckets($parent, $optParams = [])
   {
@@ -170,7 +163,6 @@ class LocationsBuckets extends \Google\Service\Resource
    * buffers/docs/reference/google.protobuf#google.protobuf.FieldMaskFor example:
    * updateMask=retention_days
    * @return LogBucket
-   * @throws \Google\Service\Exception
    */
   public function patch($name, LogBucket $postBody, $optParams = [])
   {
@@ -191,7 +183,6 @@ class LocationsBuckets extends \Google\Service\Resource
    * @param UndeleteBucketRequest $postBody
    * @param array $optParams Optional parameters.
    * @return LoggingEmpty
-   * @throws \Google\Service\Exception
    */
   public function undelete($name, UndeleteBucketRequest $postBody, $optParams = [])
   {
@@ -222,7 +213,6 @@ class LocationsBuckets extends \Google\Service\Resource
    * buffers/docs/reference/google.protobuf#google.protobuf.FieldMaskFor example:
    * updateMask=retention_days
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function updateAsync($name, LogBucket $postBody, $optParams = [])
   {

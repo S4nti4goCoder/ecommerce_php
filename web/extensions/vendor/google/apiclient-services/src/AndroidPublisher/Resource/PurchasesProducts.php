@@ -41,7 +41,6 @@ class PurchasesProducts extends \Google\Service\Resource
    * product was purchased.
    * @param ProductPurchasesAcknowledgeRequest $postBody
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function acknowledge($packageName, $productId, $token, ProductPurchasesAcknowledgeRequest $postBody, $optParams = [])
   {
@@ -59,7 +58,6 @@ class PurchasesProducts extends \Google\Service\Resource
    * @param string $token The token provided to the user's device when the inapp
    * product was purchased.
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function consume($packageName, $productId, $token, $optParams = [])
   {
@@ -78,7 +76,6 @@ class PurchasesProducts extends \Google\Service\Resource
    * product was purchased.
    * @param array $optParams Optional parameters.
    * @return ProductPurchase
-   * @throws \Google\Service\Exception
    */
   public function get($packageName, $productId, $token, $optParams = [])
   {

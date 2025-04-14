@@ -51,7 +51,6 @@ class ProjectsLocationsCapacityCommitments extends \Google\Service\Resource
    * @opt_param bool enforceSingleAdminProjectPerOrg If true, fail the request if
    * another project in the organization has a capacity commitment.
    * @return CapacityCommitment
-   * @throws \Google\Service\Exception
    */
   public function create($parent, CapacityCommitment $postBody, $optParams = [])
   {
@@ -72,7 +71,6 @@ class ProjectsLocationsCapacityCommitments extends \Google\Service\Resource
    * assignments exist. Deleting commitments with assignments may cause queries to
    * fail if they no longer have access to slots.
    * @return BigqueryreservationEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -87,7 +85,6 @@ class ProjectsLocationsCapacityCommitments extends \Google\Service\Resource
    * retrieve. E.g., `projects/myproject/locations/US/capacityCommitments/123`
    * @param array $optParams Optional parameters.
    * @return CapacityCommitment
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -107,7 +104,6 @@ class ProjectsLocationsCapacityCommitments extends \Google\Service\Resource
    * @opt_param string pageToken The next_page_token value returned from a
    * previous List request, if any.
    * @return ListCapacityCommitmentsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsCapacityCommitments($parent, $optParams = [])
   {
@@ -127,7 +123,6 @@ class ProjectsLocationsCapacityCommitments extends \Google\Service\Resource
    * @param MergeCapacityCommitmentsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return CapacityCommitment
-   * @throws \Google\Service\Exception
    */
   public function merge($parent, MergeCapacityCommitmentsRequest $postBody, $optParams = [])
   {
@@ -153,7 +148,6 @@ class ProjectsLocationsCapacityCommitments extends \Google\Service\Resource
    * @opt_param string updateMask Standard field mask for the set of fields to be
    * updated.
    * @return CapacityCommitment
-   * @throws \Google\Service\Exception
    */
   public function patch($name, CapacityCommitment $postBody, $optParams = [])
   {
@@ -174,7 +168,6 @@ class ProjectsLocationsCapacityCommitments extends \Google\Service\Resource
    * @param SplitCapacityCommitmentRequest $postBody
    * @param array $optParams Optional parameters.
    * @return SplitCapacityCommitmentResponse
-   * @throws \Google\Service\Exception
    */
   public function split($name, SplitCapacityCommitmentRequest $postBody, $optParams = [])
   {

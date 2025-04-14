@@ -26,10 +26,6 @@ class ComplianceSnapshot extends \Google\Model
   /**
    * @var string
    */
-  public $cloudProvider;
-  /**
-   * @var string
-   */
   public $complianceStandard;
   /**
    * @var string
@@ -50,6 +46,10 @@ class ComplianceSnapshot extends \Google\Model
   /**
    * @var string
    */
+  public $projectDisplayName;
+  /**
+   * @var string
+   */
   public $snapshotTime;
 
   /**
@@ -65,20 +65,6 @@ class ComplianceSnapshot extends \Google\Model
   public function getCategory()
   {
     return $this->category;
-  }
-  /**
-   * @param string
-   */
-  public function setCloudProvider($cloudProvider)
-  {
-    $this->cloudProvider = $cloudProvider;
-  }
-  /**
-   * @return string
-   */
-  public function getCloudProvider()
-  {
-    return $this->cloudProvider;
   }
   /**
    * @param string
@@ -149,6 +135,20 @@ class ComplianceSnapshot extends \Google\Model
   public function getName()
   {
     return $this->name;
+  }
+  /**
+   * @param string
+   */
+  public function setProjectDisplayName($projectDisplayName)
+  {
+    $this->projectDisplayName = $projectDisplayName;
+  }
+  /**
+   * @return string
+   */
+  public function getProjectDisplayName()
+  {
+    return $this->projectDisplayName;
   }
   /**
    * @param string

@@ -49,7 +49,6 @@ class ProjectsLocationsClientTlsPolicies extends \Google\Service\Resource
    * long, containing only letters, numbers, hyphens, and underscores, and should
    * not start with a number. E.g. "client_mtls_policy".
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, ClientTlsPolicy $postBody, $optParams = [])
   {
@@ -64,7 +63,6 @@ class ProjectsLocationsClientTlsPolicies extends \Google\Service\Resource
    * be in the format `projects/locations/{location}/clientTlsPolicies`.
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -79,7 +77,6 @@ class ProjectsLocationsClientTlsPolicies extends \Google\Service\Resource
    * in the format `projects/locations/{location}/clientTlsPolicies`.
    * @param array $optParams Optional parameters.
    * @return ClientTlsPolicy
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -111,7 +108,6 @@ class ProjectsLocationsClientTlsPolicies extends \Google\Service\Resource
    * documentation](https://cloud.google.com/iam/help/conditions/resource-
    * policies).
    * @return GoogleIamV1Policy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, $optParams = [])
   {
@@ -135,7 +131,6 @@ class ProjectsLocationsClientTlsPolicies extends \Google\Service\Resource
    * prior `ListClientTlsPolicies` call, and that the system should return the
    * next page of data.
    * @return ListClientTlsPoliciesResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsClientTlsPolicies($parent, $optParams = [])
   {
@@ -158,7 +153,6 @@ class ProjectsLocationsClientTlsPolicies extends \Google\Service\Resource
    * full request. A field will be overwritten if it is in the mask. If the user
    * does not provide a mask then all fields will be overwritten.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, ClientTlsPolicy $postBody, $optParams = [])
   {
@@ -178,7 +172,6 @@ class ProjectsLocationsClientTlsPolicies extends \Google\Service\Resource
    * @param GoogleIamV1SetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleIamV1Policy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, GoogleIamV1SetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -201,7 +194,6 @@ class ProjectsLocationsClientTlsPolicies extends \Google\Service\Resource
    * @param GoogleIamV1TestIamPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleIamV1TestIamPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, GoogleIamV1TestIamPermissionsRequest $postBody, $optParams = [])
   {

@@ -17,13 +17,24 @@
 
 namespace Google\Service\Bigquery;
 
-class Table extends \Google\Collection
+class Table extends \Google\Model
 {
-  protected $collection_key = 'replicas';
+  /**
+   * @var BigLakeConfiguration
+   */
+  public $biglakeConfiguration;
   protected $biglakeConfigurationType = BigLakeConfiguration::class;
   protected $biglakeConfigurationDataType = '';
+  /**
+   * @var CloneDefinition
+   */
+  public $cloneDefinition;
   protected $cloneDefinitionType = CloneDefinition::class;
   protected $cloneDefinitionDataType = '';
+  /**
+   * @var Clustering
+   */
+  public $clustering;
   protected $clusteringType = Clustering::class;
   protected $clusteringDataType = '';
   /**
@@ -42,6 +53,10 @@ class Table extends \Google\Collection
    * @var string
    */
   public $description;
+  /**
+   * @var EncryptionConfiguration
+   */
+  public $encryptionConfiguration;
   protected $encryptionConfigurationType = EncryptionConfiguration::class;
   protected $encryptionConfigurationDataType = '';
   /**
@@ -52,8 +67,10 @@ class Table extends \Google\Collection
    * @var string
    */
   public $expirationTime;
-  protected $externalCatalogTableOptionsType = ExternalCatalogTableOptions::class;
-  protected $externalCatalogTableOptionsDataType = '';
+  /**
+   * @var ExternalDataConfiguration
+   */
+  public $externalDataConfiguration;
   protected $externalDataConfigurationType = ExternalDataConfiguration::class;
   protected $externalDataConfigurationDataType = '';
   /**
@@ -81,17 +98,19 @@ class Table extends \Google\Collection
    */
   public $location;
   /**
-   * @var string
+   * @var MaterializedViewDefinition
    */
-  public $managedTableType;
+  public $materializedView;
   protected $materializedViewType = MaterializedViewDefinition::class;
   protected $materializedViewDataType = '';
-  protected $materializedViewStatusType = MaterializedViewStatus::class;
-  protected $materializedViewStatusDataType = '';
   /**
    * @var string
    */
   public $maxStaleness;
+  /**
+   * @var ModelDefinition
+   */
+  public $model;
   protected $modelType = ModelDefinition::class;
   protected $modelDataType = '';
   /**
@@ -106,10 +125,6 @@ class Table extends \Google\Collection
    * @var string
    */
   public $numBytes;
-  /**
-   * @var string
-   */
-  public $numCurrentPhysicalBytes;
   /**
    * @var string
    */
@@ -146,12 +161,12 @@ class Table extends \Google\Collection
    * @var string
    */
   public $numTotalPhysicalBytes;
-  protected $partitionDefinitionType = PartitioningDefinition::class;
-  protected $partitionDefinitionDataType = '';
+  /**
+   * @var RangePartitioning
+   */
+  public $rangePartitioning;
   protected $rangePartitioningType = RangePartitioning::class;
   protected $rangePartitioningDataType = '';
-  protected $replicasType = TableReference::class;
-  protected $replicasDataType = 'array';
   /**
    * @var bool
    */
@@ -160,30 +175,54 @@ class Table extends \Google\Collection
    * @var string[]
    */
   public $resourceTags;
-  protected $restrictionsType = RestrictionConfig::class;
-  protected $restrictionsDataType = '';
+  /**
+   * @var TableSchema
+   */
+  public $schema;
   protected $schemaType = TableSchema::class;
   protected $schemaDataType = '';
   /**
    * @var string
    */
   public $selfLink;
+  /**
+   * @var SnapshotDefinition
+   */
+  public $snapshotDefinition;
   protected $snapshotDefinitionType = SnapshotDefinition::class;
   protected $snapshotDefinitionDataType = '';
+  /**
+   * @var Streamingbuffer
+   */
+  public $streamingBuffer;
   protected $streamingBufferType = Streamingbuffer::class;
   protected $streamingBufferDataType = '';
+  /**
+   * @var TableConstraints
+   */
+  public $tableConstraints;
   protected $tableConstraintsType = TableConstraints::class;
   protected $tableConstraintsDataType = '';
+  /**
+   * @var TableReference
+   */
+  public $tableReference;
   protected $tableReferenceType = TableReference::class;
   protected $tableReferenceDataType = '';
-  protected $tableReplicationInfoType = TableReplicationInfo::class;
-  protected $tableReplicationInfoDataType = '';
+  /**
+   * @var TimePartitioning
+   */
+  public $timePartitioning;
   protected $timePartitioningType = TimePartitioning::class;
   protected $timePartitioningDataType = '';
   /**
    * @var string
    */
   public $type;
+  /**
+   * @var ViewDefinition
+   */
+  public $view;
   protected $viewType = ViewDefinition::class;
   protected $viewDataType = '';
 
@@ -328,20 +367,6 @@ class Table extends \Google\Collection
     return $this->expirationTime;
   }
   /**
-   * @param ExternalCatalogTableOptions
-   */
-  public function setExternalCatalogTableOptions(ExternalCatalogTableOptions $externalCatalogTableOptions)
-  {
-    $this->externalCatalogTableOptions = $externalCatalogTableOptions;
-  }
-  /**
-   * @return ExternalCatalogTableOptions
-   */
-  public function getExternalCatalogTableOptions()
-  {
-    return $this->externalCatalogTableOptions;
-  }
-  /**
    * @param ExternalDataConfiguration
    */
   public function setExternalDataConfiguration(ExternalDataConfiguration $externalDataConfiguration)
@@ -440,20 +465,6 @@ class Table extends \Google\Collection
     return $this->location;
   }
   /**
-   * @param string
-   */
-  public function setManagedTableType($managedTableType)
-  {
-    $this->managedTableType = $managedTableType;
-  }
-  /**
-   * @return string
-   */
-  public function getManagedTableType()
-  {
-    return $this->managedTableType;
-  }
-  /**
    * @param MaterializedViewDefinition
    */
   public function setMaterializedView(MaterializedViewDefinition $materializedView)
@@ -466,20 +477,6 @@ class Table extends \Google\Collection
   public function getMaterializedView()
   {
     return $this->materializedView;
-  }
-  /**
-   * @param MaterializedViewStatus
-   */
-  public function setMaterializedViewStatus(MaterializedViewStatus $materializedViewStatus)
-  {
-    $this->materializedViewStatus = $materializedViewStatus;
-  }
-  /**
-   * @return MaterializedViewStatus
-   */
-  public function getMaterializedViewStatus()
-  {
-    return $this->materializedViewStatus;
   }
   /**
    * @param string
@@ -550,20 +547,6 @@ class Table extends \Google\Collection
   public function getNumBytes()
   {
     return $this->numBytes;
-  }
-  /**
-   * @param string
-   */
-  public function setNumCurrentPhysicalBytes($numCurrentPhysicalBytes)
-  {
-    $this->numCurrentPhysicalBytes = $numCurrentPhysicalBytes;
-  }
-  /**
-   * @return string
-   */
-  public function getNumCurrentPhysicalBytes()
-  {
-    return $this->numCurrentPhysicalBytes;
   }
   /**
    * @param string
@@ -692,20 +675,6 @@ class Table extends \Google\Collection
     return $this->numTotalPhysicalBytes;
   }
   /**
-   * @param PartitioningDefinition
-   */
-  public function setPartitionDefinition(PartitioningDefinition $partitionDefinition)
-  {
-    $this->partitionDefinition = $partitionDefinition;
-  }
-  /**
-   * @return PartitioningDefinition
-   */
-  public function getPartitionDefinition()
-  {
-    return $this->partitionDefinition;
-  }
-  /**
    * @param RangePartitioning
    */
   public function setRangePartitioning(RangePartitioning $rangePartitioning)
@@ -718,20 +687,6 @@ class Table extends \Google\Collection
   public function getRangePartitioning()
   {
     return $this->rangePartitioning;
-  }
-  /**
-   * @param TableReference[]
-   */
-  public function setReplicas($replicas)
-  {
-    $this->replicas = $replicas;
-  }
-  /**
-   * @return TableReference[]
-   */
-  public function getReplicas()
-  {
-    return $this->replicas;
   }
   /**
    * @param bool
@@ -760,20 +715,6 @@ class Table extends \Google\Collection
   public function getResourceTags()
   {
     return $this->resourceTags;
-  }
-  /**
-   * @param RestrictionConfig
-   */
-  public function setRestrictions(RestrictionConfig $restrictions)
-  {
-    $this->restrictions = $restrictions;
-  }
-  /**
-   * @return RestrictionConfig
-   */
-  public function getRestrictions()
-  {
-    return $this->restrictions;
   }
   /**
    * @param TableSchema
@@ -858,20 +799,6 @@ class Table extends \Google\Collection
   public function getTableReference()
   {
     return $this->tableReference;
-  }
-  /**
-   * @param TableReplicationInfo
-   */
-  public function setTableReplicationInfo(TableReplicationInfo $tableReplicationInfo)
-  {
-    $this->tableReplicationInfo = $tableReplicationInfo;
-  }
-  /**
-   * @return TableReplicationInfo
-   */
-  public function getTableReplicationInfo()
-  {
-    return $this->tableReplicationInfo;
   }
   /**
    * @param TimePartitioning

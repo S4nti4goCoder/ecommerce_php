@@ -44,7 +44,6 @@ class RegionUrlMaps extends \Google\Service\Resource
    * @opt_param string requestId begin_interface: MixerMutationRequestBuilder
    * Request ID to support idempotency.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($project, $region, $urlMap, $optParams = [])
   {
@@ -60,7 +59,6 @@ class RegionUrlMaps extends \Google\Service\Resource
    * @param string $urlMap Name of the UrlMap resource to return.
    * @param array $optParams Optional parameters.
    * @return UrlMap
-   * @throws \Google\Service\Exception
    */
   public function get($project, $region, $urlMap, $optParams = [])
   {
@@ -80,7 +78,6 @@ class RegionUrlMaps extends \Google\Service\Resource
    * @opt_param string requestId begin_interface: MixerMutationRequestBuilder
    * Request ID to support idempotency.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function insert($project, $region, UrlMap $postBody, $optParams = [])
   {
@@ -146,11 +143,8 @@ class RegionUrlMaps extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
+   * false.
    * @return UrlMapList
-   * @throws \Google\Service\Exception
    */
   public function listRegionUrlMaps($project, $region, $optParams = [])
   {
@@ -172,7 +166,6 @@ class RegionUrlMaps extends \Google\Service\Resource
    * @opt_param string requestId begin_interface: MixerMutationRequestBuilder
    * Request ID to support idempotency.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($project, $region, $urlMap, UrlMap $postBody, $optParams = [])
   {
@@ -193,7 +186,6 @@ class RegionUrlMaps extends \Google\Service\Resource
    * @opt_param string requestId begin_interface: MixerMutationRequestBuilder
    * Request ID to support idempotency.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function update($project, $region, $urlMap, UrlMap $postBody, $optParams = [])
   {
@@ -212,7 +204,6 @@ class RegionUrlMaps extends \Google\Service\Resource
    * @param RegionUrlMapsValidateRequest $postBody
    * @param array $optParams Optional parameters.
    * @return UrlMapsValidateResponse
-   * @throws \Google\Service\Exception
    */
   public function validate($project, $region, $urlMap, RegionUrlMapsValidateRequest $postBody, $optParams = [])
   {

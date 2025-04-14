@@ -19,83 +19,67 @@ namespace Google\Service\ChromeManagement;
 
 class GoogleChromeManagementV1TelemetryEvent extends \Google\Model
 {
-  protected $appInstallEventType = GoogleChromeManagementV1TelemetryAppInstallEvent::class;
-  protected $appInstallEventDataType = '';
-  protected $appLaunchEventType = GoogleChromeManagementV1TelemetryAppLaunchEvent::class;
-  protected $appLaunchEventDataType = '';
-  protected $appUninstallEventType = GoogleChromeManagementV1TelemetryAppUninstallEvent::class;
-  protected $appUninstallEventDataType = '';
+  /**
+   * @var GoogleChromeManagementV1TelemetryAudioSevereUnderrunEvent
+   */
+  public $audioSevereUnderrunEvent;
   protected $audioSevereUnderrunEventType = GoogleChromeManagementV1TelemetryAudioSevereUnderrunEvent::class;
   protected $audioSevereUnderrunEventDataType = '';
+  /**
+   * @var GoogleChromeManagementV1TelemetryDeviceInfo
+   */
+  public $device;
   protected $deviceType = GoogleChromeManagementV1TelemetryDeviceInfo::class;
   protected $deviceDataType = '';
   /**
    * @var string
    */
   public $eventType;
+  /**
+   * @var GoogleChromeManagementV1TelemetryHttpsLatencyChangeEvent
+   */
+  public $httpsLatencyChangeEvent;
   protected $httpsLatencyChangeEventType = GoogleChromeManagementV1TelemetryHttpsLatencyChangeEvent::class;
   protected $httpsLatencyChangeEventDataType = '';
   /**
    * @var string
    */
   public $name;
+  /**
+   * @var GoogleChromeManagementV1TelemetryNetworkConnectionStateChangeEvent
+   */
+  public $networkStateChangeEvent;
   protected $networkStateChangeEventType = GoogleChromeManagementV1TelemetryNetworkConnectionStateChangeEvent::class;
   protected $networkStateChangeEventDataType = '';
   /**
    * @var string
    */
   public $reportTime;
+  /**
+   * @var GoogleChromeManagementV1TelemetryUsbPeripheralsEvent
+   */
+  public $usbPeripheralsEvent;
   protected $usbPeripheralsEventType = GoogleChromeManagementV1TelemetryUsbPeripheralsEvent::class;
   protected $usbPeripheralsEventDataType = '';
+  /**
+   * @var GoogleChromeManagementV1TelemetryUserInfo
+   */
+  public $user;
   protected $userType = GoogleChromeManagementV1TelemetryUserInfo::class;
   protected $userDataType = '';
+  /**
+   * @var GoogleChromeManagementV1TelemetryNetworkConnectionStateChangeEvent
+   */
+  public $vpnConnectionStateChangeEvent;
   protected $vpnConnectionStateChangeEventType = GoogleChromeManagementV1TelemetryNetworkConnectionStateChangeEvent::class;
   protected $vpnConnectionStateChangeEventDataType = '';
+  /**
+   * @var GoogleChromeManagementV1TelemetryNetworkSignalStrengthEvent
+   */
+  public $wifiSignalStrengthEvent;
   protected $wifiSignalStrengthEventType = GoogleChromeManagementV1TelemetryNetworkSignalStrengthEvent::class;
   protected $wifiSignalStrengthEventDataType = '';
 
-  /**
-   * @param GoogleChromeManagementV1TelemetryAppInstallEvent
-   */
-  public function setAppInstallEvent(GoogleChromeManagementV1TelemetryAppInstallEvent $appInstallEvent)
-  {
-    $this->appInstallEvent = $appInstallEvent;
-  }
-  /**
-   * @return GoogleChromeManagementV1TelemetryAppInstallEvent
-   */
-  public function getAppInstallEvent()
-  {
-    return $this->appInstallEvent;
-  }
-  /**
-   * @param GoogleChromeManagementV1TelemetryAppLaunchEvent
-   */
-  public function setAppLaunchEvent(GoogleChromeManagementV1TelemetryAppLaunchEvent $appLaunchEvent)
-  {
-    $this->appLaunchEvent = $appLaunchEvent;
-  }
-  /**
-   * @return GoogleChromeManagementV1TelemetryAppLaunchEvent
-   */
-  public function getAppLaunchEvent()
-  {
-    return $this->appLaunchEvent;
-  }
-  /**
-   * @param GoogleChromeManagementV1TelemetryAppUninstallEvent
-   */
-  public function setAppUninstallEvent(GoogleChromeManagementV1TelemetryAppUninstallEvent $appUninstallEvent)
-  {
-    $this->appUninstallEvent = $appUninstallEvent;
-  }
-  /**
-   * @return GoogleChromeManagementV1TelemetryAppUninstallEvent
-   */
-  public function getAppUninstallEvent()
-  {
-    return $this->appUninstallEvent;
-  }
   /**
    * @param GoogleChromeManagementV1TelemetryAudioSevereUnderrunEvent
    */

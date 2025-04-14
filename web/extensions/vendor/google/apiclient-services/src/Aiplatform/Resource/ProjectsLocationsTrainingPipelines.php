@@ -50,7 +50,6 @@ class ProjectsLocationsTrainingPipelines extends \Google\Service\Resource
    * @param GoogleCloudAiplatformV1CancelTrainingPipelineRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty
-   * @throws \Google\Service\Exception
    */
   public function cancel($name, GoogleCloudAiplatformV1CancelTrainingPipelineRequest $postBody, $optParams = [])
   {
@@ -67,7 +66,6 @@ class ProjectsLocationsTrainingPipelines extends \Google\Service\Resource
    * @param GoogleCloudAiplatformV1TrainingPipeline $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudAiplatformV1TrainingPipeline
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudAiplatformV1TrainingPipeline $postBody, $optParams = [])
   {
@@ -83,7 +81,6 @@ class ProjectsLocationsTrainingPipelines extends \Google\Service\Resource
    * training_pipeline}`
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -99,7 +96,6 @@ class ProjectsLocationsTrainingPipelines extends \Google\Service\Resource
    * pipeline}`
    * @param array $optParams Optional parameters.
    * @return GoogleCloudAiplatformV1TrainingPipeline
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -133,7 +129,6 @@ class ProjectsLocationsTrainingPipelines extends \Google\Service\Resource
    * PipelineService.ListTrainingPipelines call.
    * @opt_param string readMask Mask specifying which fields to read.
    * @return GoogleCloudAiplatformV1ListTrainingPipelinesResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsTrainingPipelines($parent, $optParams = [])
   {

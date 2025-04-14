@@ -43,7 +43,6 @@ class ProjectsBuckets extends \Google\Service\Resource
    * @param AddFirebaseRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Bucket
-   * @throws \Google\Service\Exception
    */
   public function addFirebase($bucket, AddFirebaseRequest $postBody, $optParams = [])
   {
@@ -59,7 +58,6 @@ class ProjectsBuckets extends \Google\Service\Resource
    * `projects/{project_id_or_number}/buckets/{bucket_id}`.
    * @param array $optParams Optional parameters.
    * @return Bucket
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -81,7 +79,6 @@ class ProjectsBuckets extends \Google\Service\Resource
    * paginating, all other parameters provided to `ListBuckets` must match the
    * call that provided the page token.
    * @return ListBucketsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsBuckets($parent, $optParams = [])
   {
@@ -99,7 +96,6 @@ class ProjectsBuckets extends \Google\Service\Resource
    * @param RemoveFirebaseRequest $postBody
    * @param array $optParams Optional parameters.
    * @return FirebasestorageEmpty
-   * @throws \Google\Service\Exception
    */
   public function removeFirebase($bucket, RemoveFirebaseRequest $postBody, $optParams = [])
   {

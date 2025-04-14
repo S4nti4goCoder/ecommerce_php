@@ -19,8 +19,16 @@ namespace Google\Service\Walletobjects;
 
 class PrivateText extends \Google\Model
 {
+  /**
+   * @var LocalizedString
+   */
+  public $body;
   protected $bodyType = LocalizedString::class;
   protected $bodyDataType = '';
+  /**
+   * @var LocalizedString
+   */
+  public $header;
   protected $headerType = LocalizedString::class;
   protected $headerDataType = '';
 

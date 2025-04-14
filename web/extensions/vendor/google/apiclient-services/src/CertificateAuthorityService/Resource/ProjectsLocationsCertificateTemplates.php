@@ -58,7 +58,6 @@ class ProjectsLocationsCertificateTemplates extends \Google\Service\Resource
    * exception that zero UUID is not supported
    * (00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, CertificateTemplate $postBody, $optParams = [])
   {
@@ -86,7 +85,6 @@ class ProjectsLocationsCertificateTemplates extends \Google\Service\Resource
    * exception that zero UUID is not supported
    * (00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -100,7 +98,6 @@ class ProjectsLocationsCertificateTemplates extends \Google\Service\Resource
    * @param string $name Required. The name of the CertificateTemplate to get.
    * @param array $optParams Optional parameters.
    * @return CertificateTemplate
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -132,7 +129,6 @@ class ProjectsLocationsCertificateTemplates extends \Google\Service\Resource
    * documentation](https://cloud.google.com/iam/help/conditions/resource-
    * policies).
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, $optParams = [])
   {
@@ -159,7 +155,6 @@ class ProjectsLocationsCertificateTemplates extends \Google\Service\Resource
    * @opt_param string pageToken Optional. Pagination token, returned earlier via
    * ListCertificateTemplatesResponse.next_page_token.
    * @return ListCertificateTemplatesResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsCertificateTemplates($parent, $optParams = [])
   {
@@ -170,7 +165,7 @@ class ProjectsLocationsCertificateTemplates extends \Google\Service\Resource
   /**
    * Update a CertificateTemplate. (certificateTemplates.patch)
    *
-   * @param string $name Identifier. The resource name for this
+   * @param string $name Output only. The resource name for this
    * CertificateTemplate in the format `projects/locations/certificateTemplates`.
    * @param CertificateTemplate $postBody
    * @param array $optParams Optional parameters.
@@ -189,7 +184,6 @@ class ProjectsLocationsCertificateTemplates extends \Google\Service\Resource
    * @opt_param string updateMask Required. A list of fields to be updated in this
    * request.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, CertificateTemplate $postBody, $optParams = [])
   {
@@ -209,7 +203,6 @@ class ProjectsLocationsCertificateTemplates extends \Google\Service\Resource
    * @param SetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, SetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -232,7 +225,6 @@ class ProjectsLocationsCertificateTemplates extends \Google\Service\Resource
    * @param TestIamPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestIamPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, TestIamPermissionsRequest $postBody, $optParams = [])
   {

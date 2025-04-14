@@ -21,9 +21,9 @@ class LinkedRouterApplianceInstances extends \Google\Collection
 {
   protected $collection_key = 'instances';
   /**
-   * @var string[]
+   * @var RouterApplianceInstance[]
    */
-  public $includeImportRanges;
+  public $instances;
   protected $instancesType = RouterApplianceInstance::class;
   protected $instancesDataType = 'array';
   /**
@@ -35,20 +35,6 @@ class LinkedRouterApplianceInstances extends \Google\Collection
    */
   public $vpcNetwork;
 
-  /**
-   * @param string[]
-   */
-  public function setIncludeImportRanges($includeImportRanges)
-  {
-    $this->includeImportRanges = $includeImportRanges;
-  }
-  /**
-   * @return string[]
-   */
-  public function getIncludeImportRanges()
-  {
-    return $this->includeImportRanges;
-  }
   /**
    * @param RouterApplianceInstance[]
    */

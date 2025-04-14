@@ -52,7 +52,6 @@ class Policies extends \Google\Service\Resource
    * dashes (`-`) and periods (`.`). The first character must be a lowercase
    * letter.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function createPolicy($parent, GoogleIamV2Policy $postBody, $optParams = [])
   {
@@ -78,7 +77,6 @@ class Policies extends \Google\Service\Resource
    * fails with a `409` error code and `ABORTED` status. If you omit this field,
    * the policy is deleted regardless of its current `etag`.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -99,7 +97,6 @@ class Policies extends \Google\Service\Resource
    * alphanumeric or the numeric ID.
    * @param array $optParams Optional parameters.
    * @return GoogleIamV2Policy
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -128,7 +125,6 @@ class Policies extends \Google\Service\Resource
    * @opt_param string pageToken A page token received in a ListPoliciesResponse.
    * Provide this token to retrieve the next page.
    * @return GoogleIamV2ListPoliciesResponse
-   * @throws \Google\Service\Exception
    */
   public function listPolicies($parent, $optParams = [])
   {
@@ -154,7 +150,6 @@ class Policies extends \Google\Service\Resource
    * @param GoogleIamV2Policy $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function update($name, GoogleIamV2Policy $postBody, $optParams = [])
   {

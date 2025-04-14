@@ -38,7 +38,6 @@ class Tests extends \Google\Service\Resource
    *
    * @opt_param string externalChannelId
    * @return TestItem
-   * @throws \Google\Service\Exception
    */
   public function insert($part, TestItem $postBody, $optParams = [])
   {

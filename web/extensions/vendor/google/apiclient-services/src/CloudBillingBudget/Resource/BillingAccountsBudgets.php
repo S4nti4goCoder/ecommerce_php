@@ -41,7 +41,6 @@ class BillingAccountsBudgets extends \Google\Service\Resource
    * @param GoogleCloudBillingBudgetsV1Budget $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudBillingBudgetsV1Budget
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudBillingBudgetsV1Budget $postBody, $optParams = [])
   {
@@ -56,7 +55,6 @@ class BillingAccountsBudgets extends \Google\Service\Resource
    * form `billingAccounts/{billingAccountId}/budgets/{budgetId}`.
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -74,7 +72,6 @@ class BillingAccountsBudgets extends \Google\Service\Resource
    * `billingAccounts/{billingAccountId}/budgets/{budgetId}`.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudBillingBudgetsV1Budget
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -106,7 +103,6 @@ class BillingAccountsBudgets extends \Google\Service\Resource
    * a project's resource name, the budgets returned are tracking the costs for
    * that project.
    * @return GoogleCloudBillingBudgetsV1ListBudgetsResponse
-   * @throws \Google\Service\Exception
    */
   public function listBillingAccountsBudgets($parent, $optParams = [])
   {
@@ -132,7 +128,6 @@ class BillingAccountsBudgets extends \Google\Service\Resource
    * request are updated. See https://developers.google.com/protocol-
    * buffers/docs/proto3#default for more details about default values.
    * @return GoogleCloudBillingBudgetsV1Budget
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleCloudBillingBudgetsV1Budget $postBody, $optParams = [])
   {

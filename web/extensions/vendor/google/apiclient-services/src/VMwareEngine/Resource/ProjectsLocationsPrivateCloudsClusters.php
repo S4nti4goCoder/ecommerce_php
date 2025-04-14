@@ -61,7 +61,6 @@ class ProjectsLocationsPrivateCloudsClusters extends \Google\Service\Resource
    * @opt_param bool validateOnly Optional. True if you want the request to be
    * validated and not executed; false otherwise.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Cluster $postBody, $optParams = [])
   {
@@ -86,7 +85,6 @@ class ProjectsLocationsPrivateCloudsClusters extends \Google\Service\Resource
    * with the exception that zero UUID is not supported
    * (00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -104,7 +102,6 @@ class ProjectsLocationsPrivateCloudsClusters extends \Google\Service\Resource
    * cloud/clusters/my-cluster`
    * @param array $optParams Optional parameters.
    * @return Cluster
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -135,7 +132,6 @@ class ProjectsLocationsPrivateCloudsClusters extends \Google\Service\Resource
    * documentation](https://cloud.google.com/iam/help/conditions/resource-
    * policies).
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, $optParams = [])
   {
@@ -171,7 +167,6 @@ class ProjectsLocationsPrivateCloudsClusters extends \Google\Service\Resource
    * paginating, all other parameters provided to `ListClusters` must match the
    * call that provided the page token.
    * @return ListClustersResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsPrivateCloudsClusters($parent, $optParams = [])
   {
@@ -186,8 +181,8 @@ class ProjectsLocationsPrivateCloudsClusters extends \Google\Service\Resource
    * you can't update the resource. Use the operation status to determine when the
    * processing fully completes. (clusters.patch)
    *
-   * @param string $name Output only. Identifier. The resource name of this
-   * cluster. Resource names are schemeless URIs that follow the conventions in
+   * @param string $name Output only. The resource name of this cluster. Resource
+   * names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names. For example:
    * `projects/my-project/locations/us-central1-a/privateClouds/my-
    * cloud/clusters/my-cluster`
@@ -205,7 +200,6 @@ class ProjectsLocationsPrivateCloudsClusters extends \Google\Service\Resource
    * @opt_param bool validateOnly Optional. True if you want the request to be
    * validated and not executed; false otherwise.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, Cluster $postBody, $optParams = [])
   {
@@ -225,7 +219,6 @@ class ProjectsLocationsPrivateCloudsClusters extends \Google\Service\Resource
    * @param SetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, SetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -247,7 +240,6 @@ class ProjectsLocationsPrivateCloudsClusters extends \Google\Service\Resource
    * @param TestIamPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestIamPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, TestIamPermissionsRequest $postBody, $optParams = [])
   {

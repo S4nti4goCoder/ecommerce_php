@@ -37,7 +37,6 @@ class FloodlightActivityGroups extends \Google\Service\Resource
    * @param string $id Floodlight activity Group ID.
    * @param array $optParams Optional parameters.
    * @return FloodlightActivityGroup
-   * @throws \Google\Service\Exception
    */
   public function get($profileId, $id, $optParams = [])
   {
@@ -52,7 +51,6 @@ class FloodlightActivityGroups extends \Google\Service\Resource
    * @param FloodlightActivityGroup $postBody
    * @param array $optParams Optional parameters.
    * @return FloodlightActivityGroup
-   * @throws \Google\Service\Exception
    */
   public function insert($profileId, FloodlightActivityGroup $postBody, $optParams = [])
   {
@@ -94,7 +92,6 @@ class FloodlightActivityGroups extends \Google\Service\Resource
    * @opt_param string type Select only floodlight activity groups with the
    * specified floodlight activity group type.
    * @return FloodlightActivityGroupsListResponse
-   * @throws \Google\Service\Exception
    */
   public function listFloodlightActivityGroups($profileId, $optParams = [])
   {
@@ -103,15 +100,14 @@ class FloodlightActivityGroups extends \Google\Service\Resource
     return $this->call('list', [$params], FloodlightActivityGroupsListResponse::class);
   }
   /**
-   * Updates an existing floodlight activity group. This method supports patch
-   * semantics. (floodlightActivityGroups.patch)
+   * Updates an existing event tag. This method supports patch semantics.
+   * (floodlightActivityGroups.patch)
    *
    * @param string $profileId User profile ID associated with this request.
    * @param string $id Required. EventTag ID.
    * @param FloodlightActivityGroup $postBody
    * @param array $optParams Optional parameters.
    * @return FloodlightActivityGroup
-   * @throws \Google\Service\Exception
    */
   public function patch($profileId, $id, FloodlightActivityGroup $postBody, $optParams = [])
   {
@@ -127,7 +123,6 @@ class FloodlightActivityGroups extends \Google\Service\Resource
    * @param FloodlightActivityGroup $postBody
    * @param array $optParams Optional parameters.
    * @return FloodlightActivityGroup
-   * @throws \Google\Service\Exception
    */
   public function update($profileId, FloodlightActivityGroup $postBody, $optParams = [])
   {

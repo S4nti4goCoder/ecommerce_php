@@ -35,11 +35,10 @@ class ProjectsLocationsAdaptiveMtDatasetsAdaptiveMtFiles extends \Google\Service
    * Deletes an AdaptiveMtFile along with its sentences. (adaptiveMtFiles.delete)
    *
    * @param string $name Required. The resource name of the file to delete, in
-   * form of `projects/{project-number-or-id}/locations/{location_id}/adaptiveMtDa
-   * tasets/{dataset}/adaptiveMtFiles/{file}`
+   * form of `projects/{project-number-or-
+   * id}/locations/{location_id}/adaptiveMtDatasets/{dataset}/files/{file}`
    * @param array $optParams Optional parameters.
    * @return TranslateEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -51,11 +50,10 @@ class ProjectsLocationsAdaptiveMtDatasetsAdaptiveMtFiles extends \Google\Service
    * Gets and AdaptiveMtFile (adaptiveMtFiles.get)
    *
    * @param string $name Required. The resource name of the file, in form of
-   * `projects/{project-number-or-id}/locations/{location_id}/adaptiveMtDatasets/{
-   * dataset}/adaptiveMtFiles/{file}`
+   * `projects/{project-number-or-
+   * id}/locations/{location_id}/adaptiveMtDatasets/{dataset}/files/{file}`
    * @param array $optParams Optional parameters.
    * @return AdaptiveMtFile
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -79,7 +77,6 @@ class ProjectsLocationsAdaptiveMtDatasetsAdaptiveMtFiles extends \Google\Service
    * to `ListAdaptiveMtFiles` method. The first page is returned if `page_token`is
    * empty or missing.
    * @return ListAdaptiveMtFilesResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsAdaptiveMtDatasetsAdaptiveMtFiles($parent, $optParams = [])
   {

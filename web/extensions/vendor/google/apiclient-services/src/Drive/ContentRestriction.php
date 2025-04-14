@@ -31,6 +31,10 @@ class ContentRestriction extends \Google\Model
    * @var string
    */
   public $reason;
+  /**
+   * @var User
+   */
+  public $restrictingUser;
   protected $restrictingUserType = User::class;
   protected $restrictingUserDataType = '';
   /**

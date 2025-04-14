@@ -19,6 +19,10 @@ namespace Google\Service\AppHub;
 
 class Service extends \Google\Model
 {
+  /**
+   * @var Attributes
+   */
+  public $attributes;
   protected $attributesType = Attributes::class;
   protected $attributesDataType = '';
   /**
@@ -41,8 +45,16 @@ class Service extends \Google\Model
    * @var string
    */
   public $name;
+  /**
+   * @var ServiceProperties
+   */
+  public $serviceProperties;
   protected $servicePropertiesType = ServiceProperties::class;
   protected $servicePropertiesDataType = '';
+  /**
+   * @var ServiceReference
+   */
+  public $serviceReference;
   protected $serviceReferenceType = ServiceReference::class;
   protected $serviceReferenceDataType = '';
   /**

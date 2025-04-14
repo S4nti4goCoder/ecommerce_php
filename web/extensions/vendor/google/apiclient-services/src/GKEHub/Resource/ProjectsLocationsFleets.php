@@ -39,7 +39,6 @@ class ProjectsLocationsFleets extends \Google\Service\Resource
    * @param Fleet $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Fleet $postBody, $optParams = [])
   {
@@ -55,7 +54,6 @@ class ProjectsLocationsFleets extends \Google\Service\Resource
    * `projects/locations/fleets`.
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -70,7 +68,6 @@ class ProjectsLocationsFleets extends \Google\Service\Resource
    * `projects/locations/fleets`.
    * @param array $optParams Optional parameters.
    * @return Fleet
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -96,7 +93,6 @@ class ProjectsLocationsFleets extends \Google\Service\Resource
    * paginating, all other parameters provided to `ListFleets` must match the call
    * that provided the page token.
    * @return ListFleetsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsFleets($parent, $optParams = [])
   {
@@ -116,7 +112,6 @@ class ProjectsLocationsFleets extends \Google\Service\Resource
    *
    * @opt_param string updateMask Required. The fields to be updated;
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, Fleet $postBody, $optParams = [])
   {

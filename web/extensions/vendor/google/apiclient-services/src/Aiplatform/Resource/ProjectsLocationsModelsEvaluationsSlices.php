@@ -42,7 +42,6 @@ class ProjectsLocationsModelsEvaluationsSlices extends \Google\Service\Resource
    * @param GoogleCloudAiplatformV1BatchImportEvaluatedAnnotationsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudAiplatformV1BatchImportEvaluatedAnnotationsResponse
-   * @throws \Google\Service\Exception
    */
   public function batchImport($parent, GoogleCloudAiplatformV1BatchImportEvaluatedAnnotationsRequest $postBody, $optParams = [])
   {
@@ -58,7 +57,6 @@ class ProjectsLocationsModelsEvaluationsSlices extends \Google\Service\Resource
    * evaluation}/slices/{slice}`
    * @param array $optParams Optional parameters.
    * @return GoogleCloudAiplatformV1ModelEvaluationSlice
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -83,7 +81,6 @@ class ProjectsLocationsModelsEvaluationsSlices extends \Google\Service\Resource
    * ModelService.ListModelEvaluationSlices call.
    * @opt_param string readMask Mask specifying which fields to read.
    * @return GoogleCloudAiplatformV1ListModelEvaluationSlicesResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsModelsEvaluationsSlices($parent, $optParams = [])
   {

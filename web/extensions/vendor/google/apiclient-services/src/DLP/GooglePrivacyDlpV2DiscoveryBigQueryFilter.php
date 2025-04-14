@@ -19,10 +19,16 @@ namespace Google\Service\DLP;
 
 class GooglePrivacyDlpV2DiscoveryBigQueryFilter extends \Google\Model
 {
+  /**
+   * @var GooglePrivacyDlpV2AllOtherBigQueryTables
+   */
+  public $otherTables;
   protected $otherTablesType = GooglePrivacyDlpV2AllOtherBigQueryTables::class;
   protected $otherTablesDataType = '';
-  protected $tableReferenceType = GooglePrivacyDlpV2TableReference::class;
-  protected $tableReferenceDataType = '';
+  /**
+   * @var GooglePrivacyDlpV2BigQueryTableCollection
+   */
+  public $tables;
   protected $tablesType = GooglePrivacyDlpV2BigQueryTableCollection::class;
   protected $tablesDataType = '';
 
@@ -39,20 +45,6 @@ class GooglePrivacyDlpV2DiscoveryBigQueryFilter extends \Google\Model
   public function getOtherTables()
   {
     return $this->otherTables;
-  }
-  /**
-   * @param GooglePrivacyDlpV2TableReference
-   */
-  public function setTableReference(GooglePrivacyDlpV2TableReference $tableReference)
-  {
-    $this->tableReference = $tableReference;
-  }
-  /**
-   * @return GooglePrivacyDlpV2TableReference
-   */
-  public function getTableReference()
-  {
-    return $this->tableReference;
   }
   /**
    * @param GooglePrivacyDlpV2BigQueryTableCollection

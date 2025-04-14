@@ -37,7 +37,6 @@ class GroupsAliases extends \Google\Service\Resource
    * can be the group's email address, group alias, or the unique group ID.
    * @param string $alias The alias to be removed
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function delete($groupKey, $alias, $optParams = [])
   {
@@ -53,7 +52,6 @@ class GroupsAliases extends \Google\Service\Resource
    * @param Alias $postBody
    * @param array $optParams Optional parameters.
    * @return Alias
-   * @throws \Google\Service\Exception
    */
   public function insert($groupKey, Alias $postBody, $optParams = [])
   {
@@ -68,7 +66,6 @@ class GroupsAliases extends \Google\Service\Resource
    * can be the group's email address, group alias, or the unique group ID.
    * @param array $optParams Optional parameters.
    * @return Aliases
-   * @throws \Google\Service\Exception
    */
   public function listGroupsAliases($groupKey, $optParams = [])
   {

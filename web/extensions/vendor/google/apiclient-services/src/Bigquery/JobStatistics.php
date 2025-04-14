@@ -24,28 +24,36 @@ class JobStatistics extends \Google\Collection
         "reservationId" => "reservation_id",
   ];
   public $completionRatio;
+  /**
+   * @var JobStatistics5
+   */
+  public $copy;
   protected $copyType = JobStatistics5::class;
   protected $copyDataType = '';
   /**
    * @var string
    */
   public $creationTime;
+  /**
+   * @var DataMaskingStatistics
+   */
+  public $dataMaskingStatistics;
   protected $dataMaskingStatisticsType = DataMaskingStatistics::class;
   protected $dataMaskingStatisticsDataType = '';
   /**
    * @var string
    */
-  public $edition;
-  /**
-   * @var string
-   */
   public $endTime;
+  /**
+   * @var JobStatistics4
+   */
+  public $extract;
   protected $extractType = JobStatistics4::class;
   protected $extractDataType = '';
   /**
-   * @var string
+   * @var JobStatistics3
    */
-  public $finalExecutionDurationMs;
+  public $load;
   protected $loadType = JobStatistics3::class;
   protected $loadDataType = '';
   /**
@@ -56,22 +64,42 @@ class JobStatistics extends \Google\Collection
    * @var string
    */
   public $parentJobId;
+  /**
+   * @var JobStatistics2
+   */
+  public $query;
   protected $queryType = JobStatistics2::class;
   protected $queryDataType = '';
   /**
    * @var string[]
    */
   public $quotaDeferments;
+  /**
+   * @var JobStatisticsReservationUsage[]
+   */
+  public $reservationUsage;
   protected $reservationUsageType = JobStatisticsReservationUsage::class;
   protected $reservationUsageDataType = 'array';
   /**
    * @var string
    */
   public $reservationId;
+  /**
+   * @var RowLevelSecurityStatistics
+   */
+  public $rowLevelSecurityStatistics;
   protected $rowLevelSecurityStatisticsType = RowLevelSecurityStatistics::class;
   protected $rowLevelSecurityStatisticsDataType = '';
+  /**
+   * @var ScriptStatistics
+   */
+  public $scriptStatistics;
   protected $scriptStatisticsType = ScriptStatistics::class;
   protected $scriptStatisticsDataType = '';
+  /**
+   * @var SessionInfo
+   */
+  public $sessionInfo;
   protected $sessionInfoType = SessionInfo::class;
   protected $sessionInfoDataType = '';
   /**
@@ -86,6 +114,10 @@ class JobStatistics extends \Google\Collection
    * @var string
    */
   public $totalSlotMs;
+  /**
+   * @var TransactionInfo
+   */
+  public $transactionInfo;
   protected $transactionInfoType = TransactionInfo::class;
   protected $transactionInfoDataType = '';
 
@@ -142,20 +174,6 @@ class JobStatistics extends \Google\Collection
   /**
    * @param string
    */
-  public function setEdition($edition)
-  {
-    $this->edition = $edition;
-  }
-  /**
-   * @return string
-   */
-  public function getEdition()
-  {
-    return $this->edition;
-  }
-  /**
-   * @param string
-   */
   public function setEndTime($endTime)
   {
     $this->endTime = $endTime;
@@ -180,20 +198,6 @@ class JobStatistics extends \Google\Collection
   public function getExtract()
   {
     return $this->extract;
-  }
-  /**
-   * @param string
-   */
-  public function setFinalExecutionDurationMs($finalExecutionDurationMs)
-  {
-    $this->finalExecutionDurationMs = $finalExecutionDurationMs;
-  }
-  /**
-   * @return string
-   */
-  public function getFinalExecutionDurationMs()
-  {
-    return $this->finalExecutionDurationMs;
   }
   /**
    * @param JobStatistics3

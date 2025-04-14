@@ -36,20 +36,36 @@ class Instance extends \Google\Collection
    * @var string
    */
   public $displayName;
+  /**
+   * @var InstanceMessage[]
+   */
+  public $instanceMessages;
   protected $instanceMessagesType = InstanceMessage::class;
   protected $instanceMessagesDataType = 'array';
   /**
    * @var string[]
    */
   public $labels;
+  /**
+   * @var GoogleCloudMemcacheV1MaintenancePolicy
+   */
+  public $maintenancePolicy;
   protected $maintenancePolicyType = GoogleCloudMemcacheV1MaintenancePolicy::class;
   protected $maintenancePolicyDataType = '';
+  /**
+   * @var MaintenanceSchedule
+   */
+  public $maintenanceSchedule;
   protected $maintenanceScheduleType = MaintenanceSchedule::class;
   protected $maintenanceScheduleDataType = '';
   /**
    * @var string
    */
   public $memcacheFullVersion;
+  /**
+   * @var Node[]
+   */
+  public $memcacheNodes;
   protected $memcacheNodesType = Node::class;
   protected $memcacheNodesDataType = 'array';
   /**
@@ -60,26 +76,26 @@ class Instance extends \Google\Collection
    * @var string
    */
   public $name;
+  /**
+   * @var NodeConfig
+   */
+  public $nodeConfig;
   protected $nodeConfigType = NodeConfig::class;
   protected $nodeConfigDataType = '';
   /**
    * @var int
    */
   public $nodeCount;
+  /**
+   * @var MemcacheParameters
+   */
+  public $parameters;
   protected $parametersType = MemcacheParameters::class;
   protected $parametersDataType = '';
   /**
    * @var string[]
    */
   public $reservedIpRangeId;
-  /**
-   * @var bool
-   */
-  public $satisfiesPzi;
-  /**
-   * @var bool
-   */
-  public $satisfiesPzs;
   /**
    * @var string
    */
@@ -316,34 +332,6 @@ class Instance extends \Google\Collection
   public function getReservedIpRangeId()
   {
     return $this->reservedIpRangeId;
-  }
-  /**
-   * @param bool
-   */
-  public function setSatisfiesPzi($satisfiesPzi)
-  {
-    $this->satisfiesPzi = $satisfiesPzi;
-  }
-  /**
-   * @return bool
-   */
-  public function getSatisfiesPzi()
-  {
-    return $this->satisfiesPzi;
-  }
-  /**
-   * @param bool
-   */
-  public function setSatisfiesPzs($satisfiesPzs)
-  {
-    $this->satisfiesPzs = $satisfiesPzs;
-  }
-  /**
-   * @return bool
-   */
-  public function getSatisfiesPzs()
-  {
-    return $this->satisfiesPzs;
   }
   /**
    * @param string

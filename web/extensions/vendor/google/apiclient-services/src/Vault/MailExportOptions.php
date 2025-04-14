@@ -26,10 +26,6 @@ class MailExportOptions extends \Google\Model
   /**
    * @var bool
    */
-  public $exportLinkedDriveFiles;
-  /**
-   * @var bool
-   */
   public $showConfidentialModeContent;
   /**
    * @var bool
@@ -49,20 +45,6 @@ class MailExportOptions extends \Google\Model
   public function getExportFormat()
   {
     return $this->exportFormat;
-  }
-  /**
-   * @param bool
-   */
-  public function setExportLinkedDriveFiles($exportLinkedDriveFiles)
-  {
-    $this->exportLinkedDriveFiles = $exportLinkedDriveFiles;
-  }
-  /**
-   * @return bool
-   */
-  public function getExportLinkedDriveFiles()
-  {
-    return $this->exportLinkedDriveFiles;
   }
   /**
    * @param bool

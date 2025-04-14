@@ -41,7 +41,6 @@ class ProjectsLocationsProductsCertificates extends \Google\Service\Resource
    * @param GoogleCloudIntegrationsV1alphaCertificate $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudIntegrationsV1alphaCertificate
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudIntegrationsV1alphaCertificate $postBody, $optParams = [])
   {
@@ -56,7 +55,6 @@ class ProjectsLocationsProductsCertificates extends \Google\Service\Resource
    * Certificate.
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -71,7 +69,6 @@ class ProjectsLocationsProductsCertificates extends \Google\Service\Resource
    * projects/{project}/locations/{location}/certificates/{certificate}
    * @param array $optParams Optional parameters.
    * @return GoogleCloudIntegrationsV1alphaCertificate
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -95,7 +92,6 @@ class ProjectsLocationsProductsCertificates extends \Google\Service\Resource
    * @opt_param string readMask The mask which specifies fields that need to be
    * returned in the Certificate's response.
    * @return GoogleCloudIntegrationsV1alphaListCertificatesResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsProductsCertificates($parent, $optParams = [])
   {
@@ -116,7 +112,6 @@ class ProjectsLocationsProductsCertificates extends \Google\Service\Resource
    * @opt_param string updateMask Field mask specifying the fields in the above
    * Certificate that have been modified and need to be updated.
    * @return GoogleCloudIntegrationsV1alphaCertificate
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleCloudIntegrationsV1alphaCertificate $postBody, $optParams = [])
   {

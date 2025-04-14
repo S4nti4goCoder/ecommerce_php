@@ -40,7 +40,6 @@ class Media extends \Google\Service\Resource
    * @param GoogleFirebaseAppdistroV1UploadReleaseRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function upload($app, GoogleFirebaseAppdistroV1UploadReleaseRequest $postBody, $optParams = [])
   {

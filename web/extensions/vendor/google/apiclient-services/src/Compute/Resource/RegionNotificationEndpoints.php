@@ -52,7 +52,6 @@ class RegionNotificationEndpoints extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($project, $region, $notificationEndpoint, $optParams = [])
   {
@@ -70,7 +69,6 @@ class RegionNotificationEndpoints extends \Google\Service\Resource
    * to return.
    * @param array $optParams Optional parameters.
    * @return NotificationEndpoint
-   * @throws \Google\Service\Exception
    */
   public function get($project, $region, $notificationEndpoint, $optParams = [])
   {
@@ -99,7 +97,6 @@ class RegionNotificationEndpoints extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function insert($project, $region, NotificationEndpoint $postBody, $optParams = [])
   {
@@ -165,11 +162,8 @@ class RegionNotificationEndpoints extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
+   * false.
    * @return NotificationEndpointList
-   * @throws \Google\Service\Exception
    */
   public function listRegionNotificationEndpoints($project, $region, $optParams = [])
   {

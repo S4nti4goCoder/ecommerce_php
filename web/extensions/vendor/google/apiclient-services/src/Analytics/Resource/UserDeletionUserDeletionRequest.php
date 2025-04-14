@@ -35,7 +35,6 @@ class UserDeletionUserDeletionRequest extends \Google\Service\Resource
    * @param UserDeletionRequest $postBody
    * @param array $optParams Optional parameters.
    * @return UserDeletionRequest
-   * @throws \Google\Service\Exception
    */
   public function upsert(UserDeletionRequest $postBody, $optParams = [])
   {

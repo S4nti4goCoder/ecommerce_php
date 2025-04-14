@@ -23,34 +23,24 @@ class AwsSourceVmDetails extends \Google\Collection
   /**
    * @var string
    */
-  public $architecture;
-  /**
-   * @var string
-   */
   public $committedStorageBytes;
+  /**
+   * @var AwsDiskDetails[]
+   */
+  public $disks;
   protected $disksType = AwsDiskDetails::class;
   protected $disksDataType = 'array';
   /**
    * @var string
    */
   public $firmware;
+  /**
+   * @var VmCapabilities
+   */
+  public $vmCapabilitiesInfo;
   protected $vmCapabilitiesInfoType = VmCapabilities::class;
   protected $vmCapabilitiesInfoDataType = '';
 
-  /**
-   * @param string
-   */
-  public function setArchitecture($architecture)
-  {
-    $this->architecture = $architecture;
-  }
-  /**
-   * @return string
-   */
-  public function getArchitecture()
-  {
-    return $this->architecture;
-  }
   /**
    * @param string
    */

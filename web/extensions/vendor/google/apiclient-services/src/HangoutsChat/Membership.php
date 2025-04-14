@@ -24,11 +24,15 @@ class Membership extends \Google\Model
    */
   public $createTime;
   /**
-   * @var string
+   * @var Group
    */
-  public $deleteTime;
+  public $groupMember;
   protected $groupMemberType = Group::class;
   protected $groupMemberDataType = '';
+  /**
+   * @var User
+   */
+  public $member;
   protected $memberType = User::class;
   protected $memberDataType = '';
   /**
@@ -57,20 +61,6 @@ class Membership extends \Google\Model
   public function getCreateTime()
   {
     return $this->createTime;
-  }
-  /**
-   * @param string
-   */
-  public function setDeleteTime($deleteTime)
-  {
-    $this->deleteTime = $deleteTime;
-  }
-  /**
-   * @return string
-   */
-  public function getDeleteTime()
-  {
-    return $this->deleteTime;
   }
   /**
    * @param Group

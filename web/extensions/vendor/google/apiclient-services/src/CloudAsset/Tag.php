@@ -26,10 +26,6 @@ class Tag extends \Google\Model
   /**
    * @var string
    */
-  public $tagKeyId;
-  /**
-   * @var string
-   */
   public $tagValue;
   /**
    * @var string
@@ -49,20 +45,6 @@ class Tag extends \Google\Model
   public function getTagKey()
   {
     return $this->tagKey;
-  }
-  /**
-   * @param string
-   */
-  public function setTagKeyId($tagKeyId)
-  {
-    $this->tagKeyId = $tagKeyId;
-  }
-  /**
-   * @return string
-   */
-  public function getTagKeyId()
-  {
-    return $this->tagKeyId;
   }
   /**
    * @param string

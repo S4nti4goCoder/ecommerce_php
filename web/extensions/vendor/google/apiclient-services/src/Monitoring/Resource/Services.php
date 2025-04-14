@@ -44,7 +44,6 @@ class Services extends \Google\Service\Resource
    * If omitted, an id will be generated instead. Must match the pattern
    * [a-z0-9\-]+
    * @return Service
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Service $postBody, $optParams = [])
   {
@@ -59,7 +58,6 @@ class Services extends \Google\Service\Resource
    * format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    * @param array $optParams Optional parameters.
    * @return MonitoringEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -74,7 +72,6 @@ class Services extends \Google\Service\Resource
    * projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    * @param array $optParams Optional parameters.
    * @return Service
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -114,7 +111,6 @@ class Services extends \Google\Service\Resource
    * this field causes the method to return additional results from the previous
    * method call.
    * @return ListServicesResponse
-   * @throws \Google\Service\Exception
    */
   public function listServices($parent, $optParams = [])
   {
@@ -125,15 +121,14 @@ class Services extends \Google\Service\Resource
   /**
    * Update this Service. (services.patch)
    *
-   * @param string $name Identifier. Resource name for this Service. The format
-   * is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
+   * @param string $name Resource name for this Service. The format is:
+   * projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    * @param Service $postBody
    * @param array $optParams Optional parameters.
    *
    * @opt_param string updateMask A set of field paths defining which fields to
    * use for the update.
    * @return Service
-   * @throws \Google\Service\Exception
    */
   public function patch($name, Service $postBody, $optParams = [])
   {

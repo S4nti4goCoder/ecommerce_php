@@ -31,10 +31,6 @@ class VpnGateway extends \Google\Collection
   /**
    * @var string
    */
-  public $gatewayIpVersion;
-  /**
-   * @var string
-   */
   public $id;
   /**
    * @var string
@@ -68,6 +64,10 @@ class VpnGateway extends \Google\Collection
    * @var string
    */
   public $stackType;
+  /**
+   * @var VpnGatewayVpnGatewayInterface[]
+   */
+  public $vpnInterfaces;
   protected $vpnInterfacesType = VpnGatewayVpnGatewayInterface::class;
   protected $vpnInterfacesDataType = 'array';
 
@@ -98,20 +98,6 @@ class VpnGateway extends \Google\Collection
   public function getDescription()
   {
     return $this->description;
-  }
-  /**
-   * @param string
-   */
-  public function setGatewayIpVersion($gatewayIpVersion)
-  {
-    $this->gatewayIpVersion = $gatewayIpVersion;
-  }
-  /**
-   * @return string
-   */
-  public function getGatewayIpVersion()
-  {
-    return $this->gatewayIpVersion;
   }
   /**
    * @param string

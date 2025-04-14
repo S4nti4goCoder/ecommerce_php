@@ -39,6 +39,10 @@ class CloudSqlSettings extends \Google\Model
    * @var string
    */
   public $collation;
+  /**
+   * @var DataCacheConfig
+   */
+  public $dataCacheConfig;
   protected $dataCacheConfigType = DataCacheConfig::class;
   protected $dataCacheConfigDataType = '';
   /**
@@ -60,11 +64,11 @@ class CloudSqlSettings extends \Google\Model
   /**
    * @var string
    */
-  public $databaseVersionName;
-  /**
-   * @var string
-   */
   public $edition;
+  /**
+   * @var SqlIpConfig
+   */
+  public $ipConfig;
   protected $ipConfigType = SqlIpConfig::class;
   protected $ipConfigDataType = '';
   /**
@@ -239,20 +243,6 @@ class CloudSqlSettings extends \Google\Model
   public function getDatabaseVersion()
   {
     return $this->databaseVersion;
-  }
-  /**
-   * @param string
-   */
-  public function setDatabaseVersionName($databaseVersionName)
-  {
-    $this->databaseVersionName = $databaseVersionName;
-  }
-  /**
-   * @return string
-   */
-  public function getDatabaseVersionName()
-  {
-    return $this->databaseVersionName;
   }
   /**
    * @param string

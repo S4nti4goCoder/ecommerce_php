@@ -19,7 +19,7 @@ namespace Google\Service\SQLAdmin;
 
 class DatabaseInstance extends \Google\Collection
 {
-  protected $collection_key = 'upgradableDatabaseVersions';
+  protected $collection_key = 'suspensionReason';
   /**
    * @var string[]
    */
@@ -48,8 +48,16 @@ class DatabaseInstance extends \Google\Collection
    * @var string
    */
   public $databaseVersion;
+  /**
+   * @var DiskEncryptionConfiguration
+   */
+  public $diskEncryptionConfiguration;
   protected $diskEncryptionConfigurationType = DiskEncryptionConfiguration::class;
   protected $diskEncryptionConfigurationDataType = '';
+  /**
+   * @var DiskEncryptionStatus
+   */
+  public $diskEncryptionStatus;
   protected $diskEncryptionStatusType = DiskEncryptionStatus::class;
   protected $diskEncryptionStatusDataType = '';
   /**
@@ -60,22 +68,24 @@ class DatabaseInstance extends \Google\Collection
    * @var string
    */
   public $etag;
+  /**
+   * @var DatabaseInstanceFailoverReplica
+   */
+  public $failoverReplica;
   protected $failoverReplicaType = DatabaseInstanceFailoverReplica::class;
   protected $failoverReplicaDataType = '';
   /**
    * @var string
    */
   public $gceZone;
-  protected $geminiConfigType = GeminiInstanceConfig::class;
-  protected $geminiConfigDataType = '';
-  /**
-   * @var bool
-   */
-  public $includeReplicasForMajorVersionUpgrade;
   /**
    * @var string
    */
   public $instanceType;
+  /**
+   * @var IpMapping[]
+   */
+  public $ipAddresses;
   protected $ipAddressesType = IpMapping::class;
   protected $ipAddressesDataType = 'array';
   /**
@@ -102,8 +112,16 @@ class DatabaseInstance extends \Google\Collection
    * @var string
    */
   public $name;
+  /**
+   * @var OnPremisesConfiguration
+   */
+  public $onPremisesConfiguration;
   protected $onPremisesConfigurationType = OnPremisesConfiguration::class;
   protected $onPremisesConfigurationDataType = '';
+  /**
+   * @var SqlOutOfDiskReport
+   */
+  public $outOfDiskReport;
   protected $outOfDiskReportType = SqlOutOfDiskReport::class;
   protected $outOfDiskReportDataType = '';
   /**
@@ -122,14 +140,16 @@ class DatabaseInstance extends \Google\Collection
    * @var string
    */
   public $region;
+  /**
+   * @var ReplicaConfiguration
+   */
+  public $replicaConfiguration;
   protected $replicaConfigurationType = ReplicaConfiguration::class;
   protected $replicaConfigurationDataType = '';
   /**
    * @var string[]
    */
   public $replicaNames;
-  protected $replicationClusterType = ReplicationCluster::class;
-  protected $replicationClusterDataType = '';
   /**
    * @var string
    */
@@ -137,11 +157,11 @@ class DatabaseInstance extends \Google\Collection
   /**
    * @var bool
    */
-  public $satisfiesPzi;
-  /**
-   * @var bool
-   */
   public $satisfiesPzs;
+  /**
+   * @var SqlScheduledMaintenance
+   */
+  public $scheduledMaintenance;
   protected $scheduledMaintenanceType = SqlScheduledMaintenance::class;
   protected $scheduledMaintenanceDataType = '';
   /**
@@ -152,12 +172,20 @@ class DatabaseInstance extends \Google\Collection
    * @var string
    */
   public $selfLink;
+  /**
+   * @var SslCert
+   */
+  public $serverCaCert;
   protected $serverCaCertType = SslCert::class;
   protected $serverCaCertDataType = '';
   /**
    * @var string
    */
   public $serviceAccountEmailAddress;
+  /**
+   * @var Settings
+   */
+  public $settings;
   protected $settingsType = Settings::class;
   protected $settingsDataType = '';
   /**
@@ -172,16 +200,6 @@ class DatabaseInstance extends \Google\Collection
    * @var string[]
    */
   public $suspensionReason;
-  /**
-   * @var bool
-   */
-  public $switchTransactionLogsToCloudStorageEnabled;
-  /**
-   * @var string[]
-   */
-  public $tags;
-  protected $upgradableDatabaseVersionsType = AvailableDatabaseVersion::class;
-  protected $upgradableDatabaseVersionsDataType = 'array';
   /**
    * @var string
    */
@@ -368,34 +386,6 @@ class DatabaseInstance extends \Google\Collection
   public function getGceZone()
   {
     return $this->gceZone;
-  }
-  /**
-   * @param GeminiInstanceConfig
-   */
-  public function setGeminiConfig(GeminiInstanceConfig $geminiConfig)
-  {
-    $this->geminiConfig = $geminiConfig;
-  }
-  /**
-   * @return GeminiInstanceConfig
-   */
-  public function getGeminiConfig()
-  {
-    return $this->geminiConfig;
-  }
-  /**
-   * @param bool
-   */
-  public function setIncludeReplicasForMajorVersionUpgrade($includeReplicasForMajorVersionUpgrade)
-  {
-    $this->includeReplicasForMajorVersionUpgrade = $includeReplicasForMajorVersionUpgrade;
-  }
-  /**
-   * @return bool
-   */
-  public function getIncludeReplicasForMajorVersionUpgrade()
-  {
-    return $this->includeReplicasForMajorVersionUpgrade;
   }
   /**
    * @param string
@@ -622,20 +612,6 @@ class DatabaseInstance extends \Google\Collection
     return $this->replicaNames;
   }
   /**
-   * @param ReplicationCluster
-   */
-  public function setReplicationCluster(ReplicationCluster $replicationCluster)
-  {
-    $this->replicationCluster = $replicationCluster;
-  }
-  /**
-   * @return ReplicationCluster
-   */
-  public function getReplicationCluster()
-  {
-    return $this->replicationCluster;
-  }
-  /**
    * @param string
    */
   public function setRootPassword($rootPassword)
@@ -648,20 +624,6 @@ class DatabaseInstance extends \Google\Collection
   public function getRootPassword()
   {
     return $this->rootPassword;
-  }
-  /**
-   * @param bool
-   */
-  public function setSatisfiesPzi($satisfiesPzi)
-  {
-    $this->satisfiesPzi = $satisfiesPzi;
-  }
-  /**
-   * @return bool
-   */
-  public function getSatisfiesPzi()
-  {
-    return $this->satisfiesPzi;
   }
   /**
    * @param bool
@@ -802,48 +764,6 @@ class DatabaseInstance extends \Google\Collection
   public function getSuspensionReason()
   {
     return $this->suspensionReason;
-  }
-  /**
-   * @param bool
-   */
-  public function setSwitchTransactionLogsToCloudStorageEnabled($switchTransactionLogsToCloudStorageEnabled)
-  {
-    $this->switchTransactionLogsToCloudStorageEnabled = $switchTransactionLogsToCloudStorageEnabled;
-  }
-  /**
-   * @return bool
-   */
-  public function getSwitchTransactionLogsToCloudStorageEnabled()
-  {
-    return $this->switchTransactionLogsToCloudStorageEnabled;
-  }
-  /**
-   * @param string[]
-   */
-  public function setTags($tags)
-  {
-    $this->tags = $tags;
-  }
-  /**
-   * @return string[]
-   */
-  public function getTags()
-  {
-    return $this->tags;
-  }
-  /**
-   * @param AvailableDatabaseVersion[]
-   */
-  public function setUpgradableDatabaseVersions($upgradableDatabaseVersions)
-  {
-    $this->upgradableDatabaseVersions = $upgradableDatabaseVersions;
-  }
-  /**
-   * @return AvailableDatabaseVersion[]
-   */
-  public function getUpgradableDatabaseVersions()
-  {
-    return $this->upgradableDatabaseVersions;
   }
   /**
    * @param string

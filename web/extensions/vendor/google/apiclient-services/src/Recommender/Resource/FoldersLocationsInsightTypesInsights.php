@@ -38,7 +38,6 @@ class FoldersLocationsInsightTypesInsights extends \Google\Service\Resource
    * @param string $name Required. Name of the insight.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudRecommenderV1Insight
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -83,7 +82,6 @@ class FoldersLocationsInsightTypesInsights extends \Google\Service\Resource
    * value of `next_page_token` from the previous response. The values of other
    * method parameters must be identical to those in the previous call.
    * @return GoogleCloudRecommenderV1ListInsightsResponse
-   * @throws \Google\Service\Exception
    */
   public function listFoldersLocationsInsightTypesInsights($parent, $optParams = [])
   {
@@ -102,7 +100,6 @@ class FoldersLocationsInsightTypesInsights extends \Google\Service\Resource
    * @param GoogleCloudRecommenderV1MarkInsightAcceptedRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudRecommenderV1Insight
-   * @throws \Google\Service\Exception
    */
   public function markAccepted($name, GoogleCloudRecommenderV1MarkInsightAcceptedRequest $postBody, $optParams = [])
   {

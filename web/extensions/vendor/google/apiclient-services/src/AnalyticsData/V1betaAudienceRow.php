@@ -20,6 +20,10 @@ namespace Google\Service\AnalyticsData;
 class V1betaAudienceRow extends \Google\Collection
 {
   protected $collection_key = 'dimensionValues';
+  /**
+   * @var V1betaAudienceDimensionValue[]
+   */
+  public $dimensionValues;
   protected $dimensionValuesType = V1betaAudienceDimensionValue::class;
   protected $dimensionValuesDataType = 'array';
 

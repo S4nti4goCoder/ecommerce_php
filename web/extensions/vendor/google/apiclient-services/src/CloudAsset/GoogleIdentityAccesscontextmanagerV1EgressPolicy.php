@@ -19,14 +19,18 @@ namespace Google\Service\CloudAsset;
 
 class GoogleIdentityAccesscontextmanagerV1EgressPolicy extends \Google\Model
 {
+  /**
+   * @var GoogleIdentityAccesscontextmanagerV1EgressFrom
+   */
+  public $egressFrom;
   protected $egressFromType = GoogleIdentityAccesscontextmanagerV1EgressFrom::class;
   protected $egressFromDataType = '';
+  /**
+   * @var GoogleIdentityAccesscontextmanagerV1EgressTo
+   */
+  public $egressTo;
   protected $egressToType = GoogleIdentityAccesscontextmanagerV1EgressTo::class;
   protected $egressToDataType = '';
-  /**
-   * @var string
-   */
-  public $title;
 
   /**
    * @param GoogleIdentityAccesscontextmanagerV1EgressFrom
@@ -55,20 +59,6 @@ class GoogleIdentityAccesscontextmanagerV1EgressPolicy extends \Google\Model
   public function getEgressTo()
   {
     return $this->egressTo;
-  }
-  /**
-   * @param string
-   */
-  public function setTitle($title)
-  {
-    $this->title = $title;
-  }
-  /**
-   * @return string
-   */
-  public function getTitle()
-  {
-    return $this->title;
   }
 }
 

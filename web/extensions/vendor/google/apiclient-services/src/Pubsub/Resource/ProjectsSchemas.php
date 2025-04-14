@@ -50,7 +50,6 @@ class ProjectsSchemas extends \Google\Service\Resource
    * @param CommitSchemaRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Schema
-   * @throws \Google\Service\Exception
    */
   public function commit($name, CommitSchemaRequest $postBody, $optParams = [])
   {
@@ -71,7 +70,6 @@ class ProjectsSchemas extends \Google\Service\Resource
    * https://cloud.google.com/pubsub/docs/pubsub-basics#resource_names for
    * resource name constraints.
    * @return Schema
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Schema $postBody, $optParams = [])
   {
@@ -86,7 +84,6 @@ class ProjectsSchemas extends \Google\Service\Resource
    * `projects/{project}/schemas/{schema}`.
    * @param array $optParams Optional parameters.
    * @return PubsubEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -106,7 +103,6 @@ class ProjectsSchemas extends \Google\Service\Resource
    * not be used for specifying the revision ID. The revision ID should be
    * specified via the `name` parameter.
    * @return Schema
-   * @throws \Google\Service\Exception
    */
   public function deleteRevision($name, $optParams = [])
   {
@@ -125,7 +121,6 @@ class ProjectsSchemas extends \Google\Service\Resource
    * set, returns a Schema with all fields filled out. Set to `BASIC` to omit the
    * `definition`.
    * @return Schema
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -156,7 +151,6 @@ class ProjectsSchemas extends \Google\Service\Resource
    * documentation](https://cloud.google.com/iam/help/conditions/resource-
    * policies).
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, $optParams = [])
   {
@@ -179,7 +173,6 @@ class ProjectsSchemas extends \Google\Service\Resource
    * not set, returns Schemas with `name` and `type`, but not `definition`. Set to
    * `FULL` to retrieve all fields.
    * @return ListSchemasResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsSchemas($parent, $optParams = [])
   {
@@ -200,7 +193,6 @@ class ProjectsSchemas extends \Google\Service\Resource
    * not set, returns Schemas with `name` and `type`, but not `definition`. Set to
    * `FULL` to retrieve all fields.
    * @return ListSchemaRevisionsResponse
-   * @throws \Google\Service\Exception
    */
   public function listRevisions($name, $optParams = [])
   {
@@ -216,7 +208,6 @@ class ProjectsSchemas extends \Google\Service\Resource
    * @param RollbackSchemaRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Schema
-   * @throws \Google\Service\Exception
    */
   public function rollback($name, RollbackSchemaRequest $postBody, $optParams = [])
   {
@@ -236,7 +227,6 @@ class ProjectsSchemas extends \Google\Service\Resource
    * @param SetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, SetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -258,7 +248,6 @@ class ProjectsSchemas extends \Google\Service\Resource
    * @param TestIamPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestIamPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, TestIamPermissionsRequest $postBody, $optParams = [])
   {
@@ -274,7 +263,6 @@ class ProjectsSchemas extends \Google\Service\Resource
    * @param ValidateSchemaRequest $postBody
    * @param array $optParams Optional parameters.
    * @return ValidateSchemaResponse
-   * @throws \Google\Service\Exception
    */
   public function validate($parent, ValidateSchemaRequest $postBody, $optParams = [])
   {
@@ -290,7 +278,6 @@ class ProjectsSchemas extends \Google\Service\Resource
    * @param ValidateMessageRequest $postBody
    * @param array $optParams Optional parameters.
    * @return ValidateMessageResponse
-   * @throws \Google\Service\Exception
    */
   public function validateMessage($parent, ValidateMessageRequest $postBody, $optParams = [])
   {

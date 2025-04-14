@@ -20,6 +20,10 @@ namespace Google\Service\CloudIdentity;
 class GoogleAppsCloudidentityDevicesV1Device extends \Google\Collection
 {
   protected $collection_key = 'wifiMacAddresses';
+  /**
+   * @var GoogleAppsCloudidentityDevicesV1AndroidAttributes
+   */
+  public $androidSpecificAttributes;
   protected $androidSpecificAttributesType = GoogleAppsCloudidentityDevicesV1AndroidAttributes::class;
   protected $androidSpecificAttributesDataType = '';
   /**
@@ -70,8 +74,6 @@ class GoogleAppsCloudidentityDevicesV1Device extends \Google\Collection
    * @var string
    */
   public $encryptionState;
-  protected $endpointVerificationSpecificAttributesType = GoogleAppsCloudidentityDevicesV1EndpointVerificationSpecificAttributes::class;
-  protected $endpointVerificationSpecificAttributesDataType = '';
   /**
    * @var string
    */
@@ -136,10 +138,6 @@ class GoogleAppsCloudidentityDevicesV1Device extends \Google\Collection
    * @var string
    */
   public $serialNumber;
-  /**
-   * @var string
-   */
-  public $unifiedDeviceId;
   /**
    * @var string[]
    */
@@ -326,20 +324,6 @@ class GoogleAppsCloudidentityDevicesV1Device extends \Google\Collection
   public function getEncryptionState()
   {
     return $this->encryptionState;
-  }
-  /**
-   * @param GoogleAppsCloudidentityDevicesV1EndpointVerificationSpecificAttributes
-   */
-  public function setEndpointVerificationSpecificAttributes(GoogleAppsCloudidentityDevicesV1EndpointVerificationSpecificAttributes $endpointVerificationSpecificAttributes)
-  {
-    $this->endpointVerificationSpecificAttributes = $endpointVerificationSpecificAttributes;
-  }
-  /**
-   * @return GoogleAppsCloudidentityDevicesV1EndpointVerificationSpecificAttributes
-   */
-  public function getEndpointVerificationSpecificAttributes()
-  {
-    return $this->endpointVerificationSpecificAttributes;
   }
   /**
    * @param string
@@ -564,20 +548,6 @@ class GoogleAppsCloudidentityDevicesV1Device extends \Google\Collection
   public function getSerialNumber()
   {
     return $this->serialNumber;
-  }
-  /**
-   * @param string
-   */
-  public function setUnifiedDeviceId($unifiedDeviceId)
-  {
-    $this->unifiedDeviceId = $unifiedDeviceId;
-  }
-  /**
-   * @return string
-   */
-  public function getUnifiedDeviceId()
-  {
-    return $this->unifiedDeviceId;
   }
   /**
    * @param string[]

@@ -35,7 +35,6 @@ class Nodes extends \Google\Service\Resource
    * @param string $name Required. The name of the node.
    * @param array $optParams Optional parameters.
    * @return SasPortalNode
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {

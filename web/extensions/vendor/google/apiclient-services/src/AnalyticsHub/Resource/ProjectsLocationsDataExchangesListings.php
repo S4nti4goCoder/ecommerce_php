@@ -52,7 +52,6 @@ class ProjectsLocationsDataExchangesListings extends \Google\Service\Resource
    * characters that require URL-escaping, or characters outside of ASCII, spaces.
    * Max length: 100 bytes.
    * @return Listing
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Listing $postBody, $optParams = [])
   {
@@ -67,7 +66,6 @@ class ProjectsLocationsDataExchangesListings extends \Google\Service\Resource
    * `projects/myproject/locations/US/dataExchanges/123/listings/456`.
    * @param array $optParams Optional parameters.
    * @return AnalyticshubEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -82,7 +80,6 @@ class ProjectsLocationsDataExchangesListings extends \Google\Service\Resource
    * `projects/myproject/locations/US/dataExchanges/123/listings/456`.
    * @param array $optParams Optional parameters.
    * @return Listing
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -100,7 +97,6 @@ class ProjectsLocationsDataExchangesListings extends \Google\Service\Resource
    * @param GetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, GetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -122,7 +118,6 @@ class ProjectsLocationsDataExchangesListings extends \Google\Service\Resource
    * @opt_param string pageToken Page token, returned by a previous call, to
    * request the next page of results.
    * @return ListListingsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsDataExchangesListings($parent, $optParams = [])
   {
@@ -146,7 +141,6 @@ class ProjectsLocationsDataExchangesListings extends \Google\Service\Resource
    * response page.
    * @opt_param string pageToken Page token, returned by a previous call.
    * @return ListSharedResourceSubscriptionsResponse
-   * @throws \Google\Service\Exception
    */
   public function listSubscriptions($resource, $optParams = [])
   {
@@ -166,7 +160,6 @@ class ProjectsLocationsDataExchangesListings extends \Google\Service\Resource
    * update in the listing resource. The fields specified in the `updateMask` are
    * relative to the resource and are not a full request.
    * @return Listing
-   * @throws \Google\Service\Exception
    */
   public function patch($name, Listing $postBody, $optParams = [])
   {
@@ -184,7 +177,6 @@ class ProjectsLocationsDataExchangesListings extends \Google\Service\Resource
    * @param SetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, SetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -204,7 +196,6 @@ class ProjectsLocationsDataExchangesListings extends \Google\Service\Resource
    * @param SubscribeListingRequest $postBody
    * @param array $optParams Optional parameters.
    * @return SubscribeListingResponse
-   * @throws \Google\Service\Exception
    */
   public function subscribe($name, SubscribeListingRequest $postBody, $optParams = [])
   {
@@ -222,7 +213,6 @@ class ProjectsLocationsDataExchangesListings extends \Google\Service\Resource
    * @param TestIamPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestIamPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, TestIamPermissionsRequest $postBody, $optParams = [])
   {

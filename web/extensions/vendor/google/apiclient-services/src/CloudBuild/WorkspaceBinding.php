@@ -23,12 +23,22 @@ class WorkspaceBinding extends \Google\Model
    * @var string
    */
   public $name;
+  /**
+   * @var SecretVolumeSource
+   */
+  public $secret;
   protected $secretType = SecretVolumeSource::class;
   protected $secretDataType = '';
   /**
    * @var string
    */
   public $subPath;
+  /**
+   * @var VolumeClaim
+   */
+  public $volumeClaim;
+  protected $volumeClaimType = VolumeClaim::class;
+  protected $volumeClaimDataType = '';
 
   /**
    * @param string
@@ -71,6 +81,20 @@ class WorkspaceBinding extends \Google\Model
   public function getSubPath()
   {
     return $this->subPath;
+  }
+  /**
+   * @param VolumeClaim
+   */
+  public function setVolumeClaim(VolumeClaim $volumeClaim)
+  {
+    $this->volumeClaim = $volumeClaim;
+  }
+  /**
+   * @return VolumeClaim
+   */
+  public function getVolumeClaim()
+  {
+    return $this->volumeClaim;
   }
 }
 

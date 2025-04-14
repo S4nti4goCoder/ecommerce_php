@@ -19,6 +19,10 @@ namespace Google\Service\Walletobjects;
 
 class DiscoverableProgramMerchantSigninInfo extends \Google\Model
 {
+  /**
+   * @var Uri
+   */
+  public $signinWebsite;
   protected $signinWebsiteType = Uri::class;
   protected $signinWebsiteDataType = '';
 

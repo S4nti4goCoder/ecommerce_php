@@ -46,7 +46,6 @@ class SuperChatEvents extends \Google\Service\Resource
    * nextPageToken and prevPageToken properties identify other pages that could be
    * retrieved.
    * @return SuperChatEventListResponse
-   * @throws \Google\Service\Exception
    */
   public function listSuperChatEvents($part, $optParams = [])
   {

@@ -19,12 +19,20 @@ namespace Google\Service\Walletobjects;
 
 class TimeInterval extends \Google\Model
 {
+  /**
+   * @var DateTime
+   */
+  public $end;
   protected $endType = DateTime::class;
   protected $endDataType = '';
   /**
    * @var string
    */
   public $kind;
+  /**
+   * @var DateTime
+   */
+  public $start;
   protected $startType = DateTime::class;
   protected $startDataType = '';
 

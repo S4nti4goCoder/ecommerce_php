@@ -52,7 +52,6 @@ class ProjectsLocationsAgentsIntents extends \Google\Service\Resource
    * are supported. Note: languages must be enabled in the agent before they can
    * be used.
    * @return GoogleCloudDialogflowCxV3Intent
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudDialogflowCxV3Intent $postBody, $optParams = [])
   {
@@ -70,7 +69,6 @@ class ProjectsLocationsAgentsIntents extends \Google\Service\Resource
    * `projects//locations//agents//intents/`.
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -90,7 +88,6 @@ class ProjectsLocationsAgentsIntents extends \Google\Service\Resource
    * @param GoogleCloudDialogflowCxV3ExportIntentsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function export($parent, GoogleCloudDialogflowCxV3ExportIntentsRequest $postBody, $optParams = [])
   {
@@ -113,7 +110,6 @@ class ProjectsLocationsAgentsIntents extends \Google\Service\Resource
    * are supported. Note: languages must be enabled in the agent before they can
    * be used.
    * @return GoogleCloudDialogflowCxV3Intent
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -133,7 +129,6 @@ class ProjectsLocationsAgentsIntents extends \Google\Service\Resource
    * @param GoogleCloudDialogflowCxV3ImportIntentsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function import($parent, GoogleCloudDialogflowCxV3ImportIntentsRequest $postBody, $optParams = [])
   {
@@ -163,7 +158,6 @@ class ProjectsLocationsAgentsIntents extends \Google\Service\Resource
    * @opt_param string pageToken The next_page_token value returned from a
    * previous list request.
    * @return GoogleCloudDialogflowCxV3ListIntentsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsAgentsIntents($parent, $optParams = [])
   {
@@ -192,7 +186,6 @@ class ProjectsLocationsAgentsIntents extends \Google\Service\Resource
    * @opt_param string updateMask The mask to control which fields get updated. If
    * the mask is not present, all fields will be updated.
    * @return GoogleCloudDialogflowCxV3Intent
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleCloudDialogflowCxV3Intent $postBody, $optParams = [])
   {

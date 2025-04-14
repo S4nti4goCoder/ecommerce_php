@@ -52,7 +52,6 @@ class Subscriptions extends \Google\Service\Resource
    * method.
    * @param array $optParams Optional parameters.
    * @return Subscription
-   * @throws \Google\Service\Exception
    */
   public function activate($customerId, $subscriptionId, $optParams = [])
   {
@@ -83,7 +82,6 @@ class Subscriptions extends \Google\Service\Resource
    * @param ChangePlanRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Subscription
-   * @throws \Google\Service\Exception
    */
   public function changePlan($customerId, $subscriptionId, ChangePlanRequest $postBody, $optParams = [])
   {
@@ -112,7 +110,6 @@ class Subscriptions extends \Google\Service\Resource
    * @param RenewalSettings $postBody
    * @param array $optParams Optional parameters.
    * @return Subscription
-   * @throws \Google\Service\Exception
    */
   public function changeRenewalSettings($customerId, $subscriptionId, RenewalSettings $postBody, $optParams = [])
   {
@@ -141,7 +138,6 @@ class Subscriptions extends \Google\Service\Resource
    * @param Seats $postBody
    * @param array $optParams Optional parameters.
    * @return Subscription
-   * @throws \Google\Service\Exception
    */
   public function changeSeats($customerId, $subscriptionId, Seats $postBody, $optParams = [])
   {
@@ -167,7 +163,6 @@ class Subscriptions extends \Google\Service\Resource
    * @param string $deletionType The `deletionType` query string enables the
    * cancellation, downgrade, or suspension of a subscription.
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function delete($customerId, $subscriptionId, $deletionType, $optParams = [])
   {
@@ -196,7 +191,6 @@ class Subscriptions extends \Google\Service\Resource
    * method.
    * @param array $optParams Optional parameters.
    * @return Subscription
-   * @throws \Google\Service\Exception
    */
   public function get($customerId, $subscriptionId, $optParams = [])
   {
@@ -245,7 +239,6 @@ class Subscriptions extends \Google\Service\Resource
    * & available to consume, we will share more information about its usage,
    * limitations and policy documentation.
    * @return Subscription
-   * @throws \Google\Service\Exception
    */
   public function insert($customerId, Subscription $postBody, $optParams = [])
   {
@@ -287,7 +280,6 @@ class Subscriptions extends \Google\Service\Resource
    * you to the next page. The default is 20.
    * @opt_param string pageToken Token to specify next page in the list
    * @return SubscriptionsModel
-   * @throws \Google\Service\Exception
    */
   public function listSubscriptions($optParams = [])
   {
@@ -315,7 +307,6 @@ class Subscriptions extends \Google\Service\Resource
    * method.
    * @param array $optParams Optional parameters.
    * @return Subscription
-   * @throws \Google\Service\Exception
    */
   public function startPaidService($customerId, $subscriptionId, $optParams = [])
   {
@@ -348,7 +339,6 @@ class Subscriptions extends \Google\Service\Resource
    * method.
    * @param array $optParams Optional parameters.
    * @return Subscription
-   * @throws \Google\Service\Exception
    */
   public function suspend($customerId, $subscriptionId, $optParams = [])
   {

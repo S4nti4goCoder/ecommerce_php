@@ -56,16 +56,16 @@ class NetworkConfig extends \Google\Collection
    * @var string
    */
   public $userNote;
+  /**
+   * @var IntakeVlanAttachment[]
+   */
+  public $vlanAttachments;
   protected $vlanAttachmentsType = IntakeVlanAttachment::class;
   protected $vlanAttachmentsDataType = 'array';
   /**
    * @var bool
    */
   public $vlanSameProject;
-  /**
-   * @var string
-   */
-  public $vrf;
 
   /**
    * @param string
@@ -220,20 +220,6 @@ class NetworkConfig extends \Google\Collection
   public function getVlanSameProject()
   {
     return $this->vlanSameProject;
-  }
-  /**
-   * @param string
-   */
-  public function setVrf($vrf)
-  {
-    $this->vrf = $vrf;
-  }
-  /**
-   * @return string
-   */
-  public function getVrf()
-  {
-    return $this->vrf;
   }
 }
 

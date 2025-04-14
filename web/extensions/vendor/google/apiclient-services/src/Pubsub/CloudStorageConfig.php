@@ -19,16 +19,16 @@ namespace Google\Service\Pubsub;
 
 class CloudStorageConfig extends \Google\Model
 {
+  /**
+   * @var AvroConfig
+   */
+  public $avroConfig;
   protected $avroConfigType = AvroConfig::class;
   protected $avroConfigDataType = '';
   /**
    * @var string
    */
   public $bucket;
-  /**
-   * @var string
-   */
-  public $filenameDatetimeFormat;
   /**
    * @var string
    */
@@ -48,15 +48,11 @@ class CloudStorageConfig extends \Google\Model
   /**
    * @var string
    */
-  public $maxMessages;
-  /**
-   * @var string
-   */
-  public $serviceAccountEmail;
-  /**
-   * @var string
-   */
   public $state;
+  /**
+   * @var TextConfig
+   */
+  public $textConfig;
   protected $textConfigType = TextConfig::class;
   protected $textConfigDataType = '';
 
@@ -87,20 +83,6 @@ class CloudStorageConfig extends \Google\Model
   public function getBucket()
   {
     return $this->bucket;
-  }
-  /**
-   * @param string
-   */
-  public function setFilenameDatetimeFormat($filenameDatetimeFormat)
-  {
-    $this->filenameDatetimeFormat = $filenameDatetimeFormat;
-  }
-  /**
-   * @return string
-   */
-  public function getFilenameDatetimeFormat()
-  {
-    return $this->filenameDatetimeFormat;
   }
   /**
    * @param string
@@ -157,34 +139,6 @@ class CloudStorageConfig extends \Google\Model
   public function getMaxDuration()
   {
     return $this->maxDuration;
-  }
-  /**
-   * @param string
-   */
-  public function setMaxMessages($maxMessages)
-  {
-    $this->maxMessages = $maxMessages;
-  }
-  /**
-   * @return string
-   */
-  public function getMaxMessages()
-  {
-    return $this->maxMessages;
-  }
-  /**
-   * @param string
-   */
-  public function setServiceAccountEmail($serviceAccountEmail)
-  {
-    $this->serviceAccountEmail = $serviceAccountEmail;
-  }
-  /**
-   * @return string
-   */
-  public function getServiceAccountEmail()
-  {
-    return $this->serviceAccountEmail;
   }
   /**
    * @param string

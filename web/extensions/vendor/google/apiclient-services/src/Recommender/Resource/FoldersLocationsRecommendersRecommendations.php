@@ -41,7 +41,6 @@ class FoldersLocationsRecommendersRecommendations extends \Google\Service\Resour
    * @param string $name Required. Name of the recommendation.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudRecommenderV1Recommendation
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -86,7 +85,6 @@ class FoldersLocationsRecommendersRecommendations extends \Google\Service\Resour
    * value of `next_page_token` from the previous response. The values of other
    * method parameters must be identical to those in the previous call.
    * @return GoogleCloudRecommenderV1ListRecommendationsResponse
-   * @throws \Google\Service\Exception
    */
   public function listFoldersLocationsRecommendersRecommendations($parent, $optParams = [])
   {
@@ -107,7 +105,6 @@ class FoldersLocationsRecommendersRecommendations extends \Google\Service\Resour
    * @param GoogleCloudRecommenderV1MarkRecommendationClaimedRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudRecommenderV1Recommendation
-   * @throws \Google\Service\Exception
    */
   public function markClaimed($name, GoogleCloudRecommenderV1MarkRecommendationClaimedRequest $postBody, $optParams = [])
   {
@@ -126,7 +123,6 @@ class FoldersLocationsRecommendersRecommendations extends \Google\Service\Resour
    * @param GoogleCloudRecommenderV1MarkRecommendationDismissedRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudRecommenderV1Recommendation
-   * @throws \Google\Service\Exception
    */
   public function markDismissed($name, GoogleCloudRecommenderV1MarkRecommendationDismissedRequest $postBody, $optParams = [])
   {
@@ -147,7 +143,6 @@ class FoldersLocationsRecommendersRecommendations extends \Google\Service\Resour
    * @param GoogleCloudRecommenderV1MarkRecommendationFailedRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudRecommenderV1Recommendation
-   * @throws \Google\Service\Exception
    */
   public function markFailed($name, GoogleCloudRecommenderV1MarkRecommendationFailedRequest $postBody, $optParams = [])
   {
@@ -169,7 +164,6 @@ class FoldersLocationsRecommendersRecommendations extends \Google\Service\Resour
    * @param GoogleCloudRecommenderV1MarkRecommendationSucceededRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudRecommenderV1Recommendation
-   * @throws \Google\Service\Exception
    */
   public function markSucceeded($name, GoogleCloudRecommenderV1MarkRecommendationSucceededRequest $postBody, $optParams = [])
   {

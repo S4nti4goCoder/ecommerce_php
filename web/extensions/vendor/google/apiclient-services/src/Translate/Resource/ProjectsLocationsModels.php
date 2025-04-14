@@ -39,7 +39,6 @@ class ProjectsLocationsModels extends \Google\Service\Resource
    * @param Model $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Model $postBody, $optParams = [])
   {
@@ -53,7 +52,6 @@ class ProjectsLocationsModels extends \Google\Service\Resource
    * @param string $name Required. The name of the model to delete.
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -67,7 +65,6 @@ class ProjectsLocationsModels extends \Google\Service\Resource
    * @param string $name Required. The resource name of the model to retrieve.
    * @param array $optParams Optional parameters.
    * @return Model
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -90,7 +87,6 @@ class ProjectsLocationsModels extends \Google\Service\Resource
    * for the server to return. Typically obtained from next_page_token field in
    * the response of a ListModels call.
    * @return ListModelsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsModels($parent, $optParams = [])
   {

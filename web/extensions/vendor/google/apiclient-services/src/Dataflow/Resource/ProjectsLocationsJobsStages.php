@@ -53,7 +53,6 @@ class ProjectsLocationsJobsStages extends \Google\Service\Resource
    * @opt_param string startTime Lower time bound of work items to include, by
    * start time.
    * @return StageExecutionDetails
-   * @throws \Google\Service\Exception
    */
   public function getExecutionDetails($projectId, $location, $jobId, $stageId, $optParams = [])
   {

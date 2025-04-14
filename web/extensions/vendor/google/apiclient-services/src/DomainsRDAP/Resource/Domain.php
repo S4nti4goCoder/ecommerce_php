@@ -35,7 +35,6 @@ class Domain extends \Google\Service\Resource
    * @param string $domainName Full domain name to look up. Example: "example.com"
    * @param array $optParams Optional parameters.
    * @return HttpBody
-   * @throws \Google\Service\Exception
    */
   public function get($domainName, $optParams = [])
   {

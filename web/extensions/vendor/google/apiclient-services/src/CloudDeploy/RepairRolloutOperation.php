@@ -23,7 +23,7 @@ class RepairRolloutOperation extends \Google\Collection
   /**
    * @var string
    */
-  public $currentRepairPhaseIndex;
+  public $currentRepairModeIndex;
   /**
    * @var string
    */
@@ -32,6 +32,10 @@ class RepairRolloutOperation extends \Google\Collection
    * @var string
    */
   public $phaseId;
+  /**
+   * @var RepairPhase[]
+   */
+  public $repairPhases;
   protected $repairPhasesType = RepairPhase::class;
   protected $repairPhasesDataType = 'array';
   /**
@@ -42,16 +46,16 @@ class RepairRolloutOperation extends \Google\Collection
   /**
    * @param string
    */
-  public function setCurrentRepairPhaseIndex($currentRepairPhaseIndex)
+  public function setCurrentRepairModeIndex($currentRepairModeIndex)
   {
-    $this->currentRepairPhaseIndex = $currentRepairPhaseIndex;
+    $this->currentRepairModeIndex = $currentRepairModeIndex;
   }
   /**
    * @return string
    */
-  public function getCurrentRepairPhaseIndex()
+  public function getCurrentRepairModeIndex()
   {
-    return $this->currentRepairPhaseIndex;
+    return $this->currentRepairModeIndex;
   }
   /**
    * @param string

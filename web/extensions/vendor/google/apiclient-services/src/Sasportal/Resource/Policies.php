@@ -40,7 +40,6 @@ class Policies extends \Google\Service\Resource
    * @param SasPortalGetPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return SasPortalPolicy
-   * @throws \Google\Service\Exception
    */
   public function get(SasPortalGetPolicyRequest $postBody, $optParams = [])
   {
@@ -55,7 +54,6 @@ class Policies extends \Google\Service\Resource
    * @param SasPortalSetPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return SasPortalPolicy
-   * @throws \Google\Service\Exception
    */
   public function set(SasPortalSetPolicyRequest $postBody, $optParams = [])
   {
@@ -70,7 +68,6 @@ class Policies extends \Google\Service\Resource
    * @param SasPortalTestPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return SasPortalTestPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function test(SasPortalTestPermissionsRequest $postBody, $optParams = [])
   {

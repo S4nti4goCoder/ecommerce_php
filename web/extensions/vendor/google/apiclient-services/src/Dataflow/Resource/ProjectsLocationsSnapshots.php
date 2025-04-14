@@ -40,7 +40,6 @@ class ProjectsLocationsSnapshots extends \Google\Service\Resource
    * @param string $snapshotId The ID of the snapshot.
    * @param array $optParams Optional parameters.
    * @return DeleteSnapshotResponse
-   * @throws \Google\Service\Exception
    */
   public function delete($projectId, $location, $snapshotId, $optParams = [])
   {
@@ -57,7 +56,6 @@ class ProjectsLocationsSnapshots extends \Google\Service\Resource
    * @param string $snapshotId The ID of the snapshot.
    * @param array $optParams Optional parameters.
    * @return Snapshot
-   * @throws \Google\Service\Exception
    */
   public function get($projectId, $location, $snapshotId, $optParams = [])
   {
@@ -74,7 +72,6 @@ class ProjectsLocationsSnapshots extends \Google\Service\Resource
    *
    * @opt_param string jobId If specified, list snapshots created from this job.
    * @return ListSnapshotsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsSnapshots($projectId, $location, $optParams = [])
   {

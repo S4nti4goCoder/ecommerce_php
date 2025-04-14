@@ -19,7 +19,11 @@ namespace Google\Service\Spanner;
 
 class Instance extends \Google\Collection
 {
-  protected $collection_key = 'replicaComputeCapacity';
+  protected $collection_key = 'endpointUris';
+  /**
+   * @var AutoscalingConfig
+   */
+  public $autoscalingConfig;
   protected $autoscalingConfigType = AutoscalingConfig::class;
   protected $autoscalingConfigDataType = '';
   /**
@@ -33,19 +37,15 @@ class Instance extends \Google\Collection
   /**
    * @var string
    */
-  public $defaultBackupScheduleType;
-  /**
-   * @var string
-   */
   public $displayName;
-  /**
-   * @var string
-   */
-  public $edition;
   /**
    * @var string[]
    */
   public $endpointUris;
+  /**
+   * @var FreeInstanceMetadata
+   */
+  public $freeInstanceMetadata;
   protected $freeInstanceMetadataType = FreeInstanceMetadata::class;
   protected $freeInstanceMetadataDataType = '';
   /**
@@ -68,8 +68,6 @@ class Instance extends \Google\Collection
    * @var int
    */
   public $processingUnits;
-  protected $replicaComputeCapacityType = ReplicaComputeCapacity::class;
-  protected $replicaComputeCapacityDataType = 'array';
   /**
    * @var string
    */
@@ -124,20 +122,6 @@ class Instance extends \Google\Collection
   /**
    * @param string
    */
-  public function setDefaultBackupScheduleType($defaultBackupScheduleType)
-  {
-    $this->defaultBackupScheduleType = $defaultBackupScheduleType;
-  }
-  /**
-   * @return string
-   */
-  public function getDefaultBackupScheduleType()
-  {
-    return $this->defaultBackupScheduleType;
-  }
-  /**
-   * @param string
-   */
   public function setDisplayName($displayName)
   {
     $this->displayName = $displayName;
@@ -148,20 +132,6 @@ class Instance extends \Google\Collection
   public function getDisplayName()
   {
     return $this->displayName;
-  }
-  /**
-   * @param string
-   */
-  public function setEdition($edition)
-  {
-    $this->edition = $edition;
-  }
-  /**
-   * @return string
-   */
-  public function getEdition()
-  {
-    return $this->edition;
   }
   /**
    * @param string[]
@@ -260,20 +230,6 @@ class Instance extends \Google\Collection
   public function getProcessingUnits()
   {
     return $this->processingUnits;
-  }
-  /**
-   * @param ReplicaComputeCapacity[]
-   */
-  public function setReplicaComputeCapacity($replicaComputeCapacity)
-  {
-    $this->replicaComputeCapacity = $replicaComputeCapacity;
-  }
-  /**
-   * @return ReplicaComputeCapacity[]
-   */
-  public function getReplicaComputeCapacity()
-  {
-    return $this->replicaComputeCapacity;
   }
   /**
    * @param string

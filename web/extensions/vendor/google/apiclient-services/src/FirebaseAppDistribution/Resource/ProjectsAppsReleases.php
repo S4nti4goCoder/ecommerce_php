@@ -44,7 +44,6 @@ class ProjectsAppsReleases extends \Google\Service\Resource
    * @param GoogleFirebaseAppdistroV1BatchDeleteReleasesRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty
-   * @throws \Google\Service\Exception
    */
   public function batchDelete($parent, GoogleFirebaseAppdistroV1BatchDeleteReleasesRequest $postBody, $optParams = [])
   {
@@ -65,7 +64,6 @@ class ProjectsAppsReleases extends \Google\Service\Resource
    * @param GoogleFirebaseAppdistroV1DistributeReleaseRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleFirebaseAppdistroV1DistributeReleaseResponse
-   * @throws \Google\Service\Exception
    */
   public function distribute($name, GoogleFirebaseAppdistroV1DistributeReleaseRequest $postBody, $optParams = [])
   {
@@ -80,7 +78,6 @@ class ProjectsAppsReleases extends \Google\Service\Resource
    * Format: projects/{project_number}/apps/{app_id}/releases/{release_id}
    * @param array $optParams Optional parameters.
    * @return GoogleFirebaseAppdistroV1Release
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -117,7 +114,6 @@ class ProjectsAppsReleases extends \Google\Service\Resource
    * paginating, all other parameters provided to `ListReleases` must match the
    * call that provided the page token.
    * @return GoogleFirebaseAppdistroV1ListReleasesResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsAppsReleases($parent, $optParams = [])
   {
@@ -135,7 +131,6 @@ class ProjectsAppsReleases extends \Google\Service\Resource
    *
    * @opt_param string updateMask The list of fields to update.
    * @return GoogleFirebaseAppdistroV1Release
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleFirebaseAppdistroV1Release $postBody, $optParams = [])
   {

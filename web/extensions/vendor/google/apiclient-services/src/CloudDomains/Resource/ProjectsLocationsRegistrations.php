@@ -23,16 +23,12 @@ use Google\Service\CloudDomains\ConfigureDnsSettingsRequest;
 use Google\Service\CloudDomains\ConfigureManagementSettingsRequest;
 use Google\Service\CloudDomains\ExportRegistrationRequest;
 use Google\Service\CloudDomains\ImportDomainRequest;
-use Google\Service\CloudDomains\InitiatePushTransferRequest;
 use Google\Service\CloudDomains\ListRegistrationsResponse;
 use Google\Service\CloudDomains\Operation;
 use Google\Service\CloudDomains\Policy;
 use Google\Service\CloudDomains\RegisterDomainRequest;
 use Google\Service\CloudDomains\Registration;
-use Google\Service\CloudDomains\RenewDomainRequest;
 use Google\Service\CloudDomains\ResetAuthorizationCodeRequest;
-use Google\Service\CloudDomains\RetrieveGoogleDomainsDnsRecordsResponse;
-use Google\Service\CloudDomains\RetrieveGoogleDomainsForwardingConfigResponse;
 use Google\Service\CloudDomains\RetrieveImportableDomainsResponse;
 use Google\Service\CloudDomains\RetrieveRegisterParametersResponse;
 use Google\Service\CloudDomains\RetrieveTransferParametersResponse;
@@ -54,16 +50,7 @@ class ProjectsLocationsRegistrations extends \Google\Service\Resource
 {
   /**
    * Updates a `Registration`'s contact settings. Some changes require
-   * confirmation by the domain's registrant contact . Caution: Please consider
-   * carefully any changes to contact privacy settings when changing from
-   * `REDACTED_CONTACT_DATA` to `PUBLIC_CONTACT_DATA.` There may be a delay in
-   * reflecting updates you make to registrant contact information such that any
-   * changes you make to contact privacy (including from `REDACTED_CONTACT_DATA`
-   * to `PUBLIC_CONTACT_DATA`) will be applied without delay but changes to
-   * registrant contact information may take a limited time to be publicized. This
-   * means that changes to contact privacy from `REDACTED_CONTACT_DATA` to
-   * `PUBLIC_CONTACT_DATA` may make the previous registrant contact data public
-   * until the modified registrant contact details are published.
+   * confirmation by the domain's registrant contact .
    * (registrations.configureContactSettings)
    *
    * @param string $registration Required. The name of the `Registration` whose
@@ -72,7 +59,6 @@ class ProjectsLocationsRegistrations extends \Google\Service\Resource
    * @param ConfigureContactSettingsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function configureContactSettings($registration, ConfigureContactSettingsRequest $postBody, $optParams = [])
   {
@@ -89,7 +75,6 @@ class ProjectsLocationsRegistrations extends \Google\Service\Resource
    * @param ConfigureDnsSettingsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function configureDnsSettings($registration, ConfigureDnsSettingsRequest $postBody, $optParams = [])
   {
@@ -107,7 +92,6 @@ class ProjectsLocationsRegistrations extends \Google\Service\Resource
    * @param ConfigureManagementSettingsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function configureManagementSettings($registration, ConfigureManagementSettingsRequest $postBody, $optParams = [])
   {
@@ -134,7 +118,6 @@ class ProjectsLocationsRegistrations extends \Google\Service\Resource
    * the format `projects/locations/registrations`.
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -158,7 +141,6 @@ class ProjectsLocationsRegistrations extends \Google\Service\Resource
    * @param ExportRegistrationRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function export($name, ExportRegistrationRequest $postBody, $optParams = [])
   {
@@ -173,7 +155,6 @@ class ProjectsLocationsRegistrations extends \Google\Service\Resource
    * format `projects/locations/registrations`.
    * @param array $optParams Optional parameters.
    * @return Registration
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -204,7 +185,6 @@ class ProjectsLocationsRegistrations extends \Google\Service\Resource
    * documentation](https://cloud.google.com/iam/help/conditions/resource-
    * policies).
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, $optParams = [])
   {
@@ -226,39 +206,12 @@ class ProjectsLocationsRegistrations extends \Google\Service\Resource
    * @param ImportDomainRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function import($parent, ImportDomainRequest $postBody, $optParams = [])
   {
     $params = ['parent' => $parent, 'postBody' => $postBody];
     $params = array_merge($params, $optParams);
     return $this->call('import', [$params], Operation::class);
-  }
-  /**
-   * Initiates the `Push Transfer` process to transfer the domain to another
-   * registrar. The process might complete instantly or might require confirmation
-   * or additional work. Check the emails sent to the email address of the
-   * registrant. The process is aborted after a timeout if it's not completed.
-   * This method is only supported for domains that have the
-   * `REQUIRE_PUSH_TRANSFER` property in the list of `domain_properties`. The
-   * domain must also be unlocked before it can be transferred to a different
-   * registrar. For more information, see [Transfer a registered domain to another
-   * registrar](https://cloud.google.com/domains/docs/transfer-domain-to-another-
-   * registrar). (registrations.initiatePushTransfer)
-   *
-   * @param string $registration Required. The name of the `Registration` for
-   * which the push transfer is initiated, in the format
-   * `projects/locations/registrations`.
-   * @param InitiatePushTransferRequest $postBody
-   * @param array $optParams Optional parameters.
-   * @return Operation
-   * @throws \Google\Service\Exception
-   */
-  public function initiatePushTransfer($registration, InitiatePushTransferRequest $postBody, $optParams = [])
-  {
-    $params = ['registration' => $registration, 'postBody' => $postBody];
-    $params = array_merge($params, $optParams);
-    return $this->call('initiatePushTransfer', [$params], Operation::class);
   }
   /**
    * Lists the `Registration` resources in a project.
@@ -284,7 +237,6 @@ class ProjectsLocationsRegistrations extends \Google\Service\Resource
    * @opt_param string pageToken When set to the `next_page_token` from a prior
    * response, provides the next page of results.
    * @return ListRegistrationsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsRegistrations($parent, $optParams = [])
   {
@@ -308,7 +260,6 @@ class ProjectsLocationsRegistrations extends \Google\Service\Resource
    * to update as a comma-separated list. For example, if only the labels are
    * being updated, the `update_mask` is `"labels"`.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, Registration $postBody, $optParams = [])
   {
@@ -332,7 +283,6 @@ class ProjectsLocationsRegistrations extends \Google\Service\Resource
    * @param RegisterDomainRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function register($parent, RegisterDomainRequest $postBody, $optParams = [])
   {
@@ -341,31 +291,9 @@ class ProjectsLocationsRegistrations extends \Google\Service\Resource
     return $this->call('register', [$params], Operation::class);
   }
   /**
-   * Renews a recently expired domain. This method can only be called on domains
-   * that expired in the previous 30 days. After the renewal, the new expiration
-   * time of the domain is one year after the old expiration time and you are
-   * charged a `yearly_price` for the renewal. (registrations.renewDomain)
-   *
-   * @param string $registration Required. The name of the `Registration` whish is
-   * being renewed, in the format `projects/locations/registrations`.
-   * @param RenewDomainRequest $postBody
-   * @param array $optParams Optional parameters.
-   * @return Operation
-   * @throws \Google\Service\Exception
-   */
-  public function renewDomain($registration, RenewDomainRequest $postBody, $optParams = [])
-  {
-    $params = ['registration' => $registration, 'postBody' => $postBody];
-    $params = array_merge($params, $optParams);
-    return $this->call('renewDomain', [$params], Operation::class);
-  }
-  /**
    * Resets the authorization code of the `Registration` to a new random string.
    * You can call this method only after 60 days have elapsed since the initial
-   * domain registration. Domains that have the `REQUIRE_PUSH_TRANSFER` property
-   * in the list of `domain_properties` don't support authorization codes and must
-   * use the `InitiatePushTransfer` method to initiate the process to transfer the
-   * domain to a different registrar. (registrations.resetAuthorizationCode)
+   * domain registration. (registrations.resetAuthorizationCode)
    *
    * @param string $registration Required. The name of the `Registration` whose
    * authorization code is being reset, in the format
@@ -373,7 +301,6 @@ class ProjectsLocationsRegistrations extends \Google\Service\Resource
    * @param ResetAuthorizationCodeRequest $postBody
    * @param array $optParams Optional parameters.
    * @return AuthorizationCode
-   * @throws \Google\Service\Exception
    */
   public function resetAuthorizationCode($registration, ResetAuthorizationCodeRequest $postBody, $optParams = [])
   {
@@ -384,67 +311,20 @@ class ProjectsLocationsRegistrations extends \Google\Service\Resource
   /**
    * Gets the authorization code of the `Registration` for the purpose of
    * transferring the domain to another registrar. You can call this method only
-   * after 60 days have elapsed since the initial domain registration. Domains
-   * that have the `REQUIRE_PUSH_TRANSFER` property in the list of
-   * `domain_properties` don't support authorization codes and must use the
-   * `InitiatePushTransfer` method to initiate the process to transfer the domain
-   * to a different registrar. (registrations.retrieveAuthorizationCode)
+   * after 60 days have elapsed since the initial domain registration.
+   * (registrations.retrieveAuthorizationCode)
    *
    * @param string $registration Required. The name of the `Registration` whose
    * authorization code is being retrieved, in the format
    * `projects/locations/registrations`.
    * @param array $optParams Optional parameters.
    * @return AuthorizationCode
-   * @throws \Google\Service\Exception
    */
   public function retrieveAuthorizationCode($registration, $optParams = [])
   {
     $params = ['registration' => $registration];
     $params = array_merge($params, $optParams);
     return $this->call('retrieveAuthorizationCode', [$params], AuthorizationCode::class);
-  }
-  /**
-   * Lists the DNS records from the Google Domains DNS zone for domains that use
-   * the deprecated `google_domains_dns` in the `Registration`'s `dns_settings`.
-   * (registrations.retrieveGoogleDomainsDnsRecords)
-   *
-   * @param string $registration Required. The name of the `Registration` whose
-   * Google Domains DNS records details you are retrieving, in the format
-   * `projects/locations/registrations`.
-   * @param array $optParams Optional parameters.
-   *
-   * @opt_param int pageSize Optional. Maximum number of results to return.
-   * @opt_param string pageToken Optional. When set to the `next_page_token` from
-   * a prior response, provides the next page of results.
-   * @return RetrieveGoogleDomainsDnsRecordsResponse
-   * @throws \Google\Service\Exception
-   */
-  public function retrieveGoogleDomainsDnsRecords($registration, $optParams = [])
-  {
-    $params = ['registration' => $registration];
-    $params = array_merge($params, $optParams);
-    return $this->call('retrieveGoogleDomainsDnsRecords', [$params], RetrieveGoogleDomainsDnsRecordsResponse::class);
-  }
-  /**
-   * Lists the deprecated domain and email forwarding configurations you set up in
-   * the deprecated Google Domains UI. The configuration is present only for
-   * domains with the `google_domains_redirects_data_available` set to `true` in
-   * the `Registration`'s `dns_settings`. A forwarding configuration might not
-   * work correctly if required DNS records are not present in the domain's
-   * authoritative DNS Zone. (registrations.retrieveGoogleDomainsForwardingConfig)
-   *
-   * @param string $registration Required. The name of the `Registration` whose
-   * Google Domains forwarding configuration details are being retrieved, in the
-   * format `projects/locations/registrations`.
-   * @param array $optParams Optional parameters.
-   * @return RetrieveGoogleDomainsForwardingConfigResponse
-   * @throws \Google\Service\Exception
-   */
-  public function retrieveGoogleDomainsForwardingConfig($registration, $optParams = [])
-  {
-    $params = ['registration' => $registration];
-    $params = array_merge($params, $optParams);
-    return $this->call('retrieveGoogleDomainsForwardingConfig', [$params], RetrieveGoogleDomainsForwardingConfigResponse::class);
   }
   /**
    * Deprecated: For more information, see [Cloud Domains feature
@@ -464,7 +344,6 @@ class ProjectsLocationsRegistrations extends \Google\Service\Resource
    * @opt_param string pageToken When set to the `next_page_token` from a prior
    * response, provides the next page of results.
    * @return RetrieveImportableDomainsResponse
-   * @throws \Google\Service\Exception
    */
   public function retrieveImportableDomains($location, $optParams = [])
   {
@@ -484,7 +363,6 @@ class ProjectsLocationsRegistrations extends \Google\Service\Resource
    * @opt_param string domainName Required. The domain name. Unicode domain names
    * must be expressed in Punycode format.
    * @return RetrieveRegisterParametersResponse
-   * @throws \Google\Service\Exception
    */
   public function retrieveRegisterParameters($location, $optParams = [])
   {
@@ -508,7 +386,6 @@ class ProjectsLocationsRegistrations extends \Google\Service\Resource
    * @opt_param string domainName Required. The domain name. Unicode domain names
    * must be expressed in Punycode format.
    * @return RetrieveTransferParametersResponse
-   * @throws \Google\Service\Exception
    */
   public function retrieveTransferParameters($location, $optParams = [])
   {
@@ -529,7 +406,6 @@ class ProjectsLocationsRegistrations extends \Google\Service\Resource
    * @opt_param string query Required. String used to search for available domain
    * names.
    * @return SearchDomainsResponse
-   * @throws \Google\Service\Exception
    */
   public function searchDomains($location, $optParams = [])
   {
@@ -549,7 +425,6 @@ class ProjectsLocationsRegistrations extends \Google\Service\Resource
    * @param SetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, SetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -572,7 +447,6 @@ class ProjectsLocationsRegistrations extends \Google\Service\Resource
    * @param TestIamPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestIamPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, TestIamPermissionsRequest $postBody, $optParams = [])
   {
@@ -605,7 +479,6 @@ class ProjectsLocationsRegistrations extends \Google\Service\Resource
    * @param TransferDomainRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function transfer($parent, TransferDomainRequest $postBody, $optParams = [])
   {

@@ -36,17 +36,17 @@ class ProjectsLocationsDeliveryPipelinesAutomations extends \Google\Service\Reso
    * (automations.create)
    *
    * @param string $parent Required. The parent collection in which the
-   * `Automation` must be created. The format is `projects/{project_id}/locations/
-   * {location_name}/deliveryPipelines/{pipeline_name}`.
+   * `Automation` should be created. Format should be `projects/{project_id}/locat
+   * ions/{location_name}/deliveryPipelines/{pipeline_name}`.
    * @param Automation $postBody
    * @param array $optParams Optional parameters.
    *
    * @opt_param string automationId Required. ID of the `Automation`.
    * @opt_param string requestId Optional. A request ID to identify requests.
    * Specify a unique request ID so that if you must retry your request, the
-   * server knows to ignore the request if it has already been completed. The
-   * server guarantees that for at least 60 minutes after the first request. For
-   * example, consider a situation where you make an initial request and the
+   * server will know to ignore the request if it has already been completed. The
+   * server will guarantee that for at least 60 minutes since the first request.
+   * For example, consider a situation where you make an initial request and the
    * request times out. If you make the request again with the same request ID,
    * the server can check if original operation with the same request ID was
    * received, and if so, will ignore the second request. This prevents clients
@@ -57,7 +57,6 @@ class ProjectsLocationsDeliveryPipelinesAutomations extends \Google\Service\Reso
    * validated and the user is provided with an expected result, but no actual
    * change is made.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Automation $postBody, $optParams = [])
   {
@@ -68,8 +67,8 @@ class ProjectsLocationsDeliveryPipelinesAutomations extends \Google\Service\Reso
   /**
    * Deletes a single Automation resource. (automations.delete)
    *
-   * @param string $name Required. The name of the `Automation` to delete. The
-   * format is `projects/{project_id}/locations/{location_name}/deliveryPipelines/
+   * @param string $name Required. The name of the `Automation` to delete. Format
+   * should be `projects/{project_id}/locations/{location_name}/deliveryPipelines/
    * {pipeline_name}/automations/{automation_name}`.
    * @param array $optParams Optional parameters.
    *
@@ -81,9 +80,9 @@ class ProjectsLocationsDeliveryPipelinesAutomations extends \Google\Service\Reso
    * before proceeding.
    * @opt_param string requestId Optional. A request ID to identify requests.
    * Specify a unique request ID so that if you must retry your request, the
-   * server knows to ignore the request if it has already been completed. The
-   * server guarantees that for at least 60 minutes after the first request. For
-   * example, consider a situation where you make an initial request and the
+   * server will know to ignore the request if it has already been completed. The
+   * server will guarantee that for at least 60 minutes after the first request.
+   * For example, consider a situation where you make an initial request and the
    * request times out. If you make the request again with the same request ID,
    * the server can check if original operation with the same request ID was
    * received, and if so, will ignore the second request. This prevents clients
@@ -93,7 +92,6 @@ class ProjectsLocationsDeliveryPipelinesAutomations extends \Google\Service\Reso
    * @opt_param bool validateOnly Optional. If set, validate the request and
    * verify whether the resource exists, but do not actually post it.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -109,7 +107,6 @@ class ProjectsLocationsDeliveryPipelinesAutomations extends \Google\Service\Reso
    * automations/{automation_name}`.
    * @param array $optParams Optional parameters.
    * @return Automation
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -138,7 +135,6 @@ class ProjectsLocationsDeliveryPipelinesAutomations extends \Google\Service\Reso
    * paginating, all other provided parameters match the call that provided the
    * page token.
    * @return ListAutomationsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsDeliveryPipelinesAutomations($parent, $optParams = [])
   {
@@ -160,9 +156,9 @@ class ProjectsLocationsDeliveryPipelinesAutomations extends \Google\Service\Reso
    * `Automation`.
    * @opt_param string requestId Optional. A request ID to identify requests.
    * Specify a unique request ID so that if you must retry your request, the
-   * server knows to ignore the request if it has already been completed. The
-   * server guarantees that for at least 60 minutes after the first request. For
-   * example, consider a situation where you make an initial request and the
+   * server will know to ignore the request if it has already been completed. The
+   * server will guarantee that for at least 60 minutes since the first request.
+   * For example, consider a situation where you make an initial request and the
    * request times out. If you make the request again with the same request ID,
    * the server can check if original operation with the same request ID was
    * received, and if so, will ignore the second request. This prevents clients
@@ -170,15 +166,14 @@ class ProjectsLocationsDeliveryPipelinesAutomations extends \Google\Service\Reso
    * valid UUID with the exception that zero UUID is not supported
    * (00000000-0000-0000-0000-000000000000).
    * @opt_param string updateMask Required. Field mask is used to specify the
-   * fields to be overwritten by the update in the `Automation` resource. The
+   * fields to be overwritten in the `Automation` resource by the update. The
    * fields specified in the update_mask are relative to the resource, not the
-   * full request. A field will be overwritten if it's in the mask. If the user
-   * doesn't provide a mask then all fields are overwritten.
+   * full request. A field will be overwritten if it is in the mask. If the user
+   * does not provide a mask then all fields will be overwritten.
    * @opt_param bool validateOnly Optional. If set to true, the request is
    * validated and the user is provided with an expected result, but no actual
    * change is made.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, Automation $postBody, $optParams = [])
   {

@@ -50,7 +50,6 @@ class ServicesTenancyUnits extends \Google\Service\Resource
    * @param AddTenantProjectRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function addProject($parent, AddTenantProjectRequest $postBody, $optParams = [])
   {
@@ -79,7 +78,6 @@ class ServicesTenancyUnits extends \Google\Service\Resource
    * @param ApplyTenantProjectConfigRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function applyProjectConfig($name, ApplyTenantProjectConfigRequest $postBody, $optParams = [])
   {
@@ -105,7 +103,6 @@ class ServicesTenancyUnits extends \Google\Service\Resource
    * @param AttachTenantProjectRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function attachProject($name, AttachTenantProjectRequest $postBody, $optParams = [])
   {
@@ -128,7 +125,6 @@ class ServicesTenancyUnits extends \Google\Service\Resource
    * @param CreateTenancyUnitRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TenancyUnit
-   * @throws \Google\Service\Exception
    */
   public function create($parent, CreateTenancyUnitRequest $postBody, $optParams = [])
   {
@@ -144,7 +140,6 @@ class ServicesTenancyUnits extends \Google\Service\Resource
    * @param string $name Required. Name of the tenancy unit to be deleted.
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -167,7 +162,6 @@ class ServicesTenancyUnits extends \Google\Service\Resource
    * @param DeleteTenantProjectRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function deleteProject($name, DeleteTenantProjectRequest $postBody, $optParams = [])
   {
@@ -198,7 +192,6 @@ class ServicesTenancyUnits extends \Google\Service\Resource
    * to page through large result sets. To get the next page of results, set this
    * parameter to the value of `nextPageToken` from the previous response.
    * @return ListTenancyUnitsResponse
-   * @throws \Google\Service\Exception
    */
   public function listServicesTenancyUnits($parent, $optParams = [])
   {
@@ -220,7 +213,6 @@ class ServicesTenancyUnits extends \Google\Service\Resource
    * @param RemoveTenantProjectRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function removeProject($name, RemoveTenantProjectRequest $postBody, $optParams = [])
   {
@@ -240,7 +232,6 @@ class ServicesTenancyUnits extends \Google\Service\Resource
    * @param UndeleteTenantProjectRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function undeleteProject($name, UndeleteTenantProjectRequest $postBody, $optParams = [])
   {

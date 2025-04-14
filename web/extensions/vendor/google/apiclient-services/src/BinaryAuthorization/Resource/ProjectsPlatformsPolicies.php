@@ -44,7 +44,6 @@ class ProjectsPlatformsPolicies extends \Google\Service\Resource
    *
    * @opt_param string policyId Required. The platform policy ID.
    * @return PlatformPolicy
-   * @throws \Google\Service\Exception
    */
   public function create($parent, PlatformPolicy $postBody, $optParams = [])
   {
@@ -59,11 +58,7 @@ class ProjectsPlatformsPolicies extends \Google\Service\Resource
    * @param string $name Required. The name of the platform policy to delete, in
    * the format `projects/platforms/policies`.
    * @param array $optParams Optional parameters.
-   *
-   * @opt_param string etag Optional. Used to prevent deleting the policy when
-   * another request has updated it since it was retrieved.
    * @return BinaryauthorizationEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -79,7 +74,6 @@ class ProjectsPlatformsPolicies extends \Google\Service\Resource
    * the format `projects/platforms/policies`.
    * @param array $optParams Optional parameters.
    * @return PlatformPolicy
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -104,7 +98,6 @@ class ProjectsPlatformsPolicies extends \Google\Service\Resource
    * ListPlatformPoliciesResponse.next_page_token returned from the previous call
    * to the `ListPlatformPolicies` method.
    * @return ListPlatformPoliciesResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsPlatformsPolicies($parent, $optParams = [])
   {
@@ -121,7 +114,6 @@ class ProjectsPlatformsPolicies extends \Google\Service\Resource
    * @param PlatformPolicy $postBody
    * @param array $optParams Optional parameters.
    * @return PlatformPolicy
-   * @throws \Google\Service\Exception
    */
   public function replacePlatformPolicy($name, PlatformPolicy $postBody, $optParams = [])
   {

@@ -19,6 +19,10 @@ namespace Google\Service\Bigquery;
 
 class TableListTables extends \Google\Model
 {
+  /**
+   * @var Clustering
+   */
+  public $clustering;
   protected $clusteringType = Clustering::class;
   protected $clusteringDataType = '';
   /**
@@ -45,20 +49,32 @@ class TableListTables extends \Google\Model
    * @var string[]
    */
   public $labels;
+  /**
+   * @var RangePartitioning
+   */
+  public $rangePartitioning;
   protected $rangePartitioningType = RangePartitioning::class;
   protected $rangePartitioningDataType = '';
   /**
-   * @var bool
+   * @var TableReference
    */
-  public $requirePartitionFilter;
+  public $tableReference;
   protected $tableReferenceType = TableReference::class;
   protected $tableReferenceDataType = '';
+  /**
+   * @var TimePartitioning
+   */
+  public $timePartitioning;
   protected $timePartitioningType = TimePartitioning::class;
   protected $timePartitioningDataType = '';
   /**
    * @var string
    */
   public $type;
+  /**
+   * @var TableListTablesView
+   */
+  public $view;
   protected $viewType = TableListTablesView::class;
   protected $viewDataType = '';
 
@@ -173,20 +189,6 @@ class TableListTables extends \Google\Model
   public function getRangePartitioning()
   {
     return $this->rangePartitioning;
-  }
-  /**
-   * @param bool
-   */
-  public function setRequirePartitionFilter($requirePartitionFilter)
-  {
-    $this->requirePartitionFilter = $requirePartitionFilter;
-  }
-  /**
-   * @return bool
-   */
-  public function getRequirePartitionFilter()
-  {
-    return $this->requirePartitionFilter;
   }
   /**
    * @param TableReference

@@ -21,28 +21,18 @@ class BatchWriteRequest extends \Google\Collection
 {
   protected $collection_key = 'mutationGroups';
   /**
-   * @var bool
+   * @var MutationGroup[]
    */
-  public $excludeTxnFromChangeStreams;
+  public $mutationGroups;
   protected $mutationGroupsType = MutationGroup::class;
   protected $mutationGroupsDataType = 'array';
+  /**
+   * @var RequestOptions
+   */
+  public $requestOptions;
   protected $requestOptionsType = RequestOptions::class;
   protected $requestOptionsDataType = '';
 
-  /**
-   * @param bool
-   */
-  public function setExcludeTxnFromChangeStreams($excludeTxnFromChangeStreams)
-  {
-    $this->excludeTxnFromChangeStreams = $excludeTxnFromChangeStreams;
-  }
-  /**
-   * @return bool
-   */
-  public function getExcludeTxnFromChangeStreams()
-  {
-    return $this->excludeTxnFromChangeStreams;
-  }
   /**
    * @param MutationGroup[]
    */

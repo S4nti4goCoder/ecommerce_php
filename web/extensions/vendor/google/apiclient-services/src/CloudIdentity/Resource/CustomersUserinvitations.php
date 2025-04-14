@@ -42,7 +42,6 @@ class CustomersUserinvitations extends \Google\Service\Resource
    * @param CancelUserInvitationRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function cancel($name, CancelUserInvitationRequest $postBody, $optParams = [])
   {
@@ -60,7 +59,6 @@ class CustomersUserinvitations extends \Google\Service\Resource
    * `customers/{customer}/userinvitations/{user_email_address}`
    * @param array $optParams Optional parameters.
    * @return UserInvitation
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -81,7 +79,6 @@ class CustomersUserinvitations extends \Google\Service\Resource
    * `customers/{customer}/userinvitations/{user_email_address}`
    * @param array $optParams Optional parameters.
    * @return IsInvitableUserResponse
-   * @throws \Google\Service\Exception
    */
   public function isInvitableUser($name, $optParams = [])
   {
@@ -115,7 +112,6 @@ class CustomersUserinvitations extends \Google\Service\Resource
    * When paginating, all other parameters provided to `ListBooks` must match the
    * call that provided the page token.
    * @return ListUserInvitationsResponse
-   * @throws \Google\Service\Exception
    */
   public function listCustomersUserinvitations($parent, $optParams = [])
   {
@@ -136,7 +132,6 @@ class CustomersUserinvitations extends \Google\Service\Resource
    * @param SendUserInvitationRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function send($name, SendUserInvitationRequest $postBody, $optParams = [])
   {

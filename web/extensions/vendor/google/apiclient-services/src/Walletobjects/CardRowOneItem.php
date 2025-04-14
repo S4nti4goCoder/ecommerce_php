@@ -19,6 +19,10 @@ namespace Google\Service\Walletobjects;
 
 class CardRowOneItem extends \Google\Model
 {
+  /**
+   * @var TemplateItem
+   */
+  public $item;
   protected $itemType = TemplateItem::class;
   protected $itemDataType = '';
 

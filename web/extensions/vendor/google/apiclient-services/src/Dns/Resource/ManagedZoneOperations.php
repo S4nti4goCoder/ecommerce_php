@@ -45,7 +45,6 @@ class ManagedZoneOperations extends \Google\Service\Resource
    * optional identifier specified by the client. Must be unique for operation
    * resources in the Operations collection.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function get($project, $managedZone, $operation, $optParams = [])
   {
@@ -70,7 +69,6 @@ class ManagedZoneOperations extends \Google\Service\Resource
    * @opt_param string sortBy Sorting criterion. The only supported values are
    * START_TIME and ID.
    * @return ManagedZoneOperationsListResponse
-   * @throws \Google\Service\Exception
    */
   public function listManagedZoneOperations($project, $managedZone, $optParams = [])
   {

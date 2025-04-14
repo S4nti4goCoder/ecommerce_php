@@ -48,7 +48,6 @@ class TagValues extends \Google\Service\Resource
    * @opt_param bool validateOnly Optional. Set as true to perform the validations
    * necessary for creating the resource, but not actually perform the action.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create(TagValue $postBody, $optParams = [])
   {
@@ -70,7 +69,6 @@ class TagValues extends \Google\Service\Resource
    * @opt_param bool validateOnly Optional. Set as true to perform the validations
    * necessary for deletion, but not actually perform the action.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -87,7 +85,6 @@ class TagValues extends \Google\Service\Resource
    * format `tagValues/456`.
    * @param array $optParams Optional parameters.
    * @return TagValue
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -110,7 +107,6 @@ class TagValues extends \Google\Service\Resource
    * @param GetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, GetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -131,7 +127,6 @@ class TagValues extends \Google\Service\Resource
    * the organization with ID 42 - `r2-d2/bar/xyz` for a value with short name
    * "xyz" under the key with short name "bar" under the project with ID "r2-d2"
    * @return TagValue
-   * @throws \Google\Service\Exception
    */
   public function getNamespaced($optParams = [])
   {
@@ -153,7 +148,6 @@ class TagValues extends \Google\Service\Resource
    * @opt_param string parent Required. Resource name for the parent of the
    * TagValues to be listed, in the format `tagKeys/123` or `tagValues/123`.
    * @return ListTagValuesResponse
-   * @throws \Google\Service\Exception
    */
   public function listTagValues($optParams = [])
   {
@@ -173,7 +167,6 @@ class TagValues extends \Google\Service\Resource
    * @opt_param bool validateOnly Optional. True to perform validations necessary
    * for updating the resource, but not actually perform the action.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, TagValue $postBody, $optParams = [])
   {
@@ -195,7 +188,6 @@ class TagValues extends \Google\Service\Resource
    * @param SetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, SetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -216,7 +208,6 @@ class TagValues extends \Google\Service\Resource
    * @param TestIamPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestIamPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, TestIamPermissionsRequest $postBody, $optParams = [])
   {

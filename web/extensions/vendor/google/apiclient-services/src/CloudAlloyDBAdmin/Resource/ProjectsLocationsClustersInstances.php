@@ -46,20 +46,19 @@ class ProjectsLocationsClustersInstances extends \Google\Service\Resource
    * @opt_param string instanceId Required. ID of the requesting object.
    * @opt_param string requestId Optional. An optional request ID to identify
    * requests. Specify a unique request ID so that if you must retry your request,
-   * the server ignores the request if it has already been completed. The server
-   * guarantees that for at least 60 minutes since the first request. For example,
-   * consider a situation where you make an initial request and the request times
-   * out. If you make the request again with the same request ID, the server can
-   * check if the original operation with the same request ID was received, and if
-   * so, ignores the second request. This prevents clients from accidentally
-   * creating duplicate commitments. The request ID must be a valid UUID with the
-   * exception that zero UUID is not supported
+   * the server will know to ignore the request if it has already been completed.
+   * The server will guarantee that for at least 60 minutes since the first
+   * request. For example, consider a situation where you make an initial request
+   * and the request times out. If you make the request again with the same
+   * request ID, the server can check if original operation with the same request
+   * ID was received, and if so, will ignore the second request. This prevents
+   * clients from accidentally creating duplicate commitments. The request ID must
+   * be a valid UUID with the exception that zero UUID is not supported
    * (00000000-0000-0000-0000-000000000000).
-   * @opt_param bool validateOnly Optional. If set, performs request validation,
-   * for example, permission checks and any other type of validation, but does not
+   * @opt_param bool validateOnly Optional. If set, performs request validation
+   * (e.g. permission checks and any other type of validation), but do not
    * actually execute the create request.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Instance $postBody, $optParams = [])
   {
@@ -79,20 +78,19 @@ class ProjectsLocationsClustersInstances extends \Google\Service\Resource
    * @opt_param string instanceId Required. ID of the requesting object.
    * @opt_param string requestId Optional. An optional request ID to identify
    * requests. Specify a unique request ID so that if you must retry your request,
-   * the server ignores the request if it has already been completed. The server
-   * guarantees that for at least 60 minutes since the first request. For example,
-   * consider a situation where you make an initial request and the request times
-   * out. If you make the request again with the same request ID, the server can
-   * check if the original operation with the same request ID was received, and if
-   * so, ignores the second request. This prevents clients from accidentally
-   * creating duplicate commitments. The request ID must be a valid UUID with the
-   * exception that zero UUID is not supported
+   * the server will know to ignore the request if it has already been completed.
+   * The server will guarantee that for at least 60 minutes since the first
+   * request. For example, consider a situation where you make an initial request
+   * and the request times out. If you make the request again with the same
+   * request ID, the server can check if original operation with the same request
+   * ID was received, and if so, will ignore the second request. This prevents
+   * clients from accidentally creating duplicate commitments. The request ID must
+   * be a valid UUID with the exception that zero UUID is not supported
    * (00000000-0000-0000-0000-000000000000).
-   * @opt_param bool validateOnly Optional. If set, performs request validation,
-   * for example, permission checks and any other type of validation, but does not
+   * @opt_param bool validateOnly Optional. If set, performs request validation
+   * (e.g. permission checks and any other type of validation), but do not
    * actually execute the create request.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function createsecondary($parent, Instance $postBody, $optParams = [])
   {
@@ -112,20 +110,19 @@ class ProjectsLocationsClustersInstances extends \Google\Service\Resource
    * will be blocked and an ABORTED error will be returned.
    * @opt_param string requestId Optional. An optional request ID to identify
    * requests. Specify a unique request ID so that if you must retry your request,
-   * the server ignores the request if it has already been completed. The server
-   * guarantees that for at least 60 minutes since the first request. For example,
-   * consider a situation where you make an initial request and the request times
-   * out. If you make the request again with the same request ID, the server can
-   * check if the original operation with the same request ID was received, and if
-   * so, ignores the second request. This prevents clients from accidentally
-   * creating duplicate commitments. The request ID must be a valid UUID with the
-   * exception that zero UUID is not supported
+   * the server will know to ignore the request if it has already been completed.
+   * The server will guarantee that for at least 60 minutes after the first
+   * request. For example, consider a situation where you make an initial request
+   * and the request times out. If you make the request again with the same
+   * request ID, the server can check if original operation with the same request
+   * ID was received, and if so, will ignore the second request. This prevents
+   * clients from accidentally creating duplicate commitments. The request ID must
+   * be a valid UUID with the exception that zero UUID is not supported
    * (00000000-0000-0000-0000-000000000000).
-   * @opt_param bool validateOnly Optional. If set, performs request validation,
-   * for example, permission checks and any other type of validation, but does not
-   * actually execute the create request.
+   * @opt_param bool validateOnly Optional. If set, performs request validation
+   * (e.g. permission checks and any other type of validation), but do not
+   * actually execute the delete.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -142,7 +139,6 @@ class ProjectsLocationsClustersInstances extends \Google\Service\Resource
    * @param FailoverInstanceRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function failover($name, FailoverInstanceRequest $postBody, $optParams = [])
   {
@@ -159,7 +155,6 @@ class ProjectsLocationsClustersInstances extends \Google\Service\Resource
    *
    * @opt_param string view The view of the instance to return.
    * @return Instance
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -177,17 +172,16 @@ class ProjectsLocationsClustersInstances extends \Google\Service\Resource
    *
    * @opt_param string requestId Optional. An optional request ID to identify
    * requests. Specify a unique request ID so that if you must retry your request,
-   * the server ignores the request if it has already been completed. The server
-   * guarantees that for at least 60 minutes since the first request. For example,
-   * consider a situation where you make an initial request and the request times
-   * out. If you make the request again with the same request ID, the server can
-   * check if the original operation with the same request ID was received, and if
-   * so, ignores the second request. This prevents clients from accidentally
-   * creating duplicate commitments. The request ID must be a valid UUID with the
-   * exception that zero UUID is not supported
+   * the server will know to ignore the request if it has already been completed.
+   * The server will guarantee that for at least 60 minutes after the first
+   * request. For example, consider a situation where you make an initial request
+   * and the request times out. If you make the request again with the same
+   * request ID, the server can check if original operation with the same request
+   * ID was received, and if so, will ignore the second request. This prevents
+   * clients from accidentally creating duplicate commitments. The request ID must
+   * be a valid UUID with the exception that zero UUID is not supported
    * (00000000-0000-0000-0000-000000000000).
    * @return ConnectionInfo
-   * @throws \Google\Service\Exception
    */
   public function getConnectionInfo($parent, $optParams = [])
   {
@@ -203,7 +197,6 @@ class ProjectsLocationsClustersInstances extends \Google\Service\Resource
    * @param InjectFaultRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function injectFault($name, InjectFaultRequest $postBody, $optParams = [])
   {
@@ -230,7 +223,6 @@ class ProjectsLocationsClustersInstances extends \Google\Service\Resource
    * @opt_param string pageToken A token identifying a page of results the server
    * should return.
    * @return ListInstancesResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsClustersInstances($parent, $optParams = [])
   {
@@ -257,25 +249,24 @@ class ProjectsLocationsClustersInstances extends \Google\Service\Resource
    * `update_mask` is ignored.
    * @opt_param string requestId Optional. An optional request ID to identify
    * requests. Specify a unique request ID so that if you must retry your request,
-   * the server ignores the request if it has already been completed. The server
-   * guarantees that for at least 60 minutes since the first request. For example,
-   * consider a situation where you make an initial request and the request times
-   * out. If you make the request again with the same request ID, the server can
-   * check if the original operation with the same request ID was received, and if
-   * so, ignores the second request. This prevents clients from accidentally
-   * creating duplicate commitments. The request ID must be a valid UUID with the
-   * exception that zero UUID is not supported
+   * the server will know to ignore the request if it has already been completed.
+   * The server will guarantee that for at least 60 minutes since the first
+   * request. For example, consider a situation where you make an initial request
+   * and the request times out. If you make the request again with the same
+   * request ID, the server can check if original operation with the same request
+   * ID was received, and if so, will ignore the second request. This prevents
+   * clients from accidentally creating duplicate commitments. The request ID must
+   * be a valid UUID with the exception that zero UUID is not supported
    * (00000000-0000-0000-0000-000000000000).
    * @opt_param string updateMask Optional. Field mask is used to specify the
    * fields to be overwritten in the Instance resource by the update. The fields
    * specified in the update_mask are relative to the resource, not the full
    * request. A field will be overwritten if it is in the mask. If the user does
    * not provide a mask then all fields will be overwritten.
-   * @opt_param bool validateOnly Optional. If set, performs request validation,
-   * for example, permission checks and any other type of validation, but does not
-   * actually execute the create request.
+   * @opt_param bool validateOnly Optional. If set, performs request validation
+   * (e.g. permission checks and any other type of validation), but do not
+   * actually execute the update request.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, Instance $postBody, $optParams = [])
   {
@@ -291,7 +282,6 @@ class ProjectsLocationsClustersInstances extends \Google\Service\Resource
    * @param RestartInstanceRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function restart($name, RestartInstanceRequest $postBody, $optParams = [])
   {

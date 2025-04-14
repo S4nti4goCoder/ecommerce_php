@@ -20,6 +20,10 @@ namespace Google\Service\Dataproc;
 class GceClusterConfig extends \Google\Collection
 {
   protected $collection_key = 'tags';
+  /**
+   * @var ConfidentialInstanceConfig
+   */
+  public $confidentialInstanceConfig;
   protected $confidentialInstanceConfigType = ConfidentialInstanceConfig::class;
   protected $confidentialInstanceConfigDataType = '';
   /**
@@ -34,18 +38,22 @@ class GceClusterConfig extends \Google\Collection
    * @var string
    */
   public $networkUri;
+  /**
+   * @var NodeGroupAffinity
+   */
+  public $nodeGroupAffinity;
   protected $nodeGroupAffinityType = NodeGroupAffinity::class;
   protected $nodeGroupAffinityDataType = '';
   /**
    * @var string
    */
   public $privateIpv6GoogleAccess;
+  /**
+   * @var ReservationAffinity
+   */
+  public $reservationAffinity;
   protected $reservationAffinityType = ReservationAffinity::class;
   protected $reservationAffinityDataType = '';
-  /**
-   * @var string[]
-   */
-  public $resourceManagerTags;
   /**
    * @var string
    */
@@ -54,6 +62,10 @@ class GceClusterConfig extends \Google\Collection
    * @var string[]
    */
   public $serviceAccountScopes;
+  /**
+   * @var ShieldedInstanceConfig
+   */
+  public $shieldedInstanceConfig;
   protected $shieldedInstanceConfigType = ShieldedInstanceConfig::class;
   protected $shieldedInstanceConfigDataType = '';
   /**
@@ -166,20 +178,6 @@ class GceClusterConfig extends \Google\Collection
   public function getReservationAffinity()
   {
     return $this->reservationAffinity;
-  }
-  /**
-   * @param string[]
-   */
-  public function setResourceManagerTags($resourceManagerTags)
-  {
-    $this->resourceManagerTags = $resourceManagerTags;
-  }
-  /**
-   * @return string[]
-   */
-  public function getResourceManagerTags()
-  {
-    return $this->resourceManagerTags;
   }
   /**
    * @param string

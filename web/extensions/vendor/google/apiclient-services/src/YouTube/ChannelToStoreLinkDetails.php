@@ -19,10 +19,6 @@ namespace Google\Service\YouTube;
 
 class ChannelToStoreLinkDetails extends \Google\Model
 {
-  protected $billingDetailsType = ChannelToStoreLinkDetailsBillingDetails::class;
-  protected $billingDetailsDataType = '';
-  protected $merchantAffiliateProgramDetailsType = ChannelToStoreLinkDetailsMerchantAffiliateProgramDetails::class;
-  protected $merchantAffiliateProgramDetailsDataType = '';
   /**
    * @var string
    */
@@ -36,34 +32,6 @@ class ChannelToStoreLinkDetails extends \Google\Model
    */
   public $storeUrl;
 
-  /**
-   * @param ChannelToStoreLinkDetailsBillingDetails
-   */
-  public function setBillingDetails(ChannelToStoreLinkDetailsBillingDetails $billingDetails)
-  {
-    $this->billingDetails = $billingDetails;
-  }
-  /**
-   * @return ChannelToStoreLinkDetailsBillingDetails
-   */
-  public function getBillingDetails()
-  {
-    return $this->billingDetails;
-  }
-  /**
-   * @param ChannelToStoreLinkDetailsMerchantAffiliateProgramDetails
-   */
-  public function setMerchantAffiliateProgramDetails(ChannelToStoreLinkDetailsMerchantAffiliateProgramDetails $merchantAffiliateProgramDetails)
-  {
-    $this->merchantAffiliateProgramDetails = $merchantAffiliateProgramDetails;
-  }
-  /**
-   * @return ChannelToStoreLinkDetailsMerchantAffiliateProgramDetails
-   */
-  public function getMerchantAffiliateProgramDetails()
-  {
-    return $this->merchantAffiliateProgramDetails;
-  }
   /**
    * @param string
    */

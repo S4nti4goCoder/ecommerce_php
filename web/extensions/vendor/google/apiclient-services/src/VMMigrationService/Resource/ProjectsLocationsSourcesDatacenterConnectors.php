@@ -56,7 +56,6 @@ class ProjectsLocationsSourcesDatacenterConnectors extends \Google\Service\Resou
    * exception that zero UUID is not supported
    * (00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, DatacenterConnector $postBody, $optParams = [])
   {
@@ -82,7 +81,6 @@ class ProjectsLocationsSourcesDatacenterConnectors extends \Google\Service\Resou
    * exception that zero UUID is not supported
    * (00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -96,7 +94,6 @@ class ProjectsLocationsSourcesDatacenterConnectors extends \Google\Service\Resou
    * @param string $name Required. The name of the DatacenterConnector.
    * @param array $optParams Optional parameters.
    * @return DatacenterConnector
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -123,7 +120,6 @@ class ProjectsLocationsSourcesDatacenterConnectors extends \Google\Service\Resou
    * page. When paginating, all other parameters provided to
    * `ListDatacenterConnectors` must match the call that provided the page token.
    * @return ListDatacenterConnectorsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsSourcesDatacenterConnectors($parent, $optParams = [])
   {
@@ -139,7 +135,6 @@ class ProjectsLocationsSourcesDatacenterConnectors extends \Google\Service\Resou
    * @param UpgradeApplianceRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function upgradeAppliance($datacenterConnector, UpgradeApplianceRequest $postBody, $optParams = [])
   {

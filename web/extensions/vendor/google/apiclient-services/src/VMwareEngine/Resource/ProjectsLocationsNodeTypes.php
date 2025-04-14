@@ -39,7 +39,6 @@ class ProjectsLocationsNodeTypes extends \Google\Service\Resource
    * `projects/my-proj/locations/us-central1-a/nodeTypes/standard-72`
    * @param array $optParams Optional parameters.
    * @return NodeType
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -75,7 +74,6 @@ class ProjectsLocationsNodeTypes extends \Google\Service\Resource
    * paginating, all other parameters provided to `ListNodeTypes` must match the
    * call that provided the page token.
    * @return ListNodeTypesResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsNodeTypes($parent, $optParams = [])
   {

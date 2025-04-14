@@ -20,14 +20,10 @@ namespace Google\Service\MigrationCenterAPI;
 class ImportRowError extends \Google\Collection
 {
   protected $collection_key = 'errors';
-  protected $archiveErrorType = ImportRowErrorArchiveErrorDetails::class;
-  protected $archiveErrorDataType = '';
   /**
-   * @var string
+   * @var ImportError[]
    */
-  public $assetTitle;
-  protected $csvErrorType = ImportRowErrorCsvErrorDetails::class;
-  protected $csvErrorDataType = '';
+  public $errors;
   protected $errorsType = ImportError::class;
   protected $errorsDataType = 'array';
   /**
@@ -42,51 +38,7 @@ class ImportRowError extends \Google\Collection
    * @var string
    */
   public $vmUuid;
-  protected $xlsxErrorType = ImportRowErrorXlsxErrorDetails::class;
-  protected $xlsxErrorDataType = '';
 
-  /**
-   * @param ImportRowErrorArchiveErrorDetails
-   */
-  public function setArchiveError(ImportRowErrorArchiveErrorDetails $archiveError)
-  {
-    $this->archiveError = $archiveError;
-  }
-  /**
-   * @return ImportRowErrorArchiveErrorDetails
-   */
-  public function getArchiveError()
-  {
-    return $this->archiveError;
-  }
-  /**
-   * @param string
-   */
-  public function setAssetTitle($assetTitle)
-  {
-    $this->assetTitle = $assetTitle;
-  }
-  /**
-   * @return string
-   */
-  public function getAssetTitle()
-  {
-    return $this->assetTitle;
-  }
-  /**
-   * @param ImportRowErrorCsvErrorDetails
-   */
-  public function setCsvError(ImportRowErrorCsvErrorDetails $csvError)
-  {
-    $this->csvError = $csvError;
-  }
-  /**
-   * @return ImportRowErrorCsvErrorDetails
-   */
-  public function getCsvError()
-  {
-    return $this->csvError;
-  }
   /**
    * @param ImportError[]
    */
@@ -142,20 +94,6 @@ class ImportRowError extends \Google\Collection
   public function getVmUuid()
   {
     return $this->vmUuid;
-  }
-  /**
-   * @param ImportRowErrorXlsxErrorDetails
-   */
-  public function setXlsxError(ImportRowErrorXlsxErrorDetails $xlsxError)
-  {
-    $this->xlsxError = $xlsxError;
-  }
-  /**
-   * @return ImportRowErrorXlsxErrorDetails
-   */
-  public function getXlsxError()
-  {
-    return $this->xlsxError;
   }
 }
 

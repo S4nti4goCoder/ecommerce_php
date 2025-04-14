@@ -48,7 +48,6 @@ class ProjectsLocationsChannels extends \Google\Service\Resource
    * @opt_param bool validateOnly Optional. If set, validate the request and
    * preview the review, but do not post it.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Channel $postBody, $optParams = [])
   {
@@ -65,7 +64,6 @@ class ProjectsLocationsChannels extends \Google\Service\Resource
    * @opt_param bool validateOnly Optional. If set, validate the request and
    * preview the review, but do not post it.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -79,7 +77,6 @@ class ProjectsLocationsChannels extends \Google\Service\Resource
    * @param string $name Required. The name of the channel to get.
    * @param array $optParams Optional parameters.
    * @return Channel
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -110,7 +107,6 @@ class ProjectsLocationsChannels extends \Google\Service\Resource
    * documentation](https://cloud.google.com/iam/help/conditions/resource-
    * policies).
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, $optParams = [])
   {
@@ -135,7 +131,6 @@ class ProjectsLocationsChannels extends \Google\Service\Resource
    * subsequent page. When paginating, all other parameters provided to
    * `ListChannels` must match the call that provided the page token.
    * @return ListChannelsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsChannels($parent, $optParams = [])
   {
@@ -158,7 +153,6 @@ class ProjectsLocationsChannels extends \Google\Service\Resource
    * @opt_param bool validateOnly Optional. If set, validate the request and
    * preview the review, but do not post it.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, Channel $postBody, $optParams = [])
   {
@@ -178,7 +172,6 @@ class ProjectsLocationsChannels extends \Google\Service\Resource
    * @param SetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, SetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -200,7 +193,6 @@ class ProjectsLocationsChannels extends \Google\Service\Resource
    * @param TestIamPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestIamPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, TestIamPermissionsRequest $postBody, $optParams = [])
   {

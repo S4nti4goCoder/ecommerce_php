@@ -20,26 +20,12 @@ namespace Google\Service\Walletobjects;
 class AppLinkDataAppLinkInfoAppTarget extends \Google\Model
 {
   /**
-   * @var string
+   * @var Uri
    */
-  public $packageName;
+  public $targetUri;
   protected $targetUriType = Uri::class;
   protected $targetUriDataType = '';
 
-  /**
-   * @param string
-   */
-  public function setPackageName($packageName)
-  {
-    $this->packageName = $packageName;
-  }
-  /**
-   * @return string
-   */
-  public function getPackageName()
-  {
-    return $this->packageName;
-  }
   /**
    * @param Uri
    */

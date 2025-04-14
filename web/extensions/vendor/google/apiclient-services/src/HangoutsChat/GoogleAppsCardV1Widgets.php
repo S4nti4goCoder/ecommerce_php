@@ -19,20 +19,46 @@ namespace Google\Service\HangoutsChat;
 
 class GoogleAppsCardV1Widgets extends \Google\Model
 {
+  /**
+   * @var GoogleAppsCardV1ButtonList
+   */
+  public $buttonList;
   protected $buttonListType = GoogleAppsCardV1ButtonList::class;
   protected $buttonListDataType = '';
-  protected $chipListType = GoogleAppsCardV1ChipList::class;
-  protected $chipListDataType = '';
+  /**
+   * @var GoogleAppsCardV1DateTimePicker
+   */
+  public $dateTimePicker;
   protected $dateTimePickerType = GoogleAppsCardV1DateTimePicker::class;
   protected $dateTimePickerDataType = '';
+  /**
+   * @var GoogleAppsCardV1DecoratedText
+   */
+  public $decoratedText;
   protected $decoratedTextType = GoogleAppsCardV1DecoratedText::class;
   protected $decoratedTextDataType = '';
+  /**
+   * @var GoogleAppsCardV1Image
+   */
+  public $image;
   protected $imageType = GoogleAppsCardV1Image::class;
   protected $imageDataType = '';
+  /**
+   * @var GoogleAppsCardV1SelectionInput
+   */
+  public $selectionInput;
   protected $selectionInputType = GoogleAppsCardV1SelectionInput::class;
   protected $selectionInputDataType = '';
+  /**
+   * @var GoogleAppsCardV1TextInput
+   */
+  public $textInput;
   protected $textInputType = GoogleAppsCardV1TextInput::class;
   protected $textInputDataType = '';
+  /**
+   * @var GoogleAppsCardV1TextParagraph
+   */
+  public $textParagraph;
   protected $textParagraphType = GoogleAppsCardV1TextParagraph::class;
   protected $textParagraphDataType = '';
 
@@ -49,20 +75,6 @@ class GoogleAppsCardV1Widgets extends \Google\Model
   public function getButtonList()
   {
     return $this->buttonList;
-  }
-  /**
-   * @param GoogleAppsCardV1ChipList
-   */
-  public function setChipList(GoogleAppsCardV1ChipList $chipList)
-  {
-    $this->chipList = $chipList;
-  }
-  /**
-   * @return GoogleAppsCardV1ChipList
-   */
-  public function getChipList()
-  {
-    return $this->chipList;
   }
   /**
    * @param GoogleAppsCardV1DateTimePicker

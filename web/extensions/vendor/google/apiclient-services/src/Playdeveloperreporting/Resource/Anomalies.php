@@ -55,7 +55,6 @@ class Anomalies extends \Google\Service\Resource
    * paginating, all other parameters provided to `ListErrorReports` must match
    * the call that provided the page token.
    * @return GooglePlayDeveloperReportingV1beta1ListAnomaliesResponse
-   * @throws \Google\Service\Exception
    */
   public function listAnomalies($parent, $optParams = [])
   {

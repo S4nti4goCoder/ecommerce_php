@@ -23,21 +23,21 @@ class WorkflowConfig extends \Google\Collection
   /**
    * @var string
    */
-  public $createTime;
-  /**
-   * @var string
-   */
   public $cronSchedule;
   /**
-   * @var string
+   * @var InvocationConfig
    */
-  public $internalMetadata;
+  public $invocationConfig;
   protected $invocationConfigType = InvocationConfig::class;
   protected $invocationConfigDataType = '';
   /**
    * @var string
    */
   public $name;
+  /**
+   * @var ScheduledExecutionRecord[]
+   */
+  public $recentScheduledExecutionRecords;
   protected $recentScheduledExecutionRecordsType = ScheduledExecutionRecord::class;
   protected $recentScheduledExecutionRecordsDataType = 'array';
   /**
@@ -48,25 +48,7 @@ class WorkflowConfig extends \Google\Collection
    * @var string
    */
   public $timeZone;
-  /**
-   * @var string
-   */
-  public $updateTime;
 
-  /**
-   * @param string
-   */
-  public function setCreateTime($createTime)
-  {
-    $this->createTime = $createTime;
-  }
-  /**
-   * @return string
-   */
-  public function getCreateTime()
-  {
-    return $this->createTime;
-  }
   /**
    * @param string
    */
@@ -80,20 +62,6 @@ class WorkflowConfig extends \Google\Collection
   public function getCronSchedule()
   {
     return $this->cronSchedule;
-  }
-  /**
-   * @param string
-   */
-  public function setInternalMetadata($internalMetadata)
-  {
-    $this->internalMetadata = $internalMetadata;
-  }
-  /**
-   * @return string
-   */
-  public function getInternalMetadata()
-  {
-    return $this->internalMetadata;
   }
   /**
    * @param InvocationConfig
@@ -164,20 +132,6 @@ class WorkflowConfig extends \Google\Collection
   public function getTimeZone()
   {
     return $this->timeZone;
-  }
-  /**
-   * @param string
-   */
-  public function setUpdateTime($updateTime)
-  {
-    $this->updateTime = $updateTime;
-  }
-  /**
-   * @return string
-   */
-  public function getUpdateTime()
-  {
-    return $this->updateTime;
   }
 }
 

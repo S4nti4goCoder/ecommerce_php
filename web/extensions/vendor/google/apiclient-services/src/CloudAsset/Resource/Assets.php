@@ -79,7 +79,6 @@ class Assets extends \Google\Service\Resource
    * Inventory](https://cloud.google.com/asset-inventory/docs/overview) for all
    * supported asset types and relationship types.
    * @return ListAssetsResponse
-   * @throws \Google\Service\Exception
    */
   public function listAssets($parent, $optParams = [])
   {

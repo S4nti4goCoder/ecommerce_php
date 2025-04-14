@@ -40,20 +40,30 @@ class Database extends \Google\Collection
    * @var bool
    */
   public $enableDropProtection;
+  /**
+   * @var EncryptionConfig
+   */
+  public $encryptionConfig;
   protected $encryptionConfigType = EncryptionConfig::class;
   protected $encryptionConfigDataType = '';
+  /**
+   * @var EncryptionInfo[]
+   */
+  public $encryptionInfo;
   protected $encryptionInfoType = EncryptionInfo::class;
   protected $encryptionInfoDataType = 'array';
   /**
    * @var string
    */
   public $name;
-  protected $quorumInfoType = QuorumInfo::class;
-  protected $quorumInfoDataType = '';
   /**
    * @var bool
    */
   public $reconciling;
+  /**
+   * @var RestoreInfo
+   */
+  public $restoreInfo;
   protected $restoreInfoType = RestoreInfo::class;
   protected $restoreInfoDataType = '';
   /**
@@ -176,20 +186,6 @@ class Database extends \Google\Collection
   public function getName()
   {
     return $this->name;
-  }
-  /**
-   * @param QuorumInfo
-   */
-  public function setQuorumInfo(QuorumInfo $quorumInfo)
-  {
-    $this->quorumInfo = $quorumInfo;
-  }
-  /**
-   * @return QuorumInfo
-   */
-  public function getQuorumInfo()
-  {
-    return $this->quorumInfo;
   }
   /**
    * @param bool

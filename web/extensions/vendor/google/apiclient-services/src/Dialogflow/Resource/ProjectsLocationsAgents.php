@@ -48,7 +48,6 @@ class ProjectsLocationsAgents extends \Google\Service\Resource
    * @param GoogleCloudDialogflowCxV3Agent $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudDialogflowCxV3Agent
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudDialogflowCxV3Agent $postBody, $optParams = [])
   {
@@ -63,7 +62,6 @@ class ProjectsLocationsAgents extends \Google\Service\Resource
    * `projects//locations//agents/`.
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -85,7 +83,6 @@ class ProjectsLocationsAgents extends \Google\Service\Resource
    * @param GoogleCloudDialogflowCxV3ExportAgentRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function export($name, GoogleCloudDialogflowCxV3ExportAgentRequest $postBody, $optParams = [])
   {
@@ -100,7 +97,6 @@ class ProjectsLocationsAgents extends \Google\Service\Resource
    * `projects//locations//agents/`.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudDialogflowCxV3Agent
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -118,7 +114,6 @@ class ProjectsLocationsAgents extends \Google\Service\Resource
    * @opt_param string languageCode Required. Language code of the generative
    * settings.
    * @return GoogleCloudDialogflowCxV3GenerativeSettings
-   * @throws \Google\Service\Exception
    */
   public function getGenerativeSettings($name, $optParams = [])
   {
@@ -137,7 +132,6 @@ class ProjectsLocationsAgents extends \Google\Service\Resource
    * @opt_param string languageCode If not specified, the agent's default language
    * is used.
    * @return GoogleCloudDialogflowCxV3AgentValidationResult
-   * @throws \Google\Service\Exception
    */
   public function getValidationResult($name, $optParams = [])
   {
@@ -158,7 +152,6 @@ class ProjectsLocationsAgents extends \Google\Service\Resource
    * @opt_param string pageToken The next_page_token value returned from a
    * previous list request.
    * @return GoogleCloudDialogflowCxV3ListAgentsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsAgents($parent, $optParams = [])
   {
@@ -181,7 +174,6 @@ class ProjectsLocationsAgents extends \Google\Service\Resource
    * @opt_param string updateMask The mask to control which fields get updated. If
    * the mask is not present, all fields will be updated.
    * @return GoogleCloudDialogflowCxV3Agent
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleCloudDialogflowCxV3Agent $postBody, $optParams = [])
   {
@@ -209,7 +201,6 @@ class ProjectsLocationsAgents extends \Google\Service\Resource
    * @param GoogleCloudDialogflowCxV3RestoreAgentRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function restore($name, GoogleCloudDialogflowCxV3RestoreAgentRequest $postBody, $optParams = [])
   {
@@ -229,7 +220,6 @@ class ProjectsLocationsAgents extends \Google\Service\Resource
    * @opt_param string updateMask Optional. The mask to control which fields get
    * updated. If the mask is not present, all fields will be updated.
    * @return GoogleCloudDialogflowCxV3GenerativeSettings
-   * @throws \Google\Service\Exception
    */
   public function updateGenerativeSettings($name, GoogleCloudDialogflowCxV3GenerativeSettings $postBody, $optParams = [])
   {
@@ -247,7 +237,6 @@ class ProjectsLocationsAgents extends \Google\Service\Resource
    * @param GoogleCloudDialogflowCxV3ValidateAgentRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudDialogflowCxV3AgentValidationResult
-   * @throws \Google\Service\Exception
    */
   public function validate($name, GoogleCloudDialogflowCxV3ValidateAgentRequest $postBody, $optParams = [])
   {

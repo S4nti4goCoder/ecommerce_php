@@ -20,16 +20,24 @@ namespace Google\Service\CloudRetail;
 class GoogleCloudRetailV2CatalogAttributeFacetConfig extends \Google\Collection
 {
   protected $collection_key = 'mergedFacetValues';
+  /**
+   * @var GoogleCloudRetailV2Interval[]
+   */
+  public $facetIntervals;
   protected $facetIntervalsType = GoogleCloudRetailV2Interval::class;
   protected $facetIntervalsDataType = 'array';
+  /**
+   * @var GoogleCloudRetailV2CatalogAttributeFacetConfigIgnoredFacetValues[]
+   */
+  public $ignoredFacetValues;
   protected $ignoredFacetValuesType = GoogleCloudRetailV2CatalogAttributeFacetConfigIgnoredFacetValues::class;
   protected $ignoredFacetValuesDataType = 'array';
-  protected $mergedFacetType = GoogleCloudRetailV2CatalogAttributeFacetConfigMergedFacet::class;
-  protected $mergedFacetDataType = '';
+  /**
+   * @var GoogleCloudRetailV2CatalogAttributeFacetConfigMergedFacetValue[]
+   */
+  public $mergedFacetValues;
   protected $mergedFacetValuesType = GoogleCloudRetailV2CatalogAttributeFacetConfigMergedFacetValue::class;
   protected $mergedFacetValuesDataType = 'array';
-  protected $rerankConfigType = GoogleCloudRetailV2CatalogAttributeFacetConfigRerankConfig::class;
-  protected $rerankConfigDataType = '';
 
   /**
    * @param GoogleCloudRetailV2Interval[]
@@ -60,20 +68,6 @@ class GoogleCloudRetailV2CatalogAttributeFacetConfig extends \Google\Collection
     return $this->ignoredFacetValues;
   }
   /**
-   * @param GoogleCloudRetailV2CatalogAttributeFacetConfigMergedFacet
-   */
-  public function setMergedFacet(GoogleCloudRetailV2CatalogAttributeFacetConfigMergedFacet $mergedFacet)
-  {
-    $this->mergedFacet = $mergedFacet;
-  }
-  /**
-   * @return GoogleCloudRetailV2CatalogAttributeFacetConfigMergedFacet
-   */
-  public function getMergedFacet()
-  {
-    return $this->mergedFacet;
-  }
-  /**
    * @param GoogleCloudRetailV2CatalogAttributeFacetConfigMergedFacetValue[]
    */
   public function setMergedFacetValues($mergedFacetValues)
@@ -86,20 +80,6 @@ class GoogleCloudRetailV2CatalogAttributeFacetConfig extends \Google\Collection
   public function getMergedFacetValues()
   {
     return $this->mergedFacetValues;
-  }
-  /**
-   * @param GoogleCloudRetailV2CatalogAttributeFacetConfigRerankConfig
-   */
-  public function setRerankConfig(GoogleCloudRetailV2CatalogAttributeFacetConfigRerankConfig $rerankConfig)
-  {
-    $this->rerankConfig = $rerankConfig;
-  }
-  /**
-   * @return GoogleCloudRetailV2CatalogAttributeFacetConfigRerankConfig
-   */
-  public function getRerankConfig()
-  {
-    return $this->rerankConfig;
   }
 }
 

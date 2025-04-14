@@ -40,7 +40,6 @@ class BuyersProposalsDeals extends \Google\Service\Resource
    * @param BatchUpdateDealsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return BatchUpdateDealsResponse
-   * @throws \Google\Service\Exception
    */
   public function batchUpdate($parent, BatchUpdateDealsRequest $postBody, $optParams = [])
   {
@@ -56,7 +55,6 @@ class BuyersProposalsDeals extends \Google\Service\Resource
    * buyers/{accountId}/proposals/{proposalId}/deals/{dealId}
    * @param array $optParams Optional parameters.
    * @return Deal
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -80,7 +78,6 @@ class BuyersProposalsDeals extends \Google\Service\Resource
    * @opt_param string pageToken The page token as returned from
    * ListDealsResponse.
    * @return ListDealsResponse
-   * @throws \Google\Service\Exception
    */
   public function listBuyersProposalsDeals($parent, $optParams = [])
   {
@@ -117,7 +114,6 @@ class BuyersProposalsDeals extends \Google\Service\Resource
    * or set to default value. Output only fields will be ignored regardless of the
    * value of updateMask.
    * @return Deal
-   * @throws \Google\Service\Exception
    */
   public function patch($name, Deal $postBody, $optParams = [])
   {

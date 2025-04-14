@@ -34,9 +34,8 @@ use Google\Service\Compute\TargetVpnGatewayList;
 class TargetVpnGateways extends \Google\Service\Resource
 {
   /**
-   * Retrieves an aggregated list of target VPN gateways. To prevent failure,
-   * Google recommends that you set the `returnPartialSuccess` parameter to
-   * `true`. (targetVpnGateways.aggregatedList)
+   * Retrieves an aggregated list of target VPN gateways.
+   * (targetVpnGateways.aggregatedList)
    *
    * @param string $project Project ID for this request.
    * @param array $optParams Optional parameters.
@@ -98,14 +97,9 @@ class TargetVpnGateways extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
-   * @opt_param string serviceProjectNumber The Shared VPC service project id or
-   * service project number for which aggregated list request is invoked for
-   * subnetworks list-usable api.
+   * false.
+   * @opt_param string serviceProjectNumber
    * @return TargetVpnGatewayAggregatedList
-   * @throws \Google\Service\Exception
    */
   public function aggregatedList($project, $optParams = [])
   {
@@ -132,7 +126,6 @@ class TargetVpnGateways extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($project, $region, $targetVpnGateway, $optParams = [])
   {
@@ -148,7 +141,6 @@ class TargetVpnGateways extends \Google\Service\Resource
    * @param string $targetVpnGateway Name of the target VPN gateway to return.
    * @param array $optParams Optional parameters.
    * @return TargetVpnGateway
-   * @throws \Google\Service\Exception
    */
   public function get($project, $region, $targetVpnGateway, $optParams = [])
   {
@@ -176,7 +168,6 @@ class TargetVpnGateways extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function insert($project, $region, TargetVpnGateway $postBody, $optParams = [])
   {
@@ -242,11 +233,8 @@ class TargetVpnGateways extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
+   * false.
    * @return TargetVpnGatewayList
-   * @throws \Google\Service\Exception
    */
   public function listTargetVpnGateways($project, $region, $optParams = [])
   {
@@ -275,7 +263,6 @@ class TargetVpnGateways extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function setLabels($project, $region, $resource, RegionSetLabelsRequest $postBody, $optParams = [])
   {

@@ -19,12 +19,12 @@ namespace Google\Service\Container;
 
 class AdditionalPodNetworkConfig extends \Google\Model
 {
+  /**
+   * @var MaxPodsConstraint
+   */
+  public $maxPodsPerNode;
   protected $maxPodsPerNodeType = MaxPodsConstraint::class;
   protected $maxPodsPerNodeDataType = '';
-  /**
-   * @var string
-   */
-  public $networkAttachment;
   /**
    * @var string
    */
@@ -47,20 +47,6 @@ class AdditionalPodNetworkConfig extends \Google\Model
   public function getMaxPodsPerNode()
   {
     return $this->maxPodsPerNode;
-  }
-  /**
-   * @param string
-   */
-  public function setNetworkAttachment($networkAttachment)
-  {
-    $this->networkAttachment = $networkAttachment;
-  }
-  /**
-   * @return string
-   */
-  public function getNetworkAttachment()
-  {
-    return $this->networkAttachment;
   }
   /**
    * @param string

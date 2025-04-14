@@ -43,7 +43,6 @@ class LabelsRevisions extends \Google\Service\Resource
    * credentials. The server will verify the user is an admin for the Label before
    * allowing access.
    * @return GoogleAppsDriveLabelsV2LabelPermission
-   * @throws \Google\Service\Exception
    */
   public function updatePermissions($parent, GoogleAppsDriveLabelsV2LabelPermission $postBody, $optParams = [])
   {

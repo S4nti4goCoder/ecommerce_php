@@ -68,7 +68,6 @@ class ProjectsLocationsPrivateClouds extends \Google\Service\Resource
    * @opt_param bool validateOnly Optional. True if you want the request to be
    * validated and not executed; false otherwise.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, PrivateCloud $postBody, $optParams = [])
   {
@@ -114,7 +113,6 @@ class ProjectsLocationsPrivateClouds extends \Google\Service\Resource
    * with the exception that zero UUID is not supported
    * (00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -131,7 +129,6 @@ class ProjectsLocationsPrivateClouds extends \Google\Service\Resource
    * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * @param array $optParams Optional parameters.
    * @return PrivateCloud
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -149,7 +146,6 @@ class ProjectsLocationsPrivateClouds extends \Google\Service\Resource
    * cloud/dnsForwarding`
    * @param array $optParams Optional parameters.
    * @return DnsForwarding
-   * @throws \Google\Service\Exception
    */
   public function getDnsForwarding($name, $optParams = [])
   {
@@ -180,7 +176,6 @@ class ProjectsLocationsPrivateClouds extends \Google\Service\Resource
    * documentation](https://cloud.google.com/iam/help/conditions/resource-
    * policies).
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, $optParams = [])
   {
@@ -225,7 +220,6 @@ class ProjectsLocationsPrivateClouds extends \Google\Service\Resource
    * paginating, all other parameters provided to `ListPrivateClouds` must match
    * the call that provided the page token.
    * @return ListPrivateCloudsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsPrivateClouds($parent, $optParams = [])
   {
@@ -241,9 +235,9 @@ class ProjectsLocationsPrivateClouds extends \Google\Service\Resource
    * update the resource. Use the operation status to determine when the
    * processing fully completes. (privateClouds.patch)
    *
-   * @param string $name Output only. Identifier. The resource name of this
-   * private cloud. Resource names are schemeless URIs that follow the conventions
-   * in https://cloud.google.com/apis/design/resource_names. For example:
+   * @param string $name Output only. The resource name of this private cloud.
+   * Resource names are schemeless URIs that follow the conventions in
+   * https://cloud.google.com/apis/design/resource_names. For example:
    * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * @param PrivateCloud $postBody
    * @param array $optParams Optional parameters.
@@ -257,7 +251,6 @@ class ProjectsLocationsPrivateClouds extends \Google\Service\Resource
    * request. A field will be overwritten if it is in the mask. If the user does
    * not provide a mask then all fields will be overwritten.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, PrivateCloud $postBody, $optParams = [])
   {
@@ -275,7 +268,6 @@ class ProjectsLocationsPrivateClouds extends \Google\Service\Resource
    * @param ResetNsxCredentialsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function resetNsxCredentials($privateCloud, ResetNsxCredentialsRequest $postBody, $optParams = [])
   {
@@ -294,7 +286,6 @@ class ProjectsLocationsPrivateClouds extends \Google\Service\Resource
    * @param ResetVcenterCredentialsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function resetVcenterCredentials($privateCloud, ResetVcenterCredentialsRequest $postBody, $optParams = [])
   {
@@ -314,7 +305,6 @@ class ProjectsLocationsPrivateClouds extends \Google\Service\Resource
    * @param SetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, SetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -332,7 +322,6 @@ class ProjectsLocationsPrivateClouds extends \Google\Service\Resource
    * example: `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * @param array $optParams Optional parameters.
    * @return Credentials
-   * @throws \Google\Service\Exception
    */
   public function showNsxCredentials($privateCloud, $optParams = [])
   {
@@ -356,7 +345,6 @@ class ProjectsLocationsPrivateClouds extends \Google\Service\Resource
    * user-01@gve.local, solution-user-02@gve.local, solution-user-03@gve.local,
    * solution-user-04@gve.local, solution-user-05@gve.local, zertoadmin@gve.local.
    * @return Credentials
-   * @throws \Google\Service\Exception
    */
   public function showVcenterCredentials($privateCloud, $optParams = [])
   {
@@ -379,7 +367,6 @@ class ProjectsLocationsPrivateClouds extends \Google\Service\Resource
    * @param TestIamPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestIamPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, TestIamPermissionsRequest $postBody, $optParams = [])
   {
@@ -400,7 +387,6 @@ class ProjectsLocationsPrivateClouds extends \Google\Service\Resource
    * @param UndeletePrivateCloudRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function undelete($name, UndeletePrivateCloudRequest $postBody, $optParams = [])
   {
@@ -413,8 +399,8 @@ class ProjectsLocationsPrivateClouds extends \Google\Service\Resource
    * domains. Only fields specified in `update_mask` are applied.
    * (privateClouds.updateDnsForwarding)
    *
-   * @param string $name Output only. Identifier. The resource name of this DNS
-   * profile. Resource names are schemeless URIs that follow the conventions in
+   * @param string $name Output only. The resource name of this DNS profile.
+   * Resource names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names. For example:
    * `projects/my-project/locations/us-central1-a/privateClouds/my-
    * cloud/dnsForwarding`
@@ -438,7 +424,6 @@ class ProjectsLocationsPrivateClouds extends \Google\Service\Resource
    * full request. A field will be overwritten if it is in the mask. If the user
    * does not provide a mask then all fields will be overwritten.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function updateDnsForwarding($name, DnsForwarding $postBody, $optParams = [])
   {

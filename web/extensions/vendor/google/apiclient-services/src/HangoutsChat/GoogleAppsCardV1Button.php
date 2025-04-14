@@ -23,24 +23,32 @@ class GoogleAppsCardV1Button extends \Google\Model
    * @var string
    */
   public $altText;
+  /**
+   * @var Color
+   */
+  public $color;
   protected $colorType = Color::class;
   protected $colorDataType = '';
   /**
    * @var bool
    */
   public $disabled;
+  /**
+   * @var GoogleAppsCardV1Icon
+   */
+  public $icon;
   protected $iconType = GoogleAppsCardV1Icon::class;
   protected $iconDataType = '';
+  /**
+   * @var GoogleAppsCardV1OnClick
+   */
+  public $onClick;
   protected $onClickType = GoogleAppsCardV1OnClick::class;
   protected $onClickDataType = '';
   /**
    * @var string
    */
   public $text;
-  /**
-   * @var string
-   */
-  public $type;
 
   /**
    * @param string
@@ -125,20 +133,6 @@ class GoogleAppsCardV1Button extends \Google\Model
   public function getText()
   {
     return $this->text;
-  }
-  /**
-   * @param string
-   */
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  /**
-   * @return string
-   */
-  public function getType()
-  {
-    return $this->type;
   }
 }
 

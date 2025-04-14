@@ -27,6 +27,10 @@ class CustomTargetType extends \Google\Model
    * @var string
    */
   public $createTime;
+  /**
+   * @var CustomTargetSkaffoldActions
+   */
+  public $customActions;
   protected $customActionsType = CustomTargetSkaffoldActions::class;
   protected $customActionsDataType = '';
   /**

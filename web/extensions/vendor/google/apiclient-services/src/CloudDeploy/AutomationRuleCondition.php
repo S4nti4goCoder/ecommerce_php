@@ -19,10 +19,12 @@ namespace Google\Service\CloudDeploy;
 
 class AutomationRuleCondition extends \Google\Model
 {
+  /**
+   * @var TargetsPresentCondition
+   */
+  public $targetsPresentCondition;
   protected $targetsPresentConditionType = TargetsPresentCondition::class;
   protected $targetsPresentConditionDataType = '';
-  protected $timedPromoteReleaseConditionType = TimedPromoteReleaseCondition::class;
-  protected $timedPromoteReleaseConditionDataType = '';
 
   /**
    * @param TargetsPresentCondition
@@ -37,20 +39,6 @@ class AutomationRuleCondition extends \Google\Model
   public function getTargetsPresentCondition()
   {
     return $this->targetsPresentCondition;
-  }
-  /**
-   * @param TimedPromoteReleaseCondition
-   */
-  public function setTimedPromoteReleaseCondition(TimedPromoteReleaseCondition $timedPromoteReleaseCondition)
-  {
-    $this->timedPromoteReleaseCondition = $timedPromoteReleaseCondition;
-  }
-  /**
-   * @return TimedPromoteReleaseCondition
-   */
-  public function getTimedPromoteReleaseCondition()
-  {
-    return $this->timedPromoteReleaseCondition;
   }
 }
 

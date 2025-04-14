@@ -20,22 +20,36 @@ namespace Google\Service\Dialogflow;
 class GoogleCloudDialogflowCxV3QueryResult extends \Google\Collection
 {
   protected $collection_key = 'webhookStatuses';
+  /**
+   * @var GoogleCloudDialogflowCxV3AdvancedSettings
+   */
+  public $advancedSettings;
   protected $advancedSettingsType = GoogleCloudDialogflowCxV3AdvancedSettings::class;
   protected $advancedSettingsDataType = '';
   /**
    * @var bool
    */
   public $allowAnswerFeedback;
+  /**
+   * @var GoogleCloudDialogflowCxV3Page
+   */
+  public $currentPage;
   protected $currentPageType = GoogleCloudDialogflowCxV3Page::class;
   protected $currentPageDataType = '';
-  protected $dataStoreConnectionSignalsType = GoogleCloudDialogflowCxV3DataStoreConnectionSignals::class;
-  protected $dataStoreConnectionSignalsDataType = '';
   /**
    * @var array[]
    */
   public $diagnosticInfo;
+  /**
+   * @var GoogleCloudDialogflowCxV3DtmfInput
+   */
+  public $dtmf;
   protected $dtmfType = GoogleCloudDialogflowCxV3DtmfInput::class;
   protected $dtmfDataType = '';
+  /**
+   * @var GoogleCloudDialogflowCxV3Intent
+   */
+  public $intent;
   protected $intentType = GoogleCloudDialogflowCxV3Intent::class;
   protected $intentDataType = '';
   /**
@@ -46,14 +60,26 @@ class GoogleCloudDialogflowCxV3QueryResult extends \Google\Collection
    * @var string
    */
   public $languageCode;
+  /**
+   * @var GoogleCloudDialogflowCxV3Match
+   */
+  public $match;
   protected $matchType = GoogleCloudDialogflowCxV3Match::class;
   protected $matchDataType = '';
   /**
    * @var array[]
    */
   public $parameters;
+  /**
+   * @var GoogleCloudDialogflowCxV3ResponseMessage[]
+   */
+  public $responseMessages;
   protected $responseMessagesType = GoogleCloudDialogflowCxV3ResponseMessage::class;
   protected $responseMessagesDataType = 'array';
+  /**
+   * @var GoogleCloudDialogflowCxV3SentimentAnalysisResult
+   */
+  public $sentimentAnalysisResult;
   protected $sentimentAnalysisResultType = GoogleCloudDialogflowCxV3SentimentAnalysisResult::class;
   protected $sentimentAnalysisResultDataType = '';
   /**
@@ -76,6 +102,10 @@ class GoogleCloudDialogflowCxV3QueryResult extends \Google\Collection
    * @var array[]
    */
   public $webhookPayloads;
+  /**
+   * @var GoogleRpcStatus[]
+   */
+  public $webhookStatuses;
   protected $webhookStatusesType = GoogleRpcStatus::class;
   protected $webhookStatusesDataType = 'array';
 
@@ -120,20 +150,6 @@ class GoogleCloudDialogflowCxV3QueryResult extends \Google\Collection
   public function getCurrentPage()
   {
     return $this->currentPage;
-  }
-  /**
-   * @param GoogleCloudDialogflowCxV3DataStoreConnectionSignals
-   */
-  public function setDataStoreConnectionSignals(GoogleCloudDialogflowCxV3DataStoreConnectionSignals $dataStoreConnectionSignals)
-  {
-    $this->dataStoreConnectionSignals = $dataStoreConnectionSignals;
-  }
-  /**
-   * @return GoogleCloudDialogflowCxV3DataStoreConnectionSignals
-   */
-  public function getDataStoreConnectionSignals()
-  {
-    return $this->dataStoreConnectionSignals;
   }
   /**
    * @param array[]

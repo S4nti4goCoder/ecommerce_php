@@ -36,7 +36,6 @@ class DomainAliases extends \Google\Service\Resource
    * @param string $customer Immutable ID of the Google Workspace account.
    * @param string $domainAliasName Name of domain alias to be retrieved.
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function delete($customer, $domainAliasName, $optParams = [])
   {
@@ -57,7 +56,6 @@ class DomainAliases extends \Google\Service\Resource
    * @param string $domainAliasName Name of domain alias to be retrieved.
    * @param array $optParams Optional parameters.
    * @return DomainAlias
-   * @throws \Google\Service\Exception
    */
   public function get($customer, $domainAliasName, $optParams = [])
   {
@@ -72,7 +70,6 @@ class DomainAliases extends \Google\Service\Resource
    * @param DomainAlias $postBody
    * @param array $optParams Optional parameters.
    * @return DomainAlias
-   * @throws \Google\Service\Exception
    */
   public function insert($customer, DomainAlias $postBody, $optParams = [])
   {
@@ -95,7 +92,6 @@ class DomainAliases extends \Google\Service\Resource
    * @opt_param string parentDomainName Name of the parent domain for which domain
    * aliases are to be fetched.
    * @return DomainAliasesModel
-   * @throws \Google\Service\Exception
    */
   public function listDomainAliases($customer, $optParams = [])
   {

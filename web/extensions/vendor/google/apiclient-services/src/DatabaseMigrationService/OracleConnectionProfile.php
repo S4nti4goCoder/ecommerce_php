@@ -23,14 +23,16 @@ class OracleConnectionProfile extends \Google\Model
    * @var string
    */
   public $databaseService;
+  /**
+   * @var ForwardSshTunnelConnectivity
+   */
+  public $forwardSshConnectivity;
   protected $forwardSshConnectivityType = ForwardSshTunnelConnectivity::class;
   protected $forwardSshConnectivityDataType = '';
   /**
    * @var string
    */
   public $host;
-  protected $oracleAsmConfigType = OracleAsmConfig::class;
-  protected $oracleAsmConfigDataType = '';
   /**
    * @var string
    */
@@ -43,10 +45,22 @@ class OracleConnectionProfile extends \Google\Model
    * @var int
    */
   public $port;
+  /**
+   * @var PrivateConnectivity
+   */
+  public $privateConnectivity;
   protected $privateConnectivityType = PrivateConnectivity::class;
   protected $privateConnectivityDataType = '';
+  /**
+   * @var SslConfig
+   */
+  public $ssl;
   protected $sslType = SslConfig::class;
   protected $sslDataType = '';
+  /**
+   * @var StaticServiceIpConnectivity
+   */
+  public $staticServiceIpConnectivity;
   protected $staticServiceIpConnectivityType = StaticServiceIpConnectivity::class;
   protected $staticServiceIpConnectivityDataType = '';
   /**
@@ -95,20 +109,6 @@ class OracleConnectionProfile extends \Google\Model
   public function getHost()
   {
     return $this->host;
-  }
-  /**
-   * @param OracleAsmConfig
-   */
-  public function setOracleAsmConfig(OracleAsmConfig $oracleAsmConfig)
-  {
-    $this->oracleAsmConfig = $oracleAsmConfig;
-  }
-  /**
-   * @return OracleAsmConfig
-   */
-  public function getOracleAsmConfig()
-  {
-    return $this->oracleAsmConfig;
   }
   /**
    * @param string

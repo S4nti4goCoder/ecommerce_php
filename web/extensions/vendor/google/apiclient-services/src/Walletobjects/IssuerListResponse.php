@@ -20,6 +20,10 @@ namespace Google\Service\Walletobjects;
 class IssuerListResponse extends \Google\Collection
 {
   protected $collection_key = 'resources';
+  /**
+   * @var Issuer[]
+   */
+  public $resources;
   protected $resourcesType = Issuer::class;
   protected $resourcesDataType = 'array';
 

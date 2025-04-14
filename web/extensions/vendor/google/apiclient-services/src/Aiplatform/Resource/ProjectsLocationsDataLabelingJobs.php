@@ -42,7 +42,6 @@ class ProjectsLocationsDataLabelingJobs extends \Google\Service\Resource
    * @param GoogleCloudAiplatformV1CancelDataLabelingJobRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty
-   * @throws \Google\Service\Exception
    */
   public function cancel($name, GoogleCloudAiplatformV1CancelDataLabelingJobRequest $postBody, $optParams = [])
   {
@@ -58,7 +57,6 @@ class ProjectsLocationsDataLabelingJobs extends \Google\Service\Resource
    * @param GoogleCloudAiplatformV1DataLabelingJob $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudAiplatformV1DataLabelingJob
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudAiplatformV1DataLabelingJob $postBody, $optParams = [])
   {
@@ -74,7 +72,6 @@ class ProjectsLocationsDataLabelingJobs extends \Google\Service\Resource
    * ing_job}`
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -89,7 +86,6 @@ class ProjectsLocationsDataLabelingJobs extends \Google\Service\Resource
    * cts/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
    * @param array $optParams Optional parameters.
    * @return GoogleCloudAiplatformV1DataLabelingJob
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -125,7 +121,6 @@ class ProjectsLocationsDataLabelingJobs extends \Google\Service\Resource
    * `paths: "name"`. The "name" here is a field in DataLabelingJob. If this field
    * is not set, all fields of the DataLabelingJob are returned.
    * @return GoogleCloudAiplatformV1ListDataLabelingJobsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsDataLabelingJobs($parent, $optParams = [])
   {

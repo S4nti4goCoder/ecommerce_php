@@ -24,10 +24,6 @@ class GcsData extends \Google\Model
    */
   public $bucketName;
   /**
-   * @var bool
-   */
-  public $managedFolderTransferEnabled;
-  /**
    * @var string
    */
   public $path;
@@ -45,20 +41,6 @@ class GcsData extends \Google\Model
   public function getBucketName()
   {
     return $this->bucketName;
-  }
-  /**
-   * @param bool
-   */
-  public function setManagedFolderTransferEnabled($managedFolderTransferEnabled)
-  {
-    $this->managedFolderTransferEnabled = $managedFolderTransferEnabled;
-  }
-  /**
-   * @return bool
-   */
-  public function getManagedFolderTransferEnabled()
-  {
-    return $this->managedFolderTransferEnabled;
   }
   /**
    * @param string

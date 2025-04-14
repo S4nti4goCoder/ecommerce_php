@@ -39,7 +39,6 @@ class Snapshots extends \Google\Service\Resource
    * @opt_param string language The preferred language to use for strings returned
    * by this method.
    * @return Snapshot
-   * @throws \Google\Service\Exception
    */
   public function get($snapshotId, $optParams = [])
   {
@@ -62,7 +61,6 @@ class Snapshots extends \Google\Service\Resource
    * snapshot resources returned may be less than the specified `maxResults`.
    * @opt_param string pageToken The token returned by the previous request.
    * @return SnapshotListResponse
-   * @throws \Google\Service\Exception
    */
   public function listSnapshots($playerId, $optParams = [])
   {

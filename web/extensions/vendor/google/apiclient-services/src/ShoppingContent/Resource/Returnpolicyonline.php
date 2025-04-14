@@ -38,7 +38,6 @@ class Returnpolicyonline extends \Google\Service\Resource
    * @param ReturnPolicyOnlineModel $postBody
    * @param array $optParams Optional parameters.
    * @return ReturnPolicyOnlineModel
-   * @throws \Google\Service\Exception
    */
   public function create($merchantId, ReturnPolicyOnlineModel $postBody, $optParams = [])
   {
@@ -54,7 +53,6 @@ class Returnpolicyonline extends \Google\Service\Resource
    * @param string $returnPolicyId Required. The id of the return policy to
    * delete.
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function delete($merchantId, $returnPolicyId, $optParams = [])
   {
@@ -71,7 +69,6 @@ class Returnpolicyonline extends \Google\Service\Resource
    * retrieve.
    * @param array $optParams Optional parameters.
    * @return ReturnPolicyOnlineModel
-   * @throws \Google\Service\Exception
    */
   public function get($merchantId, $returnPolicyId, $optParams = [])
   {
@@ -87,7 +84,6 @@ class Returnpolicyonline extends \Google\Service\Resource
    * retrieve the return policy online object.
    * @param array $optParams Optional parameters.
    * @return ListReturnPolicyOnlineResponse
-   * @throws \Google\Service\Exception
    */
   public function listReturnpolicyonline($merchantId, $optParams = [])
   {
@@ -105,7 +101,6 @@ class Returnpolicyonline extends \Google\Service\Resource
    * @param ReturnPolicyOnlineModel $postBody
    * @param array $optParams Optional parameters.
    * @return ReturnPolicyOnlineModel
-   * @throws \Google\Service\Exception
    */
   public function patch($merchantId, $returnPolicyId, ReturnPolicyOnlineModel $postBody, $optParams = [])
   {

@@ -62,7 +62,6 @@ class QuerySources extends \Google\Service\Resource
    * correctly interpret date and time queries. If this field is not specified,
    * the default time zone (UTC) is used.
    * @return ListQuerySourcesResponse
-   * @throws \Google\Service\Exception
    */
   public function listQuerySources($optParams = [])
   {

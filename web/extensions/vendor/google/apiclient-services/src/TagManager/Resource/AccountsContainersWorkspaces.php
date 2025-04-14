@@ -44,7 +44,6 @@ class AccountsContainersWorkspaces extends \Google\Service\Resource
    * @param Workspace $postBody
    * @param array $optParams Optional parameters.
    * @return Workspace
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Workspace $postBody, $optParams = [])
   {
@@ -62,7 +61,6 @@ class AccountsContainersWorkspaces extends \Google\Service\Resource
    * @param CreateContainerVersionRequestVersionOptions $postBody
    * @param array $optParams Optional parameters.
    * @return CreateContainerVersionResponse
-   * @throws \Google\Service\Exception
    */
   public function create_version($path, CreateContainerVersionRequestVersionOptions $postBody, $optParams = [])
   {
@@ -76,7 +74,6 @@ class AccountsContainersWorkspaces extends \Google\Service\Resource
    * @param string $path GTM Workspace's API relative path. Example:
    * accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function delete($path, $optParams = [])
   {
@@ -91,7 +88,6 @@ class AccountsContainersWorkspaces extends \Google\Service\Resource
    * accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
    * @param array $optParams Optional parameters.
    * @return Workspace
-   * @throws \Google\Service\Exception
    */
   public function get($path, $optParams = [])
   {
@@ -107,7 +103,6 @@ class AccountsContainersWorkspaces extends \Google\Service\Resource
    * accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
    * @param array $optParams Optional parameters.
    * @return GetWorkspaceStatusResponse
-   * @throws \Google\Service\Exception
    */
   public function getStatus($path, $optParams = [])
   {
@@ -126,7 +121,6 @@ class AccountsContainersWorkspaces extends \Google\Service\Resource
    * @opt_param string pageToken Continuation token for fetching the next page of
    * results.
    * @return ListWorkspacesResponse
-   * @throws \Google\Service\Exception
    */
   public function listAccountsContainersWorkspaces($parent, $optParams = [])
   {
@@ -142,7 +136,6 @@ class AccountsContainersWorkspaces extends \Google\Service\Resource
    * accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
    * @param array $optParams Optional parameters.
    * @return QuickPreviewResponse
-   * @throws \Google\Service\Exception
    */
   public function quick_preview($path, $optParams = [])
   {
@@ -161,7 +154,6 @@ class AccountsContainersWorkspaces extends \Google\Service\Resource
    *
    * @opt_param string fingerprint When provided, this fingerprint must match the
    * fingerprint of the entity_in_workspace in the merge conflict.
-   * @throws \Google\Service\Exception
    */
   public function resolve_conflict($path, Entity $postBody, $optParams = [])
   {
@@ -178,7 +170,6 @@ class AccountsContainersWorkspaces extends \Google\Service\Resource
    * accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
    * @param array $optParams Optional parameters.
    * @return SyncWorkspaceResponse
-   * @throws \Google\Service\Exception
    */
   public function sync($path, $optParams = [])
   {
@@ -197,7 +188,6 @@ class AccountsContainersWorkspaces extends \Google\Service\Resource
    * @opt_param string fingerprint When provided, this fingerprint must match the
    * fingerprint of the workspace in storage.
    * @return Workspace
-   * @throws \Google\Service\Exception
    */
   public function update($path, Workspace $postBody, $optParams = [])
   {

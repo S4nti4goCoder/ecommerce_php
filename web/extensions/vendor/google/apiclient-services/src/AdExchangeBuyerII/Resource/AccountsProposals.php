@@ -50,7 +50,6 @@ class AccountsProposals extends \Google\Service\Resource
    * @param AcceptProposalRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Proposal
-   * @throws \Google\Service\Exception
    */
   public function accept($accountId, $proposalId, AcceptProposalRequest $postBody, $optParams = [])
   {
@@ -68,7 +67,6 @@ class AccountsProposals extends \Google\Service\Resource
    * @param AddNoteRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Note
-   * @throws \Google\Service\Exception
    */
   public function addNote($accountId, $proposalId, AddNoteRequest $postBody, $optParams = [])
   {
@@ -86,7 +84,6 @@ class AccountsProposals extends \Google\Service\Resource
    * @param CancelNegotiationRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Proposal
-   * @throws \Google\Service\Exception
    */
   public function cancelNegotiation($accountId, $proposalId, CancelNegotiationRequest $postBody, $optParams = [])
   {
@@ -111,7 +108,6 @@ class AccountsProposals extends \Google\Service\Resource
    * @param CompleteSetupRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Proposal
-   * @throws \Google\Service\Exception
    */
   public function completeSetup($accountId, $proposalId, CompleteSetupRequest $postBody, $optParams = [])
   {
@@ -127,7 +123,6 @@ class AccountsProposals extends \Google\Service\Resource
    * @param Proposal $postBody
    * @param array $optParams Optional parameters.
    * @return Proposal
-   * @throws \Google\Service\Exception
    */
   public function create($accountId, Proposal $postBody, $optParams = [])
   {
@@ -143,7 +138,6 @@ class AccountsProposals extends \Google\Service\Resource
    * @param string $proposalId The unique ID of the proposal
    * @param array $optParams Optional parameters.
    * @return Proposal
-   * @throws \Google\Service\Exception
    */
   public function get($accountId, $proposalId, $optParams = [])
   {
@@ -173,7 +167,6 @@ class AccountsProposals extends \Google\Service\Resource
    * @opt_param string pageToken The page token as returned from
    * ListProposalsResponse.
    * @return ListProposalsResponse
-   * @throws \Google\Service\Exception
    */
   public function listAccountsProposals($accountId, $optParams = [])
   {
@@ -193,7 +186,6 @@ class AccountsProposals extends \Google\Service\Resource
    * @param PauseProposalRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Proposal
-   * @throws \Google\Service\Exception
    */
   public function pause($accountId, $proposalId, PauseProposalRequest $postBody, $optParams = [])
   {
@@ -214,7 +206,6 @@ class AccountsProposals extends \Google\Service\Resource
    * @param ResumeProposalRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Proposal
-   * @throws \Google\Service\Exception
    */
   public function resume($accountId, $proposalId, ResumeProposalRequest $postBody, $optParams = [])
   {
@@ -239,7 +230,6 @@ class AccountsProposals extends \Google\Service\Resource
    * @param Proposal $postBody
    * @param array $optParams Optional parameters.
    * @return Proposal
-   * @throws \Google\Service\Exception
    */
   public function update($accountId, $proposalId, Proposal $postBody, $optParams = [])
   {

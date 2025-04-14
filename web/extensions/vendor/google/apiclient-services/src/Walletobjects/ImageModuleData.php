@@ -23,6 +23,10 @@ class ImageModuleData extends \Google\Model
    * @var string
    */
   public $id;
+  /**
+   * @var Image
+   */
+  public $mainImage;
   protected $mainImageType = Image::class;
   protected $mainImageDataType = '';
 

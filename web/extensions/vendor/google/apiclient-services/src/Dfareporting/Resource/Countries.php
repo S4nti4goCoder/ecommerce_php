@@ -37,7 +37,6 @@ class Countries extends \Google\Service\Resource
    * @param string $dartId Country DART ID.
    * @param array $optParams Optional parameters.
    * @return Country
-   * @throws \Google\Service\Exception
    */
   public function get($profileId, $dartId, $optParams = [])
   {
@@ -51,7 +50,6 @@ class Countries extends \Google\Service\Resource
    * @param string $profileId User profile ID associated with this request.
    * @param array $optParams Optional parameters.
    * @return CountriesListResponse
-   * @throws \Google\Service\Exception
    */
   public function listCountries($profileId, $optParams = [])
   {

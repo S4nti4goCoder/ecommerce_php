@@ -39,7 +39,6 @@ class OSConfig extends \Google\Service
   const CLOUD_PLATFORM =
       "https://www.googleapis.com/auth/cloud-platform";
 
-  public $projects_locations_global;
   public $projects_locations_instances_inventories;
   public $projects_locations_instances_osPolicyAssignments_reports;
   public $projects_locations_instances_vulnerabilityReports;
@@ -48,7 +47,6 @@ class OSConfig extends \Google\Service
   public $projects_patchDeployments;
   public $projects_patchJobs;
   public $projects_patchJobs_instanceDetails;
-  public $rootUrlTemplate;
 
   /**
    * Constructs the internal representation of the OSConfig service.
@@ -61,46 +59,11 @@ class OSConfig extends \Google\Service
   {
     parent::__construct($clientOrConfig);
     $this->rootUrl = $rootUrl ?: 'https://osconfig.googleapis.com/';
-    $this->rootUrlTemplate = $rootUrl ?: 'https://osconfig.UNIVERSE_DOMAIN/';
     $this->servicePath = '';
     $this->batchPath = 'batch';
     $this->version = 'v1';
     $this->serviceName = 'osconfig';
 
-    $this->projects_locations_global = new OSConfig\Resource\ProjectsLocationsOsconfigGlobal(
-        $this,
-        $this->serviceName,
-        'global',
-        [
-          'methods' => [
-            'getProjectFeatureSettings' => [
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'updateProjectFeatureSettings' => [
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'PATCH',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'updateMask' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],
-          ]
-        ]
-    );
     $this->projects_locations_instances_inventories = new OSConfig\Resource\ProjectsLocationsInstancesInventories(
         $this,
         $this->serviceName,
@@ -254,10 +217,6 @@ class OSConfig extends \Google\Service
                   'location' => 'query',
                   'type' => 'string',
                 ],
-                'requestId' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
               ],
             ],'delete' => [
               'path' => 'v1/{+name}',
@@ -267,10 +226,6 @@ class OSConfig extends \Google\Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ],
-                'requestId' => [
-                  'location' => 'query',
-                  'type' => 'string',
                 ],
               ],
             ],'get' => [
@@ -327,14 +282,6 @@ class OSConfig extends \Google\Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ],
-                'allowMissing' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
-                'requestId' => [
-                  'location' => 'query',
-                  'type' => 'string',
                 ],
                 'updateMask' => [
                   'location' => 'query',

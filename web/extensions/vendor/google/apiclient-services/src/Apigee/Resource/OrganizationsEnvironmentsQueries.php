@@ -44,7 +44,6 @@ class OrganizationsEnvironmentsQueries extends \Google\Service\Resource
    * @param GoogleCloudApigeeV1Query $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudApigeeV1AsyncQuery
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudApigeeV1Query $postBody, $optParams = [])
   {
@@ -61,7 +60,6 @@ class OrganizationsEnvironmentsQueries extends \Google\Service\Resource
    * of the form `organizations/{org}/environments/{env}/queries/{queryId}`.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudApigeeV1AsyncQuery
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -82,7 +80,6 @@ class OrganizationsEnvironmentsQueries extends \Google\Service\Resource
    * `organizations/{org}/environments/{env}/queries/{queryId}/result`.
    * @param array $optParams Optional parameters.
    * @return GoogleApiHttpBody
-   * @throws \Google\Service\Exception
    */
   public function getResult($name, $optParams = [])
   {
@@ -100,7 +97,6 @@ class OrganizationsEnvironmentsQueries extends \Google\Service\Resource
    * `organizations/{org}/environments/{env}/queries/{queryId}/resulturl`.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudApigeeV1GetAsyncQueryResultUrlResponse
-   * @throws \Google\Service\Exception
    */
   public function getResulturl($name, $optParams = [])
   {
@@ -130,7 +126,6 @@ class OrganizationsEnvironmentsQueries extends \Google\Service\Resource
    * that created before this date time. Time must be in ISO date-time format like
    * '2011-12-03T10:16:30Z'.
    * @return GoogleCloudApigeeV1ListAsyncQueriesResponse
-   * @throws \Google\Service\Exception
    */
   public function listOrganizationsEnvironmentsQueries($parent, $optParams = [])
   {

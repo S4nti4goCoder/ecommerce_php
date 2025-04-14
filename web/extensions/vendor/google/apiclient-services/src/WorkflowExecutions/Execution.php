@@ -30,25 +30,17 @@ class Execution extends \Google\Model
   /**
    * @var string
    */
-  public $createTime;
-  /**
-   * @var bool
-   */
-  public $disableConcurrencyQuotaOverflowBuffering;
-  /**
-   * @var string
-   */
   public $duration;
   /**
    * @var string
    */
   public $endTime;
+  /**
+   * @var Error
+   */
+  public $error;
   protected $errorType = Error::class;
   protected $errorDataType = '';
-  /**
-   * @var string
-   */
-  public $executionHistoryLevel;
   /**
    * @var string[]
    */
@@ -69,8 +61,16 @@ class Execution extends \Google\Model
    * @var string
    */
   public $state;
+  /**
+   * @var StateError
+   */
+  public $stateError;
   protected $stateErrorType = StateError::class;
   protected $stateErrorDataType = '';
+  /**
+   * @var Status
+   */
+  public $status;
   protected $statusType = Status::class;
   protected $statusDataType = '';
   /**
@@ -105,34 +105,6 @@ class Execution extends \Google\Model
   public function getCallLogLevel()
   {
     return $this->callLogLevel;
-  }
-  /**
-   * @param string
-   */
-  public function setCreateTime($createTime)
-  {
-    $this->createTime = $createTime;
-  }
-  /**
-   * @return string
-   */
-  public function getCreateTime()
-  {
-    return $this->createTime;
-  }
-  /**
-   * @param bool
-   */
-  public function setDisableConcurrencyQuotaOverflowBuffering($disableConcurrencyQuotaOverflowBuffering)
-  {
-    $this->disableConcurrencyQuotaOverflowBuffering = $disableConcurrencyQuotaOverflowBuffering;
-  }
-  /**
-   * @return bool
-   */
-  public function getDisableConcurrencyQuotaOverflowBuffering()
-  {
-    return $this->disableConcurrencyQuotaOverflowBuffering;
   }
   /**
    * @param string
@@ -175,20 +147,6 @@ class Execution extends \Google\Model
   public function getError()
   {
     return $this->error;
-  }
-  /**
-   * @param string
-   */
-  public function setExecutionHistoryLevel($executionHistoryLevel)
-  {
-    $this->executionHistoryLevel = $executionHistoryLevel;
-  }
-  /**
-   * @return string
-   */
-  public function getExecutionHistoryLevel()
-  {
-    return $this->executionHistoryLevel;
   }
   /**
    * @param string[]

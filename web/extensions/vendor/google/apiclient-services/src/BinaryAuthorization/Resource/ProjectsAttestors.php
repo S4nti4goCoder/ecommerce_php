@@ -49,7 +49,6 @@ class ProjectsAttestors extends \Google\Service\Resource
    *
    * @opt_param string attestorId Required. The attestors ID.
    * @return Attestor
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Attestor $postBody, $optParams = [])
   {
@@ -65,7 +64,6 @@ class ProjectsAttestors extends \Google\Service\Resource
    * format `projects/attestors`.
    * @param array $optParams Optional parameters.
    * @return BinaryauthorizationEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -81,7 +79,6 @@ class ProjectsAttestors extends \Google\Service\Resource
    * format `projects/attestors`.
    * @param array $optParams Optional parameters.
    * @return Attestor
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -112,7 +109,6 @@ class ProjectsAttestors extends \Google\Service\Resource
    * documentation](https://cloud.google.com/iam/help/conditions/resource-
    * policies).
    * @return IamPolicy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, $optParams = [])
   {
@@ -136,7 +132,6 @@ class ProjectsAttestors extends \Google\Service\Resource
    * ListAttestorsResponse.next_page_token returned from the previous call to the
    * `ListAttestors` method.
    * @return ListAttestorsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsAttestors($parent, $optParams = [])
   {
@@ -156,7 +151,6 @@ class ProjectsAttestors extends \Google\Service\Resource
    * @param SetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return IamPolicy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, SetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -179,7 +173,6 @@ class ProjectsAttestors extends \Google\Service\Resource
    * @param TestIamPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestIamPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, TestIamPermissionsRequest $postBody, $optParams = [])
   {
@@ -196,7 +189,6 @@ class ProjectsAttestors extends \Google\Service\Resource
    * @param Attestor $postBody
    * @param array $optParams Optional parameters.
    * @return Attestor
-   * @throws \Google\Service\Exception
    */
   public function update($name, Attestor $postBody, $optParams = [])
   {
@@ -213,7 +205,6 @@ class ProjectsAttestors extends \Google\Service\Resource
    * @param ValidateAttestationOccurrenceRequest $postBody
    * @param array $optParams Optional parameters.
    * @return ValidateAttestationOccurrenceResponse
-   * @throws \Google\Service\Exception
    */
   public function validateAttestationOccurrence($attestor, ValidateAttestationOccurrenceRequest $postBody, $optParams = [])
   {

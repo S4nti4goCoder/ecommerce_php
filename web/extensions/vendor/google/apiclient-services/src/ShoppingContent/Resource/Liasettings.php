@@ -46,7 +46,6 @@ class Liasettings extends \Google\Service\Resource
    * @param LiasettingsCustomBatchRequest $postBody
    * @param array $optParams Optional parameters.
    * @return LiasettingsCustomBatchResponse
-   * @throws \Google\Service\Exception
    */
   public function custombatch(LiasettingsCustomBatchRequest $postBody, $optParams = [])
   {
@@ -64,7 +63,6 @@ class Liasettings extends \Google\Service\Resource
    * settings.
    * @param array $optParams Optional parameters.
    * @return LiaSettingsModel
-   * @throws \Google\Service\Exception
    */
   public function get($merchantId, $accountId, $optParams = [])
   {
@@ -83,7 +81,6 @@ class Liasettings extends \Google\Service\Resource
    * accessible Business Profiles.
    * @param array $optParams Optional parameters.
    * @return LiasettingsGetAccessibleGmbAccountsResponse
-   * @throws \Google\Service\Exception
    */
   public function getaccessiblegmbaccounts($merchantId, $accountId, $optParams = [])
   {
@@ -103,7 +100,6 @@ class Liasettings extends \Google\Service\Resource
    * the response, used for paging.
    * @opt_param string pageToken The token returned by the previous request.
    * @return LiasettingsListResponse
-   * @throws \Google\Service\Exception
    */
   public function listLiasettings($merchantId, $optParams = [])
   {
@@ -117,7 +113,6 @@ class Liasettings extends \Google\Service\Resource
    *
    * @param array $optParams Optional parameters.
    * @return LiasettingsListPosDataProvidersResponse
-   * @throws \Google\Service\Exception
    */
   public function listposdataproviders($optParams = [])
   {
@@ -137,7 +132,6 @@ class Liasettings extends \Google\Service\Resource
    * @param string $gmbEmail The email of the Business Profile.
    * @param array $optParams Optional parameters.
    * @return LiasettingsRequestGmbAccessResponse
-   * @throws \Google\Service\Exception
    */
   public function requestgmbaccess($merchantId, $accountId, $gmbEmail, $optParams = [])
   {
@@ -158,7 +152,6 @@ class Liasettings extends \Google\Service\Resource
    * requested.
    * @param array $optParams Optional parameters.
    * @return LiasettingsRequestInventoryVerificationResponse
-   * @throws \Google\Service\Exception
    */
   public function requestinventoryverification($merchantId, $accountId, $country, $optParams = [])
   {
@@ -183,7 +176,6 @@ class Liasettings extends \Google\Service\Resource
    * @param string $contactEmail The email of the inventory verification contact.
    * @param array $optParams Optional parameters.
    * @return LiasettingsSetInventoryVerificationContactResponse
-   * @throws \Google\Service\Exception
    */
   public function setinventoryverificationcontact($merchantId, $accountId, $country, $language, $contactName, $contactEmail, $optParams = [])
   {
@@ -216,7 +208,6 @@ class Liasettings extends \Google\Service\Resource
    * @opt_param string pickupTypes The Pickup types for this country. Acceptable
    * values are: - "`pickupToday`" - "`pickupLater`"
    * @return LiaOmnichannelExperience
-   * @throws \Google\Service\Exception
    */
   public function setomnichannelexperience($merchantId, $accountId, $optParams = [])
   {
@@ -241,7 +232,6 @@ class Liasettings extends \Google\Service\Resource
    * @opt_param string posExternalAccountId The account ID by which this merchant
    * is known to the POS data provider.
    * @return LiasettingsSetPosDataProviderResponse
-   * @throws \Google\Service\Exception
    */
   public function setposdataprovider($merchantId, $accountId, $country, $optParams = [])
   {
@@ -261,7 +251,6 @@ class Liasettings extends \Google\Service\Resource
    * @param LiaSettingsModel $postBody
    * @param array $optParams Optional parameters.
    * @return LiaSettingsModel
-   * @throws \Google\Service\Exception
    */
   public function update($merchantId, $accountId, LiaSettingsModel $postBody, $optParams = [])
   {

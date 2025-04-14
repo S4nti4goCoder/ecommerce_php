@@ -19,17 +19,17 @@ namespace Google\Service\CloudBuild;
 
 class ListRepositoriesResponse extends \Google\Collection
 {
-  protected $collection_key = 'unreachable';
+  protected $collection_key = 'repositories';
   /**
    * @var string
    */
   public $nextPageToken;
+  /**
+   * @var Repository[]
+   */
+  public $repositories;
   protected $repositoriesType = Repository::class;
   protected $repositoriesDataType = 'array';
-  /**
-   * @var string[]
-   */
-  public $unreachable;
 
   /**
    * @param string
@@ -58,20 +58,6 @@ class ListRepositoriesResponse extends \Google\Collection
   public function getRepositories()
   {
     return $this->repositories;
-  }
-  /**
-   * @param string[]
-   */
-  public function setUnreachable($unreachable)
-  {
-    $this->unreachable = $unreachable;
-  }
-  /**
-   * @return string[]
-   */
-  public function getUnreachable()
-  {
-    return $this->unreachable;
   }
 }
 

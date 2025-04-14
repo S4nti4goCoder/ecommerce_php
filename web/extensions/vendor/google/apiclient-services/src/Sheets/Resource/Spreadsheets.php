@@ -50,7 +50,6 @@ class Spreadsheets extends \Google\Service\Resource
    * @param BatchUpdateSpreadsheetRequest $postBody
    * @param array $optParams Optional parameters.
    * @return BatchUpdateSpreadsheetResponse
-   * @throws \Google\Service\Exception
    */
   public function batchUpdate($spreadsheetId, BatchUpdateSpreadsheetRequest $postBody, $optParams = [])
   {
@@ -65,7 +64,6 @@ class Spreadsheets extends \Google\Service\Resource
    * @param Spreadsheet $postBody
    * @param array $optParams Optional parameters.
    * @return Spreadsheet
-   * @throws \Google\Service\Exception
    */
   public function create(Spreadsheet $postBody, $optParams = [])
   {
@@ -98,7 +96,6 @@ class Spreadsheets extends \Google\Service\Resource
    * parameter is ignored if a field mask was set in the request.
    * @opt_param string ranges The ranges to retrieve from the spreadsheet.
    * @return Spreadsheet
-   * @throws \Google\Service\Exception
    */
   public function get($spreadsheetId, $optParams = [])
   {
@@ -125,7 +122,6 @@ class Spreadsheets extends \Google\Service\Resource
    * @param GetSpreadsheetByDataFilterRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Spreadsheet
-   * @throws \Google\Service\Exception
    */
   public function getByDataFilter($spreadsheetId, GetSpreadsheetByDataFilterRequest $postBody, $optParams = [])
   {

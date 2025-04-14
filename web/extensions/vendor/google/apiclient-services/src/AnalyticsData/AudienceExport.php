@@ -36,6 +36,10 @@ class AudienceExport extends \Google\Collection
    * @var int
    */
   public $creationQuotaTokensCharged;
+  /**
+   * @var V1betaAudienceDimension[]
+   */
+  public $dimensions;
   protected $dimensionsType = V1betaAudienceDimension::class;
   protected $dimensionsDataType = 'array';
   /**

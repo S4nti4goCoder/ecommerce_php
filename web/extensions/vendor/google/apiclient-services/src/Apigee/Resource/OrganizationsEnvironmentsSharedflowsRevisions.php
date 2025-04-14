@@ -56,7 +56,6 @@ class OrganizationsEnvironmentsSharedflowsRevisions extends \Google\Service\Reso
    * what permissions it has. The format must be
    * `{ACCOUNT_ID}@{PROJECT}.iam.gserviceaccount.com`.
    * @return GoogleCloudApigeeV1Deployment
-   * @throws \Google\Service\Exception
    */
   public function deploy($name, $optParams = [])
   {
@@ -73,7 +72,6 @@ class OrganizationsEnvironmentsSharedflowsRevisions extends \Google\Service\Reso
    * sharedflows/{sharedflow}/revisions/{rev}`
    * @param array $optParams Optional parameters.
    * @return GoogleCloudApigeeV1Deployment
-   * @throws \Google\Service\Exception
    */
   public function getDeployments($name, $optParams = [])
   {
@@ -94,7 +92,6 @@ class OrganizationsEnvironmentsSharedflowsRevisions extends \Google\Service\Reso
    * aredflow}/revisions/{rev}`
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty
-   * @throws \Google\Service\Exception
    */
   public function undeploy($name, $optParams = [])
   {

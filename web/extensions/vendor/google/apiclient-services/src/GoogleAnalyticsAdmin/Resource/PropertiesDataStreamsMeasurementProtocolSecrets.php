@@ -39,7 +39,6 @@ class PropertiesDataStreamsMeasurementProtocolSecrets extends \Google\Service\Re
    * @param GoogleAnalyticsAdminV1betaMeasurementProtocolSecret $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleAnalyticsAdminV1betaMeasurementProtocolSecret
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleAnalyticsAdminV1betaMeasurementProtocolSecret $postBody, $optParams = [])
   {
@@ -55,7 +54,6 @@ class PropertiesDataStreamsMeasurementProtocolSecrets extends \Google\Service\Re
    * tocolSecrets/{measurementProtocolSecret}
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -64,7 +62,7 @@ class PropertiesDataStreamsMeasurementProtocolSecrets extends \Google\Service\Re
     return $this->call('delete', [$params], GoogleProtobufEmpty::class);
   }
   /**
-   * Lookup for a single MeasurementProtocolSecret.
+   * Lookup for a single "GA4" MeasurementProtocolSecret.
    * (measurementProtocolSecrets.get)
    *
    * @param string $name Required. The name of the measurement protocol secret to
@@ -72,7 +70,6 @@ class PropertiesDataStreamsMeasurementProtocolSecrets extends \Google\Service\Re
    * tocolSecrets/{measurementProtocolSecret}
    * @param array $optParams Optional parameters.
    * @return GoogleAnalyticsAdminV1betaMeasurementProtocolSecret
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -99,7 +96,6 @@ class PropertiesDataStreamsMeasurementProtocolSecrets extends \Google\Service\Re
    * `ListMeasurementProtocolSecrets` must match the call that provided the page
    * token.
    * @return GoogleAnalyticsAdminV1betaListMeasurementProtocolSecretsResponse
-   * @throws \Google\Service\Exception
    */
   public function listPropertiesDataStreamsMeasurementProtocolSecrets($parent, $optParams = [])
   {
@@ -119,7 +115,6 @@ class PropertiesDataStreamsMeasurementProtocolSecrets extends \Google\Service\Re
    * @opt_param string updateMask Required. The list of fields to be updated.
    * Omitted fields will not be updated.
    * @return GoogleAnalyticsAdminV1betaMeasurementProtocolSecret
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleAnalyticsAdminV1betaMeasurementProtocolSecret $postBody, $optParams = [])
   {

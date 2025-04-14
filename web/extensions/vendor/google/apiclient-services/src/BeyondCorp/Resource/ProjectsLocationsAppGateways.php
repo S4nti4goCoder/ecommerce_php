@@ -24,7 +24,6 @@ use Google\Service\BeyondCorp\GoogleIamV1TestIamPermissionsRequest;
 use Google\Service\BeyondCorp\GoogleIamV1TestIamPermissionsResponse;
 use Google\Service\BeyondCorp\GoogleLongrunningOperation;
 use Google\Service\BeyondCorp\ListAppGatewaysResponse;
-use Google\Service\BeyondCorp\ShouldThrottleResponse;
 
 /**
  * The "appGateways" collection of methods.
@@ -62,7 +61,6 @@ class ProjectsLocationsAppGateways extends \Google\Service\Resource
    * @opt_param bool validateOnly Optional. If set, validates request by executing
    * a dry-run which would not alter the resource in any way.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, AppGateway $postBody, $optParams = [])
   {
@@ -91,7 +89,6 @@ class ProjectsLocationsAppGateways extends \Google\Service\Resource
    * @opt_param bool validateOnly Optional. If set, validates request by executing
    * a dry-run which would not alter the resource in any way.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -106,7 +103,6 @@ class ProjectsLocationsAppGateways extends \Google\Service\Resource
    * `projects/{project_id}/locations/{location_id}/appGateways/{app_gateway_id}`
    * @param array $optParams Optional parameters.
    * @return AppGateway
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -137,7 +133,6 @@ class ProjectsLocationsAppGateways extends \Google\Service\Resource
    * documentation](https://cloud.google.com/iam/help/conditions/resource-
    * policies).
    * @return GoogleIamV1Policy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, $optParams = [])
   {
@@ -167,7 +162,6 @@ class ProjectsLocationsAppGateways extends \Google\Service\Resource
    * @opt_param string pageToken Optional. The next_page_token value returned from
    * a previous ListAppGatewaysRequest, if any.
    * @return ListAppGatewaysResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsAppGateways($parent, $optParams = [])
   {
@@ -187,32 +181,12 @@ class ProjectsLocationsAppGateways extends \Google\Service\Resource
    * @param GoogleIamV1SetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleIamV1Policy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, GoogleIamV1SetIamPolicyRequest $postBody, $optParams = [])
   {
     $params = ['resource' => $resource, 'postBody' => $postBody];
     $params = array_merge($params, $optParams);
     return $this->call('setIamPolicy', [$params], GoogleIamV1Policy::class);
-  }
-  /**
-   * Calls the Bouncer method ShouldThrottle to check if a request should be
-   * throttled. (appGateways.shouldThrottle)
-   *
-   * @param string $name Required. Name of the resource
-   * @param array $optParams Optional parameters.
-   *
-   * @opt_param int port Optional. The port that is being throttled
-   * @opt_param string requestedAmount Optional. The current throughput through
-   * the port (mbps)
-   * @return ShouldThrottleResponse
-   * @throws \Google\Service\Exception
-   */
-  public function shouldThrottle($name, $optParams = [])
-  {
-    $params = ['name' => $name];
-    $params = array_merge($params, $optParams);
-    return $this->call('shouldThrottle', [$params], ShouldThrottleResponse::class);
   }
   /**
    * Returns permissions that a caller has on the specified resource. If the
@@ -229,7 +203,6 @@ class ProjectsLocationsAppGateways extends \Google\Service\Resource
    * @param GoogleIamV1TestIamPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleIamV1TestIamPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, GoogleIamV1TestIamPermissionsRequest $postBody, $optParams = [])
   {

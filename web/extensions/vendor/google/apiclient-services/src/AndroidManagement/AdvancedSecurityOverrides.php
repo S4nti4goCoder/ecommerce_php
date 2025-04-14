@@ -27,19 +27,11 @@ class AdvancedSecurityOverrides extends \Google\Collection
   /**
    * @var string
    */
-  public $contentProtectionPolicy;
-  /**
-   * @var string
-   */
   public $developerSettings;
   /**
    * @var string
    */
   public $googlePlayProtectVerifyApps;
-  /**
-   * @var string
-   */
-  public $mtePolicy;
   /**
    * @var string[]
    */
@@ -62,20 +54,6 @@ class AdvancedSecurityOverrides extends \Google\Collection
   public function getCommonCriteriaMode()
   {
     return $this->commonCriteriaMode;
-  }
-  /**
-   * @param string
-   */
-  public function setContentProtectionPolicy($contentProtectionPolicy)
-  {
-    $this->contentProtectionPolicy = $contentProtectionPolicy;
-  }
-  /**
-   * @return string
-   */
-  public function getContentProtectionPolicy()
-  {
-    return $this->contentProtectionPolicy;
   }
   /**
    * @param string
@@ -104,20 +82,6 @@ class AdvancedSecurityOverrides extends \Google\Collection
   public function getGooglePlayProtectVerifyApps()
   {
     return $this->googlePlayProtectVerifyApps;
-  }
-  /**
-   * @param string
-   */
-  public function setMtePolicy($mtePolicy)
-  {
-    $this->mtePolicy = $mtePolicy;
-  }
-  /**
-   * @return string
-   */
-  public function getMtePolicy()
-  {
-    return $this->mtePolicy;
   }
   /**
    * @param string[]

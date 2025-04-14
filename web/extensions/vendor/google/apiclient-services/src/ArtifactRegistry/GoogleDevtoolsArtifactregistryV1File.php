@@ -21,10 +21,6 @@ class GoogleDevtoolsArtifactregistryV1File extends \Google\Collection
 {
   protected $collection_key = 'hashes';
   /**
-   * @var string[]
-   */
-  public $annotations;
-  /**
    * @var string
    */
   public $createTime;
@@ -32,6 +28,10 @@ class GoogleDevtoolsArtifactregistryV1File extends \Google\Collection
    * @var string
    */
   public $fetchTime;
+  /**
+   * @var Hash[]
+   */
+  public $hashes;
   protected $hashesType = Hash::class;
   protected $hashesDataType = 'array';
   /**
@@ -51,20 +51,6 @@ class GoogleDevtoolsArtifactregistryV1File extends \Google\Collection
    */
   public $updateTime;
 
-  /**
-   * @param string[]
-   */
-  public function setAnnotations($annotations)
-  {
-    $this->annotations = $annotations;
-  }
-  /**
-   * @return string[]
-   */
-  public function getAnnotations()
-  {
-    return $this->annotations;
-  }
   /**
    * @param string
    */

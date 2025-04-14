@@ -34,19 +34,11 @@ class IdentityServiceAzureADConfig extends \Google\Model
   /**
    * @var string
    */
-  public $groupFormat;
-  /**
-   * @var string
-   */
   public $kubectlRedirectUri;
   /**
    * @var string
    */
   public $tenant;
-  /**
-   * @var string
-   */
-  public $userClaim;
 
   /**
    * @param string
@@ -93,20 +85,6 @@ class IdentityServiceAzureADConfig extends \Google\Model
   /**
    * @param string
    */
-  public function setGroupFormat($groupFormat)
-  {
-    $this->groupFormat = $groupFormat;
-  }
-  /**
-   * @return string
-   */
-  public function getGroupFormat()
-  {
-    return $this->groupFormat;
-  }
-  /**
-   * @param string
-   */
   public function setKubectlRedirectUri($kubectlRedirectUri)
   {
     $this->kubectlRedirectUri = $kubectlRedirectUri;
@@ -131,20 +109,6 @@ class IdentityServiceAzureADConfig extends \Google\Model
   public function getTenant()
   {
     return $this->tenant;
-  }
-  /**
-   * @param string
-   */
-  public function setUserClaim($userClaim)
-  {
-    $this->userClaim = $userClaim;
-  }
-  /**
-   * @return string
-   */
-  public function getUserClaim()
-  {
-    return $this->userClaim;
   }
 }
 

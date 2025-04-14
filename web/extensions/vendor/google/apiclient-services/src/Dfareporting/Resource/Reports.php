@@ -37,7 +37,6 @@ class Reports extends \Google\Service\Resource
    * @param string $profileId The Campaign Manager 360 user profile ID.
    * @param string $reportId The ID of the report.
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function delete($profileId, $reportId, $optParams = [])
   {
@@ -52,7 +51,6 @@ class Reports extends \Google\Service\Resource
    * @param string $reportId The ID of the report.
    * @param array $optParams Optional parameters.
    * @return Report
-   * @throws \Google\Service\Exception
    */
   public function get($profileId, $reportId, $optParams = [])
   {
@@ -67,7 +65,6 @@ class Reports extends \Google\Service\Resource
    * @param Report $postBody
    * @param array $optParams Optional parameters.
    * @return Report
-   * @throws \Google\Service\Exception
    */
   public function insert($profileId, Report $postBody, $optParams = [])
   {
@@ -88,7 +85,6 @@ class Reports extends \Google\Service\Resource
    * @opt_param string sortField The field by which to sort the list.
    * @opt_param string sortOrder Order of sorted results.
    * @return ReportList
-   * @throws \Google\Service\Exception
    */
   public function listReports($profileId, $optParams = [])
   {
@@ -105,7 +101,6 @@ class Reports extends \Google\Service\Resource
    * @param Report $postBody
    * @param array $optParams Optional parameters.
    * @return Report
-   * @throws \Google\Service\Exception
    */
   public function patch($profileId, $reportId, Report $postBody, $optParams = [])
   {
@@ -123,7 +118,6 @@ class Reports extends \Google\Service\Resource
    * @opt_param bool synchronous If set and true, tries to run the report
    * synchronously.
    * @return DfareportingFile
-   * @throws \Google\Service\Exception
    */
   public function run($profileId, $reportId, $optParams = [])
   {
@@ -139,7 +133,6 @@ class Reports extends \Google\Service\Resource
    * @param Report $postBody
    * @param array $optParams Optional parameters.
    * @return Report
-   * @throws \Google\Service\Exception
    */
   public function update($profileId, $reportId, Report $postBody, $optParams = [])
   {

@@ -57,7 +57,6 @@ class ProjectsLocationsProductsReferenceImages extends \Google\Service\Resource
    * ALREADY_EXISTS. Must be at most 128 characters long. It cannot contain the
    * character `/`.
    * @return ReferenceImage
-   * @throws \Google\Service\Exception
    */
   public function create($parent, ReferenceImage $postBody, $optParams = [])
   {
@@ -76,7 +75,6 @@ class ProjectsLocationsProductsReferenceImages extends \Google\Service\Resource
    * referenceImages/IMAGE_ID`
    * @param array $optParams Optional parameters.
    * @return VisionEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -93,7 +91,6 @@ class ProjectsLocationsProductsReferenceImages extends \Google\Service\Resource
    * eImages/IMAGE_ID`.
    * @param array $optParams Optional parameters.
    * @return ReferenceImage
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -118,7 +115,6 @@ class ProjectsLocationsProductsReferenceImages extends \Google\Service\Resource
    * returned. This is the value of `nextPageToken` returned in a previous
    * reference image list request. Defaults to the first page if not specified.
    * @return ListReferenceImagesResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsProductsReferenceImages($parent, $optParams = [])
   {

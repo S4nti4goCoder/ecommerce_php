@@ -19,6 +19,10 @@ namespace Google\Service\Connectors;
 
 class ExchangeAuthCodeResponse extends \Google\Model
 {
+  /**
+   * @var AccessCredentials
+   */
+  public $accessCredentials;
   protected $accessCredentialsType = AccessCredentials::class;
   protected $accessCredentialsDataType = '';
 

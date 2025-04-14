@@ -20,8 +20,6 @@ namespace Google\Service\Tasks;
 class Task extends \Google\Collection
 {
   protected $collection_key = 'links';
-  protected $assignmentInfoType = AssignmentInfo::class;
-  protected $assignmentInfoDataType = '';
   /**
    * @var string
    */
@@ -50,6 +48,10 @@ class Task extends \Google\Collection
    * @var string
    */
   public $kind;
+  /**
+   * @var TaskLinks[]
+   */
+  public $links;
   protected $linksType = TaskLinks::class;
   protected $linksDataType = 'array';
   /**
@@ -80,25 +82,7 @@ class Task extends \Google\Collection
    * @var string
    */
   public $updated;
-  /**
-   * @var string
-   */
-  public $webViewLink;
 
-  /**
-   * @param AssignmentInfo
-   */
-  public function setAssignmentInfo(AssignmentInfo $assignmentInfo)
-  {
-    $this->assignmentInfo = $assignmentInfo;
-  }
-  /**
-   * @return AssignmentInfo
-   */
-  public function getAssignmentInfo()
-  {
-    return $this->assignmentInfo;
-  }
   /**
    * @param string
    */
@@ -308,20 +292,6 @@ class Task extends \Google\Collection
   public function getUpdated()
   {
     return $this->updated;
-  }
-  /**
-   * @param string
-   */
-  public function setWebViewLink($webViewLink)
-  {
-    $this->webViewLink = $webViewLink;
-  }
-  /**
-   * @return string
-   */
-  public function getWebViewLink()
-  {
-    return $this->webViewLink;
   }
 }
 

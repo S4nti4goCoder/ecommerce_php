@@ -43,7 +43,6 @@ class Changes extends \Google\Service\Resource
    * optional identifier specified by the client. Must be unique for operation
    * resources in the Operations collection.
    * @return Change
-   * @throws \Google\Service\Exception
    */
   public function create($project, $managedZone, Change $postBody, $optParams = [])
   {
@@ -65,7 +64,6 @@ class Changes extends \Google\Service\Resource
    * optional identifier specified by the client. Must be unique for operation
    * resources in the Operations collection.
    * @return Change
-   * @throws \Google\Service\Exception
    */
   public function get($project, $managedZone, $changeId, $optParams = [])
   {
@@ -91,7 +89,6 @@ class Changes extends \Google\Service\Resource
    * @opt_param string sortOrder Sorting order direction: 'ascending' or
    * 'descending'.
    * @return ChangesListResponse
-   * @throws \Google\Service\Exception
    */
   public function listChanges($project, $managedZone, $optParams = [])
   {

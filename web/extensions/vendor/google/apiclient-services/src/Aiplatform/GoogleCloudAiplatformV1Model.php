@@ -24,20 +24,26 @@ class GoogleCloudAiplatformV1Model extends \Google\Collection
    * @var string
    */
   public $artifactUri;
-  protected $baseModelSourceType = GoogleCloudAiplatformV1ModelBaseModelSource::class;
-  protected $baseModelSourceDataType = '';
+  /**
+   * @var GoogleCloudAiplatformV1ModelContainerSpec
+   */
+  public $containerSpec;
   protected $containerSpecType = GoogleCloudAiplatformV1ModelContainerSpec::class;
   protected $containerSpecDataType = '';
   /**
    * @var string
    */
   public $createTime;
+  /**
+   * @var GoogleCloudAiplatformV1ModelDataStats
+   */
+  public $dataStats;
   protected $dataStatsType = GoogleCloudAiplatformV1ModelDataStats::class;
   protected $dataStatsDataType = '';
   /**
-   * @var string
+   * @var GoogleCloudAiplatformV1DeployedModelRef[]
    */
-  public $defaultCheckpointId;
+  public $deployedModels;
   protected $deployedModelsType = GoogleCloudAiplatformV1DeployedModelRef::class;
   protected $deployedModelsDataType = 'array';
   /**
@@ -48,12 +54,20 @@ class GoogleCloudAiplatformV1Model extends \Google\Collection
    * @var string
    */
   public $displayName;
+  /**
+   * @var GoogleCloudAiplatformV1EncryptionSpec
+   */
+  public $encryptionSpec;
   protected $encryptionSpecType = GoogleCloudAiplatformV1EncryptionSpec::class;
   protected $encryptionSpecDataType = '';
   /**
    * @var string
    */
   public $etag;
+  /**
+   * @var GoogleCloudAiplatformV1ExplanationSpec
+   */
+  public $explanationSpec;
   protected $explanationSpecType = GoogleCloudAiplatformV1ExplanationSpec::class;
   protected $explanationSpecDataType = '';
   /**
@@ -72,32 +86,40 @@ class GoogleCloudAiplatformV1Model extends \Google\Collection
    * @var string
    */
   public $metadataSchemaUri;
+  /**
+   * @var GoogleCloudAiplatformV1ModelSourceInfo
+   */
+  public $modelSourceInfo;
   protected $modelSourceInfoType = GoogleCloudAiplatformV1ModelSourceInfo::class;
   protected $modelSourceInfoDataType = '';
   /**
    * @var string
    */
   public $name;
+  /**
+   * @var GoogleCloudAiplatformV1ModelOriginalModelInfo
+   */
+  public $originalModelInfo;
   protected $originalModelInfoType = GoogleCloudAiplatformV1ModelOriginalModelInfo::class;
   protected $originalModelInfoDataType = '';
   /**
    * @var string
    */
   public $pipelineJob;
+  /**
+   * @var GoogleCloudAiplatformV1PredictSchemata
+   */
+  public $predictSchemata;
   protected $predictSchemataType = GoogleCloudAiplatformV1PredictSchemata::class;
   protected $predictSchemataDataType = '';
-  /**
-   * @var bool
-   */
-  public $satisfiesPzi;
-  /**
-   * @var bool
-   */
-  public $satisfiesPzs;
   /**
    * @var string[]
    */
   public $supportedDeploymentResourcesTypes;
+  /**
+   * @var GoogleCloudAiplatformV1ModelExportFormat[]
+   */
+  public $supportedExportFormats;
   protected $supportedExportFormatsType = GoogleCloudAiplatformV1ModelExportFormat::class;
   protected $supportedExportFormatsDataType = 'array';
   /**
@@ -152,20 +174,6 @@ class GoogleCloudAiplatformV1Model extends \Google\Collection
     return $this->artifactUri;
   }
   /**
-   * @param GoogleCloudAiplatformV1ModelBaseModelSource
-   */
-  public function setBaseModelSource(GoogleCloudAiplatformV1ModelBaseModelSource $baseModelSource)
-  {
-    $this->baseModelSource = $baseModelSource;
-  }
-  /**
-   * @return GoogleCloudAiplatformV1ModelBaseModelSource
-   */
-  public function getBaseModelSource()
-  {
-    return $this->baseModelSource;
-  }
-  /**
    * @param GoogleCloudAiplatformV1ModelContainerSpec
    */
   public function setContainerSpec(GoogleCloudAiplatformV1ModelContainerSpec $containerSpec)
@@ -206,20 +214,6 @@ class GoogleCloudAiplatformV1Model extends \Google\Collection
   public function getDataStats()
   {
     return $this->dataStats;
-  }
-  /**
-   * @param string
-   */
-  public function setDefaultCheckpointId($defaultCheckpointId)
-  {
-    $this->defaultCheckpointId = $defaultCheckpointId;
-  }
-  /**
-   * @return string
-   */
-  public function getDefaultCheckpointId()
-  {
-    return $this->defaultCheckpointId;
   }
   /**
    * @param GoogleCloudAiplatformV1DeployedModelRef[]
@@ -430,34 +424,6 @@ class GoogleCloudAiplatformV1Model extends \Google\Collection
   public function getPredictSchemata()
   {
     return $this->predictSchemata;
-  }
-  /**
-   * @param bool
-   */
-  public function setSatisfiesPzi($satisfiesPzi)
-  {
-    $this->satisfiesPzi = $satisfiesPzi;
-  }
-  /**
-   * @return bool
-   */
-  public function getSatisfiesPzi()
-  {
-    return $this->satisfiesPzi;
-  }
-  /**
-   * @param bool
-   */
-  public function setSatisfiesPzs($satisfiesPzs)
-  {
-    $this->satisfiesPzs = $satisfiesPzs;
-  }
-  /**
-   * @return bool
-   */
-  public function getSatisfiesPzs()
-  {
-    return $this->satisfiesPzs;
   }
   /**
    * @param string[]

@@ -47,7 +47,6 @@ class ProjectsLocationsScopesNamespaces extends \Google\Service\Resource
    * Which can be expressed as the regex: `[a-z0-9]([-a-z0-9]*[a-z0-9])?`, with a
    * maximum length of 63 characters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GkehubNamespace $postBody, $optParams = [])
   {
@@ -62,7 +61,6 @@ class ProjectsLocationsScopesNamespaces extends \Google\Service\Resource
    * `projects/locations/scopes/namespaces`.
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -77,7 +75,6 @@ class ProjectsLocationsScopesNamespaces extends \Google\Service\Resource
    * `projects/locations/scopes/namespaces`.
    * @param array $optParams Optional parameters.
    * @return GkehubNamespace
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -99,7 +96,6 @@ class ProjectsLocationsScopesNamespaces extends \Google\Service\Resource
    * `ListFeatures` which specifies the position in the list from where to
    * continue listing the resources.
    * @return ListScopeNamespacesResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsScopesNamespaces($parent, $optParams = [])
   {
@@ -117,7 +113,6 @@ class ProjectsLocationsScopesNamespaces extends \Google\Service\Resource
    *
    * @opt_param string updateMask Required. The fields to be updated.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GkehubNamespace $postBody, $optParams = [])
   {

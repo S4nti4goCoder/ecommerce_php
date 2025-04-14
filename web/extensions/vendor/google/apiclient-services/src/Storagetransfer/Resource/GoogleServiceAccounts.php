@@ -42,7 +42,6 @@ class GoogleServiceAccounts extends \Google\Service\Resource
    * the Google service account is associated with.
    * @param array $optParams Optional parameters.
    * @return GoogleServiceAccount
-   * @throws \Google\Service\Exception
    */
   public function get($projectId, $optParams = [])
   {

@@ -23,6 +23,10 @@ class AirportInfo extends \Google\Model
    * @var string
    */
   public $airportIataCode;
+  /**
+   * @var LocalizedString
+   */
+  public $airportNameOverride;
   protected $airportNameOverrideType = LocalizedString::class;
   protected $airportNameOverrideDataType = '';
   /**

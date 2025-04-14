@@ -45,7 +45,6 @@ class ProjectsLocationsEvaluationsExecutionsScannedResources extends \Google\Ser
    * should return.
    * @opt_param string rule rule name
    * @return ListScannedResourcesResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsEvaluationsExecutionsScannedResources($parent, $optParams = [])
   {

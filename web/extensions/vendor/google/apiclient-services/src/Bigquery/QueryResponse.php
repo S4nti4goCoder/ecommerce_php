@@ -25,33 +25,35 @@ class QueryResponse extends \Google\Collection
    */
   public $cacheHit;
   /**
-   * @var string
+   * @var DmlStatistics
    */
-  public $creationTime;
+  public $dmlStats;
   protected $dmlStatsType = DmlStatistics::class;
   protected $dmlStatsDataType = '';
   /**
-   * @var string
+   * @var ErrorProto[]
    */
-  public $endTime;
+  public $errors;
   protected $errorsType = ErrorProto::class;
   protected $errorsDataType = 'array';
   /**
    * @var bool
    */
   public $jobComplete;
-  protected $jobCreationReasonType = JobCreationReason::class;
-  protected $jobCreationReasonDataType = '';
+  /**
+   * @var array
+   */
+  public $jobCreationReason;
+  /**
+   * @var JobReference
+   */
+  public $jobReference;
   protected $jobReferenceType = JobReference::class;
   protected $jobReferenceDataType = '';
   /**
    * @var string
    */
   public $kind;
-  /**
-   * @var string
-   */
-  public $location;
   /**
    * @var string
    */
@@ -64,20 +66,24 @@ class QueryResponse extends \Google\Collection
    * @var string
    */
   public $queryId;
+  /**
+   * @var TableRow[]
+   */
+  public $rows;
   protected $rowsType = TableRow::class;
   protected $rowsDataType = 'array';
+  /**
+   * @var TableSchema
+   */
+  public $schema;
   protected $schemaType = TableSchema::class;
   protected $schemaDataType = '';
+  /**
+   * @var SessionInfo
+   */
+  public $sessionInfo;
   protected $sessionInfoType = SessionInfo::class;
   protected $sessionInfoDataType = '';
-  /**
-   * @var string
-   */
-  public $startTime;
-  /**
-   * @var string
-   */
-  public $totalBytesBilled;
   /**
    * @var string
    */
@@ -86,10 +92,6 @@ class QueryResponse extends \Google\Collection
    * @var string
    */
   public $totalRows;
-  /**
-   * @var string
-   */
-  public $totalSlotMs;
 
   /**
    * @param bool
@@ -106,20 +108,6 @@ class QueryResponse extends \Google\Collection
     return $this->cacheHit;
   }
   /**
-   * @param string
-   */
-  public function setCreationTime($creationTime)
-  {
-    $this->creationTime = $creationTime;
-  }
-  /**
-   * @return string
-   */
-  public function getCreationTime()
-  {
-    return $this->creationTime;
-  }
-  /**
    * @param DmlStatistics
    */
   public function setDmlStats(DmlStatistics $dmlStats)
@@ -132,20 +120,6 @@ class QueryResponse extends \Google\Collection
   public function getDmlStats()
   {
     return $this->dmlStats;
-  }
-  /**
-   * @param string
-   */
-  public function setEndTime($endTime)
-  {
-    $this->endTime = $endTime;
-  }
-  /**
-   * @return string
-   */
-  public function getEndTime()
-  {
-    return $this->endTime;
   }
   /**
    * @param ErrorProto[]
@@ -176,14 +150,14 @@ class QueryResponse extends \Google\Collection
     return $this->jobComplete;
   }
   /**
-   * @param JobCreationReason
+   * @param array
    */
-  public function setJobCreationReason(JobCreationReason $jobCreationReason)
+  public function setJobCreationReason($jobCreationReason)
   {
     $this->jobCreationReason = $jobCreationReason;
   }
   /**
-   * @return JobCreationReason
+   * @return array
    */
   public function getJobCreationReason()
   {
@@ -216,20 +190,6 @@ class QueryResponse extends \Google\Collection
   public function getKind()
   {
     return $this->kind;
-  }
-  /**
-   * @param string
-   */
-  public function setLocation($location)
-  {
-    $this->location = $location;
-  }
-  /**
-   * @return string
-   */
-  public function getLocation()
-  {
-    return $this->location;
   }
   /**
    * @param string
@@ -318,34 +278,6 @@ class QueryResponse extends \Google\Collection
   /**
    * @param string
    */
-  public function setStartTime($startTime)
-  {
-    $this->startTime = $startTime;
-  }
-  /**
-   * @return string
-   */
-  public function getStartTime()
-  {
-    return $this->startTime;
-  }
-  /**
-   * @param string
-   */
-  public function setTotalBytesBilled($totalBytesBilled)
-  {
-    $this->totalBytesBilled = $totalBytesBilled;
-  }
-  /**
-   * @return string
-   */
-  public function getTotalBytesBilled()
-  {
-    return $this->totalBytesBilled;
-  }
-  /**
-   * @param string
-   */
   public function setTotalBytesProcessed($totalBytesProcessed)
   {
     $this->totalBytesProcessed = $totalBytesProcessed;
@@ -370,20 +302,6 @@ class QueryResponse extends \Google\Collection
   public function getTotalRows()
   {
     return $this->totalRows;
-  }
-  /**
-   * @param string
-   */
-  public function setTotalSlotMs($totalSlotMs)
-  {
-    $this->totalSlotMs = $totalSlotMs;
-  }
-  /**
-   * @return string
-   */
-  public function getTotalSlotMs()
-  {
-    return $this->totalSlotMs;
   }
 }
 

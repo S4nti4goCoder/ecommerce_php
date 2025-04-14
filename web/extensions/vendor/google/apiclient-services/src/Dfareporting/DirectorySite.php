@@ -24,6 +24,10 @@ class DirectorySite extends \Google\Collection
    * @var string
    */
   public $id;
+  /**
+   * @var DimensionValue
+   */
+  public $idDimensionValue;
   protected $idDimensionValueType = DimensionValue::class;
   protected $idDimensionValueDataType = '';
   /**
@@ -43,9 +47,9 @@ class DirectorySite extends \Google\Collection
    */
   public $name;
   /**
-   * @var string
+   * @var DirectorySiteSettings
    */
-  public $publisherSpecificationId;
+  public $settings;
   protected $settingsType = DirectorySiteSettings::class;
   protected $settingsDataType = '';
   /**
@@ -136,20 +140,6 @@ class DirectorySite extends \Google\Collection
   public function getName()
   {
     return $this->name;
-  }
-  /**
-   * @param string
-   */
-  public function setPublisherSpecificationId($publisherSpecificationId)
-  {
-    $this->publisherSpecificationId = $publisherSpecificationId;
-  }
-  /**
-   * @return string
-   */
-  public function getPublisherSpecificationId()
-  {
-    return $this->publisherSpecificationId;
   }
   /**
    * @param DirectorySiteSettings

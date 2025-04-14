@@ -23,10 +23,12 @@ class GoogleCloudAssetV1Rule extends \Google\Model
    * @var bool
    */
   public $allowAll;
+  /**
+   * @var Expr
+   */
+  public $condition;
   protected $conditionType = Expr::class;
   protected $conditionDataType = '';
-  protected $conditionEvaluationType = ConditionEvaluation::class;
-  protected $conditionEvaluationDataType = '';
   /**
    * @var bool
    */
@@ -35,6 +37,10 @@ class GoogleCloudAssetV1Rule extends \Google\Model
    * @var bool
    */
   public $enforce;
+  /**
+   * @var GoogleCloudAssetV1StringValues
+   */
+  public $values;
   protected $valuesType = GoogleCloudAssetV1StringValues::class;
   protected $valuesDataType = '';
 
@@ -65,20 +71,6 @@ class GoogleCloudAssetV1Rule extends \Google\Model
   public function getCondition()
   {
     return $this->condition;
-  }
-  /**
-   * @param ConditionEvaluation
-   */
-  public function setConditionEvaluation(ConditionEvaluation $conditionEvaluation)
-  {
-    $this->conditionEvaluation = $conditionEvaluation;
-  }
-  /**
-   * @return ConditionEvaluation
-   */
-  public function getConditionEvaluation()
-  {
-    return $this->conditionEvaluation;
   }
   /**
    * @param bool

@@ -42,7 +42,6 @@ class ProjectsTestMatrices extends \Google\Service\Resource
    * @param string $testMatrixId Test matrix that will be canceled.
    * @param array $optParams Optional parameters.
    * @return CancelTestMatrixResponse
-   * @throws \Google\Service\Exception
    */
   public function cancel($projectId, $testMatrixId, $optParams = [])
   {
@@ -70,7 +69,6 @@ class ProjectsTestMatrices extends \Google\Service\Resource
    * unique per-project. A UUID is recommended. Optional, but strongly
    * recommended.
    * @return TestMatrix
-   * @throws \Google\Service\Exception
    */
   public function create($projectId, TestMatrix $postBody, $optParams = [])
   {
@@ -92,7 +90,6 @@ class ProjectsTestMatrices extends \Google\Service\Resource
    * service.
    * @param array $optParams Optional parameters.
    * @return TestMatrix
-   * @throws \Google\Service\Exception
    */
   public function get($projectId, $testMatrixId, $optParams = [])
   {

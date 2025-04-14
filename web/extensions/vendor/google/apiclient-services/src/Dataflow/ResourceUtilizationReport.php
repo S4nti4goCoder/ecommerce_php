@@ -20,12 +20,22 @@ namespace Google\Service\Dataflow;
 class ResourceUtilizationReport extends \Google\Collection
 {
   protected $collection_key = 'memoryInfo';
+  /**
+   * @var ResourceUtilizationReport[]
+   */
+  public $containers;
   protected $containersType = ResourceUtilizationReport::class;
   protected $containersDataType = 'map';
+  /**
+   * @var CPUTime[]
+   */
+  public $cpuTime;
   protected $cpuTimeType = CPUTime::class;
   protected $cpuTimeDataType = 'array';
-  protected $gpuUsageType = GPUUsage::class;
-  protected $gpuUsageDataType = 'array';
+  /**
+   * @var MemInfo[]
+   */
+  public $memoryInfo;
   protected $memoryInfoType = MemInfo::class;
   protected $memoryInfoDataType = 'array';
 
@@ -56,20 +66,6 @@ class ResourceUtilizationReport extends \Google\Collection
   public function getCpuTime()
   {
     return $this->cpuTime;
-  }
-  /**
-   * @param GPUUsage[]
-   */
-  public function setGpuUsage($gpuUsage)
-  {
-    $this->gpuUsage = $gpuUsage;
-  }
-  /**
-   * @return GPUUsage[]
-   */
-  public function getGpuUsage()
-  {
-    return $this->gpuUsage;
   }
   /**
    * @param MemInfo[]

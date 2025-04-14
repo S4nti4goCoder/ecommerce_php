@@ -17,31 +17,38 @@
 
 namespace Google\Service\Datastore;
 
-class Mutation extends \Google\Collection
+class Mutation extends \Google\Model
 {
-  protected $collection_key = 'propertyTransforms';
   /**
    * @var string
    */
   public $baseVersion;
   /**
-   * @var string
+   * @var Key
    */
-  public $conflictResolutionStrategy;
+  public $delete;
   protected $deleteType = Key::class;
   protected $deleteDataType = '';
+  /**
+   * @var Entity
+   */
+  public $insert;
   protected $insertType = Entity::class;
   protected $insertDataType = '';
-  protected $propertyMaskType = PropertyMask::class;
-  protected $propertyMaskDataType = '';
-  protected $propertyTransformsType = PropertyTransform::class;
-  protected $propertyTransformsDataType = 'array';
+  /**
+   * @var Entity
+   */
+  public $update;
   protected $updateType = Entity::class;
   protected $updateDataType = '';
   /**
    * @var string
    */
   public $updateTime;
+  /**
+   * @var Entity
+   */
+  public $upsert;
   protected $upsertType = Entity::class;
   protected $upsertDataType = '';
 
@@ -58,20 +65,6 @@ class Mutation extends \Google\Collection
   public function getBaseVersion()
   {
     return $this->baseVersion;
-  }
-  /**
-   * @param string
-   */
-  public function setConflictResolutionStrategy($conflictResolutionStrategy)
-  {
-    $this->conflictResolutionStrategy = $conflictResolutionStrategy;
-  }
-  /**
-   * @return string
-   */
-  public function getConflictResolutionStrategy()
-  {
-    return $this->conflictResolutionStrategy;
   }
   /**
    * @param Key
@@ -100,34 +93,6 @@ class Mutation extends \Google\Collection
   public function getInsert()
   {
     return $this->insert;
-  }
-  /**
-   * @param PropertyMask
-   */
-  public function setPropertyMask(PropertyMask $propertyMask)
-  {
-    $this->propertyMask = $propertyMask;
-  }
-  /**
-   * @return PropertyMask
-   */
-  public function getPropertyMask()
-  {
-    return $this->propertyMask;
-  }
-  /**
-   * @param PropertyTransform[]
-   */
-  public function setPropertyTransforms($propertyTransforms)
-  {
-    $this->propertyTransforms = $propertyTransforms;
-  }
-  /**
-   * @return PropertyTransform[]
-   */
-  public function getPropertyTransforms()
-  {
-    return $this->propertyTransforms;
   }
   /**
    * @param Entity

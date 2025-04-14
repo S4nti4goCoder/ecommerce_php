@@ -39,7 +39,6 @@ class ResourcesFeatures extends \Google\Service\Resource
    * alias to represent your account's customer ID.
    * @param string $featureKey The unique ID of the feature to delete.
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function delete($customer, $featureKey, $optParams = [])
   {
@@ -56,7 +55,6 @@ class ResourcesFeatures extends \Google\Service\Resource
    * @param string $featureKey The unique ID of the feature to retrieve.
    * @param array $optParams Optional parameters.
    * @return Feature
-   * @throws \Google\Service\Exception
    */
   public function get($customer, $featureKey, $optParams = [])
   {
@@ -73,7 +71,6 @@ class ResourcesFeatures extends \Google\Service\Resource
    * @param Feature $postBody
    * @param array $optParams Optional parameters.
    * @return Feature
-   * @throws \Google\Service\Exception
    */
   public function insert($customer, Feature $postBody, $optParams = [])
   {
@@ -92,7 +89,6 @@ class ResourcesFeatures extends \Google\Service\Resource
    * @opt_param int maxResults Maximum number of results to return.
    * @opt_param string pageToken Token to specify the next page in the list.
    * @return Features
-   * @throws \Google\Service\Exception
    */
   public function listResourcesFeatures($customer, $optParams = [])
   {
@@ -110,7 +106,6 @@ class ResourcesFeatures extends \Google\Service\Resource
    * @param Feature $postBody
    * @param array $optParams Optional parameters.
    * @return Feature
-   * @throws \Google\Service\Exception
    */
   public function patch($customer, $featureKey, Feature $postBody, $optParams = [])
   {
@@ -127,7 +122,6 @@ class ResourcesFeatures extends \Google\Service\Resource
    * @param string $oldName The unique ID of the feature to rename.
    * @param FeatureRename $postBody
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function rename($customer, $oldName, FeatureRename $postBody, $optParams = [])
   {
@@ -145,7 +139,6 @@ class ResourcesFeatures extends \Google\Service\Resource
    * @param Feature $postBody
    * @param array $optParams Optional parameters.
    * @return Feature
-   * @throws \Google\Service\Exception
    */
   public function update($customer, $featureKey, Feature $postBody, $optParams = [])
   {

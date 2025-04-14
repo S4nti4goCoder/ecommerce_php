@@ -20,38 +20,70 @@ namespace Google\Service\Document;
 class GoogleCloudDocumentaiV1beta2Document extends \Google\Collection
 {
   protected $collection_key = 'textStyles';
-  protected $chunkedDocumentType = GoogleCloudDocumentaiV1beta2DocumentChunkedDocument::class;
-  protected $chunkedDocumentDataType = '';
   /**
    * @var string
    */
   public $content;
-  protected $documentLayoutType = GoogleCloudDocumentaiV1beta2DocumentDocumentLayout::class;
-  protected $documentLayoutDataType = '';
+  /**
+   * @var GoogleCloudDocumentaiV1beta2DocumentEntity[]
+   */
+  public $entities;
   protected $entitiesType = GoogleCloudDocumentaiV1beta2DocumentEntity::class;
   protected $entitiesDataType = 'array';
+  /**
+   * @var GoogleCloudDocumentaiV1beta2DocumentEntityRelation[]
+   */
+  public $entityRelations;
   protected $entityRelationsType = GoogleCloudDocumentaiV1beta2DocumentEntityRelation::class;
   protected $entityRelationsDataType = 'array';
+  /**
+   * @var GoogleRpcStatus
+   */
+  public $error;
   protected $errorType = GoogleRpcStatus::class;
   protected $errorDataType = '';
+  /**
+   * @var GoogleCloudDocumentaiV1beta2DocumentLabel[]
+   */
+  public $labels;
   protected $labelsType = GoogleCloudDocumentaiV1beta2DocumentLabel::class;
   protected $labelsDataType = 'array';
   /**
    * @var string
    */
   public $mimeType;
+  /**
+   * @var GoogleCloudDocumentaiV1beta2DocumentPage[]
+   */
+  public $pages;
   protected $pagesType = GoogleCloudDocumentaiV1beta2DocumentPage::class;
   protected $pagesDataType = 'array';
+  /**
+   * @var GoogleCloudDocumentaiV1beta2DocumentRevision[]
+   */
+  public $revisions;
   protected $revisionsType = GoogleCloudDocumentaiV1beta2DocumentRevision::class;
   protected $revisionsDataType = 'array';
+  /**
+   * @var GoogleCloudDocumentaiV1beta2DocumentShardInfo
+   */
+  public $shardInfo;
   protected $shardInfoType = GoogleCloudDocumentaiV1beta2DocumentShardInfo::class;
   protected $shardInfoDataType = '';
   /**
    * @var string
    */
   public $text;
+  /**
+   * @var GoogleCloudDocumentaiV1beta2DocumentTextChange[]
+   */
+  public $textChanges;
   protected $textChangesType = GoogleCloudDocumentaiV1beta2DocumentTextChange::class;
   protected $textChangesDataType = 'array';
+  /**
+   * @var GoogleCloudDocumentaiV1beta2DocumentStyle[]
+   */
+  public $textStyles;
   protected $textStylesType = GoogleCloudDocumentaiV1beta2DocumentStyle::class;
   protected $textStylesDataType = 'array';
   /**
@@ -59,20 +91,6 @@ class GoogleCloudDocumentaiV1beta2Document extends \Google\Collection
    */
   public $uri;
 
-  /**
-   * @param GoogleCloudDocumentaiV1beta2DocumentChunkedDocument
-   */
-  public function setChunkedDocument(GoogleCloudDocumentaiV1beta2DocumentChunkedDocument $chunkedDocument)
-  {
-    $this->chunkedDocument = $chunkedDocument;
-  }
-  /**
-   * @return GoogleCloudDocumentaiV1beta2DocumentChunkedDocument
-   */
-  public function getChunkedDocument()
-  {
-    return $this->chunkedDocument;
-  }
   /**
    * @param string
    */
@@ -86,20 +104,6 @@ class GoogleCloudDocumentaiV1beta2Document extends \Google\Collection
   public function getContent()
   {
     return $this->content;
-  }
-  /**
-   * @param GoogleCloudDocumentaiV1beta2DocumentDocumentLayout
-   */
-  public function setDocumentLayout(GoogleCloudDocumentaiV1beta2DocumentDocumentLayout $documentLayout)
-  {
-    $this->documentLayout = $documentLayout;
-  }
-  /**
-   * @return GoogleCloudDocumentaiV1beta2DocumentDocumentLayout
-   */
-  public function getDocumentLayout()
-  {
-    return $this->documentLayout;
   }
   /**
    * @param GoogleCloudDocumentaiV1beta2DocumentEntity[]

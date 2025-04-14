@@ -39,7 +39,6 @@ class ProjectsLocations extends \Google\Service\Resource
    * projects/{project_number}/locations/{location}.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudContentwarehouseV1ProjectStatus
-   * @throws \Google\Service\Exception
    */
   public function getStatus($location, $optParams = [])
   {
@@ -56,7 +55,6 @@ class ProjectsLocations extends \Google\Service\Resource
    * @param GoogleCloudContentwarehouseV1InitializeProjectRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function initialize($location, GoogleCloudContentwarehouseV1InitializeProjectRequest $postBody, $optParams = [])
   {
@@ -72,7 +70,6 @@ class ProjectsLocations extends \Google\Service\Resource
    * @param GoogleCloudContentwarehouseV1RunPipelineRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function runPipeline($name, GoogleCloudContentwarehouseV1RunPipelineRequest $postBody, $optParams = [])
   {

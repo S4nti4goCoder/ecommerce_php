@@ -32,9 +32,8 @@ use Google\Service\Drive\StartPageToken;
 class Changes extends \Google\Service\Resource
 {
   /**
-   * Gets the starting pageToken for listing future changes. For more information,
-   * see [Retrieve changes](https://developers.google.com/drive/api/guides/manage-
-   * changes). (changes.getStartPageToken)
+   * Gets the starting pageToken for listing future changes.
+   * (changes.getStartPageToken)
    *
    * @param array $optParams Optional parameters.
    *
@@ -46,7 +45,6 @@ class Changes extends \Google\Service\Resource
    * instead.
    * @opt_param string teamDriveId Deprecated: Use `driveId` instead.
    * @return StartPageToken
-   * @throws \Google\Service\Exception
    */
   public function getStartPageToken($optParams = [])
   {
@@ -55,9 +53,7 @@ class Changes extends \Google\Service\Resource
     return $this->call('getStartPageToken', [$params], StartPageToken::class);
   }
   /**
-   * Lists the changes for a user or shared drive. For more information, see
-   * [Retrieve changes](https://developers.google.com/drive/api/guides/manage-
-   * changes). (changes.listChanges)
+   * Lists the changes for a user or shared drive. (changes.listChanges)
    *
    * @param string $pageToken The token for continuing a previous list request on
    * the next page. This should be set to the value of 'nextPageToken' from the
@@ -95,7 +91,6 @@ class Changes extends \Google\Service\Resource
    * instead.
    * @opt_param string teamDriveId Deprecated: Use `driveId` instead.
    * @return ChangeList
-   * @throws \Google\Service\Exception
    */
   public function listChanges($pageToken, $optParams = [])
   {
@@ -104,9 +99,7 @@ class Changes extends \Google\Service\Resource
     return $this->call('list', [$params], ChangeList::class);
   }
   /**
-   * Subscribes to changes for a user. For more information, see [Notifications
-   * for resource changes](https://developers.google.com/drive/api/guides/push).
-   * (changes.watch)
+   * Subscribes to changes for a user. (changes.watch)
    *
    * @param string $pageToken The token for continuing a previous list request on
    * the next page. This should be set to the value of 'nextPageToken' from the
@@ -145,7 +138,6 @@ class Changes extends \Google\Service\Resource
    * instead.
    * @opt_param string teamDriveId Deprecated: Use `driveId` instead.
    * @return Channel
-   * @throws \Google\Service\Exception
    */
   public function watch($pageToken, Channel $postBody, $optParams = [])
   {

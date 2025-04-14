@@ -52,7 +52,6 @@ class ProjectsLocationsQueuesTasks extends \Google\Service\Resource
    * @param BufferTaskRequest $postBody
    * @param array $optParams Optional parameters.
    * @return BufferTaskResponse
-   * @throws \Google\Service\Exception
    */
   public function buffer($queue, $taskId, BufferTaskRequest $postBody, $optParams = [])
   {
@@ -71,7 +70,6 @@ class ProjectsLocationsQueuesTasks extends \Google\Service\Resource
    * @param CreateTaskRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Task
-   * @throws \Google\Service\Exception
    */
   public function create($parent, CreateTaskRequest $postBody, $optParams = [])
   {
@@ -88,7 +86,6 @@ class ProjectsLocationsQueuesTasks extends \Google\Service\Resource
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
    * @param array $optParams Optional parameters.
    * @return CloudtasksEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -111,7 +108,6 @@ class ProjectsLocationsQueuesTasks extends \Google\Service\Resource
    * requires `cloudtasks.tasks.fullView` [Google
    * IAM](https://cloud.google.com/iam/) permission on the Task resource.
    * @return Task
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -146,7 +142,6 @@ class ProjectsLocationsQueuesTasks extends \Google\Service\Resource
    * requires `cloudtasks.tasks.fullView` [Google
    * IAM](https://cloud.google.com/iam/) permission on the Task resource.
    * @return ListTasksResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsQueuesTasks($parent, $optParams = [])
   {
@@ -159,19 +154,20 @@ class ProjectsLocationsQueuesTasks extends \Google\Service\Resource
    * dispatch the task, even if the task is already running, the queue has reached
    * its RateLimits or is PAUSED. This command is meant to be used for manual
    * debugging. For example, RunTask can be used to retry a failed task after a
-   * fix has been made or to manually force a task to be dispatched now. If Cloud
-   * Tasks receives a successful response from the task's target, then the task
-   * will be deleted; otherwise the task's schedule_time will be reset to the time
-   * that RunTask was called plus the retry delay specified in the queue's
-   * RetryConfig. RunTask returns NOT_FOUND when it is called on a task that has
-   * already succeeded or permanently failed. (tasks.run)
+   * fix has been made or to manually force a task to be dispatched now. The
+   * dispatched task is returned. That is, the task that is returned contains the
+   * status after the task is dispatched but before the task is received by its
+   * target. If Cloud Tasks receives a successful response from the task's target,
+   * then the task will be deleted; otherwise the task's schedule_time will be
+   * reset to the time that RunTask was called plus the retry delay specified in
+   * the queue's RetryConfig. RunTask returns NOT_FOUND when it is called on a
+   * task that has already succeeded or permanently failed. (tasks.run)
    *
    * @param string $name Required. The task name. For example:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
    * @param RunTaskRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Task
-   * @throws \Google\Service\Exception
    */
   public function run($name, RunTaskRequest $postBody, $optParams = [])
   {

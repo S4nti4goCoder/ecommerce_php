@@ -50,7 +50,6 @@ class ProjectsLocationsProducts extends \Google\Service\Resource
    * already in use, an error is returned with code ALREADY_EXISTS. Must be at
    * most 128 characters long. It cannot contain the character `/`.
    * @return Product
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Product $postBody, $optParams = [])
   {
@@ -68,7 +67,6 @@ class ProjectsLocationsProducts extends \Google\Service\Resource
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
    * @param array $optParams Optional parameters.
    * @return VisionEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -84,7 +82,6 @@ class ProjectsLocationsProducts extends \Google\Service\Resource
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
    * @param array $optParams Optional parameters.
    * @return Product
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -106,7 +103,6 @@ class ProjectsLocationsProducts extends \Google\Service\Resource
    * @opt_param string pageToken The next_page_token returned from a previous List
    * request, if any.
    * @return ListProductsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsProducts($parent, $optParams = [])
   {
@@ -135,7 +131,6 @@ class ProjectsLocationsProducts extends \Google\Service\Resource
    * update. If update_mask isn't specified, all mutable fields are to be updated.
    * Valid mask paths include `product_labels`, `display_name`, and `description`.
    * @return Product
-   * @throws \Google\Service\Exception
    */
   public function patch($name, Product $postBody, $optParams = [])
   {
@@ -167,7 +162,6 @@ class ProjectsLocationsProducts extends \Google\Service\Resource
    * @param PurgeProductsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function purge($parent, PurgeProductsRequest $postBody, $optParams = [])
   {

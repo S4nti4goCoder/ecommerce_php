@@ -40,7 +40,6 @@ class Leaderboards extends \Google\Service\Resource
    * @opt_param string language The preferred language to use for strings returned
    * by this method.
    * @return Leaderboard
-   * @throws \Google\Service\Exception
    */
   public function get($leaderboardId, $optParams = [])
   {
@@ -61,7 +60,6 @@ class Leaderboards extends \Google\Service\Resource
    * less than the specified `maxResults`.
    * @opt_param string pageToken The token returned by the previous request.
    * @return LeaderboardListResponse
-   * @throws \Google\Service\Exception
    */
   public function listLeaderboards($optParams = [])
   {

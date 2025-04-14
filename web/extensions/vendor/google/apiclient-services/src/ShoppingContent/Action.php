@@ -20,20 +20,30 @@ namespace Google\Service\ShoppingContent;
 class Action extends \Google\Collection
 {
   protected $collection_key = 'reasons';
+  /**
+   * @var BuiltInSimpleAction
+   */
+  public $builtinSimpleAction;
   protected $builtinSimpleActionType = BuiltInSimpleAction::class;
   protected $builtinSimpleActionDataType = '';
-  protected $builtinUserInputActionType = BuiltInUserInputAction::class;
-  protected $builtinUserInputActionDataType = '';
   /**
    * @var string
    */
   public $buttonLabel;
+  /**
+   * @var ExternalAction
+   */
+  public $externalAction;
   protected $externalActionType = ExternalAction::class;
   protected $externalActionDataType = '';
   /**
    * @var bool
    */
   public $isAvailable;
+  /**
+   * @var ActionReason[]
+   */
+  public $reasons;
   protected $reasonsType = ActionReason::class;
   protected $reasonsDataType = 'array';
 
@@ -50,20 +60,6 @@ class Action extends \Google\Collection
   public function getBuiltinSimpleAction()
   {
     return $this->builtinSimpleAction;
-  }
-  /**
-   * @param BuiltInUserInputAction
-   */
-  public function setBuiltinUserInputAction(BuiltInUserInputAction $builtinUserInputAction)
-  {
-    $this->builtinUserInputAction = $builtinUserInputAction;
-  }
-  /**
-   * @return BuiltInUserInputAction
-   */
-  public function getBuiltinUserInputAction()
-  {
-    return $this->builtinUserInputAction;
   }
   /**
    * @param string

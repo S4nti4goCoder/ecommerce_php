@@ -50,7 +50,6 @@ class SavedQueries extends \Google\Service\Resource
    * required in the saved query creation, and the `name` field of the
    * `saved_query` will be ignored.
    * @return SavedQuery
-   * @throws \Google\Service\Exception
    */
   public function create($parent, SavedQuery $postBody, $optParams = [])
   {
@@ -67,7 +66,6 @@ class SavedQueries extends \Google\Service\Resource
    * organizations/organization_number/savedQueries/saved_query_id
    * @param array $optParams Optional parameters.
    * @return CloudassetEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -84,7 +82,6 @@ class SavedQueries extends \Google\Service\Resource
    * organizations/organization_number/savedQueries/saved_query_id
    * @param array $optParams Optional parameters.
    * @return SavedQuery
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -117,7 +114,6 @@ class SavedQueries extends \Google\Service\Resource
    * paginating, all other parameters provided to `ListSavedQueries` must match
    * the call that provided the page token.
    * @return ListSavedQueriesResponse
-   * @throws \Google\Service\Exception
    */
   public function listSavedQueries($parent, $optParams = [])
   {
@@ -137,7 +133,6 @@ class SavedQueries extends \Google\Service\Resource
    *
    * @opt_param string updateMask Required. The list of fields to update.
    * @return SavedQuery
-   * @throws \Google\Service\Exception
    */
   public function patch($name, SavedQuery $postBody, $optParams = [])
   {

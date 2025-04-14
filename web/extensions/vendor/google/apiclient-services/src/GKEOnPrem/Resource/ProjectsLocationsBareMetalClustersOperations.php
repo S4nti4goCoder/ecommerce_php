@@ -38,7 +38,6 @@ class ProjectsLocationsBareMetalClustersOperations extends \Google\Service\Resou
    * @param string $name The name of the operation resource.
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -58,7 +57,6 @@ class ProjectsLocationsBareMetalClustersOperations extends \Google\Service\Resou
    * @opt_param int pageSize The standard list page size.
    * @opt_param string pageToken The standard list page token.
    * @return ListOperationsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsBareMetalClustersOperations($name, $optParams = [])
   {

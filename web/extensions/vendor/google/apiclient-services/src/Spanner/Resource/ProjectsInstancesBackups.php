@@ -53,7 +53,6 @@ class ProjectsInstancesBackups extends \Google\Service\Resource
    * @param CopyBackupRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function copy($parent, CopyBackupRequest $postBody, $optParams = [])
   {
@@ -88,20 +87,7 @@ class ProjectsInstancesBackups extends \Google\Service\Resource
    * that will be used to protect the backup. This field should be set only when
    * encryption_type is `CUSTOMER_MANAGED_ENCRYPTION`. Values are of the form
    * `projects//locations//keyRings//cryptoKeys/`.
-   * @opt_param string encryptionConfig.kmsKeyNames Optional. Specifies the KMS
-   * configuration for the one or more keys used to protect the backup. Values are
-   * of the form `projects//locations//keyRings//cryptoKeys/`. The keys referenced
-   * by `kms_key_names` must fully cover all regions of the backup's instance
-   * configuration. Some examples: * For regional (single-region) instance
-   * configurations, specify a regional location KMS key. * For multi-region
-   * instance configurations of type `GOOGLE_MANAGED`, either specify a multi-
-   * region location KMS key or multiple regional location KMS keys that cover all
-   * regions in the instance configuration. * For an instance configuration of
-   * type `USER_MANAGED`, specify only regional location KMS keys to cover each
-   * region in the instance configuration. Multi-region location KMS keys aren't
-   * supported for `USER_MANAGED` type instance configurations.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Backup $postBody, $optParams = [])
   {
@@ -116,7 +102,6 @@ class ProjectsInstancesBackups extends \Google\Service\Resource
    * form `projects//instances//backups/`.
    * @param array $optParams Optional parameters.
    * @return SpannerEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -131,7 +116,6 @@ class ProjectsInstancesBackups extends \Google\Service\Resource
    * `projects//instances//backups/`.
    * @param array $optParams Optional parameters.
    * @return Backup
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -144,9 +128,7 @@ class ProjectsInstancesBackups extends \Google\Service\Resource
    * empty policy if a database or backup exists but does not have a policy set.
    * Authorization requires `spanner.databases.getIamPolicy` permission on
    * resource. For backups, authorization requires `spanner.backups.getIamPolicy`
-   * permission on resource. For backup schedules, authorization requires
-   * `spanner.backupSchedules.getIamPolicy` permission on resource.
-   * (backups.getIamPolicy)
+   * permission on resource. (backups.getIamPolicy)
    *
    * @param string $resource REQUIRED: The Cloud Spanner resource for which the
    * policy is being retrieved. The format is `projects//instances/` for instance
@@ -154,7 +136,6 @@ class ProjectsInstancesBackups extends \Google\Service\Resource
    * @param GetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, GetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -180,10 +161,10 @@ class ProjectsInstancesBackups extends \Google\Service\Resource
    * `name` * `database` * `state` * `create_time` (and values are of the format
    * YYYY-MM-DDTHH:MM:SSZ) * `expire_time` (and values are of the format YYYY-MM-
    * DDTHH:MM:SSZ) * `version_time` (and values are of the format YYYY-MM-
-   * DDTHH:MM:SSZ) * `size_bytes` * `backup_schedules` You can combine multiple
-   * expressions by enclosing each expression in parentheses. By default,
-   * expressions are combined with AND logic, but you can specify AND, OR, and NOT
-   * logic explicitly. Here are a few examples: * `name:Howl` - The backup's name
+   * DDTHH:MM:SSZ) * `size_bytes` You can combine multiple expressions by
+   * enclosing each expression in parentheses. By default, expressions are
+   * combined with AND logic, but you can specify AND, OR, and NOT logic
+   * explicitly. Here are a few examples: * `name:Howl` - The backup's name
    * contains the string "howl". * `database:prod` - The database's name contains
    * the string "prod". * `state:CREATING` - The backup is pending creation. *
    * `state:READY` - The backup is fully created and ready for use. * `(name:howl)
@@ -191,15 +172,13 @@ class ProjectsInstancesBackups extends \Google\Service\Resource
    * string "howl" and `create_time` of the backup is before 2018-03-28T14:50:00Z.
    * * `expire_time < \"2018-03-28T14:50:00Z\"` - The backup `expire_time` is
    * before 2018-03-28T14:50:00Z. * `size_bytes > 10000000000` - The backup's size
-   * is greater than 10GB * `backup_schedules:daily` - The backup is created from
-   * a schedule with "daily" in its name.
+   * is greater than 10GB
    * @opt_param int pageSize Number of backups to be returned in the response. If
    * 0 or less, defaults to the server's maximum allowed page size.
    * @opt_param string pageToken If non-empty, `page_token` should contain a
    * next_page_token from a previous ListBackupsResponse to the same `parent` and
    * with the same `filter`.
    * @return ListBackupsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsInstancesBackups($parent, $optParams = [])
   {
@@ -227,7 +206,6 @@ class ProjectsInstancesBackups extends \Google\Service\Resource
    * must always be specified; this prevents any future fields from being erased
    * accidentally by clients that do not know about them.
    * @return Backup
-   * @throws \Google\Service\Exception
    */
   public function patch($name, Backup $postBody, $optParams = [])
   {
@@ -239,9 +217,7 @@ class ProjectsInstancesBackups extends \Google\Service\Resource
    * Sets the access control policy on a database or backup resource. Replaces any
    * existing policy. Authorization requires `spanner.databases.setIamPolicy`
    * permission on resource. For backups, authorization requires
-   * `spanner.backups.setIamPolicy` permission on resource. For backup schedules,
-   * authorization requires `spanner.backupSchedules.setIamPolicy` permission on
-   * resource. (backups.setIamPolicy)
+   * `spanner.backups.setIamPolicy` permission on resource. (backups.setIamPolicy)
    *
    * @param string $resource REQUIRED: The Cloud Spanner resource for which the
    * policy is being set. The format is `projects//instances/` for instance
@@ -249,7 +225,6 @@ class ProjectsInstancesBackups extends \Google\Service\Resource
    * @param SetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, SetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -264,10 +239,7 @@ class ProjectsInstancesBackups extends \Google\Service\Resource
    * permission on the containing Cloud Spanner instance. Otherwise returns an
    * empty set of permissions. Calling this method on a backup that does not exist
    * will result in a NOT_FOUND error if the user has `spanner.backups.list`
-   * permission on the containing instance. Calling this method on a backup
-   * schedule that does not exist will result in a NOT_FOUND error if the user has
-   * `spanner.backupSchedules.list` permission on the containing database.
-   * (backups.testIamPermissions)
+   * permission on the containing instance. (backups.testIamPermissions)
    *
    * @param string $resource REQUIRED: The Cloud Spanner resource for which
    * permissions are being tested. The format is `projects//instances/` for
@@ -276,7 +248,6 @@ class ProjectsInstancesBackups extends \Google\Service\Resource
    * @param TestIamPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestIamPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, TestIamPermissionsRequest $postBody, $optParams = [])
   {

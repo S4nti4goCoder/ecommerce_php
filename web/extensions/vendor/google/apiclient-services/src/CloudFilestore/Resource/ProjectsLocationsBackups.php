@@ -46,7 +46,6 @@ class ProjectsLocationsBackups extends \Google\Service\Resource
    * numbers, or hyphens, and cannot end with a hyphen. Values that do not match
    * this pattern will trigger an INVALID_ARGUMENT error.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Backup $postBody, $optParams = [])
   {
@@ -61,7 +60,6 @@ class ProjectsLocationsBackups extends \Google\Service\Resource
    * `projects/{project_number}/locations/{location}/backups/{backup_id}`
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -76,7 +74,6 @@ class ProjectsLocationsBackups extends \Google\Service\Resource
    * `projects/{project_number}/locations/{location}/backups/{backup_id}`.
    * @param array $optParams Optional parameters.
    * @return Backup
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -102,7 +99,6 @@ class ProjectsLocationsBackups extends \Google\Service\Resource
    * @opt_param string pageToken The next_page_token value to use if there are
    * additional results to retrieve for this list request.
    * @return ListBackupsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsBackups($parent, $optParams = [])
   {
@@ -122,7 +118,6 @@ class ProjectsLocationsBackups extends \Google\Service\Resource
    * @opt_param string updateMask Required. Mask of fields to update. At least one
    * path must be supplied in this field.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, Backup $postBody, $optParams = [])
   {

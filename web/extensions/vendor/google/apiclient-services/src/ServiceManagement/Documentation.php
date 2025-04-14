@@ -23,19 +23,27 @@ class Documentation extends \Google\Collection
   /**
    * @var string
    */
-  public $additionalIamInfo;
-  /**
-   * @var string
-   */
   public $documentationRootUrl;
   /**
    * @var string
    */
   public $overview;
+  /**
+   * @var Page[]
+   */
+  public $pages;
   protected $pagesType = Page::class;
   protected $pagesDataType = 'array';
+  /**
+   * @var DocumentationRule[]
+   */
+  public $rules;
   protected $rulesType = DocumentationRule::class;
   protected $rulesDataType = 'array';
+  /**
+   * @var Page[]
+   */
+  public $sectionOverrides;
   protected $sectionOverridesType = Page::class;
   protected $sectionOverridesDataType = 'array';
   /**
@@ -47,20 +55,6 @@ class Documentation extends \Google\Collection
    */
   public $summary;
 
-  /**
-   * @param string
-   */
-  public function setAdditionalIamInfo($additionalIamInfo)
-  {
-    $this->additionalIamInfo = $additionalIamInfo;
-  }
-  /**
-   * @return string
-   */
-  public function getAdditionalIamInfo()
-  {
-    return $this->additionalIamInfo;
-  }
   /**
    * @param string
    */

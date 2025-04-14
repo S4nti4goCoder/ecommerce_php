@@ -19,12 +19,20 @@ namespace Google\Service\Walletobjects;
 
 class LoyaltyPoints extends \Google\Model
 {
+  /**
+   * @var LoyaltyPointsBalance
+   */
+  public $balance;
   protected $balanceType = LoyaltyPointsBalance::class;
   protected $balanceDataType = '';
   /**
    * @var string
    */
   public $label;
+  /**
+   * @var LocalizedString
+   */
+  public $localizedLabel;
   protected $localizedLabelType = LocalizedString::class;
   protected $localizedLabelDataType = '';
 

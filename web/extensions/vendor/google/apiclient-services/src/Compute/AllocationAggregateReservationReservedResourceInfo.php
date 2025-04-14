@@ -19,6 +19,10 @@ namespace Google\Service\Compute;
 
 class AllocationAggregateReservationReservedResourceInfo extends \Google\Model
 {
+  /**
+   * @var AllocationAggregateReservationReservedResourceInfoAccelerator
+   */
+  public $accelerator;
   protected $acceleratorType = AllocationAggregateReservationReservedResourceInfoAccelerator::class;
   protected $acceleratorDataType = '';
 

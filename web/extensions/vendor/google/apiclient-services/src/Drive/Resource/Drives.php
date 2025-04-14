@@ -41,7 +41,6 @@ class Drives extends \Google\Service\Resource
    * @param Drive $postBody
    * @param array $optParams Optional parameters.
    * @return Drive
-   * @throws \Google\Service\Exception
    */
   public function create($requestId, Drive $postBody, $optParams = [])
   {
@@ -62,7 +61,6 @@ class Drives extends \Google\Service\Resource
    * @opt_param bool useDomainAdminAccess Issue the request as a domain
    * administrator; if set to true, then the requester will be granted access if
    * they are an administrator of the domain to which the shared drive belongs.
-   * @throws \Google\Service\Exception
    */
   public function delete($driveId, $optParams = [])
   {
@@ -80,7 +78,6 @@ class Drives extends \Google\Service\Resource
    * administrator; if set to true, then the requester will be granted access if
    * they are an administrator of the domain to which the shared drive belongs.
    * @return Drive
-   * @throws \Google\Service\Exception
    */
   public function get($driveId, $optParams = [])
   {
@@ -94,7 +91,6 @@ class Drives extends \Google\Service\Resource
    * @param string $driveId The ID of the shared drive.
    * @param array $optParams Optional parameters.
    * @return Drive
-   * @throws \Google\Service\Exception
    */
   public function hide($driveId, $optParams = [])
   {
@@ -117,7 +113,6 @@ class Drives extends \Google\Service\Resource
    * administrator; if set to true, then all shared drives of the domain in which
    * the requester is an administrator are returned.
    * @return DriveList
-   * @throws \Google\Service\Exception
    */
   public function listDrives($optParams = [])
   {
@@ -131,7 +126,6 @@ class Drives extends \Google\Service\Resource
    * @param string $driveId The ID of the shared drive.
    * @param array $optParams Optional parameters.
    * @return Drive
-   * @throws \Google\Service\Exception
    */
   public function unhide($driveId, $optParams = [])
   {
@@ -140,7 +134,7 @@ class Drives extends \Google\Service\Resource
     return $this->call('unhide', [$params], Drive::class);
   }
   /**
-   * Updates the metadata for a shared drive. (drives.update)
+   * Updates the metadate for a shared drive. (drives.update)
    *
    * @param string $driveId The ID of the shared drive.
    * @param Drive $postBody
@@ -150,7 +144,6 @@ class Drives extends \Google\Service\Resource
    * administrator; if set to true, then the requester will be granted access if
    * they are an administrator of the domain to which the shared drive belongs.
    * @return Drive
-   * @throws \Google\Service\Exception
    */
   public function update($driveId, Drive $postBody, $optParams = [])
   {

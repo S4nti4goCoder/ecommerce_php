@@ -42,7 +42,6 @@ class BillingAccountsLocationsInsightTypes extends \Google\Service\Resource
    * ig`
    * @param array $optParams Optional parameters.
    * @return GoogleCloudRecommenderV1InsightTypeConfig
-   * @throws \Google\Service\Exception
    */
   public function getConfig($name, $optParams = [])
   {
@@ -54,8 +53,8 @@ class BillingAccountsLocationsInsightTypes extends \Google\Service\Resource
    * Updates an InsightTypeConfig change. This will create a new revision of the
    * config. (insightTypes.updateConfig)
    *
-   * @param string $name Identifier. Name of insight type config. Eg, projects/[PR
-   * OJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/config
+   * @param string $name Name of insight type config. Eg, projects/[PROJECT_NUMBER
+   * ]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/config
    * @param GoogleCloudRecommenderV1InsightTypeConfig $postBody
    * @param array $optParams Optional parameters.
    *
@@ -63,7 +62,6 @@ class BillingAccountsLocationsInsightTypes extends \Google\Service\Resource
    * @opt_param bool validateOnly If true, validate the request and preview the
    * change, but do not actually update it.
    * @return GoogleCloudRecommenderV1InsightTypeConfig
-   * @throws \Google\Service\Exception
    */
   public function updateConfig($name, GoogleCloudRecommenderV1InsightTypeConfig $postBody, $optParams = [])
   {

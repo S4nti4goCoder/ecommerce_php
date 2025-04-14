@@ -42,7 +42,6 @@ class ProjectsLocationsConnectionsActions extends \Google\Service\Resource
    * @param ExecuteActionRequest $postBody
    * @param array $optParams Optional parameters.
    * @return ExecuteActionResponse
-   * @throws \Google\Service\Exception
    */
   public function execute($name, ExecuteActionRequest $postBody, $optParams = [])
   {
@@ -57,7 +56,6 @@ class ProjectsLocationsConnectionsActions extends \Google\Service\Resource
    * project}/locations/{location}/connections/{connection}/actions/{action}
    * @param array $optParams Optional parameters.
    * @return Action
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -80,7 +78,6 @@ class ProjectsLocationsConnectionsActions extends \Google\Service\Resource
    * @opt_param string view Specifies which fields of the Action are returned in
    * the response.
    * @return ListActionsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsConnectionsActions($parent, $optParams = [])
   {

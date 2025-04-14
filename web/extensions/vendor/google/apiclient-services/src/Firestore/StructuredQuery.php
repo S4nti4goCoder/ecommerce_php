@@ -20,10 +20,16 @@ namespace Google\Service\Firestore;
 class StructuredQuery extends \Google\Collection
 {
   protected $collection_key = 'orderBy';
+  /**
+   * @var Cursor
+   */
+  public $endAt;
   protected $endAtType = Cursor::class;
   protected $endAtDataType = '';
-  protected $findNearestType = FindNearest::class;
-  protected $findNearestDataType = '';
+  /**
+   * @var CollectionSelector[]
+   */
+  public $from;
   protected $fromType = CollectionSelector::class;
   protected $fromDataType = 'array';
   /**
@@ -34,12 +40,28 @@ class StructuredQuery extends \Google\Collection
    * @var int
    */
   public $offset;
+  /**
+   * @var Order[]
+   */
+  public $orderBy;
   protected $orderByType = Order::class;
   protected $orderByDataType = 'array';
+  /**
+   * @var Projection
+   */
+  public $select;
   protected $selectType = Projection::class;
   protected $selectDataType = '';
+  /**
+   * @var Cursor
+   */
+  public $startAt;
   protected $startAtType = Cursor::class;
   protected $startAtDataType = '';
+  /**
+   * @var Filter
+   */
+  public $where;
   protected $whereType = Filter::class;
   protected $whereDataType = '';
 
@@ -56,20 +78,6 @@ class StructuredQuery extends \Google\Collection
   public function getEndAt()
   {
     return $this->endAt;
-  }
-  /**
-   * @param FindNearest
-   */
-  public function setFindNearest(FindNearest $findNearest)
-  {
-    $this->findNearest = $findNearest;
-  }
-  /**
-   * @return FindNearest
-   */
-  public function getFindNearest()
-  {
-    return $this->findNearest;
   }
   /**
    * @param CollectionSelector[]

@@ -19,30 +19,62 @@ namespace Google\Service\RecaptchaEnterprise;
 
 class GoogleCloudRecaptchaenterpriseV1Assessment extends \Google\Model
 {
+  /**
+   * @var GoogleCloudRecaptchaenterpriseV1AccountDefenderAssessment
+   */
+  public $accountDefenderAssessment;
   protected $accountDefenderAssessmentType = GoogleCloudRecaptchaenterpriseV1AccountDefenderAssessment::class;
   protected $accountDefenderAssessmentDataType = '';
+  /**
+   * @var GoogleCloudRecaptchaenterpriseV1AccountVerificationInfo
+   */
+  public $accountVerification;
   protected $accountVerificationType = GoogleCloudRecaptchaenterpriseV1AccountVerificationInfo::class;
   protected $accountVerificationDataType = '';
-  protected $assessmentEnvironmentType = GoogleCloudRecaptchaenterpriseV1AssessmentEnvironment::class;
-  protected $assessmentEnvironmentDataType = '';
+  /**
+   * @var GoogleCloudRecaptchaenterpriseV1Event
+   */
+  public $event;
   protected $eventType = GoogleCloudRecaptchaenterpriseV1Event::class;
   protected $eventDataType = '';
+  /**
+   * @var GoogleCloudRecaptchaenterpriseV1FirewallPolicyAssessment
+   */
+  public $firewallPolicyAssessment;
   protected $firewallPolicyAssessmentType = GoogleCloudRecaptchaenterpriseV1FirewallPolicyAssessment::class;
   protected $firewallPolicyAssessmentDataType = '';
+  /**
+   * @var GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessment
+   */
+  public $fraudPreventionAssessment;
   protected $fraudPreventionAssessmentType = GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessment::class;
   protected $fraudPreventionAssessmentDataType = '';
+  /**
+   * @var GoogleCloudRecaptchaenterpriseV1FraudSignals
+   */
+  public $fraudSignals;
   protected $fraudSignalsType = GoogleCloudRecaptchaenterpriseV1FraudSignals::class;
   protected $fraudSignalsDataType = '';
   /**
    * @var string
    */
   public $name;
-  protected $phoneFraudAssessmentType = GoogleCloudRecaptchaenterpriseV1PhoneFraudAssessment::class;
-  protected $phoneFraudAssessmentDataType = '';
+  /**
+   * @var GoogleCloudRecaptchaenterpriseV1PrivatePasswordLeakVerification
+   */
+  public $privatePasswordLeakVerification;
   protected $privatePasswordLeakVerificationType = GoogleCloudRecaptchaenterpriseV1PrivatePasswordLeakVerification::class;
   protected $privatePasswordLeakVerificationDataType = '';
+  /**
+   * @var GoogleCloudRecaptchaenterpriseV1RiskAnalysis
+   */
+  public $riskAnalysis;
   protected $riskAnalysisType = GoogleCloudRecaptchaenterpriseV1RiskAnalysis::class;
   protected $riskAnalysisDataType = '';
+  /**
+   * @var GoogleCloudRecaptchaenterpriseV1TokenProperties
+   */
+  public $tokenProperties;
   protected $tokenPropertiesType = GoogleCloudRecaptchaenterpriseV1TokenProperties::class;
   protected $tokenPropertiesDataType = '';
 
@@ -73,20 +105,6 @@ class GoogleCloudRecaptchaenterpriseV1Assessment extends \Google\Model
   public function getAccountVerification()
   {
     return $this->accountVerification;
-  }
-  /**
-   * @param GoogleCloudRecaptchaenterpriseV1AssessmentEnvironment
-   */
-  public function setAssessmentEnvironment(GoogleCloudRecaptchaenterpriseV1AssessmentEnvironment $assessmentEnvironment)
-  {
-    $this->assessmentEnvironment = $assessmentEnvironment;
-  }
-  /**
-   * @return GoogleCloudRecaptchaenterpriseV1AssessmentEnvironment
-   */
-  public function getAssessmentEnvironment()
-  {
-    return $this->assessmentEnvironment;
   }
   /**
    * @param GoogleCloudRecaptchaenterpriseV1Event
@@ -157,20 +175,6 @@ class GoogleCloudRecaptchaenterpriseV1Assessment extends \Google\Model
   public function getName()
   {
     return $this->name;
-  }
-  /**
-   * @param GoogleCloudRecaptchaenterpriseV1PhoneFraudAssessment
-   */
-  public function setPhoneFraudAssessment(GoogleCloudRecaptchaenterpriseV1PhoneFraudAssessment $phoneFraudAssessment)
-  {
-    $this->phoneFraudAssessment = $phoneFraudAssessment;
-  }
-  /**
-   * @return GoogleCloudRecaptchaenterpriseV1PhoneFraudAssessment
-   */
-  public function getPhoneFraudAssessment()
-  {
-    return $this->phoneFraudAssessment;
   }
   /**
    * @param GoogleCloudRecaptchaenterpriseV1PrivatePasswordLeakVerification

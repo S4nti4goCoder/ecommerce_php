@@ -24,21 +24,17 @@ class NetworkConfig extends \Google\Model
    */
   public $datapathProvider;
   /**
-   * @var bool
+   * @var DefaultSnatStatus
    */
-  public $defaultEnablePrivateNodes;
+  public $defaultSnatStatus;
   protected $defaultSnatStatusType = DefaultSnatStatus::class;
   protected $defaultSnatStatusDataType = '';
   /**
-   * @var bool
+   * @var DNSConfig
    */
-  public $disableL4LbFirewallReconciliation;
+  public $dnsConfig;
   protected $dnsConfigType = DNSConfig::class;
   protected $dnsConfigDataType = '';
-  /**
-   * @var bool
-   */
-  public $enableCiliumClusterwideNetworkPolicy;
   /**
    * @var bool
    */
@@ -55,22 +51,30 @@ class NetworkConfig extends \Google\Model
    * @var bool
    */
   public $enableMultiNetworking;
+  /**
+   * @var GatewayAPIConfig
+   */
+  public $gatewayApiConfig;
   protected $gatewayApiConfigType = GatewayAPIConfig::class;
   protected $gatewayApiConfigDataType = '';
   /**
    * @var string
    */
-  public $inTransitEncryptionConfig;
-  /**
-   * @var string
-   */
   public $network;
+  /**
+   * @var ClusterNetworkPerformanceConfig
+   */
+  public $networkPerformanceConfig;
   protected $networkPerformanceConfigType = ClusterNetworkPerformanceConfig::class;
   protected $networkPerformanceConfigDataType = '';
   /**
    * @var string
    */
   public $privateIpv6GoogleAccess;
+  /**
+   * @var ServiceExternalIPsConfig
+   */
+  public $serviceExternalIpsConfig;
   protected $serviceExternalIpsConfigType = ServiceExternalIPsConfig::class;
   protected $serviceExternalIpsConfigDataType = '';
   /**
@@ -93,20 +97,6 @@ class NetworkConfig extends \Google\Model
     return $this->datapathProvider;
   }
   /**
-   * @param bool
-   */
-  public function setDefaultEnablePrivateNodes($defaultEnablePrivateNodes)
-  {
-    $this->defaultEnablePrivateNodes = $defaultEnablePrivateNodes;
-  }
-  /**
-   * @return bool
-   */
-  public function getDefaultEnablePrivateNodes()
-  {
-    return $this->defaultEnablePrivateNodes;
-  }
-  /**
    * @param DefaultSnatStatus
    */
   public function setDefaultSnatStatus(DefaultSnatStatus $defaultSnatStatus)
@@ -121,20 +111,6 @@ class NetworkConfig extends \Google\Model
     return $this->defaultSnatStatus;
   }
   /**
-   * @param bool
-   */
-  public function setDisableL4LbFirewallReconciliation($disableL4LbFirewallReconciliation)
-  {
-    $this->disableL4LbFirewallReconciliation = $disableL4LbFirewallReconciliation;
-  }
-  /**
-   * @return bool
-   */
-  public function getDisableL4LbFirewallReconciliation()
-  {
-    return $this->disableL4LbFirewallReconciliation;
-  }
-  /**
    * @param DNSConfig
    */
   public function setDnsConfig(DNSConfig $dnsConfig)
@@ -147,20 +123,6 @@ class NetworkConfig extends \Google\Model
   public function getDnsConfig()
   {
     return $this->dnsConfig;
-  }
-  /**
-   * @param bool
-   */
-  public function setEnableCiliumClusterwideNetworkPolicy($enableCiliumClusterwideNetworkPolicy)
-  {
-    $this->enableCiliumClusterwideNetworkPolicy = $enableCiliumClusterwideNetworkPolicy;
-  }
-  /**
-   * @return bool
-   */
-  public function getEnableCiliumClusterwideNetworkPolicy()
-  {
-    return $this->enableCiliumClusterwideNetworkPolicy;
   }
   /**
    * @param bool
@@ -231,20 +193,6 @@ class NetworkConfig extends \Google\Model
   public function getGatewayApiConfig()
   {
     return $this->gatewayApiConfig;
-  }
-  /**
-   * @param string
-   */
-  public function setInTransitEncryptionConfig($inTransitEncryptionConfig)
-  {
-    $this->inTransitEncryptionConfig = $inTransitEncryptionConfig;
-  }
-  /**
-   * @return string
-   */
-  public function getInTransitEncryptionConfig()
-  {
-    return $this->inTransitEncryptionConfig;
   }
   /**
    * @param string

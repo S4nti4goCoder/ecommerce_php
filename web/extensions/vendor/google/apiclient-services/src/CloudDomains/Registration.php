@@ -20,22 +20,26 @@ namespace Google\Service\CloudDomains;
 class Registration extends \Google\Collection
 {
   protected $collection_key = 'supportedPrivacy';
+  /**
+   * @var ContactSettings
+   */
+  public $contactSettings;
   protected $contactSettingsType = ContactSettings::class;
   protected $contactSettingsDataType = '';
   /**
    * @var string
    */
   public $createTime;
+  /**
+   * @var DnsSettings
+   */
+  public $dnsSettings;
   protected $dnsSettingsType = DnsSettings::class;
   protected $dnsSettingsDataType = '';
   /**
    * @var string
    */
   public $domainName;
-  /**
-   * @var string[]
-   */
-  public $domainProperties;
   /**
    * @var string
    */
@@ -48,12 +52,20 @@ class Registration extends \Google\Collection
    * @var string[]
    */
   public $labels;
+  /**
+   * @var ManagementSettings
+   */
+  public $managementSettings;
   protected $managementSettingsType = ManagementSettings::class;
   protected $managementSettingsDataType = '';
   /**
    * @var string
    */
   public $name;
+  /**
+   * @var ContactSettings
+   */
+  public $pendingContactSettings;
   protected $pendingContactSettingsType = ContactSettings::class;
   protected $pendingContactSettingsDataType = '';
   /**
@@ -128,20 +140,6 @@ class Registration extends \Google\Collection
   public function getDomainName()
   {
     return $this->domainName;
-  }
-  /**
-   * @param string[]
-   */
-  public function setDomainProperties($domainProperties)
-  {
-    $this->domainProperties = $domainProperties;
-  }
-  /**
-   * @return string[]
-   */
-  public function getDomainProperties()
-  {
-    return $this->domainProperties;
   }
   /**
    * @param string

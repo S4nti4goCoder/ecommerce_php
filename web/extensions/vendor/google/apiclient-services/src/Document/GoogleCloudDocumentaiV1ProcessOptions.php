@@ -27,14 +27,18 @@ class GoogleCloudDocumentaiV1ProcessOptions extends \Google\Model
    * @var int
    */
   public $fromStart;
+  /**
+   * @var GoogleCloudDocumentaiV1ProcessOptionsIndividualPageSelector
+   */
+  public $individualPageSelector;
   protected $individualPageSelectorType = GoogleCloudDocumentaiV1ProcessOptionsIndividualPageSelector::class;
   protected $individualPageSelectorDataType = '';
-  protected $layoutConfigType = GoogleCloudDocumentaiV1ProcessOptionsLayoutConfig::class;
-  protected $layoutConfigDataType = '';
+  /**
+   * @var GoogleCloudDocumentaiV1OcrConfig
+   */
+  public $ocrConfig;
   protected $ocrConfigType = GoogleCloudDocumentaiV1OcrConfig::class;
   protected $ocrConfigDataType = '';
-  protected $schemaOverrideType = GoogleCloudDocumentaiV1DocumentSchema::class;
-  protected $schemaOverrideDataType = '';
 
   /**
    * @param int
@@ -79,20 +83,6 @@ class GoogleCloudDocumentaiV1ProcessOptions extends \Google\Model
     return $this->individualPageSelector;
   }
   /**
-   * @param GoogleCloudDocumentaiV1ProcessOptionsLayoutConfig
-   */
-  public function setLayoutConfig(GoogleCloudDocumentaiV1ProcessOptionsLayoutConfig $layoutConfig)
-  {
-    $this->layoutConfig = $layoutConfig;
-  }
-  /**
-   * @return GoogleCloudDocumentaiV1ProcessOptionsLayoutConfig
-   */
-  public function getLayoutConfig()
-  {
-    return $this->layoutConfig;
-  }
-  /**
    * @param GoogleCloudDocumentaiV1OcrConfig
    */
   public function setOcrConfig(GoogleCloudDocumentaiV1OcrConfig $ocrConfig)
@@ -105,20 +95,6 @@ class GoogleCloudDocumentaiV1ProcessOptions extends \Google\Model
   public function getOcrConfig()
   {
     return $this->ocrConfig;
-  }
-  /**
-   * @param GoogleCloudDocumentaiV1DocumentSchema
-   */
-  public function setSchemaOverride(GoogleCloudDocumentaiV1DocumentSchema $schemaOverride)
-  {
-    $this->schemaOverride = $schemaOverride;
-  }
-  /**
-   * @return GoogleCloudDocumentaiV1DocumentSchema
-   */
-  public function getSchemaOverride()
-  {
-    return $this->schemaOverride;
   }
 }
 

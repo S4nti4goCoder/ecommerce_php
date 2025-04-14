@@ -19,8 +19,16 @@ namespace Google\Service\Dataform;
 
 class WorkflowInvocationAction extends \Google\Model
 {
+  /**
+   * @var BigQueryAction
+   */
+  public $bigqueryAction;
   protected $bigqueryActionType = BigQueryAction::class;
   protected $bigqueryActionDataType = '';
+  /**
+   * @var Target
+   */
+  public $canonicalTarget;
   protected $canonicalTargetType = Target::class;
   protected $canonicalTargetDataType = '';
   /**
@@ -28,17 +36,19 @@ class WorkflowInvocationAction extends \Google\Model
    */
   public $failureReason;
   /**
-   * @var string
+   * @var Interval
    */
-  public $internalMetadata;
+  public $invocationTiming;
   protected $invocationTimingType = Interval::class;
   protected $invocationTimingDataType = '';
-  protected $notebookActionType = NotebookAction::class;
-  protected $notebookActionDataType = '';
   /**
    * @var string
    */
   public $state;
+  /**
+   * @var Target
+   */
+  public $target;
   protected $targetType = Target::class;
   protected $targetDataType = '';
 
@@ -85,20 +95,6 @@ class WorkflowInvocationAction extends \Google\Model
     return $this->failureReason;
   }
   /**
-   * @param string
-   */
-  public function setInternalMetadata($internalMetadata)
-  {
-    $this->internalMetadata = $internalMetadata;
-  }
-  /**
-   * @return string
-   */
-  public function getInternalMetadata()
-  {
-    return $this->internalMetadata;
-  }
-  /**
    * @param Interval
    */
   public function setInvocationTiming(Interval $invocationTiming)
@@ -111,20 +107,6 @@ class WorkflowInvocationAction extends \Google\Model
   public function getInvocationTiming()
   {
     return $this->invocationTiming;
-  }
-  /**
-   * @param NotebookAction
-   */
-  public function setNotebookAction(NotebookAction $notebookAction)
-  {
-    $this->notebookAction = $notebookAction;
-  }
-  /**
-   * @return NotebookAction
-   */
-  public function getNotebookAction()
-  {
-    return $this->notebookAction;
   }
   /**
    * @param string

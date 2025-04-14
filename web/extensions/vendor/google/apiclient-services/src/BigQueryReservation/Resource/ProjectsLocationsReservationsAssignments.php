@@ -65,7 +65,6 @@ class ProjectsLocationsReservationsAssignments extends \Google\Service\Resource
    * contain lower case alphanumeric characters or dashes. Max length is 64
    * characters.
    * @return Assignment
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Assignment $postBody, $optParams = [])
   {
@@ -87,7 +86,6 @@ class ProjectsLocationsReservationsAssignments extends \Google\Service\Resource
    * `projects/myproject/locations/US/reservations/team1-prod/assignments/123`
    * @param array $optParams Optional parameters.
    * @return BigqueryreservationEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -116,7 +114,6 @@ class ProjectsLocationsReservationsAssignments extends \Google\Service\Resource
    * @opt_param string pageToken The next_page_token value returned from a
    * previous List request, if any.
    * @return ListAssignmentsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsReservationsAssignments($parent, $optParams = [])
   {
@@ -135,7 +132,6 @@ class ProjectsLocationsReservationsAssignments extends \Google\Service\Resource
    * @param MoveAssignmentRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Assignment
-   * @throws \Google\Service\Exception
    */
   public function move($name, MoveAssignmentRequest $postBody, $optParams = [])
   {
@@ -157,7 +153,6 @@ class ProjectsLocationsReservationsAssignments extends \Google\Service\Resource
    * @opt_param string updateMask Standard field mask for the set of fields to be
    * updated.
    * @return Assignment
-   * @throws \Google\Service\Exception
    */
   public function patch($name, Assignment $postBody, $optParams = [])
   {

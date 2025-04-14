@@ -20,18 +20,22 @@ namespace Google\Service\ShoppingContent;
 class AccountIssue extends \Google\Collection
 {
   protected $collection_key = 'actions';
+  /**
+   * @var Action[]
+   */
+  public $actions;
   protected $actionsType = Action::class;
   protected $actionsDataType = 'array';
+  /**
+   * @var AccountIssueImpact
+   */
+  public $impact;
   protected $impactType = AccountIssueImpact::class;
   protected $impactDataType = '';
   /**
    * @var string
    */
   public $prerenderedContent;
-  /**
-   * @var string
-   */
-  public $prerenderedOutOfCourtDisputeSettlement;
   /**
    * @var string
    */
@@ -78,20 +82,6 @@ class AccountIssue extends \Google\Collection
   public function getPrerenderedContent()
   {
     return $this->prerenderedContent;
-  }
-  /**
-   * @param string
-   */
-  public function setPrerenderedOutOfCourtDisputeSettlement($prerenderedOutOfCourtDisputeSettlement)
-  {
-    $this->prerenderedOutOfCourtDisputeSettlement = $prerenderedOutOfCourtDisputeSettlement;
-  }
-  /**
-   * @return string
-   */
-  public function getPrerenderedOutOfCourtDisputeSettlement()
-  {
-    return $this->prerenderedOutOfCourtDisputeSettlement;
   }
   /**
    * @param string

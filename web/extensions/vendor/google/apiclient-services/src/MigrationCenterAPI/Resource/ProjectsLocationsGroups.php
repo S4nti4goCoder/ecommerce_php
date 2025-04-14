@@ -40,7 +40,6 @@ class ProjectsLocationsGroups extends \Google\Service\Resource
    * @param AddAssetsToGroupRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function addAssets($group, AddAssetsToGroupRequest $postBody, $optParams = [])
   {
@@ -72,7 +71,6 @@ class ProjectsLocationsGroups extends \Google\Service\Resource
    * be a valid UUID with the exception that zero UUID is not supported
    * (00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Group $postBody, $optParams = [])
   {
@@ -98,7 +96,6 @@ class ProjectsLocationsGroups extends \Google\Service\Resource
    * be a valid UUID with the exception that zero UUID is not supported
    * (00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -112,7 +109,6 @@ class ProjectsLocationsGroups extends \Google\Service\Resource
    * @param string $name Required. Name of the resource.
    * @param array $optParams Optional parameters.
    * @return Group
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -135,7 +131,6 @@ class ProjectsLocationsGroups extends \Google\Service\Resource
    * @opt_param string pageToken A token identifying a page of results the server
    * should return.
    * @return ListGroupsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsGroups($parent, $optParams = [])
   {
@@ -167,7 +162,6 @@ class ProjectsLocationsGroups extends \Google\Service\Resource
    * request. A field will be overwritten if it is in the mask. A single * value
    * in the mask lets you to overwrite all fields.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, Group $postBody, $optParams = [])
   {
@@ -182,7 +176,6 @@ class ProjectsLocationsGroups extends \Google\Service\Resource
    * @param RemoveAssetsFromGroupRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function removeAssets($group, RemoveAssetsFromGroupRequest $postBody, $optParams = [])
   {

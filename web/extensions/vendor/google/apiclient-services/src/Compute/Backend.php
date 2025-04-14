@@ -67,10 +67,6 @@ class Backend extends \Google\Model
    * @var float
    */
   public $maxUtilization;
-  /**
-   * @var string
-   */
-  public $preference;
 
   /**
    * @param string
@@ -239,20 +235,6 @@ class Backend extends \Google\Model
   public function getMaxUtilization()
   {
     return $this->maxUtilization;
-  }
-  /**
-   * @param string
-   */
-  public function setPreference($preference)
-  {
-    $this->preference = $preference;
-  }
-  /**
-   * @return string
-   */
-  public function getPreference()
-  {
-    return $this->preference;
   }
 }
 

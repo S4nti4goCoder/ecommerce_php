@@ -36,7 +36,6 @@ class LeaderboardConfigurations extends \Google\Service\Resource
    *
    * @param string $leaderboardId The ID of the leaderboard.
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function delete($leaderboardId, $optParams = [])
   {
@@ -51,7 +50,6 @@ class LeaderboardConfigurations extends \Google\Service\Resource
    * @param string $leaderboardId The ID of the leaderboard.
    * @param array $optParams Optional parameters.
    * @return LeaderboardConfiguration
-   * @throws \Google\Service\Exception
    */
   public function get($leaderboardId, $optParams = [])
   {
@@ -68,7 +66,6 @@ class LeaderboardConfigurations extends \Google\Service\Resource
    * @param LeaderboardConfiguration $postBody
    * @param array $optParams Optional parameters.
    * @return LeaderboardConfiguration
-   * @throws \Google\Service\Exception
    */
   public function insert($applicationId, LeaderboardConfiguration $postBody, $optParams = [])
   {
@@ -89,7 +86,6 @@ class LeaderboardConfigurations extends \Google\Service\Resource
    * of resources returned may be less than the specified `maxResults`.
    * @opt_param string pageToken The token returned by the previous request.
    * @return LeaderboardConfigurationListResponse
-   * @throws \Google\Service\Exception
    */
   public function listLeaderboardConfigurations($applicationId, $optParams = [])
   {
@@ -105,7 +101,6 @@ class LeaderboardConfigurations extends \Google\Service\Resource
    * @param LeaderboardConfiguration $postBody
    * @param array $optParams Optional parameters.
    * @return LeaderboardConfiguration
-   * @throws \Google\Service\Exception
    */
   public function update($leaderboardId, LeaderboardConfiguration $postBody, $optParams = [])
   {

@@ -24,14 +24,20 @@ class GoogleCloudDialogflowCxV3Generator extends \Google\Collection
    * @var string
    */
   public $displayName;
-  protected $modelParameterType = GoogleCloudDialogflowCxV3GeneratorModelParameter::class;
-  protected $modelParameterDataType = '';
   /**
    * @var string
    */
   public $name;
+  /**
+   * @var GoogleCloudDialogflowCxV3GeneratorPlaceholder[]
+   */
+  public $placeholders;
   protected $placeholdersType = GoogleCloudDialogflowCxV3GeneratorPlaceholder::class;
   protected $placeholdersDataType = 'array';
+  /**
+   * @var GoogleCloudDialogflowCxV3Phrase
+   */
+  public $promptText;
   protected $promptTextType = GoogleCloudDialogflowCxV3Phrase::class;
   protected $promptTextDataType = '';
 
@@ -48,20 +54,6 @@ class GoogleCloudDialogflowCxV3Generator extends \Google\Collection
   public function getDisplayName()
   {
     return $this->displayName;
-  }
-  /**
-   * @param GoogleCloudDialogflowCxV3GeneratorModelParameter
-   */
-  public function setModelParameter(GoogleCloudDialogflowCxV3GeneratorModelParameter $modelParameter)
-  {
-    $this->modelParameter = $modelParameter;
-  }
-  /**
-   * @return GoogleCloudDialogflowCxV3GeneratorModelParameter
-   */
-  public function getModelParameter()
-  {
-    return $this->modelParameter;
   }
   /**
    * @param string

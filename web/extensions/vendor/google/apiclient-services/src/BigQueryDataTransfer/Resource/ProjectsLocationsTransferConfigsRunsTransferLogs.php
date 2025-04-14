@@ -48,7 +48,6 @@ class ProjectsLocationsTransferConfigsRunsTransferLogs extends \Google\Service\R
    * results, `ListTransferLogsResponse` outputs a `next_page` token, which can be
    * used as the `page_token` value to request the next page of list results.
    * @return ListTransferLogsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsTransferConfigsRunsTransferLogs($parent, $optParams = [])
   {

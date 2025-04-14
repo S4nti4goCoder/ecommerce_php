@@ -48,7 +48,6 @@ class ProjectsLocationsTriggers extends \Google\Service\Resource
    * @opt_param bool validateOnly Optional. If set, validate the request and
    * preview the review, but do not post it.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Trigger $postBody, $optParams = [])
   {
@@ -69,7 +68,6 @@ class ProjectsLocationsTriggers extends \Google\Service\Resource
    * @opt_param bool validateOnly Optional. If set, validate the request and
    * preview the review, but do not post it.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -83,7 +81,6 @@ class ProjectsLocationsTriggers extends \Google\Service\Resource
    * @param string $name Required. The name of the trigger to get.
    * @param array $optParams Optional parameters.
    * @return Trigger
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -114,7 +111,6 @@ class ProjectsLocationsTriggers extends \Google\Service\Resource
    * documentation](https://cloud.google.com/iam/help/conditions/resource-
    * policies).
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, $optParams = [])
   {
@@ -143,7 +139,6 @@ class ProjectsLocationsTriggers extends \Google\Service\Resource
    * subsequent page. When paginating, all other parameters provided to
    * `ListTriggers` must match the call that provided the page token.
    * @return ListTriggersResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsTriggers($parent, $optParams = [])
   {
@@ -168,7 +163,6 @@ class ProjectsLocationsTriggers extends \Google\Service\Resource
    * @opt_param bool validateOnly Optional. If set, validate the request and
    * preview the review, but do not post it.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, Trigger $postBody, $optParams = [])
   {
@@ -188,7 +182,6 @@ class ProjectsLocationsTriggers extends \Google\Service\Resource
    * @param SetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, SetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -210,7 +203,6 @@ class ProjectsLocationsTriggers extends \Google\Service\Resource
    * @param TestIamPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestIamPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, TestIamPermissionsRequest $postBody, $optParams = [])
   {

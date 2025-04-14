@@ -52,7 +52,6 @@ class Projects extends \Google\Service\Resource
    * @param TestRulesetRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestRulesetResponse
-   * @throws \Google\Service\Exception
    */
   public function test($name, TestRulesetRequest $postBody, $optParams = [])
   {

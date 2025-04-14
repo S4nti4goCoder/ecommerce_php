@@ -37,7 +37,6 @@ class Campaigns extends \Google\Service\Resource
    * @param string $id Campaign ID.
    * @param array $optParams Optional parameters.
    * @return Campaign
-   * @throws \Google\Service\Exception
    */
   public function get($profileId, $id, $optParams = [])
   {
@@ -52,7 +51,6 @@ class Campaigns extends \Google\Service\Resource
    * @param Campaign $postBody
    * @param array $optParams Optional parameters.
    * @return Campaign
-   * @throws \Google\Service\Exception
    */
   public function insert($profileId, Campaign $postBody, $optParams = [])
   {
@@ -94,7 +92,6 @@ class Campaigns extends \Google\Service\Resource
    * @opt_param string subaccountId Select only campaigns that belong to this
    * subaccount.
    * @return CampaignsListResponse
-   * @throws \Google\Service\Exception
    */
   public function listCampaigns($profileId, $optParams = [])
   {
@@ -103,7 +100,7 @@ class Campaigns extends \Google\Service\Resource
     return $this->call('list', [$params], CampaignsListResponse::class);
   }
   /**
-   * Updates an existing campaign. This method supports patch semantics.
+   * Updates an existing creative. This method supports patch semantics.
    * (campaigns.patch)
    *
    * @param string $profileId User profile ID associated with this request.
@@ -111,7 +108,6 @@ class Campaigns extends \Google\Service\Resource
    * @param Campaign $postBody
    * @param array $optParams Optional parameters.
    * @return Campaign
-   * @throws \Google\Service\Exception
    */
   public function patch($profileId, $id, Campaign $postBody, $optParams = [])
   {
@@ -126,7 +122,6 @@ class Campaigns extends \Google\Service\Resource
    * @param Campaign $postBody
    * @param array $optParams Optional parameters.
    * @return Campaign
-   * @throws \Google\Service\Exception
    */
   public function update($profileId, Campaign $postBody, $optParams = [])
   {

@@ -56,7 +56,6 @@ class OrganizationsLocationsBucketsViewsLogs extends \Google\Service\Resource
    * billingAccounts/[BILLING_ACCOUNT_ID] folders/[FOLDER_ID]The resource name in
    * the parent field is added to this list.
    * @return ListLogsResponse
-   * @throws \Google\Service\Exception
    */
   public function listOrganizationsLocationsBucketsViewsLogs($parent, $optParams = [])
   {

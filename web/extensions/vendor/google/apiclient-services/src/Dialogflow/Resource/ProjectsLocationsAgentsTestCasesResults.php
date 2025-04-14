@@ -37,7 +37,6 @@ class ProjectsLocationsAgentsTestCasesResults extends \Google\Service\Resource
    * `projects//locations//agents//testCases//results/`.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudDialogflowCxV3TestCaseResult
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -51,7 +50,7 @@ class ProjectsLocationsAgentsTestCasesResults extends \Google\Service\Resource
    * (results.listProjectsLocationsAgentsTestCasesResults)
    *
    * @param string $parent Required. The test case to list results for. Format:
-   * `projects//locations//agents//testCases/`. Specify a `-` as a wildcard for
+   * `projects//locations//agents// testCases/`. Specify a `-` as a wildcard for
    * TestCase ID to list results across multiple test cases.
    * @param array $optParams Optional parameters.
    *
@@ -72,7 +71,6 @@ class ProjectsLocationsAgentsTestCasesResults extends \Google\Service\Resource
    * @opt_param string pageToken The next_page_token value returned from a
    * previous list request.
    * @return GoogleCloudDialogflowCxV3ListTestCaseResultsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsAgentsTestCasesResults($parent, $optParams = [])
   {

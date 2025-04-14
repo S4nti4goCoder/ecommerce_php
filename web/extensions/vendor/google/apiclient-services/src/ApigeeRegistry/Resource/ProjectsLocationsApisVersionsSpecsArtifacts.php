@@ -49,7 +49,6 @@ class ProjectsLocationsApisVersionsSpecsArtifacts extends \Google\Service\Resour
    * should be 4-63 characters, and valid characters are /a-z-/. Following
    * AIP-162, IDs must not have the form of a UUID.
    * @return Artifact
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Artifact $postBody, $optParams = [])
   {
@@ -64,7 +63,6 @@ class ProjectsLocationsApisVersionsSpecsArtifacts extends \Google\Service\Resour
    * `{parent}/artifacts`
    * @param array $optParams Optional parameters.
    * @return ApigeeregistryEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -79,7 +77,6 @@ class ProjectsLocationsApisVersionsSpecsArtifacts extends \Google\Service\Resour
    * `{parent}/artifacts`
    * @param array $optParams Optional parameters.
    * @return Artifact
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -97,7 +94,6 @@ class ProjectsLocationsApisVersionsSpecsArtifacts extends \Google\Service\Resour
    * be retrieved. Format: `{parent}/artifacts`
    * @param array $optParams Optional parameters.
    * @return HttpBody
-   * @throws \Google\Service\Exception
    */
   public function getContents($name, $optParams = [])
   {
@@ -128,7 +124,6 @@ class ProjectsLocationsApisVersionsSpecsArtifacts extends \Google\Service\Resour
    * documentation](https://cloud.google.com/iam/help/conditions/resource-
    * policies).
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, $optParams = [])
   {
@@ -159,7 +154,6 @@ class ProjectsLocationsApisVersionsSpecsArtifacts extends \Google\Service\Resour
    * paginating, all other parameters provided to `ListArtifacts` must match the
    * call that provided the page token.
    * @return ListArtifactsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsApisVersionsSpecsArtifacts($parent, $optParams = [])
   {
@@ -174,7 +168,6 @@ class ProjectsLocationsApisVersionsSpecsArtifacts extends \Google\Service\Resour
    * @param Artifact $postBody
    * @param array $optParams Optional parameters.
    * @return Artifact
-   * @throws \Google\Service\Exception
    */
   public function replaceArtifact($name, Artifact $postBody, $optParams = [])
   {
@@ -194,7 +187,6 @@ class ProjectsLocationsApisVersionsSpecsArtifacts extends \Google\Service\Resour
    * @param SetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, SetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -217,7 +209,6 @@ class ProjectsLocationsApisVersionsSpecsArtifacts extends \Google\Service\Resour
    * @param TestIamPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestIamPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, TestIamPermissionsRequest $postBody, $optParams = [])
   {

@@ -36,7 +36,6 @@ class Media extends \Google\Service\Resource
    * @param string $resourceName Name of the media that is being downloaded.
    * @param array $optParams Optional parameters.
    * @return GdataMedia
-   * @throws \Google\Service\Exception
    */
   public function download($resourceName, $optParams = [])
   {

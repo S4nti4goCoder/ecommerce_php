@@ -27,10 +27,6 @@ class SchedulingConfig extends \Google\Model
    * @var bool
    */
   public $reserved;
-  /**
-   * @var bool
-   */
-  public $spot;
 
   /**
    * @param bool
@@ -59,20 +55,6 @@ class SchedulingConfig extends \Google\Model
   public function getReserved()
   {
     return $this->reserved;
-  }
-  /**
-   * @param bool
-   */
-  public function setSpot($spot)
-  {
-    $this->spot = $spot;
-  }
-  /**
-   * @return bool
-   */
-  public function getSpot()
-  {
-    return $this->spot;
   }
 }
 

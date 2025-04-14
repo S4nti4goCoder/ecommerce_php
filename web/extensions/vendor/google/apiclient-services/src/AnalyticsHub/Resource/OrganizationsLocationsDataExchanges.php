@@ -43,7 +43,6 @@ class OrganizationsLocationsDataExchanges extends \Google\Service\Resource
    * @opt_param string pageToken Page token, returned by a previous call, to
    * request the next page of results.
    * @return ListOrgDataExchangesResponse
-   * @throws \Google\Service\Exception
    */
   public function listOrganizationsLocationsDataExchanges($organization, $optParams = [])
   {

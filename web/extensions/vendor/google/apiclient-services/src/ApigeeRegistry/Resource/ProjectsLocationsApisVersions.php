@@ -48,7 +48,6 @@ class ProjectsLocationsApisVersions extends \Google\Service\Resource
    * should be 1-63 characters, and valid characters are /a-z-/. Following
    * AIP-162, IDs must not have the form of a UUID.
    * @return ApiVersion
-   * @throws \Google\Service\Exception
    */
   public function create($parent, ApiVersion $postBody, $optParams = [])
   {
@@ -68,7 +67,6 @@ class ProjectsLocationsApisVersions extends \Google\Service\Resource
    * deleted. (Otherwise, the request will only work if there are no child
    * resources.)
    * @return ApigeeregistryEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -83,7 +81,6 @@ class ProjectsLocationsApisVersions extends \Google\Service\Resource
    * `projects/locations/apis/versions`
    * @param array $optParams Optional parameters.
    * @return ApiVersion
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -114,7 +111,6 @@ class ProjectsLocationsApisVersions extends \Google\Service\Resource
    * documentation](https://cloud.google.com/iam/help/conditions/resource-
    * policies).
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, $optParams = [])
   {
@@ -143,7 +139,6 @@ class ProjectsLocationsApisVersions extends \Google\Service\Resource
    * paginating, all other parameters provided to `ListApiVersions` must match the
    * call that provided the page token.
    * @return ListApiVersionsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsApisVersions($parent, $optParams = [])
   {
@@ -165,7 +160,6 @@ class ProjectsLocationsApisVersions extends \Google\Service\Resource
    * default values are ignored). If an asterisk "*" is specified, all fields are
    * updated, including fields that are unspecified/default in the request.
    * @return ApiVersion
-   * @throws \Google\Service\Exception
    */
   public function patch($name, ApiVersion $postBody, $optParams = [])
   {
@@ -185,7 +179,6 @@ class ProjectsLocationsApisVersions extends \Google\Service\Resource
    * @param SetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, SetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -207,7 +200,6 @@ class ProjectsLocationsApisVersions extends \Google\Service\Resource
    * @param TestIamPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestIamPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, TestIamPermissionsRequest $postBody, $optParams = [])
   {

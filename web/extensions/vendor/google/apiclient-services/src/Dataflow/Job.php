@@ -40,14 +40,26 @@ class Job extends \Google\Collection
    * @var string
    */
   public $currentStateTime;
+  /**
+   * @var Environment
+   */
+  public $environment;
   protected $environmentType = Environment::class;
   protected $environmentDataType = '';
+  /**
+   * @var JobExecutionInfo
+   */
+  public $executionInfo;
   protected $executionInfoType = JobExecutionInfo::class;
   protected $executionInfoDataType = '';
   /**
    * @var string
    */
   public $id;
+  /**
+   * @var JobMetadata
+   */
+  public $jobMetadata;
   protected $jobMetadataType = JobMetadata::class;
   protected $jobMetadataDataType = '';
   /**
@@ -62,6 +74,10 @@ class Job extends \Google\Collection
    * @var string
    */
   public $name;
+  /**
+   * @var PipelineDescription
+   */
+  public $pipelineDescription;
   protected $pipelineDescriptionType = PipelineDescription::class;
   protected $pipelineDescriptionDataType = '';
   /**
@@ -80,6 +96,10 @@ class Job extends \Google\Collection
    * @var string
    */
   public $requestedState;
+  /**
+   * @var RuntimeUpdatableParams
+   */
+  public $runtimeUpdatableParams;
   protected $runtimeUpdatableParamsType = RuntimeUpdatableParams::class;
   protected $runtimeUpdatableParamsDataType = '';
   /**
@@ -90,14 +110,20 @@ class Job extends \Google\Collection
    * @var bool
    */
   public $satisfiesPzs;
-  protected $serviceResourcesType = ServiceResources::class;
-  protected $serviceResourcesDataType = '';
+  /**
+   * @var ExecutionStageState[]
+   */
+  public $stageStates;
   protected $stageStatesType = ExecutionStageState::class;
   protected $stageStatesDataType = 'array';
   /**
    * @var string
    */
   public $startTime;
+  /**
+   * @var Step[]
+   */
+  public $steps;
   protected $stepsType = Step::class;
   protected $stepsDataType = 'array';
   /**
@@ -396,20 +422,6 @@ class Job extends \Google\Collection
   public function getSatisfiesPzs()
   {
     return $this->satisfiesPzs;
-  }
-  /**
-   * @param ServiceResources
-   */
-  public function setServiceResources(ServiceResources $serviceResources)
-  {
-    $this->serviceResources = $serviceResources;
-  }
-  /**
-   * @return ServiceResources
-   */
-  public function getServiceResources()
-  {
-    return $this->serviceResources;
   }
   /**
    * @param ExecutionStageState[]

@@ -20,8 +20,16 @@ namespace Google\Service\Datastream;
 class Stream extends \Google\Collection
 {
   protected $collection_key = 'errors';
+  /**
+   * @var BackfillAllStrategy
+   */
+  public $backfillAll;
   protected $backfillAllType = BackfillAllStrategy::class;
   protected $backfillAllDataType = '';
+  /**
+   * @var BackfillNoneStrategy
+   */
+  public $backfillNone;
   protected $backfillNoneType = BackfillNoneStrategy::class;
   protected $backfillNoneDataType = '';
   /**
@@ -32,12 +40,20 @@ class Stream extends \Google\Collection
    * @var string
    */
   public $customerManagedEncryptionKey;
+  /**
+   * @var DestinationConfig
+   */
+  public $destinationConfig;
   protected $destinationConfigType = DestinationConfig::class;
   protected $destinationConfigDataType = '';
   /**
    * @var string
    */
   public $displayName;
+  /**
+   * @var Error[]
+   */
+  public $errors;
   protected $errorsType = Error::class;
   protected $errorsDataType = 'array';
   /**
@@ -53,13 +69,9 @@ class Stream extends \Google\Collection
    */
   public $name;
   /**
-   * @var bool
+   * @var SourceConfig
    */
-  public $satisfiesPzi;
-  /**
-   * @var bool
-   */
-  public $satisfiesPzs;
+  public $sourceConfig;
   protected $sourceConfigType = SourceConfig::class;
   protected $sourceConfigDataType = '';
   /**
@@ -210,34 +222,6 @@ class Stream extends \Google\Collection
   public function getName()
   {
     return $this->name;
-  }
-  /**
-   * @param bool
-   */
-  public function setSatisfiesPzi($satisfiesPzi)
-  {
-    $this->satisfiesPzi = $satisfiesPzi;
-  }
-  /**
-   * @return bool
-   */
-  public function getSatisfiesPzi()
-  {
-    return $this->satisfiesPzi;
-  }
-  /**
-   * @param bool
-   */
-  public function setSatisfiesPzs($satisfiesPzs)
-  {
-    $this->satisfiesPzs = $satisfiesPzs;
-  }
-  /**
-   * @return bool
-   */
-  public function getSatisfiesPzs()
-  {
-    return $this->satisfiesPzs;
   }
   /**
    * @param SourceConfig

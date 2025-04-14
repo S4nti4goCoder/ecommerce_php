@@ -40,7 +40,6 @@ class ProjectsLocations extends \Google\Service\Resource
    * @param SendWorkerMessagesRequest $postBody
    * @param array $optParams Optional parameters.
    * @return SendWorkerMessagesResponse
-   * @throws \Google\Service\Exception
    */
   public function workerMessages($projectId, $location, SendWorkerMessagesRequest $postBody, $optParams = [])
   {

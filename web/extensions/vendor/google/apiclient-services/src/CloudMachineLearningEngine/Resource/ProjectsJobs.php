@@ -43,7 +43,6 @@ class ProjectsJobs extends \Google\Service\Resource
    * @param GoogleCloudMlV1CancelJobRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty
-   * @throws \Google\Service\Exception
    */
   public function cancel($name, GoogleCloudMlV1CancelJobRequest $postBody, $optParams = [])
   {
@@ -58,7 +57,6 @@ class ProjectsJobs extends \Google\Service\Resource
    * @param GoogleCloudMlV1Job $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudMlV1Job
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudMlV1Job $postBody, $optParams = [])
   {
@@ -72,7 +70,6 @@ class ProjectsJobs extends \Google\Service\Resource
    * @param string $name Required. The name of the job to get the description of.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudMlV1Job
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -103,7 +100,6 @@ class ProjectsJobs extends \Google\Service\Resource
    * documentation](https://cloud.google.com/iam/help/conditions/resource-
    * policies).
    * @return GoogleIamV1Policy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, $optParams = [])
   {
@@ -135,7 +131,6 @@ class ProjectsJobs extends \Google\Service\Resource
    * of results. You get the token from the `next_page_token` field of the
    * response from the previous call.
    * @return GoogleCloudMlV1ListJobsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsJobs($parent, $optParams = [])
   {
@@ -162,7 +157,6 @@ class ProjectsJobs extends \Google\Service\Resource
    * server end `etag` will be recalculated. Currently the only supported update
    * masks are `labels` and `etag`.
    * @return GoogleCloudMlV1Job
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleCloudMlV1Job $postBody, $optParams = [])
   {
@@ -182,7 +176,6 @@ class ProjectsJobs extends \Google\Service\Resource
    * @param GoogleIamV1SetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleIamV1Policy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, GoogleIamV1SetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -204,7 +197,6 @@ class ProjectsJobs extends \Google\Service\Resource
    * @param GoogleIamV1TestIamPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleIamV1TestIamPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, GoogleIamV1TestIamPermissionsRequest $postBody, $optParams = [])
   {

@@ -36,7 +36,6 @@ class SnapshotSettings extends \Google\Service\Resource
    * @param string $project Project ID for this request.
    * @param array $optParams Optional parameters.
    * @return SnapshotSettingsModel
-   * @throws \Google\Service\Exception
    */
   public function get($project, $optParams = [])
   {
@@ -64,7 +63,6 @@ class SnapshotSettings extends \Google\Service\Resource
    * @opt_param string updateMask update_mask indicates fields to be updated as
    * part of this request.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($project, SnapshotSettingsModel $postBody, $optParams = [])
   {

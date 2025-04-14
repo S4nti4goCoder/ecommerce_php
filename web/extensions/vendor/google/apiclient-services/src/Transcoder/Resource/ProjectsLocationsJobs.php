@@ -39,7 +39,6 @@ class ProjectsLocationsJobs extends \Google\Service\Resource
    * @param Job $postBody
    * @param array $optParams Optional parameters.
    * @return Job
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Job $postBody, $optParams = [])
   {
@@ -57,7 +56,6 @@ class ProjectsLocationsJobs extends \Google\Service\Resource
    * @opt_param bool allowMissing If set to true, and the job is not found, the
    * request will succeed but no action will be taken on the server.
    * @return TranscoderEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -72,7 +70,6 @@ class ProjectsLocationsJobs extends \Google\Service\Resource
    * `projects/{project}/locations/{location}/jobs/{job}`
    * @param array $optParams Optional parameters.
    * @return Job
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -95,7 +92,6 @@ class ProjectsLocationsJobs extends \Google\Service\Resource
    * @opt_param string pageToken The `next_page_token` value returned from a
    * previous List request, if any.
    * @return ListJobsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsJobs($parent, $optParams = [])
   {

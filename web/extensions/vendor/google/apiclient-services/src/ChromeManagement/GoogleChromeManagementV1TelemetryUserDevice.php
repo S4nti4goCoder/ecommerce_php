@@ -20,35 +20,35 @@ namespace Google\Service\ChromeManagement;
 class GoogleChromeManagementV1TelemetryUserDevice extends \Google\Collection
 {
   protected $collection_key = 'peripheralsReport';
-  protected $appReportType = GoogleChromeManagementV1AppReport::class;
-  protected $appReportDataType = 'array';
+  /**
+   * @var GoogleChromeManagementV1AudioStatusReport[]
+   */
+  public $audioStatusReport;
   protected $audioStatusReportType = GoogleChromeManagementV1AudioStatusReport::class;
   protected $audioStatusReportDataType = 'array';
+  /**
+   * @var GoogleChromeManagementV1DeviceActivityReport[]
+   */
+  public $deviceActivityReport;
   protected $deviceActivityReportType = GoogleChromeManagementV1DeviceActivityReport::class;
   protected $deviceActivityReportDataType = 'array';
   /**
    * @var string
    */
   public $deviceId;
+  /**
+   * @var GoogleChromeManagementV1NetworkBandwidthReport[]
+   */
+  public $networkBandwidthReport;
   protected $networkBandwidthReportType = GoogleChromeManagementV1NetworkBandwidthReport::class;
   protected $networkBandwidthReportDataType = 'array';
+  /**
+   * @var GoogleChromeManagementV1PeripheralsReport[]
+   */
+  public $peripheralsReport;
   protected $peripheralsReportType = GoogleChromeManagementV1PeripheralsReport::class;
   protected $peripheralsReportDataType = 'array';
 
-  /**
-   * @param GoogleChromeManagementV1AppReport[]
-   */
-  public function setAppReport($appReport)
-  {
-    $this->appReport = $appReport;
-  }
-  /**
-   * @return GoogleChromeManagementV1AppReport[]
-   */
-  public function getAppReport()
-  {
-    return $this->appReport;
-  }
   /**
    * @param GoogleChromeManagementV1AudioStatusReport[]
    */

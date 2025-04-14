@@ -45,7 +45,6 @@ class Loyaltyobject extends \Google\Service\Resource
    * @param AddMessageRequest $postBody
    * @param array $optParams Optional parameters.
    * @return LoyaltyObjectAddMessageResponse
-   * @throws \Google\Service\Exception
    */
   public function addmessage($resourceId, AddMessageRequest $postBody, $optParams = [])
   {
@@ -63,7 +62,6 @@ class Loyaltyobject extends \Google\Service\Resource
    * characters, '.', '_', or '-'.
    * @param array $optParams Optional parameters.
    * @return LoyaltyObjectModel
-   * @throws \Google\Service\Exception
    */
   public function get($resourceId, $optParams = [])
   {
@@ -78,7 +76,6 @@ class Loyaltyobject extends \Google\Service\Resource
    * @param LoyaltyObjectModel $postBody
    * @param array $optParams Optional parameters.
    * @return LoyaltyObjectModel
-   * @throws \Google\Service\Exception
    */
   public function insert(LoyaltyObjectModel $postBody, $optParams = [])
   {
@@ -102,7 +99,6 @@ class Loyaltyobject extends \Google\Service\Resource
    * Call list again with `maxResults` set to 20 and the token to get the next 20
    * objects.
    * @return LoyaltyObjectListResponse
-   * @throws \Google\Service\Exception
    */
   public function listLoyaltyobject($optParams = [])
   {
@@ -122,7 +118,6 @@ class Loyaltyobject extends \Google\Service\Resource
    * @param ModifyLinkedOfferObjectsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return LoyaltyObjectModel
-   * @throws \Google\Service\Exception
    */
   public function modifylinkedofferobjects($resourceId, ModifyLinkedOfferObjectsRequest $postBody, $optParams = [])
   {
@@ -142,7 +137,6 @@ class Loyaltyobject extends \Google\Service\Resource
    * @param LoyaltyObjectModel $postBody
    * @param array $optParams Optional parameters.
    * @return LoyaltyObjectModel
-   * @throws \Google\Service\Exception
    */
   public function patch($resourceId, LoyaltyObjectModel $postBody, $optParams = [])
   {
@@ -162,7 +156,6 @@ class Loyaltyobject extends \Google\Service\Resource
    * @param LoyaltyObjectModel $postBody
    * @param array $optParams Optional parameters.
    * @return LoyaltyObjectModel
-   * @throws \Google\Service\Exception
    */
   public function update($resourceId, LoyaltyObjectModel $postBody, $optParams = [])
   {

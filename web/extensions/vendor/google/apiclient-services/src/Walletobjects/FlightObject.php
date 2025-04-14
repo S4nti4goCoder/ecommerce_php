@@ -19,23 +19,43 @@ namespace Google\Service\Walletobjects;
 
 class FlightObject extends \Google\Collection
 {
-  protected $collection_key = 'valueAddedModuleData';
+  protected $collection_key = 'textModulesData';
+  /**
+   * @var AppLinkData
+   */
+  public $appLinkData;
   protected $appLinkDataType = AppLinkData::class;
   protected $appLinkDataDataType = '';
+  /**
+   * @var Barcode
+   */
+  public $barcode;
   protected $barcodeType = Barcode::class;
   protected $barcodeDataType = '';
+  /**
+   * @var BoardingAndSeatingInfo
+   */
+  public $boardingAndSeatingInfo;
   protected $boardingAndSeatingInfoType = BoardingAndSeatingInfo::class;
   protected $boardingAndSeatingInfoDataType = '';
   /**
    * @var string
    */
   public $classId;
+  /**
+   * @var FlightClass
+   */
+  public $classReference;
   protected $classReferenceType = FlightClass::class;
   protected $classReferenceDataType = '';
   /**
    * @var bool
    */
   public $disableExpirationNotification;
+  /**
+   * @var GroupingInfo
+   */
+  public $groupingInfo;
   protected $groupingInfoType = GroupingInfo::class;
   protected $groupingInfoDataType = '';
   /**
@@ -46,6 +66,10 @@ class FlightObject extends \Google\Collection
    * @var bool
    */
   public $hasUsers;
+  /**
+   * @var Image
+   */
+  public $heroImage;
   protected $heroImageType = Image::class;
   protected $heroImageDataType = '';
   /**
@@ -56,8 +80,16 @@ class FlightObject extends \Google\Collection
    * @var string
    */
   public $id;
+  /**
+   * @var ImageModuleData[]
+   */
+  public $imageModulesData;
   protected $imageModulesDataType = ImageModuleData::class;
   protected $imageModulesDataDataType = 'array';
+  /**
+   * @var InfoModuleData
+   */
+  public $infoModuleData;
   protected $infoModuleDataType = InfoModuleData::class;
   protected $infoModuleDataDataType = '';
   /**
@@ -65,33 +97,49 @@ class FlightObject extends \Google\Collection
    */
   public $kind;
   /**
-   * @var string[]
+   * @var LinksModuleData
    */
-  public $linkedObjectIds;
+  public $linksModuleData;
   protected $linksModuleDataType = LinksModuleData::class;
   protected $linksModuleDataDataType = '';
+  /**
+   * @var LatLongPoint[]
+   */
+  public $locations;
   protected $locationsType = LatLongPoint::class;
   protected $locationsDataType = 'array';
-  protected $merchantLocationsType = MerchantLocation::class;
-  protected $merchantLocationsDataType = 'array';
+  /**
+   * @var Message[]
+   */
+  public $messages;
   protected $messagesType = Message::class;
   protected $messagesDataType = 'array';
   /**
-   * @var string
+   * @var PassConstraints
    */
-  public $notifyPreference;
+  public $passConstraints;
   protected $passConstraintsType = PassConstraints::class;
   protected $passConstraintsDataType = '';
   /**
    * @var string
    */
   public $passengerName;
+  /**
+   * @var ReservationInfo
+   */
+  public $reservationInfo;
   protected $reservationInfoType = ReservationInfo::class;
   protected $reservationInfoDataType = '';
+  /**
+   * @var RotatingBarcode
+   */
+  public $rotatingBarcode;
   protected $rotatingBarcodeType = RotatingBarcode::class;
   protected $rotatingBarcodeDataType = '';
-  protected $saveRestrictionsType = SaveRestrictions::class;
-  protected $saveRestrictionsDataType = '';
+  /**
+   * @var Image
+   */
+  public $securityProgramLogo;
   protected $securityProgramLogoType = Image::class;
   protected $securityProgramLogoDataType = '';
   /**
@@ -102,12 +150,18 @@ class FlightObject extends \Google\Collection
    * @var string
    */
   public $state;
+  /**
+   * @var TextModuleData[]
+   */
+  public $textModulesData;
   protected $textModulesDataType = TextModuleData::class;
   protected $textModulesDataDataType = 'array';
+  /**
+   * @var TimeInterval
+   */
+  public $validTimeInterval;
   protected $validTimeIntervalType = TimeInterval::class;
   protected $validTimeIntervalDataType = '';
-  protected $valueAddedModuleDataType = ValueAddedModuleData::class;
-  protected $valueAddedModuleDataDataType = 'array';
   /**
    * @var string
    */
@@ -324,20 +378,6 @@ class FlightObject extends \Google\Collection
     return $this->kind;
   }
   /**
-   * @param string[]
-   */
-  public function setLinkedObjectIds($linkedObjectIds)
-  {
-    $this->linkedObjectIds = $linkedObjectIds;
-  }
-  /**
-   * @return string[]
-   */
-  public function getLinkedObjectIds()
-  {
-    return $this->linkedObjectIds;
-  }
-  /**
    * @param LinksModuleData
    */
   public function setLinksModuleData(LinksModuleData $linksModuleData)
@@ -366,20 +406,6 @@ class FlightObject extends \Google\Collection
     return $this->locations;
   }
   /**
-   * @param MerchantLocation[]
-   */
-  public function setMerchantLocations($merchantLocations)
-  {
-    $this->merchantLocations = $merchantLocations;
-  }
-  /**
-   * @return MerchantLocation[]
-   */
-  public function getMerchantLocations()
-  {
-    return $this->merchantLocations;
-  }
-  /**
    * @param Message[]
    */
   public function setMessages($messages)
@@ -392,20 +418,6 @@ class FlightObject extends \Google\Collection
   public function getMessages()
   {
     return $this->messages;
-  }
-  /**
-   * @param string
-   */
-  public function setNotifyPreference($notifyPreference)
-  {
-    $this->notifyPreference = $notifyPreference;
-  }
-  /**
-   * @return string
-   */
-  public function getNotifyPreference()
-  {
-    return $this->notifyPreference;
   }
   /**
    * @param PassConstraints
@@ -462,20 +474,6 @@ class FlightObject extends \Google\Collection
   public function getRotatingBarcode()
   {
     return $this->rotatingBarcode;
-  }
-  /**
-   * @param SaveRestrictions
-   */
-  public function setSaveRestrictions(SaveRestrictions $saveRestrictions)
-  {
-    $this->saveRestrictions = $saveRestrictions;
-  }
-  /**
-   * @return SaveRestrictions
-   */
-  public function getSaveRestrictions()
-  {
-    return $this->saveRestrictions;
   }
   /**
    * @param Image
@@ -546,20 +544,6 @@ class FlightObject extends \Google\Collection
   public function getValidTimeInterval()
   {
     return $this->validTimeInterval;
-  }
-  /**
-   * @param ValueAddedModuleData[]
-   */
-  public function setValueAddedModuleData($valueAddedModuleData)
-  {
-    $this->valueAddedModuleData = $valueAddedModuleData;
-  }
-  /**
-   * @return ValueAddedModuleData[]
-   */
-  public function getValueAddedModuleData()
-  {
-    return $this->valueAddedModuleData;
   }
   /**
    * @param string

@@ -43,7 +43,6 @@ class UsersSettingsForwardingAddresses extends \Google\Service\Resource
    * @param ForwardingAddress $postBody
    * @param array $optParams Optional parameters.
    * @return ForwardingAddress
-   * @throws \Google\Service\Exception
    */
   public function create($userId, ForwardingAddress $postBody, $optParams = [])
   {
@@ -61,7 +60,6 @@ class UsersSettingsForwardingAddresses extends \Google\Service\Resource
    * used to indicate the authenticated user.
    * @param string $forwardingEmail The forwarding address to be deleted.
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function delete($userId, $forwardingEmail, $optParams = [])
   {
@@ -77,7 +75,6 @@ class UsersSettingsForwardingAddresses extends \Google\Service\Resource
    * @param string $forwardingEmail The forwarding address to be retrieved.
    * @param array $optParams Optional parameters.
    * @return ForwardingAddress
-   * @throws \Google\Service\Exception
    */
   public function get($userId, $forwardingEmail, $optParams = [])
   {
@@ -93,7 +90,6 @@ class UsersSettingsForwardingAddresses extends \Google\Service\Resource
    * used to indicate the authenticated user.
    * @param array $optParams Optional parameters.
    * @return ListForwardingAddressesResponse
-   * @throws \Google\Service\Exception
    */
   public function listUsersSettingsForwardingAddresses($userId, $optParams = [])
   {

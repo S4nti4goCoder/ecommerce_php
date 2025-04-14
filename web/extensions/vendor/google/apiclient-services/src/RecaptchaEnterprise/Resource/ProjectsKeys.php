@@ -17,15 +17,10 @@
 
 namespace Google\Service\RecaptchaEnterprise\Resource;
 
-use Google\Service\RecaptchaEnterprise\GoogleCloudRecaptchaenterpriseV1AddIpOverrideRequest;
-use Google\Service\RecaptchaEnterprise\GoogleCloudRecaptchaenterpriseV1AddIpOverrideResponse;
 use Google\Service\RecaptchaEnterprise\GoogleCloudRecaptchaenterpriseV1Key;
-use Google\Service\RecaptchaEnterprise\GoogleCloudRecaptchaenterpriseV1ListIpOverridesResponse;
 use Google\Service\RecaptchaEnterprise\GoogleCloudRecaptchaenterpriseV1ListKeysResponse;
 use Google\Service\RecaptchaEnterprise\GoogleCloudRecaptchaenterpriseV1Metrics;
 use Google\Service\RecaptchaEnterprise\GoogleCloudRecaptchaenterpriseV1MigrateKeyRequest;
-use Google\Service\RecaptchaEnterprise\GoogleCloudRecaptchaenterpriseV1RemoveIpOverrideRequest;
-use Google\Service\RecaptchaEnterprise\GoogleCloudRecaptchaenterpriseV1RemoveIpOverrideResponse;
 use Google\Service\RecaptchaEnterprise\GoogleCloudRecaptchaenterpriseV1RetrieveLegacySecretKeyResponse;
 use Google\Service\RecaptchaEnterprise\GoogleProtobufEmpty;
 
@@ -40,33 +35,13 @@ use Google\Service\RecaptchaEnterprise\GoogleProtobufEmpty;
 class ProjectsKeys extends \Google\Service\Resource
 {
   /**
-   * Adds an IP override to a key. The following restrictions hold: * The maximum
-   * number of IP overrides per key is 100. * For any conflict (such as IP already
-   * exists or IP part of an existing IP range), an error is returned.
-   * (keys.addIpOverride)
-   *
-   * @param string $name Required. The name of the key to which the IP override is
-   * added, in the format `projects/{project}/keys/{key}`.
-   * @param GoogleCloudRecaptchaenterpriseV1AddIpOverrideRequest $postBody
-   * @param array $optParams Optional parameters.
-   * @return GoogleCloudRecaptchaenterpriseV1AddIpOverrideResponse
-   * @throws \Google\Service\Exception
-   */
-  public function addIpOverride($name, GoogleCloudRecaptchaenterpriseV1AddIpOverrideRequest $postBody, $optParams = [])
-  {
-    $params = ['name' => $name, 'postBody' => $postBody];
-    $params = array_merge($params, $optParams);
-    return $this->call('addIpOverride', [$params], GoogleCloudRecaptchaenterpriseV1AddIpOverrideResponse::class);
-  }
-  /**
    * Creates a new reCAPTCHA Enterprise key. (keys.create)
    *
-   * @param string $parent Required. The name of the project in which the key is
-   * created, in the format `projects/{project}`.
+   * @param string $parent Required. The name of the project in which the key will
+   * be created, in the format `projects/{project}`.
    * @param GoogleCloudRecaptchaenterpriseV1Key $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudRecaptchaenterpriseV1Key
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudRecaptchaenterpriseV1Key $postBody, $optParams = [])
   {
@@ -81,7 +56,6 @@ class ProjectsKeys extends \Google\Service\Resource
    * format `projects/{project}/keys/{key}`.
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -96,7 +70,6 @@ class ProjectsKeys extends \Google\Service\Resource
    * `projects/{project}/keys/{key}`.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudRecaptchaenterpriseV1Key
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -112,7 +85,6 @@ class ProjectsKeys extends \Google\Service\Resource
    * format `projects/{project}/keys/{key}/metrics`.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudRecaptchaenterpriseV1Metrics
-   * @throws \Google\Service\Exception
    */
   public function getMetrics($name, $optParams = [])
   {
@@ -125,7 +97,7 @@ class ProjectsKeys extends \Google\Service\Resource
    * (keys.listProjectsKeys)
    *
    * @param string $parent Required. The name of the project that contains the
-   * keys that is listed, in the format `projects/{project}`.
+   * keys that will be listed, in the format `projects/{project}`.
    * @param array $optParams Optional parameters.
    *
    * @opt_param int pageSize Optional. The maximum number of keys to return.
@@ -133,35 +105,12 @@ class ProjectsKeys extends \Google\Service\Resource
    * @opt_param string pageToken Optional. The next_page_token value returned from
    * a previous. ListKeysRequest, if any.
    * @return GoogleCloudRecaptchaenterpriseV1ListKeysResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsKeys($parent, $optParams = [])
   {
     $params = ['parent' => $parent];
     $params = array_merge($params, $optParams);
     return $this->call('list', [$params], GoogleCloudRecaptchaenterpriseV1ListKeysResponse::class);
-  }
-  /**
-   * Lists all IP overrides for a key. (keys.listIpOverrides)
-   *
-   * @param string $parent Required. The parent key for which the IP overrides are
-   * listed, in the format `projects/{project}/keys/{key}`.
-   * @param array $optParams Optional parameters.
-   *
-   * @opt_param int pageSize Optional. The maximum number of overrides to return.
-   * Default is 10. Max limit is 100. If the number of overrides is less than the
-   * page_size, all overrides are returned. If the page size is more than 100, it
-   * is coerced to 100.
-   * @opt_param string pageToken Optional. The next_page_token value returned from
-   * a previous ListIpOverridesRequest, if any.
-   * @return GoogleCloudRecaptchaenterpriseV1ListIpOverridesResponse
-   * @throws \Google\Service\Exception
-   */
-  public function listIpOverrides($parent, $optParams = [])
-  {
-    $params = ['parent' => $parent];
-    $params = array_merge($params, $optParams);
-    return $this->call('listIpOverrides', [$params], GoogleCloudRecaptchaenterpriseV1ListIpOverridesResponse::class);
   }
   /**
    * Migrates an existing key from reCAPTCHA to reCAPTCHA Enterprise. Once a key
@@ -175,7 +124,6 @@ class ProjectsKeys extends \Google\Service\Resource
    * @param GoogleCloudRecaptchaenterpriseV1MigrateKeyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudRecaptchaenterpriseV1Key
-   * @throws \Google\Service\Exception
    */
   public function migrate($name, GoogleCloudRecaptchaenterpriseV1MigrateKeyRequest $postBody, $optParams = [])
   {
@@ -192,34 +140,14 @@ class ProjectsKeys extends \Google\Service\Resource
    * @param array $optParams Optional parameters.
    *
    * @opt_param string updateMask Optional. The mask to control which fields of
-   * the key get updated. If the mask is not present, all fields are updated.
+   * the key get updated. If the mask is not present, all fields will be updated.
    * @return GoogleCloudRecaptchaenterpriseV1Key
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleCloudRecaptchaenterpriseV1Key $postBody, $optParams = [])
   {
     $params = ['name' => $name, 'postBody' => $postBody];
     $params = array_merge($params, $optParams);
     return $this->call('patch', [$params], GoogleCloudRecaptchaenterpriseV1Key::class);
-  }
-  /**
-   * Removes an IP override from a key. The following restrictions hold: * If the
-   * IP isn't found in an existing IP override, a `NOT_FOUND` error is returned. *
-   * If the IP is found in an existing IP override, but the override type does not
-   * match, a `NOT_FOUND` error is returned. (keys.removeIpOverride)
-   *
-   * @param string $name Required. The name of the key from which the IP override
-   * is removed, in the format `projects/{project}/keys/{key}`.
-   * @param GoogleCloudRecaptchaenterpriseV1RemoveIpOverrideRequest $postBody
-   * @param array $optParams Optional parameters.
-   * @return GoogleCloudRecaptchaenterpriseV1RemoveIpOverrideResponse
-   * @throws \Google\Service\Exception
-   */
-  public function removeIpOverride($name, GoogleCloudRecaptchaenterpriseV1RemoveIpOverrideRequest $postBody, $optParams = [])
-  {
-    $params = ['name' => $name, 'postBody' => $postBody];
-    $params = array_merge($params, $optParams);
-    return $this->call('removeIpOverride', [$params], GoogleCloudRecaptchaenterpriseV1RemoveIpOverrideResponse::class);
   }
   /**
    * Returns the secret key related to the specified public key. You must use the
@@ -230,7 +158,6 @@ class ProjectsKeys extends \Google\Service\Resource
    * secret key in the format `projects/{project}/keys/{key}`.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudRecaptchaenterpriseV1RetrieveLegacySecretKeyResponse
-   * @throws \Google\Service\Exception
    */
   public function retrieveLegacySecretKey($key, $optParams = [])
   {

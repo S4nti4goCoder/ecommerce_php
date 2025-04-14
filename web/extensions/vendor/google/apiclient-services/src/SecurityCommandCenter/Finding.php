@@ -20,12 +20,28 @@ namespace Google\Service\SecurityCommandCenter;
 class Finding extends \Google\Collection
 {
   protected $collection_key = 'processes';
+  /**
+   * @var Access
+   */
+  public $access;
   protected $accessType = Access::class;
   protected $accessDataType = '';
+  /**
+   * @var Application
+   */
+  public $application;
   protected $applicationType = Application::class;
   protected $applicationDataType = '';
+  /**
+   * @var AttackExposure
+   */
+  public $attackExposure;
   protected $attackExposureType = AttackExposure::class;
   protected $attackExposureDataType = '';
+  /**
+   * @var BackupDisasterRecovery
+   */
+  public $backupDisasterRecovery;
   protected $backupDisasterRecoveryType = BackupDisasterRecovery::class;
   protected $backupDisasterRecoveryDataType = '';
   /**
@@ -36,74 +52,126 @@ class Finding extends \Google\Collection
    * @var string
    */
   public $category;
-  protected $cloudArmorType = CloudArmor::class;
-  protected $cloudArmorDataType = '';
+  /**
+   * @var CloudDlpDataProfile
+   */
+  public $cloudDlpDataProfile;
   protected $cloudDlpDataProfileType = CloudDlpDataProfile::class;
   protected $cloudDlpDataProfileDataType = '';
+  /**
+   * @var CloudDlpInspection
+   */
+  public $cloudDlpInspection;
   protected $cloudDlpInspectionType = CloudDlpInspection::class;
   protected $cloudDlpInspectionDataType = '';
+  /**
+   * @var Compliance[]
+   */
+  public $compliances;
   protected $compliancesType = Compliance::class;
   protected $compliancesDataType = 'array';
+  /**
+   * @var Connection[]
+   */
+  public $connections;
   protected $connectionsType = Connection::class;
   protected $connectionsDataType = 'array';
+  /**
+   * @var ContactDetails[]
+   */
+  public $contacts;
   protected $contactsType = ContactDetails::class;
   protected $contactsDataType = 'map';
+  /**
+   * @var Container[]
+   */
+  public $containers;
   protected $containersType = Container::class;
   protected $containersDataType = 'array';
   /**
    * @var string
    */
   public $createTime;
-  protected $dataAccessEventsType = DataAccessEvent::class;
-  protected $dataAccessEventsDataType = 'array';
-  protected $dataFlowEventsType = DataFlowEvent::class;
-  protected $dataFlowEventsDataType = 'array';
-  protected $dataRetentionDeletionEventsType = DataRetentionDeletionEvent::class;
-  protected $dataRetentionDeletionEventsDataType = 'array';
+  /**
+   * @var Database
+   */
+  public $database;
   protected $databaseType = Database::class;
   protected $databaseDataType = '';
   /**
    * @var string
    */
   public $description;
-  protected $diskType = Disk::class;
-  protected $diskDataType = '';
   /**
    * @var string
    */
   public $eventTime;
+  /**
+   * @var Exfiltration
+   */
+  public $exfiltration;
   protected $exfiltrationType = Exfiltration::class;
   protected $exfiltrationDataType = '';
+  /**
+   * @var GoogleCloudSecuritycenterV1ExternalSystem[]
+   */
+  public $externalSystems;
   protected $externalSystemsType = GoogleCloudSecuritycenterV1ExternalSystem::class;
   protected $externalSystemsDataType = 'map';
   /**
    * @var string
    */
   public $externalUri;
+  /**
+   * @var SecuritycenterFile[]
+   */
+  public $files;
   protected $filesType = SecuritycenterFile::class;
   protected $filesDataType = 'array';
   /**
    * @var string
    */
   public $findingClass;
-  protected $groupMembershipsType = GroupMembership::class;
-  protected $groupMembershipsDataType = 'array';
+  /**
+   * @var IamBinding[]
+   */
+  public $iamBindings;
   protected $iamBindingsType = IamBinding::class;
   protected $iamBindingsDataType = 'array';
+  /**
+   * @var Indicator
+   */
+  public $indicator;
   protected $indicatorType = Indicator::class;
   protected $indicatorDataType = '';
-  protected $ipRulesType = IpRules::class;
-  protected $ipRulesDataType = '';
-  protected $jobType = Job::class;
-  protected $jobDataType = '';
+  /**
+   * @var KernelRootkit
+   */
+  public $kernelRootkit;
   protected $kernelRootkitType = KernelRootkit::class;
   protected $kernelRootkitDataType = '';
+  /**
+   * @var Kubernetes
+   */
+  public $kubernetes;
   protected $kubernetesType = Kubernetes::class;
   protected $kubernetesDataType = '';
+  /**
+   * @var LoadBalancer[]
+   */
+  public $loadBalancers;
   protected $loadBalancersType = LoadBalancer::class;
   protected $loadBalancersDataType = 'array';
+  /**
+   * @var LogEntry[]
+   */
+  public $logEntries;
   protected $logEntriesType = LogEntry::class;
   protected $logEntriesDataType = 'array';
+  /**
+   * @var MitreAttack
+   */
+  public $mitreAttack;
   protected $mitreAttackType = MitreAttack::class;
   protected $mitreAttackDataType = '';
   /**
@@ -114,8 +182,6 @@ class Finding extends \Google\Collection
    * @var string
    */
   public $mute;
-  protected $muteInfoType = MuteInfo::class;
-  protected $muteInfoDataType = '';
   /**
    * @var string
    */
@@ -128,14 +194,14 @@ class Finding extends \Google\Collection
    * @var string
    */
   public $name;
-  protected $networksType = Network::class;
-  protected $networksDataType = 'array';
   /**
    * @var string
    */
   public $nextSteps;
-  protected $notebookType = Notebook::class;
-  protected $notebookDataType = '';
+  /**
+   * @var OrgPolicy[]
+   */
+  public $orgPolicies;
   protected $orgPoliciesType = OrgPolicy::class;
   protected $orgPoliciesDataType = 'array';
   /**
@@ -146,14 +212,26 @@ class Finding extends \Google\Collection
    * @var string
    */
   public $parentDisplayName;
+  /**
+   * @var Process[]
+   */
+  public $processes;
   protected $processesType = Process::class;
   protected $processesDataType = 'array';
   /**
    * @var string
    */
   public $resourceName;
+  /**
+   * @var SecurityMarks
+   */
+  public $securityMarks;
   protected $securityMarksType = SecurityMarks::class;
   protected $securityMarksDataType = '';
+  /**
+   * @var SecurityPosture
+   */
+  public $securityPosture;
   protected $securityPostureType = SecurityPosture::class;
   protected $securityPostureDataType = '';
   /**
@@ -168,8 +246,10 @@ class Finding extends \Google\Collection
    * @var string
    */
   public $state;
-  protected $toxicCombinationType = ToxicCombination::class;
-  protected $toxicCombinationDataType = '';
+  /**
+   * @var Vulnerability
+   */
+  public $vulnerability;
   protected $vulnerabilityType = Vulnerability::class;
   protected $vulnerabilityDataType = '';
 
@@ -256,20 +336,6 @@ class Finding extends \Google\Collection
   public function getCategory()
   {
     return $this->category;
-  }
-  /**
-   * @param CloudArmor
-   */
-  public function setCloudArmor(CloudArmor $cloudArmor)
-  {
-    $this->cloudArmor = $cloudArmor;
-  }
-  /**
-   * @return CloudArmor
-   */
-  public function getCloudArmor()
-  {
-    return $this->cloudArmor;
   }
   /**
    * @param CloudDlpDataProfile
@@ -370,48 +436,6 @@ class Finding extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * @param DataAccessEvent[]
-   */
-  public function setDataAccessEvents($dataAccessEvents)
-  {
-    $this->dataAccessEvents = $dataAccessEvents;
-  }
-  /**
-   * @return DataAccessEvent[]
-   */
-  public function getDataAccessEvents()
-  {
-    return $this->dataAccessEvents;
-  }
-  /**
-   * @param DataFlowEvent[]
-   */
-  public function setDataFlowEvents($dataFlowEvents)
-  {
-    $this->dataFlowEvents = $dataFlowEvents;
-  }
-  /**
-   * @return DataFlowEvent[]
-   */
-  public function getDataFlowEvents()
-  {
-    return $this->dataFlowEvents;
-  }
-  /**
-   * @param DataRetentionDeletionEvent[]
-   */
-  public function setDataRetentionDeletionEvents($dataRetentionDeletionEvents)
-  {
-    $this->dataRetentionDeletionEvents = $dataRetentionDeletionEvents;
-  }
-  /**
-   * @return DataRetentionDeletionEvent[]
-   */
-  public function getDataRetentionDeletionEvents()
-  {
-    return $this->dataRetentionDeletionEvents;
-  }
-  /**
    * @param Database
    */
   public function setDatabase(Database $database)
@@ -438,20 +462,6 @@ class Finding extends \Google\Collection
   public function getDescription()
   {
     return $this->description;
-  }
-  /**
-   * @param Disk
-   */
-  public function setDisk(Disk $disk)
-  {
-    $this->disk = $disk;
-  }
-  /**
-   * @return Disk
-   */
-  public function getDisk()
-  {
-    return $this->disk;
   }
   /**
    * @param string
@@ -538,20 +548,6 @@ class Finding extends \Google\Collection
     return $this->findingClass;
   }
   /**
-   * @param GroupMembership[]
-   */
-  public function setGroupMemberships($groupMemberships)
-  {
-    $this->groupMemberships = $groupMemberships;
-  }
-  /**
-   * @return GroupMembership[]
-   */
-  public function getGroupMemberships()
-  {
-    return $this->groupMemberships;
-  }
-  /**
    * @param IamBinding[]
    */
   public function setIamBindings($iamBindings)
@@ -578,34 +574,6 @@ class Finding extends \Google\Collection
   public function getIndicator()
   {
     return $this->indicator;
-  }
-  /**
-   * @param IpRules
-   */
-  public function setIpRules(IpRules $ipRules)
-  {
-    $this->ipRules = $ipRules;
-  }
-  /**
-   * @return IpRules
-   */
-  public function getIpRules()
-  {
-    return $this->ipRules;
-  }
-  /**
-   * @param Job
-   */
-  public function setJob(Job $job)
-  {
-    $this->job = $job;
-  }
-  /**
-   * @return Job
-   */
-  public function getJob()
-  {
-    return $this->job;
   }
   /**
    * @param KernelRootkit
@@ -706,20 +674,6 @@ class Finding extends \Google\Collection
     return $this->mute;
   }
   /**
-   * @param MuteInfo
-   */
-  public function setMuteInfo(MuteInfo $muteInfo)
-  {
-    $this->muteInfo = $muteInfo;
-  }
-  /**
-   * @return MuteInfo
-   */
-  public function getMuteInfo()
-  {
-    return $this->muteInfo;
-  }
-  /**
    * @param string
    */
   public function setMuteInitiator($muteInitiator)
@@ -762,20 +716,6 @@ class Finding extends \Google\Collection
     return $this->name;
   }
   /**
-   * @param Network[]
-   */
-  public function setNetworks($networks)
-  {
-    $this->networks = $networks;
-  }
-  /**
-   * @return Network[]
-   */
-  public function getNetworks()
-  {
-    return $this->networks;
-  }
-  /**
    * @param string
    */
   public function setNextSteps($nextSteps)
@@ -788,20 +728,6 @@ class Finding extends \Google\Collection
   public function getNextSteps()
   {
     return $this->nextSteps;
-  }
-  /**
-   * @param Notebook
-   */
-  public function setNotebook(Notebook $notebook)
-  {
-    $this->notebook = $notebook;
-  }
-  /**
-   * @return Notebook
-   */
-  public function getNotebook()
-  {
-    return $this->notebook;
   }
   /**
    * @param OrgPolicy[]
@@ -942,20 +868,6 @@ class Finding extends \Google\Collection
   public function getState()
   {
     return $this->state;
-  }
-  /**
-   * @param ToxicCombination
-   */
-  public function setToxicCombination(ToxicCombination $toxicCombination)
-  {
-    $this->toxicCombination = $toxicCombination;
-  }
-  /**
-   * @return ToxicCombination
-   */
-  public function getToxicCombination()
-  {
-    return $this->toxicCombination;
   }
   /**
    * @param Vulnerability

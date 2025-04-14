@@ -54,7 +54,6 @@ class PartnersDevices extends \Google\Service\Resource
    * @param ClaimDeviceRequest $postBody
    * @param array $optParams Optional parameters.
    * @return ClaimDeviceResponse
-   * @throws \Google\Service\Exception
    */
   public function claim($partnerId, ClaimDeviceRequest $postBody, $optParams = [])
   {
@@ -71,7 +70,6 @@ class PartnersDevices extends \Google\Service\Resource
    * @param ClaimDevicesRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function claimAsync($partnerId, ClaimDevicesRequest $postBody, $optParams = [])
   {
@@ -87,7 +85,6 @@ class PartnersDevices extends \Google\Service\Resource
    * @param FindDevicesByDeviceIdentifierRequest $postBody
    * @param array $optParams Optional parameters.
    * @return FindDevicesByDeviceIdentifierResponse
-   * @throws \Google\Service\Exception
    */
   public function findByIdentifier($partnerId, FindDevicesByDeviceIdentifierRequest $postBody, $optParams = [])
   {
@@ -105,7 +102,6 @@ class PartnersDevices extends \Google\Service\Resource
    * @param FindDevicesByOwnerRequest $postBody
    * @param array $optParams Optional parameters.
    * @return FindDevicesByOwnerResponse
-   * @throws \Google\Service\Exception
    */
   public function findByOwner($partnerId, FindDevicesByOwnerRequest $postBody, $optParams = [])
   {
@@ -120,7 +116,6 @@ class PartnersDevices extends \Google\Service\Resource
    * `partners/[PARTNER_ID]/devices/[DEVICE_ID]`.
    * @param array $optParams Optional parameters.
    * @return Device
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -135,7 +130,6 @@ class PartnersDevices extends \Google\Service\Resource
    * @param GetDeviceSimLockStateRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GetDeviceSimLockStateResponse
-   * @throws \Google\Service\Exception
    */
   public function getSimLockState($partnerId, GetDeviceSimLockStateRequest $postBody, $optParams = [])
   {
@@ -153,7 +147,6 @@ class PartnersDevices extends \Google\Service\Resource
    * @param UpdateDeviceMetadataRequest $postBody
    * @param array $optParams Optional parameters.
    * @return DeviceMetadata
-   * @throws \Google\Service\Exception
    */
   public function metadata($metadataOwnerId, $deviceId, UpdateDeviceMetadataRequest $postBody, $optParams = [])
   {
@@ -169,7 +162,6 @@ class PartnersDevices extends \Google\Service\Resource
    * @param UnclaimDeviceRequest $postBody
    * @param array $optParams Optional parameters.
    * @return AndroiddeviceprovisioningEmpty
-   * @throws \Google\Service\Exception
    */
   public function unclaim($partnerId, UnclaimDeviceRequest $postBody, $optParams = [])
   {
@@ -187,7 +179,6 @@ class PartnersDevices extends \Google\Service\Resource
    * @param UnclaimDevicesRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function unclaimAsync($partnerId, UnclaimDevicesRequest $postBody, $optParams = [])
   {
@@ -205,7 +196,6 @@ class PartnersDevices extends \Google\Service\Resource
    * @param UpdateDeviceMetadataInBatchRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function updateMetadataAsync($partnerId, UpdateDeviceMetadataInBatchRequest $postBody, $optParams = [])
   {

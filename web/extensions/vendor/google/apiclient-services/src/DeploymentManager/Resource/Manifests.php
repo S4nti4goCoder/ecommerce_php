@@ -37,10 +37,7 @@ class Manifests extends \Google\Service\Resource
    * @param string $deployment The name of the deployment for this request.
    * @param string $manifest The name of the manifest for this request.
    * @param array $optParams Optional parameters.
-   *
-   * @opt_param bool header.bypassBillingFilter
    * @return Manifest
-   * @throws \Google\Service\Exception
    */
   public function get($project, $deployment, $manifest, $optParams = [])
   {
@@ -104,7 +101,6 @@ class Manifests extends \Google\Service\Resource
    * the `nextPageToken` returned by a previous list request to get the next page
    * of results.
    * @return ManifestsListResponse
-   * @throws \Google\Service\Exception
    */
   public function listManifests($project, $deployment, $optParams = [])
   {

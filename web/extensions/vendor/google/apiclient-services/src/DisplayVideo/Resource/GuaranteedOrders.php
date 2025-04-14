@@ -44,7 +44,6 @@ class GuaranteedOrders extends \Google\Service\Resource
    * @opt_param string partnerId The ID of the partner that the request is being
    * made within.
    * @return GuaranteedOrder
-   * @throws \Google\Service\Exception
    */
   public function create(GuaranteedOrder $postBody, $optParams = [])
   {
@@ -61,7 +60,6 @@ class GuaranteedOrders extends \Google\Service\Resource
    * @param EditGuaranteedOrderReadAccessorsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return EditGuaranteedOrderReadAccessorsResponse
-   * @throws \Google\Service\Exception
    */
   public function editGuaranteedOrderReadAccessors($guaranteedOrderId, EditGuaranteedOrderReadAccessorsRequest $postBody, $optParams = [])
   {
@@ -81,7 +79,6 @@ class GuaranteedOrders extends \Google\Service\Resource
    * @opt_param string partnerId The ID of the partner that has access to the
    * guaranteed order.
    * @return GuaranteedOrder
-   * @throws \Google\Service\Exception
    */
   public function get($guaranteedOrderId, $optParams = [])
   {
@@ -125,7 +122,6 @@ class GuaranteedOrders extends \Google\Service\Resource
    * @opt_param string partnerId The ID of the partner that has access to the
    * guaranteed order.
    * @return ListGuaranteedOrdersResponse
-   * @throws \Google\Service\Exception
    */
   public function listGuaranteedOrders($optParams = [])
   {
@@ -150,7 +146,6 @@ class GuaranteedOrders extends \Google\Service\Resource
    * @opt_param string updateMask Required. The mask to control which fields to
    * update.
    * @return GuaranteedOrder
-   * @throws \Google\Service\Exception
    */
   public function patch($guaranteedOrderId, GuaranteedOrder $postBody, $optParams = [])
   {

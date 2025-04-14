@@ -28,6 +28,10 @@ class GoogleCloudApigeeV1TlsInfoConfig extends \Google\Collection
    * @var bool
    */
   public $clientAuthEnabled;
+  /**
+   * @var GoogleCloudApigeeV1CommonNameConfig
+   */
+  public $commonName;
   protected $commonNameType = GoogleCloudApigeeV1CommonNameConfig::class;
   protected $commonNameDataType = '';
   /**
@@ -37,15 +41,15 @@ class GoogleCloudApigeeV1TlsInfoConfig extends \Google\Collection
   /**
    * @var bool
    */
-  public $enforce;
-  /**
-   * @var bool
-   */
   public $ignoreValidationErrors;
   /**
    * @var string
    */
   public $keyAlias;
+  /**
+   * @var GoogleCloudApigeeV1KeyAliasReference
+   */
+  public $keyAliasReference;
   protected $keyAliasReferenceType = GoogleCloudApigeeV1KeyAliasReference::class;
   protected $keyAliasReferenceDataType = '';
   /**
@@ -112,20 +116,6 @@ class GoogleCloudApigeeV1TlsInfoConfig extends \Google\Collection
   public function getEnabled()
   {
     return $this->enabled;
-  }
-  /**
-   * @param bool
-   */
-  public function setEnforce($enforce)
-  {
-    $this->enforce = $enforce;
-  }
-  /**
-   * @return bool
-   */
-  public function getEnforce()
-  {
-    return $this->enforce;
   }
   /**
    * @param bool

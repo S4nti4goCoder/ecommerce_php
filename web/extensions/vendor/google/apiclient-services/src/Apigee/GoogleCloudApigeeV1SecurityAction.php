@@ -17,21 +17,28 @@
 
 namespace Google\Service\Apigee;
 
-class GoogleCloudApigeeV1SecurityAction extends \Google\Collection
+class GoogleCloudApigeeV1SecurityAction extends \Google\Model
 {
-  protected $collection_key = 'apiProxies';
+  /**
+   * @var GoogleCloudApigeeV1SecurityActionAllow
+   */
+  public $allow;
   protected $allowType = GoogleCloudApigeeV1SecurityActionAllow::class;
   protected $allowDataType = '';
   /**
-   * @var string[]
+   * @var GoogleCloudApigeeV1SecurityActionConditionConfig
    */
-  public $apiProxies;
+  public $conditionConfig;
   protected $conditionConfigType = GoogleCloudApigeeV1SecurityActionConditionConfig::class;
   protected $conditionConfigDataType = '';
   /**
    * @var string
    */
   public $createTime;
+  /**
+   * @var GoogleCloudApigeeV1SecurityActionDeny
+   */
+  public $deny;
   protected $denyType = GoogleCloudApigeeV1SecurityActionDeny::class;
   protected $denyDataType = '';
   /**
@@ -42,6 +49,10 @@ class GoogleCloudApigeeV1SecurityAction extends \Google\Collection
    * @var string
    */
   public $expireTime;
+  /**
+   * @var GoogleCloudApigeeV1SecurityActionFlag
+   */
+  public $flag;
   protected $flagType = GoogleCloudApigeeV1SecurityActionFlag::class;
   protected $flagDataType = '';
   /**
@@ -74,20 +85,6 @@ class GoogleCloudApigeeV1SecurityAction extends \Google\Collection
   public function getAllow()
   {
     return $this->allow;
-  }
-  /**
-   * @param string[]
-   */
-  public function setApiProxies($apiProxies)
-  {
-    $this->apiProxies = $apiProxies;
-  }
-  /**
-   * @return string[]
-   */
-  public function getApiProxies()
-  {
-    return $this->apiProxies;
   }
   /**
    * @param GoogleCloudApigeeV1SecurityActionConditionConfig

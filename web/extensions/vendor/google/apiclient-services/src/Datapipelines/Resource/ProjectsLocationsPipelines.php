@@ -45,7 +45,6 @@ class ProjectsLocationsPipelines extends \Google\Service\Resource
    * @param GoogleCloudDatapipelinesV1Pipeline $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudDatapipelinesV1Pipeline
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudDatapipelinesV1Pipeline $postBody, $optParams = [])
   {
@@ -61,7 +60,6 @@ class ProjectsLocationsPipelines extends \Google\Service\Resource
    * `projects/PROJECT_ID/locations/LOCATION_ID/pipelines/PIPELINE_ID`.
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -78,7 +76,6 @@ class ProjectsLocationsPipelines extends \Google\Service\Resource
    * `projects/PROJECT_ID/locations/LOCATION_ID/pipelines/PIPELINE_ID`.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudDatapipelinesV1Pipeline
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -111,7 +108,6 @@ class ProjectsLocationsPipelines extends \Google\Service\Resource
    * paginating, all other parameters provided to `ListPipelines` must match the
    * call that provided the page token.
    * @return GoogleCloudDatapipelinesV1ListPipelinesResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsPipelines($parent, $optParams = [])
   {
@@ -142,7 +138,6 @@ class ProjectsLocationsPipelines extends \Google\Service\Resource
    *
    * @opt_param string updateMask The list of fields to be updated.
    * @return GoogleCloudDatapipelinesV1Pipeline
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleCloudDatapipelinesV1Pipeline $postBody, $optParams = [])
   {
@@ -163,7 +158,6 @@ class ProjectsLocationsPipelines extends \Google\Service\Resource
    * @param GoogleCloudDatapipelinesV1RunPipelineRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudDatapipelinesV1RunPipelineResponse
-   * @throws \Google\Service\Exception
    */
   public function run($name, GoogleCloudDatapipelinesV1RunPipelineRequest $postBody, $optParams = [])
   {
@@ -181,7 +175,6 @@ class ProjectsLocationsPipelines extends \Google\Service\Resource
    * @param GoogleCloudDatapipelinesV1StopPipelineRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudDatapipelinesV1Pipeline
-   * @throws \Google\Service\Exception
    */
   public function stop($name, GoogleCloudDatapipelinesV1StopPipelineRequest $postBody, $optParams = [])
   {

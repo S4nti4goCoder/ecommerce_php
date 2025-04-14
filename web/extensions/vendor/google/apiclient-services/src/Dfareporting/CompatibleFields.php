@@ -19,20 +19,50 @@ namespace Google\Service\Dfareporting;
 
 class CompatibleFields extends \Google\Model
 {
+  /**
+   * @var CrossDimensionReachReportCompatibleFields
+   */
+  public $crossDimensionReachReportCompatibleFields;
   protected $crossDimensionReachReportCompatibleFieldsType = CrossDimensionReachReportCompatibleFields::class;
   protected $crossDimensionReachReportCompatibleFieldsDataType = '';
-  protected $crossMediaReachReportCompatibleFieldsType = CrossMediaReachReportCompatibleFields::class;
-  protected $crossMediaReachReportCompatibleFieldsDataType = '';
+  /**
+   * @var FloodlightReportCompatibleFields
+   */
+  public $floodlightReportCompatibleFields;
   protected $floodlightReportCompatibleFieldsType = FloodlightReportCompatibleFields::class;
   protected $floodlightReportCompatibleFieldsDataType = '';
   /**
    * @var string
    */
   public $kind;
+  /**
+   * @var PathReportCompatibleFields
+   */
+  public $pathAttributionReportCompatibleFields;
+  protected $pathAttributionReportCompatibleFieldsType = PathReportCompatibleFields::class;
+  protected $pathAttributionReportCompatibleFieldsDataType = '';
+  /**
+   * @var PathReportCompatibleFields
+   */
+  public $pathReportCompatibleFields;
+  protected $pathReportCompatibleFieldsType = PathReportCompatibleFields::class;
+  protected $pathReportCompatibleFieldsDataType = '';
+  /**
+   * @var PathToConversionReportCompatibleFields
+   */
+  public $pathToConversionReportCompatibleFields;
   protected $pathToConversionReportCompatibleFieldsType = PathToConversionReportCompatibleFields::class;
   protected $pathToConversionReportCompatibleFieldsDataType = '';
+  /**
+   * @var ReachReportCompatibleFields
+   */
+  public $reachReportCompatibleFields;
   protected $reachReportCompatibleFieldsType = ReachReportCompatibleFields::class;
   protected $reachReportCompatibleFieldsDataType = '';
+  /**
+   * @var ReportCompatibleFields
+   */
+  public $reportCompatibleFields;
   protected $reportCompatibleFieldsType = ReportCompatibleFields::class;
   protected $reportCompatibleFieldsDataType = '';
 
@@ -49,20 +79,6 @@ class CompatibleFields extends \Google\Model
   public function getCrossDimensionReachReportCompatibleFields()
   {
     return $this->crossDimensionReachReportCompatibleFields;
-  }
-  /**
-   * @param CrossMediaReachReportCompatibleFields
-   */
-  public function setCrossMediaReachReportCompatibleFields(CrossMediaReachReportCompatibleFields $crossMediaReachReportCompatibleFields)
-  {
-    $this->crossMediaReachReportCompatibleFields = $crossMediaReachReportCompatibleFields;
-  }
-  /**
-   * @return CrossMediaReachReportCompatibleFields
-   */
-  public function getCrossMediaReachReportCompatibleFields()
-  {
-    return $this->crossMediaReachReportCompatibleFields;
   }
   /**
    * @param FloodlightReportCompatibleFields
@@ -91,6 +107,34 @@ class CompatibleFields extends \Google\Model
   public function getKind()
   {
     return $this->kind;
+  }
+  /**
+   * @param PathReportCompatibleFields
+   */
+  public function setPathAttributionReportCompatibleFields(PathReportCompatibleFields $pathAttributionReportCompatibleFields)
+  {
+    $this->pathAttributionReportCompatibleFields = $pathAttributionReportCompatibleFields;
+  }
+  /**
+   * @return PathReportCompatibleFields
+   */
+  public function getPathAttributionReportCompatibleFields()
+  {
+    return $this->pathAttributionReportCompatibleFields;
+  }
+  /**
+   * @param PathReportCompatibleFields
+   */
+  public function setPathReportCompatibleFields(PathReportCompatibleFields $pathReportCompatibleFields)
+  {
+    $this->pathReportCompatibleFields = $pathReportCompatibleFields;
+  }
+  /**
+   * @return PathReportCompatibleFields
+   */
+  public function getPathReportCompatibleFields()
+  {
+    return $this->pathReportCompatibleFields;
   }
   /**
    * @param PathToConversionReportCompatibleFields

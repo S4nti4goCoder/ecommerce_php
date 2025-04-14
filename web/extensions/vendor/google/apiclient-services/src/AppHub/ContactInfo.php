@@ -20,6 +20,12 @@ namespace Google\Service\AppHub;
 class ContactInfo extends \Google\Model
 {
   /**
+   * @var Channel
+   */
+  public $channel;
+  protected $channelType = Channel::class;
+  protected $channelDataType = '';
+  /**
    * @var string
    */
   public $displayName;
@@ -28,6 +34,20 @@ class ContactInfo extends \Google\Model
    */
   public $email;
 
+  /**
+   * @param Channel
+   */
+  public function setChannel(Channel $channel)
+  {
+    $this->channel = $channel;
+  }
+  /**
+   * @return Channel
+   */
+  public function getChannel()
+  {
+    return $this->channel;
+  }
   /**
    * @param string
    */

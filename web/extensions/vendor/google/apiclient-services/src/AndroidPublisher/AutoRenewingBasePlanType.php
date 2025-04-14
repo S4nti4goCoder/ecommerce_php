@@ -22,10 +22,6 @@ class AutoRenewingBasePlanType extends \Google\Model
   /**
    * @var string
    */
-  public $accountHoldDuration;
-  /**
-   * @var string
-   */
   public $billingPeriodDuration;
   /**
    * @var string
@@ -48,20 +44,6 @@ class AutoRenewingBasePlanType extends \Google\Model
    */
   public $resubscribeState;
 
-  /**
-   * @param string
-   */
-  public function setAccountHoldDuration($accountHoldDuration)
-  {
-    $this->accountHoldDuration = $accountHoldDuration;
-  }
-  /**
-   * @return string
-   */
-  public function getAccountHoldDuration()
-  {
-    return $this->accountHoldDuration;
-  }
   /**
    * @param string
    */

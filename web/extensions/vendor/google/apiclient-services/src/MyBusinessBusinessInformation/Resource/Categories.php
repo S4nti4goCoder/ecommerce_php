@@ -46,7 +46,6 @@ class Categories extends \Google\Service\Resource
    * @opt_param string view Required. Specifies which parts to the Category
    * resource should be returned in the response.
    * @return BatchGetCategoriesResponse
-   * @throws \Google\Service\Exception
    */
   public function batchGet($optParams = [])
   {
@@ -73,7 +72,6 @@ class Categories extends \Google\Service\Resource
    * @opt_param string view Required. Specifies which parts to the Category
    * resource should be returned in the response.
    * @return ListCategoriesResponse
-   * @throws \Google\Service\Exception
    */
   public function listCategories($optParams = [])
   {

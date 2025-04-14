@@ -38,7 +38,6 @@ class Buyers extends \Google\Service\Resource
    * `buyers/{buyerId}`
    * @param array $optParams Optional parameters.
    * @return Buyer
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -64,7 +63,6 @@ class Buyers extends \Google\Service\Resource
    * `buyers/{accountId}/userLists/{userListId}`. See UserList.name.
    * @param array $optParams Optional parameters.
    * @return GetRemarketingTagResponse
-   * @throws \Google\Service\Exception
    */
   public function getRemarketingTag($name, $optParams = [])
   {
@@ -85,7 +83,6 @@ class Buyers extends \Google\Service\Resource
    * should return. This value is received from a previous `ListBuyers` call in
    * ListBuyersResponse.nextPageToken.
    * @return ListBuyersResponse
-   * @throws \Google\Service\Exception
    */
   public function listBuyers($optParams = [])
   {

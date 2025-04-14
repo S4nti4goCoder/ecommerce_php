@@ -28,34 +28,48 @@ class GoogleCloudRetailV2SearchResponse extends \Google\Collection
    * @var string
    */
   public $attributionToken;
-  protected $conversationalSearchResultType = GoogleCloudRetailV2SearchResponseConversationalSearchResult::class;
-  protected $conversationalSearchResultDataType = '';
   /**
    * @var string
    */
   public $correctedQuery;
+  /**
+   * @var GoogleCloudRetailV2ExperimentInfo[]
+   */
+  public $experimentInfo;
   protected $experimentInfoType = GoogleCloudRetailV2ExperimentInfo::class;
   protected $experimentInfoDataType = 'array';
+  /**
+   * @var GoogleCloudRetailV2SearchResponseFacet[]
+   */
+  public $facets;
   protected $facetsType = GoogleCloudRetailV2SearchResponseFacet::class;
   protected $facetsDataType = 'array';
+  /**
+   * @var GoogleCloudRetailV2SearchRequestBoostSpecConditionBoostSpec[]
+   */
+  public $invalidConditionBoostSpecs;
   protected $invalidConditionBoostSpecsType = GoogleCloudRetailV2SearchRequestBoostSpecConditionBoostSpec::class;
   protected $invalidConditionBoostSpecsDataType = 'array';
   /**
    * @var string
    */
   public $nextPageToken;
-  protected $pinControlMetadataType = GoogleCloudRetailV2PinControlMetadata::class;
-  protected $pinControlMetadataDataType = '';
+  /**
+   * @var GoogleCloudRetailV2SearchResponseQueryExpansionInfo
+   */
+  public $queryExpansionInfo;
   protected $queryExpansionInfoType = GoogleCloudRetailV2SearchResponseQueryExpansionInfo::class;
   protected $queryExpansionInfoDataType = '';
   /**
    * @var string
    */
   public $redirectUri;
+  /**
+   * @var GoogleCloudRetailV2SearchResponseSearchResult[]
+   */
+  public $results;
   protected $resultsType = GoogleCloudRetailV2SearchResponseSearchResult::class;
   protected $resultsDataType = 'array';
-  protected $tileNavigationResultType = GoogleCloudRetailV2SearchResponseTileNavigationResult::class;
-  protected $tileNavigationResultDataType = '';
   /**
    * @var int
    */
@@ -88,20 +102,6 @@ class GoogleCloudRetailV2SearchResponse extends \Google\Collection
   public function getAttributionToken()
   {
     return $this->attributionToken;
-  }
-  /**
-   * @param GoogleCloudRetailV2SearchResponseConversationalSearchResult
-   */
-  public function setConversationalSearchResult(GoogleCloudRetailV2SearchResponseConversationalSearchResult $conversationalSearchResult)
-  {
-    $this->conversationalSearchResult = $conversationalSearchResult;
-  }
-  /**
-   * @return GoogleCloudRetailV2SearchResponseConversationalSearchResult
-   */
-  public function getConversationalSearchResult()
-  {
-    return $this->conversationalSearchResult;
   }
   /**
    * @param string
@@ -174,20 +174,6 @@ class GoogleCloudRetailV2SearchResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * @param GoogleCloudRetailV2PinControlMetadata
-   */
-  public function setPinControlMetadata(GoogleCloudRetailV2PinControlMetadata $pinControlMetadata)
-  {
-    $this->pinControlMetadata = $pinControlMetadata;
-  }
-  /**
-   * @return GoogleCloudRetailV2PinControlMetadata
-   */
-  public function getPinControlMetadata()
-  {
-    return $this->pinControlMetadata;
-  }
-  /**
    * @param GoogleCloudRetailV2SearchResponseQueryExpansionInfo
    */
   public function setQueryExpansionInfo(GoogleCloudRetailV2SearchResponseQueryExpansionInfo $queryExpansionInfo)
@@ -228,20 +214,6 @@ class GoogleCloudRetailV2SearchResponse extends \Google\Collection
   public function getResults()
   {
     return $this->results;
-  }
-  /**
-   * @param GoogleCloudRetailV2SearchResponseTileNavigationResult
-   */
-  public function setTileNavigationResult(GoogleCloudRetailV2SearchResponseTileNavigationResult $tileNavigationResult)
-  {
-    $this->tileNavigationResult = $tileNavigationResult;
-  }
-  /**
-   * @return GoogleCloudRetailV2SearchResponseTileNavigationResult
-   */
-  public function getTileNavigationResult()
-  {
-    return $this->tileNavigationResult;
   }
   /**
    * @param int

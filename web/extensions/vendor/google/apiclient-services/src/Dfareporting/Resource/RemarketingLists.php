@@ -37,7 +37,6 @@ class RemarketingLists extends \Google\Service\Resource
    * @param string $id Remarketing list ID.
    * @param array $optParams Optional parameters.
    * @return RemarketingList
-   * @throws \Google\Service\Exception
    */
   public function get($profileId, $id, $optParams = [])
   {
@@ -52,7 +51,6 @@ class RemarketingLists extends \Google\Service\Resource
    * @param RemarketingList $postBody
    * @param array $optParams Optional parameters.
    * @return RemarketingList
-   * @throws \Google\Service\Exception
    */
   public function insert($profileId, RemarketingList $postBody, $optParams = [])
   {
@@ -85,7 +83,6 @@ class RemarketingLists extends \Google\Service\Resource
    * @opt_param string sortField Field by which to sort the list.
    * @opt_param string sortOrder Order of sorted results.
    * @return RemarketingListsListResponse
-   * @throws \Google\Service\Exception
    */
   public function listRemarketingLists($profileId, $advertiserId, $optParams = [])
   {
@@ -94,7 +91,7 @@ class RemarketingLists extends \Google\Service\Resource
     return $this->call('list', [$params], RemarketingListsListResponse::class);
   }
   /**
-   * Updates an existing remarketing list. This method supports patch semantics.
+   * Updates an existing RemarketingList. This method supports patch semantics.
    * (remarketingLists.patch)
    *
    * @param string $profileId User profile ID associated with this request.
@@ -102,7 +99,6 @@ class RemarketingLists extends \Google\Service\Resource
    * @param RemarketingList $postBody
    * @param array $optParams Optional parameters.
    * @return RemarketingList
-   * @throws \Google\Service\Exception
    */
   public function patch($profileId, $id, RemarketingList $postBody, $optParams = [])
   {
@@ -117,7 +113,6 @@ class RemarketingLists extends \Google\Service\Resource
    * @param RemarketingList $postBody
    * @param array $optParams Optional parameters.
    * @return RemarketingList
-   * @throws \Google\Service\Exception
    */
   public function update($profileId, RemarketingList $postBody, $optParams = [])
   {

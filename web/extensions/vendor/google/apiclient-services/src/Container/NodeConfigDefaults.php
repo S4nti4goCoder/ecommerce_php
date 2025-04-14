@@ -19,29 +19,19 @@ namespace Google\Service\Container;
 
 class NodeConfigDefaults extends \Google\Model
 {
-  protected $containerdConfigType = ContainerdConfig::class;
-  protected $containerdConfigDataType = '';
+  /**
+   * @var GcfsConfig
+   */
+  public $gcfsConfig;
   protected $gcfsConfigType = GcfsConfig::class;
   protected $gcfsConfigDataType = '';
+  /**
+   * @var NodePoolLoggingConfig
+   */
+  public $loggingConfig;
   protected $loggingConfigType = NodePoolLoggingConfig::class;
   protected $loggingConfigDataType = '';
-  protected $nodeKubeletConfigType = NodeKubeletConfig::class;
-  protected $nodeKubeletConfigDataType = '';
 
-  /**
-   * @param ContainerdConfig
-   */
-  public function setContainerdConfig(ContainerdConfig $containerdConfig)
-  {
-    $this->containerdConfig = $containerdConfig;
-  }
-  /**
-   * @return ContainerdConfig
-   */
-  public function getContainerdConfig()
-  {
-    return $this->containerdConfig;
-  }
   /**
    * @param GcfsConfig
    */
@@ -69,20 +59,6 @@ class NodeConfigDefaults extends \Google\Model
   public function getLoggingConfig()
   {
     return $this->loggingConfig;
-  }
-  /**
-   * @param NodeKubeletConfig
-   */
-  public function setNodeKubeletConfig(NodeKubeletConfig $nodeKubeletConfig)
-  {
-    $this->nodeKubeletConfig = $nodeKubeletConfig;
-  }
-  /**
-   * @return NodeKubeletConfig
-   */
-  public function getNodeKubeletConfig()
-  {
-    return $this->nodeKubeletConfig;
   }
 }
 

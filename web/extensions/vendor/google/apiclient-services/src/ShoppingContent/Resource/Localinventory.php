@@ -38,7 +38,6 @@ class Localinventory extends \Google\Service\Resource
    * @param LocalinventoryCustomBatchRequest $postBody
    * @param array $optParams Optional parameters.
    * @return LocalinventoryCustomBatchResponse
-   * @throws \Google\Service\Exception
    */
   public function custombatch(LocalinventoryCustomBatchRequest $postBody, $optParams = [])
   {
@@ -57,7 +56,6 @@ class Localinventory extends \Google\Service\Resource
    * @param LocalInventoryModel $postBody
    * @param array $optParams Optional parameters.
    * @return LocalInventoryModel
-   * @throws \Google\Service\Exception
    */
   public function insert($merchantId, $productId, LocalInventoryModel $postBody, $optParams = [])
   {

@@ -41,7 +41,6 @@ class ProjectsLocationsFlexTemplates extends \Google\Service\Resource
    * @param LaunchFlexTemplateRequest $postBody
    * @param array $optParams Optional parameters.
    * @return LaunchFlexTemplateResponse
-   * @throws \Google\Service\Exception
    */
   public function launch($projectId, $location, LaunchFlexTemplateRequest $postBody, $optParams = [])
   {

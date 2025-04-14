@@ -19,16 +19,16 @@ namespace Google\Service\FirebaseCloudMessaging;
 
 class ApnsConfig extends \Google\Model
 {
+  /**
+   * @var ApnsFcmOptions
+   */
+  public $fcmOptions;
   protected $fcmOptionsType = ApnsFcmOptions::class;
   protected $fcmOptionsDataType = '';
   /**
    * @var string[]
    */
   public $headers;
-  /**
-   * @var string
-   */
-  public $liveActivityToken;
   /**
    * @var array[]
    */
@@ -61,20 +61,6 @@ class ApnsConfig extends \Google\Model
   public function getHeaders()
   {
     return $this->headers;
-  }
-  /**
-   * @param string
-   */
-  public function setLiveActivityToken($liveActivityToken)
-  {
-    $this->liveActivityToken = $liveActivityToken;
-  }
-  /**
-   * @return string
-   */
-  public function getLiveActivityToken()
-  {
-    return $this->liveActivityToken;
   }
   /**
    * @param array[]

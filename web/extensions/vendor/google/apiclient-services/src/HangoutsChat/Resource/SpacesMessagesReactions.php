@@ -32,18 +32,17 @@ use Google\Service\HangoutsChat\Reaction;
 class SpacesMessagesReactions extends \Google\Service\Resource
 {
   /**
-   * Creates a reaction and adds it to a message. For an example, see [Add a
-   * reaction to a message](https://developers.google.com/workspace/chat/create-
-   * reactions). Requires [user
-   * authentication](https://developers.google.com/workspace/chat/authenticate-
-   * authorize-chat-user). (reactions.create)
+   * Creates a reaction and adds it to a message. For an example, see [Create a
+   * reaction](https://developers.google.com/chat/api/guides/v1/reactions/create).
+   * Requires [user
+   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * Only unicode emoji are supported. (reactions.create)
    *
    * @param string $parent Required. The message where the reaction is created.
    * Format: `spaces/{space}/messages/{message}`
    * @param Reaction $postBody
    * @param array $optParams Optional parameters.
    * @return Reaction
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Reaction $postBody, $optParams = [])
   {
@@ -53,16 +52,15 @@ class SpacesMessagesReactions extends \Google\Service\Resource
   }
   /**
    * Deletes a reaction to a message. For an example, see [Delete a
-   * reaction](https://developers.google.com/workspace/chat/delete-reactions).
+   * reaction](https://developers.google.com/chat/api/guides/v1/reactions/delete).
    * Requires [user
-   * authentication](https://developers.google.com/workspace/chat/authenticate-
-   * authorize-chat-user). (reactions.delete)
+   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * (reactions.delete)
    *
    * @param string $name Required. Name of the reaction to delete. Format:
    * `spaces/{space}/messages/{message}/reactions/{reaction}`
    * @param array $optParams Optional parameters.
    * @return ChatEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -71,20 +69,20 @@ class SpacesMessagesReactions extends \Google\Service\Resource
     return $this->call('delete', [$params], ChatEmpty::class);
   }
   /**
-   * Lists reactions to a message. For an example, see [List reactions for a
-   * message](https://developers.google.com/workspace/chat/list-reactions).
+   * Lists reactions to a message. For an example, see [List
+   * reactions](https://developers.google.com/chat/api/guides/v1/reactions/list).
    * Requires [user
-   * authentication](https://developers.google.com/workspace/chat/authenticate-
-   * authorize-chat-user). (reactions.listSpacesMessagesReactions)
+   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * (reactions.listSpacesMessagesReactions)
    *
    * @param string $parent Required. The message users reacted to. Format:
    * `spaces/{space}/messages/{message}`
    * @param array $optParams Optional parameters.
    *
    * @opt_param string filter Optional. A query filter. You can filter reactions
-   * by [emoji](https://developers.google.com/workspace/chat/api/reference/rest/v1
-   * /Emoji) (either `emoji.unicode` or `emoji.custom_emoji.uid`) and [user](https
-   * ://developers.google.com/workspace/chat/api/reference/rest/v1/User)
+   * by [emoji](https://developers.google.com/chat/api/reference/rest/v1/Emoji)
+   * (either `emoji.unicode` or `emoji.custom_emoji.uid`) and
+   * [user](https://developers.google.com/chat/api/reference/rest/v1/User)
    * (`user.name`). To filter reactions for multiple emojis or users, join similar
    * fields with the `OR` operator, such as `emoji.unicode = "🙂" OR emoji.unicode
    * = "👍"` and `user.name = "users/AAAAAA" OR user.name = "users/BBBBBB"`. To
@@ -112,7 +110,6 @@ class SpacesMessagesReactions extends \Google\Service\Resource
    * the call that provided the page token. Passing a different value might lead
    * to unexpected results.
    * @return ListReactionsResponse
-   * @throws \Google\Service\Exception
    */
   public function listSpacesMessagesReactions($parent, $optParams = [])
   {

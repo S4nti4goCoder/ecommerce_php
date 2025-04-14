@@ -38,7 +38,6 @@ class AccountsLabels extends \Google\Service\Resource
    * @param AccountLabel $postBody
    * @param array $optParams Optional parameters.
    * @return AccountLabel
-   * @throws \Google\Service\Exception
    */
   public function create($accountId, AccountLabel $postBody, $optParams = [])
   {
@@ -53,7 +52,6 @@ class AccountsLabels extends \Google\Service\Resource
    * @param string $accountId Required. The id of the account that owns the label.
    * @param string $labelId Required. The id of the label to delete.
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function delete($accountId, $labelId, $optParams = [])
   {
@@ -77,7 +75,6 @@ class AccountsLabels extends \Google\Service\Resource
    * paginating, all other parameters provided to `ListAccountLabels` must match
    * the call that provided the page token.
    * @return ListAccountLabelsResponse
-   * @throws \Google\Service\Exception
    */
   public function listAccountsLabels($accountId, $optParams = [])
   {
@@ -94,7 +91,6 @@ class AccountsLabels extends \Google\Service\Resource
    * @param AccountLabel $postBody
    * @param array $optParams Optional parameters.
    * @return AccountLabel
-   * @throws \Google\Service\Exception
    */
   public function patch($accountId, $labelId, AccountLabel $postBody, $optParams = [])
   {

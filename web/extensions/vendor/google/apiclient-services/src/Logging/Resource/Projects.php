@@ -49,7 +49,6 @@ class Projects extends \Google\Service\Resource
    * folders in the Google Cloud organization.
    * @param array $optParams Optional parameters.
    * @return CmekSettings
-   * @throws \Google\Service\Exception
    */
   public function getCmekSettings($name, $optParams = [])
   {
@@ -72,7 +71,6 @@ class Projects extends \Google\Service\Resource
    * Google Cloud projects, folders, organizations, and billing accounts.
    * @param array $optParams Optional parameters.
    * @return Settings
-   * @throws \Google\Service\Exception
    */
   public function getSettings($name, $optParams = [])
   {

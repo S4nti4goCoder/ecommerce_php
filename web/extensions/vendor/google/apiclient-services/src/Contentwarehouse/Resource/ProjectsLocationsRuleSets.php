@@ -40,7 +40,6 @@ class ProjectsLocationsRuleSets extends \Google\Service\Resource
    * @param GoogleCloudContentwarehouseV1RuleSet $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudContentwarehouseV1RuleSet
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudContentwarehouseV1RuleSet $postBody, $optParams = [])
   {
@@ -56,7 +55,6 @@ class ProjectsLocationsRuleSets extends \Google\Service\Resource
    * projects/{project_number}/locations/{location}/ruleSets/{rule_set_id}.
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -72,7 +70,6 @@ class ProjectsLocationsRuleSets extends \Google\Service\Resource
    * projects/{project_number}/locations/{location}/ruleSets/{rule_set_id}.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudContentwarehouseV1RuleSet
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -96,7 +93,6 @@ class ProjectsLocationsRuleSets extends \Google\Service\Resource
    * paginating, all other parameters provided to `ListRuleSets` must match the
    * call that provided the page token.
    * @return GoogleCloudContentwarehouseV1ListRuleSetsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsRuleSets($parent, $optParams = [])
   {
@@ -113,7 +109,6 @@ class ProjectsLocationsRuleSets extends \Google\Service\Resource
    * @param GoogleCloudContentwarehouseV1UpdateRuleSetRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudContentwarehouseV1RuleSet
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleCloudContentwarehouseV1UpdateRuleSetRequest $postBody, $optParams = [])
   {

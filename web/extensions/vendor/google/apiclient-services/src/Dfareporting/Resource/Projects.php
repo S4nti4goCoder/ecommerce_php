@@ -37,7 +37,6 @@ class Projects extends \Google\Service\Resource
    * @param string $id Project ID.
    * @param array $optParams Optional parameters.
    * @return Project
-   * @throws \Google\Service\Exception
    */
   public function get($profileId, $id, $optParams = [])
   {
@@ -67,7 +66,6 @@ class Projects extends \Google\Service\Resource
    * @opt_param string sortField Field by which to sort the list.
    * @opt_param string sortOrder Order of sorted results.
    * @return ProjectsListResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjects($profileId, $optParams = [])
   {

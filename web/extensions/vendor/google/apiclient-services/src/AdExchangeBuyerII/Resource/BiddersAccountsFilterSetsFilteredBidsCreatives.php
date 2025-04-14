@@ -55,7 +55,6 @@ class BiddersAccountsFilterSetsFilteredBidsCreatives extends \Google\Service\Res
    * ListCreativeStatusBreakdownByCreativeResponse.nextPageToken returned from the
    * previous call to the filteredBids.creatives.list method.
    * @return ListCreativeStatusBreakdownByCreativeResponse
-   * @throws \Google\Service\Exception
    */
   public function listBiddersAccountsFilterSetsFilteredBidsCreatives($filterSetName, $creativeStatusId, $optParams = [])
   {

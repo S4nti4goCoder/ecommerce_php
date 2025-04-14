@@ -32,25 +32,41 @@ class Service extends \Google\Model
    */
   public $databaseType;
   /**
-   * @var bool
+   * @var EncryptionConfig
    */
-  public $deletionProtection;
+  public $encryptionConfig;
   protected $encryptionConfigType = EncryptionConfig::class;
   protected $encryptionConfigDataType = '';
   /**
    * @var string
    */
   public $endpointUri;
+  /**
+   * @var HiveMetastoreConfig
+   */
+  public $hiveMetastoreConfig;
   protected $hiveMetastoreConfigType = HiveMetastoreConfig::class;
   protected $hiveMetastoreConfigDataType = '';
   /**
    * @var string[]
    */
   public $labels;
+  /**
+   * @var MaintenanceWindow
+   */
+  public $maintenanceWindow;
   protected $maintenanceWindowType = MaintenanceWindow::class;
   protected $maintenanceWindowDataType = '';
+  /**
+   * @var MetadataIntegration
+   */
+  public $metadataIntegration;
   protected $metadataIntegrationType = MetadataIntegration::class;
   protected $metadataIntegrationDataType = '';
+  /**
+   * @var MetadataManagementActivity
+   */
+  public $metadataManagementActivity;
   protected $metadataManagementActivityType = MetadataManagementActivity::class;
   protected $metadataManagementActivityDataType = '';
   /**
@@ -61,6 +77,10 @@ class Service extends \Google\Model
    * @var string
    */
   public $network;
+  /**
+   * @var NetworkConfig
+   */
+  public $networkConfig;
   protected $networkConfigType = NetworkConfig::class;
   protected $networkConfigDataType = '';
   /**
@@ -71,10 +91,12 @@ class Service extends \Google\Model
    * @var string
    */
   public $releaseChannel;
+  /**
+   * @var ScalingConfig
+   */
+  public $scalingConfig;
   protected $scalingConfigType = ScalingConfig::class;
   protected $scalingConfigDataType = '';
-  protected $scheduledBackupType = ScheduledBackup::class;
-  protected $scheduledBackupDataType = '';
   /**
    * @var string
    */
@@ -83,6 +105,10 @@ class Service extends \Google\Model
    * @var string
    */
   public $stateMessage;
+  /**
+   * @var TelemetryConfig
+   */
+  public $telemetryConfig;
   protected $telemetryConfigType = TelemetryConfig::class;
   protected $telemetryConfigDataType = '';
   /**
@@ -139,20 +165,6 @@ class Service extends \Google\Model
   public function getDatabaseType()
   {
     return $this->databaseType;
-  }
-  /**
-   * @param bool
-   */
-  public function setDeletionProtection($deletionProtection)
-  {
-    $this->deletionProtection = $deletionProtection;
-  }
-  /**
-   * @return bool
-   */
-  public function getDeletionProtection()
-  {
-    return $this->deletionProtection;
   }
   /**
    * @param EncryptionConfig
@@ -335,20 +347,6 @@ class Service extends \Google\Model
   public function getScalingConfig()
   {
     return $this->scalingConfig;
-  }
-  /**
-   * @param ScheduledBackup
-   */
-  public function setScheduledBackup(ScheduledBackup $scheduledBackup)
-  {
-    $this->scheduledBackup = $scheduledBackup;
-  }
-  /**
-   * @return ScheduledBackup
-   */
-  public function getScheduledBackup()
-  {
-    return $this->scheduledBackup;
   }
   /**
    * @param string

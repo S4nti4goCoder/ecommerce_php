@@ -39,7 +39,6 @@ class AccountsCredentials extends \Google\Service\Resource
    * @param AccountCredentials $postBody
    * @param array $optParams Optional parameters.
    * @return AccountCredentials
-   * @throws \Google\Service\Exception
    */
   public function create($accountId, AccountCredentials $postBody, $optParams = [])
   {

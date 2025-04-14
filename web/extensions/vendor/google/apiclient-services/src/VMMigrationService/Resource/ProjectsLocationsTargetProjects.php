@@ -53,7 +53,6 @@ class ProjectsLocationsTargetProjects extends \Google\Service\Resource
    * (00000000-0000-0000-0000-000000000000).
    * @opt_param string targetProjectId Required. The target_project identifier.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, TargetProject $postBody, $optParams = [])
   {
@@ -81,7 +80,6 @@ class ProjectsLocationsTargetProjects extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported
    * (00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -97,7 +95,6 @@ class ProjectsLocationsTargetProjects extends \Google\Service\Resource
    * @param string $name Required. The TargetProject name.
    * @param array $optParams Optional parameters.
    * @return TargetProject
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -125,7 +122,6 @@ class ProjectsLocationsTargetProjects extends \Google\Service\Resource
    * paginating, all other parameters provided to `ListTargets` must match the
    * call that provided the page token.
    * @return ListTargetProjectsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsTargetProjects($parent, $optParams = [])
   {
@@ -159,7 +155,6 @@ class ProjectsLocationsTargetProjects extends \Google\Service\Resource
    * field will be overwritten if it is in the mask. If the user does not provide
    * a mask then all fields will be overwritten.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, TargetProject $postBody, $optParams = [])
   {

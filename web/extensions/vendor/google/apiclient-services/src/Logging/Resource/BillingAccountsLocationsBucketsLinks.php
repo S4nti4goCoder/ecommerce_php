@@ -49,7 +49,6 @@ class BillingAccountsLocationsBucketsLinks extends \Google\Service\Resource
    * can have up to 100 characters. A valid link_id must only have alphanumeric
    * characters and underscores within it.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Link $postBody, $optParams = [])
   {
@@ -69,7 +68,6 @@ class BillingAccountsLocationsBucketsLinks extends \Google\Service\Resource
    * LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -88,7 +86,6 @@ class BillingAccountsLocationsBucketsLinks extends \Google\Service\Resource
    * ckets/[BUCKET_ID]/links/[LINK_ID]"
    * @param array $optParams Optional parameters.
    * @return Link
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -112,7 +109,6 @@ class BillingAccountsLocationsBucketsLinks extends \Google\Service\Resource
    * batch of results from the preceding call to this method. pageToken must be
    * the value of nextPageToken from the previous response.
    * @return ListLinksResponse
-   * @throws \Google\Service\Exception
    */
   public function listBillingAccountsLocationsBucketsLinks($parent, $optParams = [])
   {

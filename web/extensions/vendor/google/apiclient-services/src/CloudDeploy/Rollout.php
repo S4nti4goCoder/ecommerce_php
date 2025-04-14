@@ -21,10 +21,6 @@ class Rollout extends \Google\Collection
 {
   protected $collection_key = 'rolledBackByRollouts';
   /**
-   * @var string
-   */
-  public $activeRepairAutomationRun;
-  /**
    * @var string[]
    */
   public $annotations;
@@ -80,12 +76,20 @@ class Rollout extends \Google\Collection
    * @var string[]
    */
   public $labels;
+  /**
+   * @var Metadata
+   */
+  public $metadata;
   protected $metadataType = Metadata::class;
   protected $metadataDataType = '';
   /**
    * @var string
    */
   public $name;
+  /**
+   * @var Phase[]
+   */
+  public $phases;
   protected $phasesType = Phase::class;
   protected $phasesDataType = 'array';
   /**
@@ -109,20 +113,6 @@ class Rollout extends \Google\Collection
    */
   public $uid;
 
-  /**
-   * @param string
-   */
-  public function setActiveRepairAutomationRun($activeRepairAutomationRun)
-  {
-    $this->activeRepairAutomationRun = $activeRepairAutomationRun;
-  }
-  /**
-   * @return string
-   */
-  public function getActiveRepairAutomationRun()
-  {
-    return $this->activeRepairAutomationRun;
-  }
   /**
    * @param string[]
    */

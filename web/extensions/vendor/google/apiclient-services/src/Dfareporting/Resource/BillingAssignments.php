@@ -43,7 +43,6 @@ class BillingAssignments extends \Google\Service\Resource
    * @param BillingAssignment $postBody
    * @param array $optParams Optional parameters.
    * @return BillingAssignment
-   * @throws \Google\Service\Exception
    */
   public function insert($profileId, $billingProfileId, BillingAssignment $postBody, $optParams = [])
   {
@@ -60,7 +59,6 @@ class BillingAssignments extends \Google\Service\Resource
    * assignment.
    * @param array $optParams Optional parameters.
    * @return BillingAssignmentsListResponse
-   * @throws \Google\Service\Exception
    */
   public function listBillingAssignments($profileId, $billingProfileId, $optParams = [])
   {

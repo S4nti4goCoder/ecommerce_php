@@ -48,7 +48,6 @@ class ProjectsWebApps extends \Google\Service\Resource
    * @param WebApp $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, WebApp $postBody, $optParams = [])
   {
@@ -67,7 +66,6 @@ class ProjectsWebApps extends \Google\Service\Resource
    * PROJECT_IDENTIFIER and APP_ID values.
    * @param array $optParams Optional parameters.
    * @return WebApp
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -88,7 +86,6 @@ class ProjectsWebApps extends \Google\Service\Resource
    * PROJECT_IDENTIFIER and APP_ID values.
    * @param array $optParams Optional parameters.
    * @return WebAppConfig
-   * @throws \Google\Service\Exception
    */
   public function getConfig($name, $optParams = [])
   {
@@ -119,7 +116,6 @@ class ProjectsWebApps extends \Google\Service\Resource
    * be returned in the response. If not specified, only `ACTIVE` Apps will be
    * returned.
    * @return ListWebAppsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsWebApps($parent, $optParams = [])
   {
@@ -149,7 +145,6 @@ class ProjectsWebApps extends \Google\Service\Resource
    * `project_id`. To update `state`, use any of the following endpoints:
    * RemoveWebApp or UndeleteWebApp.
    * @return WebApp
-   * @throws \Google\Service\Exception
    */
   public function patch($name, WebApp $postBody, $optParams = [])
   {
@@ -169,7 +164,6 @@ class ProjectsWebApps extends \Google\Service\Resource
    * @param RemoveWebAppRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function remove($name, RemoveWebAppRequest $postBody, $optParams = [])
   {
@@ -189,7 +183,6 @@ class ProjectsWebApps extends \Google\Service\Resource
    * @param UndeleteWebAppRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function undelete($name, UndeleteWebAppRequest $postBody, $optParams = [])
   {

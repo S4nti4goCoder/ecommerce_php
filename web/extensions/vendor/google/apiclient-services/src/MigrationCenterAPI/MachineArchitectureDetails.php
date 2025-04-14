@@ -19,16 +19,16 @@ namespace Google\Service\MigrationCenterAPI;
 
 class MachineArchitectureDetails extends \Google\Model
 {
+  /**
+   * @var BiosDetails
+   */
+  public $bios;
   protected $biosType = BiosDetails::class;
   protected $biosDataType = '';
   /**
    * @var string
    */
   public $cpuArchitecture;
-  /**
-   * @var string
-   */
-  public $cpuManufacturer;
   /**
    * @var string
    */
@@ -81,20 +81,6 @@ class MachineArchitectureDetails extends \Google\Model
   public function getCpuArchitecture()
   {
     return $this->cpuArchitecture;
-  }
-  /**
-   * @param string
-   */
-  public function setCpuManufacturer($cpuManufacturer)
-  {
-    $this->cpuManufacturer = $cpuManufacturer;
-  }
-  /**
-   * @return string
-   */
-  public function getCpuManufacturer()
-  {
-    return $this->cpuManufacturer;
   }
   /**
    * @param string

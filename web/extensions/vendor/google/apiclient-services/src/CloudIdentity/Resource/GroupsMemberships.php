@@ -60,7 +60,6 @@ class GroupsMemberships extends \Google\Service\Resource
    * requires an additional query input: 'member_key_namespace'. Example query:
    * `member_key_id == 'member_key_id_value'`
    * @return CheckTransitiveMembershipResponse
-   * @throws \Google\Service\Exception
    */
   public function checkTransitiveMembership($parent, $optParams = [])
   {
@@ -76,7 +75,6 @@ class GroupsMemberships extends \Google\Service\Resource
    * @param Membership $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Membership $postBody, $optParams = [])
   {
@@ -93,7 +91,6 @@ class GroupsMemberships extends \Google\Service\Resource
    * `groups/{group}/memberships/{membership}`
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -110,7 +107,6 @@ class GroupsMemberships extends \Google\Service\Resource
    * `groups/{group}/memberships/{membership}`.
    * @param array $optParams Optional parameters.
    * @return Membership
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -144,7 +140,6 @@ class GroupsMemberships extends \Google\Service\Resource
    * query input: 'member_key_namespace'. Example query: `member_key_id ==
    * 'member_key_id_value' && in labels`
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function getMembershipGraph($parent, $optParams = [])
   {
@@ -171,7 +166,6 @@ class GroupsMemberships extends \Google\Service\Resource
    * @opt_param string view The level of detail to be returned. If unspecified,
    * defaults to `View.BASIC`.
    * @return ListMembershipsResponse
-   * @throws \Google\Service\Exception
    */
   public function listGroupsMemberships($parent, $optParams = [])
   {
@@ -190,10 +184,8 @@ class GroupsMemberships extends \Google\Service\Resource
    *
    * @opt_param string memberKey.id The ID of the entity. For Google-managed
    * entities, the `id` should be the email address of an existing group or user.
-   * Email addresses need to adhere to [name guidelines for users and
-   * groups](https://support.google.com/a/answer/9193374). For external-identity-
-   * mapped entities, the `id` must be a string conforming to the Identity
-   * Source's requirements. Must be unique within a `namespace`.
+   * For external-identity-mapped entities, the `id` must be a string conforming
+   * to the Identity Source's requirements. Must be unique within a `namespace`.
    * @opt_param string memberKey.namespace The namespace in which the entity
    * exists. If not specified, the `EntityKey` represents a Google-managed entity
    * such as a Google user or a Google Group. If specified, the `EntityKey`
@@ -201,7 +193,6 @@ class GroupsMemberships extends \Google\Service\Resource
    * to an identity source created in Admin Console and must be in the form of
    * `identitysources/{identity_source}`.
    * @return LookupMembershipNameResponse
-   * @throws \Google\Service\Exception
    */
   public function lookup($parent, $optParams = [])
   {
@@ -220,7 +211,6 @@ class GroupsMemberships extends \Google\Service\Resource
    * @param ModifyMembershipRolesRequest $postBody
    * @param array $optParams Optional parameters.
    * @return ModifyMembershipRolesResponse
-   * @throws \Google\Service\Exception
    */
   public function modifyMembershipRoles($name, ModifyMembershipRolesRequest $postBody, $optParams = [])
   {
@@ -246,7 +236,7 @@ class GroupsMemberships extends \Google\Service\Resource
    * order_by="group_key" or order_by="group_key asc". Sort by the descending
    * group key: order_by="group_key desc".
    * @opt_param int pageSize The default page size is 200 (max 1000).
-   * @opt_param string pageToken The `next_page_token` value returned from a
+   * @opt_param string pageToken The next_page_token value returned from a
    * previous list request, if any
    * @opt_param string query Required. A CEL expression that MUST include member
    * specification AND label(s). Users can search on label attributes of groups.
@@ -255,7 +245,6 @@ class GroupsMemberships extends \Google\Service\Resource
    * which requires an additional query input: `member_key_namespace`. Example
    * query: `member_key_id == 'member_key_id_value' && 'label_value' in labels`
    * @return SearchDirectGroupsResponse
-   * @throws \Google\Service\Exception
    */
   public function searchDirectGroups($parent, $optParams = [])
   {
@@ -279,7 +268,7 @@ class GroupsMemberships extends \Google\Service\Resource
    * @param array $optParams Optional parameters.
    *
    * @opt_param int pageSize The default page size is 200 (max 1000).
-   * @opt_param string pageToken The `next_page_token` value returned from a
+   * @opt_param string pageToken The next_page_token value returned from a
    * previous list request, if any.
    * @opt_param string query Required. A CEL expression that MUST include member
    * specification AND label(s). This is a `required` field. Users can search on
@@ -291,11 +280,10 @@ class GroupsMemberships extends \Google\Service\Resource
    * operators on the parent of the group restricting the search within a
    * particular customer, e.g. `parent == 'customers/{customer_id}'`. The
    * `customer_id` must begin with "C" (for example, 'C046psxkn'). This filtering
-   * is only supported for Admins with groups read permissions on the input
+   * is only supported for Admins with groups read permissons on the input
    * customer. Example query: `member_key_id == 'member_key_id_value' && in labels
    * && parent == 'customers/C046psxkn'`
    * @return SearchTransitiveGroupsResponse
-   * @throws \Google\Service\Exception
    */
   public function searchTransitiveGroups($parent, $optParams = [])
   {
@@ -319,10 +307,9 @@ class GroupsMemberships extends \Google\Service\Resource
    * @param array $optParams Optional parameters.
    *
    * @opt_param int pageSize The default page size is 200 (max 1000).
-   * @opt_param string pageToken The `next_page_token` value returned from a
+   * @opt_param string pageToken The next_page_token value returned from a
    * previous list request, if any.
    * @return SearchTransitiveMembershipsResponse
-   * @throws \Google\Service\Exception
    */
   public function searchTransitiveMemberships($parent, $optParams = [])
   {

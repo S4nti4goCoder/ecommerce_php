@@ -45,7 +45,6 @@ class CustomersChromePrintServers extends \Google\Service\Resource
    * @param BatchCreatePrintServersRequest $postBody
    * @param array $optParams Optional parameters.
    * @return BatchCreatePrintServersResponse
-   * @throws \Google\Service\Exception
    */
   public function batchCreatePrintServers($parent, BatchCreatePrintServersRequest $postBody, $optParams = [])
   {
@@ -63,7 +62,6 @@ class CustomersChromePrintServers extends \Google\Service\Resource
    * @param BatchDeletePrintServersRequest $postBody
    * @param array $optParams Optional parameters.
    * @return BatchDeletePrintServersResponse
-   * @throws \Google\Service\Exception
    */
   public function batchDeletePrintServers($parent, BatchDeletePrintServersRequest $postBody, $optParams = [])
   {
@@ -81,7 +79,6 @@ class CustomersChromePrintServers extends \Google\Service\Resource
    * @param PrintServer $postBody
    * @param array $optParams Optional parameters.
    * @return PrintServer
-   * @throws \Google\Service\Exception
    */
   public function create($parent, PrintServer $postBody, $optParams = [])
   {
@@ -96,7 +93,6 @@ class CustomersChromePrintServers extends \Google\Service\Resource
    * Format: `customers/{customer.id}/chrome/printServers/{print_server.id}`
    * @param array $optParams Optional parameters.
    * @return AdminEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -113,7 +109,6 @@ class CustomersChromePrintServers extends \Google\Service\Resource
    * account. Format: `customers/{id}`
    * @param array $optParams Optional parameters.
    * @return PrintServer
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -150,7 +145,6 @@ class CustomersChromePrintServers extends \Google\Service\Resource
    * @opt_param string pageToken A generated token to paginate results (the
    * `next_page_token` from a previous call).
    * @return ListPrintServersResponse
-   * @throws \Google\Service\Exception
    */
   public function listCustomersChromePrintServers($parent, $optParams = [])
   {
@@ -170,7 +164,6 @@ class CustomersChromePrintServers extends \Google\Service\Resource
    * @opt_param string updateMask The list of fields to update. Some fields are
    * read-only and cannot be updated. Values for unspecified fields are patched.
    * @return PrintServer
-   * @throws \Google\Service\Exception
    */
   public function patch($name, PrintServer $postBody, $optParams = [])
   {

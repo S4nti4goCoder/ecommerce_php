@@ -19,11 +19,7 @@ namespace Google\Service\HangoutsChat;
 
 class GoogleAppsCardV1Action extends \Google\Collection
 {
-  protected $collection_key = 'requiredWidgets';
-  /**
-   * @var bool
-   */
-  public $allWidgetsAreRequired;
+  protected $collection_key = 'parameters';
   /**
    * @var string
    */
@@ -36,31 +32,17 @@ class GoogleAppsCardV1Action extends \Google\Collection
    * @var string
    */
   public $loadIndicator;
+  /**
+   * @var GoogleAppsCardV1ActionParameter[]
+   */
+  public $parameters;
   protected $parametersType = GoogleAppsCardV1ActionParameter::class;
   protected $parametersDataType = 'array';
   /**
    * @var bool
    */
   public $persistValues;
-  /**
-   * @var string[]
-   */
-  public $requiredWidgets;
 
-  /**
-   * @param bool
-   */
-  public function setAllWidgetsAreRequired($allWidgetsAreRequired)
-  {
-    $this->allWidgetsAreRequired = $allWidgetsAreRequired;
-  }
-  /**
-   * @return bool
-   */
-  public function getAllWidgetsAreRequired()
-  {
-    return $this->allWidgetsAreRequired;
-  }
   /**
    * @param string
    */
@@ -130,20 +112,6 @@ class GoogleAppsCardV1Action extends \Google\Collection
   public function getPersistValues()
   {
     return $this->persistValues;
-  }
-  /**
-   * @param string[]
-   */
-  public function setRequiredWidgets($requiredWidgets)
-  {
-    $this->requiredWidgets = $requiredWidgets;
-  }
-  /**
-   * @return string[]
-   */
-  public function getRequiredWidgets()
-  {
-    return $this->requiredWidgets;
   }
 }
 

@@ -36,7 +36,6 @@ class UrlTestingToolsMobileFriendlyTest extends \Google\Service\Resource
    * @param RunMobileFriendlyTestRequest $postBody
    * @param array $optParams Optional parameters.
    * @return RunMobileFriendlyTestResponse
-   * @throws \Google\Service\Exception
    */
   public function run(RunMobileFriendlyTestRequest $postBody, $optParams = [])
   {

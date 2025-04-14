@@ -19,8 +19,16 @@ namespace Google\Service\Translate;
 
 class ImportAdaptiveMtFileRequest extends \Google\Model
 {
+  /**
+   * @var FileInputSource
+   */
+  public $fileInputSource;
   protected $fileInputSourceType = FileInputSource::class;
   protected $fileInputSourceDataType = '';
+  /**
+   * @var GcsInputSource
+   */
+  public $gcsInputSource;
   protected $gcsInputSourceType = GcsInputSource::class;
   protected $gcsInputSourceDataType = '';
 

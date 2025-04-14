@@ -46,7 +46,6 @@ class ProjectsLocationsModelDeploymentMonitoringJobs extends \Google\Service\Res
    * @param GoogleCloudAiplatformV1ModelDeploymentMonitoringJob $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudAiplatformV1ModelDeploymentMonitoringJob
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudAiplatformV1ModelDeploymentMonitoringJob $postBody, $optParams = [])
   {
@@ -63,7 +62,6 @@ class ProjectsLocationsModelDeploymentMonitoringJobs extends \Google\Service\Res
    * nitoringJobs/{model_deployment_monitoring_job}`
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -79,7 +77,6 @@ class ProjectsLocationsModelDeploymentMonitoringJobs extends \Google\Service\Res
    * }/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
    * @param array $optParams Optional parameters.
    * @return GoogleCloudAiplatformV1ModelDeploymentMonitoringJob
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -110,7 +107,6 @@ class ProjectsLocationsModelDeploymentMonitoringJobs extends \Google\Service\Res
    * @opt_param string pageToken The standard list page token.
    * @opt_param string readMask Mask specifying which fields to read
    * @return GoogleCloudAiplatformV1ListModelDeploymentMonitoringJobsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsModelDeploymentMonitoringJobs($parent, $optParams = [])
   {
@@ -145,7 +141,6 @@ class ProjectsLocationsModelDeploymentMonitoringJobs extends \Google\Service\Res
    * ection_config` * `model_deployment_monitoring_objective_configs.objective_con
    * fig.prediction_drift_detection_config`
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleCloudAiplatformV1ModelDeploymentMonitoringJob $postBody, $optParams = [])
   {
@@ -165,7 +160,6 @@ class ProjectsLocationsModelDeploymentMonitoringJobs extends \Google\Service\Res
    * @param GoogleCloudAiplatformV1PauseModelDeploymentMonitoringJobRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty
-   * @throws \Google\Service\Exception
    */
   public function pause($name, GoogleCloudAiplatformV1PauseModelDeploymentMonitoringJobRequest $postBody, $optParams = [])
   {
@@ -184,7 +178,6 @@ class ProjectsLocationsModelDeploymentMonitoringJobs extends \Google\Service\Res
    * @param GoogleCloudAiplatformV1ResumeModelDeploymentMonitoringJobRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty
-   * @throws \Google\Service\Exception
    */
   public function resume($name, GoogleCloudAiplatformV1ResumeModelDeploymentMonitoringJobRequest $postBody, $optParams = [])
   {
@@ -203,7 +196,6 @@ class ProjectsLocationsModelDeploymentMonitoringJobs extends \Google\Service\Res
    * @param GoogleCloudAiplatformV1SearchModelDeploymentMonitoringStatsAnomaliesRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudAiplatformV1SearchModelDeploymentMonitoringStatsAnomaliesResponse
-   * @throws \Google\Service\Exception
    */
   public function searchModelDeploymentMonitoringStatsAnomalies($modelDeploymentMonitoringJob, GoogleCloudAiplatformV1SearchModelDeploymentMonitoringStatsAnomaliesRequest $postBody, $optParams = [])
   {

@@ -56,7 +56,6 @@ class ProjectsLocationsPreferenceSets extends \Google\Service\Resource
    * be a valid UUID with the exception that zero UUID is not supported
    * (00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, PreferenceSet $postBody, $optParams = [])
   {
@@ -82,7 +81,6 @@ class ProjectsLocationsPreferenceSets extends \Google\Service\Resource
    * be a valid UUID with the exception that zero UUID is not supported
    * (00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -96,7 +94,6 @@ class ProjectsLocationsPreferenceSets extends \Google\Service\Resource
    * @param string $name Required. Name of the resource.
    * @param array $optParams Optional parameters.
    * @return PreferenceSet
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -119,7 +116,6 @@ class ProjectsLocationsPreferenceSets extends \Google\Service\Resource
    * @opt_param string pageToken A token identifying a page of results the server
    * should return.
    * @return ListPreferenceSetsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsPreferenceSets($parent, $optParams = [])
   {
@@ -151,7 +147,6 @@ class ProjectsLocationsPreferenceSets extends \Google\Service\Resource
    * the full request. A field will be overwritten if it is in the mask. A single
    * * value in the mask lets you to overwrite all fields.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, PreferenceSet $postBody, $optParams = [])
   {

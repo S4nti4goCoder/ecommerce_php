@@ -38,7 +38,6 @@ class EditsTesters extends \Google\Service\Resource
    * @param string $track The track to read from.
    * @param array $optParams Optional parameters.
    * @return Testers
-   * @throws \Google\Service\Exception
    */
   public function get($packageName, $editId, $track, $optParams = [])
   {
@@ -56,7 +55,6 @@ class EditsTesters extends \Google\Service\Resource
    * @param Testers $postBody
    * @param array $optParams Optional parameters.
    * @return Testers
-   * @throws \Google\Service\Exception
    */
   public function patch($packageName, $editId, $track, Testers $postBody, $optParams = [])
   {
@@ -74,7 +72,6 @@ class EditsTesters extends \Google\Service\Resource
    * @param Testers $postBody
    * @param array $optParams Optional parameters.
    * @return Testers
-   * @throws \Google\Service\Exception
    */
   public function update($packageName, $editId, $track, Testers $postBody, $optParams = [])
   {

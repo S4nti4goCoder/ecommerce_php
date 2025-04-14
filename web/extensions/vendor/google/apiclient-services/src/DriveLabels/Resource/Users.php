@@ -40,7 +40,6 @@ class Users extends \Google\Service\Resource
    * example: "customers/abcd1234". If unset, will return settings within the
    * current customer.
    * @return GoogleAppsDriveLabelsV2UserCapabilities
-   * @throws \Google\Service\Exception
    */
   public function getCapabilities($name, $optParams = [])
   {

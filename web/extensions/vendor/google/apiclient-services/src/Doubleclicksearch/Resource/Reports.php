@@ -37,7 +37,6 @@ class Reports extends \Google\Service\Resource
    * @param ReportRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Report
-   * @throws \Google\Service\Exception
    */
   public function generate(ReportRequest $postBody, $optParams = [])
   {
@@ -51,7 +50,6 @@ class Reports extends \Google\Service\Resource
    * @param string $reportId ID of the report request being polled.
    * @param array $optParams Optional parameters.
    * @return Report
-   * @throws \Google\Service\Exception
    */
   public function get($reportId, $optParams = [])
   {
@@ -65,7 +63,6 @@ class Reports extends \Google\Service\Resource
    * @param string $reportId ID of the report.
    * @param int $reportFragment The index of the report fragment to download.
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function getFile($reportId, $reportFragment, $optParams = [])
   {
@@ -83,7 +80,6 @@ class Reports extends \Google\Service\Resource
    * @param string $advertiserId Legacy SA360 advertiser ID.
    * @param array $optParams Optional parameters.
    * @return IdMappingFile
-   * @throws \Google\Service\Exception
    */
   public function getIdMappingFile($agencyId, $advertiserId, $optParams = [])
   {
@@ -97,7 +93,6 @@ class Reports extends \Google\Service\Resource
    * @param ReportRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Report
-   * @throws \Google\Service\Exception
    */
   public function request(ReportRequest $postBody, $optParams = [])
   {

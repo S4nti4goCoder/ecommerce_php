@@ -20,8 +20,6 @@ namespace Google\Service\WorkloadManager;
 class Evaluation extends \Google\Collection
 {
   protected $collection_key = 'ruleVersions';
-  protected $bigQueryDestinationType = BigQueryDestination::class;
-  protected $bigQueryDestinationDataType = '';
   /**
    * @var string
    */
@@ -35,10 +33,6 @@ class Evaluation extends \Google\Collection
    */
   public $description;
   /**
-   * @var string
-   */
-  public $evaluationType;
-  /**
    * @var string[]
    */
   public $labels;
@@ -46,8 +40,16 @@ class Evaluation extends \Google\Collection
    * @var string
    */
   public $name;
+  /**
+   * @var ResourceFilter
+   */
+  public $resourceFilter;
   protected $resourceFilterType = ResourceFilter::class;
   protected $resourceFilterDataType = '';
+  /**
+   * @var ResourceStatus
+   */
+  public $resourceStatus;
   protected $resourceStatusType = ResourceStatus::class;
   protected $resourceStatusDataType = '';
   /**
@@ -67,20 +69,6 @@ class Evaluation extends \Google\Collection
    */
   public $updateTime;
 
-  /**
-   * @param BigQueryDestination
-   */
-  public function setBigQueryDestination(BigQueryDestination $bigQueryDestination)
-  {
-    $this->bigQueryDestination = $bigQueryDestination;
-  }
-  /**
-   * @return BigQueryDestination
-   */
-  public function getBigQueryDestination()
-  {
-    return $this->bigQueryDestination;
-  }
   /**
    * @param string
    */
@@ -122,20 +110,6 @@ class Evaluation extends \Google\Collection
   public function getDescription()
   {
     return $this->description;
-  }
-  /**
-   * @param string
-   */
-  public function setEvaluationType($evaluationType)
-  {
-    $this->evaluationType = $evaluationType;
-  }
-  /**
-   * @return string
-   */
-  public function getEvaluationType()
-  {
-    return $this->evaluationType;
   }
   /**
    * @param string[]

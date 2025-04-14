@@ -25,11 +25,15 @@ class EnterpriseCrmEventbusProtoEventExecutionSnapshot extends \Google\Collectio
    */
   public $checkpointTaskNumber;
   /**
-   * @var string
+   * @var EnterpriseCrmEventbusProtoConditionResult[]
    */
-  public $clientId;
+  public $conditionResults;
   protected $conditionResultsType = EnterpriseCrmEventbusProtoConditionResult::class;
   protected $conditionResultsDataType = 'array';
+  /**
+   * @var EnterpriseCrmEventbusProtoEventParameters
+   */
+  public $diffParams;
   protected $diffParamsType = EnterpriseCrmEventbusProtoEventParameters::class;
   protected $diffParamsDataType = '';
   /**
@@ -40,8 +44,16 @@ class EnterpriseCrmEventbusProtoEventExecutionSnapshot extends \Google\Collectio
    * @var string
    */
   public $eventExecutionSnapshotId;
+  /**
+   * @var EnterpriseCrmEventbusProtoEventExecutionSnapshotEventExecutionSnapshotMetadata
+   */
+  public $eventExecutionSnapshotMetadata;
   protected $eventExecutionSnapshotMetadataType = EnterpriseCrmEventbusProtoEventExecutionSnapshotEventExecutionSnapshotMetadata::class;
   protected $eventExecutionSnapshotMetadataDataType = '';
+  /**
+   * @var EnterpriseCrmEventbusProtoEventParameters
+   */
+  public $eventParams;
   protected $eventParamsType = EnterpriseCrmEventbusProtoEventParameters::class;
   protected $eventParamsDataType = '';
   /**
@@ -52,16 +64,16 @@ class EnterpriseCrmEventbusProtoEventExecutionSnapshot extends \Google\Collectio
    * @var string
    */
   public $snapshotTime;
+  /**
+   * @var EnterpriseCrmEventbusProtoTaskExecutionDetails[]
+   */
+  public $taskExecutionDetails;
   protected $taskExecutionDetailsType = EnterpriseCrmEventbusProtoTaskExecutionDetails::class;
   protected $taskExecutionDetailsDataType = 'array';
   /**
    * @var string
    */
   public $taskName;
-  /**
-   * @var string
-   */
-  public $workflowName;
 
   /**
    * @param string
@@ -76,20 +88,6 @@ class EnterpriseCrmEventbusProtoEventExecutionSnapshot extends \Google\Collectio
   public function getCheckpointTaskNumber()
   {
     return $this->checkpointTaskNumber;
-  }
-  /**
-   * @param string
-   */
-  public function setClientId($clientId)
-  {
-    $this->clientId = $clientId;
-  }
-  /**
-   * @return string
-   */
-  public function getClientId()
-  {
-    return $this->clientId;
   }
   /**
    * @param EnterpriseCrmEventbusProtoConditionResult[]
@@ -230,20 +228,6 @@ class EnterpriseCrmEventbusProtoEventExecutionSnapshot extends \Google\Collectio
   public function getTaskName()
   {
     return $this->taskName;
-  }
-  /**
-   * @param string
-   */
-  public function setWorkflowName($workflowName)
-  {
-    $this->workflowName = $workflowName;
-  }
-  /**
-   * @return string
-   */
-  public function getWorkflowName()
-  {
-    return $this->workflowName;
   }
 }
 

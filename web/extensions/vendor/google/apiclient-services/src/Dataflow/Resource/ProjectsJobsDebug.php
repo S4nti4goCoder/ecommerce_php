@@ -41,7 +41,6 @@ class ProjectsJobsDebug extends \Google\Service\Resource
    * @param GetDebugConfigRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GetDebugConfigResponse
-   * @throws \Google\Service\Exception
    */
   public function getConfig($projectId, $jobId, GetDebugConfigRequest $postBody, $optParams = [])
   {
@@ -57,7 +56,6 @@ class ProjectsJobsDebug extends \Google\Service\Resource
    * @param SendDebugCaptureRequest $postBody
    * @param array $optParams Optional parameters.
    * @return SendDebugCaptureResponse
-   * @throws \Google\Service\Exception
    */
   public function sendCapture($projectId, $jobId, SendDebugCaptureRequest $postBody, $optParams = [])
   {

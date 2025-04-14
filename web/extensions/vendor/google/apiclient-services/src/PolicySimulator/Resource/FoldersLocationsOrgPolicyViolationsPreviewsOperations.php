@@ -37,7 +37,6 @@ class FoldersLocationsOrgPolicyViolationsPreviewsOperations extends \Google\Serv
    * @param string $name The name of the operation resource.
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {

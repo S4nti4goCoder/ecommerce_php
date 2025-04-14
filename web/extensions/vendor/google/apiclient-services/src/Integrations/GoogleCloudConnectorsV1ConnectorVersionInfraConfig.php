@@ -24,13 +24,9 @@ class GoogleCloudConnectorsV1ConnectorVersionInfraConfig extends \Google\Model
    */
   public $connectionRatelimitWindowSeconds;
   /**
-   * @var string
+   * @var GoogleCloudConnectorsV1HPAConfig
    */
-  public $deploymentModel;
-  /**
-   * @var string
-   */
-  public $deploymentModelMigrationState;
+  public $hpaConfig;
   protected $hpaConfigType = GoogleCloudConnectorsV1HPAConfig::class;
   protected $hpaConfigDataType = '';
   /**
@@ -38,25 +34,25 @@ class GoogleCloudConnectorsV1ConnectorVersionInfraConfig extends \Google\Model
    */
   public $internalclientRatelimitThreshold;
   /**
-   * @var int
-   */
-  public $maxInstanceRequestConcurrency;
-  /**
    * @var string
    */
   public $ratelimitThreshold;
+  /**
+   * @var GoogleCloudConnectorsV1ResourceLimits
+   */
+  public $resourceLimits;
   protected $resourceLimitsType = GoogleCloudConnectorsV1ResourceLimits::class;
   protected $resourceLimitsDataType = '';
+  /**
+   * @var GoogleCloudConnectorsV1ResourceRequests
+   */
+  public $resourceRequests;
   protected $resourceRequestsType = GoogleCloudConnectorsV1ResourceRequests::class;
   protected $resourceRequestsDataType = '';
   /**
    * @var string
    */
   public $sharedDeployment;
-  /**
-   * @var string
-   */
-  public $tlsMigrationState;
 
   /**
    * @param string
@@ -71,34 +67,6 @@ class GoogleCloudConnectorsV1ConnectorVersionInfraConfig extends \Google\Model
   public function getConnectionRatelimitWindowSeconds()
   {
     return $this->connectionRatelimitWindowSeconds;
-  }
-  /**
-   * @param string
-   */
-  public function setDeploymentModel($deploymentModel)
-  {
-    $this->deploymentModel = $deploymentModel;
-  }
-  /**
-   * @return string
-   */
-  public function getDeploymentModel()
-  {
-    return $this->deploymentModel;
-  }
-  /**
-   * @param string
-   */
-  public function setDeploymentModelMigrationState($deploymentModelMigrationState)
-  {
-    $this->deploymentModelMigrationState = $deploymentModelMigrationState;
-  }
-  /**
-   * @return string
-   */
-  public function getDeploymentModelMigrationState()
-  {
-    return $this->deploymentModelMigrationState;
   }
   /**
    * @param GoogleCloudConnectorsV1HPAConfig
@@ -127,20 +95,6 @@ class GoogleCloudConnectorsV1ConnectorVersionInfraConfig extends \Google\Model
   public function getInternalclientRatelimitThreshold()
   {
     return $this->internalclientRatelimitThreshold;
-  }
-  /**
-   * @param int
-   */
-  public function setMaxInstanceRequestConcurrency($maxInstanceRequestConcurrency)
-  {
-    $this->maxInstanceRequestConcurrency = $maxInstanceRequestConcurrency;
-  }
-  /**
-   * @return int
-   */
-  public function getMaxInstanceRequestConcurrency()
-  {
-    return $this->maxInstanceRequestConcurrency;
   }
   /**
    * @param string
@@ -197,20 +151,6 @@ class GoogleCloudConnectorsV1ConnectorVersionInfraConfig extends \Google\Model
   public function getSharedDeployment()
   {
     return $this->sharedDeployment;
-  }
-  /**
-   * @param string
-   */
-  public function setTlsMigrationState($tlsMigrationState)
-  {
-    $this->tlsMigrationState = $tlsMigrationState;
-  }
-  /**
-   * @return string
-   */
-  public function getTlsMigrationState()
-  {
-    return $this->tlsMigrationState;
   }
 }
 

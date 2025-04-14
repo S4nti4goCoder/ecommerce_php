@@ -50,7 +50,6 @@ class ProjectsLocationsMetadataStoresArtifacts extends \Google\Service\Resource
    * MetadataStore. (Otherwise the request will fail with ALREADY_EXISTS, or
    * PERMISSION_DENIED if the caller can't view the preexisting Artifact.)
    * @return GoogleCloudAiplatformV1Artifact
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudAiplatformV1Artifact $postBody, $optParams = [])
   {
@@ -70,7 +69,6 @@ class ProjectsLocationsMetadataStoresArtifacts extends \Google\Service\Resource
    * is provided, it must match the server's etag. Otherwise, the request will
    * fail with a FAILED_PRECONDITION.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -86,7 +84,6 @@ class ProjectsLocationsMetadataStoresArtifacts extends \Google\Service\Resource
    * e}/artifacts/{artifact}`
    * @param array $optParams Optional parameters.
    * @return GoogleCloudAiplatformV1Artifact
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -137,7 +134,6 @@ class ProjectsLocationsMetadataStoresArtifacts extends \Google\Service\Resource
    * provided the page token. (Otherwise the request will fail with
    * INVALID_ARGUMENT error.)
    * @return GoogleCloudAiplatformV1ListArtifactsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsMetadataStoresArtifacts($parent, $optParams = [])
   {
@@ -157,7 +153,6 @@ class ProjectsLocationsMetadataStoresArtifacts extends \Google\Service\Resource
    * @opt_param string updateMask Optional. A FieldMask indicating which fields
    * should be updated.
    * @return GoogleCloudAiplatformV1Artifact
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleCloudAiplatformV1Artifact $postBody, $optParams = [])
   {
@@ -174,7 +169,6 @@ class ProjectsLocationsMetadataStoresArtifacts extends \Google\Service\Resource
    * @param GoogleCloudAiplatformV1PurgeArtifactsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function purge($parent, GoogleCloudAiplatformV1PurgeArtifactsRequest $postBody, $optParams = [])
   {
@@ -216,7 +210,6 @@ class ProjectsLocationsMetadataStoresArtifacts extends \Google\Service\Resource
    * error is returned 0: Only input artifact is returned. No value: Transitive
    * closure is performed to return the complete graph.
    * @return GoogleCloudAiplatformV1LineageSubgraph
-   * @throws \Google\Service\Exception
    */
   public function queryArtifactLineageSubgraph($artifact, $optParams = [])
   {

@@ -39,7 +39,6 @@ class SettingsSearchapplications extends \Google\Service\Resource
    * @param SearchApplication $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create(SearchApplication $postBody, $optParams = [])
   {
@@ -58,7 +57,6 @@ class SettingsSearchapplications extends \Google\Service\Resource
    * @opt_param bool debugOptions.enableDebugging If you are asked by Google to
    * help with debugging, set this field. Otherwise, ignore this field.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -77,7 +75,6 @@ class SettingsSearchapplications extends \Google\Service\Resource
    * @opt_param bool debugOptions.enableDebugging If you are asked by Google to
    * help with debugging, set this field. Otherwise, ignore this field.
    * @return SearchApplication
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -97,7 +94,6 @@ class SettingsSearchapplications extends \Google\Service\Resource
    * @opt_param string pageToken The next_page_token value returned from a
    * previous List request, if any. The default value is 10
    * @return ListSearchApplicationsResponse
-   * @throws \Google\Service\Exception
    */
   public function listSettingsSearchapplications($optParams = [])
   {
@@ -125,7 +121,6 @@ class SettingsSearchapplications extends \Google\Service\Resource
    * cleared. * If the `update_mask` is not present or empty or has the value `*`,
    * then all fields are updated.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, SearchApplication $postBody, $optParams = [])
   {
@@ -143,7 +138,6 @@ class SettingsSearchapplications extends \Google\Service\Resource
    * @param ResetSearchApplicationRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function reset($name, ResetSearchApplicationRequest $postBody, $optParams = [])
   {
@@ -171,7 +165,6 @@ class SettingsSearchapplications extends \Google\Service\Resource
    * cleared. * If the `update_mask` is not present or empty or has the value `*`,
    * then all fields are updated.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function update($name, SearchApplication $postBody, $optParams = [])
   {

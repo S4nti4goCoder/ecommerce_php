@@ -33,10 +33,6 @@ class GoogleAdsSearchads360V0ResourcesAdGroup extends \Google\Collection
    */
   public $creationTime;
   /**
-   * @var string[]
-   */
-  public $effectiveLabels;
-  /**
    * @var string
    */
   public $endDate;
@@ -80,6 +76,10 @@ class GoogleAdsSearchads360V0ResourcesAdGroup extends \Google\Collection
    * @var string
    */
   public $status;
+  /**
+   * @var GoogleAdsSearchads360V0CommonTargetingSetting
+   */
+  public $targetingSetting;
   protected $targetingSettingType = GoogleAdsSearchads360V0CommonTargetingSetting::class;
   protected $targetingSettingDataType = '';
   /**
@@ -128,20 +128,6 @@ class GoogleAdsSearchads360V0ResourcesAdGroup extends \Google\Collection
   public function getCreationTime()
   {
     return $this->creationTime;
-  }
-  /**
-   * @param string[]
-   */
-  public function setEffectiveLabels($effectiveLabels)
-  {
-    $this->effectiveLabels = $effectiveLabels;
-  }
-  /**
-   * @return string[]
-   */
-  public function getEffectiveLabels()
-  {
-    return $this->effectiveLabels;
   }
   /**
    * @param string

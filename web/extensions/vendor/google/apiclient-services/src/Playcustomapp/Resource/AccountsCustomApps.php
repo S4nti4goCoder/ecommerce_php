@@ -36,7 +36,6 @@ class AccountsCustomApps extends \Google\Service\Resource
    * @param CustomApp $postBody
    * @param array $optParams Optional parameters.
    * @return CustomApp
-   * @throws \Google\Service\Exception
    */
   public function create($account, CustomApp $postBody, $optParams = [])
   {

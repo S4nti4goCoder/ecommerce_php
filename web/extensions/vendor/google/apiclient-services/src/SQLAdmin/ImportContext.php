@@ -19,8 +19,16 @@ namespace Google\Service\SQLAdmin;
 
 class ImportContext extends \Google\Model
 {
+  /**
+   * @var ImportContextBakImportOptions
+   */
+  public $bakImportOptions;
   protected $bakImportOptionsType = ImportContextBakImportOptions::class;
   protected $bakImportOptionsDataType = '';
+  /**
+   * @var ImportContextCsvImportOptions
+   */
+  public $csvImportOptions;
   protected $csvImportOptionsType = ImportContextCsvImportOptions::class;
   protected $csvImportOptionsDataType = '';
   /**
@@ -39,10 +47,6 @@ class ImportContext extends \Google\Model
    * @var string
    */
   public $kind;
-  protected $sqlImportOptionsType = ImportContextSqlImportOptions::class;
-  protected $sqlImportOptionsDataType = '';
-  protected $tdeImportOptionsType = ImportContextTdeImportOptions::class;
-  protected $tdeImportOptionsDataType = '';
   /**
    * @var string
    */
@@ -131,34 +135,6 @@ class ImportContext extends \Google\Model
   public function getKind()
   {
     return $this->kind;
-  }
-  /**
-   * @param ImportContextSqlImportOptions
-   */
-  public function setSqlImportOptions(ImportContextSqlImportOptions $sqlImportOptions)
-  {
-    $this->sqlImportOptions = $sqlImportOptions;
-  }
-  /**
-   * @return ImportContextSqlImportOptions
-   */
-  public function getSqlImportOptions()
-  {
-    return $this->sqlImportOptions;
-  }
-  /**
-   * @param ImportContextTdeImportOptions
-   */
-  public function setTdeImportOptions(ImportContextTdeImportOptions $tdeImportOptions)
-  {
-    $this->tdeImportOptions = $tdeImportOptions;
-  }
-  /**
-   * @return ImportContextTdeImportOptions
-   */
-  public function getTdeImportOptions()
-  {
-    return $this->tdeImportOptions;
   }
   /**
    * @param string

@@ -20,45 +20,49 @@ namespace Google\Service\Compute;
 class PathMatcher extends \Google\Collection
 {
   protected $collection_key = 'routeRules';
-  protected $defaultCustomErrorResponsePolicyType = CustomErrorResponsePolicy::class;
-  protected $defaultCustomErrorResponsePolicyDataType = '';
+  /**
+   * @var HttpRouteAction
+   */
+  public $defaultRouteAction;
   protected $defaultRouteActionType = HttpRouteAction::class;
   protected $defaultRouteActionDataType = '';
   /**
    * @var string
    */
   public $defaultService;
+  /**
+   * @var HttpRedirectAction
+   */
+  public $defaultUrlRedirect;
   protected $defaultUrlRedirectType = HttpRedirectAction::class;
   protected $defaultUrlRedirectDataType = '';
   /**
    * @var string
    */
   public $description;
+  /**
+   * @var HttpHeaderAction
+   */
+  public $headerAction;
   protected $headerActionType = HttpHeaderAction::class;
   protected $headerActionDataType = '';
   /**
    * @var string
    */
   public $name;
+  /**
+   * @var PathRule[]
+   */
+  public $pathRules;
   protected $pathRulesType = PathRule::class;
   protected $pathRulesDataType = 'array';
+  /**
+   * @var HttpRouteRule[]
+   */
+  public $routeRules;
   protected $routeRulesType = HttpRouteRule::class;
   protected $routeRulesDataType = 'array';
 
-  /**
-   * @param CustomErrorResponsePolicy
-   */
-  public function setDefaultCustomErrorResponsePolicy(CustomErrorResponsePolicy $defaultCustomErrorResponsePolicy)
-  {
-    $this->defaultCustomErrorResponsePolicy = $defaultCustomErrorResponsePolicy;
-  }
-  /**
-   * @return CustomErrorResponsePolicy
-   */
-  public function getDefaultCustomErrorResponsePolicy()
-  {
-    return $this->defaultCustomErrorResponsePolicy;
-  }
   /**
    * @param HttpRouteAction
    */

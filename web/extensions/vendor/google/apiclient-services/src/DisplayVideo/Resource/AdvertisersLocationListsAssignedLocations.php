@@ -46,7 +46,6 @@ class AdvertisersLocationListsAssignedLocations extends \Google\Service\Resource
    * @param BulkEditAssignedLocationsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return BulkEditAssignedLocationsResponse
-   * @throws \Google\Service\Exception
    */
   public function bulkEdit($advertiserId, $locationListId, BulkEditAssignedLocationsRequest $postBody, $optParams = [])
   {
@@ -65,7 +64,6 @@ class AdvertisersLocationListsAssignedLocations extends \Google\Service\Resource
    * @param AssignedLocation $postBody
    * @param array $optParams Optional parameters.
    * @return AssignedLocation
-   * @throws \Google\Service\Exception
    */
   public function create($advertiserId, $locationListId, AssignedLocation $postBody, $optParams = [])
   {
@@ -85,7 +83,6 @@ class AdvertisersLocationListsAssignedLocations extends \Google\Service\Resource
    * to delete.
    * @param array $optParams Optional parameters.
    * @return DisplayvideoEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($advertiserId, $locationListId, $assignedLocationId, $optParams = [])
   {
@@ -123,7 +120,6 @@ class AdvertisersLocationListsAssignedLocations extends \Google\Service\Resource
    * the previous call to `ListAssignedLocations` method. If not specified, the
    * first page of results will be returned.
    * @return ListAssignedLocationsResponse
-   * @throws \Google\Service\Exception
    */
   public function listAdvertisersLocationListsAssignedLocations($advertiserId, $locationListId, $optParams = [])
   {

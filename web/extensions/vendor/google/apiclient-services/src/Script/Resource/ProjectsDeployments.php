@@ -40,7 +40,6 @@ class ProjectsDeployments extends \Google\Service\Resource
    * @param DeploymentConfig $postBody
    * @param array $optParams Optional parameters.
    * @return Deployment
-   * @throws \Google\Service\Exception
    */
   public function create($scriptId, DeploymentConfig $postBody, $optParams = [])
   {
@@ -55,7 +54,6 @@ class ProjectsDeployments extends \Google\Service\Resource
    * @param string $deploymentId The deployment ID to be undeployed.
    * @param array $optParams Optional parameters.
    * @return ScriptEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($scriptId, $deploymentId, $optParams = [])
   {
@@ -70,7 +68,6 @@ class ProjectsDeployments extends \Google\Service\Resource
    * @param string $deploymentId The deployment ID.
    * @param array $optParams Optional parameters.
    * @return Deployment
-   * @throws \Google\Service\Exception
    */
   public function get($scriptId, $deploymentId, $optParams = [])
   {
@@ -91,7 +88,6 @@ class ProjectsDeployments extends \Google\Service\Resource
    * on the next page. This should be set to the value of `nextPageToken` from a
    * previous response.
    * @return ListDeploymentsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsDeployments($scriptId, $optParams = [])
   {
@@ -107,7 +103,6 @@ class ProjectsDeployments extends \Google\Service\Resource
    * @param UpdateDeploymentRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Deployment
-   * @throws \Google\Service\Exception
    */
   public function update($scriptId, $deploymentId, UpdateDeploymentRequest $postBody, $optParams = [])
   {

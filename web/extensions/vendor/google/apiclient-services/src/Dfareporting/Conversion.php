@@ -21,15 +21,13 @@ class Conversion extends \Google\Collection
 {
   protected $collection_key = 'userIdentifiers';
   /**
-   * @var string
-   */
-  public $adUserDataConsent;
-  protected $cartDataType = CartData::class;
-  protected $cartDataDataType = '';
-  /**
    * @var bool
    */
   public $childDirectedTreatment;
+  /**
+   * @var CustomFloodlightVariable[]
+   */
+  public $customVariables;
   protected $customVariablesType = CustomFloodlightVariable::class;
   protected $customVariablesDataType = 'array';
   /**
@@ -96,38 +94,14 @@ class Conversion extends \Google\Collection
    * @var bool
    */
   public $treatmentForUnderage;
+  /**
+   * @var UserIdentifier[]
+   */
+  public $userIdentifiers;
   protected $userIdentifiersType = UserIdentifier::class;
   protected $userIdentifiersDataType = 'array';
   public $value;
 
-  /**
-   * @param string
-   */
-  public function setAdUserDataConsent($adUserDataConsent)
-  {
-    $this->adUserDataConsent = $adUserDataConsent;
-  }
-  /**
-   * @return string
-   */
-  public function getAdUserDataConsent()
-  {
-    return $this->adUserDataConsent;
-  }
-  /**
-   * @param CartData
-   */
-  public function setCartData(CartData $cartData)
-  {
-    $this->cartData = $cartData;
-  }
-  /**
-   * @return CartData
-   */
-  public function getCartData()
-  {
-    return $this->cartData;
-  }
   /**
    * @param bool
    */

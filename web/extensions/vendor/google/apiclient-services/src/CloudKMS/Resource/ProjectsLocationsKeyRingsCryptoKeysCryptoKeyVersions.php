@@ -56,7 +56,6 @@ class ProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersions extends \Google\Servi
    * @param AsymmetricDecryptRequest $postBody
    * @param array $optParams Optional parameters.
    * @return AsymmetricDecryptResponse
-   * @throws \Google\Service\Exception
    */
   public function asymmetricDecrypt($name, AsymmetricDecryptRequest $postBody, $optParams = [])
   {
@@ -74,7 +73,6 @@ class ProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersions extends \Google\Servi
    * @param AsymmetricSignRequest $postBody
    * @param array $optParams Optional parameters.
    * @return AsymmetricSignResponse
-   * @throws \Google\Service\Exception
    */
   public function asymmetricSign($name, AsymmetricSignRequest $postBody, $optParams = [])
   {
@@ -92,7 +90,6 @@ class ProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersions extends \Google\Servi
    * @param CryptoKeyVersion $postBody
    * @param array $optParams Optional parameters.
    * @return CryptoKeyVersion
-   * @throws \Google\Service\Exception
    */
   public function create($parent, CryptoKeyVersion $postBody, $optParams = [])
   {
@@ -114,7 +111,6 @@ class ProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersions extends \Google\Servi
    * @param DestroyCryptoKeyVersionRequest $postBody
    * @param array $optParams Optional parameters.
    * @return CryptoKeyVersion
-   * @throws \Google\Service\Exception
    */
   public function destroy($name, DestroyCryptoKeyVersionRequest $postBody, $optParams = [])
   {
@@ -128,7 +124,6 @@ class ProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersions extends \Google\Servi
    * @param string $name Required. The name of the CryptoKeyVersion to get.
    * @param array $optParams Optional parameters.
    * @return CryptoKeyVersion
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -144,14 +139,7 @@ class ProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersions extends \Google\Servi
    * @param string $name Required. The name of the CryptoKeyVersion public key to
    * get.
    * @param array $optParams Optional parameters.
-   *
-   * @opt_param string publicKeyFormat Optional. The PublicKey format specified by
-   * the user. This field is required for PQC algorithms. If specified, the public
-   * key will be exported through the public_key field in the requested format.
-   * Otherwise, the pem field will be populated for non-PQC algorithms, and an
-   * error will be returned for PQC algorithms.
    * @return PublicKey
-   * @throws \Google\Service\Exception
    */
   public function getPublicKey($name, $optParams = [])
   {
@@ -172,7 +160,6 @@ class ProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersions extends \Google\Servi
    * @param ImportCryptoKeyVersionRequest $postBody
    * @param array $optParams Optional parameters.
    * @return CryptoKeyVersion
-   * @throws \Google\Service\Exception
    */
   public function import($parent, ImportCryptoKeyVersionRequest $postBody, $optParams = [])
   {
@@ -204,7 +191,6 @@ class ProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersions extends \Google\Servi
    * earlier via ListCryptoKeyVersionsResponse.next_page_token.
    * @opt_param string view The fields to include in the response.
    * @return ListCryptoKeyVersionsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersions($parent, $optParams = [])
   {
@@ -222,7 +208,6 @@ class ProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersions extends \Google\Servi
    * @param MacSignRequest $postBody
    * @param array $optParams Optional parameters.
    * @return MacSignResponse
-   * @throws \Google\Service\Exception
    */
   public function macSign($name, MacSignRequest $postBody, $optParams = [])
   {
@@ -240,7 +225,6 @@ class ProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersions extends \Google\Servi
    * @param MacVerifyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return MacVerifyResponse
-   * @throws \Google\Service\Exception
    */
   public function macVerify($name, MacVerifyRequest $postBody, $optParams = [])
   {
@@ -262,7 +246,6 @@ class ProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersions extends \Google\Servi
    * @opt_param string updateMask Required. List of fields to be updated in this
    * request.
    * @return CryptoKeyVersion
-   * @throws \Google\Service\Exception
    */
   public function patch($name, CryptoKeyVersion $postBody, $optParams = [])
   {
@@ -280,7 +263,6 @@ class ProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersions extends \Google\Servi
    * @param RawDecryptRequest $postBody
    * @param array $optParams Optional parameters.
    * @return RawDecryptResponse
-   * @throws \Google\Service\Exception
    */
   public function rawDecrypt($name, RawDecryptRequest $postBody, $optParams = [])
   {
@@ -298,7 +280,6 @@ class ProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersions extends \Google\Servi
    * @param RawEncryptRequest $postBody
    * @param array $optParams Optional parameters.
    * @return RawEncryptResponse
-   * @throws \Google\Service\Exception
    */
   public function rawEncrypt($name, RawEncryptRequest $postBody, $optParams = [])
   {
@@ -316,7 +297,6 @@ class ProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersions extends \Google\Servi
    * @param RestoreCryptoKeyVersionRequest $postBody
    * @param array $optParams Optional parameters.
    * @return CryptoKeyVersion
-   * @throws \Google\Service\Exception
    */
   public function restore($name, RestoreCryptoKeyVersionRequest $postBody, $optParams = [])
   {

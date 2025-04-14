@@ -20,18 +20,26 @@ namespace Google\Service\ManufacturerCenter;
 class Product extends \Google\Collection
 {
   protected $collection_key = 'issues';
+  /**
+   * @var Attributes
+   */
+  public $attributes;
   protected $attributesType = Attributes::class;
   protected $attributesDataType = '';
   /**
    * @var string
    */
   public $contentLanguage;
+  /**
+   * @var DestinationStatus[]
+   */
+  public $destinationStatuses;
   protected $destinationStatusesType = DestinationStatus::class;
   protected $destinationStatusesDataType = 'array';
   /**
-   * @var string
+   * @var Issue[]
    */
-  public $feedLabel;
+  public $issues;
   protected $issuesType = Issue::class;
   protected $issuesDataType = 'array';
   /**
@@ -92,20 +100,6 @@ class Product extends \Google\Collection
   public function getDestinationStatuses()
   {
     return $this->destinationStatuses;
-  }
-  /**
-   * @param string
-   */
-  public function setFeedLabel($feedLabel)
-  {
-    $this->feedLabel = $feedLabel;
-  }
-  /**
-   * @return string
-   */
-  public function getFeedLabel()
-  {
-    return $this->feedLabel;
   }
   /**
    * @param Issue[]

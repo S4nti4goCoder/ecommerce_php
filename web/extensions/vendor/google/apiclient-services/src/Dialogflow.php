@@ -67,7 +67,6 @@ class Dialogflow extends \Google\Service
   public $projects_locations_operations;
   public $projects_locations_securitySettings;
   public $projects_operations;
-  public $rootUrlTemplate;
 
   /**
    * Constructs the internal representation of the Dialogflow service.
@@ -80,7 +79,6 @@ class Dialogflow extends \Google\Service
   {
     parent::__construct($clientOrConfig);
     $this->rootUrl = $rootUrl ?: 'https://dialogflow.googleapis.com/';
-    $this->rootUrlTemplate = $rootUrl ?: 'https://dialogflow.UNIVERSE_DOMAIN/';
     $this->servicePath = '';
     $this->batchPath = 'batch';
     $this->version = 'v3';
@@ -348,16 +346,6 @@ class Dialogflow extends \Google\Service
                   'type' => 'boolean',
                 ],
               ],
-            ],'export' => [
-              'path' => 'v3/{+parent}/entityTypes:export',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'parent' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
             ],'get' => [
               'path' => 'v3/{+name}',
               'httpMethod' => 'GET',
@@ -370,16 +358,6 @@ class Dialogflow extends \Google\Service
                 'languageCode' => [
                   'location' => 'query',
                   'type' => 'string',
-                ],
-              ],
-            ],'import' => [
-              'path' => 'v3/{+parent}/entityTypes:import',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'parent' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
                 ],
               ],
             ],'list' => [
@@ -722,16 +700,6 @@ class Dialogflow extends \Google\Service
               ],
             ],'matchIntent' => [
               'path' => 'v3/{+session}:matchIntent',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'session' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'serverStreamingDetectIntent' => [
-              'path' => 'v3/{+session}:serverStreamingDetectIntent',
               'httpMethod' => 'POST',
               'parameters' => [
                 'session' => [
@@ -1470,16 +1438,6 @@ class Dialogflow extends \Google\Service
               ],
             ],'matchIntent' => [
               'path' => 'v3/{+session}:matchIntent',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'session' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'serverStreamingDetectIntent' => [
-              'path' => 'v3/{+session}:serverStreamingDetectIntent',
               'httpMethod' => 'POST',
               'parameters' => [
                 'session' => [

@@ -45,7 +45,6 @@ class OrganizationsResourceValueConfigs extends \Google\Service\Resource
    * @param BatchCreateResourceValueConfigsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return BatchCreateResourceValueConfigsResponse
-   * @throws \Google\Service\Exception
    */
   public function batchCreate($parent, BatchCreateResourceValueConfigsRequest $postBody, $optParams = [])
   {
@@ -59,7 +58,6 @@ class OrganizationsResourceValueConfigs extends \Google\Service\Resource
    * @param string $name Required. Name of the ResourceValueConfig to delete
    * @param array $optParams Optional parameters.
    * @return SecuritycenterEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -71,11 +69,9 @@ class OrganizationsResourceValueConfigs extends \Google\Service\Resource
    * Gets a ResourceValueConfig. (resourceValueConfigs.get)
    *
    * @param string $name Required. Name of the resource value config to retrieve.
-   * Its format is
-   * `organizations/{organization}/resourceValueConfigs/{config_id}`.
+   * Its format is organizations/{organization}/resourceValueConfigs/{config_id}.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudSecuritycenterV1ResourceValueConfig
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -88,7 +84,7 @@ class OrganizationsResourceValueConfigs extends \Google\Service\Resource
    * (resourceValueConfigs.listOrganizationsResourceValueConfigs)
    *
    * @param string $parent Required. The parent, which owns the collection of
-   * resource value configs. Its format is `organizations/[organization_id]`
+   * resource value configs. Its format is "organizations/[organization_id]"
    * @param array $optParams Optional parameters.
    *
    * @opt_param int pageSize The number of results to return. The service may
@@ -101,7 +97,6 @@ class OrganizationsResourceValueConfigs extends \Google\Service\Resource
    * `ListResourceValueConfigs` must match the call that provided the page token.
    * page_size can be specified, and the new page_size will be used.
    * @return ListResourceValueConfigsResponse
-   * @throws \Google\Service\Exception
    */
   public function listOrganizationsResourceValueConfigs($parent, $optParams = [])
   {
@@ -113,14 +108,13 @@ class OrganizationsResourceValueConfigs extends \Google\Service\Resource
    * Updates an existing ResourceValueConfigs with new rules.
    * (resourceValueConfigs.patch)
    *
-   * @param string $name Name for the resource value configuration
+   * @param string $name Name for the resource value config
    * @param GoogleCloudSecuritycenterV1ResourceValueConfig $postBody
    * @param array $optParams Optional parameters.
    *
    * @opt_param string updateMask The list of fields to be updated. If empty all
    * mutable fields will be updated.
    * @return GoogleCloudSecuritycenterV1ResourceValueConfig
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleCloudSecuritycenterV1ResourceValueConfig $postBody, $optParams = [])
   {

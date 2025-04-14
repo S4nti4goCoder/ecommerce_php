@@ -38,7 +38,6 @@ class AccountsContainersDestinations extends \Google\Service\Resource
    * }
    * @param array $optParams Optional parameters.
    * @return Destination
-   * @throws \Google\Service\Exception
    */
   public function get($path, $optParams = [])
   {
@@ -60,7 +59,6 @@ class AccountsContainersDestinations extends \Google\Service\Resource
    * @opt_param string destinationId Destination ID to be linked to the current
    * container.
    * @return Destination
-   * @throws \Google\Service\Exception
    */
   public function link($parent, $optParams = [])
   {
@@ -76,7 +74,6 @@ class AccountsContainersDestinations extends \Google\Service\Resource
    * accounts/{account_id}/containers/{container_id}
    * @param array $optParams Optional parameters.
    * @return ListDestinationsResponse
-   * @throws \Google\Service\Exception
    */
   public function listAccountsContainersDestinations($parent, $optParams = [])
   {

@@ -41,7 +41,6 @@ class Accounts extends \Google\Service\Resource
    * @param Account $postBody
    * @param array $optParams Optional parameters.
    * @return Account
-   * @throws \Google\Service\Exception
    */
   public function create(Account $postBody, $optParams = [])
   {
@@ -56,7 +55,6 @@ class Accounts extends \Google\Service\Resource
    * @param string $name Required. The name of the account to fetch.
    * @param array $optParams Optional parameters.
    * @return Account
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -87,7 +85,6 @@ class Accounts extends \Google\Service\Resource
    * only makes sense for Organizations and User Groups. If empty, will return
    * `ListAccounts` for the authenticated user. `accounts/{account_id}`.
    * @return ListAccountsResponse
-   * @throws \Google\Service\Exception
    */
   public function listAccounts($optParams = [])
   {
@@ -109,7 +106,6 @@ class Accounts extends \Google\Service\Resource
    * @opt_param bool validateOnly Optional. If true, the request is validated
    * without actually updating the account.
    * @return Account
-   * @throws \Google\Service\Exception
    */
   public function patch($name, Account $postBody, $optParams = [])
   {

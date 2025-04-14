@@ -45,7 +45,6 @@ class ProjectsLocationsProductSetsProducts extends \Google\Service\Resource
    * @opt_param string pageToken The next_page_token returned from a previous List
    * request, if any.
    * @return ListProductsInProductSetResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsProductSetsProducts($name, $optParams = [])
   {

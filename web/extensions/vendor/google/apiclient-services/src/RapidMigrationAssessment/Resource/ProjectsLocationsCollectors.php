@@ -46,7 +46,6 @@ class ProjectsLocationsCollectors extends \Google\Service\Resource
    * @opt_param string requestId Optional. An optional request ID to identify
    * requests.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Collector $postBody, $optParams = [])
   {
@@ -56,7 +55,7 @@ class ProjectsLocationsCollectors extends \Google\Service\Resource
   }
   /**
    * Deletes a single Collector - changes state of collector to "Deleting".
-   * Background jobs does final deletion through producer API. (collectors.delete)
+   * Background jobs does final deletion thorugh producer api. (collectors.delete)
    *
    * @param string $name Required. Name of the resource.
    * @param array $optParams Optional parameters.
@@ -73,7 +72,6 @@ class ProjectsLocationsCollectors extends \Google\Service\Resource
    * be a valid UUID with the exception that zero UUID is not supported
    * (00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -87,7 +85,6 @@ class ProjectsLocationsCollectors extends \Google\Service\Resource
    * @param string $name Required. Name of the resource.
    * @param array $optParams Optional parameters.
    * @return Collector
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -109,7 +106,6 @@ class ProjectsLocationsCollectors extends \Google\Service\Resource
    * @opt_param string pageToken A token identifying a page of results the server
    * should return.
    * @return ListCollectorsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsCollectors($parent, $optParams = [])
   {
@@ -141,7 +137,6 @@ class ProjectsLocationsCollectors extends \Google\Service\Resource
    * request. A field will be overwritten if it is in the mask. If the user does
    * not provide a mask then all fields will be overwritten.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, Collector $postBody, $optParams = [])
   {
@@ -156,7 +151,6 @@ class ProjectsLocationsCollectors extends \Google\Service\Resource
    * @param PauseCollectorRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function pause($name, PauseCollectorRequest $postBody, $optParams = [])
   {
@@ -171,7 +165,6 @@ class ProjectsLocationsCollectors extends \Google\Service\Resource
    * @param RegisterCollectorRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function register($name, RegisterCollectorRequest $postBody, $optParams = [])
   {
@@ -186,7 +179,6 @@ class ProjectsLocationsCollectors extends \Google\Service\Resource
    * @param ResumeCollectorRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function resume($name, ResumeCollectorRequest $postBody, $optParams = [])
   {

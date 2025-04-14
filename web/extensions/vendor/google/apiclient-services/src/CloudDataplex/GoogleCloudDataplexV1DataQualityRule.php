@@ -39,27 +39,53 @@ class GoogleCloudDataplexV1DataQualityRule extends \Google\Model
    * @var string
    */
   public $name;
+  /**
+   * @var GoogleCloudDataplexV1DataQualityRuleNonNullExpectation
+   */
+  public $nonNullExpectation;
   protected $nonNullExpectationType = GoogleCloudDataplexV1DataQualityRuleNonNullExpectation::class;
   protected $nonNullExpectationDataType = '';
+  /**
+   * @var GoogleCloudDataplexV1DataQualityRuleRangeExpectation
+   */
+  public $rangeExpectation;
   protected $rangeExpectationType = GoogleCloudDataplexV1DataQualityRuleRangeExpectation::class;
   protected $rangeExpectationDataType = '';
+  /**
+   * @var GoogleCloudDataplexV1DataQualityRuleRegexExpectation
+   */
+  public $regexExpectation;
   protected $regexExpectationType = GoogleCloudDataplexV1DataQualityRuleRegexExpectation::class;
   protected $regexExpectationDataType = '';
+  /**
+   * @var GoogleCloudDataplexV1DataQualityRuleRowConditionExpectation
+   */
+  public $rowConditionExpectation;
   protected $rowConditionExpectationType = GoogleCloudDataplexV1DataQualityRuleRowConditionExpectation::class;
   protected $rowConditionExpectationDataType = '';
+  /**
+   * @var GoogleCloudDataplexV1DataQualityRuleSetExpectation
+   */
+  public $setExpectation;
   protected $setExpectationType = GoogleCloudDataplexV1DataQualityRuleSetExpectation::class;
   protected $setExpectationDataType = '';
-  protected $sqlAssertionType = GoogleCloudDataplexV1DataQualityRuleSqlAssertion::class;
-  protected $sqlAssertionDataType = '';
+  /**
+   * @var GoogleCloudDataplexV1DataQualityRuleStatisticRangeExpectation
+   */
+  public $statisticRangeExpectation;
   protected $statisticRangeExpectationType = GoogleCloudDataplexV1DataQualityRuleStatisticRangeExpectation::class;
   protected $statisticRangeExpectationDataType = '';
   /**
-   * @var bool
+   * @var GoogleCloudDataplexV1DataQualityRuleTableConditionExpectation
    */
-  public $suspended;
+  public $tableConditionExpectation;
   protected $tableConditionExpectationType = GoogleCloudDataplexV1DataQualityRuleTableConditionExpectation::class;
   protected $tableConditionExpectationDataType = '';
   public $threshold;
+  /**
+   * @var GoogleCloudDataplexV1DataQualityRuleUniquenessExpectation
+   */
+  public $uniquenessExpectation;
   protected $uniquenessExpectationType = GoogleCloudDataplexV1DataQualityRuleUniquenessExpectation::class;
   protected $uniquenessExpectationDataType = '';
 
@@ -204,20 +230,6 @@ class GoogleCloudDataplexV1DataQualityRule extends \Google\Model
     return $this->setExpectation;
   }
   /**
-   * @param GoogleCloudDataplexV1DataQualityRuleSqlAssertion
-   */
-  public function setSqlAssertion(GoogleCloudDataplexV1DataQualityRuleSqlAssertion $sqlAssertion)
-  {
-    $this->sqlAssertion = $sqlAssertion;
-  }
-  /**
-   * @return GoogleCloudDataplexV1DataQualityRuleSqlAssertion
-   */
-  public function getSqlAssertion()
-  {
-    return $this->sqlAssertion;
-  }
-  /**
    * @param GoogleCloudDataplexV1DataQualityRuleStatisticRangeExpectation
    */
   public function setStatisticRangeExpectation(GoogleCloudDataplexV1DataQualityRuleStatisticRangeExpectation $statisticRangeExpectation)
@@ -230,20 +242,6 @@ class GoogleCloudDataplexV1DataQualityRule extends \Google\Model
   public function getStatisticRangeExpectation()
   {
     return $this->statisticRangeExpectation;
-  }
-  /**
-   * @param bool
-   */
-  public function setSuspended($suspended)
-  {
-    $this->suspended = $suspended;
-  }
-  /**
-   * @return bool
-   */
-  public function getSuspended()
-  {
-    return $this->suspended;
   }
   /**
    * @param GoogleCloudDataplexV1DataQualityRuleTableConditionExpectation

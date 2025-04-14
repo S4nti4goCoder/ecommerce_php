@@ -41,7 +41,6 @@ class EnterprisesDevices extends \Google\Service\Resource
    * @param GoogleHomeEnterpriseSdmV1ExecuteDeviceCommandRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleHomeEnterpriseSdmV1ExecuteDeviceCommandResponse
-   * @throws \Google\Service\Exception
    */
   public function executeCommand($name, GoogleHomeEnterpriseSdmV1ExecuteDeviceCommandRequest $postBody, $optParams = [])
   {
@@ -56,7 +55,6 @@ class EnterprisesDevices extends \Google\Service\Resource
    * "enterprises/XYZ/devices/123"
    * @param array $optParams Optional parameters.
    * @return GoogleHomeEnterpriseSdmV1Device
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -74,7 +72,6 @@ class EnterprisesDevices extends \Google\Service\Resource
    * @opt_param string filter Optional filter to list devices. Filters can be done
    * on: Device custom name (substring match): 'customName=wing'
    * @return GoogleHomeEnterpriseSdmV1ListDevicesResponse
-   * @throws \Google\Service\Exception
    */
   public function listEnterprisesDevices($parent, $optParams = [])
   {

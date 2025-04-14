@@ -19,6 +19,10 @@ namespace Google\Service\Walletobjects;
 
 class EventTicketClassAddMessageResponse extends \Google\Model
 {
+  /**
+   * @var EventTicketClass
+   */
+  public $resource;
   protected $resourceType = EventTicketClass::class;
   protected $resourceDataType = '';
 

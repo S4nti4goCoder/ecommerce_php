@@ -45,7 +45,6 @@ class ProjectsTesters extends \Google\Service\Resource
    * @param GoogleFirebaseAppdistroV1BatchAddTestersRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleFirebaseAppdistroV1BatchAddTestersResponse
-   * @throws \Google\Service\Exception
    */
   public function batchAdd($project, GoogleFirebaseAppdistroV1BatchAddTestersRequest $postBody, $optParams = [])
   {
@@ -62,7 +61,6 @@ class ProjectsTesters extends \Google\Service\Resource
    * @param GoogleFirebaseAppdistroV1BatchRemoveTestersRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleFirebaseAppdistroV1BatchRemoveTestersResponse
-   * @throws \Google\Service\Exception
    */
   public function batchRemove($project, GoogleFirebaseAppdistroV1BatchRemoveTestersRequest $postBody, $optParams = [])
   {
@@ -91,7 +89,6 @@ class ProjectsTesters extends \Google\Service\Resource
    * paginating, all other parameters provided to `ListTesters` must match the
    * call that provided the page token.
    * @return GoogleFirebaseAppdistroV1ListTestersResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsTesters($parent, $optParams = [])
   {
@@ -110,7 +107,6 @@ class ProjectsTesters extends \Google\Service\Resource
    *
    * @opt_param string updateMask The list of fields to update.
    * @return GoogleFirebaseAppdistroV1Tester
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleFirebaseAppdistroV1Tester $postBody, $optParams = [])
   {

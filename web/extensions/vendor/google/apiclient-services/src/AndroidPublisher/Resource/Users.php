@@ -38,7 +38,6 @@ class Users extends \Google\Service\Resource
    * @param User $postBody
    * @param array $optParams Optional parameters.
    * @return User
-   * @throws \Google\Service\Exception
    */
   public function create($parent, User $postBody, $optParams = [])
   {
@@ -53,7 +52,6 @@ class Users extends \Google\Service\Resource
    * @param string $name Required. The name of the user to delete. Format:
    * developers/{developer}/users/{email}
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -73,7 +71,6 @@ class Users extends \Google\Service\Resource
    * @opt_param string pageToken A token received from a previous call to this
    * method, in order to retrieve further results.
    * @return ListUsersResponse
-   * @throws \Google\Service\Exception
    */
   public function listUsers($parent, $optParams = [])
   {
@@ -91,7 +88,6 @@ class Users extends \Google\Service\Resource
    *
    * @opt_param string updateMask Optional. The list of fields to be updated.
    * @return User
-   * @throws \Google\Service\Exception
    */
   public function patch($name, User $postBody, $optParams = [])
   {

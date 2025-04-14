@@ -19,12 +19,16 @@ namespace Google\Service\SecurityCommandCenter;
 
 class GoogleCloudSecuritycenterV2ProcessSignature extends \Google\Model
 {
+  /**
+   * @var GoogleCloudSecuritycenterV2MemoryHashSignature
+   */
+  public $memoryHashSignature;
   protected $memoryHashSignatureType = GoogleCloudSecuritycenterV2MemoryHashSignature::class;
   protected $memoryHashSignatureDataType = '';
   /**
-   * @var string
+   * @var GoogleCloudSecuritycenterV2YaraRuleSignature
    */
-  public $signatureType;
+  public $yaraRuleSignature;
   protected $yaraRuleSignatureType = GoogleCloudSecuritycenterV2YaraRuleSignature::class;
   protected $yaraRuleSignatureDataType = '';
 
@@ -41,20 +45,6 @@ class GoogleCloudSecuritycenterV2ProcessSignature extends \Google\Model
   public function getMemoryHashSignature()
   {
     return $this->memoryHashSignature;
-  }
-  /**
-   * @param string
-   */
-  public function setSignatureType($signatureType)
-  {
-    $this->signatureType = $signatureType;
-  }
-  /**
-   * @return string
-   */
-  public function getSignatureType()
-  {
-    return $this->signatureType;
   }
   /**
    * @param GoogleCloudSecuritycenterV2YaraRuleSignature

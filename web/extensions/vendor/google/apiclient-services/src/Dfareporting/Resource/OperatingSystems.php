@@ -37,7 +37,6 @@ class OperatingSystems extends \Google\Service\Resource
    * @param string $dartId Operating system DART ID.
    * @param array $optParams Optional parameters.
    * @return OperatingSystem
-   * @throws \Google\Service\Exception
    */
   public function get($profileId, $dartId, $optParams = [])
   {
@@ -52,7 +51,6 @@ class OperatingSystems extends \Google\Service\Resource
    * @param string $profileId User profile ID associated with this request.
    * @param array $optParams Optional parameters.
    * @return OperatingSystemsListResponse
-   * @throws \Google\Service\Exception
    */
   public function listOperatingSystems($profileId, $optParams = [])
   {

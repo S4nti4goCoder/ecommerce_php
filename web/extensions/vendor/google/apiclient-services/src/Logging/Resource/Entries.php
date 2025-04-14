@@ -43,7 +43,6 @@ class Entries extends \Google\Service\Resource
    * @param CopyLogEntriesRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function copy(CopyLogEntriesRequest $postBody, $optParams = [])
   {
@@ -60,7 +59,6 @@ class Entries extends \Google\Service\Resource
    * @param ListLogEntriesRequest $postBody
    * @param array $optParams Optional parameters.
    * @return ListLogEntriesResponse
-   * @throws \Google\Service\Exception
    */
   public function listEntries(ListLogEntriesRequest $postBody, $optParams = [])
   {
@@ -75,7 +73,6 @@ class Entries extends \Google\Service\Resource
    * @param TailLogEntriesRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TailLogEntriesResponse
-   * @throws \Google\Service\Exception
    */
   public function tail(TailLogEntriesRequest $postBody, $optParams = [])
   {
@@ -95,7 +92,6 @@ class Entries extends \Google\Service\Resource
    * @param WriteLogEntriesRequest $postBody
    * @param array $optParams Optional parameters.
    * @return WriteLogEntriesResponse
-   * @throws \Google\Service\Exception
    */
   public function write(WriteLogEntriesRequest $postBody, $optParams = [])
   {

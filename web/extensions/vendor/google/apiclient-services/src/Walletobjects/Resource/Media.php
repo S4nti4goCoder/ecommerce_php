@@ -42,7 +42,6 @@ class Media extends \Google\Service\Resource
    * characters, '.', '_', or '-'.
    * @param array $optParams Optional parameters.
    * @return MediaModel
-   * @throws \Google\Service\Exception
    */
   public function download($resourceId, $optParams = [])
   {
@@ -64,7 +63,6 @@ class Media extends \Google\Service\Resource
    * @param TransitObjectUploadRotatingBarcodeValuesRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TransitObjectUploadRotatingBarcodeValuesResponse
-   * @throws \Google\Service\Exception
    */
   public function upload($resourceId, TransitObjectUploadRotatingBarcodeValuesRequest $postBody, $optParams = [])
   {

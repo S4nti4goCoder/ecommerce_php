@@ -33,10 +33,9 @@ use Google\Service\Adsense\ListLinkedAdUnitsResponse;
 class AccountsAdclientsCustomchannels extends \Google\Service\Resource
 {
   /**
-   * Creates a custom channel. This method can be called only by a restricted set
-   * of projects, which are usually owned by [AdSense for
-   * Platforms](https://developers.google.com/adsense/platforms/) publishers.
-   * Contact your account manager if you need to use this method.
+   * Creates a custom channel. This method can only be used by projects enabled
+   * for the [AdSense for
+   * Platforms](https://developers.google.com/adsense/platforms/) product.
    * (customchannels.create)
    *
    * @param string $parent Required. The ad client to create a custom channel
@@ -44,7 +43,6 @@ class AccountsAdclientsCustomchannels extends \Google\Service\Resource
    * @param CustomChannel $postBody
    * @param array $optParams Optional parameters.
    * @return CustomChannel
-   * @throws \Google\Service\Exception
    */
   public function create($parent, CustomChannel $postBody, $optParams = [])
   {
@@ -53,17 +51,15 @@ class AccountsAdclientsCustomchannels extends \Google\Service\Resource
     return $this->call('create', [$params], CustomChannel::class);
   }
   /**
-   * Deletes a custom channel. This method can be called only by a restricted set
-   * of projects, which are usually owned by [AdSense for
-   * Platforms](https://developers.google.com/adsense/platforms/) publishers.
-   * Contact your account manager if you need to use this method.
+   * Deletes a custom channel. This method can only be used by projects enabled
+   * for the [AdSense for
+   * Platforms](https://developers.google.com/adsense/platforms/) product.
    * (customchannels.delete)
    *
    * @param string $name Required. Name of the custom channel to delete. Format:
    * accounts/{account}/adclients/{adclient}/customchannels/{customchannel}
    * @param array $optParams Optional parameters.
    * @return AdsenseEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -78,7 +74,6 @@ class AccountsAdclientsCustomchannels extends \Google\Service\Resource
    * accounts/{account}/adclients/{adclient}/customchannels/{customchannel}
    * @param array $optParams Optional parameters.
    * @return CustomChannel
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -103,7 +98,6 @@ class AccountsAdclientsCustomchannels extends \Google\Service\Resource
    * paginating, all other parameters provided to `ListCustomChannels` must match
    * the call that provided the page token.
    * @return ListCustomChannelsResponse
-   * @throws \Google\Service\Exception
    */
   public function listAccountsAdclientsCustomchannels($parent, $optParams = [])
   {
@@ -129,7 +123,6 @@ class AccountsAdclientsCustomchannels extends \Google\Service\Resource
    * paginating, all other parameters provided to `ListLinkedAdUnits` must match
    * the call that provided the page token.
    * @return ListLinkedAdUnitsResponse
-   * @throws \Google\Service\Exception
    */
   public function listLinkedAdUnits($parent, $optParams = [])
   {
@@ -138,10 +131,9 @@ class AccountsAdclientsCustomchannels extends \Google\Service\Resource
     return $this->call('listLinkedAdUnits', [$params], ListLinkedAdUnitsResponse::class);
   }
   /**
-   * Updates a custom channel. This method can be called only by a restricted set
-   * of projects, which are usually owned by [AdSense for
-   * Platforms](https://developers.google.com/adsense/platforms/) publishers.
-   * Contact your account manager if you need to use this method.
+   * Updates a custom channel. This method can only be used by projects enabled
+   * for the [AdSense for
+   * Platforms](https://developers.google.com/adsense/platforms/) product.
    * (customchannels.patch)
    *
    * @param string $name Output only. Resource name of the custom channel. Format:
@@ -152,7 +144,6 @@ class AccountsAdclientsCustomchannels extends \Google\Service\Resource
    * @opt_param string updateMask The list of fields to update. If empty, a full
    * update is performed.
    * @return CustomChannel
-   * @throws \Google\Service\Exception
    */
   public function patch($name, CustomChannel $postBody, $optParams = [])
   {

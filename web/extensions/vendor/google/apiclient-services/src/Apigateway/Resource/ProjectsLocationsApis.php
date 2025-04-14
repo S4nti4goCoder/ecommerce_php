@@ -46,7 +46,6 @@ class ProjectsLocationsApis extends \Google\Service\Resource
    * @opt_param string apiId Required. Identifier to assign to the API. Must be
    * unique within scope of the parent resource.
    * @return ApigatewayOperation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, ApigatewayApi $postBody, $optParams = [])
   {
@@ -61,7 +60,6 @@ class ProjectsLocationsApis extends \Google\Service\Resource
    * `projects/locations/global/apis`
    * @param array $optParams Optional parameters.
    * @return ApigatewayOperation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -76,7 +74,6 @@ class ProjectsLocationsApis extends \Google\Service\Resource
    * `projects/locations/global/apis`
    * @param array $optParams Optional parameters.
    * @return ApigatewayApi
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -107,7 +104,6 @@ class ProjectsLocationsApis extends \Google\Service\Resource
    * documentation](https://cloud.google.com/iam/help/conditions/resource-
    * policies).
    * @return ApigatewayPolicy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, $optParams = [])
   {
@@ -127,7 +123,6 @@ class ProjectsLocationsApis extends \Google\Service\Resource
    * @opt_param int pageSize Page size.
    * @opt_param string pageToken Page token.
    * @return ApigatewayListApisResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsApis($parent, $optParams = [])
   {
@@ -149,7 +144,6 @@ class ProjectsLocationsApis extends \Google\Service\Resource
    * be overwritten if it is in the mask. If the user does not provide a mask then
    * all fields will be overwritten.
    * @return ApigatewayOperation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, ApigatewayApi $postBody, $optParams = [])
   {
@@ -169,7 +163,6 @@ class ProjectsLocationsApis extends \Google\Service\Resource
    * @param ApigatewaySetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return ApigatewayPolicy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, ApigatewaySetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -191,7 +184,6 @@ class ProjectsLocationsApis extends \Google\Service\Resource
    * @param ApigatewayTestIamPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return ApigatewayTestIamPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, ApigatewayTestIamPermissionsRequest $postBody, $optParams = [])
   {

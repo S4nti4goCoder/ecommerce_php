@@ -34,9 +34,7 @@ use Google\Service\Compute\VpnTunnelList;
 class VpnTunnels extends \Google\Service\Resource
 {
   /**
-   * Retrieves an aggregated list of VPN tunnels. To prevent failure, Google
-   * recommends that you set the `returnPartialSuccess` parameter to `true`.
-   * (vpnTunnels.aggregatedList)
+   * Retrieves an aggregated list of VPN tunnels. (vpnTunnels.aggregatedList)
    *
    * @param string $project Project ID for this request.
    * @param array $optParams Optional parameters.
@@ -98,14 +96,9 @@ class VpnTunnels extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
-   * @opt_param string serviceProjectNumber The Shared VPC service project id or
-   * service project number for which aggregated list request is invoked for
-   * subnetworks list-usable api.
+   * false.
+   * @opt_param string serviceProjectNumber
    * @return VpnTunnelAggregatedList
-   * @throws \Google\Service\Exception
    */
   public function aggregatedList($project, $optParams = [])
   {
@@ -132,7 +125,6 @@ class VpnTunnels extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($project, $region, $vpnTunnel, $optParams = [])
   {
@@ -148,7 +140,6 @@ class VpnTunnels extends \Google\Service\Resource
    * @param string $vpnTunnel Name of the VpnTunnel resource to return.
    * @param array $optParams Optional parameters.
    * @return VpnTunnel
-   * @throws \Google\Service\Exception
    */
   public function get($project, $region, $vpnTunnel, $optParams = [])
   {
@@ -176,7 +167,6 @@ class VpnTunnels extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function insert($project, $region, VpnTunnel $postBody, $optParams = [])
   {
@@ -242,11 +232,8 @@ class VpnTunnels extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
+   * false.
    * @return VpnTunnelList
-   * @throws \Google\Service\Exception
    */
   public function listVpnTunnels($project, $region, $optParams = [])
   {
@@ -275,7 +262,6 @@ class VpnTunnels extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function setLabels($project, $region, $resource, RegionSetLabelsRequest $postBody, $optParams = [])
   {

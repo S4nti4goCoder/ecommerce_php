@@ -40,13 +40,10 @@ class ProjectsSecretsVersions extends \Google\Service\Resource
    * SecretVersion. (versions.access)
    *
    * @param string $name Required. The resource name of the SecretVersion in the
-   * format `projects/secrets/versions` or `projects/locations/secrets/versions`.
-   * `projects/secrets/versions/latest` or
-   * `projects/locations/secrets/versions/latest` is an alias to the most recently
-   * created SecretVersion.
+   * format `projects/secrets/versions`. `projects/secrets/versions/latest` is an
+   * alias to the most recently created SecretVersion.
    * @param array $optParams Optional parameters.
    * @return AccessSecretVersionResponse
-   * @throws \Google\Service\Exception
    */
   public function access($name, $optParams = [])
   {
@@ -59,12 +56,10 @@ class ProjectsSecretsVersions extends \Google\Service\Resource
    * and irrevocably destroys the secret data. (versions.destroy)
    *
    * @param string $name Required. The resource name of the SecretVersion to
-   * destroy in the format `projects/secrets/versions` or
-   * `projects/locations/secrets/versions`.
+   * destroy in the format `projects/secrets/versions`.
    * @param DestroySecretVersionRequest $postBody
    * @param array $optParams Optional parameters.
    * @return SecretVersion
-   * @throws \Google\Service\Exception
    */
   public function destroy($name, DestroySecretVersionRequest $postBody, $optParams = [])
   {
@@ -77,12 +72,10 @@ class ProjectsSecretsVersions extends \Google\Service\Resource
    * (versions.disable)
    *
    * @param string $name Required. The resource name of the SecretVersion to
-   * disable in the format `projects/secrets/versions` or
-   * `projects/locations/secrets/versions`.
+   * disable in the format `projects/secrets/versions`.
    * @param DisableSecretVersionRequest $postBody
    * @param array $optParams Optional parameters.
    * @return SecretVersion
-   * @throws \Google\Service\Exception
    */
   public function disable($name, DisableSecretVersionRequest $postBody, $optParams = [])
   {
@@ -95,12 +88,10 @@ class ProjectsSecretsVersions extends \Google\Service\Resource
    * (versions.enable)
    *
    * @param string $name Required. The resource name of the SecretVersion to
-   * enable in the format `projects/secrets/versions` or
-   * `projects/locations/secrets/versions`.
+   * enable in the format `projects/secrets/versions`.
    * @param EnableSecretVersionRequest $postBody
    * @param array $optParams Optional parameters.
    * @return SecretVersion
-   * @throws \Google\Service\Exception
    */
   public function enable($name, EnableSecretVersionRequest $postBody, $optParams = [])
   {
@@ -113,13 +104,10 @@ class ProjectsSecretsVersions extends \Google\Service\Resource
    * alias to the most recently created SecretVersion. (versions.get)
    *
    * @param string $name Required. The resource name of the SecretVersion in the
-   * format `projects/secrets/versions` or `projects/locations/secrets/versions`.
-   * `projects/secrets/versions/latest` or
-   * `projects/locations/secrets/versions/latest` is an alias to the most recently
-   * created SecretVersion.
+   * format `projects/secrets/versions`. `projects/secrets/versions/latest` is an
+   * alias to the most recently created SecretVersion.
    * @param array $optParams Optional parameters.
    * @return SecretVersion
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -132,8 +120,7 @@ class ProjectsSecretsVersions extends \Google\Service\Resource
    * (versions.listProjectsSecretsVersions)
    *
    * @param string $parent Required. The resource name of the Secret associated
-   * with the SecretVersions to list, in the format `projects/secrets` or
-   * `projects/locations/secrets`.
+   * with the SecretVersions to list, in the format `projects/secrets`.
    * @param array $optParams Optional parameters.
    *
    * @opt_param string filter Optional. Filter string, adhering to the rules in
@@ -147,7 +134,6 @@ class ProjectsSecretsVersions extends \Google\Service\Resource
    * @opt_param string pageToken Optional. Pagination token, returned earlier via
    * ListSecretVersionsResponse.next_page_token][].
    * @return ListSecretVersionsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsSecretsVersions($parent, $optParams = [])
   {

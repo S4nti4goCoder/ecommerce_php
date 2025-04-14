@@ -39,7 +39,6 @@ class Users extends \Google\Service\Resource
    * @param string $userKey Identifies the user in the API request. The value can
    * be the user's primary email address, alias email address, or unique user ID.
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function delete($userKey, $optParams = [])
   {
@@ -63,7 +62,6 @@ class Users extends \Google\Service\Resource
    * non-administrator](/admin-sdk/directory/v1/guides/manage-
    * users#retrieve_users_non_admin).
    * @return User
-   * @throws \Google\Service\Exception
    */
   public function get($userKey, $optParams = [])
   {
@@ -76,12 +74,7 @@ class Users extends \Google\Service\Resource
    * sometimes fail as the user isn't fully created due to propagation delay in
    * our backends. Check the error details for the "User creation is not complete"
    * message to see if this is the case. Retrying the calls after some time can
-   * help in this case. If `resolveConflictAccount` is set to `true`, a `202`
-   * response code means that a conflicting unmanaged account exists and was
-   * invited to join the organization. A `409` response code means that a
-   * conflicting account exists so the user wasn't created based on the [handling
-   * unmanaged user accounts](https://support.google.com/a/answer/11112794) option
-   * selected. (users.insert)
+   * help in this case. (users.insert)
    *
    * @param User $postBody
    * @param array $optParams Optional parameters.
@@ -91,7 +84,6 @@ class Users extends \Google\Service\Resource
    * accounts](https://support.google.com/a/answer/11112794) will apply. Default:
    * `false`
    * @return User
-   * @throws \Google\Service\Exception
    */
   public function insert(User $postBody, $optParams = [])
   {
@@ -109,13 +101,13 @@ class Users extends \Google\Service\Resource
    * fields from these schemas are fetched. This should only be set when
    * `projection=custom`.
    * @opt_param string customer The unique ID for the customer's Google Workspace
-   * account. In case of a multi-domain account, to fetch all users for a
+   * account. In case of a multi-domain account, to fetch all groups for a
    * customer, use this field instead of `domain`. You can also use the
    * `my_customer` alias to represent your account's `customerId`. The
    * `customerId` is also returned as part of the [Users](/admin-
    * sdk/directory/v1/reference/users) resource. You must provide either the
    * `customer` or the `domain` parameter.
-   * @opt_param string domain The domain name. Use this field to get users from
+   * @opt_param string domain The domain name. Use this field to get groups from
    * only one domain. To return all domains for a customer account, use the
    * `customer` query parameter instead. Either the `customer` or the `domain`
    * parameter must be provided.
@@ -123,8 +115,7 @@ class Users extends \Google\Service\Resource
    * subscribing)
    * @opt_param int maxResults Maximum number of results to return.
    * @opt_param string orderBy Property to use for sorting results.
-   * @opt_param string pageToken Token to specify next page in the list. The page
-   * token is only valid for three days.
+   * @opt_param string pageToken Token to specify next page in the list
    * @opt_param string projection What subset of fields to fetch for this user.
    * @opt_param string query Query string for searching user fields. For more
    * information on constructing user queries, see [Search for Users](/admin-
@@ -138,7 +129,6 @@ class Users extends \Google\Service\Resource
    * non-administrator](/admin-sdk/directory/v1/guides/manage-
    * users#retrieve_users_non_admin).
    * @return UsersModel
-   * @throws \Google\Service\Exception
    */
   public function listUsers($optParams = [])
   {
@@ -153,7 +143,6 @@ class Users extends \Google\Service\Resource
    * be the user's primary email address, alias email address, or unique user ID.
    * @param UserMakeAdmin $postBody
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function makeAdmin($userKey, UserMakeAdmin $postBody, $optParams = [])
   {
@@ -175,7 +164,6 @@ class Users extends \Google\Service\Resource
    * @param User $postBody
    * @param array $optParams Optional parameters.
    * @return User
-   * @throws \Google\Service\Exception
    */
   public function patch($userKey, User $postBody, $optParams = [])
   {
@@ -191,7 +179,6 @@ class Users extends \Google\Service\Resource
    * value can be the user's primary email address, alias email address, or unique
    * user ID.
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function signOut($userKey, $optParams = [])
   {
@@ -205,7 +192,6 @@ class Users extends \Google\Service\Resource
    * @param string $userKey The immutable id of the user
    * @param UserUndelete $postBody
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function undelete($userKey, UserUndelete $postBody, $optParams = [])
   {
@@ -228,7 +214,6 @@ class Users extends \Google\Service\Resource
    * @param User $postBody
    * @param array $optParams Optional parameters.
    * @return User
-   * @throws \Google\Service\Exception
    */
   public function update($userKey, User $postBody, $optParams = [])
   {
@@ -268,7 +253,6 @@ class Users extends \Google\Service\Resource
    * non-administrator](/admin-sdk/directory/v1/guides/manage-
    * users#retrieve_users_non_admin).
    * @return Channel
-   * @throws \Google\Service\Exception
    */
   public function watch(Channel $postBody, $optParams = [])
   {

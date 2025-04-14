@@ -50,7 +50,6 @@ class CoursesTeachers extends \Google\Service\Resource
    * @param Teacher $postBody
    * @param array $optParams Optional parameters.
    * @return Teacher
-   * @throws \Google\Service\Exception
    */
   public function create($courseId, Teacher $postBody, $optParams = [])
   {
@@ -76,7 +75,6 @@ class CoursesTeachers extends \Google\Service\Resource
    * user
    * @param array $optParams Optional parameters.
    * @return ClassroomEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($courseId, $userId, $optParams = [])
   {
@@ -99,7 +97,6 @@ class CoursesTeachers extends \Google\Service\Resource
    * user
    * @param array $optParams Optional parameters.
    * @return Teacher
-   * @throws \Google\Service\Exception
    */
   public function get($courseId, $userId, $optParams = [])
   {
@@ -125,7 +122,6 @@ class CoursesTeachers extends \Google\Service\Resource
    * list request must be otherwise identical to the one that resulted in this
    * token.
    * @return ListTeachersResponse
-   * @throws \Google\Service\Exception
    */
   public function listCoursesTeachers($courseId, $optParams = [])
   {

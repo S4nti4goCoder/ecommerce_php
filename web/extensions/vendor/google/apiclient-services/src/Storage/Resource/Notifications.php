@@ -39,7 +39,6 @@ class Notifications extends \Google\Service\Resource
    *
    * @opt_param string userProject The project to be billed for this request.
    * Required for Requester Pays buckets.
-   * @throws \Google\Service\Exception
    */
   public function delete($bucket, $notification, $optParams = [])
   {
@@ -57,7 +56,6 @@ class Notifications extends \Google\Service\Resource
    * @opt_param string userProject The project to be billed for this request.
    * Required for Requester Pays buckets.
    * @return Notification
-   * @throws \Google\Service\Exception
    */
   public function get($bucket, $notification, $optParams = [])
   {
@@ -76,7 +74,6 @@ class Notifications extends \Google\Service\Resource
    * @opt_param string userProject The project to be billed for this request.
    * Required for Requester Pays buckets.
    * @return Notification
-   * @throws \Google\Service\Exception
    */
   public function insert($bucket, Notification $postBody, $optParams = [])
   {
@@ -94,7 +91,6 @@ class Notifications extends \Google\Service\Resource
    * @opt_param string userProject The project to be billed for this request.
    * Required for Requester Pays buckets.
    * @return NotificationsModel
-   * @throws \Google\Service\Exception
    */
   public function listNotifications($bucket, $optParams = [])
   {

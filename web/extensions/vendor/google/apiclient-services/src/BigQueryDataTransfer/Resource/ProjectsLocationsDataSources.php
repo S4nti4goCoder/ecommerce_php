@@ -42,7 +42,6 @@ class ProjectsLocationsDataSources extends \Google\Service\Resource
    * @param CheckValidCredsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return CheckValidCredsResponse
-   * @throws \Google\Service\Exception
    */
   public function checkValidCreds($name, CheckValidCredsRequest $postBody, $optParams = [])
   {
@@ -59,7 +58,6 @@ class ProjectsLocationsDataSources extends \Google\Service\Resource
    * `projects/{project_id}/locations/{location_id}/dataSources/{data_source_id}`
    * @param array $optParams Optional parameters.
    * @return DataSource
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -83,7 +81,6 @@ class ProjectsLocationsDataSources extends \Google\Service\Resource
    * results, `ListDataSourcesResponse` outputs a `next_page` token, which can be
    * used as the `page_token` value to request the next page of list results.
    * @return ListDataSourcesResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsDataSources($parent, $optParams = [])
   {

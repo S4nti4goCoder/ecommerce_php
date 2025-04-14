@@ -17,11 +17,8 @@
 
 namespace Google\Service\Integrations;
 
-class GoogleCloudIntegrationsV1alphaExecuteTestCaseResponse extends \Google\Collection
+class GoogleCloudIntegrationsV1alphaExecuteTestCaseResponse extends \Google\Model
 {
-  protected $collection_key = 'assertionResults';
-  protected $assertionResultsType = GoogleCloudIntegrationsV1alphaAssertionResult::class;
-  protected $assertionResultsDataType = 'array';
   /**
    * @var string
    */
@@ -30,25 +27,7 @@ class GoogleCloudIntegrationsV1alphaExecuteTestCaseResponse extends \Google\Coll
    * @var array[]
    */
   public $outputParameters;
-  /**
-   * @var string
-   */
-  public $testExecutionState;
 
-  /**
-   * @param GoogleCloudIntegrationsV1alphaAssertionResult[]
-   */
-  public function setAssertionResults($assertionResults)
-  {
-    $this->assertionResults = $assertionResults;
-  }
-  /**
-   * @return GoogleCloudIntegrationsV1alphaAssertionResult[]
-   */
-  public function getAssertionResults()
-  {
-    return $this->assertionResults;
-  }
   /**
    * @param string
    */
@@ -76,20 +55,6 @@ class GoogleCloudIntegrationsV1alphaExecuteTestCaseResponse extends \Google\Coll
   public function getOutputParameters()
   {
     return $this->outputParameters;
-  }
-  /**
-   * @param string
-   */
-  public function setTestExecutionState($testExecutionState)
-  {
-    $this->testExecutionState = $testExecutionState;
-  }
-  /**
-   * @return string
-   */
-  public function getTestExecutionState()
-  {
-    return $this->testExecutionState;
   }
 }
 

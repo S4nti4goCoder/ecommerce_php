@@ -38,7 +38,6 @@ class Users extends \Google\Service\Resource
    * used to indicate the authenticated user.
    * @param array $optParams Optional parameters.
    * @return Profile
-   * @throws \Google\Service\Exception
    */
   public function getProfile($userId, $optParams = [])
   {
@@ -52,7 +51,6 @@ class Users extends \Google\Service\Resource
    * @param string $userId The user's email address. The special value `me` can be
    * used to indicate the authenticated user.
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function stop($userId, $optParams = [])
   {
@@ -69,7 +67,6 @@ class Users extends \Google\Service\Resource
    * @param WatchRequest $postBody
    * @param array $optParams Optional parameters.
    * @return WatchResponse
-   * @throws \Google\Service\Exception
    */
   public function watch($userId, WatchRequest $postBody, $optParams = [])
   {

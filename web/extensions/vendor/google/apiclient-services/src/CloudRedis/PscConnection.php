@@ -26,19 +26,11 @@ class PscConnection extends \Google\Model
   /**
    * @var string
    */
-  public $connectionType;
-  /**
-   * @var string
-   */
   public $forwardingRule;
   /**
    * @var string
    */
   public $network;
-  /**
-   * @var int
-   */
-  public $port;
   /**
    * @var string
    */
@@ -47,14 +39,6 @@ class PscConnection extends \Google\Model
    * @var string
    */
   public $pscConnectionId;
-  /**
-   * @var string
-   */
-  public $pscConnectionStatus;
-  /**
-   * @var string
-   */
-  public $serviceAttachment;
 
   /**
    * @param string
@@ -69,20 +53,6 @@ class PscConnection extends \Google\Model
   public function getAddress()
   {
     return $this->address;
-  }
-  /**
-   * @param string
-   */
-  public function setConnectionType($connectionType)
-  {
-    $this->connectionType = $connectionType;
-  }
-  /**
-   * @return string
-   */
-  public function getConnectionType()
-  {
-    return $this->connectionType;
   }
   /**
    * @param string
@@ -113,20 +83,6 @@ class PscConnection extends \Google\Model
     return $this->network;
   }
   /**
-   * @param int
-   */
-  public function setPort($port)
-  {
-    $this->port = $port;
-  }
-  /**
-   * @return int
-   */
-  public function getPort()
-  {
-    return $this->port;
-  }
-  /**
    * @param string
    */
   public function setProjectId($projectId)
@@ -153,34 +109,6 @@ class PscConnection extends \Google\Model
   public function getPscConnectionId()
   {
     return $this->pscConnectionId;
-  }
-  /**
-   * @param string
-   */
-  public function setPscConnectionStatus($pscConnectionStatus)
-  {
-    $this->pscConnectionStatus = $pscConnectionStatus;
-  }
-  /**
-   * @return string
-   */
-  public function getPscConnectionStatus()
-  {
-    return $this->pscConnectionStatus;
-  }
-  /**
-   * @param string
-   */
-  public function setServiceAttachment($serviceAttachment)
-  {
-    $this->serviceAttachment = $serviceAttachment;
-  }
-  /**
-   * @return string
-   */
-  public function getServiceAttachment()
-  {
-    return $this->serviceAttachment;
   }
 }
 

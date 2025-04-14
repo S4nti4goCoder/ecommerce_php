@@ -48,7 +48,6 @@ class ProjectsZonesOperations extends \Google\Service\Resource
    * @param CancelOperationRequest $postBody
    * @param array $optParams Optional parameters.
    * @return ContainerEmpty
-   * @throws \Google\Service\Exception
    */
   public function cancel($projectId, $zone, $operationId, CancelOperationRequest $postBody, $optParams = [])
   {
@@ -74,7 +73,6 @@ class ProjectsZonesOperations extends \Google\Service\Resource
    * @opt_param string name The name (project, location, operation id) of the
    * operation to get. Specified in the format `projects/locations/operations`.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function get($projectId, $zone, $operationId, $optParams = [])
   {
@@ -100,7 +98,6 @@ class ProjectsZonesOperations extends \Google\Service\Resource
    * operations will be listed. Specified in the format `projects/locations`.
    * Location "-" matches all zones and all regions.
    * @return ListOperationsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsZonesOperations($projectId, $zone, $optParams = [])
   {

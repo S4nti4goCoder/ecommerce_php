@@ -25,10 +25,6 @@ class AbortInfo extends \Google\Collection
    */
   public $cause;
   /**
-   * @var string
-   */
-  public $ipAddress;
-  /**
    * @var string[]
    */
   public $projectsMissingPermission;
@@ -50,20 +46,6 @@ class AbortInfo extends \Google\Collection
   public function getCause()
   {
     return $this->cause;
-  }
-  /**
-   * @param string
-   */
-  public function setIpAddress($ipAddress)
-  {
-    $this->ipAddress = $ipAddress;
-  }
-  /**
-   * @return string
-   */
-  public function getIpAddress()
-  {
-    return $this->ipAddress;
   }
   /**
    * @param string[]

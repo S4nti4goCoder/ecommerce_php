@@ -51,7 +51,6 @@ class BiddersFilterSetsNonBillableWinningBids extends \Google\Service\Resource
    * ListNonBillableWinningBidsResponse.nextPageToken returned from the previous
    * call to the nonBillableWinningBids.list method.
    * @return ListNonBillableWinningBidsResponse
-   * @throws \Google\Service\Exception
    */
   public function listBiddersFilterSetsNonBillableWinningBids($filterSetName, $optParams = [])
   {

@@ -37,7 +37,6 @@ class PlacementGroups extends \Google\Service\Resource
    * @param string $id Placement group ID.
    * @param array $optParams Optional parameters.
    * @return PlacementGroup
-   * @throws \Google\Service\Exception
    */
   public function get($profileId, $id, $optParams = [])
   {
@@ -52,7 +51,6 @@ class PlacementGroups extends \Google\Service\Resource
    * @param PlacementGroup $postBody
    * @param array $optParams Optional parameters.
    * @return PlacementGroup
-   * @throws \Google\Service\Exception
    */
   public function insert($profileId, PlacementGroup $postBody, $optParams = [])
   {
@@ -115,7 +113,6 @@ class PlacementGroups extends \Google\Service\Resource
    * @opt_param string sortField Field by which to sort the list.
    * @opt_param string sortOrder Order of sorted results.
    * @return PlacementGroupsListResponse
-   * @throws \Google\Service\Exception
    */
   public function listPlacementGroups($profileId, $optParams = [])
   {
@@ -132,7 +129,6 @@ class PlacementGroups extends \Google\Service\Resource
    * @param PlacementGroup $postBody
    * @param array $optParams Optional parameters.
    * @return PlacementGroup
-   * @throws \Google\Service\Exception
    */
   public function patch($profileId, $id, PlacementGroup $postBody, $optParams = [])
   {
@@ -147,7 +143,6 @@ class PlacementGroups extends \Google\Service\Resource
    * @param PlacementGroup $postBody
    * @param array $optParams Optional parameters.
    * @return PlacementGroup
-   * @throws \Google\Service\Exception
    */
   public function update($profileId, PlacementGroup $postBody, $optParams = [])
   {

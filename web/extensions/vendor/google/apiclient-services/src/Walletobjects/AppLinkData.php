@@ -19,12 +19,22 @@ namespace Google\Service\Walletobjects;
 
 class AppLinkData extends \Google\Model
 {
+  /**
+   * @var AppLinkDataAppLinkInfo
+   */
+  public $androidAppLinkInfo;
   protected $androidAppLinkInfoType = AppLinkDataAppLinkInfo::class;
   protected $androidAppLinkInfoDataType = '';
-  protected $displayTextType = LocalizedString::class;
-  protected $displayTextDataType = '';
+  /**
+   * @var AppLinkDataAppLinkInfo
+   */
+  public $iosAppLinkInfo;
   protected $iosAppLinkInfoType = AppLinkDataAppLinkInfo::class;
   protected $iosAppLinkInfoDataType = '';
+  /**
+   * @var AppLinkDataAppLinkInfo
+   */
+  public $webAppLinkInfo;
   protected $webAppLinkInfoType = AppLinkDataAppLinkInfo::class;
   protected $webAppLinkInfoDataType = '';
 
@@ -41,20 +51,6 @@ class AppLinkData extends \Google\Model
   public function getAndroidAppLinkInfo()
   {
     return $this->androidAppLinkInfo;
-  }
-  /**
-   * @param LocalizedString
-   */
-  public function setDisplayText(LocalizedString $displayText)
-  {
-    $this->displayText = $displayText;
-  }
-  /**
-   * @return LocalizedString
-   */
-  public function getDisplayText()
-  {
-    return $this->displayText;
   }
   /**
    * @param AppLinkDataAppLinkInfo

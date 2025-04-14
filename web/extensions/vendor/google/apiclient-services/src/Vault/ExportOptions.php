@@ -19,39 +19,41 @@ namespace Google\Service\Vault;
 
 class ExportOptions extends \Google\Model
 {
-  protected $calendarOptionsType = CalendarExportOptions::class;
-  protected $calendarOptionsDataType = '';
+  /**
+   * @var DriveExportOptions
+   */
+  public $driveOptions;
   protected $driveOptionsType = DriveExportOptions::class;
   protected $driveOptionsDataType = '';
-  protected $geminiOptionsType = GeminiExportOptions::class;
-  protected $geminiOptionsDataType = '';
+  /**
+   * @var GroupsExportOptions
+   */
+  public $groupsOptions;
   protected $groupsOptionsType = GroupsExportOptions::class;
   protected $groupsOptionsDataType = '';
+  /**
+   * @var HangoutsChatExportOptions
+   */
+  public $hangoutsChatOptions;
   protected $hangoutsChatOptionsType = HangoutsChatExportOptions::class;
   protected $hangoutsChatOptionsDataType = '';
+  /**
+   * @var MailExportOptions
+   */
+  public $mailOptions;
   protected $mailOptionsType = MailExportOptions::class;
   protected $mailOptionsDataType = '';
   /**
    * @var string
    */
   public $region;
+  /**
+   * @var VoiceExportOptions
+   */
+  public $voiceOptions;
   protected $voiceOptionsType = VoiceExportOptions::class;
   protected $voiceOptionsDataType = '';
 
-  /**
-   * @param CalendarExportOptions
-   */
-  public function setCalendarOptions(CalendarExportOptions $calendarOptions)
-  {
-    $this->calendarOptions = $calendarOptions;
-  }
-  /**
-   * @return CalendarExportOptions
-   */
-  public function getCalendarOptions()
-  {
-    return $this->calendarOptions;
-  }
   /**
    * @param DriveExportOptions
    */
@@ -65,20 +67,6 @@ class ExportOptions extends \Google\Model
   public function getDriveOptions()
   {
     return $this->driveOptions;
-  }
-  /**
-   * @param GeminiExportOptions
-   */
-  public function setGeminiOptions(GeminiExportOptions $geminiOptions)
-  {
-    $this->geminiOptions = $geminiOptions;
-  }
-  /**
-   * @return GeminiExportOptions
-   */
-  public function getGeminiOptions()
-  {
-    return $this->geminiOptions;
   }
   /**
    * @param GroupsExportOptions

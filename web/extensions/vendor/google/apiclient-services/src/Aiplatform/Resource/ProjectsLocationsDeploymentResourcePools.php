@@ -42,7 +42,6 @@ class ProjectsLocationsDeploymentResourcePools extends \Google\Service\Resource
    * @param GoogleCloudAiplatformV1CreateDeploymentResourcePoolRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudAiplatformV1CreateDeploymentResourcePoolRequest $postBody, $optParams = [])
   {
@@ -58,7 +57,6 @@ class ProjectsLocationsDeploymentResourcePools extends \Google\Service\Resource
    * ols/{deployment_resource_pool}`
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -74,7 +72,6 @@ class ProjectsLocationsDeploymentResourcePools extends \Google\Service\Resource
    * Pools/{deployment_resource_pool}`
    * @param array $optParams Optional parameters.
    * @return GoogleCloudAiplatformV1DeploymentResourcePool
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -99,32 +96,12 @@ class ProjectsLocationsDeploymentResourcePools extends \Google\Service\Resource
    * `ListDeploymentResourcePools` must match the call that provided the page
    * token.
    * @return GoogleCloudAiplatformV1ListDeploymentResourcePoolsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsDeploymentResourcePools($parent, $optParams = [])
   {
     $params = ['parent' => $parent];
     $params = array_merge($params, $optParams);
     return $this->call('list', [$params], GoogleCloudAiplatformV1ListDeploymentResourcePoolsResponse::class);
-  }
-  /**
-   * Update a DeploymentResourcePool. (deploymentResourcePools.patch)
-   *
-   * @param string $name Immutable. The resource name of the
-   * DeploymentResourcePool. Format: `projects/{project}/locations/{location}/depl
-   * oymentResourcePools/{deployment_resource_pool}`
-   * @param GoogleCloudAiplatformV1DeploymentResourcePool $postBody
-   * @param array $optParams Optional parameters.
-   *
-   * @opt_param string updateMask Required. The list of fields to update.
-   * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
-   */
-  public function patch($name, GoogleCloudAiplatformV1DeploymentResourcePool $postBody, $optParams = [])
-  {
-    $params = ['name' => $name, 'postBody' => $postBody];
-    $params = array_merge($params, $optParams);
-    return $this->call('patch', [$params], GoogleLongrunningOperation::class);
   }
   /**
    * List DeployedModels that have been deployed on this DeploymentResourcePool.
@@ -142,7 +119,6 @@ class ProjectsLocationsDeploymentResourcePools extends \Google\Service\Resource
    * When paginating, all other parameters provided to `QueryDeployedModels` must
    * match the call that provided the page token.
    * @return GoogleCloudAiplatformV1QueryDeployedModelsResponse
-   * @throws \Google\Service\Exception
    */
   public function queryDeployedModels($deploymentResourcePool, $optParams = [])
   {

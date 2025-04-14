@@ -19,12 +19,12 @@ namespace Google\Service\MigrationCenterAPI;
 
 class DailyResourceUsageAggregationDisk extends \Google\Model
 {
+  /**
+   * @var DailyResourceUsageAggregationStats
+   */
+  public $iops;
   protected $iopsType = DailyResourceUsageAggregationStats::class;
   protected $iopsDataType = '';
-  protected $readIopsType = DailyResourceUsageAggregationStats::class;
-  protected $readIopsDataType = '';
-  protected $writeIopsType = DailyResourceUsageAggregationStats::class;
-  protected $writeIopsDataType = '';
 
   /**
    * @param DailyResourceUsageAggregationStats
@@ -39,34 +39,6 @@ class DailyResourceUsageAggregationDisk extends \Google\Model
   public function getIops()
   {
     return $this->iops;
-  }
-  /**
-   * @param DailyResourceUsageAggregationStats
-   */
-  public function setReadIops(DailyResourceUsageAggregationStats $readIops)
-  {
-    $this->readIops = $readIops;
-  }
-  /**
-   * @return DailyResourceUsageAggregationStats
-   */
-  public function getReadIops()
-  {
-    return $this->readIops;
-  }
-  /**
-   * @param DailyResourceUsageAggregationStats
-   */
-  public function setWriteIops(DailyResourceUsageAggregationStats $writeIops)
-  {
-    $this->writeIops = $writeIops;
-  }
-  /**
-   * @return DailyResourceUsageAggregationStats
-   */
-  public function getWriteIops()
-  {
-    return $this->writeIops;
   }
 }
 

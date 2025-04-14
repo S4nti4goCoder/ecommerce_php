@@ -40,20 +40,38 @@ class Spoke extends \Google\Collection
    * @var string[]
    */
   public $labels;
+  /**
+   * @var LinkedInterconnectAttachments
+   */
+  public $linkedInterconnectAttachments;
   protected $linkedInterconnectAttachmentsType = LinkedInterconnectAttachments::class;
   protected $linkedInterconnectAttachmentsDataType = '';
-  protected $linkedProducerVpcNetworkType = LinkedProducerVpcNetwork::class;
-  protected $linkedProducerVpcNetworkDataType = '';
+  /**
+   * @var LinkedRouterApplianceInstances
+   */
+  public $linkedRouterApplianceInstances;
   protected $linkedRouterApplianceInstancesType = LinkedRouterApplianceInstances::class;
   protected $linkedRouterApplianceInstancesDataType = '';
+  /**
+   * @var LinkedVpcNetwork
+   */
+  public $linkedVpcNetwork;
   protected $linkedVpcNetworkType = LinkedVpcNetwork::class;
   protected $linkedVpcNetworkDataType = '';
+  /**
+   * @var LinkedVpnTunnels
+   */
+  public $linkedVpnTunnels;
   protected $linkedVpnTunnelsType = LinkedVpnTunnels::class;
   protected $linkedVpnTunnelsDataType = '';
   /**
    * @var string
    */
   public $name;
+  /**
+   * @var StateReason[]
+   */
+  public $reasons;
   protected $reasonsType = StateReason::class;
   protected $reasonsDataType = 'array';
   /**
@@ -156,20 +174,6 @@ class Spoke extends \Google\Collection
   public function getLinkedInterconnectAttachments()
   {
     return $this->linkedInterconnectAttachments;
-  }
-  /**
-   * @param LinkedProducerVpcNetwork
-   */
-  public function setLinkedProducerVpcNetwork(LinkedProducerVpcNetwork $linkedProducerVpcNetwork)
-  {
-    $this->linkedProducerVpcNetwork = $linkedProducerVpcNetwork;
-  }
-  /**
-   * @return LinkedProducerVpcNetwork
-   */
-  public function getLinkedProducerVpcNetwork()
-  {
-    return $this->linkedProducerVpcNetwork;
   }
   /**
    * @param LinkedRouterApplianceInstances

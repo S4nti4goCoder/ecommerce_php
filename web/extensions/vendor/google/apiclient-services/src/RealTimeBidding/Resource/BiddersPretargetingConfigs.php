@@ -47,7 +47,6 @@ class BiddersPretargetingConfigs extends \Google\Service\Resource
    * @param ActivatePretargetingConfigRequest $postBody
    * @param array $optParams Optional parameters.
    * @return PretargetingConfig
-   * @throws \Google\Service\Exception
    */
   public function activate($name, ActivatePretargetingConfigRequest $postBody, $optParams = [])
   {
@@ -65,7 +64,6 @@ class BiddersPretargetingConfigs extends \Google\Service\Resource
    * @param AddTargetedAppsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return PretargetingConfig
-   * @throws \Google\Service\Exception
    */
   public function addTargetedApps($pretargetingConfig, AddTargetedAppsRequest $postBody, $optParams = [])
   {
@@ -83,7 +81,6 @@ class BiddersPretargetingConfigs extends \Google\Service\Resource
    * @param AddTargetedPublishersRequest $postBody
    * @param array $optParams Optional parameters.
    * @return PretargetingConfig
-   * @throws \Google\Service\Exception
    */
   public function addTargetedPublishers($pretargetingConfig, AddTargetedPublishersRequest $postBody, $optParams = [])
   {
@@ -101,7 +98,6 @@ class BiddersPretargetingConfigs extends \Google\Service\Resource
    * @param AddTargetedSitesRequest $postBody
    * @param array $optParams Optional parameters.
    * @return PretargetingConfig
-   * @throws \Google\Service\Exception
    */
   public function addTargetedSites($pretargetingConfig, AddTargetedSitesRequest $postBody, $optParams = [])
   {
@@ -121,7 +117,6 @@ class BiddersPretargetingConfigs extends \Google\Service\Resource
    * @param PretargetingConfig $postBody
    * @param array $optParams Optional parameters.
    * @return PretargetingConfig
-   * @throws \Google\Service\Exception
    */
   public function create($parent, PretargetingConfig $postBody, $optParams = [])
   {
@@ -136,7 +131,6 @@ class BiddersPretargetingConfigs extends \Google\Service\Resource
    * delete. Format: bidders/{bidderAccountId}/pretargetingConfig/{configId}
    * @param array $optParams Optional parameters.
    * @return RealtimebiddingEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -151,7 +145,6 @@ class BiddersPretargetingConfigs extends \Google\Service\Resource
    * Format: bidders/{bidderAccountId}/pretargetingConfig/{configId}
    * @param array $optParams Optional parameters.
    * @return PretargetingConfig
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -175,7 +168,6 @@ class BiddersPretargetingConfigs extends \Google\Service\Resource
    * `ListPretargetingConfigs` call in
    * ListPretargetingConfigsResponse.nextPageToken.
    * @return ListPretargetingConfigsResponse
-   * @throws \Google\Service\Exception
    */
   public function listBiddersPretargetingConfigs($parent, $optParams = [])
   {
@@ -194,7 +186,6 @@ class BiddersPretargetingConfigs extends \Google\Service\Resource
    *
    * @opt_param string updateMask Field mask to use for partial in-place updates.
    * @return PretargetingConfig
-   * @throws \Google\Service\Exception
    */
   public function patch($name, PretargetingConfig $postBody, $optParams = [])
   {
@@ -212,7 +203,6 @@ class BiddersPretargetingConfigs extends \Google\Service\Resource
    * @param RemoveTargetedAppsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return PretargetingConfig
-   * @throws \Google\Service\Exception
    */
   public function removeTargetedApps($pretargetingConfig, RemoveTargetedAppsRequest $postBody, $optParams = [])
   {
@@ -230,7 +220,6 @@ class BiddersPretargetingConfigs extends \Google\Service\Resource
    * @param RemoveTargetedPublishersRequest $postBody
    * @param array $optParams Optional parameters.
    * @return PretargetingConfig
-   * @throws \Google\Service\Exception
    */
   public function removeTargetedPublishers($pretargetingConfig, RemoveTargetedPublishersRequest $postBody, $optParams = [])
   {
@@ -248,7 +237,6 @@ class BiddersPretargetingConfigs extends \Google\Service\Resource
    * @param RemoveTargetedSitesRequest $postBody
    * @param array $optParams Optional parameters.
    * @return PretargetingConfig
-   * @throws \Google\Service\Exception
    */
   public function removeTargetedSites($pretargetingConfig, RemoveTargetedSitesRequest $postBody, $optParams = [])
   {
@@ -264,7 +252,6 @@ class BiddersPretargetingConfigs extends \Google\Service\Resource
    * @param SuspendPretargetingConfigRequest $postBody
    * @param array $optParams Optional parameters.
    * @return PretargetingConfig
-   * @throws \Google\Service\Exception
    */
   public function suspend($name, SuspendPretargetingConfigRequest $postBody, $optParams = [])
   {

@@ -20,28 +20,18 @@ namespace Google\Service\Sheets;
 class SetDataValidationRequest extends \Google\Model
 {
   /**
-   * @var bool
+   * @var GridRange
    */
-  public $filteredRowsIncluded;
+  public $range;
   protected $rangeType = GridRange::class;
   protected $rangeDataType = '';
+  /**
+   * @var DataValidationRule
+   */
+  public $rule;
   protected $ruleType = DataValidationRule::class;
   protected $ruleDataType = '';
 
-  /**
-   * @param bool
-   */
-  public function setFilteredRowsIncluded($filteredRowsIncluded)
-  {
-    $this->filteredRowsIncluded = $filteredRowsIncluded;
-  }
-  /**
-   * @return bool
-   */
-  public function getFilteredRowsIncluded()
-  {
-    return $this->filteredRowsIncluded;
-  }
   /**
    * @param GridRange
    */

@@ -37,8 +37,7 @@ class UrlMaps extends \Google\Service\Resource
 {
   /**
    * Retrieves the list of all UrlMap resources, regional and global, available to
-   * the specified project. To prevent failure, Google recommends that you set the
-   * `returnPartialSuccess` parameter to `true`. (urlMaps.aggregatedList)
+   * the specified project. (urlMaps.aggregatedList)
    *
    * @param string $project Name of the project scoping this request.
    * @param array $optParams Optional parameters.
@@ -100,14 +99,9 @@ class UrlMaps extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
-   * @opt_param string serviceProjectNumber The Shared VPC service project id or
-   * service project number for which aggregated list request is invoked for
-   * subnetworks list-usable api.
+   * false.
+   * @opt_param string serviceProjectNumber
    * @return UrlMapsAggregatedList
-   * @throws \Google\Service\Exception
    */
   public function aggregatedList($project, $optParams = [])
   {
@@ -133,7 +127,6 @@ class UrlMaps extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($project, $urlMap, $optParams = [])
   {
@@ -148,7 +141,6 @@ class UrlMaps extends \Google\Service\Resource
    * @param string $urlMap Name of the UrlMap resource to return.
    * @param array $optParams Optional parameters.
    * @return UrlMap
-   * @throws \Google\Service\Exception
    */
   public function get($project, $urlMap, $optParams = [])
   {
@@ -175,7 +167,6 @@ class UrlMaps extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function insert($project, UrlMap $postBody, $optParams = [])
   {
@@ -205,7 +196,6 @@ class UrlMaps extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function invalidateCache($project, $urlMap, CacheInvalidationRule $postBody, $optParams = [])
   {
@@ -270,11 +260,8 @@ class UrlMaps extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
+   * false.
    * @return UrlMapList
-   * @throws \Google\Service\Exception
    */
   public function listUrlMaps($project, $optParams = [])
   {
@@ -303,7 +290,6 @@ class UrlMaps extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($project, $urlMap, UrlMap $postBody, $optParams = [])
   {
@@ -331,7 +317,6 @@ class UrlMaps extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function update($project, $urlMap, UrlMap $postBody, $optParams = [])
   {
@@ -349,7 +334,6 @@ class UrlMaps extends \Google\Service\Resource
    * @param UrlMapsValidateRequest $postBody
    * @param array $optParams Optional parameters.
    * @return UrlMapsValidateResponse
-   * @throws \Google\Service\Exception
    */
   public function validate($project, $urlMap, UrlMapsValidateRequest $postBody, $optParams = [])
   {

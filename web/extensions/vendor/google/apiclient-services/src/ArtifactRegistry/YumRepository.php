@@ -19,25 +19,13 @@ namespace Google\Service\ArtifactRegistry;
 
 class YumRepository extends \Google\Model
 {
-  protected $customRepositoryType = GoogleDevtoolsArtifactregistryV1RemoteRepositoryConfigYumRepositoryCustomRepository::class;
-  protected $customRepositoryDataType = '';
+  /**
+   * @var GoogleDevtoolsArtifactregistryV1RemoteRepositoryConfigYumRepositoryPublicRepository
+   */
+  public $publicRepository;
   protected $publicRepositoryType = GoogleDevtoolsArtifactregistryV1RemoteRepositoryConfigYumRepositoryPublicRepository::class;
   protected $publicRepositoryDataType = '';
 
-  /**
-   * @param GoogleDevtoolsArtifactregistryV1RemoteRepositoryConfigYumRepositoryCustomRepository
-   */
-  public function setCustomRepository(GoogleDevtoolsArtifactregistryV1RemoteRepositoryConfigYumRepositoryCustomRepository $customRepository)
-  {
-    $this->customRepository = $customRepository;
-  }
-  /**
-   * @return GoogleDevtoolsArtifactregistryV1RemoteRepositoryConfigYumRepositoryCustomRepository
-   */
-  public function getCustomRepository()
-  {
-    return $this->customRepository;
-  }
   /**
    * @param GoogleDevtoolsArtifactregistryV1RemoteRepositoryConfigYumRepositoryPublicRepository
    */

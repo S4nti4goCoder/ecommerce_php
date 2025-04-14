@@ -19,6 +19,10 @@ namespace Google\Service\Walletobjects;
 
 class TransitClassAddMessageResponse extends \Google\Model
 {
+  /**
+   * @var TransitClass
+   */
+  public $resource;
   protected $resourceType = TransitClass::class;
   protected $resourceDataType = '';
 

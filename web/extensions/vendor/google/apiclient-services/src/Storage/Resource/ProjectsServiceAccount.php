@@ -38,7 +38,6 @@ class ProjectsServiceAccount extends \Google\Service\Resource
    *
    * @opt_param string userProject The project to be billed for this request.
    * @return ServiceAccount
-   * @throws \Google\Service\Exception
    */
   public function get($projectId, $optParams = [])
   {

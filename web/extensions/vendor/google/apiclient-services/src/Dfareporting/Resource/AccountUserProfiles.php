@@ -37,7 +37,6 @@ class AccountUserProfiles extends \Google\Service\Resource
    * @param string $id User profile ID.
    * @param array $optParams Optional parameters.
    * @return AccountUserProfile
-   * @throws \Google\Service\Exception
    */
   public function get($profileId, $id, $optParams = [])
   {
@@ -52,7 +51,6 @@ class AccountUserProfiles extends \Google\Service\Resource
    * @param AccountUserProfile $postBody
    * @param array $optParams Optional parameters.
    * @return AccountUserProfile
-   * @throws \Google\Service\Exception
    */
   public function insert($profileId, AccountUserProfile $postBody, $optParams = [])
   {
@@ -86,7 +84,6 @@ class AccountUserProfiles extends \Google\Service\Resource
    * @opt_param string userRoleId Select only user profiles with the specified
    * user role ID.
    * @return AccountUserProfilesListResponse
-   * @throws \Google\Service\Exception
    */
   public function listAccountUserProfiles($profileId, $optParams = [])
   {
@@ -95,15 +92,14 @@ class AccountUserProfiles extends \Google\Service\Resource
     return $this->call('list', [$params], AccountUserProfilesListResponse::class);
   }
   /**
-   * Updates an existing account user profile. This method supports patch
-   * semantics. (accountUserProfiles.patch)
+   * Updates an existing user role. This method supports patch semantics.
+   * (accountUserProfiles.patch)
    *
    * @param string $profileId User profile ID associated with this request.
    * @param string $id Required. AccountUserProfile ID.
    * @param AccountUserProfile $postBody
    * @param array $optParams Optional parameters.
    * @return AccountUserProfile
-   * @throws \Google\Service\Exception
    */
   public function patch($profileId, $id, AccountUserProfile $postBody, $optParams = [])
   {
@@ -118,7 +114,6 @@ class AccountUserProfiles extends \Google\Service\Resource
    * @param AccountUserProfile $postBody
    * @param array $optParams Optional parameters.
    * @return AccountUserProfile
-   * @throws \Google\Service\Exception
    */
   public function update($profileId, AccountUserProfile $postBody, $optParams = [])
   {

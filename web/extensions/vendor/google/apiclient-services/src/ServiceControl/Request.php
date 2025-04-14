@@ -19,6 +19,10 @@ namespace Google\Service\ServiceControl;
 
 class Request extends \Google\Model
 {
+  /**
+   * @var Auth
+   */
+  public $auth;
   protected $authType = Auth::class;
   protected $authDataType = '';
   /**
@@ -37,10 +41,6 @@ class Request extends \Google\Model
    * @var string
    */
   public $method;
-  /**
-   * @var string
-   */
-  public $origin;
   /**
    * @var string
    */
@@ -139,20 +139,6 @@ class Request extends \Google\Model
   public function getMethod()
   {
     return $this->method;
-  }
-  /**
-   * @param string
-   */
-  public function setOrigin($origin)
-  {
-    $this->origin = $origin;
-  }
-  /**
-   * @return string
-   */
-  public function getOrigin()
-  {
-    return $this->origin;
   }
   /**
    * @param string

@@ -40,7 +40,6 @@ class ProjectsLocationsConversationsAnalyses extends \Google\Service\Resource
    * @param GoogleCloudContactcenterinsightsV1Analysis $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudContactcenterinsightsV1Analysis $postBody, $optParams = [])
   {
@@ -54,7 +53,6 @@ class ProjectsLocationsConversationsAnalyses extends \Google\Service\Resource
    * @param string $name Required. The name of the analysis to delete.
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -68,7 +66,6 @@ class ProjectsLocationsConversationsAnalyses extends \Google\Service\Resource
    * @param string $name Required. The name of the analysis to get.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudContactcenterinsightsV1Analysis
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -92,7 +89,6 @@ class ProjectsLocationsConversationsAnalyses extends \Google\Service\Resource
    * `ListAnalysesResponse`; indicates that this is a continuation of a prior
    * `ListAnalyses` call and the system should return the next page of data.
    * @return GoogleCloudContactcenterinsightsV1ListAnalysesResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsConversationsAnalyses($parent, $optParams = [])
   {

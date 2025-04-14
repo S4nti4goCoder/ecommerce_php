@@ -322,14 +322,6 @@ class OAuth2 implements FetchAuthTokenInterface
     private ?string $issuedTokenType = null;
 
     /**
-     * From STS response.
-     * An identifier for the representation of the issued security token.
-     *
-     * @var array<mixed>
-     */
-    private array $additionalOptions;
-
-    /**
      * Create a new OAuthCredentials.
      *
      * The configuration array accepts various options
@@ -446,7 +438,6 @@ class OAuth2 implements FetchAuthTokenInterface
             'subjectTokenType' => null,
             'actorToken' => null,
             'actorTokenType' => null,
-            'additionalOptions' => [],
         ], $config);
 
         $this->setAuthorizationUri($opts['authorizationUri']);
@@ -475,7 +466,6 @@ class OAuth2 implements FetchAuthTokenInterface
         $this->subjectTokenType = $opts['subjectTokenType'];
         $this->actorToken = $opts['actorToken'];
         $this->actorTokenType = $opts['actorTokenType'];
-        $this->additionalOptions = $opts['additionalOptions'];
 
         $this->updateToken($opts);
     }
@@ -581,12 +571,10 @@ class OAuth2 implements FetchAuthTokenInterface
     /**
      * Generates a request for token credentials.
      *
-     * @param callable|null $httpHandler callback which delivers psr7 request
-     * @param array<mixed> $headers [optional] Additional headers to pass to
-     *        the token endpoint request.
+     * @param callable $httpHandler callback which delivers psr7 request
      * @return RequestInterface the authorization Url.
      */
-    public function generateCredentialsRequest(?callable $httpHandler = null, array $headers = [])
+    public function generateCredentialsRequest(callable $httpHandler = null)
     {
         $uri = $this->getTokenCredentialUri();
         if (is_null($uri)) {
@@ -611,9 +599,6 @@ class OAuth2 implements FetchAuthTokenInterface
                 break;
             case 'refresh_token':
                 $params['refresh_token'] = $this->getRefreshToken();
-                if (isset($this->getAdditionalClaims()['target_audience'])) {
-                    $params['target_audience'] = $this->getAdditionalClaims()['target_audience'];
-                }
                 $this->addClientCredentials($params);
                 break;
             case self::JWT_URN:
@@ -631,9 +616,6 @@ class OAuth2 implements FetchAuthTokenInterface
                     'actor_token'          => $this->actorToken,
                     'actor_token_type'     => $this->actorTokenType,
                 ]);
-                if ($this->additionalOptions) {
-                    $params['options'] = json_encode($this->additionalOptions);
-                }
                 break;
             default:
                 if (!is_null($this->getRedirectUri())) {
@@ -651,7 +633,7 @@ class OAuth2 implements FetchAuthTokenInterface
         $headers = [
             'Cache-Control' => 'no-store',
             'Content-Type' => 'application/x-www-form-urlencoded',
-        ] + $headers;
+        ];
 
         return new Request(
             'POST',
@@ -664,18 +646,16 @@ class OAuth2 implements FetchAuthTokenInterface
     /**
      * Fetches the auth tokens based on the current state.
      *
-     * @param callable|null $httpHandler callback which delivers psr7 request
-     * @param array<mixed> $headers [optional] If present, add these headers to the token
-     *        endpoint request.
+     * @param callable $httpHandler callback which delivers psr7 request
      * @return array<mixed> the response
      */
-    public function fetchAuthToken(?callable $httpHandler = null, array $headers = [])
+    public function fetchAuthToken(callable $httpHandler = null)
     {
         if (is_null($httpHandler)) {
             $httpHandler = HttpHandlerFactory::build(HttpClientCache::getHttpClient());
         }
 
-        $response = $httpHandler($this->generateCredentialsRequest($httpHandler, $headers));
+        $response = $httpHandler($this->generateCredentialsRequest($httpHandler));
         $credentials = $this->parseTokenResponse($response);
         $this->updateToken($credentials);
         if (isset($credentials['scope'])) {
@@ -686,8 +666,6 @@ class OAuth2 implements FetchAuthTokenInterface
     }
 
     /**
-     * @deprecated
-     *
      * Obtains a key that can used to cache the results of #fetchAuthToken.
      *
      * The key is derived from the scopes.
@@ -709,16 +687,6 @@ class OAuth2 implements FetchAuthTokenInterface
     }
 
     /**
-     * Gets this instance's SubjectTokenFetcher
-     *
-     * @return null|ExternalAccountCredentialSourceInterface
-     */
-    public function getSubjectTokenFetcher(): ?ExternalAccountCredentialSourceInterface
-    {
-        return $this->subjectTokenFetcher;
-    }
-
-    /**
      * Parses the fetched tokens.
      *
      * @param ResponseInterface $resp the response.
@@ -727,7 +695,7 @@ class OAuth2 implements FetchAuthTokenInterface
      */
     public function parseTokenResponse(ResponseInterface $resp)
     {
-        $body = (string) $resp->getBody();
+        $body = (string)$resp->getBody();
         if ($resp->hasHeader('Content-Type') &&
             $resp->getHeaderLine('Content-Type') == 'application/x-www-form-urlencoded'
         ) {
@@ -1012,13 +980,13 @@ class OAuth2 implements FetchAuthTokenInterface
         if (!$this->isAbsoluteUri($uri)) {
             // "postmessage" is a reserved URI string in Google-land
             // @see https://developers.google.com/identity/sign-in/web/server-side-flow
-            if ('postmessage' !== (string) $uri) {
+            if ('postmessage' !== (string)$uri) {
                 throw new InvalidArgumentException(
                     'Redirect URI must be absolute'
                 );
             }
         }
-        $this->redirectUri = (string) $uri;
+        $this->redirectUri = (string)$uri;
     }
 
     /**
@@ -1033,16 +1001,6 @@ class OAuth2 implements FetchAuthTokenInterface
         }
 
         return implode(' ', $this->scope);
-    }
-
-    /**
-     * Gets the subject token type
-     *
-     * @return ?string
-     */
-    public function getSubjectTokenType(): ?string
-    {
-        return $this->subjectTokenType;
     }
 
     /**
@@ -1130,7 +1088,7 @@ class OAuth2 implements FetchAuthTokenInterface
                     'invalid grant type'
                 );
             }
-            $this->grantType = (string) $grantType;
+            $this->grantType = (string)$grantType;
         }
     }
 
@@ -1463,7 +1421,7 @@ class OAuth2 implements FetchAuthTokenInterface
             $this->issuedAt = null;
         } else {
             $this->issuedAt = time();
-            $this->expiresIn = (int) $expiresIn;
+            $this->expiresIn = (int)$expiresIn;
         }
     }
 
@@ -1684,13 +1642,13 @@ class OAuth2 implements FetchAuthTokenInterface
     /**
      * Get the client ID.
      *
-     * Alias of {@see OAuth2::getClientId()}.
+     * Alias of {@see Google\Auth\OAuth2::getClientId()}.
      *
-     * @param callable|null $httpHandler
+     * @param callable $httpHandler
      * @return string
      * @access private
      */
-    public function getClientName(?callable $httpHandler = null)
+    public function getClientName(callable $httpHandler = null)
     {
         return $this->getClientId();
     }
@@ -1771,8 +1729,7 @@ class OAuth2 implements FetchAuthTokenInterface
                 throw new \InvalidArgumentException(
                     'To have multiple allowed algorithms, You must provide an'
                     . ' array of Firebase\JWT\Key objects.'
-                    . ' See https://github.com/firebase/php-jwt for more information.'
-                );
+                    . ' See https://github.com/firebase/php-jwt for more information.');
             }
             $allowedAlg = array_pop($allowedAlgs);
         } else {

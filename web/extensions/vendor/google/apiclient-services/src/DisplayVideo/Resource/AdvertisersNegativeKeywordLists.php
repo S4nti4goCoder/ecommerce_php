@@ -40,7 +40,6 @@ class AdvertisersNegativeKeywordLists extends \Google\Service\Resource
    * @param NegativeKeywordList $postBody
    * @param array $optParams Optional parameters.
    * @return NegativeKeywordList
-   * @throws \Google\Service\Exception
    */
   public function create($advertiserId, NegativeKeywordList $postBody, $optParams = [])
   {
@@ -58,7 +57,6 @@ class AdvertisersNegativeKeywordLists extends \Google\Service\Resource
    * list to delete.
    * @param array $optParams Optional parameters.
    * @return DisplayvideoEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($advertiserId, $negativeKeywordListId, $optParams = [])
   {
@@ -76,7 +74,6 @@ class AdvertisersNegativeKeywordLists extends \Google\Service\Resource
    * list to fetch.
    * @param array $optParams Optional parameters.
    * @return NegativeKeywordList
-   * @throws \Google\Service\Exception
    */
   public function get($advertiserId, $negativeKeywordListId, $optParams = [])
   {
@@ -100,7 +97,6 @@ class AdvertisersNegativeKeywordLists extends \Google\Service\Resource
    * the previous call to `ListNegativeKeywordLists` method. If not specified, the
    * first page of results will be returned.
    * @return ListNegativeKeywordListsResponse
-   * @throws \Google\Service\Exception
    */
   public function listAdvertisersNegativeKeywordLists($advertiserId, $optParams = [])
   {
@@ -122,7 +118,6 @@ class AdvertisersNegativeKeywordLists extends \Google\Service\Resource
    * @opt_param string updateMask Required. The mask to control which fields to
    * update.
    * @return NegativeKeywordList
-   * @throws \Google\Service\Exception
    */
   public function patch($advertiserId, $negativeKeywordListId, NegativeKeywordList $postBody, $optParams = [])
   {

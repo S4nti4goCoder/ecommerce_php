@@ -20,22 +20,18 @@ namespace Google\Service\CloudAsset;
 class OrgPolicyResult extends \Google\Collection
 {
   protected $collection_key = 'policyBundle';
+  /**
+   * @var AnalyzerOrgPolicy
+   */
+  public $consolidatedPolicy;
   protected $consolidatedPolicyType = AnalyzerOrgPolicy::class;
   protected $consolidatedPolicyDataType = '';
   /**
-   * @var string[]
+   * @var AnalyzerOrgPolicy[]
    */
-  public $folders;
-  /**
-   * @var string
-   */
-  public $organization;
+  public $policyBundle;
   protected $policyBundleType = AnalyzerOrgPolicy::class;
   protected $policyBundleDataType = 'array';
-  /**
-   * @var string
-   */
-  public $project;
 
   /**
    * @param AnalyzerOrgPolicy
@@ -52,34 +48,6 @@ class OrgPolicyResult extends \Google\Collection
     return $this->consolidatedPolicy;
   }
   /**
-   * @param string[]
-   */
-  public function setFolders($folders)
-  {
-    $this->folders = $folders;
-  }
-  /**
-   * @return string[]
-   */
-  public function getFolders()
-  {
-    return $this->folders;
-  }
-  /**
-   * @param string
-   */
-  public function setOrganization($organization)
-  {
-    $this->organization = $organization;
-  }
-  /**
-   * @return string
-   */
-  public function getOrganization()
-  {
-    return $this->organization;
-  }
-  /**
    * @param AnalyzerOrgPolicy[]
    */
   public function setPolicyBundle($policyBundle)
@@ -92,20 +60,6 @@ class OrgPolicyResult extends \Google\Collection
   public function getPolicyBundle()
   {
     return $this->policyBundle;
-  }
-  /**
-   * @param string
-   */
-  public function setProject($project)
-  {
-    $this->project = $project;
-  }
-  /**
-   * @return string
-   */
-  public function getProject()
-  {
-    return $this->project;
   }
 }
 

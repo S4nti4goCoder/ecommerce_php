@@ -35,9 +35,7 @@ class ProjectsLocationsServiceProjectAttachments extends \Google\Service\Resourc
    * Attaches a service project to the host project.
    * (serviceProjectAttachments.create)
    *
-   * @param string $parent Required. Host project ID and location to which service
-   * project is being attached. Only global location is supported. Expected
-   * format: `projects/{project}/locations/{location}`.
+   * @param string $parent Required. Value for parent.
    * @param ServiceProjectAttachment $postBody
    * @param array $optParams Optional parameters.
    *
@@ -53,10 +51,10 @@ class ProjectsLocationsServiceProjectAttachments extends \Google\Service\Resourc
    * be a valid UUID with the exception that zero UUID is not supported
    * (00000000-0000-0000-0000-000000000000).
    * @opt_param string serviceProjectAttachmentId Required. The service project
-   * attachment identifier must contain the project id of the service project
-   * specified in the service_project_attachment.service_project field.
+   * attachment identifier must contain the project_id of the service project
+   * specified in the service_project_attachment.service_project field. Hint:
+   * "projects/{project_id}"
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, ServiceProjectAttachment $postBody, $optParams = [])
   {
@@ -65,11 +63,10 @@ class ProjectsLocationsServiceProjectAttachments extends \Google\Service\Resourc
     return $this->call('create', [$params], Operation::class);
   }
   /**
-   * Deletes a service project attachment. (serviceProjectAttachments.delete)
+   * Deletes a service project attached to the host project.
+   * (serviceProjectAttachments.delete)
    *
-   * @param string $name Required. Fully qualified name of the service project
-   * attachment to delete. Expected format: `projects/{project}/locations/{locatio
-   * n}/serviceProjectAttachments/{serviceProjectAttachment}`.
+   * @param string $name Required. Value for name.
    * @param array $optParams Optional parameters.
    *
    * @opt_param string requestId Optional. An optional request ID to identify
@@ -84,7 +81,6 @@ class ProjectsLocationsServiceProjectAttachments extends \Google\Service\Resourc
    * be a valid UUID with the exception that zero UUID is not supported
    * (00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -93,14 +89,12 @@ class ProjectsLocationsServiceProjectAttachments extends \Google\Service\Resourc
     return $this->call('delete', [$params], Operation::class);
   }
   /**
-   * Gets a service project attachment. (serviceProjectAttachments.get)
+   * Gets a service project attached to the host project.
+   * (serviceProjectAttachments.get)
    *
-   * @param string $name Required. Fully qualified name of the service project
-   * attachment to retrieve. Expected format: `projects/{project}/locations/{locat
-   * ion}/serviceProjectAttachments/{serviceProjectAttachment}`.
+   * @param string $name Required. Value for name.
    * @param array $optParams Optional parameters.
    * @return ServiceProjectAttachment
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -109,23 +103,20 @@ class ProjectsLocationsServiceProjectAttachments extends \Google\Service\Resourc
     return $this->call('get', [$params], ServiceProjectAttachment::class);
   }
   /**
-   * Lists service projects attached to the host project.
+   * List service projects attached to the host project.
    * (serviceProjectAttachments.listProjectsLocationsServiceProjectAttachments)
    *
-   * @param string $parent Required. Host project ID and location to list service
-   * project attachments. Only global location is supported. Expected format:
-   * `projects/{project}/locations/{location}`.
+   * @param string $parent Required. Value for parent.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string filter Optional. Filtering results.
-   * @opt_param string orderBy Optional. Hint for how to order the results.
+   * @opt_param string filter Optional. Filtering results
+   * @opt_param string orderBy Optional. Hint for how to order the results
    * @opt_param int pageSize Optional. Requested page size. Server may return
    * fewer items than requested. If unspecified, server will pick an appropriate
    * default.
    * @opt_param string pageToken Optional. A token identifying a page of results
    * the server should return.
    * @return ListServiceProjectAttachmentsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsServiceProjectAttachments($parent, $optParams = [])
   {

@@ -17,9 +17,8 @@
 
 namespace Google\Service\WorkloadManager;
 
-class Rule extends \Google\Collection
+class Rule extends \Google\Model
 {
-  protected $collection_key = 'tags';
   /**
    * @var string
    */
@@ -56,10 +55,6 @@ class Rule extends \Google\Collection
    * @var string
    */
   public $severity;
-  /**
-   * @var string[]
-   */
-  public $tags;
   /**
    * @var string
    */
@@ -190,20 +185,6 @@ class Rule extends \Google\Collection
   public function getSeverity()
   {
     return $this->severity;
-  }
-  /**
-   * @param string[]
-   */
-  public function setTags($tags)
-  {
-    $this->tags = $tags;
-  }
-  /**
-   * @return string[]
-   */
-  public function getTags()
-  {
-    return $this->tags;
   }
   /**
    * @param string

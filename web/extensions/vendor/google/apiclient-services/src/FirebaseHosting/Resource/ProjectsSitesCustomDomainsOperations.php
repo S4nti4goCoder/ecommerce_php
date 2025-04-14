@@ -38,7 +38,6 @@ class ProjectsSitesCustomDomainsOperations extends \Google\Service\Resource
    * @param CancelOperationRequest $postBody
    * @param array $optParams Optional parameters.
    * @return FirebasehostingEmpty
-   * @throws \Google\Service\Exception
    */
   public function cancel($name, CancelOperationRequest $postBody, $optParams = [])
   {
@@ -53,7 +52,6 @@ class ProjectsSitesCustomDomainsOperations extends \Google\Service\Resource
    * @param string $name The name of the operation resource to be deleted.
    * @param array $optParams Optional parameters.
    * @return FirebasehostingEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {

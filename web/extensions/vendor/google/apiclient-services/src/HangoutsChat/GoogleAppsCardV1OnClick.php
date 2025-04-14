@@ -19,16 +19,30 @@ namespace Google\Service\HangoutsChat;
 
 class GoogleAppsCardV1OnClick extends \Google\Model
 {
+  /**
+   * @var GoogleAppsCardV1Action
+   */
+  public $action;
   protected $actionType = GoogleAppsCardV1Action::class;
   protected $actionDataType = '';
+  /**
+   * @var GoogleAppsCardV1Card
+   */
+  public $card;
   protected $cardType = GoogleAppsCardV1Card::class;
   protected $cardDataType = '';
+  /**
+   * @var GoogleAppsCardV1Action
+   */
+  public $openDynamicLinkAction;
   protected $openDynamicLinkActionType = GoogleAppsCardV1Action::class;
   protected $openDynamicLinkActionDataType = '';
+  /**
+   * @var GoogleAppsCardV1OpenLink
+   */
+  public $openLink;
   protected $openLinkType = GoogleAppsCardV1OpenLink::class;
   protected $openLinkDataType = '';
-  protected $overflowMenuType = GoogleAppsCardV1OverflowMenu::class;
-  protected $overflowMenuDataType = '';
 
   /**
    * @param GoogleAppsCardV1Action
@@ -85,20 +99,6 @@ class GoogleAppsCardV1OnClick extends \Google\Model
   public function getOpenLink()
   {
     return $this->openLink;
-  }
-  /**
-   * @param GoogleAppsCardV1OverflowMenu
-   */
-  public function setOverflowMenu(GoogleAppsCardV1OverflowMenu $overflowMenu)
-  {
-    $this->overflowMenu = $overflowMenu;
-  }
-  /**
-   * @return GoogleAppsCardV1OverflowMenu
-   */
-  public function getOverflowMenu()
-  {
-    return $this->overflowMenu;
   }
 }
 

@@ -36,6 +36,10 @@ class Operation extends \Google\Collection
    * @var string
    */
   public $endTime;
+  /**
+   * @var OperationError
+   */
+  public $error;
   protected $errorType = OperationError::class;
   protected $errorDataType = '';
   /**
@@ -54,6 +58,10 @@ class Operation extends \Google\Collection
    * @var string
    */
   public $insertTime;
+  /**
+   * @var InstancesBulkInsertOperationMetadata
+   */
+  public $instancesBulkInsertOperationMetadata;
   protected $instancesBulkInsertOperationMetadataType = InstancesBulkInsertOperationMetadata::class;
   protected $instancesBulkInsertOperationMetadataDataType = '';
   /**
@@ -85,9 +93,9 @@ class Operation extends \Google\Collection
    */
   public $selfLink;
   /**
-   * @var string
+   * @var SetCommonInstanceMetadataOperationMetadata
    */
-  public $selfLinkWithId;
+  public $setCommonInstanceMetadataOperationMetadata;
   protected $setCommonInstanceMetadataOperationMetadataType = SetCommonInstanceMetadataOperationMetadata::class;
   protected $setCommonInstanceMetadataOperationMetadataDataType = '';
   /**
@@ -114,6 +122,10 @@ class Operation extends \Google\Collection
    * @var string
    */
   public $user;
+  /**
+   * @var OperationWarnings[]
+   */
+  public $warnings;
   protected $warningsType = OperationWarnings::class;
   protected $warningsDataType = 'array';
   /**
@@ -358,20 +370,6 @@ class Operation extends \Google\Collection
   public function getSelfLink()
   {
     return $this->selfLink;
-  }
-  /**
-   * @param string
-   */
-  public function setSelfLinkWithId($selfLinkWithId)
-  {
-    $this->selfLinkWithId = $selfLinkWithId;
-  }
-  /**
-   * @return string
-   */
-  public function getSelfLinkWithId()
-  {
-    return $this->selfLinkWithId;
   }
   /**
    * @param SetCommonInstanceMetadataOperationMetadata

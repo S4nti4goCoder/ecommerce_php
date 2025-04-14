@@ -69,7 +69,6 @@ class LiveBroadcasts extends \Google\Service\Resource
    * channel.
    * @opt_param string streamId Stream to bind, if not set unbind the current one.
    * @return LiveBroadcast
-   * @throws \Google\Service\Exception
    */
   public function bind($id, $part, $optParams = [])
   {
@@ -109,7 +108,6 @@ class LiveBroadcasts extends \Google\Service\Resource
    * perform actions on behalf of the channel specified in the parameter value,
    * without having to provide authentication credentials for each separate
    * channel.
-   * @throws \Google\Service\Exception
    */
   public function delete($id, $optParams = [])
   {
@@ -155,7 +153,6 @@ class LiveBroadcasts extends \Google\Service\Resource
    * without having to provide authentication credentials for each separate
    * channel.
    * @return LiveBroadcast
-   * @throws \Google\Service\Exception
    */
   public function insert($part, LiveBroadcast $postBody, $optParams = [])
   {
@@ -202,7 +199,6 @@ class LiveBroadcasts extends \Google\Service\Resource
    * include. The part names that you can include in the parameter value are id,
    * snippet, contentDetails, and status.
    * @return Cuepoint
-   * @throws \Google\Service\Exception
    */
   public function insertCuepoint(Cuepoint $postBody, $optParams = [])
   {
@@ -260,7 +256,6 @@ class LiveBroadcasts extends \Google\Service\Resource
    * nextPageToken and prevPageToken properties identify other pages that could be
    * retrieved.
    * @return LiveBroadcastListResponse
-   * @throws \Google\Service\Exception
    */
   public function listLiveBroadcasts($part, $optParams = [])
   {
@@ -307,7 +302,6 @@ class LiveBroadcasts extends \Google\Service\Resource
    * without having to provide authentication credentials for each separate
    * channel.
    * @return LiveBroadcast
-   * @throws \Google\Service\Exception
    */
   public function transition($broadcastStatus, $id, $part, $optParams = [])
   {
@@ -362,7 +356,6 @@ class LiveBroadcasts extends \Google\Service\Resource
    * without having to provide authentication credentials for each separate
    * channel.
    * @return LiveBroadcast
-   * @throws \Google\Service\Exception
    */
   public function update($part, LiveBroadcast $postBody, $optParams = [])
   {

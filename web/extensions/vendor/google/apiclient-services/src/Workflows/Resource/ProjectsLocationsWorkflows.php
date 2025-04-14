@@ -48,7 +48,6 @@ class ProjectsLocationsWorkflows extends \Google\Service\Resource
    * between 1-64 characters. * Must end with a number or a letter. * Must be
    * unique within the customer project and location.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Workflow $postBody, $optParams = [])
   {
@@ -64,7 +63,6 @@ class ProjectsLocationsWorkflows extends \Google\Service\Resource
    * projects/{project}/locations/{location}/workflows/{workflow}
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -86,7 +84,6 @@ class ProjectsLocationsWorkflows extends \Google\Service\Resource
    * decimal revision number. They are followed by a hyphen and three hexadecimal
    * characters.
    * @return Workflow
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -119,7 +116,6 @@ class ProjectsLocationsWorkflows extends \Google\Service\Resource
    * paginating, all other parameters provided to `ListWorkflows` must match the
    * call that provided the page token.
    * @return ListWorkflowsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsWorkflows($parent, $optParams = [])
   {
@@ -140,7 +136,6 @@ class ProjectsLocationsWorkflows extends \Google\Service\Resource
    * @opt_param string pageToken The page token, received from a previous
    * ListWorkflowRevisions call. Provide this to retrieve the subsequent page.
    * @return ListWorkflowRevisionsResponse
-   * @throws \Google\Service\Exception
    */
   public function listRevisions($name, $optParams = [])
   {
@@ -163,7 +158,6 @@ class ProjectsLocationsWorkflows extends \Google\Service\Resource
    * @opt_param string updateMask List of fields to be updated. If not present,
    * the entire workflow will be updated.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, Workflow $postBody, $optParams = [])
   {

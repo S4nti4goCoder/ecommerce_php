@@ -41,7 +41,6 @@ class ProjectsLocationsPrivateCloudsSubnets extends \Google\Service\Resource
    * cloud/subnets/my-subnet`
    * @param array $optParams Optional parameters.
    * @return Subnet
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -67,7 +66,6 @@ class ProjectsLocationsPrivateCloudsSubnets extends \Google\Service\Resource
    * paginating, all other parameters provided to `ListSubnetsRequest` must match
    * the call that provided the page token.
    * @return ListSubnetsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsPrivateCloudsSubnets($parent, $optParams = [])
   {
@@ -81,8 +79,8 @@ class ProjectsLocationsPrivateCloudsSubnets extends \Google\Service\Resource
    * a successful `google.longrunning.Operation` (LRO). The returned LRO will only
    * have `done` and `response` fields. (subnets.patch)
    *
-   * @param string $name Output only. Identifier. The resource name of this
-   * subnet. Resource names are schemeless URIs that follow the conventions in
+   * @param string $name Output only. The resource name of this subnet. Resource
+   * names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names. For example:
    * `projects/my-project/locations/us-central1-a/privateClouds/my-
    * cloud/subnets/my-subnet`
@@ -95,7 +93,6 @@ class ProjectsLocationsPrivateCloudsSubnets extends \Google\Service\Resource
    * request. A field will be overwritten if it is in the mask. If the user does
    * not provide a mask then all fields will be overwritten.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, Subnet $postBody, $optParams = [])
   {

@@ -40,7 +40,6 @@ class ProjectsLocationsGroups extends \Google\Service\Resource
    * @param AddGroupMigrationRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function addGroupMigration($group, AddGroupMigrationRequest $postBody, $optParams = [])
   {
@@ -68,7 +67,6 @@ class ProjectsLocationsGroups extends \Google\Service\Resource
    * exception that zero UUID is not supported
    * (00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Group $postBody, $optParams = [])
   {
@@ -94,7 +92,6 @@ class ProjectsLocationsGroups extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported
    * (00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -108,7 +105,6 @@ class ProjectsLocationsGroups extends \Google\Service\Resource
    * @param string $name Required. The group name.
    * @param array $optParams Optional parameters.
    * @return Group
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -135,7 +131,6 @@ class ProjectsLocationsGroups extends \Google\Service\Resource
    * paginating, all other parameters provided to `ListGroups` must match the call
    * that provided the page token.
    * @return ListGroupsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsGroups($parent, $optParams = [])
   {
@@ -167,7 +162,6 @@ class ProjectsLocationsGroups extends \Google\Service\Resource
    * be overwritten if it is in the mask. If the user does not provide a mask then
    * all fields will be overwritten.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, Group $postBody, $optParams = [])
   {
@@ -182,7 +176,6 @@ class ProjectsLocationsGroups extends \Google\Service\Resource
    * @param RemoveGroupMigrationRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function removeGroupMigration($group, RemoveGroupMigrationRequest $postBody, $optParams = [])
   {

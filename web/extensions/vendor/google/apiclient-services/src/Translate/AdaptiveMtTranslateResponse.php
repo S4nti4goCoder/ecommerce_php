@@ -20,29 +20,17 @@ namespace Google\Service\Translate;
 class AdaptiveMtTranslateResponse extends \Google\Collection
 {
   protected $collection_key = 'translations';
-  protected $glossaryTranslationsType = AdaptiveMtTranslation::class;
-  protected $glossaryTranslationsDataType = 'array';
   /**
    * @var string
    */
   public $languageCode;
+  /**
+   * @var AdaptiveMtTranslation[]
+   */
+  public $translations;
   protected $translationsType = AdaptiveMtTranslation::class;
   protected $translationsDataType = 'array';
 
-  /**
-   * @param AdaptiveMtTranslation[]
-   */
-  public function setGlossaryTranslations($glossaryTranslations)
-  {
-    $this->glossaryTranslations = $glossaryTranslations;
-  }
-  /**
-   * @return AdaptiveMtTranslation[]
-   */
-  public function getGlossaryTranslations()
-  {
-    return $this->glossaryTranslations;
-  }
   /**
    * @param string
    */

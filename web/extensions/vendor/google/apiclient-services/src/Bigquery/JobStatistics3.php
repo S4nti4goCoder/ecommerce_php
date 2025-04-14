@@ -17,9 +17,8 @@
 
 namespace Google\Service\Bigquery;
 
-class JobStatistics3 extends \Google\Collection
+class JobStatistics3 extends \Google\Model
 {
-  protected $collection_key = 'timeline';
   /**
    * @var string
    */
@@ -40,8 +39,6 @@ class JobStatistics3 extends \Google\Collection
    * @var string
    */
   public $outputRows;
-  protected $timelineType = QueryTimelineSample::class;
-  protected $timelineDataType = 'array';
 
   /**
    * @param string
@@ -112,20 +109,6 @@ class JobStatistics3 extends \Google\Collection
   public function getOutputRows()
   {
     return $this->outputRows;
-  }
-  /**
-   * @param QueryTimelineSample[]
-   */
-  public function setTimeline($timeline)
-  {
-    $this->timeline = $timeline;
-  }
-  /**
-   * @return QueryTimelineSample[]
-   */
-  public function getTimeline()
-  {
-    return $this->timeline;
   }
 }
 

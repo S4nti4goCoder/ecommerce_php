@@ -52,7 +52,6 @@ class ProjectsLocationsApisVersionsSpecs extends \Google\Service\Resource
    * 4-63 characters, and valid characters are /a-z-/. Following AIP-162, IDs must
    * not have the form of a UUID.
    * @return ApiSpec
-   * @throws \Google\Service\Exception
    */
   public function create($parent, ApiSpec $postBody, $optParams = [])
   {
@@ -72,7 +71,6 @@ class ProjectsLocationsApisVersionsSpecs extends \Google\Service\Resource
    * deleted. (Otherwise, the request will only work if there are no child
    * resources.)
    * @return ApigeeregistryEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -88,7 +86,6 @@ class ProjectsLocationsApisVersionsSpecs extends \Google\Service\Resource
    * lobal/apis/petstore/versions/1.0.0/specs/openapi.yaml@c7cfa2a8`
    * @param array $optParams Optional parameters.
    * @return ApiSpec
-   * @throws \Google\Service\Exception
    */
   public function deleteRevision($name, $optParams = [])
   {
@@ -103,7 +100,6 @@ class ProjectsLocationsApisVersionsSpecs extends \Google\Service\Resource
    * `projects/locations/apis/versions/specs`
    * @param array $optParams Optional parameters.
    * @return ApiSpec
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -121,7 +117,6 @@ class ProjectsLocationsApisVersionsSpecs extends \Google\Service\Resource
    * retrieved. Format: `projects/locations/apis/versions/specs`
    * @param array $optParams Optional parameters.
    * @return HttpBody
-   * @throws \Google\Service\Exception
    */
   public function getContents($name, $optParams = [])
   {
@@ -152,7 +147,6 @@ class ProjectsLocationsApisVersionsSpecs extends \Google\Service\Resource
    * documentation](https://cloud.google.com/iam/help/conditions/resource-
    * policies).
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, $optParams = [])
   {
@@ -181,7 +175,6 @@ class ProjectsLocationsApisVersionsSpecs extends \Google\Service\Resource
    * paginating, all other parameters provided to `ListApiSpecs` must match the
    * call that provided the page token.
    * @return ListApiSpecsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsApisVersionsSpecs($parent, $optParams = [])
   {
@@ -203,7 +196,6 @@ class ProjectsLocationsApisVersionsSpecs extends \Google\Service\Resource
    * @opt_param string pageToken The page token, received from a previous
    * ListApiSpecRevisions call. Provide this to retrieve the subsequent page.
    * @return ListApiSpecRevisionsResponse
-   * @throws \Google\Service\Exception
    */
   public function listRevisions($name, $optParams = [])
   {
@@ -225,7 +217,6 @@ class ProjectsLocationsApisVersionsSpecs extends \Google\Service\Resource
    * default values are ignored). If an asterisk "*" is specified, all fields are
    * updated, including fields that are unspecified/default in the request.
    * @return ApiSpec
-   * @throws \Google\Service\Exception
    */
   public function patch($name, ApiSpec $postBody, $optParams = [])
   {
@@ -241,7 +232,6 @@ class ProjectsLocationsApisVersionsSpecs extends \Google\Service\Resource
    * @param RollbackApiSpecRequest $postBody
    * @param array $optParams Optional parameters.
    * @return ApiSpec
-   * @throws \Google\Service\Exception
    */
   public function rollback($name, RollbackApiSpecRequest $postBody, $optParams = [])
   {
@@ -261,7 +251,6 @@ class ProjectsLocationsApisVersionsSpecs extends \Google\Service\Resource
    * @param SetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, SetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -278,7 +267,6 @@ class ProjectsLocationsApisVersionsSpecs extends \Google\Service\Resource
    * @param TagApiSpecRevisionRequest $postBody
    * @param array $optParams Optional parameters.
    * @return ApiSpec
-   * @throws \Google\Service\Exception
    */
   public function tagRevision($name, TagApiSpecRevisionRequest $postBody, $optParams = [])
   {
@@ -300,7 +288,6 @@ class ProjectsLocationsApisVersionsSpecs extends \Google\Service\Resource
    * @param TestIamPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestIamPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, TestIamPermissionsRequest $postBody, $optParams = [])
   {

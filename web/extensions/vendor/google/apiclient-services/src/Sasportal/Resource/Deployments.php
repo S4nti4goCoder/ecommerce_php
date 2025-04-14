@@ -35,7 +35,6 @@ class Deployments extends \Google\Service\Resource
    * @param string $name Required. The name of the deployment.
    * @param array $optParams Optional parameters.
    * @return SasPortalDeployment
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {

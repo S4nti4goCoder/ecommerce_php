@@ -19,10 +19,22 @@ namespace Google\Service\Walletobjects;
 
 class FlightCarrier extends \Google\Model
 {
+  /**
+   * @var Image
+   */
+  public $airlineAllianceLogo;
   protected $airlineAllianceLogoType = Image::class;
   protected $airlineAllianceLogoDataType = '';
+  /**
+   * @var Image
+   */
+  public $airlineLogo;
   protected $airlineLogoType = Image::class;
   protected $airlineLogoDataType = '';
+  /**
+   * @var LocalizedString
+   */
+  public $airlineName;
   protected $airlineNameType = LocalizedString::class;
   protected $airlineNameDataType = '';
   /**
@@ -37,6 +49,10 @@ class FlightCarrier extends \Google\Model
    * @var string
    */
   public $kind;
+  /**
+   * @var Image
+   */
+  public $wideAirlineLogo;
   protected $wideAirlineLogoType = Image::class;
   protected $wideAirlineLogoDataType = '';
 

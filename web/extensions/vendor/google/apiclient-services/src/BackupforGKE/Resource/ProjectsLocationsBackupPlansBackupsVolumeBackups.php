@@ -41,7 +41,6 @@ class ProjectsLocationsBackupPlansBackupsVolumeBackups extends \Google\Service\R
    * `projects/locations/backupPlans/backups/volumeBackups`
    * @param array $optParams Optional parameters.
    * @return VolumeBackup
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -72,7 +71,6 @@ class ProjectsLocationsBackupPlansBackupsVolumeBackups extends \Google\Service\R
    * documentation](https://cloud.google.com/iam/help/conditions/resource-
    * policies).
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, $optParams = [])
   {
@@ -102,7 +100,6 @@ class ProjectsLocationsBackupPlansBackupsVolumeBackups extends \Google\Service\R
    * parameters provided to `ListVolumeBackups` must match the call that provided
    * the page token.
    * @return ListVolumeBackupsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsBackupPlansBackupsVolumeBackups($parent, $optParams = [])
   {
@@ -122,7 +119,6 @@ class ProjectsLocationsBackupPlansBackupsVolumeBackups extends \Google\Service\R
    * @param SetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, SetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -145,7 +141,6 @@ class ProjectsLocationsBackupPlansBackupsVolumeBackups extends \Google\Service\R
    * @param TestIamPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestIamPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, TestIamPermissionsRequest $postBody, $optParams = [])
   {

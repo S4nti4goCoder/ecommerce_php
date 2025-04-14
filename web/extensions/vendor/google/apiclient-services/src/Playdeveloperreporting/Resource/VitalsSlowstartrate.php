@@ -38,7 +38,6 @@ class VitalsSlowstartrate extends \Google\Service\Resource
    * apps/{app}/slowStartRateMetricSet
    * @param array $optParams Optional parameters.
    * @return GooglePlayDeveloperReportingV1beta1SlowStartRateMetricSet
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -54,7 +53,6 @@ class VitalsSlowstartrate extends \Google\Service\Resource
    * @param GooglePlayDeveloperReportingV1beta1QuerySlowStartRateMetricSetRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GooglePlayDeveloperReportingV1beta1QuerySlowStartRateMetricSetResponse
-   * @throws \Google\Service\Exception
    */
   public function query($name, GooglePlayDeveloperReportingV1beta1QuerySlowStartRateMetricSetRequest $postBody, $optParams = [])
   {

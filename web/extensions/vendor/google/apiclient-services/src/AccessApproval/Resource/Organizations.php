@@ -42,7 +42,6 @@ class Organizations extends \Google\Service\Resource
    * @param string $name Name of the AccessApprovalSettings to delete.
    * @param array $optParams Optional parameters.
    * @return AccessapprovalEmpty
-   * @throws \Google\Service\Exception
    */
   public function deleteAccessApprovalSettings($name, $optParams = [])
   {
@@ -58,7 +57,6 @@ class Organizations extends \Google\Service\Resource
    * Format: "{projects|folders|organizations}/{id}/accessApprovalSettings"
    * @param array $optParams Optional parameters.
    * @return AccessApprovalSettings
-   * @throws \Google\Service\Exception
    */
   public function getAccessApprovalSettings($name, $optParams = [])
   {
@@ -74,7 +72,6 @@ class Organizations extends \Google\Service\Resource
    * @param string $name Name of the AccessApprovalServiceAccount to retrieve.
    * @param array $optParams Optional parameters.
    * @return AccessApprovalServiceAccount
-   * @throws \Google\Service\Exception
    */
   public function getServiceAccount($name, $optParams = [])
   {
@@ -103,7 +100,6 @@ class Organizations extends \Google\Service\Resource
    * buffers/docs/reference/google.protobuf#fieldmask If this field is left unset,
    * only the notification_emails field will be updated.
    * @return AccessApprovalSettings
-   * @throws \Google\Service\Exception
    */
   public function updateAccessApprovalSettings($name, AccessApprovalSettings $postBody, $optParams = [])
   {

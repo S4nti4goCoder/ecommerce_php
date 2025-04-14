@@ -19,6 +19,10 @@ namespace Google\Service\MigrationCenterAPI;
 
 class MachineDetails extends \Google\Model
 {
+  /**
+   * @var MachineArchitectureDetails
+   */
+  public $architecture;
   protected $architectureType = MachineArchitectureDetails::class;
   protected $architectureDataType = '';
   /**
@@ -29,10 +33,16 @@ class MachineDetails extends \Google\Model
    * @var string
    */
   public $createTime;
-  protected $diskPartitionsType = DiskPartitionDetails::class;
-  protected $diskPartitionsDataType = '';
+  /**
+   * @var MachineDiskDetails
+   */
+  public $disks;
   protected $disksType = MachineDiskDetails::class;
   protected $disksDataType = '';
+  /**
+   * @var GuestOsDetails
+   */
+  public $guestOs;
   protected $guestOsType = GuestOsDetails::class;
   protected $guestOsDataType = '';
   /**
@@ -43,8 +53,16 @@ class MachineDetails extends \Google\Model
    * @var int
    */
   public $memoryMb;
+  /**
+   * @var MachineNetworkDetails
+   */
+  public $network;
   protected $networkType = MachineNetworkDetails::class;
   protected $networkDataType = '';
+  /**
+   * @var PlatformDetails
+   */
+  public $platform;
   protected $platformType = PlatformDetails::class;
   protected $platformDataType = '';
   /**
@@ -97,20 +115,6 @@ class MachineDetails extends \Google\Model
   public function getCreateTime()
   {
     return $this->createTime;
-  }
-  /**
-   * @param DiskPartitionDetails
-   */
-  public function setDiskPartitions(DiskPartitionDetails $diskPartitions)
-  {
-    $this->diskPartitions = $diskPartitions;
-  }
-  /**
-   * @return DiskPartitionDetails
-   */
-  public function getDiskPartitions()
-  {
-    return $this->diskPartitions;
   }
   /**
    * @param MachineDiskDetails

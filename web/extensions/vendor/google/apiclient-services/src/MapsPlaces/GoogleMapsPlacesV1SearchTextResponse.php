@@ -19,50 +19,14 @@ namespace Google\Service\MapsPlaces;
 
 class GoogleMapsPlacesV1SearchTextResponse extends \Google\Collection
 {
-  protected $collection_key = 'routingSummaries';
-  protected $contextualContentsType = GoogleMapsPlacesV1ContextualContent::class;
-  protected $contextualContentsDataType = 'array';
+  protected $collection_key = 'places';
   /**
-   * @var string
+   * @var GoogleMapsPlacesV1Place[]
    */
-  public $nextPageToken;
+  public $places;
   protected $placesType = GoogleMapsPlacesV1Place::class;
   protected $placesDataType = 'array';
-  protected $routingSummariesType = GoogleMapsPlacesV1RoutingSummary::class;
-  protected $routingSummariesDataType = 'array';
-  /**
-   * @var string
-   */
-  public $searchUri;
 
-  /**
-   * @param GoogleMapsPlacesV1ContextualContent[]
-   */
-  public function setContextualContents($contextualContents)
-  {
-    $this->contextualContents = $contextualContents;
-  }
-  /**
-   * @return GoogleMapsPlacesV1ContextualContent[]
-   */
-  public function getContextualContents()
-  {
-    return $this->contextualContents;
-  }
-  /**
-   * @param string
-   */
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  /**
-   * @return string
-   */
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
   /**
    * @param GoogleMapsPlacesV1Place[]
    */
@@ -76,34 +40,6 @@ class GoogleMapsPlacesV1SearchTextResponse extends \Google\Collection
   public function getPlaces()
   {
     return $this->places;
-  }
-  /**
-   * @param GoogleMapsPlacesV1RoutingSummary[]
-   */
-  public function setRoutingSummaries($routingSummaries)
-  {
-    $this->routingSummaries = $routingSummaries;
-  }
-  /**
-   * @return GoogleMapsPlacesV1RoutingSummary[]
-   */
-  public function getRoutingSummaries()
-  {
-    return $this->routingSummaries;
-  }
-  /**
-   * @param string
-   */
-  public function setSearchUri($searchUri)
-  {
-    $this->searchUri = $searchUri;
-  }
-  /**
-   * @return string
-   */
-  public function getSearchUri()
-  {
-    return $this->searchUri;
   }
 }
 

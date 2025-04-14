@@ -44,7 +44,6 @@ class AdminProjectsLocationsReservations extends \Google\Service\Resource
    * which will become the final component of the reservation's name. This value
    * is structured like: `my-reservation-name`.
    * @return Reservation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Reservation $postBody, $optParams = [])
   {
@@ -60,7 +59,6 @@ class AdminProjectsLocationsReservations extends \Google\Service\Resource
    * projects/{project_number}/locations/{location}/reservations/{reservation_id}
    * @param array $optParams Optional parameters.
    * @return PubsubliteEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -76,7 +74,6 @@ class AdminProjectsLocationsReservations extends \Google\Service\Resource
    * projects/{project_number}/locations/{location}/reservations/{reservation_id}
    * @param array $optParams Optional parameters.
    * @return Reservation
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -100,7 +97,6 @@ class AdminProjectsLocationsReservations extends \Google\Service\Resource
    * paginating, all other parameters provided to `ListReservations` must match
    * the call that provided the page token.
    * @return ListReservationsResponse
-   * @throws \Google\Service\Exception
    */
   public function listAdminProjectsLocationsReservations($parent, $optParams = [])
   {
@@ -119,7 +115,6 @@ class AdminProjectsLocationsReservations extends \Google\Service\Resource
    * @opt_param string updateMask Required. A mask specifying the reservation
    * fields to change.
    * @return Reservation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, Reservation $postBody, $optParams = [])
   {

@@ -46,7 +46,6 @@ class SslCerts extends \Google\Service\Resource
    * @param SslCertsCreateEphemeralRequest $postBody
    * @param array $optParams Optional parameters.
    * @return SslCert
-   * @throws \Google\Service\Exception
    */
   public function createEphemeral($project, $instance, SslCertsCreateEphemeralRequest $postBody, $optParams = [])
   {
@@ -64,7 +63,6 @@ class SslCerts extends \Google\Service\Resource
    * @param string $sha1Fingerprint Sha1 FingerPrint.
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($project, $instance, $sha1Fingerprint, $optParams = [])
   {
@@ -83,7 +81,6 @@ class SslCerts extends \Google\Service\Resource
    * @param string $sha1Fingerprint Sha1 FingerPrint.
    * @param array $optParams Optional parameters.
    * @return SslCert
-   * @throws \Google\Service\Exception
    */
   public function get($project, $instance, $sha1Fingerprint, $optParams = [])
   {
@@ -102,7 +99,6 @@ class SslCerts extends \Google\Service\Resource
    * @param SslCertsInsertRequest $postBody
    * @param array $optParams Optional parameters.
    * @return SslCertsInsertResponse
-   * @throws \Google\Service\Exception
    */
   public function insert($project, $instance, SslCertsInsertRequest $postBody, $optParams = [])
   {
@@ -119,7 +115,6 @@ class SslCerts extends \Google\Service\Resource
    * project ID.
    * @param array $optParams Optional parameters.
    * @return SslCertsListResponse
-   * @throws \Google\Service\Exception
    */
   public function listSslCerts($project, $instance, $optParams = [])
   {

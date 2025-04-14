@@ -39,7 +39,6 @@ class ProjectsLocations extends \Google\Service\Resource
    * Format: `projects/{project}/locations/{location}`.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudDocumentaiV1FetchProcessorTypesResponse
-   * @throws \Google\Service\Exception
    */
   public function fetchProcessorTypes($parent, $optParams = [])
   {
@@ -53,7 +52,6 @@ class ProjectsLocations extends \Google\Service\Resource
    * @param string $name Resource name for the location.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudLocationLocation
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -77,7 +75,6 @@ class ProjectsLocations extends \Google\Service\Resource
    * @opt_param string pageToken A page token received from the `next_page_token`
    * field in the response. Send that page token to receive the subsequent page.
    * @return GoogleCloudLocationListLocationsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocations($name, $optParams = [])
   {

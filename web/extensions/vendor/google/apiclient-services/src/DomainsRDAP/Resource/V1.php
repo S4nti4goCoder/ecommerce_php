@@ -36,7 +36,6 @@ class V1 extends \Google\Service\Resource
    *
    * @param array $optParams Optional parameters.
    * @return RdapResponse
-   * @throws \Google\Service\Exception
    */
   public function getDomains($optParams = [])
   {
@@ -50,7 +49,6 @@ class V1 extends \Google\Service\Resource
    *
    * @param array $optParams Optional parameters.
    * @return RdapResponse
-   * @throws \Google\Service\Exception
    */
   public function getEntities($optParams = [])
   {
@@ -64,7 +62,6 @@ class V1 extends \Google\Service\Resource
    *
    * @param array $optParams Optional parameters.
    * @return HttpBody
-   * @throws \Google\Service\Exception
    */
   public function getHelp($optParams = [])
   {
@@ -78,7 +75,6 @@ class V1 extends \Google\Service\Resource
    *
    * @param array $optParams Optional parameters.
    * @return HttpBody
-   * @throws \Google\Service\Exception
    */
   public function getIp($optParams = [])
   {
@@ -92,7 +88,6 @@ class V1 extends \Google\Service\Resource
    *
    * @param array $optParams Optional parameters.
    * @return RdapResponse
-   * @throws \Google\Service\Exception
    */
   public function getNameservers($optParams = [])
   {

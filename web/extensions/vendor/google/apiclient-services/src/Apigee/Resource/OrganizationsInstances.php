@@ -43,7 +43,6 @@ class OrganizationsInstances extends \Google\Service\Resource
    * @param GoogleCloudApigeeV1Instance $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudApigeeV1Instance $postBody, $optParams = [])
   {
@@ -60,7 +59,6 @@ class OrganizationsInstances extends \Google\Service\Resource
    * structure in your request: `organizations/{org}/instances/{instance}`.
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -76,7 +74,6 @@ class OrganizationsInstances extends \Google\Service\Resource
    * structure in your request: `organizations/{org}/instances/{instance}`.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudApigeeV1Instance
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -97,7 +94,6 @@ class OrganizationsInstances extends \Google\Service\Resource
    * @opt_param string pageToken Page token, returned from a previous
    * ListInstances call, that you can use to retrieve the next page of content.
    * @return GoogleCloudApigeeV1ListInstancesResponse
-   * @throws \Google\Service\Exception
    */
   public function listOrganizationsInstances($parent, $optParams = [])
   {
@@ -117,7 +113,6 @@ class OrganizationsInstances extends \Google\Service\Resource
    *
    * @opt_param string updateMask List of fields to be updated.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleCloudApigeeV1Instance $postBody, $optParams = [])
   {
@@ -134,7 +129,6 @@ class OrganizationsInstances extends \Google\Service\Resource
    * @param GoogleCloudApigeeV1ReportInstanceStatusRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudApigeeV1ReportInstanceStatusResponse
-   * @throws \Google\Service\Exception
    */
   public function reportStatus($instance, GoogleCloudApigeeV1ReportInstanceStatusRequest $postBody, $optParams = [])
   {

@@ -38,7 +38,6 @@ class Users extends \Google\Service\Resource
    * @param string $enterpriseId The ID of the enterprise.
    * @param string $userId The ID of the user.
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function delete($enterpriseId, $userId, $optParams = [])
   {
@@ -57,7 +56,6 @@ class Users extends \Google\Service\Resource
    * @param string $userId The ID of the user.
    * @param array $optParams Optional parameters.
    * @return AuthenticationToken
-   * @throws \Google\Service\Exception
    */
   public function generateAuthenticationToken($enterpriseId, $userId, $optParams = [])
   {
@@ -72,7 +70,6 @@ class Users extends \Google\Service\Resource
    * @param string $userId The ID of the user.
    * @param array $optParams Optional parameters.
    * @return User
-   * @throws \Google\Service\Exception
    */
   public function get($enterpriseId, $userId, $optParams = [])
   {
@@ -89,7 +86,6 @@ class Users extends \Google\Service\Resource
    * @param string $userId The ID of the user.
    * @param array $optParams Optional parameters.
    * @return ProductSet
-   * @throws \Google\Service\Exception
    */
   public function getAvailableProductSet($enterpriseId, $userId, $optParams = [])
   {
@@ -108,7 +104,6 @@ class Users extends \Google\Service\Resource
    * @param User $postBody
    * @param array $optParams Optional parameters.
    * @return User
-   * @throws \Google\Service\Exception
    */
   public function insert($enterpriseId, User $postBody, $optParams = [])
   {
@@ -127,7 +122,6 @@ class Users extends \Google\Service\Resource
    * look up.
    * @param array $optParams Optional parameters.
    * @return UsersListResponse
-   * @throws \Google\Service\Exception
    */
   public function listUsers($enterpriseId, $email, $optParams = [])
   {
@@ -144,7 +138,6 @@ class Users extends \Google\Service\Resource
    * @param string $enterpriseId The ID of the enterprise.
    * @param string $userId The ID of the user.
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function revokeDeviceAccess($enterpriseId, $userId, $optParams = [])
   {
@@ -165,7 +158,6 @@ class Users extends \Google\Service\Resource
    * @param ProductSet $postBody
    * @param array $optParams Optional parameters.
    * @return ProductSet
-   * @throws \Google\Service\Exception
    */
   public function setAvailableProductSet($enterpriseId, $userId, ProductSet $postBody, $optParams = [])
   {
@@ -185,7 +177,6 @@ class Users extends \Google\Service\Resource
    * @param User $postBody
    * @param array $optParams Optional parameters.
    * @return User
-   * @throws \Google\Service\Exception
    */
   public function update($enterpriseId, $userId, User $postBody, $optParams = [])
   {

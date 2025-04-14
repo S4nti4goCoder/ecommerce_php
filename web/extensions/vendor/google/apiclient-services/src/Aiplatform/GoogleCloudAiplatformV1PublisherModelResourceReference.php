@@ -22,34 +22,12 @@ class GoogleCloudAiplatformV1PublisherModelResourceReference extends \Google\Mod
   /**
    * @var string
    */
-  public $description;
-  /**
-   * @var string
-   */
   public $resourceName;
   /**
    * @var string
    */
   public $uri;
-  /**
-   * @var string
-   */
-  public $useCase;
 
-  /**
-   * @param string
-   */
-  public function setDescription($description)
-  {
-    $this->description = $description;
-  }
-  /**
-   * @return string
-   */
-  public function getDescription()
-  {
-    return $this->description;
-  }
   /**
    * @param string
    */
@@ -77,20 +55,6 @@ class GoogleCloudAiplatformV1PublisherModelResourceReference extends \Google\Mod
   public function getUri()
   {
     return $this->uri;
-  }
-  /**
-   * @param string
-   */
-  public function setUseCase($useCase)
-  {
-    $this->useCase = $useCase;
-  }
-  /**
-   * @return string
-   */
-  public function getUseCase()
-  {
-    return $this->useCase;
   }
 }
 

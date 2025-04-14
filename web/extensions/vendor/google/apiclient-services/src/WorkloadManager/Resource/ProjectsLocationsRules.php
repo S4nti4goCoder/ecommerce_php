@@ -45,7 +45,6 @@ class ProjectsLocationsRules extends \Google\Service\Resource
    * @opt_param string pageToken A token identifying a page of results the server
    * should return.
    * @return ListRulesResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsRules($parent, $optParams = [])
   {

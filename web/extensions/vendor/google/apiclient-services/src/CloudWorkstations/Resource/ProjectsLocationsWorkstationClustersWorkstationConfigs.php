@@ -48,7 +48,6 @@ class ProjectsLocationsWorkstationClustersWorkstationConfigs extends \Google\Ser
    * @opt_param string workstationConfigId Required. ID to use for the workstation
    * configuration.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, WorkstationConfig $postBody, $optParams = [])
   {
@@ -72,7 +71,6 @@ class ProjectsLocationsWorkstationClustersWorkstationConfigs extends \Google\Ser
    * @opt_param bool validateOnly Optional. If set, validate the request and
    * preview the review, but do not actually apply it.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -86,7 +84,6 @@ class ProjectsLocationsWorkstationClustersWorkstationConfigs extends \Google\Ser
    * @param string $name Required. Name of the requested resource.
    * @param array $optParams Optional parameters.
    * @return WorkstationConfig
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -118,7 +115,6 @@ class ProjectsLocationsWorkstationClustersWorkstationConfigs extends \Google\Ser
    * documentation](https://cloud.google.com/iam/help/conditions/resource-
    * policies).
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, $optParams = [])
   {
@@ -137,7 +133,6 @@ class ProjectsLocationsWorkstationClustersWorkstationConfigs extends \Google\Ser
    * @opt_param string pageToken Optional. next_page_token value returned from a
    * previous List request, if any.
    * @return ListWorkstationConfigsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsWorkstationClustersWorkstationConfigs($parent, $optParams = [])
   {
@@ -157,7 +152,6 @@ class ProjectsLocationsWorkstationClustersWorkstationConfigs extends \Google\Ser
    * @opt_param string pageToken Optional. next_page_token value returned from a
    * previous List request, if any.
    * @return ListUsableWorkstationConfigsResponse
-   * @throws \Google\Service\Exception
    */
   public function listUsable($parent, $optParams = [])
   {
@@ -180,7 +174,6 @@ class ProjectsLocationsWorkstationClustersWorkstationConfigs extends \Google\Ser
    * @opt_param bool validateOnly Optional. If set, validate the request and
    * preview the review, but do not actually apply it.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, WorkstationConfig $postBody, $optParams = [])
   {
@@ -200,7 +193,6 @@ class ProjectsLocationsWorkstationClustersWorkstationConfigs extends \Google\Ser
    * @param SetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, SetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -223,7 +215,6 @@ class ProjectsLocationsWorkstationClustersWorkstationConfigs extends \Google\Ser
    * @param TestIamPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestIamPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, TestIamPermissionsRequest $postBody, $optParams = [])
   {

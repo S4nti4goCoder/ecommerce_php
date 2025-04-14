@@ -22,30 +22,12 @@ class YoutubeAndPartnersInventorySourceConfig extends \Google\Model
   /**
    * @var bool
    */
-  public $includeGoogleTv;
-  /**
-   * @var bool
-   */
   public $includeYoutube;
   /**
    * @var bool
    */
   public $includeYoutubeVideoPartners;
 
-  /**
-   * @param bool
-   */
-  public function setIncludeGoogleTv($includeGoogleTv)
-  {
-    $this->includeGoogleTv = $includeGoogleTv;
-  }
-  /**
-   * @return bool
-   */
-  public function getIncludeGoogleTv()
-  {
-    return $this->includeGoogleTv;
-  }
   /**
    * @param bool
    */

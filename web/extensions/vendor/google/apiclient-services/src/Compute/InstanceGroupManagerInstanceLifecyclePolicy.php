@@ -22,26 +22,8 @@ class InstanceGroupManagerInstanceLifecyclePolicy extends \Google\Model
   /**
    * @var string
    */
-  public $defaultActionOnFailure;
-  /**
-   * @var string
-   */
   public $forceUpdateOnRepair;
 
-  /**
-   * @param string
-   */
-  public function setDefaultActionOnFailure($defaultActionOnFailure)
-  {
-    $this->defaultActionOnFailure = $defaultActionOnFailure;
-  }
-  /**
-   * @return string
-   */
-  public function getDefaultActionOnFailure()
-  {
-    return $this->defaultActionOnFailure;
-  }
   /**
    * @param string
    */

@@ -19,12 +19,20 @@ namespace Google\Service\Walletobjects;
 
 class EventVenue extends \Google\Model
 {
+  /**
+   * @var LocalizedString
+   */
+  public $address;
   protected $addressType = LocalizedString::class;
   protected $addressDataType = '';
   /**
    * @var string
    */
   public $kind;
+  /**
+   * @var LocalizedString
+   */
+  public $name;
   protected $nameType = LocalizedString::class;
   protected $nameDataType = '';
 

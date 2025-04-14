@@ -46,7 +46,6 @@ class Projects extends \Google\Service\Resource
    * @param GoogleCloudContentwarehouseV1FetchAclRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudContentwarehouseV1FetchAclResponse
-   * @throws \Google\Service\Exception
    */
   public function fetchAcl($resource, GoogleCloudContentwarehouseV1FetchAclRequest $postBody, $optParams = [])
   {
@@ -67,7 +66,6 @@ class Projects extends \Google\Service\Resource
    * @param GoogleCloudContentwarehouseV1SetAclRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudContentwarehouseV1SetAclResponse
-   * @throws \Google\Service\Exception
    */
   public function setAcl($resource, GoogleCloudContentwarehouseV1SetAclRequest $postBody, $optParams = [])
   {

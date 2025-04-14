@@ -44,7 +44,6 @@ class Partners extends \Google\Service\Resource
    * @param BulkEditPartnerAssignedTargetingOptionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return BulkEditPartnerAssignedTargetingOptionsResponse
-   * @throws \Google\Service\Exception
    */
   public function editAssignedTargetingOptions($partnerId, BulkEditPartnerAssignedTargetingOptionsRequest $postBody, $optParams = [])
   {
@@ -58,7 +57,6 @@ class Partners extends \Google\Service\Resource
    * @param string $partnerId Required. The ID of the partner to fetch.
    * @param array $optParams Optional parameters.
    * @return Partner
-   * @throws \Google\Service\Exception
    */
   public function get($partnerId, $optParams = [])
   {
@@ -92,7 +90,6 @@ class Partners extends \Google\Service\Resource
    * the previous call to `ListPartners` method. If not specified, the first page
    * of results will be returned.
    * @return ListPartnersResponse
-   * @throws \Google\Service\Exception
    */
   public function listPartners($optParams = [])
   {

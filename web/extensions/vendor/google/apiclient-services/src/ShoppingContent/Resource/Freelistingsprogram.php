@@ -39,7 +39,6 @@ class Freelistingsprogram extends \Google\Service\Resource
    * @param string $merchantId Required. The ID of the account.
    * @param array $optParams Optional parameters.
    * @return FreeListingsProgramStatus
-   * @throws \Google\Service\Exception
    */
   public function get($merchantId, $optParams = [])
   {
@@ -55,7 +54,6 @@ class Freelistingsprogram extends \Google\Service\Resource
    * @param string $merchantId Required. The ID of the account.
    * @param RequestReviewFreeListingsRequest $postBody
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function requestreview($merchantId, RequestReviewFreeListingsRequest $postBody, $optParams = [])
   {

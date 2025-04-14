@@ -21,19 +21,25 @@ class CommitRequest extends \Google\Collection
 {
   protected $collection_key = 'mutations';
   /**
-   * @var string
+   * @var Mutation[]
    */
-  public $maxCommitDelay;
+  public $mutations;
   protected $mutationsType = Mutation::class;
   protected $mutationsDataType = 'array';
-  protected $precommitTokenType = MultiplexedSessionPrecommitToken::class;
-  protected $precommitTokenDataType = '';
+  /**
+   * @var RequestOptions
+   */
+  public $requestOptions;
   protected $requestOptionsType = RequestOptions::class;
   protected $requestOptionsDataType = '';
   /**
    * @var bool
    */
   public $returnCommitStats;
+  /**
+   * @var TransactionOptions
+   */
+  public $singleUseTransaction;
   protected $singleUseTransactionType = TransactionOptions::class;
   protected $singleUseTransactionDataType = '';
   /**
@@ -41,20 +47,6 @@ class CommitRequest extends \Google\Collection
    */
   public $transactionId;
 
-  /**
-   * @param string
-   */
-  public function setMaxCommitDelay($maxCommitDelay)
-  {
-    $this->maxCommitDelay = $maxCommitDelay;
-  }
-  /**
-   * @return string
-   */
-  public function getMaxCommitDelay()
-  {
-    return $this->maxCommitDelay;
-  }
   /**
    * @param Mutation[]
    */
@@ -68,20 +60,6 @@ class CommitRequest extends \Google\Collection
   public function getMutations()
   {
     return $this->mutations;
-  }
-  /**
-   * @param MultiplexedSessionPrecommitToken
-   */
-  public function setPrecommitToken(MultiplexedSessionPrecommitToken $precommitToken)
-  {
-    $this->precommitToken = $precommitToken;
-  }
-  /**
-   * @return MultiplexedSessionPrecommitToken
-   */
-  public function getPrecommitToken()
-  {
-    return $this->precommitToken;
   }
   /**
    * @param RequestOptions

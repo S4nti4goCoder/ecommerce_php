@@ -52,7 +52,6 @@ class GlobalForwardingRules extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($project, $forwardingRule, $optParams = [])
   {
@@ -68,7 +67,6 @@ class GlobalForwardingRules extends \Google\Service\Resource
    * @param string $forwardingRule Name of the ForwardingRule resource to return.
    * @param array $optParams Optional parameters.
    * @return ForwardingRule
-   * @throws \Google\Service\Exception
    */
   public function get($project, $forwardingRule, $optParams = [])
   {
@@ -95,7 +93,6 @@ class GlobalForwardingRules extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function insert($project, ForwardingRule $postBody, $optParams = [])
   {
@@ -160,11 +157,8 @@ class GlobalForwardingRules extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
+   * false.
    * @return ForwardingRuleList
-   * @throws \Google\Service\Exception
    */
   public function listGlobalForwardingRules($project, $optParams = [])
   {
@@ -194,7 +188,6 @@ class GlobalForwardingRules extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($project, $forwardingRule, ForwardingRule $postBody, $optParams = [])
   {
@@ -211,7 +204,6 @@ class GlobalForwardingRules extends \Google\Service\Resource
    * @param GlobalSetLabelsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function setLabels($project, $resource, GlobalSetLabelsRequest $postBody, $optParams = [])
   {
@@ -241,7 +233,6 @@ class GlobalForwardingRules extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function setTarget($project, $forwardingRule, TargetReference $postBody, $optParams = [])
   {

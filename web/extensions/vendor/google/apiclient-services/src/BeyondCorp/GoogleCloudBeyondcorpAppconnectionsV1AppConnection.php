@@ -20,6 +20,10 @@ namespace Google\Service\BeyondCorp;
 class GoogleCloudBeyondcorpAppconnectionsV1AppConnection extends \Google\Collection
 {
   protected $collection_key = 'connectors';
+  /**
+   * @var GoogleCloudBeyondcorpAppconnectionsV1AppConnectionApplicationEndpoint
+   */
+  public $applicationEndpoint;
   protected $applicationEndpointType = GoogleCloudBeyondcorpAppconnectionsV1AppConnectionApplicationEndpoint::class;
   protected $applicationEndpointDataType = '';
   /**
@@ -34,6 +38,10 @@ class GoogleCloudBeyondcorpAppconnectionsV1AppConnection extends \Google\Collect
    * @var string
    */
   public $displayName;
+  /**
+   * @var GoogleCloudBeyondcorpAppconnectionsV1AppConnectionGateway
+   */
+  public $gateway;
   protected $gatewayType = GoogleCloudBeyondcorpAppconnectionsV1AppConnectionGateway::class;
   protected $gatewayDataType = '';
   /**
@@ -44,14 +52,6 @@ class GoogleCloudBeyondcorpAppconnectionsV1AppConnection extends \Google\Collect
    * @var string
    */
   public $name;
-  /**
-   * @var bool
-   */
-  public $satisfiesPzi;
-  /**
-   * @var bool
-   */
-  public $satisfiesPzs;
   /**
    * @var string
    */
@@ -166,34 +166,6 @@ class GoogleCloudBeyondcorpAppconnectionsV1AppConnection extends \Google\Collect
   public function getName()
   {
     return $this->name;
-  }
-  /**
-   * @param bool
-   */
-  public function setSatisfiesPzi($satisfiesPzi)
-  {
-    $this->satisfiesPzi = $satisfiesPzi;
-  }
-  /**
-   * @return bool
-   */
-  public function getSatisfiesPzi()
-  {
-    return $this->satisfiesPzi;
-  }
-  /**
-   * @param bool
-   */
-  public function setSatisfiesPzs($satisfiesPzs)
-  {
-    $this->satisfiesPzs = $satisfiesPzs;
-  }
-  /**
-   * @return bool
-   */
-  public function getSatisfiesPzs()
-  {
-    return $this->satisfiesPzs;
   }
   /**
    * @param string

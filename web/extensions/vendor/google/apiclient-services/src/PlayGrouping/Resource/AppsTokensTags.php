@@ -41,7 +41,6 @@ class AppsTokensTags extends \Google\Service\Resource
    * @param CreateOrUpdateTagsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return CreateOrUpdateTagsResponse
-   * @throws \Google\Service\Exception
    */
   public function createOrUpdate($appPackage, $token, CreateOrUpdateTagsRequest $postBody, $optParams = [])
   {

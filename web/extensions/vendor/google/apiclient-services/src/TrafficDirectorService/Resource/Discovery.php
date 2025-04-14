@@ -36,7 +36,6 @@ class Discovery extends \Google\Service\Resource
    * @param ClientStatusRequest $postBody
    * @param array $optParams Optional parameters.
    * @return ClientStatusResponse
-   * @throws \Google\Service\Exception
    */
   public function client_status(ClientStatusRequest $postBody, $optParams = [])
   {

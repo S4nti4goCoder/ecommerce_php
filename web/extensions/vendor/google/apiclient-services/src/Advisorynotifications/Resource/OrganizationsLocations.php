@@ -33,11 +33,9 @@ class OrganizationsLocations extends \Google\Service\Resource
    * Get notification settings. (locations.getSettings)
    *
    * @param string $name Required. The resource name of the settings to retrieve.
-   * Format: organizations/{organization}/locations/{location}/settings or
-   * projects/{projects}/locations/{location}/settings.
+   * Format: organizations/{organization}/locations/{location}/settings.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudAdvisorynotificationsV1Settings
-   * @throws \Google\Service\Exception
    */
   public function getSettings($name, $optParams = [])
   {
@@ -49,12 +47,10 @@ class OrganizationsLocations extends \Google\Service\Resource
    * Update notification settings. (locations.updateSettings)
    *
    * @param string $name Identifier. The resource name of the settings to
-   * retrieve. Format: organizations/{organization}/locations/{location}/settings
-   * or projects/{projects}/locations/{location}/settings.
+   * retrieve. Format: organizations/{organization}/locations/{location}/settings.
    * @param GoogleCloudAdvisorynotificationsV1Settings $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudAdvisorynotificationsV1Settings
-   * @throws \Google\Service\Exception
    */
   public function updateSettings($name, GoogleCloudAdvisorynotificationsV1Settings $postBody, $optParams = [])
   {

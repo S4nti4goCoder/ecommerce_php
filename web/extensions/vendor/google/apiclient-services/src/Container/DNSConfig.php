@@ -22,10 +22,6 @@ class DNSConfig extends \Google\Model
   /**
    * @var string
    */
-  public $additiveVpcScopeDnsDomain;
-  /**
-   * @var string
-   */
   public $clusterDns;
   /**
    * @var string
@@ -36,20 +32,6 @@ class DNSConfig extends \Google\Model
    */
   public $clusterDnsScope;
 
-  /**
-   * @param string
-   */
-  public function setAdditiveVpcScopeDnsDomain($additiveVpcScopeDnsDomain)
-  {
-    $this->additiveVpcScopeDnsDomain = $additiveVpcScopeDnsDomain;
-  }
-  /**
-   * @return string
-   */
-  public function getAdditiveVpcScopeDnsDomain()
-  {
-    return $this->additiveVpcScopeDnsDomain;
-  }
   /**
    * @param string
    */

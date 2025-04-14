@@ -23,6 +23,10 @@ class ImageUri extends \Google\Model
    * @var string
    */
   public $description;
+  /**
+   * @var LocalizedString
+   */
+  public $localizedDescription;
   protected $localizedDescriptionType = LocalizedString::class;
   protected $localizedDescriptionDataType = '';
   /**

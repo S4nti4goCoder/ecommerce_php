@@ -19,33 +19,25 @@ namespace Google\Service\DiscoveryEngine;
 
 class GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpec extends \Google\Model
 {
-  protected $chunkSpecType = GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecChunkSpec::class;
-  protected $chunkSpecDataType = '';
+  /**
+   * @var GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecExtractiveContentSpec
+   */
+  public $extractiveContentSpec;
   protected $extractiveContentSpecType = GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecExtractiveContentSpec::class;
   protected $extractiveContentSpecDataType = '';
   /**
-   * @var string
+   * @var GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecSnippetSpec
    */
-  public $searchResultMode;
+  public $snippetSpec;
   protected $snippetSpecType = GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecSnippetSpec::class;
   protected $snippetSpecDataType = '';
+  /**
+   * @var GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecSummarySpec
+   */
+  public $summarySpec;
   protected $summarySpecType = GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecSummarySpec::class;
   protected $summarySpecDataType = '';
 
-  /**
-   * @param GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecChunkSpec
-   */
-  public function setChunkSpec(GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecChunkSpec $chunkSpec)
-  {
-    $this->chunkSpec = $chunkSpec;
-  }
-  /**
-   * @return GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecChunkSpec
-   */
-  public function getChunkSpec()
-  {
-    return $this->chunkSpec;
-  }
   /**
    * @param GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecExtractiveContentSpec
    */
@@ -59,20 +51,6 @@ class GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpec extends \Go
   public function getExtractiveContentSpec()
   {
     return $this->extractiveContentSpec;
-  }
-  /**
-   * @param string
-   */
-  public function setSearchResultMode($searchResultMode)
-  {
-    $this->searchResultMode = $searchResultMode;
-  }
-  /**
-   * @return string
-   */
-  public function getSearchResultMode()
-  {
-    return $this->searchResultMode;
   }
   /**
    * @param GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecSnippetSpec

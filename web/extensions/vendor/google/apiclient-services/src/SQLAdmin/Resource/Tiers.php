@@ -37,7 +37,6 @@ class Tiers extends \Google\Service\Resource
    * @param string $project Project ID of the project for which to list tiers.
    * @param array $optParams Optional parameters.
    * @return TiersListResponse
-   * @throws \Google\Service\Exception
    */
   public function listTiers($project, $optParams = [])
   {

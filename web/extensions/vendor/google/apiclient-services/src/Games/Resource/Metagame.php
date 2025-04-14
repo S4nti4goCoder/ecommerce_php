@@ -36,7 +36,6 @@ class Metagame extends \Google\Service\Resource
    *
    * @param array $optParams Optional parameters.
    * @return MetagameConfig
-   * @throws \Google\Service\Exception
    */
   public function getMetagameConfig($optParams = [])
   {
@@ -61,7 +60,6 @@ class Metagame extends \Google\Service\Resource
    * category resources returned may be less than the specified `maxResults`.
    * @opt_param string pageToken The token returned by the previous request.
    * @return CategoryListResponse
-   * @throws \Google\Service\Exception
    */
   public function listCategoriesByPlayer($playerId, $collection, $optParams = [])
   {

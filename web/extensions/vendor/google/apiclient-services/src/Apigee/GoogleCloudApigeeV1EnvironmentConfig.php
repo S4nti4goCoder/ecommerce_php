@@ -20,24 +20,42 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1EnvironmentConfig extends \Google\Collection
 {
   protected $collection_key = 'targets';
+  /**
+   * @var GoogleCloudApigeeV1RuntimeAddonsConfig
+   */
+  public $addonsConfig;
   protected $addonsConfigType = GoogleCloudApigeeV1RuntimeAddonsConfig::class;
   protected $addonsConfigDataType = '';
   /**
    * @var string
    */
   public $arcConfigLocation;
-  protected $clientIpResolutionConfigType = GoogleCloudApigeeV1EnvironmentConfigClientIPResolutionConfig::class;
-  protected $clientIpResolutionConfigDataType = '';
   /**
    * @var string
    */
   public $createTime;
+  /**
+   * @var GoogleCloudApigeeV1DataCollectorConfig[]
+   */
+  public $dataCollectors;
   protected $dataCollectorsType = GoogleCloudApigeeV1DataCollectorConfig::class;
   protected $dataCollectorsDataType = 'array';
+  /**
+   * @var GoogleCloudApigeeV1DebugMask
+   */
+  public $debugMask;
   protected $debugMaskType = GoogleCloudApigeeV1DebugMask::class;
   protected $debugMaskDataType = '';
+  /**
+   * @var GoogleCloudApigeeV1DeploymentGroupConfig[]
+   */
+  public $deploymentGroups;
   protected $deploymentGroupsType = GoogleCloudApigeeV1DeploymentGroupConfig::class;
   protected $deploymentGroupsDataType = 'array';
+  /**
+   * @var GoogleCloudApigeeV1DeploymentConfig[]
+   */
+  public $deployments;
   protected $deploymentsType = GoogleCloudApigeeV1DeploymentConfig::class;
   protected $deploymentsDataType = 'array';
   /**
@@ -48,6 +66,10 @@ class GoogleCloudApigeeV1EnvironmentConfig extends \Google\Collection
    * @var string[]
    */
   public $featureFlags;
+  /**
+   * @var GoogleCloudApigeeV1FlowHookConfig[]
+   */
+  public $flowhooks;
   protected $flowhooksType = GoogleCloudApigeeV1FlowHookConfig::class;
   protected $flowhooksDataType = 'array';
   /**
@@ -58,6 +80,10 @@ class GoogleCloudApigeeV1EnvironmentConfig extends \Google\Collection
    * @var string
    */
   public $gatewayConfigLocation;
+  /**
+   * @var GoogleCloudApigeeV1KeystoreConfig[]
+   */
+  public $keystores;
   protected $keystoresType = GoogleCloudApigeeV1KeystoreConfig::class;
   protected $keystoresDataType = 'array';
   /**
@@ -72,8 +98,16 @@ class GoogleCloudApigeeV1EnvironmentConfig extends \Google\Collection
    * @var string
    */
   public $pubsubTopic;
+  /**
+   * @var GoogleCloudApigeeV1ReferenceConfig[]
+   */
+  public $resourceReferences;
   protected $resourceReferencesType = GoogleCloudApigeeV1ReferenceConfig::class;
   protected $resourceReferencesDataType = 'array';
+  /**
+   * @var GoogleCloudApigeeV1ResourceConfig[]
+   */
+  public $resources;
   protected $resourcesType = GoogleCloudApigeeV1ResourceConfig::class;
   protected $resourcesDataType = 'array';
   /**
@@ -84,8 +118,16 @@ class GoogleCloudApigeeV1EnvironmentConfig extends \Google\Collection
    * @var string
    */
   public $sequenceNumber;
+  /**
+   * @var GoogleCloudApigeeV1TargetServerConfig[]
+   */
+  public $targets;
   protected $targetsType = GoogleCloudApigeeV1TargetServerConfig::class;
   protected $targetsDataType = 'array';
+  /**
+   * @var GoogleCloudApigeeV1RuntimeTraceConfig
+   */
+  public $traceConfig;
   protected $traceConfigType = GoogleCloudApigeeV1RuntimeTraceConfig::class;
   protected $traceConfigDataType = '';
   /**
@@ -120,20 +162,6 @@ class GoogleCloudApigeeV1EnvironmentConfig extends \Google\Collection
   public function getArcConfigLocation()
   {
     return $this->arcConfigLocation;
-  }
-  /**
-   * @param GoogleCloudApigeeV1EnvironmentConfigClientIPResolutionConfig
-   */
-  public function setClientIpResolutionConfig(GoogleCloudApigeeV1EnvironmentConfigClientIPResolutionConfig $clientIpResolutionConfig)
-  {
-    $this->clientIpResolutionConfig = $clientIpResolutionConfig;
-  }
-  /**
-   * @return GoogleCloudApigeeV1EnvironmentConfigClientIPResolutionConfig
-   */
-  public function getClientIpResolutionConfig()
-  {
-    return $this->clientIpResolutionConfig;
   }
   /**
    * @param string

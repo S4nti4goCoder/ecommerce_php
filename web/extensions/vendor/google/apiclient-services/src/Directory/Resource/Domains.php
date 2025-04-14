@@ -36,7 +36,6 @@ class Domains extends \Google\Service\Resource
    * @param string $customer Immutable ID of the Google Workspace account.
    * @param string $domainName Name of domain to be deleted
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function delete($customer, $domainName, $optParams = [])
   {
@@ -57,7 +56,6 @@ class Domains extends \Google\Service\Resource
    * @param string $domainName Name of domain to be retrieved
    * @param array $optParams Optional parameters.
    * @return DomainsModel
-   * @throws \Google\Service\Exception
    */
   public function get($customer, $domainName, $optParams = [])
   {
@@ -72,7 +70,6 @@ class Domains extends \Google\Service\Resource
    * @param DomainsModel $postBody
    * @param array $optParams Optional parameters.
    * @return DomainsModel
-   * @throws \Google\Service\Exception
    */
   public function insert($customer, DomainsModel $postBody, $optParams = [])
   {
@@ -92,7 +89,6 @@ class Domains extends \Google\Service\Resource
    * `customer` or the `domain` parameter.
    * @param array $optParams Optional parameters.
    * @return Domains2
-   * @throws \Google\Service\Exception
    */
   public function listDomains($customer, $optParams = [])
   {

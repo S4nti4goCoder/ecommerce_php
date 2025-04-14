@@ -17,13 +17,24 @@
 
 namespace Google\Service\CloudAlloyDBAdmin;
 
-class StorageDatabasecenterPartnerapiV1mainDatabaseResourceMetadata extends \Google\Collection
+class StorageDatabasecenterPartnerapiV1mainDatabaseResourceMetadata extends \Google\Model
 {
-  protected $collection_key = 'entitlements';
+  /**
+   * @var StorageDatabasecenterPartnerapiV1mainAvailabilityConfiguration
+   */
+  public $availabilityConfiguration;
   protected $availabilityConfigurationType = StorageDatabasecenterPartnerapiV1mainAvailabilityConfiguration::class;
   protected $availabilityConfigurationDataType = '';
+  /**
+   * @var StorageDatabasecenterPartnerapiV1mainBackupConfiguration
+   */
+  public $backupConfiguration;
   protected $backupConfigurationType = StorageDatabasecenterPartnerapiV1mainBackupConfiguration::class;
   protected $backupConfigurationDataType = '';
+  /**
+   * @var StorageDatabasecenterPartnerapiV1mainBackupRun
+   */
+  public $backupRun;
   protected $backupRunType = StorageDatabasecenterPartnerapiV1mainBackupRun::class;
   protected $backupRunDataType = '';
   /**
@@ -34,18 +45,18 @@ class StorageDatabasecenterPartnerapiV1mainDatabaseResourceMetadata extends \Goo
    * @var string
    */
   public $currentState;
-  protected $customMetadataType = StorageDatabasecenterPartnerapiV1mainCustomMetadataData::class;
-  protected $customMetadataDataType = '';
   /**
-   * @var string
+   * @var array[]
    */
-  public $edition;
-  protected $entitlementsType = StorageDatabasecenterPartnerapiV1mainEntitlement::class;
-  protected $entitlementsDataType = 'array';
+  public $customMetadata;
   /**
    * @var string
    */
   public $expectedState;
+  /**
+   * @var StorageDatabasecenterPartnerapiV1mainDatabaseResourceId
+   */
+  public $id;
   protected $idType = StorageDatabasecenterPartnerapiV1mainDatabaseResourceId::class;
   protected $idDataType = '';
   /**
@@ -56,14 +67,16 @@ class StorageDatabasecenterPartnerapiV1mainDatabaseResourceMetadata extends \Goo
    * @var string
    */
   public $location;
-  protected $machineConfigurationType = StorageDatabasecenterPartnerapiV1mainMachineConfiguration::class;
-  protected $machineConfigurationDataType = '';
+  /**
+   * @var StorageDatabasecenterPartnerapiV1mainDatabaseResourceId
+   */
+  public $primaryResourceId;
   protected $primaryResourceIdType = StorageDatabasecenterPartnerapiV1mainDatabaseResourceId::class;
   protected $primaryResourceIdDataType = '';
   /**
-   * @var string
+   * @var StorageDatabasecenterProtoCommonProduct
    */
-  public $primaryResourceLocation;
+  public $product;
   protected $productType = StorageDatabasecenterProtoCommonProduct::class;
   protected $productDataType = '';
   /**
@@ -77,15 +90,11 @@ class StorageDatabasecenterPartnerapiV1mainDatabaseResourceMetadata extends \Goo
   /**
    * @var string
    */
-  public $suspensionReason;
-  protected $tagsSetType = StorageDatabasecenterPartnerapiV1mainTags::class;
-  protected $tagsSetDataType = '';
-  /**
-   * @var string
-   */
   public $updationTime;
-  protected $userLabelSetType = StorageDatabasecenterPartnerapiV1mainUserLabels::class;
-  protected $userLabelSetDataType = '';
+  /**
+   * @var string[]
+   */
+  public $userLabels;
 
   /**
    * @param StorageDatabasecenterPartnerapiV1mainAvailabilityConfiguration
@@ -158,46 +167,18 @@ class StorageDatabasecenterPartnerapiV1mainDatabaseResourceMetadata extends \Goo
     return $this->currentState;
   }
   /**
-   * @param StorageDatabasecenterPartnerapiV1mainCustomMetadataData
+   * @param array[]
    */
-  public function setCustomMetadata(StorageDatabasecenterPartnerapiV1mainCustomMetadataData $customMetadata)
+  public function setCustomMetadata($customMetadata)
   {
     $this->customMetadata = $customMetadata;
   }
   /**
-   * @return StorageDatabasecenterPartnerapiV1mainCustomMetadataData
+   * @return array[]
    */
   public function getCustomMetadata()
   {
     return $this->customMetadata;
-  }
-  /**
-   * @param string
-   */
-  public function setEdition($edition)
-  {
-    $this->edition = $edition;
-  }
-  /**
-   * @return string
-   */
-  public function getEdition()
-  {
-    return $this->edition;
-  }
-  /**
-   * @param StorageDatabasecenterPartnerapiV1mainEntitlement[]
-   */
-  public function setEntitlements($entitlements)
-  {
-    $this->entitlements = $entitlements;
-  }
-  /**
-   * @return StorageDatabasecenterPartnerapiV1mainEntitlement[]
-   */
-  public function getEntitlements()
-  {
-    return $this->entitlements;
   }
   /**
    * @param string
@@ -256,20 +237,6 @@ class StorageDatabasecenterPartnerapiV1mainDatabaseResourceMetadata extends \Goo
     return $this->location;
   }
   /**
-   * @param StorageDatabasecenterPartnerapiV1mainMachineConfiguration
-   */
-  public function setMachineConfiguration(StorageDatabasecenterPartnerapiV1mainMachineConfiguration $machineConfiguration)
-  {
-    $this->machineConfiguration = $machineConfiguration;
-  }
-  /**
-   * @return StorageDatabasecenterPartnerapiV1mainMachineConfiguration
-   */
-  public function getMachineConfiguration()
-  {
-    return $this->machineConfiguration;
-  }
-  /**
    * @param StorageDatabasecenterPartnerapiV1mainDatabaseResourceId
    */
   public function setPrimaryResourceId(StorageDatabasecenterPartnerapiV1mainDatabaseResourceId $primaryResourceId)
@@ -282,20 +249,6 @@ class StorageDatabasecenterPartnerapiV1mainDatabaseResourceMetadata extends \Goo
   public function getPrimaryResourceId()
   {
     return $this->primaryResourceId;
-  }
-  /**
-   * @param string
-   */
-  public function setPrimaryResourceLocation($primaryResourceLocation)
-  {
-    $this->primaryResourceLocation = $primaryResourceLocation;
-  }
-  /**
-   * @return string
-   */
-  public function getPrimaryResourceLocation()
-  {
-    return $this->primaryResourceLocation;
   }
   /**
    * @param StorageDatabasecenterProtoCommonProduct
@@ -342,34 +295,6 @@ class StorageDatabasecenterPartnerapiV1mainDatabaseResourceMetadata extends \Goo
   /**
    * @param string
    */
-  public function setSuspensionReason($suspensionReason)
-  {
-    $this->suspensionReason = $suspensionReason;
-  }
-  /**
-   * @return string
-   */
-  public function getSuspensionReason()
-  {
-    return $this->suspensionReason;
-  }
-  /**
-   * @param StorageDatabasecenterPartnerapiV1mainTags
-   */
-  public function setTagsSet(StorageDatabasecenterPartnerapiV1mainTags $tagsSet)
-  {
-    $this->tagsSet = $tagsSet;
-  }
-  /**
-   * @return StorageDatabasecenterPartnerapiV1mainTags
-   */
-  public function getTagsSet()
-  {
-    return $this->tagsSet;
-  }
-  /**
-   * @param string
-   */
   public function setUpdationTime($updationTime)
   {
     $this->updationTime = $updationTime;
@@ -382,18 +307,18 @@ class StorageDatabasecenterPartnerapiV1mainDatabaseResourceMetadata extends \Goo
     return $this->updationTime;
   }
   /**
-   * @param StorageDatabasecenterPartnerapiV1mainUserLabels
+   * @param string[]
    */
-  public function setUserLabelSet(StorageDatabasecenterPartnerapiV1mainUserLabels $userLabelSet)
+  public function setUserLabels($userLabels)
   {
-    $this->userLabelSet = $userLabelSet;
+    $this->userLabels = $userLabels;
   }
   /**
-   * @return StorageDatabasecenterPartnerapiV1mainUserLabels
+   * @return string[]
    */
-  public function getUserLabelSet()
+  public function getUserLabels()
   {
-    return $this->userLabelSet;
+    return $this->userLabels;
   }
 }
 

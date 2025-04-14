@@ -28,6 +28,10 @@ class ListWorkloadsResponse extends \Google\Collection
    * @var string[]
    */
   public $unreachable;
+  /**
+   * @var Workload[]
+   */
+  public $workloads;
   protected $workloadsType = Workload::class;
   protected $workloadsDataType = 'array';
 

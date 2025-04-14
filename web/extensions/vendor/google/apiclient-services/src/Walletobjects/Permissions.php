@@ -24,6 +24,10 @@ class Permissions extends \Google\Collection
    * @var string
    */
   public $issuerId;
+  /**
+   * @var Permission[]
+   */
+  public $permissions;
   protected $permissionsType = Permission::class;
   protected $permissionsDataType = 'array';
 

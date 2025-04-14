@@ -43,7 +43,6 @@ class Exclusions extends \Google\Service\Resource
    * @param LogExclusion $postBody
    * @param array $optParams Optional parameters.
    * @return LogExclusion
-   * @throws \Google\Service\Exception
    */
   public function create($parent, LogExclusion $postBody, $optParams = [])
   {
@@ -62,7 +61,6 @@ class Exclusions extends \Google\Service\Resource
    * project/exclusions/my-exclusion"
    * @param array $optParams Optional parameters.
    * @return LoggingEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -81,7 +79,6 @@ class Exclusions extends \Google\Service\Resource
    * project/exclusions/my-exclusion"
    * @param array $optParams Optional parameters.
    * @return LogExclusion
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -106,7 +103,6 @@ class Exclusions extends \Google\Service\Resource
    * the value of nextPageToken from the previous response. The values of other
    * method parameters should be identical to those in the previous call.
    * @return ListExclusionsResponse
-   * @throws \Google\Service\Exception
    */
   public function listExclusions($parent, $optParams = [])
   {
@@ -134,7 +130,6 @@ class Exclusions extends \Google\Service\Resource
    * example, to change the filter and description of an exclusion, specify an
    * update_mask of "filter,description".
    * @return LogExclusion
-   * @throws \Google\Service\Exception
    */
   public function patch($name, LogExclusion $postBody, $optParams = [])
   {

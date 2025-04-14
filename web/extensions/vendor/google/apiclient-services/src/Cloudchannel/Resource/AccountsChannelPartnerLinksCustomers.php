@@ -47,7 +47,6 @@ class AccountsChannelPartnerLinksCustomers extends \Google\Service\Resource
    * @param GoogleCloudChannelV1Customer $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudChannelV1Customer
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudChannelV1Customer $postBody, $optParams = [])
   {
@@ -65,7 +64,6 @@ class AccountsChannelPartnerLinksCustomers extends \Google\Service\Resource
    * @param string $name Required. The resource name of the customer to delete.
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -85,7 +83,6 @@ class AccountsChannelPartnerLinksCustomers extends \Google\Service\Resource
    * Name uses the format: accounts/{account_id}/customers/{customer_id}
    * @param array $optParams Optional parameters.
    * @return GoogleCloudChannelV1Customer
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -112,7 +109,6 @@ class AccountsChannelPartnerLinksCustomers extends \Google\Service\Resource
    * @param GoogleCloudChannelV1ImportCustomerRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudChannelV1Customer
-   * @throws \Google\Service\Exception
    */
   public function import($parent, GoogleCloudChannelV1ImportCustomerRequest $postBody, $optParams = [])
   {
@@ -143,7 +139,6 @@ class AccountsChannelPartnerLinksCustomers extends \Google\Service\Resource
    * ListCustomersResponse.next_page_token of the previous
    * CloudChannelService.ListCustomers call.
    * @return GoogleCloudChannelV1ListCustomersResponse
-   * @throws \Google\Service\Exception
    */
   public function listAccountsChannelPartnerLinksCustomers($parent, $optParams = [])
   {
@@ -167,7 +162,6 @@ class AccountsChannelPartnerLinksCustomers extends \Google\Service\Resource
    * @opt_param string updateMask The update mask that applies to the resource.
    * Optional.
    * @return GoogleCloudChannelV1Customer
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleCloudChannelV1Customer $postBody, $optParams = [])
   {

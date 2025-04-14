@@ -20,14 +20,26 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1DeployedIndex extends \Google\Collection
 {
   protected $collection_key = 'reservedIpRanges';
+  /**
+   * @var GoogleCloudAiplatformV1AutomaticResources
+   */
+  public $automaticResources;
   protected $automaticResourcesType = GoogleCloudAiplatformV1AutomaticResources::class;
   protected $automaticResourcesDataType = '';
   /**
    * @var string
    */
   public $createTime;
+  /**
+   * @var GoogleCloudAiplatformV1DedicatedResources
+   */
+  public $dedicatedResources;
   protected $dedicatedResourcesType = GoogleCloudAiplatformV1DedicatedResources::class;
   protected $dedicatedResourcesDataType = '';
+  /**
+   * @var GoogleCloudAiplatformV1DeployedIndexAuthConfig
+   */
+  public $deployedIndexAuthConfig;
   protected $deployedIndexAuthConfigType = GoogleCloudAiplatformV1DeployedIndexAuthConfig::class;
   protected $deployedIndexAuthConfigDataType = '';
   /**
@@ -54,10 +66,12 @@ class GoogleCloudAiplatformV1DeployedIndex extends \Google\Collection
    * @var string
    */
   public $indexSyncTime;
+  /**
+   * @var GoogleCloudAiplatformV1IndexPrivateEndpoints
+   */
+  public $privateEndpoints;
   protected $privateEndpointsType = GoogleCloudAiplatformV1IndexPrivateEndpoints::class;
   protected $privateEndpointsDataType = '';
-  protected $pscAutomationConfigsType = GoogleCloudAiplatformV1PSCAutomationConfig::class;
-  protected $pscAutomationConfigsDataType = 'array';
   /**
    * @var string[]
    */
@@ -216,20 +230,6 @@ class GoogleCloudAiplatformV1DeployedIndex extends \Google\Collection
   public function getPrivateEndpoints()
   {
     return $this->privateEndpoints;
-  }
-  /**
-   * @param GoogleCloudAiplatformV1PSCAutomationConfig[]
-   */
-  public function setPscAutomationConfigs($pscAutomationConfigs)
-  {
-    $this->pscAutomationConfigs = $pscAutomationConfigs;
-  }
-  /**
-   * @return GoogleCloudAiplatformV1PSCAutomationConfig[]
-   */
-  public function getPscAutomationConfigs()
-  {
-    return $this->pscAutomationConfigs;
   }
   /**
    * @param string[]

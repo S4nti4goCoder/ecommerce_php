@@ -45,7 +45,6 @@ class DebugDatasourcesItemsUnmappedids extends \Google\Service\Resource
    * @opt_param string pageToken The next_page_token value returned from a
    * previous List request, if any.
    * @return ListUnmappedIdentitiesResponse
-   * @throws \Google\Service\Exception
    */
   public function listDebugDatasourcesItemsUnmappedids($parent, $optParams = [])
   {

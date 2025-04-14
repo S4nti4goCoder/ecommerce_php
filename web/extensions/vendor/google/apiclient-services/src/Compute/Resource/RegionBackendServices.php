@@ -59,7 +59,6 @@ class RegionBackendServices extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($project, $region, $backendService, $optParams = [])
   {
@@ -76,7 +75,6 @@ class RegionBackendServices extends \Google\Service\Resource
    * @param string $backendService Name of the BackendService resource to return.
    * @param array $optParams Optional parameters.
    * @return BackendService
-   * @throws \Google\Service\Exception
    */
   public function get($project, $region, $backendService, $optParams = [])
   {
@@ -95,7 +93,6 @@ class RegionBackendServices extends \Google\Service\Resource
    * @param ResourceGroupReference $postBody
    * @param array $optParams Optional parameters.
    * @return BackendServiceGroupHealth
-   * @throws \Google\Service\Exception
    */
   public function getHealth($project, $region, $backendService, ResourceGroupReference $postBody, $optParams = [])
   {
@@ -114,7 +111,6 @@ class RegionBackendServices extends \Google\Service\Resource
    *
    * @opt_param int optionsRequestedPolicyVersion Requested IAM Policy version.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($project, $region, $resource, $optParams = [])
   {
@@ -143,7 +139,6 @@ class RegionBackendServices extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function insert($project, $region, BackendService $postBody, $optParams = [])
   {
@@ -210,11 +205,8 @@ class RegionBackendServices extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
+   * false.
    * @return BackendServiceList
-   * @throws \Google\Service\Exception
    */
   public function listRegionBackendServices($project, $region, $optParams = [])
   {
@@ -223,8 +215,8 @@ class RegionBackendServices extends \Google\Service\Resource
     return $this->call('list', [$params], BackendServiceList::class);
   }
   /**
-   * Retrieves a list of all usable backend services in the specified project in
-   * the given region. (regionBackendServices.listUsable)
+   * Retrieves an aggregated list of all usable backend services in the specified
+   * project in the given region. (regionBackendServices.listUsable)
    *
    * @param string $project Project ID for this request.
    * @param string $region Name of the region scoping this request. It must be a
@@ -281,11 +273,8 @@ class RegionBackendServices extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
+   * false.
    * @return BackendServiceListUsable
-   * @throws \Google\Service\Exception
    */
   public function listUsable($project, $region, $optParams = [])
   {
@@ -316,7 +305,6 @@ class RegionBackendServices extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($project, $region, $backendService, BackendService $postBody, $optParams = [])
   {
@@ -334,7 +322,6 @@ class RegionBackendServices extends \Google\Service\Resource
    * @param RegionSetPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($project, $region, $resource, RegionSetPolicyRequest $postBody, $optParams = [])
   {
@@ -365,7 +352,6 @@ class RegionBackendServices extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function setSecurityPolicy($project, $region, $backendService, SecurityPolicyReference $postBody, $optParams = [])
   {
@@ -383,7 +369,6 @@ class RegionBackendServices extends \Google\Service\Resource
    * @param TestPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($project, $region, $resource, TestPermissionsRequest $postBody, $optParams = [])
   {
@@ -413,7 +398,6 @@ class RegionBackendServices extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function update($project, $region, $backendService, BackendService $postBody, $optParams = [])
   {

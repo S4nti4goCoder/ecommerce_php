@@ -38,7 +38,6 @@ class ProjectsLocationsState extends \Google\Service\Resource
    * @param ReportAgentStateRequest $postBody
    * @param array $optParams Optional parameters.
    * @return ReportAgentStateResponse
-   * @throws \Google\Service\Exception
    */
   public function report($parent, ReportAgentStateRequest $postBody, $optParams = [])
   {

@@ -38,7 +38,6 @@ class MattersExports extends \Google\Service\Resource
    * @param Export $postBody
    * @param array $optParams Optional parameters.
    * @return Export
-   * @throws \Google\Service\Exception
    */
   public function create($matterId, Export $postBody, $optParams = [])
   {
@@ -53,7 +52,6 @@ class MattersExports extends \Google\Service\Resource
    * @param string $exportId The export ID.
    * @param array $optParams Optional parameters.
    * @return VaultEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($matterId, $exportId, $optParams = [])
   {
@@ -68,7 +66,6 @@ class MattersExports extends \Google\Service\Resource
    * @param string $exportId The export ID.
    * @param array $optParams Optional parameters.
    * @return Export
-   * @throws \Google\Service\Exception
    */
   public function get($matterId, $exportId, $optParams = [])
   {
@@ -86,7 +83,6 @@ class MattersExports extends \Google\Service\Resource
    * @opt_param int pageSize The number of exports to return in the response.
    * @opt_param string pageToken The pagination token as returned in the response.
    * @return ListExportsResponse
-   * @throws \Google\Service\Exception
    */
   public function listMattersExports($matterId, $optParams = [])
   {

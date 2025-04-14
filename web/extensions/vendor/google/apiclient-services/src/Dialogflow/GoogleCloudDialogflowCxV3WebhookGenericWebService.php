@@ -28,8 +28,6 @@ class GoogleCloudDialogflowCxV3WebhookGenericWebService extends \Google\Collecti
    * @var string
    */
   public $httpMethod;
-  protected $oauthConfigType = GoogleCloudDialogflowCxV3WebhookGenericWebServiceOAuthConfig::class;
-  protected $oauthConfigDataType = '';
   /**
    * @var string[]
    */
@@ -46,10 +44,6 @@ class GoogleCloudDialogflowCxV3WebhookGenericWebService extends \Google\Collecti
    * @var string[]
    */
   public $requestHeaders;
-  /**
-   * @var string
-   */
-  public $serviceAgentAuth;
   /**
    * @var string
    */
@@ -90,20 +84,6 @@ class GoogleCloudDialogflowCxV3WebhookGenericWebService extends \Google\Collecti
   public function getHttpMethod()
   {
     return $this->httpMethod;
-  }
-  /**
-   * @param GoogleCloudDialogflowCxV3WebhookGenericWebServiceOAuthConfig
-   */
-  public function setOauthConfig(GoogleCloudDialogflowCxV3WebhookGenericWebServiceOAuthConfig $oauthConfig)
-  {
-    $this->oauthConfig = $oauthConfig;
-  }
-  /**
-   * @return GoogleCloudDialogflowCxV3WebhookGenericWebServiceOAuthConfig
-   */
-  public function getOauthConfig()
-  {
-    return $this->oauthConfig;
   }
   /**
    * @param string[]
@@ -160,20 +140,6 @@ class GoogleCloudDialogflowCxV3WebhookGenericWebService extends \Google\Collecti
   public function getRequestHeaders()
   {
     return $this->requestHeaders;
-  }
-  /**
-   * @param string
-   */
-  public function setServiceAgentAuth($serviceAgentAuth)
-  {
-    $this->serviceAgentAuth = $serviceAgentAuth;
-  }
-  /**
-   * @return string
-   */
-  public function getServiceAgentAuth()
-  {
-    return $this->serviceAgentAuth;
   }
   /**
    * @param string

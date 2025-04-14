@@ -43,7 +43,6 @@ class Files extends \Google\Service\Resource
    * @param BatchAnnotateFilesRequest $postBody
    * @param array $optParams Optional parameters.
    * @return BatchAnnotateFilesResponse
-   * @throws \Google\Service\Exception
    */
   public function annotate(BatchAnnotateFilesRequest $postBody, $optParams = [])
   {
@@ -62,7 +61,6 @@ class Files extends \Google\Service\Resource
    * @param AsyncBatchAnnotateFilesRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function asyncBatchAnnotate(AsyncBatchAnnotateFilesRequest $postBody, $optParams = [])
   {

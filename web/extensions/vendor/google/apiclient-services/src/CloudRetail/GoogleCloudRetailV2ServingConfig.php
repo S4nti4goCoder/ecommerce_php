@@ -40,6 +40,10 @@ class GoogleCloudRetailV2ServingConfig extends \Google\Collection
    * @var string[]
    */
   public $doNotAssociateControlIds;
+  /**
+   * @var GoogleCloudRetailV2SearchRequestDynamicFacetSpec
+   */
+  public $dynamicFacetSpec;
   protected $dynamicFacetSpecType = GoogleCloudRetailV2SearchRequestDynamicFacetSpec::class;
   protected $dynamicFacetSpecDataType = '';
   /**
@@ -59,10 +63,6 @@ class GoogleCloudRetailV2ServingConfig extends \Google\Collection
    */
   public $ignoreControlIds;
   /**
-   * @var bool
-   */
-  public $ignoreRecsDenylist;
-  /**
    * @var string
    */
   public $modelId;
@@ -74,6 +74,10 @@ class GoogleCloudRetailV2ServingConfig extends \Google\Collection
    * @var string[]
    */
   public $onewaySynonymsControlIds;
+  /**
+   * @var GoogleCloudRetailV2SearchRequestPersonalizationSpec
+   */
+  public $personalizationSpec;
   protected $personalizationSpecType = GoogleCloudRetailV2SearchRequestPersonalizationSpec::class;
   protected $personalizationSpecDataType = '';
   /**
@@ -236,20 +240,6 @@ class GoogleCloudRetailV2ServingConfig extends \Google\Collection
   public function getIgnoreControlIds()
   {
     return $this->ignoreControlIds;
-  }
-  /**
-   * @param bool
-   */
-  public function setIgnoreRecsDenylist($ignoreRecsDenylist)
-  {
-    $this->ignoreRecsDenylist = $ignoreRecsDenylist;
-  }
-  /**
-   * @return bool
-   */
-  public function getIgnoreRecsDenylist()
-  {
-    return $this->ignoreRecsDenylist;
   }
   /**
    * @param string

@@ -18,7 +18,6 @@
 namespace Google\Service\Dataform\Resource;
 
 use Google\Service\Dataform\CommitRepositoryChangesRequest;
-use Google\Service\Dataform\CommitRepositoryChangesResponse;
 use Google\Service\Dataform\ComputeRepositoryAccessTokenStatusResponse;
 use Google\Service\Dataform\DataformEmpty;
 use Google\Service\Dataform\FetchRemoteBranchesResponse;
@@ -49,14 +48,13 @@ class ProjectsLocationsRepositories extends \Google\Service\Resource
    * @param string $name Required. The repository's name.
    * @param CommitRepositoryChangesRequest $postBody
    * @param array $optParams Optional parameters.
-   * @return CommitRepositoryChangesResponse
-   * @throws \Google\Service\Exception
+   * @return DataformEmpty
    */
   public function commit($name, CommitRepositoryChangesRequest $postBody, $optParams = [])
   {
     $params = ['name' => $name, 'postBody' => $postBody];
     $params = array_merge($params, $optParams);
-    return $this->call('commit', [$params], CommitRepositoryChangesResponse::class);
+    return $this->call('commit', [$params], DataformEmpty::class);
   }
   /**
    * Computes a Repository's Git access token status.
@@ -65,7 +63,6 @@ class ProjectsLocationsRepositories extends \Google\Service\Resource
    * @param string $name Required. The repository's name.
    * @param array $optParams Optional parameters.
    * @return ComputeRepositoryAccessTokenStatusResponse
-   * @throws \Google\Service\Exception
    */
   public function computeAccessTokenStatus($name, $optParams = [])
   {
@@ -85,7 +82,6 @@ class ProjectsLocationsRepositories extends \Google\Service\Resource
    * @opt_param string repositoryId Required. The ID to use for the repository,
    * which will become the final component of the repository's resource name.
    * @return Repository
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Repository $postBody, $optParams = [])
   {
@@ -99,11 +95,10 @@ class ProjectsLocationsRepositories extends \Google\Service\Resource
    * @param string $name Required. The repository's name.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param bool force Optional. If set to true, any child resources of this
-   * repository will also be deleted. (Otherwise, the request will only succeed if
-   * the repository has no child resources.)
+   * @opt_param bool force If set to true, any child resources of this repository
+   * will also be deleted. (Otherwise, the request will only succeed if the
+   * repository has no child resources.)
    * @return DataformEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -123,11 +118,9 @@ class ProjectsLocationsRepositories extends \Google\Service\Resource
    * pick an appropriate default.
    * @opt_param string pageToken Optional. Page token received from a previous
    * `FetchRepositoryHistory` call. Provide this to retrieve the subsequent page.
-   * When paginating, all other parameters provided to `FetchRepositoryHistory`,
-   * with the exception of `page_size`, must match the call that provided the page
-   * token.
+   * When paginating, all other parameters provided to `FetchRepositoryHistory`
+   * must match the call that provided the page token.
    * @return FetchRepositoryHistoryResponse
-   * @throws \Google\Service\Exception
    */
   public function fetchHistory($name, $optParams = [])
   {
@@ -141,7 +134,6 @@ class ProjectsLocationsRepositories extends \Google\Service\Resource
    * @param string $name Required. The repository's name.
    * @param array $optParams Optional parameters.
    * @return FetchRemoteBranchesResponse
-   * @throws \Google\Service\Exception
    */
   public function fetchRemoteBranches($name, $optParams = [])
   {
@@ -155,7 +147,6 @@ class ProjectsLocationsRepositories extends \Google\Service\Resource
    * @param string $name Required. The repository's name.
    * @param array $optParams Optional parameters.
    * @return Repository
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -186,7 +177,6 @@ class ProjectsLocationsRepositories extends \Google\Service\Resource
    * documentation](https://cloud.google.com/iam/help/conditions/resource-
    * policies).
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, $optParams = [])
   {
@@ -211,10 +201,9 @@ class ProjectsLocationsRepositories extends \Google\Service\Resource
    * will pick an appropriate default.
    * @opt_param string pageToken Optional. Page token received from a previous
    * `ListRepositories` call. Provide this to retrieve the subsequent page. When
-   * paginating, all other parameters provided to `ListRepositories`, with the
-   * exception of `page_size`, must match the call that provided the page token.
+   * paginating, all other parameters provided to `ListRepositories` must match
+   * the call that provided the page token.
    * @return ListRepositoriesResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsRepositories($parent, $optParams = [])
   {
@@ -223,20 +212,15 @@ class ProjectsLocationsRepositories extends \Google\Service\Resource
     return $this->call('list', [$params], ListRepositoriesResponse::class);
   }
   /**
-   * Updates a single Repository. **Note:** *This method does not fully
-   * implement*, (see [AIP/134](https://google.aip.dev/134), in particular: - The
-   * wildcard entry (****) is treated as a bad request - When the **field_mask**
-   * is omitted, instead of only updating the set fields, the request is treated
-   * as a full update on all modifiable fields (repositories.patch)
+   * Updates a single Repository. (repositories.patch)
    *
-   * @param string $name Identifier. The repository's name.
+   * @param string $name Output only. The repository's name.
    * @param Repository $postBody
    * @param array $optParams Optional parameters.
    *
    * @opt_param string updateMask Optional. Specifies the fields to be updated in
    * the repository. If left unset, all fields will be updated.
    * @return Repository
-   * @throws \Google\Service\Exception
    */
   public function patch($name, Repository $postBody, $optParams = [])
   {
@@ -260,12 +244,11 @@ class ProjectsLocationsRepositories extends \Google\Service\Resource
    * @opt_param string pageToken Optional. Page token received from a previous
    * `QueryRepositoryDirectoryContents` call. Provide this to retrieve the
    * subsequent page. When paginating, all other parameters provided to
-   * `QueryRepositoryDirectoryContents`, with the exception of `page_size`, must
-   * match the call that provided the page token.
+   * `QueryRepositoryDirectoryContents` must match the call that provided the page
+   * token.
    * @opt_param string path Optional. The directory's full path including
    * directory name, relative to root. If left unset, the root is used.
    * @return QueryRepositoryDirectoryContentsResponse
-   * @throws \Google\Service\Exception
    */
   public function queryDirectoryContents($name, $optParams = [])
   {
@@ -285,7 +268,6 @@ class ProjectsLocationsRepositories extends \Google\Service\Resource
    * @opt_param string path Required. Full file path to read including filename,
    * from repository root.
    * @return ReadRepositoryFileResponse
-   * @throws \Google\Service\Exception
    */
   public function readFile($name, $optParams = [])
   {
@@ -305,7 +287,6 @@ class ProjectsLocationsRepositories extends \Google\Service\Resource
    * @param SetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, SetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -328,7 +309,6 @@ class ProjectsLocationsRepositories extends \Google\Service\Resource
    * @param TestIamPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestIamPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, TestIamPermissionsRequest $postBody, $optParams = [])
   {

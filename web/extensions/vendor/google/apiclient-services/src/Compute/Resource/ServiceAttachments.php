@@ -38,9 +38,7 @@ class ServiceAttachments extends \Google\Service\Resource
 {
   /**
    * Retrieves the list of all ServiceAttachment resources, regional and global,
-   * available to the specified project. To prevent failure, Google recommends
-   * that you set the `returnPartialSuccess` parameter to `true`.
-   * (serviceAttachments.aggregatedList)
+   * available to the specified project. (serviceAttachments.aggregatedList)
    *
    * @param string $project Name of the project scoping this request.
    * @param array $optParams Optional parameters.
@@ -102,14 +100,9 @@ class ServiceAttachments extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
-   * @opt_param string serviceProjectNumber The Shared VPC service project id or
-   * service project number for which aggregated list request is invoked for
-   * subnetworks list-usable api.
+   * false.
+   * @opt_param string serviceProjectNumber
    * @return ServiceAttachmentAggregatedList
-   * @throws \Google\Service\Exception
    */
   public function aggregatedList($project, $optParams = [])
   {
@@ -138,7 +131,6 @@ class ServiceAttachments extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($project, $region, $serviceAttachment, $optParams = [])
   {
@@ -156,7 +148,6 @@ class ServiceAttachments extends \Google\Service\Resource
    * return.
    * @param array $optParams Optional parameters.
    * @return ServiceAttachment
-   * @throws \Google\Service\Exception
    */
   public function get($project, $region, $serviceAttachment, $optParams = [])
   {
@@ -175,7 +166,6 @@ class ServiceAttachments extends \Google\Service\Resource
    *
    * @opt_param int optionsRequestedPolicyVersion Requested IAM Policy version.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($project, $region, $resource, $optParams = [])
   {
@@ -203,7 +193,6 @@ class ServiceAttachments extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function insert($project, $region, ServiceAttachment $postBody, $optParams = [])
   {
@@ -269,11 +258,8 @@ class ServiceAttachments extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
+   * false.
    * @return ServiceAttachmentList
-   * @throws \Google\Service\Exception
    */
   public function listServiceAttachments($project, $region, $optParams = [])
   {
@@ -306,7 +292,6 @@ class ServiceAttachments extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($project, $region, $serviceAttachment, ServiceAttachment $postBody, $optParams = [])
   {
@@ -324,7 +309,6 @@ class ServiceAttachments extends \Google\Service\Resource
    * @param RegionSetPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($project, $region, $resource, RegionSetPolicyRequest $postBody, $optParams = [])
   {
@@ -342,7 +326,6 @@ class ServiceAttachments extends \Google\Service\Resource
    * @param TestPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($project, $region, $resource, TestPermissionsRequest $postBody, $optParams = [])
   {

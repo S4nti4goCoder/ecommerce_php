@@ -47,7 +47,6 @@ class AlertsFeedback extends \Google\Service\Resource
    * Inferred from the caller identity if not provided. [Find your customer
    * ID](https://support.google.com/cloudidentity/answer/10070793).
    * @return AlertFeedback
-   * @throws \Google\Service\Exception
    */
   public function create($alertId, AlertFeedback $postBody, $optParams = [])
   {
@@ -75,7 +74,6 @@ class AlertsFeedback extends \Google\Service\Resource
    * fields](https://developers.google.com/admin-sdk/alertcenter/reference/filter-
    * fields#alerts.feedback.list).
    * @return ListAlertFeedbackResponse
-   * @throws \Google\Service\Exception
    */
   public function listAlertsFeedback($alertId, $optParams = [])
   {

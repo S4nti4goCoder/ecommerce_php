@@ -19,19 +19,31 @@ namespace Google\Service\DataFusion;
 
 class Instance extends \Google\Collection
 {
-  protected $collection_key = 'maintenanceEvents';
+  protected $collection_key = 'disabledReason';
+  /**
+   * @var Accelerator[]
+   */
+  public $accelerators;
   protected $acceleratorsType = Accelerator::class;
   protected $acceleratorsDataType = 'array';
   /**
    * @var string
    */
   public $apiEndpoint;
+  /**
+   * @var Version[]
+   */
+  public $availableVersion;
   protected $availableVersionType = Version::class;
   protected $availableVersionDataType = 'array';
   /**
    * @var string
    */
   public $createTime;
+  /**
+   * @var CryptoKeyConfig
+   */
+  public $cryptoKeyConfig;
   protected $cryptoKeyConfigType = CryptoKeyConfig::class;
   protected $cryptoKeyConfigDataType = '';
   /**
@@ -70,6 +82,10 @@ class Instance extends \Google\Collection
    * @var bool
    */
   public $enableZoneSeparation;
+  /**
+   * @var EventPublishConfig
+   */
+  public $eventPublishConfig;
   protected $eventPublishConfigType = EventPublishConfig::class;
   protected $eventPublishConfigDataType = '';
   /**
@@ -80,14 +96,14 @@ class Instance extends \Google\Collection
    * @var string[]
    */
   public $labels;
-  protected $maintenanceEventsType = MaintenanceEvent::class;
-  protected $maintenanceEventsDataType = 'array';
-  protected $maintenancePolicyType = MaintenancePolicy::class;
-  protected $maintenancePolicyDataType = '';
   /**
    * @var string
    */
   public $name;
+  /**
+   * @var NetworkConfig
+   */
+  public $networkConfig;
   protected $networkConfigType = NetworkConfig::class;
   protected $networkConfigDataType = '';
   /**
@@ -388,34 +404,6 @@ class Instance extends \Google\Collection
   public function getLabels()
   {
     return $this->labels;
-  }
-  /**
-   * @param MaintenanceEvent[]
-   */
-  public function setMaintenanceEvents($maintenanceEvents)
-  {
-    $this->maintenanceEvents = $maintenanceEvents;
-  }
-  /**
-   * @return MaintenanceEvent[]
-   */
-  public function getMaintenanceEvents()
-  {
-    return $this->maintenanceEvents;
-  }
-  /**
-   * @param MaintenancePolicy
-   */
-  public function setMaintenancePolicy(MaintenancePolicy $maintenancePolicy)
-  {
-    $this->maintenancePolicy = $maintenancePolicy;
-  }
-  /**
-   * @return MaintenancePolicy
-   */
-  public function getMaintenancePolicy()
-  {
-    return $this->maintenancePolicy;
   }
   /**
    * @param string

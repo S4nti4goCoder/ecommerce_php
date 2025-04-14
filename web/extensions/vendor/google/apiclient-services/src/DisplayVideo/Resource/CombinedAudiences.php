@@ -42,7 +42,6 @@ class CombinedAudiences extends \Google\Service\Resource
    * @opt_param string partnerId The ID of the partner that has access to the
    * fetched combined audience.
    * @return CombinedAudience
-   * @throws \Google\Service\Exception
    */
   public function get($combinedAudienceId, $optParams = [])
   {
@@ -81,7 +80,6 @@ class CombinedAudiences extends \Google\Service\Resource
    * @opt_param string partnerId The ID of the partner that has access to the
    * fetched combined audiences.
    * @return ListCombinedAudiencesResponse
-   * @throws \Google\Service\Exception
    */
   public function listCombinedAudiences($optParams = [])
   {

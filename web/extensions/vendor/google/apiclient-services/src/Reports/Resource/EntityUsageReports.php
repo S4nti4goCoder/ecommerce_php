@@ -87,7 +87,6 @@ class EntityUsageReports extends \Google\Service\Resource
    * parameter is one that does not belong to the application. If no parameters
    * are requested, all parameters are returned.
    * @return UsageReports
-   * @throws \Google\Service\Exception
    */
   public function get($entityType, $entityKey, $date, $optParams = [])
   {

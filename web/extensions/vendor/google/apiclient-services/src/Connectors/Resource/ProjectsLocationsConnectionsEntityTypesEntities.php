@@ -44,7 +44,6 @@ class ProjectsLocationsConnectionsEntityTypesEntities extends \Google\Service\Re
    * @param Entity $postBody
    * @param array $optParams Optional parameters.
    * @return Entity
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Entity $postBody, $optParams = [])
   {
@@ -61,7 +60,6 @@ class ProjectsLocationsConnectionsEntityTypesEntities extends \Google\Service\Re
    * }/entities/{id}
    * @param array $optParams Optional parameters.
    * @return ConnectorsEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -86,7 +84,6 @@ class ProjectsLocationsConnectionsEntityTypesEntities extends \Google\Service\Re
    * consider 'empty conditions' to be a match-all case. Connector developers can
    * determine and document what a match-all case constraint would be.
    * @return ConnectorsEmpty
-   * @throws \Google\Service\Exception
    */
   public function deleteEntitiesWithConditions($entityType, $optParams = [])
   {
@@ -103,7 +100,6 @@ class ProjectsLocationsConnectionsEntityTypesEntities extends \Google\Service\Re
    * }/entities/{id}
    * @param array $optParams Optional parameters.
    * @return Entity
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -139,7 +135,6 @@ class ProjectsLocationsConnectionsEntityTypesEntities extends \Google\Service\Re
    * @opt_param string sortBy List of 'sort_by' columns to use when returning the
    * results.
    * @return ListEntitiesResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsConnectionsEntityTypesEntities($parent, $optParams = [])
   {
@@ -160,7 +155,6 @@ class ProjectsLocationsConnectionsEntityTypesEntities extends \Google\Service\Re
    * @param Entity $postBody
    * @param array $optParams Optional parameters.
    * @return Entity
-   * @throws \Google\Service\Exception
    */
   public function patch($name, Entity $postBody, $optParams = [])
   {
@@ -186,7 +180,6 @@ class ProjectsLocationsConnectionsEntityTypesEntities extends \Google\Service\Re
    * consider 'empty conditions' to be a match-all case. Connector developers can
    * determine and document what a match-all case constraint would be.
    * @return UpdateEntitiesWithConditionsResponse
-   * @throws \Google\Service\Exception
    */
   public function updateEntitiesWithConditions($entityType, Entity $postBody, $optParams = [])
   {

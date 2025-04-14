@@ -50,7 +50,6 @@ class AdminProjectsLocationsSubscriptions extends \Google\Service\Resource
    * subscription, which will become the final component of the subscription's
    * name. This value is structured like: `my-sub-name`.
    * @return Subscription
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Subscription $postBody, $optParams = [])
   {
@@ -64,7 +63,6 @@ class AdminProjectsLocationsSubscriptions extends \Google\Service\Resource
    * @param string $name Required. The name of the subscription to delete.
    * @param array $optParams Optional parameters.
    * @return PubsubliteEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -79,7 +77,6 @@ class AdminProjectsLocationsSubscriptions extends \Google\Service\Resource
    * configuration to return.
    * @param array $optParams Optional parameters.
    * @return Subscription
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -103,7 +100,6 @@ class AdminProjectsLocationsSubscriptions extends \Google\Service\Resource
    * paginating, all other parameters provided to `ListSubscriptions` must match
    * the call that provided the page token.
    * @return ListSubscriptionsResponse
-   * @throws \Google\Service\Exception
    */
   public function listAdminProjectsLocationsSubscriptions($parent, $optParams = [])
   {
@@ -122,7 +118,6 @@ class AdminProjectsLocationsSubscriptions extends \Google\Service\Resource
    * @opt_param string updateMask Required. A mask specifying the subscription
    * fields to change.
    * @return Subscription
-   * @throws \Google\Service\Exception
    */
   public function patch($name, Subscription $postBody, $optParams = [])
   {
@@ -152,7 +147,6 @@ class AdminProjectsLocationsSubscriptions extends \Google\Service\Resource
    * @param SeekSubscriptionRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function seek($name, SeekSubscriptionRequest $postBody, $optParams = [])
   {

@@ -37,7 +37,6 @@ class Advertisers extends \Google\Service\Resource
    * @param string $id Advertiser ID.
    * @param array $optParams Optional parameters.
    * @return Advertiser
-   * @throws \Google\Service\Exception
    */
   public function get($profileId, $id, $optParams = [])
   {
@@ -52,7 +51,6 @@ class Advertisers extends \Google\Service\Resource
    * @param Advertiser $postBody
    * @param array $optParams Optional parameters.
    * @return Advertiser
-   * @throws \Google\Service\Exception
    */
   public function insert($profileId, Advertiser $postBody, $optParams = [])
   {
@@ -92,7 +90,6 @@ class Advertisers extends \Google\Service\Resource
    * @opt_param string subaccountId Select only advertisers with these subaccount
    * IDs.
    * @return AdvertisersListResponse
-   * @throws \Google\Service\Exception
    */
   public function listAdvertisers($profileId, $optParams = [])
   {
@@ -109,7 +106,6 @@ class Advertisers extends \Google\Service\Resource
    * @param Advertiser $postBody
    * @param array $optParams Optional parameters.
    * @return Advertiser
-   * @throws \Google\Service\Exception
    */
   public function patch($profileId, $id, Advertiser $postBody, $optParams = [])
   {
@@ -124,7 +120,6 @@ class Advertisers extends \Google\Service\Resource
    * @param Advertiser $postBody
    * @param array $optParams Optional parameters.
    * @return Advertiser
-   * @throws \Google\Service\Exception
    */
   public function update($profileId, Advertiser $postBody, $optParams = [])
   {

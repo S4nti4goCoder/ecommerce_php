@@ -53,7 +53,6 @@ class ProjectsLocationsLakesZones extends \Google\Service\Resource
    * from all locations in a project. * Must not be one of the reserved IDs (i.e.
    * "default", "global-temp")
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudDataplexV1Zone $postBody, $optParams = [])
   {
@@ -69,7 +68,6 @@ class ProjectsLocationsLakesZones extends \Google\Service\Resource
    * t_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}.
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -84,7 +82,6 @@ class ProjectsLocationsLakesZones extends \Google\Service\Resource
    * t_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudDataplexV1Zone
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -114,7 +111,6 @@ class ProjectsLocationsLakesZones extends \Google\Service\Resource
    * IAM policies, see the IAM documentation
    * (https://cloud.google.com/iam/help/conditions/resource-policies).
    * @return GoogleIamV1Policy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, $optParams = [])
   {
@@ -140,7 +136,6 @@ class ProjectsLocationsLakesZones extends \Google\Service\Resource
    * paginating, all other parameters provided to ListZones must match the call
    * that provided the page token.
    * @return GoogleCloudDataplexV1ListZonesResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsLakesZones($parent, $optParams = [])
   {
@@ -161,7 +156,6 @@ class ProjectsLocationsLakesZones extends \Google\Service\Resource
    * @opt_param bool validateOnly Optional. Only validate the request, but do not
    * perform mutations. The default is false.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleCloudDataplexV1Zone $postBody, $optParams = [])
   {
@@ -181,7 +175,6 @@ class ProjectsLocationsLakesZones extends \Google\Service\Resource
    * @param GoogleIamV1SetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleIamV1Policy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, GoogleIamV1SetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -203,7 +196,6 @@ class ProjectsLocationsLakesZones extends \Google\Service\Resource
    * @param GoogleIamV1TestIamPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleIamV1TestIamPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, GoogleIamV1TestIamPermissionsRequest $postBody, $optParams = [])
   {

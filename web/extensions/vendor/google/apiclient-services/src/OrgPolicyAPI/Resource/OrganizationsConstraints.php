@@ -46,7 +46,6 @@ class OrganizationsConstraints extends \Google\Service\Resource
    * is currently unsupported and will be ignored. The server may at any point
    * start using this field.
    * @return GoogleCloudOrgpolicyV2ListConstraintsResponse
-   * @throws \Google\Service\Exception
    */
   public function listOrganizationsConstraints($parent, $optParams = [])
   {

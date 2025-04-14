@@ -39,7 +39,6 @@ class Conversionsources extends \Google\Service\Resource
    * @param ConversionSource $postBody
    * @param array $optParams Optional parameters.
    * @return ConversionSource
-   * @throws \Google\Service\Exception
    */
   public function create($merchantId, ConversionSource $postBody, $optParams = [])
   {
@@ -57,7 +56,6 @@ class Conversionsources extends \Google\Service\Resource
    * @param string $conversionSourceId Required. The ID of the conversion source
    * to be deleted.
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function delete($merchantId, $conversionSourceId, $optParams = [])
   {
@@ -73,7 +71,6 @@ class Conversionsources extends \Google\Service\Resource
    * @param string $conversionSourceId Required. The REST ID of the collection.
    * @param array $optParams Optional parameters.
    * @return ConversionSource
-   * @throws \Google\Service\Exception
    */
   public function get($merchantId, $conversionSourceId, $optParams = [])
   {
@@ -98,7 +95,6 @@ class Conversionsources extends \Google\Service\Resource
    * @opt_param bool showDeleted If true, also returns archived conversion
    * sources.
    * @return ListConversionSourcesResponse
-   * @throws \Google\Service\Exception
    */
   public function listConversionsources($merchantId, $optParams = [])
   {
@@ -117,9 +113,8 @@ class Conversionsources extends \Google\Service\Resource
    * @param ConversionSource $postBody
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string updateMask Optional. List of fields being updated.
+   * @opt_param string updateMask Required. List of fields being updated.
    * @return ConversionSource
-   * @throws \Google\Service\Exception
    */
   public function patch($merchantId, $conversionSourceId, ConversionSource $postBody, $optParams = [])
   {
@@ -136,7 +131,6 @@ class Conversionsources extends \Google\Service\Resource
    * to be undeleted.
    * @param UndeleteConversionSourceRequest $postBody
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function undelete($merchantId, $conversionSourceId, UndeleteConversionSourceRequest $postBody, $optParams = [])
   {

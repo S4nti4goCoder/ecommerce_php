@@ -19,10 +19,12 @@ namespace Google\Service\Vault;
 
 class Query extends \Google\Model
 {
+  /**
+   * @var AccountInfo
+   */
+  public $accountInfo;
   protected $accountInfoType = AccountInfo::class;
   protected $accountInfoDataType = '';
-  protected $calendarOptionsType = CalendarOptions::class;
-  protected $calendarOptionsDataType = '';
   /**
    * @var string
    */
@@ -31,40 +33,68 @@ class Query extends \Google\Model
    * @var string
    */
   public $dataScope;
-  protected $driveDocumentInfoType = DriveDocumentInfo::class;
-  protected $driveDocumentInfoDataType = '';
+  /**
+   * @var DriveOptions
+   */
+  public $driveOptions;
   protected $driveOptionsType = DriveOptions::class;
   protected $driveOptionsDataType = '';
   /**
    * @var string
    */
   public $endTime;
-  protected $geminiOptionsType = GeminiOptions::class;
-  protected $geminiOptionsDataType = '';
+  /**
+   * @var HangoutsChatInfo
+   */
+  public $hangoutsChatInfo;
   protected $hangoutsChatInfoType = HangoutsChatInfo::class;
   protected $hangoutsChatInfoDataType = '';
+  /**
+   * @var HangoutsChatOptions
+   */
+  public $hangoutsChatOptions;
   protected $hangoutsChatOptionsType = HangoutsChatOptions::class;
   protected $hangoutsChatOptionsDataType = '';
+  /**
+   * @var MailOptions
+   */
+  public $mailOptions;
   protected $mailOptionsType = MailOptions::class;
   protected $mailOptionsDataType = '';
   /**
    * @var string
    */
   public $method;
+  /**
+   * @var OrgUnitInfo
+   */
+  public $orgUnitInfo;
   protected $orgUnitInfoType = OrgUnitInfo::class;
   protected $orgUnitInfoDataType = '';
   /**
    * @var string
    */
   public $searchMethod;
+  /**
+   * @var SharedDriveInfo
+   */
+  public $sharedDriveInfo;
   protected $sharedDriveInfoType = SharedDriveInfo::class;
   protected $sharedDriveInfoDataType = '';
+  /**
+   * @var SitesUrlInfo
+   */
+  public $sitesUrlInfo;
   protected $sitesUrlInfoType = SitesUrlInfo::class;
   protected $sitesUrlInfoDataType = '';
   /**
    * @var string
    */
   public $startTime;
+  /**
+   * @var TeamDriveInfo
+   */
+  public $teamDriveInfo;
   protected $teamDriveInfoType = TeamDriveInfo::class;
   protected $teamDriveInfoDataType = '';
   /**
@@ -75,6 +105,10 @@ class Query extends \Google\Model
    * @var string
    */
   public $timeZone;
+  /**
+   * @var VoiceOptions
+   */
+  public $voiceOptions;
   protected $voiceOptionsType = VoiceOptions::class;
   protected $voiceOptionsDataType = '';
 
@@ -91,20 +125,6 @@ class Query extends \Google\Model
   public function getAccountInfo()
   {
     return $this->accountInfo;
-  }
-  /**
-   * @param CalendarOptions
-   */
-  public function setCalendarOptions(CalendarOptions $calendarOptions)
-  {
-    $this->calendarOptions = $calendarOptions;
-  }
-  /**
-   * @return CalendarOptions
-   */
-  public function getCalendarOptions()
-  {
-    return $this->calendarOptions;
   }
   /**
    * @param string
@@ -135,20 +155,6 @@ class Query extends \Google\Model
     return $this->dataScope;
   }
   /**
-   * @param DriveDocumentInfo
-   */
-  public function setDriveDocumentInfo(DriveDocumentInfo $driveDocumentInfo)
-  {
-    $this->driveDocumentInfo = $driveDocumentInfo;
-  }
-  /**
-   * @return DriveDocumentInfo
-   */
-  public function getDriveDocumentInfo()
-  {
-    return $this->driveDocumentInfo;
-  }
-  /**
    * @param DriveOptions
    */
   public function setDriveOptions(DriveOptions $driveOptions)
@@ -175,20 +181,6 @@ class Query extends \Google\Model
   public function getEndTime()
   {
     return $this->endTime;
-  }
-  /**
-   * @param GeminiOptions
-   */
-  public function setGeminiOptions(GeminiOptions $geminiOptions)
-  {
-    $this->geminiOptions = $geminiOptions;
-  }
-  /**
-   * @return GeminiOptions
-   */
-  public function getGeminiOptions()
-  {
-    return $this->geminiOptions;
   }
   /**
    * @param HangoutsChatInfo

@@ -38,7 +38,6 @@ class Challenge extends \Google\Service\Resource
    * @param VerifiedaccessEmpty $postBody
    * @param array $optParams Optional parameters.
    * @return ChallengeModel
-   * @throws \Google\Service\Exception
    */
   public function generate(VerifiedaccessEmpty $postBody, $optParams = [])
   {
@@ -52,7 +51,6 @@ class Challenge extends \Google\Service\Resource
    * @param VerifyChallengeResponseRequest $postBody
    * @param array $optParams Optional parameters.
    * @return VerifyChallengeResponseResult
-   * @throws \Google\Service\Exception
    */
   public function verify(VerifyChallengeResponseRequest $postBody, $optParams = [])
   {

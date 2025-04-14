@@ -38,7 +38,6 @@ class Regionalinventory extends \Google\Service\Resource
    * @param RegionalinventoryCustomBatchRequest $postBody
    * @param array $optParams Optional parameters.
    * @return RegionalinventoryCustomBatchResponse
-   * @throws \Google\Service\Exception
    */
   public function custombatch(RegionalinventoryCustomBatchRequest $postBody, $optParams = [])
   {
@@ -58,7 +57,6 @@ class Regionalinventory extends \Google\Service\Resource
    * @param RegionalInventoryModel $postBody
    * @param array $optParams Optional parameters.
    * @return RegionalInventoryModel
-   * @throws \Google\Service\Exception
    */
   public function insert($merchantId, $productId, RegionalInventoryModel $postBody, $optParams = [])
   {

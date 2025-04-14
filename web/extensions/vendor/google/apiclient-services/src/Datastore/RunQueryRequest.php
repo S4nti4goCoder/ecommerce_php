@@ -23,16 +23,28 @@ class RunQueryRequest extends \Google\Model
    * @var string
    */
   public $databaseId;
-  protected $explainOptionsType = ExplainOptions::class;
-  protected $explainOptionsDataType = '';
+  /**
+   * @var GqlQuery
+   */
+  public $gqlQuery;
   protected $gqlQueryType = GqlQuery::class;
   protected $gqlQueryDataType = '';
+  /**
+   * @var PartitionId
+   */
+  public $partitionId;
   protected $partitionIdType = PartitionId::class;
   protected $partitionIdDataType = '';
-  protected $propertyMaskType = PropertyMask::class;
-  protected $propertyMaskDataType = '';
+  /**
+   * @var Query
+   */
+  public $query;
   protected $queryType = Query::class;
   protected $queryDataType = '';
+  /**
+   * @var ReadOptions
+   */
+  public $readOptions;
   protected $readOptionsType = ReadOptions::class;
   protected $readOptionsDataType = '';
 
@@ -49,20 +61,6 @@ class RunQueryRequest extends \Google\Model
   public function getDatabaseId()
   {
     return $this->databaseId;
-  }
-  /**
-   * @param ExplainOptions
-   */
-  public function setExplainOptions(ExplainOptions $explainOptions)
-  {
-    $this->explainOptions = $explainOptions;
-  }
-  /**
-   * @return ExplainOptions
-   */
-  public function getExplainOptions()
-  {
-    return $this->explainOptions;
   }
   /**
    * @param GqlQuery
@@ -91,20 +89,6 @@ class RunQueryRequest extends \Google\Model
   public function getPartitionId()
   {
     return $this->partitionId;
-  }
-  /**
-   * @param PropertyMask
-   */
-  public function setPropertyMask(PropertyMask $propertyMask)
-  {
-    $this->propertyMask = $propertyMask;
-  }
-  /**
-   * @return PropertyMask
-   */
-  public function getPropertyMask()
-  {
-    return $this->propertyMask;
   }
   /**
    * @param Query

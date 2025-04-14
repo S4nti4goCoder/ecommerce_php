@@ -36,7 +36,6 @@ class Issuer extends \Google\Service\Resource
    * @param string $resourceId The unique identifier for an issuer.
    * @param array $optParams Optional parameters.
    * @return IssuerModel
-   * @throws \Google\Service\Exception
    */
   public function get($resourceId, $optParams = [])
   {
@@ -50,7 +49,6 @@ class Issuer extends \Google\Service\Resource
    * @param IssuerModel $postBody
    * @param array $optParams Optional parameters.
    * @return IssuerModel
-   * @throws \Google\Service\Exception
    */
   public function insert(IssuerModel $postBody, $optParams = [])
   {
@@ -63,7 +61,6 @@ class Issuer extends \Google\Service\Resource
    *
    * @param array $optParams Optional parameters.
    * @return IssuerListResponse
-   * @throws \Google\Service\Exception
    */
   public function listIssuer($optParams = [])
   {
@@ -79,7 +76,6 @@ class Issuer extends \Google\Service\Resource
    * @param IssuerModel $postBody
    * @param array $optParams Optional parameters.
    * @return IssuerModel
-   * @throws \Google\Service\Exception
    */
   public function patch($resourceId, IssuerModel $postBody, $optParams = [])
   {
@@ -94,7 +90,6 @@ class Issuer extends \Google\Service\Resource
    * @param IssuerModel $postBody
    * @param array $optParams Optional parameters.
    * @return IssuerModel
-   * @throws \Google\Service\Exception
    */
   public function update($resourceId, IssuerModel $postBody, $optParams = [])
   {

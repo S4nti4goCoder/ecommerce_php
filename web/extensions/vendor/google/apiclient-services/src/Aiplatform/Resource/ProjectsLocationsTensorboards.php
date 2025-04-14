@@ -17,7 +17,6 @@
 
 namespace Google\Service\Aiplatform\Resource;
 
-use Google\Service\Aiplatform\GoogleCloudAiplatformV1BatchReadTensorboardTimeSeriesDataResponse;
 use Google\Service\Aiplatform\GoogleCloudAiplatformV1ListTensorboardsResponse;
 use Google\Service\Aiplatform\GoogleCloudAiplatformV1ReadTensorboardSizeResponse;
 use Google\Service\Aiplatform\GoogleCloudAiplatformV1ReadTensorboardUsageResponse;
@@ -35,33 +34,6 @@ use Google\Service\Aiplatform\GoogleLongrunningOperation;
 class ProjectsLocationsTensorboards extends \Google\Service\Resource
 {
   /**
-   * Reads multiple TensorboardTimeSeries' data. The data point number limit is
-   * 1000 for scalars, 100 for tensors and blob references. If the number of data
-   * points stored is less than the limit, all data is returned. Otherwise, the
-   * number limit of data points is randomly selected from this time series and
-   * returned. (tensorboards.batchRead)
-   *
-   * @param string $tensorboard Required. The resource name of the Tensorboard
-   * containing TensorboardTimeSeries to read data from. Format:
-   * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`. The
-   * TensorboardTimeSeries referenced by time_series must be sub resources of this
-   * Tensorboard.
-   * @param array $optParams Optional parameters.
-   *
-   * @opt_param string timeSeries Required. The resource names of the
-   * TensorboardTimeSeries to read data from. Format: `projects/{project}/location
-   * s/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/t
-   * imeSeries/{time_series}`
-   * @return GoogleCloudAiplatformV1BatchReadTensorboardTimeSeriesDataResponse
-   * @throws \Google\Service\Exception
-   */
-  public function batchRead($tensorboard, $optParams = [])
-  {
-    $params = ['tensorboard' => $tensorboard];
-    $params = array_merge($params, $optParams);
-    return $this->call('batchRead', [$params], GoogleCloudAiplatformV1BatchReadTensorboardTimeSeriesDataResponse::class);
-  }
-  /**
    * Creates a Tensorboard. (tensorboards.create)
    *
    * @param string $parent Required. The resource name of the Location to create
@@ -69,7 +41,6 @@ class ProjectsLocationsTensorboards extends \Google\Service\Resource
    * @param GoogleCloudAiplatformV1Tensorboard $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudAiplatformV1Tensorboard $postBody, $optParams = [])
   {
@@ -84,7 +55,6 @@ class ProjectsLocationsTensorboards extends \Google\Service\Resource
    * Format: `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -99,7 +69,6 @@ class ProjectsLocationsTensorboards extends \Google\Service\Resource
    * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
    * @param array $optParams Optional parameters.
    * @return GoogleCloudAiplatformV1Tensorboard
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -129,7 +98,6 @@ class ProjectsLocationsTensorboards extends \Google\Service\Resource
    * page token.
    * @opt_param string readMask Mask specifying which fields to read.
    * @return GoogleCloudAiplatformV1ListTensorboardsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsTensorboards($parent, $optParams = [])
   {
@@ -152,7 +120,6 @@ class ProjectsLocationsTensorboards extends \Google\Service\Resource
    * not provide a mask then all fields are overwritten if new values are
    * specified.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleCloudAiplatformV1Tensorboard $postBody, $optParams = [])
   {
@@ -168,7 +135,6 @@ class ProjectsLocationsTensorboards extends \Google\Service\Resource
    * Format: `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
    * @param array $optParams Optional parameters.
    * @return GoogleCloudAiplatformV1ReadTensorboardSizeResponse
-   * @throws \Google\Service\Exception
    */
   public function readSize($tensorboard, $optParams = [])
   {
@@ -184,7 +150,6 @@ class ProjectsLocationsTensorboards extends \Google\Service\Resource
    * Format: `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
    * @param array $optParams Optional parameters.
    * @return GoogleCloudAiplatformV1ReadTensorboardUsageResponse
-   * @throws \Google\Service\Exception
    */
   public function readUsage($tensorboard, $optParams = [])
   {

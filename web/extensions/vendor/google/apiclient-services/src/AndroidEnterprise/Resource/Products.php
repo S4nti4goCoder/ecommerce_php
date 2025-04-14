@@ -46,7 +46,6 @@ class Products extends \Google\Service\Resource
    * @param string $productId The ID of the product.
    * @param ProductsApproveRequest $postBody
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function approve($enterpriseId, $productId, ProductsApproveRequest $postBody, $optParams = [])
   {
@@ -73,7 +72,6 @@ class Products extends \Google\Service\Resource
    * @opt_param string languageCode The BCP 47 language code used for permission
    * names and descriptions in the returned iframe, for instance "en-US".
    * @return ProductsGenerateApprovalUrlResponse
-   * @throws \Google\Service\Exception
    */
   public function generateApprovalUrl($enterpriseId, $productId, $optParams = [])
   {
@@ -93,7 +91,6 @@ class Products extends \Google\Service\Resource
    * @opt_param string language The BCP47 tag for the user's preferred language
    * (e.g. "en-US", "de").
    * @return Product
-   * @throws \Google\Service\Exception
    */
   public function get($enterpriseId, $productId, $optParams = [])
   {
@@ -116,7 +113,6 @@ class Products extends \Google\Service\Resource
    * @opt_param string language The BCP47 tag for the user's preferred language
    * (e.g. "en-US", "de").
    * @return AppRestrictionsSchema
-   * @throws \Google\Service\Exception
    */
   public function getAppRestrictionsSchema($enterpriseId, $productId, $optParams = [])
   {
@@ -132,7 +128,6 @@ class Products extends \Google\Service\Resource
    * @param string $productId The ID of the product.
    * @param array $optParams Optional parameters.
    * @return ProductPermissions
-   * @throws \Google\Service\Exception
    */
   public function getPermissions($enterpriseId, $productId, $optParams = [])
   {
@@ -164,7 +159,6 @@ class Products extends \Google\Service\Resource
    * @opt_param string token Defines the token of the page to return, usually
    * taken from TokenPagination. This can only be used if token paging is enabled.
    * @return ProductsListResponse
-   * @throws \Google\Service\Exception
    */
   public function listProducts($enterpriseId, $optParams = [])
   {
@@ -180,7 +174,6 @@ class Products extends \Google\Service\Resource
    * @param string $enterpriseId The ID of the enterprise.
    * @param string $productId The ID of the product.
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function unapprove($enterpriseId, $productId, $optParams = [])
   {

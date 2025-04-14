@@ -40,7 +40,6 @@ class ProjectsLocationsProductsSfdcInstancesSfdcChannels extends \Google\Service
    * @param GoogleCloudIntegrationsV1alphaSfdcChannel $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudIntegrationsV1alphaSfdcChannel
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudIntegrationsV1alphaSfdcChannel $postBody, $optParams = [])
   {
@@ -55,7 +54,6 @@ class ProjectsLocationsProductsSfdcInstancesSfdcChannels extends \Google\Service
    * SfdcChannel.
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -71,7 +69,6 @@ class ProjectsLocationsProductsSfdcInstancesSfdcChannels extends \Google\Service
    * SfdcChannel.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudIntegrationsV1alphaSfdcChannel
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -96,7 +93,6 @@ class ProjectsLocationsProductsSfdcInstancesSfdcChannels extends \Google\Service
    * @opt_param string readMask The mask which specifies fields that need to be
    * returned in the SfdcChannel's response.
    * @return GoogleCloudIntegrationsV1alphaListSfdcChannelsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsProductsSfdcInstancesSfdcChannels($parent, $optParams = [])
   {
@@ -116,7 +112,6 @@ class ProjectsLocationsProductsSfdcInstancesSfdcChannels extends \Google\Service
    * @opt_param string updateMask Field mask specifying the fields in the above
    * SfdcChannel that have been modified and need to be updated.
    * @return GoogleCloudIntegrationsV1alphaSfdcChannel
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleCloudIntegrationsV1alphaSfdcChannel $postBody, $optParams = [])
   {

@@ -39,7 +39,6 @@ class Jwks extends \Google\Service\Resource
    * set. Must always be exactly the string `jwks`.
    * @param array $optParams Optional parameters.
    * @return GoogleFirebaseAppcheckV1PublicJwkSet
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {

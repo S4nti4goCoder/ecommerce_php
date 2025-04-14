@@ -23,20 +23,28 @@ class GoogleCloudDocumentaiV1ProcessRequest extends \Google\Model
    * @var string
    */
   public $fieldMask;
+  /**
+   * @var GoogleCloudDocumentaiV1GcsDocument
+   */
+  public $gcsDocument;
   protected $gcsDocumentType = GoogleCloudDocumentaiV1GcsDocument::class;
   protected $gcsDocumentDataType = '';
   /**
-   * @var bool
+   * @var GoogleCloudDocumentaiV1Document
    */
-  public $imagelessMode;
+  public $inlineDocument;
   protected $inlineDocumentType = GoogleCloudDocumentaiV1Document::class;
   protected $inlineDocumentDataType = '';
   /**
-   * @var string[]
+   * @var GoogleCloudDocumentaiV1ProcessOptions
    */
-  public $labels;
+  public $processOptions;
   protected $processOptionsType = GoogleCloudDocumentaiV1ProcessOptions::class;
   protected $processOptionsDataType = '';
+  /**
+   * @var GoogleCloudDocumentaiV1RawDocument
+   */
+  public $rawDocument;
   protected $rawDocumentType = GoogleCloudDocumentaiV1RawDocument::class;
   protected $rawDocumentDataType = '';
   /**
@@ -73,20 +81,6 @@ class GoogleCloudDocumentaiV1ProcessRequest extends \Google\Model
     return $this->gcsDocument;
   }
   /**
-   * @param bool
-   */
-  public function setImagelessMode($imagelessMode)
-  {
-    $this->imagelessMode = $imagelessMode;
-  }
-  /**
-   * @return bool
-   */
-  public function getImagelessMode()
-  {
-    return $this->imagelessMode;
-  }
-  /**
    * @param GoogleCloudDocumentaiV1Document
    */
   public function setInlineDocument(GoogleCloudDocumentaiV1Document $inlineDocument)
@@ -99,20 +93,6 @@ class GoogleCloudDocumentaiV1ProcessRequest extends \Google\Model
   public function getInlineDocument()
   {
     return $this->inlineDocument;
-  }
-  /**
-   * @param string[]
-   */
-  public function setLabels($labels)
-  {
-    $this->labels = $labels;
-  }
-  /**
-   * @return string[]
-   */
-  public function getLabels()
-  {
-    return $this->labels;
   }
   /**
    * @param GoogleCloudDocumentaiV1ProcessOptions

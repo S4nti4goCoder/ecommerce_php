@@ -19,24 +19,38 @@ namespace Google\Service\AndroidPublisher;
 
 class SubscriptionPurchaseLineItem extends \Google\Model
 {
+  /**
+   * @var AutoRenewingPlan
+   */
+  public $autoRenewingPlan;
   protected $autoRenewingPlanType = AutoRenewingPlan::class;
   protected $autoRenewingPlanDataType = '';
+  /**
+   * @var DeferredItemReplacement
+   */
+  public $deferredItemReplacement;
   protected $deferredItemReplacementType = DeferredItemReplacement::class;
   protected $deferredItemReplacementDataType = '';
   /**
    * @var string
    */
   public $expiryTime;
+  /**
+   * @var OfferDetails
+   */
+  public $offerDetails;
   protected $offerDetailsType = OfferDetails::class;
   protected $offerDetailsDataType = '';
+  /**
+   * @var PrepaidPlan
+   */
+  public $prepaidPlan;
   protected $prepaidPlanType = PrepaidPlan::class;
   protected $prepaidPlanDataType = '';
   /**
    * @var string
    */
   public $productId;
-  protected $signupPromotionType = SignupPromotion::class;
-  protected $signupPromotionDataType = '';
 
   /**
    * @param AutoRenewingPlan
@@ -121,20 +135,6 @@ class SubscriptionPurchaseLineItem extends \Google\Model
   public function getProductId()
   {
     return $this->productId;
-  }
-  /**
-   * @param SignupPromotion
-   */
-  public function setSignupPromotion(SignupPromotion $signupPromotion)
-  {
-    $this->signupPromotion = $signupPromotion;
-  }
-  /**
-   * @return SignupPromotion
-   */
-  public function getSignupPromotion()
-  {
-    return $this->signupPromotion;
   }
 }
 

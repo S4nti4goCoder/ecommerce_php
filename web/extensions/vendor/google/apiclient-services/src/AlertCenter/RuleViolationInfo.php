@@ -25,17 +25,25 @@ class RuleViolationInfo extends \Google\Collection
    */
   public $dataSource;
   /**
-   * @var string
+   * @var MatchInfo[]
    */
-  public $eventType;
+  public $matchInfo;
   protected $matchInfoType = MatchInfo::class;
   protected $matchInfoDataType = 'array';
   /**
    * @var string[]
    */
   public $recipients;
+  /**
+   * @var ResourceInfo
+   */
+  public $resourceInfo;
   protected $resourceInfoType = ResourceInfo::class;
   protected $resourceInfoDataType = '';
+  /**
+   * @var RuleInfo
+   */
+  public $ruleInfo;
   protected $ruleInfoType = RuleInfo::class;
   protected $ruleInfoDataType = '';
   /**
@@ -46,6 +54,10 @@ class RuleViolationInfo extends \Google\Collection
    * @var string
    */
   public $trigger;
+  /**
+   * @var ActionInfo[]
+   */
+  public $triggeredActionInfo;
   protected $triggeredActionInfoType = ActionInfo::class;
   protected $triggeredActionInfoDataType = 'array';
   /**
@@ -70,20 +82,6 @@ class RuleViolationInfo extends \Google\Collection
   public function getDataSource()
   {
     return $this->dataSource;
-  }
-  /**
-   * @param string
-   */
-  public function setEventType($eventType)
-  {
-    $this->eventType = $eventType;
-  }
-  /**
-   * @return string
-   */
-  public function getEventType()
-  {
-    return $this->eventType;
   }
   /**
    * @param MatchInfo[]

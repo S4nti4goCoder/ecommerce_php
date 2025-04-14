@@ -20,6 +20,10 @@ namespace Google\Service\Translate;
 class ListAdaptiveMtSentencesResponse extends \Google\Collection
 {
   protected $collection_key = 'adaptiveMtSentences';
+  /**
+   * @var AdaptiveMtSentence[]
+   */
+  public $adaptiveMtSentences;
   protected $adaptiveMtSentencesType = AdaptiveMtSentence::class;
   protected $adaptiveMtSentencesDataType = 'array';
   /**

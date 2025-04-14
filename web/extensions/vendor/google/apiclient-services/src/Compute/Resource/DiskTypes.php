@@ -32,9 +32,7 @@ use Google\Service\Compute\DiskTypeList;
 class DiskTypes extends \Google\Service\Resource
 {
   /**
-   * Retrieves an aggregated list of disk types. To prevent failure, Google
-   * recommends that you set the `returnPartialSuccess` parameter to `true`.
-   * (diskTypes.aggregatedList)
+   * Retrieves an aggregated list of disk types. (diskTypes.aggregatedList)
    *
    * @param string $project Project ID for this request.
    * @param array $optParams Optional parameters.
@@ -96,14 +94,9 @@ class DiskTypes extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
-   * @opt_param string serviceProjectNumber The Shared VPC service project id or
-   * service project number for which aggregated list request is invoked for
-   * subnetworks list-usable api.
+   * false.
+   * @opt_param string serviceProjectNumber
    * @return DiskTypeAggregatedList
-   * @throws \Google\Service\Exception
    */
   public function aggregatedList($project, $optParams = [])
   {
@@ -119,7 +112,6 @@ class DiskTypes extends \Google\Service\Resource
    * @param string $diskType Name of the disk type to return.
    * @param array $optParams Optional parameters.
    * @return DiskType
-   * @throws \Google\Service\Exception
    */
   public function get($project, $zone, $diskType, $optParams = [])
   {
@@ -185,11 +177,8 @@ class DiskTypes extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
+   * false.
    * @return DiskTypeList
-   * @throws \Google\Service\Exception
    */
   public function listDiskTypes($project, $zone, $optParams = [])
   {

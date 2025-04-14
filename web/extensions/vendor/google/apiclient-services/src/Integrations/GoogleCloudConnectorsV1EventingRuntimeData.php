@@ -27,12 +27,12 @@ class GoogleCloudConnectorsV1EventingRuntimeData extends \Google\Model
    * @var string
    */
   public $eventsListenerPscSa;
+  /**
+   * @var GoogleCloudConnectorsV1EventingStatus
+   */
+  public $status;
   protected $statusType = GoogleCloudConnectorsV1EventingStatus::class;
   protected $statusDataType = '';
-  protected $webhookDataType = GoogleCloudConnectorsV1EventingRuntimeDataWebhookData::class;
-  protected $webhookDataDataType = '';
-  protected $webhookSubscriptionsType = GoogleCloudConnectorsV1EventingRuntimeDataWebhookSubscriptions::class;
-  protected $webhookSubscriptionsDataType = '';
 
   /**
    * @param string
@@ -75,34 +75,6 @@ class GoogleCloudConnectorsV1EventingRuntimeData extends \Google\Model
   public function getStatus()
   {
     return $this->status;
-  }
-  /**
-   * @param GoogleCloudConnectorsV1EventingRuntimeDataWebhookData
-   */
-  public function setWebhookData(GoogleCloudConnectorsV1EventingRuntimeDataWebhookData $webhookData)
-  {
-    $this->webhookData = $webhookData;
-  }
-  /**
-   * @return GoogleCloudConnectorsV1EventingRuntimeDataWebhookData
-   */
-  public function getWebhookData()
-  {
-    return $this->webhookData;
-  }
-  /**
-   * @param GoogleCloudConnectorsV1EventingRuntimeDataWebhookSubscriptions
-   */
-  public function setWebhookSubscriptions(GoogleCloudConnectorsV1EventingRuntimeDataWebhookSubscriptions $webhookSubscriptions)
-  {
-    $this->webhookSubscriptions = $webhookSubscriptions;
-  }
-  /**
-   * @return GoogleCloudConnectorsV1EventingRuntimeDataWebhookSubscriptions
-   */
-  public function getWebhookSubscriptions()
-  {
-    return $this->webhookSubscriptions;
   }
 }
 

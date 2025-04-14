@@ -20,26 +20,34 @@ namespace Google\Service\RealTimeBidding;
 class CreativeServingDecision extends \Google\Collection
 {
   protected $collection_key = 'detectedVendorIds';
+  /**
+   * @var AdTechnologyProviders
+   */
+  public $adTechnologyProviders;
   protected $adTechnologyProvidersType = AdTechnologyProviders::class;
   protected $adTechnologyProvidersDataType = '';
+  /**
+   * @var PolicyCompliance
+   */
+  public $chinaPolicyCompliance;
   protected $chinaPolicyComplianceType = PolicyCompliance::class;
   protected $chinaPolicyComplianceDataType = '';
+  /**
+   * @var PolicyCompliance
+   */
+  public $dealsPolicyCompliance;
   protected $dealsPolicyComplianceType = PolicyCompliance::class;
   protected $dealsPolicyComplianceDataType = '';
+  /**
+   * @var AdvertiserAndBrand[]
+   */
+  public $detectedAdvertisers;
   protected $detectedAdvertisersType = AdvertiserAndBrand::class;
   protected $detectedAdvertisersDataType = 'array';
   /**
    * @var string[]
    */
   public $detectedAttributes;
-  /**
-   * @var string[]
-   */
-  public $detectedCategories;
-  /**
-   * @var string
-   */
-  public $detectedCategoriesTaxonomy;
   /**
    * @var string[]
    */
@@ -68,10 +76,22 @@ class CreativeServingDecision extends \Google\Collection
    * @var string
    */
   public $lastStatusUpdate;
+  /**
+   * @var PolicyCompliance
+   */
+  public $networkPolicyCompliance;
   protected $networkPolicyComplianceType = PolicyCompliance::class;
   protected $networkPolicyComplianceDataType = '';
+  /**
+   * @var PolicyCompliance
+   */
+  public $platformPolicyCompliance;
   protected $platformPolicyComplianceType = PolicyCompliance::class;
   protected $platformPolicyComplianceDataType = '';
+  /**
+   * @var PolicyCompliance
+   */
+  public $russiaPolicyCompliance;
   protected $russiaPolicyComplianceType = PolicyCompliance::class;
   protected $russiaPolicyComplianceDataType = '';
 
@@ -144,34 +164,6 @@ class CreativeServingDecision extends \Google\Collection
   public function getDetectedAttributes()
   {
     return $this->detectedAttributes;
-  }
-  /**
-   * @param string[]
-   */
-  public function setDetectedCategories($detectedCategories)
-  {
-    $this->detectedCategories = $detectedCategories;
-  }
-  /**
-   * @return string[]
-   */
-  public function getDetectedCategories()
-  {
-    return $this->detectedCategories;
-  }
-  /**
-   * @param string
-   */
-  public function setDetectedCategoriesTaxonomy($detectedCategoriesTaxonomy)
-  {
-    $this->detectedCategoriesTaxonomy = $detectedCategoriesTaxonomy;
-  }
-  /**
-   * @return string
-   */
-  public function getDetectedCategoriesTaxonomy()
-  {
-    return $this->detectedCategoriesTaxonomy;
   }
   /**
    * @param string[]

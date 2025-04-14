@@ -51,7 +51,6 @@ class PhotoSequences extends \Google\Service\Resource
    * @opt_param string pageToken Optional. The nextPageToken value returned from a
    * previous ListPhotoSequences request, if any.
    * @return ListPhotoSequencesResponse
-   * @throws \Google\Service\Exception
    */
   public function listPhotoSequences($optParams = [])
   {

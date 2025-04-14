@@ -43,7 +43,6 @@ class Applications extends \Google\Service\Resource
    * resources returned may be less than the specified `maxResults`.
    * @opt_param string pageToken The token returned by the previous request.
    * @return HiddenPlayerList
-   * @throws \Google\Service\Exception
    */
   public function listHidden($applicationId, $optParams = [])
   {

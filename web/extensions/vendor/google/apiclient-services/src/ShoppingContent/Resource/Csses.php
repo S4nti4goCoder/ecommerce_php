@@ -41,7 +41,6 @@ class Csses extends \Google\Service\Resource
    * @param string $cssDomainId Required. The ID of the CSS domain to return.
    * @param array $optParams Optional parameters.
    * @return Css
-   * @throws \Google\Service\Exception
    */
   public function get($cssGroupId, $cssDomainId, $optParams = [])
   {
@@ -65,7 +64,6 @@ class Csses extends \Google\Service\Resource
    * paginating, all other parameters provided to `ListCsses` must match the call
    * that provided the page token.
    * @return ListCssesResponse
-   * @throws \Google\Service\Exception
    */
   public function listCsses($cssGroupId, $optParams = [])
   {
@@ -83,7 +81,6 @@ class Csses extends \Google\Service\Resource
    * @param LabelIds $postBody
    * @param array $optParams Optional parameters.
    * @return Css
-   * @throws \Google\Service\Exception
    */
   public function updatelabels($cssGroupId, $cssDomainId, LabelIds $postBody, $optParams = [])
   {

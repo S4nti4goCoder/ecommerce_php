@@ -30,21 +30,11 @@ class GatewayServiceMesh extends \Google\Model
   /**
    * @var string
    */
-  public $podSelectorLabel;
-  protected $routeDestinationsType = RouteDestinations::class;
-  protected $routeDestinationsDataType = '';
-  /**
-   * @var string
-   */
   public $routeUpdateWaitTime;
   /**
    * @var string
    */
   public $service;
-  /**
-   * @var string
-   */
-  public $stableCutbackDuration;
 
   /**
    * @param string
@@ -77,34 +67,6 @@ class GatewayServiceMesh extends \Google\Model
   /**
    * @param string
    */
-  public function setPodSelectorLabel($podSelectorLabel)
-  {
-    $this->podSelectorLabel = $podSelectorLabel;
-  }
-  /**
-   * @return string
-   */
-  public function getPodSelectorLabel()
-  {
-    return $this->podSelectorLabel;
-  }
-  /**
-   * @param RouteDestinations
-   */
-  public function setRouteDestinations(RouteDestinations $routeDestinations)
-  {
-    $this->routeDestinations = $routeDestinations;
-  }
-  /**
-   * @return RouteDestinations
-   */
-  public function getRouteDestinations()
-  {
-    return $this->routeDestinations;
-  }
-  /**
-   * @param string
-   */
   public function setRouteUpdateWaitTime($routeUpdateWaitTime)
   {
     $this->routeUpdateWaitTime = $routeUpdateWaitTime;
@@ -129,20 +91,6 @@ class GatewayServiceMesh extends \Google\Model
   public function getService()
   {
     return $this->service;
-  }
-  /**
-   * @param string
-   */
-  public function setStableCutbackDuration($stableCutbackDuration)
-  {
-    $this->stableCutbackDuration = $stableCutbackDuration;
-  }
-  /**
-   * @return string
-   */
-  public function getStableCutbackDuration()
-  {
-    return $this->stableCutbackDuration;
   }
 }
 

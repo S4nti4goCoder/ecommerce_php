@@ -22,7 +22,7 @@ class LoadBalancerBackendInfo extends \Google\Model
   /**
    * @var string
    */
-  public $backendBucketUri;
+  public $backendDisplayName;
   /**
    * @var string
    */
@@ -30,7 +30,7 @@ class LoadBalancerBackendInfo extends \Google\Model
   /**
    * @var string
    */
-  public $healthCheckFirewallsConfigState;
+  public $healthCheckConfigState;
   /**
    * @var string
    */
@@ -46,33 +46,21 @@ class LoadBalancerBackendInfo extends \Google\Model
   /**
    * @var string
    */
-  public $name;
-  /**
-   * @var string
-   */
   public $networkEndpointGroupUri;
-  /**
-   * @var string
-   */
-  public $pscGoogleApiTarget;
-  /**
-   * @var string
-   */
-  public $pscServiceAttachmentUri;
 
   /**
    * @param string
    */
-  public function setBackendBucketUri($backendBucketUri)
+  public function setBackendDisplayName($backendDisplayName)
   {
-    $this->backendBucketUri = $backendBucketUri;
+    $this->backendDisplayName = $backendDisplayName;
   }
   /**
    * @return string
    */
-  public function getBackendBucketUri()
+  public function getBackendDisplayName()
   {
-    return $this->backendBucketUri;
+    return $this->backendDisplayName;
   }
   /**
    * @param string
@@ -91,16 +79,16 @@ class LoadBalancerBackendInfo extends \Google\Model
   /**
    * @param string
    */
-  public function setHealthCheckFirewallsConfigState($healthCheckFirewallsConfigState)
+  public function setHealthCheckConfigState($healthCheckConfigState)
   {
-    $this->healthCheckFirewallsConfigState = $healthCheckFirewallsConfigState;
+    $this->healthCheckConfigState = $healthCheckConfigState;
   }
   /**
    * @return string
    */
-  public function getHealthCheckFirewallsConfigState()
+  public function getHealthCheckConfigState()
   {
-    return $this->healthCheckFirewallsConfigState;
+    return $this->healthCheckConfigState;
   }
   /**
    * @param string
@@ -147,20 +135,6 @@ class LoadBalancerBackendInfo extends \Google\Model
   /**
    * @param string
    */
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  /**
-   * @return string
-   */
-  public function getName()
-  {
-    return $this->name;
-  }
-  /**
-   * @param string
-   */
   public function setNetworkEndpointGroupUri($networkEndpointGroupUri)
   {
     $this->networkEndpointGroupUri = $networkEndpointGroupUri;
@@ -171,34 +145,6 @@ class LoadBalancerBackendInfo extends \Google\Model
   public function getNetworkEndpointGroupUri()
   {
     return $this->networkEndpointGroupUri;
-  }
-  /**
-   * @param string
-   */
-  public function setPscGoogleApiTarget($pscGoogleApiTarget)
-  {
-    $this->pscGoogleApiTarget = $pscGoogleApiTarget;
-  }
-  /**
-   * @return string
-   */
-  public function getPscGoogleApiTarget()
-  {
-    return $this->pscGoogleApiTarget;
-  }
-  /**
-   * @param string
-   */
-  public function setPscServiceAttachmentUri($pscServiceAttachmentUri)
-  {
-    $this->pscServiceAttachmentUri = $pscServiceAttachmentUri;
-  }
-  /**
-   * @return string
-   */
-  public function getPscServiceAttachmentUri()
-  {
-    return $this->pscServiceAttachmentUri;
   }
 }
 

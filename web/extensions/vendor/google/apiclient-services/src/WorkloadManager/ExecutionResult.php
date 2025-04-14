@@ -17,15 +17,16 @@
 
 namespace Google\Service\WorkloadManager;
 
-class ExecutionResult extends \Google\Collection
+class ExecutionResult extends \Google\Model
 {
-  protected $collection_key = 'commands';
-  protected $commandsType = Command::class;
-  protected $commandsDataType = 'array';
   /**
    * @var string
    */
   public $documentationUrl;
+  /**
+   * @var WorkloadmanagerResource
+   */
+  public $resource;
   protected $resourceType = WorkloadmanagerResource::class;
   protected $resourceDataType = '';
   /**
@@ -37,9 +38,9 @@ class ExecutionResult extends \Google\Collection
    */
   public $severity;
   /**
-   * @var string
+   * @var ViolationDetails
    */
-  public $type;
+  public $violationDetails;
   protected $violationDetailsType = ViolationDetails::class;
   protected $violationDetailsDataType = '';
   /**
@@ -47,20 +48,6 @@ class ExecutionResult extends \Google\Collection
    */
   public $violationMessage;
 
-  /**
-   * @param Command[]
-   */
-  public function setCommands($commands)
-  {
-    $this->commands = $commands;
-  }
-  /**
-   * @return Command[]
-   */
-  public function getCommands()
-  {
-    return $this->commands;
-  }
   /**
    * @param string
    */
@@ -116,20 +103,6 @@ class ExecutionResult extends \Google\Collection
   public function getSeverity()
   {
     return $this->severity;
-  }
-  /**
-   * @param string
-   */
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  /**
-   * @return string
-   */
-  public function getType()
-  {
-    return $this->type;
   }
   /**
    * @param ViolationDetails

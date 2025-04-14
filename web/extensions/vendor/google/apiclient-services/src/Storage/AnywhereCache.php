@@ -63,10 +63,6 @@ class AnywhereCache extends \Google\Model
    * @var string
    */
   public $updateTime;
-  /**
-   * @var string
-   */
-  public $zone;
 
   /**
    * @param string
@@ -221,20 +217,6 @@ class AnywhereCache extends \Google\Model
   public function getUpdateTime()
   {
     return $this->updateTime;
-  }
-  /**
-   * @param string
-   */
-  public function setZone($zone)
-  {
-    $this->zone = $zone;
-  }
-  /**
-   * @return string
-   */
-  public function getZone()
-  {
-    return $this->zone;
   }
 }
 

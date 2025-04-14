@@ -49,7 +49,6 @@ class ProjectsLocationsFeaturestores extends \Google\Service\Resource
    * @param GoogleCloudAiplatformV1BatchReadFeatureValuesRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function batchReadFeatureValues($featurestore, GoogleCloudAiplatformV1BatchReadFeatureValuesRequest $postBody, $optParams = [])
   {
@@ -72,7 +71,6 @@ class ProjectsLocationsFeaturestores extends \Google\Service\Resource
    * are `[a-z0-9_]`. The first character cannot be a number. The value must be
    * unique within the project and location.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudAiplatformV1Featurestore $postBody, $optParams = [])
   {
@@ -94,7 +92,6 @@ class ProjectsLocationsFeaturestores extends \Google\Service\Resource
    * Featurestore will also be deleted. (Otherwise, the request will only work if
    * the Featurestore has no EntityTypes.)
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -108,7 +105,6 @@ class ProjectsLocationsFeaturestores extends \Google\Service\Resource
    * @param string $name Required. The name of the Featurestore resource.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudAiplatformV1Featurestore
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -139,7 +135,6 @@ class ProjectsLocationsFeaturestores extends \Google\Service\Resource
    * documentation](https://cloud.google.com/iam/help/conditions/resource-
    * policies).
    * @return GoogleIamV1Policy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, $optParams = [])
   {
@@ -180,7 +175,6 @@ class ProjectsLocationsFeaturestores extends \Google\Service\Resource
    * page token.
    * @opt_param string readMask Mask specifying which fields to read.
    * @return GoogleCloudAiplatformV1ListFeaturestoresResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsFeaturestores($parent, $optParams = [])
   {
@@ -205,7 +199,6 @@ class ProjectsLocationsFeaturestores extends \Google\Service\Resource
    * fields: * `labels` * `online_serving_config.fixed_node_count` *
    * `online_serving_config.scaling` * `online_storage_ttl_days`
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleCloudAiplatformV1Featurestore $postBody, $optParams = [])
   {
@@ -264,7 +257,6 @@ class ProjectsLocationsFeaturestores extends \Google\Service\Resource
    * yes) and (env: prod) labels. * `labels.env: *` --> Any Feature which has a
    * label with `env` as the key.
    * @return GoogleCloudAiplatformV1SearchFeaturesResponse
-   * @throws \Google\Service\Exception
    */
   public function searchFeatures($location, $optParams = [])
   {
@@ -284,7 +276,6 @@ class ProjectsLocationsFeaturestores extends \Google\Service\Resource
    * @param GoogleIamV1SetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleIamV1Policy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, GoogleIamV1SetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -311,7 +302,6 @@ class ProjectsLocationsFeaturestores extends \Google\Service\Resource
    * allowed. For more information see [IAM
    * Overview](https://cloud.google.com/iam/docs/overview#permissions).
    * @return GoogleIamV1TestIamPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, $optParams = [])
   {

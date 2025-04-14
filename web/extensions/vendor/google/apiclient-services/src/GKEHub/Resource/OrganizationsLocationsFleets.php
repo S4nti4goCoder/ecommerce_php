@@ -47,7 +47,6 @@ class OrganizationsLocationsFleets extends \Google\Service\Resource
    * paginating, all other parameters provided to `ListFleets` must match the call
    * that provided the page token.
    * @return ListFleetsResponse
-   * @throws \Google\Service\Exception
    */
   public function listOrganizationsLocationsFleets($parent, $optParams = [])
   {

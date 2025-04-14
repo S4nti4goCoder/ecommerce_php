@@ -39,7 +39,6 @@ class ProjectsLocationsNfsShares extends \Google\Service\Resource
    * @param NfsShare $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, NfsShare $postBody, $optParams = [])
   {
@@ -54,7 +53,6 @@ class ProjectsLocationsNfsShares extends \Google\Service\Resource
    * @param string $name Required. The name of the NFS share to delete.
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -68,7 +66,6 @@ class ProjectsLocationsNfsShares extends \Google\Service\Resource
    * @param string $name Required. Name of the resource.
    * @param array $optParams Optional parameters.
    * @return NfsShare
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -89,7 +86,6 @@ class ProjectsLocationsNfsShares extends \Google\Service\Resource
    * @opt_param string pageToken A token identifying a page of results from the
    * server.
    * @return ListNfsSharesResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsNfsShares($parent, $optParams = [])
   {
@@ -107,7 +103,6 @@ class ProjectsLocationsNfsShares extends \Google\Service\Resource
    * @opt_param string updateMask The list of fields to update. The only currently
    * supported fields are: `labels` `allowed_clients`
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, NfsShare $postBody, $optParams = [])
   {
@@ -125,7 +120,6 @@ class ProjectsLocationsNfsShares extends \Google\Service\Resource
    * @param RenameNfsShareRequest $postBody
    * @param array $optParams Optional parameters.
    * @return NfsShare
-   * @throws \Google\Service\Exception
    */
   public function rename($name, RenameNfsShareRequest $postBody, $optParams = [])
   {

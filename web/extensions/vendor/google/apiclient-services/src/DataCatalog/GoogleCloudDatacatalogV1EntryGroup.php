@@ -19,6 +19,10 @@ namespace Google\Service\DataCatalog;
 
 class GoogleCloudDatacatalogV1EntryGroup extends \Google\Model
 {
+  /**
+   * @var GoogleCloudDatacatalogV1SystemTimestamps
+   */
+  public $dataCatalogTimestamps;
   protected $dataCatalogTimestampsType = GoogleCloudDatacatalogV1SystemTimestamps::class;
   protected $dataCatalogTimestampsDataType = '';
   /**
@@ -33,10 +37,6 @@ class GoogleCloudDatacatalogV1EntryGroup extends \Google\Model
    * @var string
    */
   public $name;
-  /**
-   * @var bool
-   */
-  public $transferredToDataplex;
 
   /**
    * @param GoogleCloudDatacatalogV1SystemTimestamps
@@ -93,20 +93,6 @@ class GoogleCloudDatacatalogV1EntryGroup extends \Google\Model
   public function getName()
   {
     return $this->name;
-  }
-  /**
-   * @param bool
-   */
-  public function setTransferredToDataplex($transferredToDataplex)
-  {
-    $this->transferredToDataplex = $transferredToDataplex;
-  }
-  /**
-   * @return bool
-   */
-  public function getTransferredToDataplex()
-  {
-    return $this->transferredToDataplex;
   }
 }
 

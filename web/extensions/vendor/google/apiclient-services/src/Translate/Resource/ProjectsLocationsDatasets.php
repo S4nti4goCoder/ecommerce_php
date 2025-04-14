@@ -40,7 +40,6 @@ class ProjectsLocationsDatasets extends \Google\Service\Resource
    * @param Dataset $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Dataset $postBody, $optParams = [])
   {
@@ -54,7 +53,6 @@ class ProjectsLocationsDatasets extends \Google\Service\Resource
    * @param string $name Required. The name of the dataset to delete.
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -71,7 +69,6 @@ class ProjectsLocationsDatasets extends \Google\Service\Resource
    * @param ExportDataRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function exportData($dataset, ExportDataRequest $postBody, $optParams = [])
   {
@@ -85,7 +82,6 @@ class ProjectsLocationsDatasets extends \Google\Service\Resource
    * @param string $name Required. The resource name of the dataset to retrieve.
    * @param array $optParams Optional parameters.
    * @return Dataset
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -102,7 +98,6 @@ class ProjectsLocationsDatasets extends \Google\Service\Resource
    * @param ImportDataRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function importData($dataset, ImportDataRequest $postBody, $optParams = [])
   {
@@ -123,7 +118,6 @@ class ProjectsLocationsDatasets extends \Google\Service\Resource
    * for the server to return. Typically obtained from next_page_token field in
    * the response of a ListDatasets call.
    * @return ListDatasetsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsDatasets($parent, $optParams = [])
   {

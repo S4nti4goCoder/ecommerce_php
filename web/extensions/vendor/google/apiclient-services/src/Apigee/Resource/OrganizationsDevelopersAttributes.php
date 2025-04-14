@@ -38,7 +38,6 @@ class OrganizationsDevelopersAttributes extends \Google\Service\Resource
    * `organizations/{org}/developers/{developer_email}/attributes/{attribute}`
    * @param array $optParams Optional parameters.
    * @return GoogleCloudApigeeV1Attribute
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -54,7 +53,6 @@ class OrganizationsDevelopersAttributes extends \Google\Service\Resource
    * `organizations/{org}/developers/{developer_email}/attributes/{attribute}`
    * @param array $optParams Optional parameters.
    * @return GoogleCloudApigeeV1Attribute
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -71,7 +69,6 @@ class OrganizationsDevelopersAttributes extends \Google\Service\Resource
    * `organizations/{org}/developers/{developer_email}`
    * @param array $optParams Optional parameters.
    * @return GoogleCloudApigeeV1Attributes
-   * @throws \Google\Service\Exception
    */
   public function listOrganizationsDevelopersAttributes($parent, $optParams = [])
   {
@@ -94,7 +91,6 @@ class OrganizationsDevelopersAttributes extends \Google\Service\Resource
    * @param GoogleCloudApigeeV1Attribute $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudApigeeV1Attribute
-   * @throws \Google\Service\Exception
    */
   public function updateDeveloperAttribute($name, GoogleCloudApigeeV1Attribute $postBody, $optParams = [])
   {

@@ -42,7 +42,6 @@ class RegionInstanceGroups extends \Google\Service\Resource
    * @param string $instanceGroup Name of the instance group resource to return.
    * @param array $optParams Optional parameters.
    * @return InstanceGroup
-   * @throws \Google\Service\Exception
    */
   public function get($project, $region, $instanceGroup, $optParams = [])
   {
@@ -108,11 +107,8 @@ class RegionInstanceGroups extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
+   * false.
    * @return RegionInstanceGroupList
-   * @throws \Google\Service\Exception
    */
   public function listRegionInstanceGroups($project, $region, $optParams = [])
   {
@@ -183,11 +179,8 @@ class RegionInstanceGroups extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
+   * false.
    * @return RegionInstanceGroupsListInstances
-   * @throws \Google\Service\Exception
    */
   public function listInstances($project, $region, $instanceGroup, RegionInstanceGroupsListInstancesRequest $postBody, $optParams = [])
   {
@@ -217,7 +210,6 @@ class RegionInstanceGroups extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function setNamedPorts($project, $region, $instanceGroup, RegionInstanceGroupsSetNamedPortsRequest $postBody, $optParams = [])
   {

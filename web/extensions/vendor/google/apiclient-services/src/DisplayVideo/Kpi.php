@@ -22,10 +22,6 @@ class Kpi extends \Google\Model
   /**
    * @var string
    */
-  public $kpiAlgorithmId;
-  /**
-   * @var string
-   */
   public $kpiAmountMicros;
   /**
    * @var string
@@ -40,20 +36,6 @@ class Kpi extends \Google\Model
    */
   public $kpiType;
 
-  /**
-   * @param string
-   */
-  public function setKpiAlgorithmId($kpiAlgorithmId)
-  {
-    $this->kpiAlgorithmId = $kpiAlgorithmId;
-  }
-  /**
-   * @return string
-   */
-  public function getKpiAlgorithmId()
-  {
-    return $this->kpiAlgorithmId;
-  }
   /**
    * @param string
    */

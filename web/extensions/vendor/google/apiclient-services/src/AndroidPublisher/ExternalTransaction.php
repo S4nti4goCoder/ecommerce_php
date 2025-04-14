@@ -23,32 +23,56 @@ class ExternalTransaction extends \Google\Model
    * @var string
    */
   public $createTime;
+  /**
+   * @var Price
+   */
+  public $currentPreTaxAmount;
   protected $currentPreTaxAmountType = Price::class;
   protected $currentPreTaxAmountDataType = '';
+  /**
+   * @var Price
+   */
+  public $currentTaxAmount;
   protected $currentTaxAmountType = Price::class;
   protected $currentTaxAmountDataType = '';
   /**
    * @var string
    */
   public $externalTransactionId;
+  /**
+   * @var OneTimeExternalTransaction
+   */
+  public $oneTimeTransaction;
   protected $oneTimeTransactionType = OneTimeExternalTransaction::class;
   protected $oneTimeTransactionDataType = '';
+  /**
+   * @var Price
+   */
+  public $originalPreTaxAmount;
   protected $originalPreTaxAmountType = Price::class;
   protected $originalPreTaxAmountDataType = '';
+  /**
+   * @var Price
+   */
+  public $originalTaxAmount;
   protected $originalTaxAmountType = Price::class;
   protected $originalTaxAmountDataType = '';
   /**
    * @var string
    */
   public $packageName;
+  /**
+   * @var RecurringExternalTransaction
+   */
+  public $recurringTransaction;
   protected $recurringTransactionType = RecurringExternalTransaction::class;
   protected $recurringTransactionDataType = '';
+  /**
+   * @var ExternalTransactionTestPurchase
+   */
+  public $testPurchase;
   protected $testPurchaseType = ExternalTransactionTestPurchase::class;
   protected $testPurchaseDataType = '';
-  /**
-   * @var int
-   */
-  public $transactionProgramCode;
   /**
    * @var string
    */
@@ -57,6 +81,10 @@ class ExternalTransaction extends \Google\Model
    * @var string
    */
   public $transactionTime;
+  /**
+   * @var ExternalTransactionAddress
+   */
+  public $userTaxAddress;
   protected $userTaxAddressType = ExternalTransactionAddress::class;
   protected $userTaxAddressDataType = '';
 
@@ -199,20 +227,6 @@ class ExternalTransaction extends \Google\Model
   public function getTestPurchase()
   {
     return $this->testPurchase;
-  }
-  /**
-   * @param int
-   */
-  public function setTransactionProgramCode($transactionProgramCode)
-  {
-    $this->transactionProgramCode = $transactionProgramCode;
-  }
-  /**
-   * @return int
-   */
-  public function getTransactionProgramCode()
-  {
-    return $this->transactionProgramCode;
   }
   /**
    * @param string

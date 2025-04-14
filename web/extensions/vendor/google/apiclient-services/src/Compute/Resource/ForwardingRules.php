@@ -35,8 +35,7 @@ use Google\Service\Compute\TargetReference;
 class ForwardingRules extends \Google\Service\Resource
 {
   /**
-   * Retrieves an aggregated list of forwarding rules. To prevent failure, Google
-   * recommends that you set the `returnPartialSuccess` parameter to `true`.
+   * Retrieves an aggregated list of forwarding rules.
    * (forwardingRules.aggregatedList)
    *
    * @param string $project Project ID for this request.
@@ -99,14 +98,9 @@ class ForwardingRules extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
-   * @opt_param string serviceProjectNumber The Shared VPC service project id or
-   * service project number for which aggregated list request is invoked for
-   * subnetworks list-usable api.
+   * false.
+   * @opt_param string serviceProjectNumber
    * @return ForwardingRuleAggregatedList
-   * @throws \Google\Service\Exception
    */
   public function aggregatedList($project, $optParams = [])
   {
@@ -133,7 +127,6 @@ class ForwardingRules extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($project, $region, $forwardingRule, $optParams = [])
   {
@@ -149,7 +142,6 @@ class ForwardingRules extends \Google\Service\Resource
    * @param string $forwardingRule Name of the ForwardingRule resource to return.
    * @param array $optParams Optional parameters.
    * @return ForwardingRule
-   * @throws \Google\Service\Exception
    */
   public function get($project, $region, $forwardingRule, $optParams = [])
   {
@@ -177,7 +169,6 @@ class ForwardingRules extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function insert($project, $region, ForwardingRule $postBody, $optParams = [])
   {
@@ -243,11 +234,8 @@ class ForwardingRules extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
+   * false.
    * @return ForwardingRuleList
-   * @throws \Google\Service\Exception
    */
   public function listForwardingRules($project, $region, $optParams = [])
   {
@@ -278,7 +266,6 @@ class ForwardingRules extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($project, $region, $forwardingRule, ForwardingRule $postBody, $optParams = [])
   {
@@ -307,7 +294,6 @@ class ForwardingRules extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function setLabels($project, $region, $resource, RegionSetLabelsRequest $postBody, $optParams = [])
   {
@@ -337,7 +323,6 @@ class ForwardingRules extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function setTarget($project, $region, $forwardingRule, TargetReference $postBody, $optParams = [])
   {

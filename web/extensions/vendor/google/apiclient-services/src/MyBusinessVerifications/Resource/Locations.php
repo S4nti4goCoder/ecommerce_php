@@ -41,7 +41,6 @@ class Locations extends \Google\Service\Resource
    * @param FetchVerificationOptionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return FetchVerificationOptionsResponse
-   * @throws \Google\Service\Exception
    */
   public function fetchVerificationOptions($location, FetchVerificationOptionsRequest $postBody, $optParams = [])
   {
@@ -55,7 +54,6 @@ class Locations extends \Google\Service\Resource
    * @param string $name Required. Resource name of the location.
    * @param array $optParams Optional parameters.
    * @return VoiceOfMerchantState
-   * @throws \Google\Service\Exception
    */
   public function getVoiceOfMerchantState($name, $optParams = [])
   {
@@ -70,7 +68,6 @@ class Locations extends \Google\Service\Resource
    * @param VerifyLocationRequest $postBody
    * @param array $optParams Optional parameters.
    * @return VerifyLocationResponse
-   * @throws \Google\Service\Exception
    */
   public function verify($name, VerifyLocationRequest $postBody, $optParams = [])
   {

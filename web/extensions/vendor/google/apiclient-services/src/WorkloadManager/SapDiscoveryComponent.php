@@ -20,34 +20,32 @@ namespace Google\Service\WorkloadManager;
 class SapDiscoveryComponent extends \Google\Collection
 {
   protected $collection_key = 'resources';
+  /**
+   * @var SapDiscoveryComponentApplicationProperties
+   */
+  public $applicationProperties;
   protected $applicationPropertiesType = SapDiscoveryComponentApplicationProperties::class;
   protected $applicationPropertiesDataType = '';
+  /**
+   * @var SapDiscoveryComponentDatabaseProperties
+   */
+  public $databaseProperties;
   protected $databasePropertiesType = SapDiscoveryComponentDatabaseProperties::class;
   protected $databasePropertiesDataType = '';
-  /**
-   * @var string[]
-   */
-  public $haHosts;
   /**
    * @var string
    */
   public $hostProject;
   /**
-   * @var string
+   * @var SapDiscoveryResource[]
    */
-  public $region;
-  protected $replicationSitesType = SapDiscoveryComponentReplicationSite::class;
-  protected $replicationSitesDataType = 'array';
+  public $resources;
   protected $resourcesType = SapDiscoveryResource::class;
   protected $resourcesDataType = 'array';
   /**
    * @var string
    */
   public $sid;
-  /**
-   * @var string
-   */
-  public $topologyType;
 
   /**
    * @param SapDiscoveryComponentApplicationProperties
@@ -78,20 +76,6 @@ class SapDiscoveryComponent extends \Google\Collection
     return $this->databaseProperties;
   }
   /**
-   * @param string[]
-   */
-  public function setHaHosts($haHosts)
-  {
-    $this->haHosts = $haHosts;
-  }
-  /**
-   * @return string[]
-   */
-  public function getHaHosts()
-  {
-    return $this->haHosts;
-  }
-  /**
    * @param string
    */
   public function setHostProject($hostProject)
@@ -104,34 +88,6 @@ class SapDiscoveryComponent extends \Google\Collection
   public function getHostProject()
   {
     return $this->hostProject;
-  }
-  /**
-   * @param string
-   */
-  public function setRegion($region)
-  {
-    $this->region = $region;
-  }
-  /**
-   * @return string
-   */
-  public function getRegion()
-  {
-    return $this->region;
-  }
-  /**
-   * @param SapDiscoveryComponentReplicationSite[]
-   */
-  public function setReplicationSites($replicationSites)
-  {
-    $this->replicationSites = $replicationSites;
-  }
-  /**
-   * @return SapDiscoveryComponentReplicationSite[]
-   */
-  public function getReplicationSites()
-  {
-    return $this->replicationSites;
   }
   /**
    * @param SapDiscoveryResource[]
@@ -160,20 +116,6 @@ class SapDiscoveryComponent extends \Google\Collection
   public function getSid()
   {
     return $this->sid;
-  }
-  /**
-   * @param string
-   */
-  public function setTopologyType($topologyType)
-  {
-    $this->topologyType = $topologyType;
-  }
-  /**
-   * @return string
-   */
-  public function getTopologyType()
-  {
-    return $this->topologyType;
   }
 }
 

@@ -43,7 +43,6 @@ class ProjectsLocationsSshKeys extends \Google\Service\Resource
    * become the final component of the key's resource name. This value must match
    * the regex: [a-zA-Z0-9@.\-_]{1,64}
    * @return SSHKey
-   * @throws \Google\Service\Exception
    */
   public function create($parent, SSHKey $postBody, $optParams = [])
   {
@@ -59,7 +58,6 @@ class ProjectsLocationsSshKeys extends \Google\Service\Resource
    * the only valid value for the location is "global".
    * @param array $optParams Optional parameters.
    * @return BaremetalsolutionEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -80,7 +78,6 @@ class ProjectsLocationsSshKeys extends \Google\Service\Resource
    * @opt_param string pageToken The next_page_token value returned from a
    * previous List request, if any.
    * @return ListSSHKeysResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsSshKeys($parent, $optParams = [])
   {

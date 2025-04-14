@@ -39,7 +39,6 @@ class CommentThreads extends \Google\Service\Resource
    * @param CommentThread $postBody
    * @param array $optParams Optional parameters.
    * @return CommentThread
-   * @throws \Google\Service\Exception
    */
   public function insert($part, CommentThread $postBody, $optParams = [])
   {
@@ -78,7 +77,6 @@ class CommentThreads extends \Google\Service\Resource
    * comments.
    * @opt_param string videoId Returns the comment threads of the specified video.
    * @return CommentThreadListResponse
-   * @throws \Google\Service\Exception
    */
   public function listCommentThreads($part, $optParams = [])
   {

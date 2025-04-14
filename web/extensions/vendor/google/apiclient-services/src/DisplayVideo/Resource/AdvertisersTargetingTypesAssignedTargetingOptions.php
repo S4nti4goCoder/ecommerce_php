@@ -39,11 +39,10 @@ class AdvertisersTargetingTypesAssignedTargetingOptions extends \Google\Service\
    * @param string $targetingType Required. Identifies the type of this assigned
    * targeting option. Supported targeting types: * `TARGETING_TYPE_CHANNEL` *
    * `TARGETING_TYPE_DIGITAL_CONTENT_LABEL_EXCLUSION` * `TARGETING_TYPE_OMID` *
-   * `TARGETING_TYPE_SENSITIVE_CATEGORY_EXCLUSION` * `TARGETING_TYPE_KEYWORD`
+   * `TARGETING_TYPE_SENSITIVE_CATEGORY_EXCLUSION`
    * @param AssignedTargetingOption $postBody
    * @param array $optParams Optional parameters.
    * @return AssignedTargetingOption
-   * @throws \Google\Service\Exception
    */
   public function create($advertiserId, $targetingType, AssignedTargetingOption $postBody, $optParams = [])
   {
@@ -59,12 +58,11 @@ class AdvertisersTargetingTypesAssignedTargetingOptions extends \Google\Service\
    * @param string $targetingType Required. Identifies the type of this assigned
    * targeting option. Supported targeting types: * `TARGETING_TYPE_CHANNEL` *
    * `TARGETING_TYPE_DIGITAL_CONTENT_LABEL_EXCLUSION` * `TARGETING_TYPE_OMID` *
-   * `TARGETING_TYPE_SENSITIVE_CATEGORY_EXCLUSION` * `TARGETING_TYPE_KEYWORD`
+   * `TARGETING_TYPE_SENSITIVE_CATEGORY_EXCLUSION`
    * @param string $assignedTargetingOptionId Required. The ID of the assigned
    * targeting option to delete.
    * @param array $optParams Optional parameters.
    * @return DisplayvideoEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($advertiserId, $targetingType, $assignedTargetingOptionId, $optParams = [])
   {
@@ -81,14 +79,12 @@ class AdvertisersTargetingTypesAssignedTargetingOptions extends \Google\Service\
    * targeting option. Supported targeting types: * `TARGETING_TYPE_CHANNEL` *
    * `TARGETING_TYPE_DIGITAL_CONTENT_LABEL_EXCLUSION` * `TARGETING_TYPE_OMID` *
    * `TARGETING_TYPE_SENSITIVE_CATEGORY_EXCLUSION` *
-   * `TARGETING_TYPE_YOUTUBE_VIDEO` * `TARGETING_TYPE_YOUTUBE_CHANNEL` *
-   * `TARGETING_TYPE_KEYWORD`
+   * `TARGETING_TYPE_YOUTUBE_VIDEO` * `TARGETING_TYPE_YOUTUBE_CHANNEL`
    * @param string $assignedTargetingOptionId Required. An identifier unique to
    * the targeting type in this advertiser that identifies the assigned targeting
    * option being requested.
    * @param array $optParams Optional parameters.
    * @return AssignedTargetingOption
-   * @throws \Google\Service\Exception
    */
   public function get($advertiserId, $targetingType, $assignedTargetingOptionId, $optParams = [])
   {
@@ -105,8 +101,7 @@ class AdvertisersTargetingTypesAssignedTargetingOptions extends \Google\Service\
    * targeting options to list. Supported targeting types: *
    * `TARGETING_TYPE_CHANNEL` * `TARGETING_TYPE_DIGITAL_CONTENT_LABEL_EXCLUSION` *
    * `TARGETING_TYPE_OMID` * `TARGETING_TYPE_SENSITIVE_CATEGORY_EXCLUSION` *
-   * `TARGETING_TYPE_YOUTUBE_VIDEO` * `TARGETING_TYPE_YOUTUBE_CHANNEL` *
-   * `TARGETING_TYPE_KEYWORD`
+   * `TARGETING_TYPE_YOUTUBE_VIDEO` * `TARGETING_TYPE_YOUTUBE_CHANNEL`
    * @param array $optParams Optional parameters.
    *
    * @opt_param string filter Allows filtering by assigned targeting option
@@ -131,7 +126,6 @@ class AdvertisersTargetingTypesAssignedTargetingOptions extends \Google\Service\
    * the previous call to `ListAdvertiserAssignedTargetingOptions` method. If not
    * specified, the first page of results will be returned.
    * @return ListAdvertiserAssignedTargetingOptionsResponse
-   * @throws \Google\Service\Exception
    */
   public function listAdvertisersTargetingTypesAssignedTargetingOptions($advertiserId, $targetingType, $optParams = [])
   {

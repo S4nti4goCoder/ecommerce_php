@@ -19,8 +19,6 @@ namespace Google\Service\RecaptchaEnterprise\Resource;
 
 use Google\Service\RecaptchaEnterprise\GoogleCloudRecaptchaenterpriseV1FirewallPolicy;
 use Google\Service\RecaptchaEnterprise\GoogleCloudRecaptchaenterpriseV1ListFirewallPoliciesResponse;
-use Google\Service\RecaptchaEnterprise\GoogleCloudRecaptchaenterpriseV1ReorderFirewallPoliciesRequest;
-use Google\Service\RecaptchaEnterprise\GoogleCloudRecaptchaenterpriseV1ReorderFirewallPoliciesResponse;
 use Google\Service\RecaptchaEnterprise\GoogleProtobufEmpty;
 
 /**
@@ -38,12 +36,11 @@ class ProjectsFirewallpolicies extends \Google\Service\Resource
    * Enterprise actions can be executed. A project may have a maximum of 1000
    * policies. (firewallpolicies.create)
    *
-   * @param string $parent Required. The name of the project this policy applies
-   * to, in the format `projects/{project}`.
+   * @param string $parent Required. The name of the project this policy will
+   * apply to, in the format `projects/{project}`.
    * @param GoogleCloudRecaptchaenterpriseV1FirewallPolicy $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudRecaptchaenterpriseV1FirewallPolicy
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudRecaptchaenterpriseV1FirewallPolicy $postBody, $optParams = [])
   {
@@ -58,7 +55,6 @@ class ProjectsFirewallpolicies extends \Google\Service\Resource
    * format `projects/{project}/firewallpolicies/{firewallpolicy}`.
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -73,7 +69,6 @@ class ProjectsFirewallpolicies extends \Google\Service\Resource
    * `projects/{project}/firewallpolicies/{firewallpolicy}`.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudRecaptchaenterpriseV1FirewallPolicy
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -94,7 +89,6 @@ class ProjectsFirewallpolicies extends \Google\Service\Resource
    * @opt_param string pageToken Optional. The next_page_token value returned from
    * a previous. ListFirewallPoliciesRequest, if any.
    * @return GoogleCloudRecaptchaenterpriseV1ListFirewallPoliciesResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsFirewallpolicies($parent, $optParams = [])
   {
@@ -111,31 +105,15 @@ class ProjectsFirewallpolicies extends \Google\Service\Resource
    * @param array $optParams Optional parameters.
    *
    * @opt_param string updateMask Optional. The mask to control which fields of
-   * the policy get updated. If the mask is not present, all fields are updated.
+   * the policy get updated. If the mask is not present, all fields will be
+   * updated.
    * @return GoogleCloudRecaptchaenterpriseV1FirewallPolicy
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleCloudRecaptchaenterpriseV1FirewallPolicy $postBody, $optParams = [])
   {
     $params = ['name' => $name, 'postBody' => $postBody];
     $params = array_merge($params, $optParams);
     return $this->call('patch', [$params], GoogleCloudRecaptchaenterpriseV1FirewallPolicy::class);
-  }
-  /**
-   * Reorders all firewall policies. (firewallpolicies.reorder)
-   *
-   * @param string $parent Required. The name of the project to list the policies
-   * for, in the format `projects/{project}`.
-   * @param GoogleCloudRecaptchaenterpriseV1ReorderFirewallPoliciesRequest $postBody
-   * @param array $optParams Optional parameters.
-   * @return GoogleCloudRecaptchaenterpriseV1ReorderFirewallPoliciesResponse
-   * @throws \Google\Service\Exception
-   */
-  public function reorder($parent, GoogleCloudRecaptchaenterpriseV1ReorderFirewallPoliciesRequest $postBody, $optParams = [])
-  {
-    $params = ['parent' => $parent, 'postBody' => $postBody];
-    $params = array_merge($params, $optParams);
-    return $this->call('reorder', [$params], GoogleCloudRecaptchaenterpriseV1ReorderFirewallPoliciesResponse::class);
   }
 }
 

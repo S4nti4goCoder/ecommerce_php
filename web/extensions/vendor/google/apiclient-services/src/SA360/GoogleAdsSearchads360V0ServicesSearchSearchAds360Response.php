@@ -20,10 +20,10 @@ namespace Google\Service\SA360;
 class GoogleAdsSearchads360V0ServicesSearchSearchAds360Response extends \Google\Collection
 {
   protected $collection_key = 'results';
-  protected $conversionCustomDimensionHeadersType = GoogleAdsSearchads360V0ServicesConversionCustomDimensionHeader::class;
-  protected $conversionCustomDimensionHeadersDataType = 'array';
-  protected $conversionCustomMetricHeadersType = GoogleAdsSearchads360V0ServicesConversionCustomMetricHeader::class;
-  protected $conversionCustomMetricHeadersDataType = 'array';
+  /**
+   * @var GoogleAdsSearchads360V0ServicesCustomColumnHeader[]
+   */
+  public $customColumnHeaders;
   protected $customColumnHeadersType = GoogleAdsSearchads360V0ServicesCustomColumnHeader::class;
   protected $customColumnHeadersDataType = 'array';
   /**
@@ -34,12 +34,16 @@ class GoogleAdsSearchads360V0ServicesSearchSearchAds360Response extends \Google\
    * @var string
    */
   public $nextPageToken;
-  protected $rawEventConversionDimensionHeadersType = GoogleAdsSearchads360V0ServicesRawEventConversionDimensionHeader::class;
-  protected $rawEventConversionDimensionHeadersDataType = 'array';
-  protected $rawEventConversionMetricHeadersType = GoogleAdsSearchads360V0ServicesRawEventConversionMetricHeader::class;
-  protected $rawEventConversionMetricHeadersDataType = 'array';
+  /**
+   * @var GoogleAdsSearchads360V0ServicesSearchAds360Row[]
+   */
+  public $results;
   protected $resultsType = GoogleAdsSearchads360V0ServicesSearchAds360Row::class;
   protected $resultsDataType = 'array';
+  /**
+   * @var GoogleAdsSearchads360V0ServicesSearchAds360Row
+   */
+  public $summaryRow;
   protected $summaryRowType = GoogleAdsSearchads360V0ServicesSearchAds360Row::class;
   protected $summaryRowDataType = '';
   /**
@@ -47,34 +51,6 @@ class GoogleAdsSearchads360V0ServicesSearchSearchAds360Response extends \Google\
    */
   public $totalResultsCount;
 
-  /**
-   * @param GoogleAdsSearchads360V0ServicesConversionCustomDimensionHeader[]
-   */
-  public function setConversionCustomDimensionHeaders($conversionCustomDimensionHeaders)
-  {
-    $this->conversionCustomDimensionHeaders = $conversionCustomDimensionHeaders;
-  }
-  /**
-   * @return GoogleAdsSearchads360V0ServicesConversionCustomDimensionHeader[]
-   */
-  public function getConversionCustomDimensionHeaders()
-  {
-    return $this->conversionCustomDimensionHeaders;
-  }
-  /**
-   * @param GoogleAdsSearchads360V0ServicesConversionCustomMetricHeader[]
-   */
-  public function setConversionCustomMetricHeaders($conversionCustomMetricHeaders)
-  {
-    $this->conversionCustomMetricHeaders = $conversionCustomMetricHeaders;
-  }
-  /**
-   * @return GoogleAdsSearchads360V0ServicesConversionCustomMetricHeader[]
-   */
-  public function getConversionCustomMetricHeaders()
-  {
-    return $this->conversionCustomMetricHeaders;
-  }
   /**
    * @param GoogleAdsSearchads360V0ServicesCustomColumnHeader[]
    */
@@ -116,34 +92,6 @@ class GoogleAdsSearchads360V0ServicesSearchSearchAds360Response extends \Google\
   public function getNextPageToken()
   {
     return $this->nextPageToken;
-  }
-  /**
-   * @param GoogleAdsSearchads360V0ServicesRawEventConversionDimensionHeader[]
-   */
-  public function setRawEventConversionDimensionHeaders($rawEventConversionDimensionHeaders)
-  {
-    $this->rawEventConversionDimensionHeaders = $rawEventConversionDimensionHeaders;
-  }
-  /**
-   * @return GoogleAdsSearchads360V0ServicesRawEventConversionDimensionHeader[]
-   */
-  public function getRawEventConversionDimensionHeaders()
-  {
-    return $this->rawEventConversionDimensionHeaders;
-  }
-  /**
-   * @param GoogleAdsSearchads360V0ServicesRawEventConversionMetricHeader[]
-   */
-  public function setRawEventConversionMetricHeaders($rawEventConversionMetricHeaders)
-  {
-    $this->rawEventConversionMetricHeaders = $rawEventConversionMetricHeaders;
-  }
-  /**
-   * @return GoogleAdsSearchads360V0ServicesRawEventConversionMetricHeader[]
-   */
-  public function getRawEventConversionMetricHeaders()
-  {
-    return $this->rawEventConversionMetricHeaders;
   }
   /**
    * @param GoogleAdsSearchads360V0ServicesSearchAds360Row[]

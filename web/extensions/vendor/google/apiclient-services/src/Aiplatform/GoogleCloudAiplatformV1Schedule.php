@@ -27,8 +27,10 @@ class GoogleCloudAiplatformV1Schedule extends \Google\Model
    * @var bool
    */
   public $catchUp;
-  protected $createNotebookExecutionJobRequestType = GoogleCloudAiplatformV1CreateNotebookExecutionJobRequest::class;
-  protected $createNotebookExecutionJobRequestDataType = '';
+  /**
+   * @var GoogleCloudAiplatformV1CreatePipelineJobRequest
+   */
+  public $createPipelineJobRequest;
   protected $createPipelineJobRequestType = GoogleCloudAiplatformV1CreatePipelineJobRequest::class;
   protected $createPipelineJobRequestDataType = '';
   /**
@@ -55,6 +57,10 @@ class GoogleCloudAiplatformV1Schedule extends \Google\Model
    * @var string
    */
   public $lastResumeTime;
+  /**
+   * @var GoogleCloudAiplatformV1ScheduleRunResponse
+   */
+  public $lastScheduledRunResponse;
   protected $lastScheduledRunResponseType = GoogleCloudAiplatformV1ScheduleRunResponse::class;
   protected $lastScheduledRunResponseDataType = '';
   /**
@@ -117,20 +123,6 @@ class GoogleCloudAiplatformV1Schedule extends \Google\Model
   public function getCatchUp()
   {
     return $this->catchUp;
-  }
-  /**
-   * @param GoogleCloudAiplatformV1CreateNotebookExecutionJobRequest
-   */
-  public function setCreateNotebookExecutionJobRequest(GoogleCloudAiplatformV1CreateNotebookExecutionJobRequest $createNotebookExecutionJobRequest)
-  {
-    $this->createNotebookExecutionJobRequest = $createNotebookExecutionJobRequest;
-  }
-  /**
-   * @return GoogleCloudAiplatformV1CreateNotebookExecutionJobRequest
-   */
-  public function getCreateNotebookExecutionJobRequest()
-  {
-    return $this->createNotebookExecutionJobRequest;
   }
   /**
    * @param GoogleCloudAiplatformV1CreatePipelineJobRequest

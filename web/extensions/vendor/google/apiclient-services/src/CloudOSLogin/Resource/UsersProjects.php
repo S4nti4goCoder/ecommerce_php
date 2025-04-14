@@ -38,7 +38,6 @@ class UsersProjects extends \Google\Service\Resource
    * `users/{user}/projects/{project}`.
    * @param array $optParams Optional parameters.
    * @return OsloginEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {

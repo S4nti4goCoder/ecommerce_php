@@ -45,7 +45,6 @@ class Feeds extends \Google\Service\Resource
    * @param CreateFeedRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Feed
-   * @throws \Google\Service\Exception
    */
   public function create($parent, CreateFeedRequest $postBody, $optParams = [])
   {
@@ -62,7 +61,6 @@ class Feeds extends \Google\Service\Resource
    * organizations/organization_number/feeds/feed_id
    * @param array $optParams Optional parameters.
    * @return CloudassetEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -79,7 +77,6 @@ class Feeds extends \Google\Service\Resource
    * organizations/organization_number/feeds/feed_id
    * @param array $optParams Optional parameters.
    * @return Feed
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -97,7 +94,6 @@ class Feeds extends \Google\Service\Resource
    * project-id").
    * @param array $optParams Optional parameters.
    * @return ListFeedsResponse
-   * @throws \Google\Service\Exception
    */
   public function listFeeds($parent, $optParams = [])
   {
@@ -117,7 +113,6 @@ class Feeds extends \Google\Service\Resource
    * @param UpdateFeedRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Feed
-   * @throws \Google\Service\Exception
    */
   public function patch($name, UpdateFeedRequest $postBody, $optParams = [])
   {

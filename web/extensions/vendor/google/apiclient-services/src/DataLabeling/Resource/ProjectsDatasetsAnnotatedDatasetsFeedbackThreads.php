@@ -39,7 +39,6 @@ class ProjectsDatasetsAnnotatedDatasetsFeedbackThreads extends \Google\Service\R
    * ts/{annotated_dataset_id}/feedbackThreads/{feedback_thread_id}'.
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -55,7 +54,6 @@ class ProjectsDatasetsAnnotatedDatasetsFeedbackThreads extends \Google\Service\R
    * Threads/{feedback_thread_id}'.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudDatalabelingV1beta1FeedbackThread
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -79,7 +77,6 @@ class ProjectsDatasetsAnnotatedDatasetsFeedbackThreads extends \Google\Service\R
    * ListFeedbackThreads.next_page_token of the previous
    * [DataLabelingService.ListFeedbackThreads] call. Return first page if empty.
    * @return GoogleCloudDatalabelingV1beta1ListFeedbackThreadsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsDatasetsAnnotatedDatasetsFeedbackThreads($parent, $optParams = [])
   {

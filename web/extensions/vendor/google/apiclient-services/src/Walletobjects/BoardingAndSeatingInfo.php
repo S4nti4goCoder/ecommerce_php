@@ -31,12 +31,20 @@ class BoardingAndSeatingInfo extends \Google\Model
    * @var string
    */
   public $boardingPosition;
+  /**
+   * @var Image
+   */
+  public $boardingPrivilegeImage;
   protected $boardingPrivilegeImageType = Image::class;
   protected $boardingPrivilegeImageDataType = '';
   /**
    * @var string
    */
   public $kind;
+  /**
+   * @var LocalizedString
+   */
+  public $seatAssignment;
   protected $seatAssignmentType = LocalizedString::class;
   protected $seatAssignmentDataType = '';
   /**

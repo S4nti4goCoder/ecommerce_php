@@ -19,22 +19,34 @@ namespace Google\Service\Compute;
 
 class HealthStatusForNetworkEndpoint extends \Google\Model
 {
+  /**
+   * @var BackendServiceReference
+   */
+  public $backendService;
   protected $backendServiceType = BackendServiceReference::class;
   protected $backendServiceDataType = '';
+  /**
+   * @var ForwardingRuleReference
+   */
+  public $forwardingRule;
   protected $forwardingRuleType = ForwardingRuleReference::class;
   protected $forwardingRuleDataType = '';
+  /**
+   * @var HealthCheckReference
+   */
+  public $healthCheck;
   protected $healthCheckType = HealthCheckReference::class;
   protected $healthCheckDataType = '';
+  /**
+   * @var HealthCheckServiceReference
+   */
+  public $healthCheckService;
   protected $healthCheckServiceType = HealthCheckServiceReference::class;
   protected $healthCheckServiceDataType = '';
   /**
    * @var string
    */
   public $healthState;
-  /**
-   * @var string
-   */
-  public $ipv6HealthState;
 
   /**
    * @param BackendServiceReference
@@ -105,20 +117,6 @@ class HealthStatusForNetworkEndpoint extends \Google\Model
   public function getHealthState()
   {
     return $this->healthState;
-  }
-  /**
-   * @param string
-   */
-  public function setIpv6HealthState($ipv6HealthState)
-  {
-    $this->ipv6HealthState = $ipv6HealthState;
-  }
-  /**
-   * @return string
-   */
-  public function getIpv6HealthState()
-  {
-    return $this->ipv6HealthState;
   }
 }
 

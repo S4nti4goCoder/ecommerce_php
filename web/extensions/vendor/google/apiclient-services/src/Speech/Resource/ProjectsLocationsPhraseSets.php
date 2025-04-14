@@ -47,7 +47,6 @@ class ProjectsLocationsPhraseSets extends \Google\Service\Resource
    * @param CreatePhraseSetRequest $postBody
    * @param array $optParams Optional parameters.
    * @return PhraseSet
-   * @throws \Google\Service\Exception
    */
   public function create($parent, CreatePhraseSetRequest $postBody, $optParams = [])
   {
@@ -62,7 +61,6 @@ class ProjectsLocationsPhraseSets extends \Google\Service\Resource
    * `projects/{project}/locations/{location}/phraseSets/{phrase_set}`
    * @param array $optParams Optional parameters.
    * @return SpeechEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -82,7 +80,6 @@ class ProjectsLocationsPhraseSets extends \Google\Service\Resource
    * matching `us` or `eu` location value.
    * @param array $optParams Optional parameters.
    * @return PhraseSet
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -111,7 +108,6 @@ class ProjectsLocationsPhraseSets extends \Google\Service\Resource
    * paginating, all other parameters provided to `ListPhraseSet` must match the
    * call that provided the page token.
    * @return ListPhraseSetResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsPhraseSets($parent, $optParams = [])
   {
@@ -128,7 +124,6 @@ class ProjectsLocationsPhraseSets extends \Google\Service\Resource
    *
    * @opt_param string updateMask The list of fields to be updated.
    * @return PhraseSet
-   * @throws \Google\Service\Exception
    */
   public function patch($name, PhraseSet $postBody, $optParams = [])
   {

@@ -19,12 +19,12 @@ namespace Google\Service\Contactcenterinsights;
 
 class GoogleCloudContactcenterinsightsV1ExportInsightsDataRequest extends \Google\Model
 {
+  /**
+   * @var GoogleCloudContactcenterinsightsV1ExportInsightsDataRequestBigQueryDestination
+   */
+  public $bigQueryDestination;
   protected $bigQueryDestinationType = GoogleCloudContactcenterinsightsV1ExportInsightsDataRequestBigQueryDestination::class;
   protected $bigQueryDestinationDataType = '';
-  /**
-   * @var string
-   */
-  public $exportSchemaVersion;
   /**
    * @var string
    */
@@ -55,20 +55,6 @@ class GoogleCloudContactcenterinsightsV1ExportInsightsDataRequest extends \Googl
   public function getBigQueryDestination()
   {
     return $this->bigQueryDestination;
-  }
-  /**
-   * @param string
-   */
-  public function setExportSchemaVersion($exportSchemaVersion)
-  {
-    $this->exportSchemaVersion = $exportSchemaVersion;
-  }
-  /**
-   * @return string
-   */
-  public function getExportSchemaVersion()
-  {
-    return $this->exportSchemaVersion;
   }
   /**
    * @param string

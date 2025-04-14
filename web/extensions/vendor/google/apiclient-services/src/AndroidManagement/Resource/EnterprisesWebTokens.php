@@ -38,7 +38,6 @@ class EnterprisesWebTokens extends \Google\Service\Resource
    * @param WebToken $postBody
    * @param array $optParams Optional parameters.
    * @return WebToken
-   * @throws \Google\Service\Exception
    */
   public function create($parent, WebToken $postBody, $optParams = [])
   {

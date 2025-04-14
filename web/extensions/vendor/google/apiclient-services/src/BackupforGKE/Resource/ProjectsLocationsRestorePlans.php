@@ -49,7 +49,6 @@ class ProjectsLocationsRestorePlans extends \Google\Service\Resource
    * dashes - start with a lower-case letter - end with a lower-case letter or
    * number - be unique within the set of RestorePlans in this location
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, RestorePlan $postBody, $optParams = [])
   {
@@ -71,7 +70,6 @@ class ProjectsLocationsRestorePlans extends \Google\Service\Resource
    * RestorePlan will also be deleted. Otherwise, the request will only succeed if
    * the RestorePlan has no Restores.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -86,7 +84,6 @@ class ProjectsLocationsRestorePlans extends \Google\Service\Resource
    * `projects/locations/restorePlans`
    * @param array $optParams Optional parameters.
    * @return RestorePlan
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -117,7 +114,6 @@ class ProjectsLocationsRestorePlans extends \Google\Service\Resource
    * documentation](https://cloud.google.com/iam/help/conditions/resource-
    * policies).
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, $optParams = [])
   {
@@ -147,7 +143,6 @@ class ProjectsLocationsRestorePlans extends \Google\Service\Resource
    * parameters provided to `ListRestorePlans` must match the call that provided
    * the page token.
    * @return ListRestorePlansResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsRestorePlans($parent, $optParams = [])
   {
@@ -172,7 +167,6 @@ class ProjectsLocationsRestorePlans extends \Google\Service\Resource
    * in `restore_plan` are ignored and are not used to update the target
    * RestorePlan.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, RestorePlan $postBody, $optParams = [])
   {
@@ -192,7 +186,6 @@ class ProjectsLocationsRestorePlans extends \Google\Service\Resource
    * @param SetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, SetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -215,7 +208,6 @@ class ProjectsLocationsRestorePlans extends \Google\Service\Resource
    * @param TestIamPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestIamPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, TestIamPermissionsRequest $postBody, $optParams = [])
   {

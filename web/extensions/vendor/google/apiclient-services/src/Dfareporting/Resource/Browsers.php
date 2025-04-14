@@ -35,7 +35,6 @@ class Browsers extends \Google\Service\Resource
    * @param string $profileId User profile ID associated with this request.
    * @param array $optParams Optional parameters.
    * @return BrowsersListResponse
-   * @throws \Google\Service\Exception
    */
   public function listBrowsers($profileId, $optParams = [])
   {

@@ -40,7 +40,6 @@ class ProjectsLocationsSfdcInstances extends \Google\Service\Resource
    * @param GoogleCloudIntegrationsV1alphaSfdcInstance $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudIntegrationsV1alphaSfdcInstance
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudIntegrationsV1alphaSfdcInstance $postBody, $optParams = [])
   {
@@ -55,7 +54,6 @@ class ProjectsLocationsSfdcInstances extends \Google\Service\Resource
    * SfdcInstance.
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -71,7 +69,6 @@ class ProjectsLocationsSfdcInstances extends \Google\Service\Resource
    * SfdcInstance.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudIntegrationsV1alphaSfdcInstance
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -96,7 +93,6 @@ class ProjectsLocationsSfdcInstances extends \Google\Service\Resource
    * @opt_param string readMask The mask which specifies fields that need to be
    * returned in the SfdcInstance's response.
    * @return GoogleCloudIntegrationsV1alphaListSfdcInstancesResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsSfdcInstances($parent, $optParams = [])
   {
@@ -116,7 +112,6 @@ class ProjectsLocationsSfdcInstances extends \Google\Service\Resource
    * @opt_param string updateMask Field mask specifying the fields in the above
    * SfdcInstance that have been modified and need to be updated.
    * @return GoogleCloudIntegrationsV1alphaSfdcInstance
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleCloudIntegrationsV1alphaSfdcInstance $postBody, $optParams = [])
   {

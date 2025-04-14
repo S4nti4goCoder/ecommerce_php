@@ -20,19 +20,27 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1DataScanJob extends \Google\Model
 {
   /**
-   * @var string
+   * @var GoogleCloudDataplexV1DataProfileResult
    */
-  public $createTime;
-  protected $dataDiscoveryResultType = GoogleCloudDataplexV1DataDiscoveryResult::class;
-  protected $dataDiscoveryResultDataType = '';
-  protected $dataDiscoverySpecType = GoogleCloudDataplexV1DataDiscoverySpec::class;
-  protected $dataDiscoverySpecDataType = '';
+  public $dataProfileResult;
   protected $dataProfileResultType = GoogleCloudDataplexV1DataProfileResult::class;
   protected $dataProfileResultDataType = '';
+  /**
+   * @var GoogleCloudDataplexV1DataProfileSpec
+   */
+  public $dataProfileSpec;
   protected $dataProfileSpecType = GoogleCloudDataplexV1DataProfileSpec::class;
   protected $dataProfileSpecDataType = '';
+  /**
+   * @var GoogleCloudDataplexV1DataQualityResult
+   */
+  public $dataQualityResult;
   protected $dataQualityResultType = GoogleCloudDataplexV1DataQualityResult::class;
   protected $dataQualityResultDataType = '';
+  /**
+   * @var GoogleCloudDataplexV1DataQualitySpec
+   */
+  public $dataQualitySpec;
   protected $dataQualitySpecType = GoogleCloudDataplexV1DataQualitySpec::class;
   protected $dataQualitySpecDataType = '';
   /**
@@ -64,48 +72,6 @@ class GoogleCloudDataplexV1DataScanJob extends \Google\Model
    */
   public $uid;
 
-  /**
-   * @param string
-   */
-  public function setCreateTime($createTime)
-  {
-    $this->createTime = $createTime;
-  }
-  /**
-   * @return string
-   */
-  public function getCreateTime()
-  {
-    return $this->createTime;
-  }
-  /**
-   * @param GoogleCloudDataplexV1DataDiscoveryResult
-   */
-  public function setDataDiscoveryResult(GoogleCloudDataplexV1DataDiscoveryResult $dataDiscoveryResult)
-  {
-    $this->dataDiscoveryResult = $dataDiscoveryResult;
-  }
-  /**
-   * @return GoogleCloudDataplexV1DataDiscoveryResult
-   */
-  public function getDataDiscoveryResult()
-  {
-    return $this->dataDiscoveryResult;
-  }
-  /**
-   * @param GoogleCloudDataplexV1DataDiscoverySpec
-   */
-  public function setDataDiscoverySpec(GoogleCloudDataplexV1DataDiscoverySpec $dataDiscoverySpec)
-  {
-    $this->dataDiscoverySpec = $dataDiscoverySpec;
-  }
-  /**
-   * @return GoogleCloudDataplexV1DataDiscoverySpec
-   */
-  public function getDataDiscoverySpec()
-  {
-    return $this->dataDiscoverySpec;
-  }
   /**
    * @param GoogleCloudDataplexV1DataProfileResult
    */

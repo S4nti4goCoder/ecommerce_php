@@ -23,6 +23,10 @@ class GoogleCloudDiscoveryengineV1alphaTargetSite extends \Google\Model
    * @var bool
    */
   public $exactMatch;
+  /**
+   * @var GoogleCloudDiscoveryengineV1alphaTargetSiteFailureReason
+   */
+  public $failureReason;
   protected $failureReasonType = GoogleCloudDiscoveryengineV1alphaTargetSiteFailureReason::class;
   protected $failureReasonDataType = '';
   /**
@@ -42,9 +46,9 @@ class GoogleCloudDiscoveryengineV1alphaTargetSite extends \Google\Model
    */
   public $providedUriPattern;
   /**
-   * @var string
+   * @var GoogleCloudDiscoveryengineV1alphaSiteVerificationInfo
    */
-  public $rootDomainUri;
+  public $siteVerificationInfo;
   protected $siteVerificationInfoType = GoogleCloudDiscoveryengineV1alphaSiteVerificationInfo::class;
   protected $siteVerificationInfoDataType = '';
   /**
@@ -139,20 +143,6 @@ class GoogleCloudDiscoveryengineV1alphaTargetSite extends \Google\Model
   public function getProvidedUriPattern()
   {
     return $this->providedUriPattern;
-  }
-  /**
-   * @param string
-   */
-  public function setRootDomainUri($rootDomainUri)
-  {
-    $this->rootDomainUri = $rootDomainUri;
-  }
-  /**
-   * @return string
-   */
-  public function getRootDomainUri()
-  {
-    return $this->rootDomainUri;
   }
   /**
    * @param GoogleCloudDiscoveryengineV1alphaSiteVerificationInfo

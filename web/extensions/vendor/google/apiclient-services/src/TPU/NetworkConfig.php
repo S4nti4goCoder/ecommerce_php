@@ -32,10 +32,6 @@ class NetworkConfig extends \Google\Model
    */
   public $network;
   /**
-   * @var int
-   */
-  public $queueCount;
-  /**
    * @var string
    */
   public $subnetwork;
@@ -81,20 +77,6 @@ class NetworkConfig extends \Google\Model
   public function getNetwork()
   {
     return $this->network;
-  }
-  /**
-   * @param int
-   */
-  public function setQueueCount($queueCount)
-  {
-    $this->queueCount = $queueCount;
-  }
-  /**
-   * @return int
-   */
-  public function getQueueCount()
-  {
-    return $this->queueCount;
   }
   /**
    * @param string

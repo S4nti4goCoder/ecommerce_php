@@ -19,6 +19,10 @@ namespace Google\Service\Apigee;
 
 class GoogleCloudApigeeV1UpdateSecurityIncidentRequest extends \Google\Model
 {
+  /**
+   * @var GoogleCloudApigeeV1SecurityIncident
+   */
+  public $securityIncident;
   protected $securityIncidentType = GoogleCloudApigeeV1SecurityIncident::class;
   protected $securityIncidentDataType = '';
   /**

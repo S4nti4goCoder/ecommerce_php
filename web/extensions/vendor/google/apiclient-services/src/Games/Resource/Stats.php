@@ -35,7 +35,6 @@ class Stats extends \Google\Service\Resource
    *
    * @param array $optParams Optional parameters.
    * @return StatsResponse
-   * @throws \Google\Service\Exception
    */
   public function get($optParams = [])
   {

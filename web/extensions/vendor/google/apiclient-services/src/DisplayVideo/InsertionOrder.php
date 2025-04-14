@@ -24,8 +24,16 @@ class InsertionOrder extends \Google\Collection
    * @var string
    */
   public $advertiserId;
+  /**
+   * @var BiddingStrategy
+   */
+  public $bidStrategy;
   protected $bidStrategyType = BiddingStrategy::class;
   protected $bidStrategyDataType = '';
+  /**
+   * @var InsertionOrderBudget
+   */
+  public $budget;
   protected $budgetType = InsertionOrderBudget::class;
   protected $budgetDataType = '';
   /**
@@ -40,6 +48,10 @@ class InsertionOrder extends \Google\Collection
    * @var string
    */
   public $entityStatus;
+  /**
+   * @var FrequencyCap
+   */
+  public $frequencyCap;
   protected $frequencyCapType = FrequencyCap::class;
   protected $frequencyCapDataType = '';
   /**
@@ -50,8 +62,16 @@ class InsertionOrder extends \Google\Collection
    * @var string
    */
   public $insertionOrderType;
+  /**
+   * @var IntegrationDetails
+   */
+  public $integrationDetails;
   protected $integrationDetailsType = IntegrationDetails::class;
   protected $integrationDetailsDataType = '';
+  /**
+   * @var Kpi
+   */
+  public $kpi;
   protected $kpiType = Kpi::class;
   protected $kpiDataType = '';
   /**
@@ -59,11 +79,15 @@ class InsertionOrder extends \Google\Collection
    */
   public $name;
   /**
-   * @var string
+   * @var Pacing
    */
-  public $optimizationObjective;
+  public $pacing;
   protected $pacingType = Pacing::class;
   protected $pacingDataType = '';
+  /**
+   * @var PartnerCost[]
+   */
+  public $partnerCosts;
   protected $partnerCostsType = PartnerCost::class;
   protected $partnerCostsDataType = 'array';
   /**
@@ -242,20 +266,6 @@ class InsertionOrder extends \Google\Collection
   public function getName()
   {
     return $this->name;
-  }
-  /**
-   * @param string
-   */
-  public function setOptimizationObjective($optimizationObjective)
-  {
-    $this->optimizationObjective = $optimizationObjective;
-  }
-  /**
-   * @return string
-   */
-  public function getOptimizationObjective()
-  {
-    return $this->optimizationObjective;
   }
   /**
    * @param Pacing

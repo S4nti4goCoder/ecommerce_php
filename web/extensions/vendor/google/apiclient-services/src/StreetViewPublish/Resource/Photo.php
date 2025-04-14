@@ -48,7 +48,6 @@ class Photo extends \Google\Service\Resource
    * @param PhotoModel $postBody
    * @param array $optParams Optional parameters.
    * @return PhotoModel
-   * @throws \Google\Service\Exception
    */
   public function create(PhotoModel $postBody, $optParams = [])
   {
@@ -65,7 +64,6 @@ class Photo extends \Google\Service\Resource
    * @param string $photoId Required. ID of the Photo.
    * @param array $optParams Optional parameters.
    * @return StreetviewpublishEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($photoId, $optParams = [])
   {
@@ -91,7 +89,6 @@ class Photo extends \Google\Service\Resource
    * @opt_param string view Required. Specifies if a download URL for the photo
    * bytes should be returned in the Photo response.
    * @return PhotoModel
-   * @throws \Google\Service\Exception
    */
   public function get($photoId, $optParams = [])
   {
@@ -116,7 +113,6 @@ class Photo extends \Google\Service\Resource
    * @param StreetviewpublishEmpty $postBody
    * @param array $optParams Optional parameters.
    * @return UploadRef
-   * @throws \Google\Service\Exception
    */
   public function startUpload(StreetviewpublishEmpty $postBody, $optParams = [])
   {
@@ -150,7 +146,6 @@ class Photo extends \Google\Service\Resource
    * contents. For example, if updateMask contains `connections` and
    * `UpdatePhotoRequest.photo.connections` is empty, all connections are removed.
    * @return PhotoModel
-   * @throws \Google\Service\Exception
    */
   public function update($id, PhotoModel $postBody, $optParams = [])
   {

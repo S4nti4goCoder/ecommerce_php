@@ -55,7 +55,6 @@ class ProjectsLocationsQueues extends \Google\Service\Resource
    * @param Queue $postBody
    * @param array $optParams Optional parameters.
    * @return Queue
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Queue $postBody, $optParams = [])
   {
@@ -83,7 +82,6 @@ class ProjectsLocationsQueues extends \Google\Service\Resource
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
    * @param array $optParams Optional parameters.
    * @return CloudtasksEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -98,7 +96,6 @@ class ProjectsLocationsQueues extends \Google\Service\Resource
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
    * @param array $optParams Optional parameters.
    * @return Queue
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -120,7 +117,6 @@ class ProjectsLocationsQueues extends \Google\Service\Resource
    * @param GetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, GetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -153,7 +149,6 @@ class ProjectsLocationsQueues extends \Google\Service\Resource
    * next_page_token returned from the previous call to ListQueues method. It is
    * an error to switch the value of the filter while iterating through pages.
    * @return ListQueuesResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsQueues($parent, $optParams = [])
   {
@@ -190,7 +185,6 @@ class ProjectsLocationsQueues extends \Google\Service\Resource
    * @opt_param string updateMask A mask used to specify which fields of the queue
    * are being updated. If empty, then all fields will be updated.
    * @return Queue
-   * @throws \Google\Service\Exception
    */
   public function patch($name, Queue $postBody, $optParams = [])
   {
@@ -209,7 +203,6 @@ class ProjectsLocationsQueues extends \Google\Service\Resource
    * @param PauseQueueRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Queue
-   * @throws \Google\Service\Exception
    */
   public function pause($name, PauseQueueRequest $postBody, $optParams = [])
   {
@@ -228,7 +221,6 @@ class ProjectsLocationsQueues extends \Google\Service\Resource
    * @param PurgeQueueRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Queue
-   * @throws \Google\Service\Exception
    */
   public function purge($name, PurgeQueueRequest $postBody, $optParams = [])
   {
@@ -250,7 +242,6 @@ class ProjectsLocationsQueues extends \Google\Service\Resource
    * @param ResumeQueueRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Queue
-   * @throws \Google\Service\Exception
    */
   public function resume($name, ResumeQueueRequest $postBody, $optParams = [])
   {
@@ -273,7 +264,6 @@ class ProjectsLocationsQueues extends \Google\Service\Resource
    * @param SetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, SetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -295,7 +285,6 @@ class ProjectsLocationsQueues extends \Google\Service\Resource
    * @param TestIamPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestIamPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, TestIamPermissionsRequest $postBody, $optParams = [])
   {

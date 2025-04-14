@@ -44,7 +44,6 @@ class Quotas extends \Google\Service\Resource
    * page. All other parameters must match the original call that provided the
    * page token.
    * @return ListMethodQuotasResponse
-   * @throws \Google\Service\Exception
    */
   public function listQuotas($merchantId, $optParams = [])
   {

@@ -40,7 +40,6 @@ class Assetlinks extends \Google\Service\Resource
    * @param BulkCheckRequest $postBody
    * @param array $optParams Optional parameters.
    * @return BulkCheckResponse
-   * @throws \Google\Service\Exception
    */
   public function bulkCheck(BulkCheckRequest $postBody, $optParams = [])
   {
@@ -145,7 +144,6 @@ class Assetlinks extends \Google\Service\Resource
    * * `https://google.com/` (hostname does not match) *
    * `https://www.google.com:444/` (port does not match) REQUIRED
    * @return CheckResponse
-   * @throws \Google\Service\Exception
    */
   public function check($optParams = [])
   {

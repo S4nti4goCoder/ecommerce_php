@@ -55,7 +55,6 @@ class Services extends \Google\Service\Resource
    * @param AddSubnetworkRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function addSubnetwork($parent, AddSubnetworkRequest $postBody, $optParams = [])
   {
@@ -73,7 +72,6 @@ class Services extends \Google\Service\Resource
    * @param DisableVpcServiceControlsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function disableVpcServiceControls($parent, DisableVpcServiceControlsRequest $postBody, $optParams = [])
   {
@@ -91,7 +89,6 @@ class Services extends \Google\Service\Resource
    * @param EnableVpcServiceControlsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function enableVpcServiceControls($parent, EnableVpcServiceControlsRequest $postBody, $optParams = [])
   {
@@ -113,7 +110,6 @@ class Services extends \Google\Service\Resource
    * @param SearchRangeRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function searchRange($parent, SearchRangeRequest $postBody, $optParams = [])
   {
@@ -134,7 +130,6 @@ class Services extends \Google\Service\Resource
    * @param ValidateConsumerConfigRequest $postBody
    * @param array $optParams Optional parameters.
    * @return ValidateConsumerConfigResponse
-   * @throws \Google\Service\Exception
    */
   public function validate($parent, ValidateConsumerConfigRequest $postBody, $optParams = [])
   {

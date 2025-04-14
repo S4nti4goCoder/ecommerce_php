@@ -36,9 +36,7 @@ class TargetTcpProxies extends \Google\Service\Resource
 {
   /**
    * Retrieves the list of all TargetTcpProxy resources, regional and global,
-   * available to the specified project. To prevent failure, Google recommends
-   * that you set the `returnPartialSuccess` parameter to `true`.
-   * (targetTcpProxies.aggregatedList)
+   * available to the specified project. (targetTcpProxies.aggregatedList)
    *
    * @param string $project Name of the project scoping this request.
    * @param array $optParams Optional parameters.
@@ -100,14 +98,9 @@ class TargetTcpProxies extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
-   * @opt_param string serviceProjectNumber The Shared VPC service project id or
-   * service project number for which aggregated list request is invoked for
-   * subnetworks list-usable api.
+   * false.
+   * @opt_param string serviceProjectNumber
    * @return TargetTcpProxyAggregatedList
-   * @throws \Google\Service\Exception
    */
   public function aggregatedList($project, $optParams = [])
   {
@@ -133,7 +126,6 @@ class TargetTcpProxies extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($project, $targetTcpProxy, $optParams = [])
   {
@@ -148,7 +140,6 @@ class TargetTcpProxies extends \Google\Service\Resource
    * @param string $targetTcpProxy Name of the TargetTcpProxy resource to return.
    * @param array $optParams Optional parameters.
    * @return TargetTcpProxy
-   * @throws \Google\Service\Exception
    */
   public function get($project, $targetTcpProxy, $optParams = [])
   {
@@ -175,7 +166,6 @@ class TargetTcpProxies extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function insert($project, TargetTcpProxy $postBody, $optParams = [])
   {
@@ -240,11 +230,8 @@ class TargetTcpProxies extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
+   * false.
    * @return TargetTcpProxyList
-   * @throws \Google\Service\Exception
    */
   public function listTargetTcpProxies($project, $optParams = [])
   {
@@ -273,7 +260,6 @@ class TargetTcpProxies extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function setBackendService($project, $targetTcpProxy, TargetTcpProxiesSetBackendServiceRequest $postBody, $optParams = [])
   {
@@ -302,7 +288,6 @@ class TargetTcpProxies extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function setProxyHeader($project, $targetTcpProxy, TargetTcpProxiesSetProxyHeaderRequest $postBody, $optParams = [])
   {

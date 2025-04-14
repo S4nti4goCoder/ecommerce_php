@@ -19,10 +19,16 @@ namespace Google\Service\Datastore;
 
 class RunQueryResponse extends \Google\Model
 {
+  /**
+   * @var QueryResultBatch
+   */
+  public $batch;
   protected $batchType = QueryResultBatch::class;
   protected $batchDataType = '';
-  protected $explainMetricsType = ExplainMetrics::class;
-  protected $explainMetricsDataType = '';
+  /**
+   * @var Query
+   */
+  public $query;
   protected $queryType = Query::class;
   protected $queryDataType = '';
   /**
@@ -43,20 +49,6 @@ class RunQueryResponse extends \Google\Model
   public function getBatch()
   {
     return $this->batch;
-  }
-  /**
-   * @param ExplainMetrics
-   */
-  public function setExplainMetrics(ExplainMetrics $explainMetrics)
-  {
-    $this->explainMetrics = $explainMetrics;
-  }
-  /**
-   * @return ExplainMetrics
-   */
-  public function getExplainMetrics()
-  {
-    return $this->explainMetrics;
   }
   /**
    * @param Query

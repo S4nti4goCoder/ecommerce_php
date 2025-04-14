@@ -23,10 +23,6 @@ class Connection extends \Google\Model
    * @var string[]
    */
   public $annotations;
-  protected $bitbucketCloudConfigType = BitbucketCloudConfig::class;
-  protected $bitbucketCloudConfigDataType = '';
-  protected $bitbucketDataCenterConfigType = BitbucketDataCenterConfig::class;
-  protected $bitbucketDataCenterConfigDataType = '';
   /**
    * @var string
    */
@@ -39,12 +35,28 @@ class Connection extends \Google\Model
    * @var string
    */
   public $etag;
+  /**
+   * @var GitHubConfig
+   */
+  public $githubConfig;
   protected $githubConfigType = GitHubConfig::class;
   protected $githubConfigDataType = '';
+  /**
+   * @var GoogleDevtoolsCloudbuildV2GitHubEnterpriseConfig
+   */
+  public $githubEnterpriseConfig;
   protected $githubEnterpriseConfigType = GoogleDevtoolsCloudbuildV2GitHubEnterpriseConfig::class;
   protected $githubEnterpriseConfigDataType = '';
+  /**
+   * @var GoogleDevtoolsCloudbuildV2GitLabConfig
+   */
+  public $gitlabConfig;
   protected $gitlabConfigType = GoogleDevtoolsCloudbuildV2GitLabConfig::class;
   protected $gitlabConfigDataType = '';
+  /**
+   * @var InstallationState
+   */
+  public $installationState;
   protected $installationStateType = InstallationState::class;
   protected $installationStateDataType = '';
   /**
@@ -73,34 +85,6 @@ class Connection extends \Google\Model
   public function getAnnotations()
   {
     return $this->annotations;
-  }
-  /**
-   * @param BitbucketCloudConfig
-   */
-  public function setBitbucketCloudConfig(BitbucketCloudConfig $bitbucketCloudConfig)
-  {
-    $this->bitbucketCloudConfig = $bitbucketCloudConfig;
-  }
-  /**
-   * @return BitbucketCloudConfig
-   */
-  public function getBitbucketCloudConfig()
-  {
-    return $this->bitbucketCloudConfig;
-  }
-  /**
-   * @param BitbucketDataCenterConfig
-   */
-  public function setBitbucketDataCenterConfig(BitbucketDataCenterConfig $bitbucketDataCenterConfig)
-  {
-    $this->bitbucketDataCenterConfig = $bitbucketDataCenterConfig;
-  }
-  /**
-   * @return BitbucketDataCenterConfig
-   */
-  public function getBitbucketDataCenterConfig()
-  {
-    return $this->bitbucketDataCenterConfig;
   }
   /**
    * @param string

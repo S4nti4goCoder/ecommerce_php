@@ -48,7 +48,6 @@ class ProjectsIosApps extends \Google\Service\Resource
    * @param IosApp $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, IosApp $postBody, $optParams = [])
   {
@@ -67,7 +66,6 @@ class ProjectsIosApps extends \Google\Service\Resource
    * PROJECT_IDENTIFIER and APP_ID values.
    * @param array $optParams Optional parameters.
    * @return IosApp
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -87,7 +85,6 @@ class ProjectsIosApps extends \Google\Service\Resource
    * details about PROJECT_IDENTIFIER and APP_ID values.
    * @param array $optParams Optional parameters.
    * @return IosAppConfig
-   * @throws \Google\Service\Exception
    */
   public function getConfig($name, $optParams = [])
   {
@@ -118,7 +115,6 @@ class ProjectsIosApps extends \Google\Service\Resource
    * be returned in the response. If not specified, only `ACTIVE` Apps will be
    * returned.
    * @return ListIosAppsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsIosApps($parent, $optParams = [])
   {
@@ -148,7 +144,6 @@ class ProjectsIosApps extends \Google\Service\Resource
    * and `bundle_id`. To update `state`, use any of the following endpoints:
    * RemoveIosApp or UndeleteIosApp.
    * @return IosApp
-   * @throws \Google\Service\Exception
    */
   public function patch($name, IosApp $postBody, $optParams = [])
   {
@@ -168,7 +163,6 @@ class ProjectsIosApps extends \Google\Service\Resource
    * @param RemoveIosAppRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function remove($name, RemoveIosAppRequest $postBody, $optParams = [])
   {
@@ -188,7 +182,6 @@ class ProjectsIosApps extends \Google\Service\Resource
    * @param UndeleteIosAppRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function undelete($name, UndeleteIosAppRequest $postBody, $optParams = [])
   {

@@ -20,8 +20,16 @@ namespace Google\Service\GKEHub;
 class ClusterUpgradeMembershipState extends \Google\Collection
 {
   protected $collection_key = 'upgrades';
+  /**
+   * @var ClusterUpgradeIgnoredMembership
+   */
+  public $ignored;
   protected $ignoredType = ClusterUpgradeIgnoredMembership::class;
   protected $ignoredDataType = '';
+  /**
+   * @var ClusterUpgradeMembershipGKEUpgradeState[]
+   */
+  public $upgrades;
   protected $upgradesType = ClusterUpgradeMembershipGKEUpgradeState::class;
   protected $upgradesDataType = 'array';
 

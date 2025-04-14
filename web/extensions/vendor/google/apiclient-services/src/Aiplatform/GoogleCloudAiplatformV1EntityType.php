@@ -35,6 +35,10 @@ class GoogleCloudAiplatformV1EntityType extends \Google\Model
    * @var string[]
    */
   public $labels;
+  /**
+   * @var GoogleCloudAiplatformV1FeaturestoreMonitoringConfig
+   */
+  public $monitoringConfig;
   protected $monitoringConfigType = GoogleCloudAiplatformV1FeaturestoreMonitoringConfig::class;
   protected $monitoringConfigDataType = '';
   /**
@@ -45,14 +49,6 @@ class GoogleCloudAiplatformV1EntityType extends \Google\Model
    * @var int
    */
   public $offlineStorageTtlDays;
-  /**
-   * @var bool
-   */
-  public $satisfiesPzi;
-  /**
-   * @var bool
-   */
-  public $satisfiesPzs;
   /**
    * @var string
    */
@@ -155,34 +151,6 @@ class GoogleCloudAiplatformV1EntityType extends \Google\Model
   public function getOfflineStorageTtlDays()
   {
     return $this->offlineStorageTtlDays;
-  }
-  /**
-   * @param bool
-   */
-  public function setSatisfiesPzi($satisfiesPzi)
-  {
-    $this->satisfiesPzi = $satisfiesPzi;
-  }
-  /**
-   * @return bool
-   */
-  public function getSatisfiesPzi()
-  {
-    return $this->satisfiesPzi;
-  }
-  /**
-   * @param bool
-   */
-  public function setSatisfiesPzs($satisfiesPzs)
-  {
-    $this->satisfiesPzs = $satisfiesPzs;
-  }
-  /**
-   * @return bool
-   */
-  public function getSatisfiesPzs()
-  {
-    return $this->satisfiesPzs;
   }
   /**
    * @param string

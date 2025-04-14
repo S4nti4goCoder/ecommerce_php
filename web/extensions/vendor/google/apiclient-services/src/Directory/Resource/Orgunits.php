@@ -41,7 +41,6 @@ class Orgunits extends \Google\Service\Resource
    * @param string $orgUnitPath The full path of the organizational unit (minus
    * the leading `/`) or its unique ID.
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function delete($customerId, $orgUnitPath, $optParams = [])
   {
@@ -61,7 +60,6 @@ class Orgunits extends \Google\Service\Resource
    * the leading `/`) or its unique ID.
    * @param array $optParams Optional parameters.
    * @return OrgUnit
-   * @throws \Google\Service\Exception
    */
   public function get($customerId, $orgUnitPath, $optParams = [])
   {
@@ -80,7 +78,6 @@ class Orgunits extends \Google\Service\Resource
    * @param OrgUnit $postBody
    * @param array $optParams Optional parameters.
    * @return OrgUnit
-   * @throws \Google\Service\Exception
    */
   public function insert($customerId, OrgUnit $postBody, $optParams = [])
   {
@@ -104,7 +101,6 @@ class Orgunits extends \Google\Service\Resource
    * @opt_param string type Whether to return all sub-organizations or just
    * immediate children.
    * @return OrgUnitsModel
-   * @throws \Google\Service\Exception
    */
   public function listOrgunits($customerId, $optParams = [])
   {
@@ -126,7 +122,6 @@ class Orgunits extends \Google\Service\Resource
    * @param OrgUnit $postBody
    * @param array $optParams Optional parameters.
    * @return OrgUnit
-   * @throws \Google\Service\Exception
    */
   public function patch($customerId, $orgUnitPath, OrgUnit $postBody, $optParams = [])
   {
@@ -147,7 +142,6 @@ class Orgunits extends \Google\Service\Resource
    * @param OrgUnit $postBody
    * @param array $optParams Optional parameters.
    * @return OrgUnit
-   * @throws \Google\Service\Exception
    */
   public function update($customerId, $orgUnitPath, OrgUnit $postBody, $optParams = [])
   {

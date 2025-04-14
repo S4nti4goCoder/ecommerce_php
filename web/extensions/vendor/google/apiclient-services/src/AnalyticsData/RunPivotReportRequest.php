@@ -20,28 +20,54 @@ namespace Google\Service\AnalyticsData;
 class RunPivotReportRequest extends \Google\Collection
 {
   protected $collection_key = 'pivots';
+  /**
+   * @var CohortSpec
+   */
+  public $cohortSpec;
   protected $cohortSpecType = CohortSpec::class;
   protected $cohortSpecDataType = '';
-  protected $comparisonsType = Comparison::class;
-  protected $comparisonsDataType = 'array';
   /**
    * @var string
    */
   public $currencyCode;
+  /**
+   * @var DateRange[]
+   */
+  public $dateRanges;
   protected $dateRangesType = DateRange::class;
   protected $dateRangesDataType = 'array';
+  /**
+   * @var FilterExpression
+   */
+  public $dimensionFilter;
   protected $dimensionFilterType = FilterExpression::class;
   protected $dimensionFilterDataType = '';
+  /**
+   * @var Dimension[]
+   */
+  public $dimensions;
   protected $dimensionsType = Dimension::class;
   protected $dimensionsDataType = 'array';
   /**
    * @var bool
    */
   public $keepEmptyRows;
+  /**
+   * @var FilterExpression
+   */
+  public $metricFilter;
   protected $metricFilterType = FilterExpression::class;
   protected $metricFilterDataType = '';
+  /**
+   * @var Metric[]
+   */
+  public $metrics;
   protected $metricsType = Metric::class;
   protected $metricsDataType = 'array';
+  /**
+   * @var Pivot[]
+   */
+  public $pivots;
   protected $pivotsType = Pivot::class;
   protected $pivotsDataType = 'array';
   /**
@@ -66,20 +92,6 @@ class RunPivotReportRequest extends \Google\Collection
   public function getCohortSpec()
   {
     return $this->cohortSpec;
-  }
-  /**
-   * @param Comparison[]
-   */
-  public function setComparisons($comparisons)
-  {
-    $this->comparisons = $comparisons;
-  }
-  /**
-   * @return Comparison[]
-   */
-  public function getComparisons()
-  {
-    return $this->comparisons;
   }
   /**
    * @param string

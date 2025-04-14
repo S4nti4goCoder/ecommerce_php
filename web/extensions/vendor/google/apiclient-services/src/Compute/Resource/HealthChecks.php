@@ -34,9 +34,7 @@ class HealthChecks extends \Google\Service\Resource
 {
   /**
    * Retrieves the list of all HealthCheck resources, regional and global,
-   * available to the specified project. To prevent failure, Google recommends
-   * that you set the `returnPartialSuccess` parameter to `true`.
-   * (healthChecks.aggregatedList)
+   * available to the specified project. (healthChecks.aggregatedList)
    *
    * @param string $project Name of the project scoping this request.
    * @param array $optParams Optional parameters.
@@ -98,14 +96,9 @@ class HealthChecks extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
-   * @opt_param string serviceProjectNumber The Shared VPC service project id or
-   * service project number for which aggregated list request is invoked for
-   * subnetworks list-usable api.
+   * false.
+   * @opt_param string serviceProjectNumber
    * @return HealthChecksAggregatedList
-   * @throws \Google\Service\Exception
    */
   public function aggregatedList($project, $optParams = [])
   {
@@ -131,7 +124,6 @@ class HealthChecks extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($project, $healthCheck, $optParams = [])
   {
@@ -146,7 +138,6 @@ class HealthChecks extends \Google\Service\Resource
    * @param string $healthCheck Name of the HealthCheck resource to return.
    * @param array $optParams Optional parameters.
    * @return HealthCheck
-   * @throws \Google\Service\Exception
    */
   public function get($project, $healthCheck, $optParams = [])
   {
@@ -173,7 +164,6 @@ class HealthChecks extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function insert($project, HealthCheck $postBody, $optParams = [])
   {
@@ -238,11 +228,8 @@ class HealthChecks extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
+   * false.
    * @return HealthCheckList
-   * @throws \Google\Service\Exception
    */
   public function listHealthChecks($project, $optParams = [])
   {
@@ -271,7 +258,6 @@ class HealthChecks extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($project, $healthCheck, HealthCheck $postBody, $optParams = [])
   {
@@ -299,7 +285,6 @@ class HealthChecks extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function update($project, $healthCheck, HealthCheck $postBody, $optParams = [])
   {

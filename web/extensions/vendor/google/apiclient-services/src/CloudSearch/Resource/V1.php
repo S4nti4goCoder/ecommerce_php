@@ -37,7 +37,6 @@ class V1 extends \Google\Service\Resource
    * @param InitializeCustomerRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function initializeCustomer(InitializeCustomerRequest $postBody, $optParams = [])
   {

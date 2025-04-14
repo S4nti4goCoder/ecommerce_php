@@ -37,7 +37,6 @@ class GoogleLocations extends \Google\Service\Resource
    * @param SearchGoogleLocationsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return SearchGoogleLocationsResponse
-   * @throws \Google\Service\Exception
    */
   public function search(SearchGoogleLocationsRequest $postBody, $optParams = [])
   {

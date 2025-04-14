@@ -57,7 +57,6 @@ class Scores extends \Google\Service\Resource
    * returned may be less than the specified `maxResults`.
    * @opt_param string pageToken The token returned by the previous request.
    * @return PlayerLeaderboardScoreListResponse
-   * @throws \Google\Service\Exception
    */
   public function get($playerId, $leaderboardId, $timeSpan, $optParams = [])
   {
@@ -81,7 +80,6 @@ class Scores extends \Google\Service\Resource
    * returned may be less than the specified `maxResults`.
    * @opt_param string pageToken The token returned by the previous request.
    * @return LeaderboardScores
-   * @throws \Google\Service\Exception
    */
   public function listScores($leaderboardId, $collection, $timeSpan, $optParams = [])
   {
@@ -112,7 +110,6 @@ class Scores extends \Google\Service\Resource
    * @opt_param bool returnTopIfAbsent True if the top scores should be returned
    * when the player is not in the leaderboard. Defaults to true.
    * @return LeaderboardScores
-   * @throws \Google\Service\Exception
    */
   public function listWindow($leaderboardId, $collection, $timeSpan, $optParams = [])
   {
@@ -138,7 +135,6 @@ class Scores extends \Google\Service\Resource
    * submitting. Values must contain no more than 64 URI-safe characters as
    * defined by section 2.3 of RFC 3986.
    * @return PlayerScoreResponse
-   * @throws \Google\Service\Exception
    */
   public function submit($leaderboardId, $score, $optParams = [])
   {
@@ -155,7 +151,6 @@ class Scores extends \Google\Service\Resource
    * @opt_param string language The preferred language to use for strings returned
    * by this method.
    * @return PlayerScoreListResponse
-   * @throws \Google\Service\Exception
    */
   public function submitMultiple(PlayerScoreSubmissionList $postBody, $optParams = [])
   {

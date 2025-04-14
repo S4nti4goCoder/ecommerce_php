@@ -37,7 +37,6 @@ class Transfers extends \Google\Service\Resource
    * returned in the response from the insert method.
    * @param array $optParams Optional parameters.
    * @return DataTransfer
-   * @throws \Google\Service\Exception
    */
   public function get($dataTransferId, $optParams = [])
   {
@@ -53,7 +52,6 @@ class Transfers extends \Google\Service\Resource
    * @param DataTransfer $postBody
    * @param array $optParams Optional parameters.
    * @return DataTransfer
-   * @throws \Google\Service\Exception
    */
   public function insert(DataTransfer $postBody, $optParams = [])
   {
@@ -75,7 +73,6 @@ class Transfers extends \Google\Service\Resource
    * @opt_param string pageToken Token to specify the next page in the list.
    * @opt_param string status Status of the transfer.
    * @return DataTransfersListResponse
-   * @throws \Google\Service\Exception
    */
   public function listTransfers($optParams = [])
   {

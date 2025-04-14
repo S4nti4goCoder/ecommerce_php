@@ -31,10 +31,6 @@ class GoogleCloudAiplatformV1ModelDeploymentMonitoringBigQueryTable extends \Goo
    * @var string
    */
   public $logType;
-  /**
-   * @var string
-   */
-  public $requestResponseLoggingSchemaVersion;
 
   /**
    * @param string
@@ -77,20 +73,6 @@ class GoogleCloudAiplatformV1ModelDeploymentMonitoringBigQueryTable extends \Goo
   public function getLogType()
   {
     return $this->logType;
-  }
-  /**
-   * @param string
-   */
-  public function setRequestResponseLoggingSchemaVersion($requestResponseLoggingSchemaVersion)
-  {
-    $this->requestResponseLoggingSchemaVersion = $requestResponseLoggingSchemaVersion;
-  }
-  /**
-   * @return string
-   */
-  public function getRequestResponseLoggingSchemaVersion()
-  {
-    return $this->requestResponseLoggingSchemaVersion;
   }
 }
 

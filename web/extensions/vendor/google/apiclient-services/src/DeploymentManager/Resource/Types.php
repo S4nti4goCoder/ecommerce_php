@@ -84,7 +84,6 @@ class Types extends \Google\Service\Resource
    * the `nextPageToken` returned by a previous list request to get the next page
    * of results.
    * @return TypesListResponse
-   * @throws \Google\Service\Exception
    */
   public function listTypes($project, $optParams = [])
   {

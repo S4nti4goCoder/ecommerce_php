@@ -19,10 +19,16 @@ namespace Google\Service\AndroidPublisher;
 
 class RegionalSubscriptionOfferPhaseConfig extends \Google\Model
 {
+  /**
+   * @var Money
+   */
+  public $absoluteDiscount;
   protected $absoluteDiscountType = Money::class;
   protected $absoluteDiscountDataType = '';
-  protected $freeType = RegionalSubscriptionOfferPhaseFreePriceOverride::class;
-  protected $freeDataType = '';
+  /**
+   * @var Money
+   */
+  public $price;
   protected $priceType = Money::class;
   protected $priceDataType = '';
   /**
@@ -44,20 +50,6 @@ class RegionalSubscriptionOfferPhaseConfig extends \Google\Model
   public function getAbsoluteDiscount()
   {
     return $this->absoluteDiscount;
-  }
-  /**
-   * @param RegionalSubscriptionOfferPhaseFreePriceOverride
-   */
-  public function setFree(RegionalSubscriptionOfferPhaseFreePriceOverride $free)
-  {
-    $this->free = $free;
-  }
-  /**
-   * @return RegionalSubscriptionOfferPhaseFreePriceOverride
-   */
-  public function getFree()
-  {
-    return $this->free;
   }
   /**
    * @param Money

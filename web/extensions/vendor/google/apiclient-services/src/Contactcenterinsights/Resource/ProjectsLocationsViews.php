@@ -40,7 +40,6 @@ class ProjectsLocationsViews extends \Google\Service\Resource
    * @param GoogleCloudContactcenterinsightsV1View $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudContactcenterinsightsV1View
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudContactcenterinsightsV1View $postBody, $optParams = [])
   {
@@ -54,7 +53,6 @@ class ProjectsLocationsViews extends \Google\Service\Resource
    * @param string $name Required. The name of the view to delete.
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -68,7 +66,6 @@ class ProjectsLocationsViews extends \Google\Service\Resource
    * @param string $name Required. The name of the view to get.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudContactcenterinsightsV1View
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -90,7 +87,6 @@ class ProjectsLocationsViews extends \Google\Service\Resource
    * `ListViewsResponse`; indicates that this is a continuation of a prior
    * `ListViews` call and the system should return the next page of data.
    * @return GoogleCloudContactcenterinsightsV1ListViewsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsViews($parent, $optParams = [])
   {
@@ -108,7 +104,6 @@ class ProjectsLocationsViews extends \Google\Service\Resource
    *
    * @opt_param string updateMask The list of fields to be updated.
    * @return GoogleCloudContactcenterinsightsV1View
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleCloudContactcenterinsightsV1View $postBody, $optParams = [])
   {

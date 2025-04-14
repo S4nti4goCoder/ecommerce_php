@@ -43,7 +43,6 @@ class Customers extends \Google\Service\Resource
    * recommend storing the unique identifier in your systems where applicable.
    * @param array $optParams Optional parameters.
    * @return Customer
-   * @throws \Google\Service\Exception
    */
   public function get($customerId, $optParams = [])
   {
@@ -78,7 +77,6 @@ class Customers extends \Google\Service\Resource
    * complete the subscription transfer. For more information, see the
    * administrator help center.
    * @return Customer
-   * @throws \Google\Service\Exception
    */
   public function insert(Customer $postBody, $optParams = [])
   {
@@ -101,7 +99,6 @@ class Customers extends \Google\Service\Resource
    * @param Customer $postBody
    * @param array $optParams Optional parameters.
    * @return Customer
-   * @throws \Google\Service\Exception
    */
   public function patch($customerId, Customer $postBody, $optParams = [])
   {
@@ -124,7 +121,6 @@ class Customers extends \Google\Service\Resource
    * @param Customer $postBody
    * @param array $optParams Optional parameters.
    * @return Customer
-   * @throws \Google\Service\Exception
    */
   public function update($customerId, Customer $postBody, $optParams = [])
   {

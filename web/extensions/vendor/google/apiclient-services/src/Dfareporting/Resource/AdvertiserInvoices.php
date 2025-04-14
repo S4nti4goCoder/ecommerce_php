@@ -44,7 +44,6 @@ class AdvertiserInvoices extends \Google\Service\Resource
    * @opt_param string pageToken Value of the nextPageToken from the previous
    * result page.
    * @return AdvertiserInvoicesListResponse
-   * @throws \Google\Service\Exception
    */
   public function listAdvertiserInvoices($profileId, $advertiserId, $optParams = [])
   {

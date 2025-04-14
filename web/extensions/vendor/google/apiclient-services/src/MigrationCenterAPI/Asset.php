@@ -32,32 +32,36 @@ class Asset extends \Google\Collection
    * @var string
    */
   public $createTime;
-  protected $databaseDeploymentDetailsType = DatabaseDeploymentDetails::class;
-  protected $databaseDeploymentDetailsDataType = '';
-  protected $databaseDetailsType = DatabaseDetails::class;
-  protected $databaseDetailsDataType = '';
+  /**
+   * @var InsightList
+   */
+  public $insightList;
   protected $insightListType = InsightList::class;
   protected $insightListDataType = '';
   /**
    * @var string[]
    */
   public $labels;
+  /**
+   * @var MachineDetails
+   */
+  public $machineDetails;
   protected $machineDetailsType = MachineDetails::class;
   protected $machineDetailsDataType = '';
   /**
    * @var string
    */
   public $name;
+  /**
+   * @var AssetPerformanceData
+   */
+  public $performanceData;
   protected $performanceDataType = AssetPerformanceData::class;
   protected $performanceDataDataType = '';
   /**
    * @var string[]
    */
   public $sources;
-  /**
-   * @var string
-   */
-  public $title;
   /**
    * @var string
    */
@@ -104,34 +108,6 @@ class Asset extends \Google\Collection
   public function getCreateTime()
   {
     return $this->createTime;
-  }
-  /**
-   * @param DatabaseDeploymentDetails
-   */
-  public function setDatabaseDeploymentDetails(DatabaseDeploymentDetails $databaseDeploymentDetails)
-  {
-    $this->databaseDeploymentDetails = $databaseDeploymentDetails;
-  }
-  /**
-   * @return DatabaseDeploymentDetails
-   */
-  public function getDatabaseDeploymentDetails()
-  {
-    return $this->databaseDeploymentDetails;
-  }
-  /**
-   * @param DatabaseDetails
-   */
-  public function setDatabaseDetails(DatabaseDetails $databaseDetails)
-  {
-    $this->databaseDetails = $databaseDetails;
-  }
-  /**
-   * @return DatabaseDetails
-   */
-  public function getDatabaseDetails()
-  {
-    return $this->databaseDetails;
   }
   /**
    * @param InsightList
@@ -216,20 +192,6 @@ class Asset extends \Google\Collection
   public function getSources()
   {
     return $this->sources;
-  }
-  /**
-   * @param string
-   */
-  public function setTitle($title)
-  {
-    $this->title = $title;
-  }
-  /**
-   * @return string
-   */
-  public function getTitle()
-  {
-    return $this->title;
   }
   /**
    * @param string

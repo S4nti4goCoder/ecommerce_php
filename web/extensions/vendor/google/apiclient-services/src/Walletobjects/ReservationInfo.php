@@ -27,6 +27,10 @@ class ReservationInfo extends \Google\Model
    * @var string
    */
   public $eticketNumber;
+  /**
+   * @var FrequentFlyerInfo
+   */
+  public $frequentFlyerInfo;
   protected $frequentFlyerInfoType = FrequentFlyerInfo::class;
   protected $frequentFlyerInfoDataType = '';
   /**

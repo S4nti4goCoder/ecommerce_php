@@ -19,12 +19,22 @@ namespace Google\Service\CertificateAuthorityService;
 
 class CertificateConfig extends \Google\Model
 {
+  /**
+   * @var PublicKey
+   */
+  public $publicKey;
   protected $publicKeyType = PublicKey::class;
   protected $publicKeyDataType = '';
+  /**
+   * @var SubjectConfig
+   */
+  public $subjectConfig;
   protected $subjectConfigType = SubjectConfig::class;
   protected $subjectConfigDataType = '';
-  protected $subjectKeyIdType = CertificateConfigKeyId::class;
-  protected $subjectKeyIdDataType = '';
+  /**
+   * @var X509Parameters
+   */
+  public $x509Config;
   protected $x509ConfigType = X509Parameters::class;
   protected $x509ConfigDataType = '';
 
@@ -55,20 +65,6 @@ class CertificateConfig extends \Google\Model
   public function getSubjectConfig()
   {
     return $this->subjectConfig;
-  }
-  /**
-   * @param CertificateConfigKeyId
-   */
-  public function setSubjectKeyId(CertificateConfigKeyId $subjectKeyId)
-  {
-    $this->subjectKeyId = $subjectKeyId;
-  }
-  /**
-   * @return CertificateConfigKeyId
-   */
-  public function getSubjectKeyId()
-  {
-    return $this->subjectKeyId;
   }
   /**
    * @param X509Parameters

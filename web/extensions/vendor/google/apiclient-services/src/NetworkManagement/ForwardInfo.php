@@ -22,30 +22,12 @@ class ForwardInfo extends \Google\Model
   /**
    * @var string
    */
-  public $ipAddress;
-  /**
-   * @var string
-   */
   public $resourceUri;
   /**
    * @var string
    */
   public $target;
 
-  /**
-   * @param string
-   */
-  public function setIpAddress($ipAddress)
-  {
-    $this->ipAddress = $ipAddress;
-  }
-  /**
-   * @return string
-   */
-  public function getIpAddress()
-  {
-    return $this->ipAddress;
-  }
   /**
    * @param string
    */

@@ -39,7 +39,6 @@ class Projects extends \Google\Service\Resource
    * optional identifier specified by the client. Must be unique for operation
    * resources in the Operations collection.
    * @return Project
-   * @throws \Google\Service\Exception
    */
   public function get($project, $optParams = [])
   {

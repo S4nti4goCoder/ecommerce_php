@@ -19,29 +19,13 @@ namespace Google\Service\Datastream;
 
 class SpecificStartPosition extends \Google\Model
 {
-  protected $mysqlGtidPositionType = MysqlGtidPosition::class;
-  protected $mysqlGtidPositionDataType = '';
+  /**
+   * @var MysqlLogPosition
+   */
+  public $mysqlLogPosition;
   protected $mysqlLogPositionType = MysqlLogPosition::class;
   protected $mysqlLogPositionDataType = '';
-  protected $oracleScnPositionType = OracleScnPosition::class;
-  protected $oracleScnPositionDataType = '';
-  protected $sqlServerLsnPositionType = SqlServerLsnPosition::class;
-  protected $sqlServerLsnPositionDataType = '';
 
-  /**
-   * @param MysqlGtidPosition
-   */
-  public function setMysqlGtidPosition(MysqlGtidPosition $mysqlGtidPosition)
-  {
-    $this->mysqlGtidPosition = $mysqlGtidPosition;
-  }
-  /**
-   * @return MysqlGtidPosition
-   */
-  public function getMysqlGtidPosition()
-  {
-    return $this->mysqlGtidPosition;
-  }
   /**
    * @param MysqlLogPosition
    */
@@ -55,34 +39,6 @@ class SpecificStartPosition extends \Google\Model
   public function getMysqlLogPosition()
   {
     return $this->mysqlLogPosition;
-  }
-  /**
-   * @param OracleScnPosition
-   */
-  public function setOracleScnPosition(OracleScnPosition $oracleScnPosition)
-  {
-    $this->oracleScnPosition = $oracleScnPosition;
-  }
-  /**
-   * @return OracleScnPosition
-   */
-  public function getOracleScnPosition()
-  {
-    return $this->oracleScnPosition;
-  }
-  /**
-   * @param SqlServerLsnPosition
-   */
-  public function setSqlServerLsnPosition(SqlServerLsnPosition $sqlServerLsnPosition)
-  {
-    $this->sqlServerLsnPosition = $sqlServerLsnPosition;
-  }
-  /**
-   * @return SqlServerLsnPosition
-   */
-  public function getSqlServerLsnPosition()
-  {
-    return $this->sqlServerLsnPosition;
   }
 }
 

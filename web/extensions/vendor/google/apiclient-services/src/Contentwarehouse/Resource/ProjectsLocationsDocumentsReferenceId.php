@@ -45,7 +45,6 @@ class ProjectsLocationsDocumentsReferenceId extends \Google\Service\Resource
    * @param GoogleCloudContentwarehouseV1DeleteDocumentRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, GoogleCloudContentwarehouseV1DeleteDocumentRequest $postBody, $optParams = [])
   {
@@ -64,7 +63,6 @@ class ProjectsLocationsDocumentsReferenceId extends \Google\Service\Resource
    * @param GoogleCloudContentwarehouseV1GetDocumentRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudContentwarehouseV1Document
-   * @throws \Google\Service\Exception
    */
   public function get($name, GoogleCloudContentwarehouseV1GetDocumentRequest $postBody, $optParams = [])
   {
@@ -83,7 +81,6 @@ class ProjectsLocationsDocumentsReferenceId extends \Google\Service\Resource
    * @param GoogleCloudContentwarehouseV1UpdateDocumentRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudContentwarehouseV1UpdateDocumentResponse
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleCloudContentwarehouseV1UpdateDocumentRequest $postBody, $optParams = [])
   {

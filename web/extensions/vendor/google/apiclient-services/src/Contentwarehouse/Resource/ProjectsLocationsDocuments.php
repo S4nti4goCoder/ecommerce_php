@@ -55,7 +55,6 @@ class ProjectsLocationsDocuments extends \Google\Service\Resource
    * @param GoogleCloudContentwarehouseV1CreateDocumentRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudContentwarehouseV1CreateDocumentResponse
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudContentwarehouseV1CreateDocumentRequest $postBody, $optParams = [])
   {
@@ -74,7 +73,6 @@ class ProjectsLocationsDocuments extends \Google\Service\Resource
    * @param GoogleCloudContentwarehouseV1DeleteDocumentRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, GoogleCloudContentwarehouseV1DeleteDocumentRequest $postBody, $optParams = [])
   {
@@ -96,7 +94,6 @@ class ProjectsLocationsDocuments extends \Google\Service\Resource
    * @param GoogleCloudContentwarehouseV1FetchAclRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudContentwarehouseV1FetchAclResponse
-   * @throws \Google\Service\Exception
    */
   public function fetchAcl($resource, GoogleCloudContentwarehouseV1FetchAclRequest $postBody, $optParams = [])
   {
@@ -115,7 +112,6 @@ class ProjectsLocationsDocuments extends \Google\Service\Resource
    * @param GoogleCloudContentwarehouseV1GetDocumentRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudContentwarehouseV1Document
-   * @throws \Google\Service\Exception
    */
   public function get($name, GoogleCloudContentwarehouseV1GetDocumentRequest $postBody, $optParams = [])
   {
@@ -132,7 +128,6 @@ class ProjectsLocationsDocuments extends \Google\Service\Resource
    * @param GoogleCloudContentwarehouseV1ListLinkedSourcesRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudContentwarehouseV1ListLinkedSourcesResponse
-   * @throws \Google\Service\Exception
    */
   public function linkedSources($parent, GoogleCloudContentwarehouseV1ListLinkedSourcesRequest $postBody, $optParams = [])
   {
@@ -149,7 +144,6 @@ class ProjectsLocationsDocuments extends \Google\Service\Resource
    * @param GoogleCloudContentwarehouseV1ListLinkedTargetsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudContentwarehouseV1ListLinkedTargetsResponse
-   * @throws \Google\Service\Exception
    */
   public function linkedTargets($parent, GoogleCloudContentwarehouseV1ListLinkedTargetsRequest $postBody, $optParams = [])
   {
@@ -166,7 +160,6 @@ class ProjectsLocationsDocuments extends \Google\Service\Resource
    * @param GoogleCloudContentwarehouseV1LockDocumentRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudContentwarehouseV1Document
-   * @throws \Google\Service\Exception
    */
   public function lock($name, GoogleCloudContentwarehouseV1LockDocumentRequest $postBody, $optParams = [])
   {
@@ -185,7 +178,6 @@ class ProjectsLocationsDocuments extends \Google\Service\Resource
    * @param GoogleCloudContentwarehouseV1UpdateDocumentRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudContentwarehouseV1UpdateDocumentResponse
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleCloudContentwarehouseV1UpdateDocumentRequest $postBody, $optParams = [])
   {
@@ -203,7 +195,6 @@ class ProjectsLocationsDocuments extends \Google\Service\Resource
    * @param GoogleCloudContentwarehouseV1SearchDocumentsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudContentwarehouseV1SearchDocumentsResponse
-   * @throws \Google\Service\Exception
    */
   public function search($parent, GoogleCloudContentwarehouseV1SearchDocumentsRequest $postBody, $optParams = [])
   {
@@ -224,7 +215,6 @@ class ProjectsLocationsDocuments extends \Google\Service\Resource
    * @param GoogleCloudContentwarehouseV1SetAclRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudContentwarehouseV1SetAclResponse
-   * @throws \Google\Service\Exception
    */
   public function setAcl($resource, GoogleCloudContentwarehouseV1SetAclRequest $postBody, $optParams = [])
   {

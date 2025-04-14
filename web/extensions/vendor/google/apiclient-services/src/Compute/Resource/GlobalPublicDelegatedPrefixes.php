@@ -51,7 +51,6 @@ class GlobalPublicDelegatedPrefixes extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($project, $publicDelegatedPrefix, $optParams = [])
   {
@@ -68,7 +67,6 @@ class GlobalPublicDelegatedPrefixes extends \Google\Service\Resource
    * resource to return.
    * @param array $optParams Optional parameters.
    * @return PublicDelegatedPrefix
-   * @throws \Google\Service\Exception
    */
   public function get($project, $publicDelegatedPrefix, $optParams = [])
   {
@@ -96,7 +94,6 @@ class GlobalPublicDelegatedPrefixes extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function insert($project, PublicDelegatedPrefix $postBody, $optParams = [])
   {
@@ -161,11 +158,8 @@ class GlobalPublicDelegatedPrefixes extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
+   * false.
    * @return PublicDelegatedPrefixList
-   * @throws \Google\Service\Exception
    */
   public function listGlobalPublicDelegatedPrefixes($project, $optParams = [])
   {
@@ -196,7 +190,6 @@ class GlobalPublicDelegatedPrefixes extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($project, $publicDelegatedPrefix, PublicDelegatedPrefix $postBody, $optParams = [])
   {

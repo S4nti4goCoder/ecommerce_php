@@ -40,7 +40,6 @@ class FoldersSettings extends \Google\Service\Resource
    *
    * @opt_param string view The SettingView for this request.
    * @return GoogleCloudResourcesettingsV1Setting
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -63,7 +62,6 @@ class FoldersSettings extends \Google\Service\Resource
    * page.
    * @opt_param string view The SettingView for this request.
    * @return GoogleCloudResourcesettingsV1ListSettingsResponse
-   * @throws \Google\Service\Exception
    */
   public function listFoldersSettings($parent, $optParams = [])
   {
@@ -91,7 +89,6 @@ class FoldersSettings extends \Google\Service\Resource
    * @param GoogleCloudResourcesettingsV1Setting $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudResourcesettingsV1Setting
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleCloudResourcesettingsV1Setting $postBody, $optParams = [])
   {

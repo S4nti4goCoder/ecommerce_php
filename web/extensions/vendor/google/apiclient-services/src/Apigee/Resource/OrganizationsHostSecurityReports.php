@@ -44,7 +44,6 @@ class OrganizationsHostSecurityReports extends \Google\Service\Resource
    * @param GoogleCloudApigeeV1SecurityReportQuery $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudApigeeV1SecurityReport
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudApigeeV1SecurityReportQuery $postBody, $optParams = [])
   {
@@ -61,7 +60,6 @@ class OrganizationsHostSecurityReports extends \Google\Service\Resource
    * the form `organizations/{org}/securityReports/{reportId}`.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudApigeeV1SecurityReport
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -81,7 +79,6 @@ class OrganizationsHostSecurityReports extends \Google\Service\Resource
    * be of the form `organizations/{org}/securityReports/{reportId}/result`.
    * @param array $optParams Optional parameters.
    * @return GoogleApiHttpBody
-   * @throws \Google\Service\Exception
    */
   public function getResult($name, $optParams = [])
   {
@@ -98,7 +95,6 @@ class OrganizationsHostSecurityReports extends \Google\Service\Resource
    * `organizations/{org}/securityReports/{reportId}/resultView`.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudApigeeV1SecurityReportResultView
-   * @throws \Google\Service\Exception
    */
   public function getResultView($name, $optParams = [])
   {
@@ -132,7 +128,6 @@ class OrganizationsHostSecurityReports extends \Google\Service\Resource
    * created before this date time. Time must be in ISO date-time format like
    * '2011-12-03T10:16:30Z'.
    * @return GoogleCloudApigeeV1ListSecurityReportsResponse
-   * @throws \Google\Service\Exception
    */
   public function listOrganizationsHostSecurityReports($parent, $optParams = [])
   {

@@ -41,7 +41,6 @@ class ShortLinks extends \Google\Service\Resource
    * @param CreateShortDynamicLinkRequest $postBody
    * @param array $optParams Optional parameters.
    * @return CreateShortDynamicLinkResponse
-   * @throws \Google\Service\Exception
    */
   public function create(CreateShortDynamicLinkRequest $postBody, $optParams = [])
   {

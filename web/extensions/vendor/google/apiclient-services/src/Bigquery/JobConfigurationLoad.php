@@ -32,18 +32,18 @@ class JobConfigurationLoad extends \Google\Collection
    * @var bool
    */
   public $autodetect;
+  /**
+   * @var Clustering
+   */
+  public $clustering;
   protected $clusteringType = Clustering::class;
   protected $clusteringDataType = '';
   /**
-   * @var string
+   * @var ConnectionProperty[]
    */
-  public $columnNameCharacterMap;
+  public $connectionProperties;
   protected $connectionPropertiesType = ConnectionProperty::class;
   protected $connectionPropertiesDataType = 'array';
-  /**
-   * @var bool
-   */
-  public $copyFilesOnly;
   /**
    * @var string
    */
@@ -53,21 +53,25 @@ class JobConfigurationLoad extends \Google\Collection
    */
   public $createSession;
   /**
-   * @var string
-   */
-  public $dateFormat;
-  /**
-   * @var string
-   */
-  public $datetimeFormat;
-  /**
    * @var string[]
    */
   public $decimalTargetTypes;
+  /**
+   * @var EncryptionConfiguration
+   */
+  public $destinationEncryptionConfiguration;
   protected $destinationEncryptionConfigurationType = EncryptionConfiguration::class;
   protected $destinationEncryptionConfigurationDataType = '';
+  /**
+   * @var TableReference
+   */
+  public $destinationTable;
   protected $destinationTableType = TableReference::class;
   protected $destinationTableDataType = '';
+  /**
+   * @var DestinationTableProperties
+   */
+  public $destinationTableProperties;
   protected $destinationTablePropertiesType = DestinationTableProperties::class;
   protected $destinationTablePropertiesDataType = '';
   /**
@@ -82,6 +86,10 @@ class JobConfigurationLoad extends \Google\Collection
    * @var string
    */
   public $fileSetSpecType;
+  /**
+   * @var HivePartitioningOptions
+   */
+  public $hivePartitioningOptions;
   protected $hivePartitioningOptionsType = HivePartitioningOptions::class;
   protected $hivePartitioningOptionsDataType = '';
   /**
@@ -100,6 +108,10 @@ class JobConfigurationLoad extends \Google\Collection
    * @var string
    */
   public $nullMarker;
+  /**
+   * @var ParquetOptions
+   */
+  public $parquetOptions;
   protected $parquetOptionsType = ParquetOptions::class;
   protected $parquetOptionsDataType = '';
   /**
@@ -114,12 +126,20 @@ class JobConfigurationLoad extends \Google\Collection
    * @var string
    */
   public $quote;
+  /**
+   * @var RangePartitioning
+   */
+  public $rangePartitioning;
   protected $rangePartitioningType = RangePartitioning::class;
   protected $rangePartitioningDataType = '';
   /**
    * @var string
    */
   public $referenceFileSchemaUri;
+  /**
+   * @var TableSchema
+   */
+  public $schema;
   protected $schemaType = TableSchema::class;
   protected $schemaDataType = '';
   /**
@@ -147,19 +167,11 @@ class JobConfigurationLoad extends \Google\Collection
    */
   public $sourceUris;
   /**
-   * @var string
+   * @var TimePartitioning
    */
-  public $timeFormat;
+  public $timePartitioning;
   protected $timePartitioningType = TimePartitioning::class;
   protected $timePartitioningDataType = '';
-  /**
-   * @var string
-   */
-  public $timeZone;
-  /**
-   * @var string
-   */
-  public $timestampFormat;
   /**
    * @var bool
    */
@@ -226,20 +238,6 @@ class JobConfigurationLoad extends \Google\Collection
     return $this->clustering;
   }
   /**
-   * @param string
-   */
-  public function setColumnNameCharacterMap($columnNameCharacterMap)
-  {
-    $this->columnNameCharacterMap = $columnNameCharacterMap;
-  }
-  /**
-   * @return string
-   */
-  public function getColumnNameCharacterMap()
-  {
-    return $this->columnNameCharacterMap;
-  }
-  /**
    * @param ConnectionProperty[]
    */
   public function setConnectionProperties($connectionProperties)
@@ -252,20 +250,6 @@ class JobConfigurationLoad extends \Google\Collection
   public function getConnectionProperties()
   {
     return $this->connectionProperties;
-  }
-  /**
-   * @param bool
-   */
-  public function setCopyFilesOnly($copyFilesOnly)
-  {
-    $this->copyFilesOnly = $copyFilesOnly;
-  }
-  /**
-   * @return bool
-   */
-  public function getCopyFilesOnly()
-  {
-    return $this->copyFilesOnly;
   }
   /**
    * @param string
@@ -294,34 +278,6 @@ class JobConfigurationLoad extends \Google\Collection
   public function getCreateSession()
   {
     return $this->createSession;
-  }
-  /**
-   * @param string
-   */
-  public function setDateFormat($dateFormat)
-  {
-    $this->dateFormat = $dateFormat;
-  }
-  /**
-   * @return string
-   */
-  public function getDateFormat()
-  {
-    return $this->dateFormat;
-  }
-  /**
-   * @param string
-   */
-  public function setDatetimeFormat($datetimeFormat)
-  {
-    $this->datetimeFormat = $datetimeFormat;
-  }
-  /**
-   * @return string
-   */
-  public function getDatetimeFormat()
-  {
-    return $this->datetimeFormat;
   }
   /**
    * @param string[]
@@ -674,20 +630,6 @@ class JobConfigurationLoad extends \Google\Collection
     return $this->sourceUris;
   }
   /**
-   * @param string
-   */
-  public function setTimeFormat($timeFormat)
-  {
-    $this->timeFormat = $timeFormat;
-  }
-  /**
-   * @return string
-   */
-  public function getTimeFormat()
-  {
-    return $this->timeFormat;
-  }
-  /**
    * @param TimePartitioning
    */
   public function setTimePartitioning(TimePartitioning $timePartitioning)
@@ -700,34 +642,6 @@ class JobConfigurationLoad extends \Google\Collection
   public function getTimePartitioning()
   {
     return $this->timePartitioning;
-  }
-  /**
-   * @param string
-   */
-  public function setTimeZone($timeZone)
-  {
-    $this->timeZone = $timeZone;
-  }
-  /**
-   * @return string
-   */
-  public function getTimeZone()
-  {
-    return $this->timeZone;
-  }
-  /**
-   * @param string
-   */
-  public function setTimestampFormat($timestampFormat)
-  {
-    $this->timestampFormat = $timestampFormat;
-  }
-  /**
-   * @return string
-   */
-  public function getTimestampFormat()
-  {
-    return $this->timestampFormat;
   }
   /**
    * @param bool

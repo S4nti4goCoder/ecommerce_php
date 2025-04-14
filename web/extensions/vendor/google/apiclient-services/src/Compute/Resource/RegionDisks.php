@@ -65,7 +65,6 @@ class RegionDisks extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function addResourcePolicies($project, $region, $disk, RegionDisksAddResourcePoliciesRequest $postBody, $optParams = [])
   {
@@ -92,7 +91,6 @@ class RegionDisks extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function bulkInsert($project, $region, BulkInsertDiskResource $postBody, $optParams = [])
   {
@@ -123,7 +121,6 @@ class RegionDisks extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function createSnapshot($project, $region, $disk, Snapshot $postBody, $optParams = [])
   {
@@ -153,7 +150,6 @@ class RegionDisks extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($project, $region, $disk, $optParams = [])
   {
@@ -169,7 +165,6 @@ class RegionDisks extends \Google\Service\Resource
    * @param string $disk Name of the regional persistent disk to return.
    * @param array $optParams Optional parameters.
    * @return Disk
-   * @throws \Google\Service\Exception
    */
   public function get($project, $region, $disk, $optParams = [])
   {
@@ -188,7 +183,6 @@ class RegionDisks extends \Google\Service\Resource
    *
    * @opt_param int optionsRequestedPolicyVersion Requested IAM Policy version.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($project, $region, $resource, $optParams = [])
   {
@@ -218,7 +212,6 @@ class RegionDisks extends \Google\Service\Resource
    * @opt_param string sourceImage Source image to restore onto a disk. This field
    * is optional.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function insert($project, $region, Disk $postBody, $optParams = [])
   {
@@ -284,11 +277,8 @@ class RegionDisks extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
+   * false.
    * @return DiskList
-   * @throws \Google\Service\Exception
    */
   public function listRegionDisks($project, $region, $optParams = [])
   {
@@ -317,7 +307,6 @@ class RegionDisks extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function removeResourcePolicies($project, $region, $disk, RegionDisksRemoveResourcePoliciesRequest $postBody, $optParams = [])
   {
@@ -345,7 +334,6 @@ class RegionDisks extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function resize($project, $region, $disk, RegionDisksResizeRequest $postBody, $optParams = [])
   {
@@ -363,7 +351,6 @@ class RegionDisks extends \Google\Service\Resource
    * @param RegionSetPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($project, $region, $resource, RegionSetPolicyRequest $postBody, $optParams = [])
   {
@@ -391,7 +378,6 @@ class RegionDisks extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function setLabels($project, $region, $resource, RegionSetLabelsRequest $postBody, $optParams = [])
   {
@@ -420,7 +406,6 @@ class RegionDisks extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function startAsyncReplication($project, $region, $disk, RegionDisksStartAsyncReplicationRequest $postBody, $optParams = [])
   {
@@ -448,7 +433,6 @@ class RegionDisks extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function stopAsyncReplication($project, $region, $disk, $optParams = [])
   {
@@ -478,7 +462,6 @@ class RegionDisks extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function stopGroupAsyncReplication($project, $region, DisksStopGroupAsyncReplicationResource $postBody, $optParams = [])
   {
@@ -496,7 +479,6 @@ class RegionDisks extends \Google\Service\Resource
    * @param TestPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($project, $region, $resource, TestPermissionsRequest $postBody, $optParams = [])
   {
@@ -529,7 +511,6 @@ class RegionDisks extends \Google\Service\Resource
    * @opt_param string updateMask update_mask indicates fields to be updated as
    * part of this request.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function update($project, $region, $disk, Disk $postBody, $optParams = [])
   {

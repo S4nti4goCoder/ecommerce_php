@@ -47,7 +47,6 @@ class PhotoSequence extends \Google\Service\Resource
    *
    * @opt_param string inputType Required. The input form of PhotoSequence.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create(PhotoSequenceModel $postBody, $optParams = [])
   {
@@ -65,7 +64,6 @@ class PhotoSequence extends \Google\Service\Resource
    * @param string $sequenceId Required. ID of the PhotoSequence.
    * @param array $optParams Optional parameters.
    * @return StreetviewpublishEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($sequenceId, $optParams = [])
   {
@@ -95,7 +93,6 @@ class PhotoSequence extends \Google\Service\Resource
    * should be returned in `download_url` of individual photos in the
    * PhotoSequence response. > Note: Currently not implemented.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function get($sequenceId, $optParams = [])
   {
@@ -113,7 +110,6 @@ class PhotoSequence extends \Google\Service\Resource
    * @param StreetviewpublishEmpty $postBody
    * @param array $optParams Optional parameters.
    * @return UploadRef
-   * @throws \Google\Service\Exception
    */
   public function startUpload(StreetviewpublishEmpty $postBody, $optParams = [])
   {

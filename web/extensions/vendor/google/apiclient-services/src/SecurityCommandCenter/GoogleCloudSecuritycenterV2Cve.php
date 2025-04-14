@@ -20,42 +20,26 @@ namespace Google\Service\SecurityCommandCenter;
 class GoogleCloudSecuritycenterV2Cve extends \Google\Collection
 {
   protected $collection_key = 'references';
+  /**
+   * @var GoogleCloudSecuritycenterV2Cvssv3
+   */
+  public $cvssv3;
   protected $cvssv3Type = GoogleCloudSecuritycenterV2Cvssv3::class;
   protected $cvssv3DataType = '';
   /**
    * @var string
    */
-  public $exploitReleaseDate;
-  /**
-   * @var string
-   */
-  public $exploitationActivity;
-  /**
-   * @var string
-   */
-  public $firstExploitationDate;
-  /**
-   * @var string
-   */
   public $id;
   /**
-   * @var string
+   * @var GoogleCloudSecuritycenterV2Reference[]
    */
-  public $impact;
-  /**
-   * @var bool
-   */
-  public $observedInTheWild;
+  public $references;
   protected $referencesType = GoogleCloudSecuritycenterV2Reference::class;
   protected $referencesDataType = 'array';
   /**
    * @var bool
    */
   public $upstreamFixAvailable;
-  /**
-   * @var bool
-   */
-  public $zeroDay;
 
   /**
    * @param GoogleCloudSecuritycenterV2Cvssv3
@@ -74,48 +58,6 @@ class GoogleCloudSecuritycenterV2Cve extends \Google\Collection
   /**
    * @param string
    */
-  public function setExploitReleaseDate($exploitReleaseDate)
-  {
-    $this->exploitReleaseDate = $exploitReleaseDate;
-  }
-  /**
-   * @return string
-   */
-  public function getExploitReleaseDate()
-  {
-    return $this->exploitReleaseDate;
-  }
-  /**
-   * @param string
-   */
-  public function setExploitationActivity($exploitationActivity)
-  {
-    $this->exploitationActivity = $exploitationActivity;
-  }
-  /**
-   * @return string
-   */
-  public function getExploitationActivity()
-  {
-    return $this->exploitationActivity;
-  }
-  /**
-   * @param string
-   */
-  public function setFirstExploitationDate($firstExploitationDate)
-  {
-    $this->firstExploitationDate = $firstExploitationDate;
-  }
-  /**
-   * @return string
-   */
-  public function getFirstExploitationDate()
-  {
-    return $this->firstExploitationDate;
-  }
-  /**
-   * @param string
-   */
   public function setId($id)
   {
     $this->id = $id;
@@ -126,34 +68,6 @@ class GoogleCloudSecuritycenterV2Cve extends \Google\Collection
   public function getId()
   {
     return $this->id;
-  }
-  /**
-   * @param string
-   */
-  public function setImpact($impact)
-  {
-    $this->impact = $impact;
-  }
-  /**
-   * @return string
-   */
-  public function getImpact()
-  {
-    return $this->impact;
-  }
-  /**
-   * @param bool
-   */
-  public function setObservedInTheWild($observedInTheWild)
-  {
-    $this->observedInTheWild = $observedInTheWild;
-  }
-  /**
-   * @return bool
-   */
-  public function getObservedInTheWild()
-  {
-    return $this->observedInTheWild;
   }
   /**
    * @param GoogleCloudSecuritycenterV2Reference[]
@@ -182,20 +96,6 @@ class GoogleCloudSecuritycenterV2Cve extends \Google\Collection
   public function getUpstreamFixAvailable()
   {
     return $this->upstreamFixAvailable;
-  }
-  /**
-   * @param bool
-   */
-  public function setZeroDay($zeroDay)
-  {
-    $this->zeroDay = $zeroDay;
-  }
-  /**
-   * @return bool
-   */
-  public function getZeroDay()
-  {
-    return $this->zeroDay;
   }
 }
 

@@ -35,7 +35,6 @@ class ConnectorPlatformRegions extends \Google\Service\Resource
    *
    * @param array $optParams Optional parameters.
    * @return GoogleCloudIntegrationsV1alphaEnumerateConnectorPlatformRegionsResponse
-   * @throws \Google\Service\Exception
    */
   public function enumerate($optParams = [])
   {

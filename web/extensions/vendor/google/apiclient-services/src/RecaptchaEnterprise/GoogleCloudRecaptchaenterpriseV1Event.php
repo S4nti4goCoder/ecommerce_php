@@ -35,10 +35,6 @@ class GoogleCloudRecaptchaenterpriseV1Event extends \Google\Collection
   /**
    * @var string
    */
-  public $fraudPrevention;
-  /**
-   * @var string
-   */
   public $hashedAccountId;
   /**
    * @var string[]
@@ -51,10 +47,6 @@ class GoogleCloudRecaptchaenterpriseV1Event extends \Google\Collection
   /**
    * @var string
    */
-  public $ja4;
-  /**
-   * @var string
-   */
   public $requestedUri;
   /**
    * @var string
@@ -64,12 +56,20 @@ class GoogleCloudRecaptchaenterpriseV1Event extends \Google\Collection
    * @var string
    */
   public $token;
+  /**
+   * @var GoogleCloudRecaptchaenterpriseV1TransactionData
+   */
+  public $transactionData;
   protected $transactionDataType = GoogleCloudRecaptchaenterpriseV1TransactionData::class;
   protected $transactionDataDataType = '';
   /**
    * @var string
    */
   public $userAgent;
+  /**
+   * @var GoogleCloudRecaptchaenterpriseV1UserInfo
+   */
+  public $userInfo;
   protected $userInfoType = GoogleCloudRecaptchaenterpriseV1UserInfo::class;
   protected $userInfoDataType = '';
   /**
@@ -126,20 +126,6 @@ class GoogleCloudRecaptchaenterpriseV1Event extends \Google\Collection
   /**
    * @param string
    */
-  public function setFraudPrevention($fraudPrevention)
-  {
-    $this->fraudPrevention = $fraudPrevention;
-  }
-  /**
-   * @return string
-   */
-  public function getFraudPrevention()
-  {
-    return $this->fraudPrevention;
-  }
-  /**
-   * @param string
-   */
   public function setHashedAccountId($hashedAccountId)
   {
     $this->hashedAccountId = $hashedAccountId;
@@ -178,20 +164,6 @@ class GoogleCloudRecaptchaenterpriseV1Event extends \Google\Collection
   public function getJa3()
   {
     return $this->ja3;
-  }
-  /**
-   * @param string
-   */
-  public function setJa4($ja4)
-  {
-    $this->ja4 = $ja4;
-  }
-  /**
-   * @return string
-   */
-  public function getJa4()
-  {
-    return $this->ja4;
   }
   /**
    * @param string

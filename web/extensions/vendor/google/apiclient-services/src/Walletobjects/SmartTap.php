@@ -24,6 +24,10 @@ class SmartTap extends \Google\Collection
    * @var string
    */
   public $id;
+  /**
+   * @var IssuerToUserInfo[]
+   */
+  public $infos;
   protected $infosType = IssuerToUserInfo::class;
   protected $infosDataType = 'array';
   /**

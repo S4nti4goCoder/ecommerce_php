@@ -28,8 +28,16 @@ class Session extends \Google\Collection
    * @var string
    */
   public $creator;
+  /**
+   * @var EnvironmentConfig
+   */
+  public $environmentConfig;
   protected $environmentConfigType = EnvironmentConfig::class;
   protected $environmentConfigDataType = '';
+  /**
+   * @var JupyterConfig
+   */
+  public $jupyterSession;
   protected $jupyterSessionType = JupyterConfig::class;
   protected $jupyterSessionDataType = '';
   /**
@@ -40,20 +48,30 @@ class Session extends \Google\Collection
    * @var string
    */
   public $name;
+  /**
+   * @var RuntimeConfig
+   */
+  public $runtimeConfig;
   protected $runtimeConfigType = RuntimeConfig::class;
   protected $runtimeConfigDataType = '';
+  /**
+   * @var RuntimeInfo
+   */
+  public $runtimeInfo;
   protected $runtimeInfoType = RuntimeInfo::class;
   protected $runtimeInfoDataType = '';
   /**
    * @var string
    */
   public $sessionTemplate;
-  protected $sparkConnectSessionType = SparkConnectConfig::class;
-  protected $sparkConnectSessionDataType = '';
   /**
    * @var string
    */
   public $state;
+  /**
+   * @var SessionStateHistory[]
+   */
+  public $stateHistory;
   protected $stateHistoryType = SessionStateHistory::class;
   protected $stateHistoryDataType = 'array';
   /**
@@ -198,20 +216,6 @@ class Session extends \Google\Collection
   public function getSessionTemplate()
   {
     return $this->sessionTemplate;
-  }
-  /**
-   * @param SparkConnectConfig
-   */
-  public function setSparkConnectSession(SparkConnectConfig $sparkConnectSession)
-  {
-    $this->sparkConnectSession = $sparkConnectSession;
-  }
-  /**
-   * @return SparkConnectConfig
-   */
-  public function getSparkConnectSession()
-  {
-    return $this->sparkConnectSession;
   }
   /**
    * @param string

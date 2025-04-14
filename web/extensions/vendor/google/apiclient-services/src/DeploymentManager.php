@@ -54,7 +54,6 @@ class DeploymentManager extends \Google\Service
   public $operations;
   public $resources;
   public $types;
-  public $rootUrlTemplate;
 
   /**
    * Constructs the internal representation of the DeploymentManager service.
@@ -67,7 +66,6 @@ class DeploymentManager extends \Google\Service
   {
     parent::__construct($clientOrConfig);
     $this->rootUrl = $rootUrl ?: 'https://deploymentmanager.googleapis.com/';
-    $this->rootUrlTemplate = $rootUrl ?: 'https://deploymentmanager.UNIVERSE_DOMAIN/';
     $this->servicePath = '';
     $this->batchPath = 'batch';
     $this->version = 'v2';
@@ -112,10 +110,6 @@ class DeploymentManager extends \Google\Service
                   'location' => 'query',
                   'type' => 'string',
                 ],
-                'header.bypassBillingFilter' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
               ],
             ],'get' => [
               'path' => 'deploymentmanager/v2/projects/{project}/global/deployments/{deployment}',
@@ -131,10 +125,6 @@ class DeploymentManager extends \Google\Service
                   'type' => 'string',
                   'required' => true,
                 ],
-                'header.bypassBillingFilter' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
               ],
             ],'getIamPolicy' => [
               'path' => 'deploymentmanager/v2/projects/{project}/global/deployments/{resource}/getIamPolicy',
@@ -149,10 +139,6 @@ class DeploymentManager extends \Google\Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ],
-                'header.bypassBillingFilter' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ],
                 'optionsRequestedPolicyVersion' => [
                   'location' => 'query',
@@ -171,10 +157,6 @@ class DeploymentManager extends \Google\Service
                 'createPolicy' => [
                   'location' => 'query',
                   'type' => 'string',
-                ],
-                'header.bypassBillingFilter' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ],
                 'preview' => [
                   'location' => 'query',
@@ -229,10 +211,6 @@ class DeploymentManager extends \Google\Service
                   'location' => 'query',
                   'type' => 'string',
                 ],
-                'header.bypassBillingFilter' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
                 'preview' => [
                   'location' => 'query',
                   'type' => 'boolean',
@@ -282,10 +260,6 @@ class DeploymentManager extends \Google\Service
                   'type' => 'string',
                   'required' => true,
                 ],
-                'header.bypassBillingFilter' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
               ],
             ],'update' => [
               'path' => 'deploymentmanager/v2/projects/{project}/global/deployments/{deployment}',
@@ -308,10 +282,6 @@ class DeploymentManager extends \Google\Service
                 'deletePolicy' => [
                   'location' => 'query',
                   'type' => 'string',
-                ],
-                'header.bypassBillingFilter' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ],
                 'preview' => [
                   'location' => 'query',
@@ -346,10 +316,6 @@ class DeploymentManager extends \Google\Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ],
-                'header.bypassBillingFilter' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ],
               ],
             ],'list' => [
@@ -407,10 +373,6 @@ class DeploymentManager extends \Google\Service
                   'type' => 'string',
                   'required' => true,
                 ],
-                'header.bypassBillingFilter' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
               ],
             ],'list' => [
               'path' => 'deploymentmanager/v2/projects/{project}/global/operations',
@@ -466,10 +428,6 @@ class DeploymentManager extends \Google\Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ],
-                'header.bypassBillingFilter' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ],
               ],
             ],'list' => [

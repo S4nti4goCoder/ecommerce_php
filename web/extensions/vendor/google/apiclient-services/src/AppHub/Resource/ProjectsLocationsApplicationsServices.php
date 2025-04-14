@@ -34,9 +34,7 @@ class ProjectsLocationsApplicationsServices extends \Google\Service\Resource
   /**
    * Creates a Service in an Application. (services.create)
    *
-   * @param string $parent Required. Fully qualified name of the parent
-   * Application to create the Service in. Expected format:
-   * `projects/{project}/locations/{location}/applications/{application}`.
+   * @param string $parent Required. Value for parent.
    * @param Service $postBody
    * @param array $optParams Optional parameters.
    *
@@ -51,11 +49,8 @@ class ProjectsLocationsApplicationsServices extends \Google\Service\Resource
    * clients from accidentally creating duplicate commitments. The request ID must
    * be a valid UUID with the exception that zero UUID is not supported
    * (00000000-0000-0000-0000-000000000000).
-   * @opt_param string serviceId Required. The Service identifier. Must contain
-   * only lowercase letters, numbers or hyphens, with the first character a
-   * letter, the last a letter or a number, and a 63 character maximum.
+   * @opt_param string serviceId Required. The Service identifier.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Service $postBody, $optParams = [])
   {
@@ -64,11 +59,9 @@ class ProjectsLocationsApplicationsServices extends \Google\Service\Resource
     return $this->call('create', [$params], Operation::class);
   }
   /**
-   * Deletes a Service from an Application. (services.delete)
+   * Deletes a Service in an Application. (services.delete)
    *
-   * @param string $name Required. Fully qualified name of the Service to delete
-   * from an Application. Expected format: `projects/{project}/locations/{location
-   * }/applications/{application}/services/{service}`.
+   * @param string $name Required. Value for name.
    * @param array $optParams Optional parameters.
    *
    * @opt_param string requestId Optional. An optional request ID to identify
@@ -83,7 +76,6 @@ class ProjectsLocationsApplicationsServices extends \Google\Service\Resource
    * be a valid UUID with the exception that zero UUID is not supported
    * (00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -94,12 +86,9 @@ class ProjectsLocationsApplicationsServices extends \Google\Service\Resource
   /**
    * Gets a Service in an Application. (services.get)
    *
-   * @param string $name Required. Fully qualified name of the Service to fetch.
-   * Expected format: `projects/{project}/locations/{location}/applications/{appli
-   * cation}/services/{service}`.
+   * @param string $name Required. Value for name.
    * @param array $optParams Optional parameters.
    * @return Service
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -108,12 +97,10 @@ class ProjectsLocationsApplicationsServices extends \Google\Service\Resource
     return $this->call('get', [$params], Service::class);
   }
   /**
-   * Lists Services in an Application.
+   * List Services in an Application.
    * (services.listProjectsLocationsApplicationsServices)
    *
-   * @param string $parent Required. Fully qualified name of the parent
-   * Application to list Services for. Expected format:
-   * `projects/{project}/locations/{location}/applications/{application}`.
+   * @param string $parent Required. Value for parent.
    * @param array $optParams Optional parameters.
    *
    * @opt_param string filter Optional. Filtering results
@@ -124,7 +111,6 @@ class ProjectsLocationsApplicationsServices extends \Google\Service\Resource
    * @opt_param string pageToken Optional. A token identifying a page of results
    * the server should return.
    * @return ListServicesResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsApplicationsServices($parent, $optParams = [])
   {
@@ -136,8 +122,8 @@ class ProjectsLocationsApplicationsServices extends \Google\Service\Resource
    * Updates a Service in an Application. (services.patch)
    *
    * @param string $name Identifier. The resource name of a Service. Format:
-   * `"projects/{host-project-id}/locations/{location}/applications/{application-
-   * id}/services/{service-id}"`
+   * "projects/{host-project-id}/locations/{location}/applications/{application-
+   * id}/services/{service-id}"
    * @param Service $postBody
    * @param array $optParams Optional parameters.
    *
@@ -161,7 +147,6 @@ class ProjectsLocationsApplicationsServices extends \Google\Service\Resource
    * message, but adding the field to the mask. This clears whatever value the
    * field previously had.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, Service $postBody, $optParams = [])
   {

@@ -32,14 +32,26 @@ class TicketLeg extends \Google\Collection
    * @var string
    */
   public $departureDateTime;
+  /**
+   * @var LocalizedString
+   */
+  public $destinationName;
   protected $destinationNameType = LocalizedString::class;
   protected $destinationNameDataType = '';
   /**
    * @var string
    */
   public $destinationStationCode;
+  /**
+   * @var LocalizedString
+   */
+  public $fareName;
   protected $fareNameType = LocalizedString::class;
   protected $fareNameDataType = '';
+  /**
+   * @var LocalizedString
+   */
+  public $originName;
   protected $originNameType = LocalizedString::class;
   protected $originNameDataType = '';
   /**
@@ -50,12 +62,28 @@ class TicketLeg extends \Google\Collection
    * @var string
    */
   public $platform;
+  /**
+   * @var TicketSeat
+   */
+  public $ticketSeat;
   protected $ticketSeatType = TicketSeat::class;
   protected $ticketSeatDataType = '';
+  /**
+   * @var TicketSeat[]
+   */
+  public $ticketSeats;
   protected $ticketSeatsType = TicketSeat::class;
   protected $ticketSeatsDataType = 'array';
+  /**
+   * @var LocalizedString
+   */
+  public $transitOperatorName;
   protected $transitOperatorNameType = LocalizedString::class;
   protected $transitOperatorNameDataType = '';
+  /**
+   * @var LocalizedString
+   */
+  public $transitTerminusName;
   protected $transitTerminusNameType = LocalizedString::class;
   protected $transitTerminusNameDataType = '';
   /**

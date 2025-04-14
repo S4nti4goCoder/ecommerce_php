@@ -23,6 +23,10 @@ class GoogleCloudOrgpolicyV2PolicySpecPolicyRule extends \Google\Model
    * @var bool
    */
   public $allowAll;
+  /**
+   * @var GoogleTypeExpr
+   */
+  public $condition;
   protected $conditionType = GoogleTypeExpr::class;
   protected $conditionDataType = '';
   /**
@@ -34,9 +38,9 @@ class GoogleCloudOrgpolicyV2PolicySpecPolicyRule extends \Google\Model
    */
   public $enforce;
   /**
-   * @var array[]
+   * @var GoogleCloudOrgpolicyV2PolicySpecPolicyRuleStringValues
    */
-  public $parameters;
+  public $values;
   protected $valuesType = GoogleCloudOrgpolicyV2PolicySpecPolicyRuleStringValues::class;
   protected $valuesDataType = '';
 
@@ -95,20 +99,6 @@ class GoogleCloudOrgpolicyV2PolicySpecPolicyRule extends \Google\Model
   public function getEnforce()
   {
     return $this->enforce;
-  }
-  /**
-   * @param array[]
-   */
-  public function setParameters($parameters)
-  {
-    $this->parameters = $parameters;
-  }
-  /**
-   * @return array[]
-   */
-  public function getParameters()
-  {
-    return $this->parameters;
   }
   /**
    * @param GoogleCloudOrgpolicyV2PolicySpecPolicyRuleStringValues

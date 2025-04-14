@@ -61,7 +61,6 @@ class FirewallPolicies extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function addAssociation($firewallPolicy, FirewallPolicyAssociation $postBody, $optParams = [])
   {
@@ -87,7 +86,6 @@ class FirewallPolicies extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function addRule($firewallPolicy, FirewallPolicyRule $postBody, $optParams = [])
   {
@@ -114,7 +112,6 @@ class FirewallPolicies extends \Google\Service\Resource
    * @opt_param string sourceFirewallPolicy The firewall policy from which to copy
    * rules.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function cloneRules($firewallPolicy, $optParams = [])
   {
@@ -139,7 +136,6 @@ class FirewallPolicies extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($firewallPolicy, $optParams = [])
   {
@@ -153,7 +149,6 @@ class FirewallPolicies extends \Google\Service\Resource
    * @param string $firewallPolicy Name of the firewall policy to get.
    * @param array $optParams Optional parameters.
    * @return FirewallPolicy
-   * @throws \Google\Service\Exception
    */
   public function get($firewallPolicy, $optParams = [])
   {
@@ -172,7 +167,6 @@ class FirewallPolicies extends \Google\Service\Resource
    * @opt_param string name The name of the association to get from the firewall
    * policy.
    * @return FirewallPolicyAssociation
-   * @throws \Google\Service\Exception
    */
   public function getAssociation($firewallPolicy, $optParams = [])
   {
@@ -189,7 +183,6 @@ class FirewallPolicies extends \Google\Service\Resource
    *
    * @opt_param int optionsRequestedPolicyVersion Requested IAM Policy version.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, $optParams = [])
   {
@@ -207,7 +200,6 @@ class FirewallPolicies extends \Google\Service\Resource
    * @opt_param int priority The priority of the rule to get from the firewall
    * policy.
    * @return FirewallPolicyRule
-   * @throws \Google\Service\Exception
    */
   public function getRule($firewallPolicy, $optParams = [])
   {
@@ -236,7 +228,6 @@ class FirewallPolicies extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function insert(FirewallPolicy $postBody, $optParams = [])
   {
@@ -303,11 +294,8 @@ class FirewallPolicies extends \Google\Service\Resource
    * "organizations/[ORGANIZATION_ID]" if the parent is an organization.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
+   * false.
    * @return FirewallPolicyList
-   * @throws \Google\Service\Exception
    */
   public function listFirewallPolicies($optParams = [])
   {
@@ -324,7 +312,6 @@ class FirewallPolicies extends \Google\Service\Resource
    * @opt_param string targetResource The target resource to list associations. It
    * is an organization, or a folder.
    * @return FirewallPoliciesListAssociationsResponse
-   * @throws \Google\Service\Exception
    */
   public function listAssociations($optParams = [])
   {
@@ -352,7 +339,6 @@ class FirewallPolicies extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function move($firewallPolicy, $optParams = [])
   {
@@ -379,7 +365,6 @@ class FirewallPolicies extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($firewallPolicy, FirewallPolicy $postBody, $optParams = [])
   {
@@ -406,7 +391,6 @@ class FirewallPolicies extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patchRule($firewallPolicy, FirewallPolicyRule $postBody, $optParams = [])
   {
@@ -433,7 +417,6 @@ class FirewallPolicies extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function removeAssociation($firewallPolicy, $optParams = [])
   {
@@ -460,7 +443,6 @@ class FirewallPolicies extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function removeRule($firewallPolicy, $optParams = [])
   {
@@ -476,7 +458,6 @@ class FirewallPolicies extends \Google\Service\Resource
    * @param GlobalOrganizationSetPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, GlobalOrganizationSetPolicyRequest $postBody, $optParams = [])
   {
@@ -492,7 +473,6 @@ class FirewallPolicies extends \Google\Service\Resource
    * @param TestPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, TestPermissionsRequest $postBody, $optParams = [])
   {

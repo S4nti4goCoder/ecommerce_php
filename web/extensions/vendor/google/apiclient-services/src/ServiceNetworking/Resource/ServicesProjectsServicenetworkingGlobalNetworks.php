@@ -52,7 +52,6 @@ class ServicesProjectsServicenetworkingGlobalNetworks extends \Google\Service\Re
    * consumer network, and reserved ranges inside the service networking network.
    * By default, this is false
    * @return ConsumerConfig
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -75,7 +74,6 @@ class ServicesProjectsServicenetworkingGlobalNetworks extends \Google\Service\Re
    * {network} is the name of the service consumer's VPC network.
    * @param array $optParams Optional parameters.
    * @return VpcServiceControls
-   * @throws \Google\Service\Exception
    */
   public function getVpcServiceControls($name, $optParams = [])
   {
@@ -99,7 +97,6 @@ class ServicesProjectsServicenetworkingGlobalNetworks extends \Google\Service\Re
    * @param UpdateConsumerConfigRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function updateConsumerConfig($parent, UpdateConsumerConfigRequest $postBody, $optParams = [])
   {

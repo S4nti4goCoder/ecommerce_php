@@ -20,26 +20,12 @@ namespace Google\Service\Forms;
 class FormSettings extends \Google\Model
 {
   /**
-   * @var string
+   * @var QuizSettings
    */
-  public $emailCollectionType;
+  public $quizSettings;
   protected $quizSettingsType = QuizSettings::class;
   protected $quizSettingsDataType = '';
 
-  /**
-   * @param string
-   */
-  public function setEmailCollectionType($emailCollectionType)
-  {
-    $this->emailCollectionType = $emailCollectionType;
-  }
-  /**
-   * @return string
-   */
-  public function getEmailCollectionType()
-  {
-    return $this->emailCollectionType;
-  }
   /**
    * @param QuizSettings
    */

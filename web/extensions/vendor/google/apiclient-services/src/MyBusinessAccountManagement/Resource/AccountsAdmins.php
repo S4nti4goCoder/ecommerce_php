@@ -42,7 +42,6 @@ class AccountsAdmins extends \Google\Service\Resource
    * @param Admin $postBody
    * @param array $optParams Optional parameters.
    * @return Admin
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Admin $postBody, $optParams = [])
   {
@@ -57,7 +56,6 @@ class AccountsAdmins extends \Google\Service\Resource
    * the account. `accounts/{account_id}/admins/{admin_id}`.
    * @param array $optParams Optional parameters.
    * @return MybusinessaccountmanagementEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -72,7 +70,6 @@ class AccountsAdmins extends \Google\Service\Resource
    * retrieve a list of admins. `accounts/{account_id}/admins`.
    * @param array $optParams Optional parameters.
    * @return ListAccountAdminsResponse
-   * @throws \Google\Service\Exception
    */
   public function listAccountsAdmins($parent, $optParams = [])
   {
@@ -93,7 +90,6 @@ class AccountsAdmins extends \Google\Service\Resource
    * @opt_param string updateMask Required. The specific fields that should be
    * updated. The only editable field is role.
    * @return Admin
-   * @throws \Google\Service\Exception
    */
   public function patch($name, Admin $postBody, $optParams = [])
   {

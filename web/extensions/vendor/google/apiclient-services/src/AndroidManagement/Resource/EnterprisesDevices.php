@@ -49,7 +49,6 @@ class EnterprisesDevices extends \Google\Service\Resource
    * effect on company owned devices. The maximum message length is 200
    * characters.
    * @return AndroidmanagementEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -64,7 +63,6 @@ class EnterprisesDevices extends \Google\Service\Resource
    * enterprises/{enterpriseId}/devices/{deviceId}.
    * @param array $optParams Optional parameters.
    * @return Device
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -82,7 +80,6 @@ class EnterprisesDevices extends \Google\Service\Resource
    * @param Command $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function issueCommand($name, Command $postBody, $optParams = [])
   {
@@ -103,7 +100,6 @@ class EnterprisesDevices extends \Google\Service\Resource
    * @opt_param string pageToken A token identifying a page of results returned by
    * the server.
    * @return ListDevicesResponse
-   * @throws \Google\Service\Exception
    */
   public function listEnterprisesDevices($parent, $optParams = [])
   {
@@ -122,7 +118,6 @@ class EnterprisesDevices extends \Google\Service\Resource
    * @opt_param string updateMask The field mask indicating the fields to update.
    * If not set, all modifiable fields will be modified.
    * @return Device
-   * @throws \Google\Service\Exception
    */
   public function patch($name, Device $postBody, $optParams = [])
   {

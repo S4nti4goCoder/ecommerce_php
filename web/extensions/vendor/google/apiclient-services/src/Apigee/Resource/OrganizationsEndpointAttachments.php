@@ -44,7 +44,6 @@ class OrganizationsEndpointAttachments extends \Google\Service\Resource
    * ID must start with a lowercase letter followed by up to 31 lowercase letters,
    * numbers, or hyphens, and cannot end with a hyphen. The minimum length is 2.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudApigeeV1EndpointAttachment $postBody, $optParams = [])
   {
@@ -60,7 +59,6 @@ class OrganizationsEndpointAttachments extends \Google\Service\Resource
    * `organizations/{org}/endpointAttachments/{endpoint_attachment}`
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -76,7 +74,6 @@ class OrganizationsEndpointAttachments extends \Google\Service\Resource
    * `organizations/{org}/endpointAttachments/{endpoint_attachment}`
    * @param array $optParams Optional parameters.
    * @return GoogleCloudApigeeV1EndpointAttachment
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -98,7 +95,6 @@ class OrganizationsEndpointAttachments extends \Google\Service\Resource
    * @opt_param string pageToken Optional. Page token, returned from a previous
    * `ListEndpointAttachments` call, that you can use to retrieve the next page.
    * @return GoogleCloudApigeeV1ListEndpointAttachmentsResponse
-   * @throws \Google\Service\Exception
    */
   public function listOrganizationsEndpointAttachments($parent, $optParams = [])
   {

@@ -46,7 +46,6 @@ class Orderreports extends \Google\Service\Resource
    * the response, used for paging.
    * @opt_param string pageToken The token returned by the previous request.
    * @return OrderreportsListDisbursementsResponse
-   * @throws \Google\Service\Exception
    */
   public function listdisbursements($merchantId, $optParams = [])
   {
@@ -72,7 +71,6 @@ class Orderreports extends \Google\Service\Resource
    * @opt_param string transactionStartDate The first date in which transaction
    * occurred. In ISO 8601 format.
    * @return OrderreportsListTransactionsResponse
-   * @throws \Google\Service\Exception
    */
   public function listtransactions($merchantId, $disbursementId, $optParams = [])
   {

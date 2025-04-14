@@ -19,12 +19,20 @@ namespace Google\Service\CloudDataplex;
 
 class GoogleCloudDataplexV1DiscoveryEvent extends \Google\Model
 {
+  /**
+   * @var GoogleCloudDataplexV1DiscoveryEventActionDetails
+   */
+  public $action;
   protected $actionType = GoogleCloudDataplexV1DiscoveryEventActionDetails::class;
   protected $actionDataType = '';
   /**
    * @var string
    */
   public $assetId;
+  /**
+   * @var GoogleCloudDataplexV1DiscoveryEventConfigDetails
+   */
+  public $config;
   protected $configType = GoogleCloudDataplexV1DiscoveryEventConfigDetails::class;
   protected $configDataType = '';
   /**
@@ -32,9 +40,9 @@ class GoogleCloudDataplexV1DiscoveryEvent extends \Google\Model
    */
   public $dataLocation;
   /**
-   * @var string
+   * @var GoogleCloudDataplexV1DiscoveryEventEntityDetails
    */
-  public $datascanId;
+  public $entity;
   protected $entityType = GoogleCloudDataplexV1DiscoveryEventEntityDetails::class;
   protected $entityDataType = '';
   /**
@@ -45,10 +53,12 @@ class GoogleCloudDataplexV1DiscoveryEvent extends \Google\Model
    * @var string
    */
   public $message;
+  /**
+   * @var GoogleCloudDataplexV1DiscoveryEventPartitionDetails
+   */
+  public $partition;
   protected $partitionType = GoogleCloudDataplexV1DiscoveryEventPartitionDetails::class;
   protected $partitionDataType = '';
-  protected $tableType = GoogleCloudDataplexV1DiscoveryEventTableDetails::class;
-  protected $tableDataType = '';
   /**
    * @var string
    */
@@ -115,20 +125,6 @@ class GoogleCloudDataplexV1DiscoveryEvent extends \Google\Model
     return $this->dataLocation;
   }
   /**
-   * @param string
-   */
-  public function setDatascanId($datascanId)
-  {
-    $this->datascanId = $datascanId;
-  }
-  /**
-   * @return string
-   */
-  public function getDatascanId()
-  {
-    return $this->datascanId;
-  }
-  /**
    * @param GoogleCloudDataplexV1DiscoveryEventEntityDetails
    */
   public function setEntity(GoogleCloudDataplexV1DiscoveryEventEntityDetails $entity)
@@ -183,20 +179,6 @@ class GoogleCloudDataplexV1DiscoveryEvent extends \Google\Model
   public function getPartition()
   {
     return $this->partition;
-  }
-  /**
-   * @param GoogleCloudDataplexV1DiscoveryEventTableDetails
-   */
-  public function setTable(GoogleCloudDataplexV1DiscoveryEventTableDetails $table)
-  {
-    $this->table = $table;
-  }
-  /**
-   * @return GoogleCloudDataplexV1DiscoveryEventTableDetails
-   */
-  public function getTable()
-  {
-    return $this->table;
   }
   /**
    * @param string

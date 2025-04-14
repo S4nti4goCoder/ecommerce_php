@@ -44,7 +44,6 @@ class OrganizationsLocationsWorkloadsViolations extends \Google\Service\Resource
    * @param GoogleCloudAssuredworkloadsV1AcknowledgeViolationRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudAssuredworkloadsV1AcknowledgeViolationResponse
-   * @throws \Google\Service\Exception
    */
   public function acknowledge($name, GoogleCloudAssuredworkloadsV1AcknowledgeViolationRequest $postBody, $optParams = [])
   {
@@ -60,7 +59,6 @@ class OrganizationsLocationsWorkloadsViolations extends \Google\Service\Resource
    * n}/workloads/{workload}/violations/{violation}
    * @param array $optParams Optional parameters.
    * @return GoogleCloudAssuredworkloadsV1Violation
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -88,7 +86,6 @@ class OrganizationsLocationsWorkloadsViolations extends \Google\Service\Resource
    * @opt_param string pageToken Optional. Page token returned from previous
    * request.
    * @return GoogleCloudAssuredworkloadsV1ListViolationsResponse
-   * @throws \Google\Service\Exception
    */
   public function listOrganizationsLocationsWorkloadsViolations($parent, $optParams = [])
   {

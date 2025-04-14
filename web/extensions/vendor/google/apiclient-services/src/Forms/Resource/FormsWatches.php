@@ -43,7 +43,6 @@ class FormsWatches extends \Google\Service\Resource
    * @param CreateWatchRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Watch
-   * @throws \Google\Service\Exception
    */
   public function create($formId, CreateWatchRequest $postBody, $optParams = [])
   {
@@ -58,7 +57,6 @@ class FormsWatches extends \Google\Service\Resource
    * @param string $watchId Required. The ID of the Watch to delete.
    * @param array $optParams Optional parameters.
    * @return FormsEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($formId, $watchId, $optParams = [])
   {
@@ -74,7 +72,6 @@ class FormsWatches extends \Google\Service\Resource
    * @param string $formId Required. ID of the Form whose watches to list.
    * @param array $optParams Optional parameters.
    * @return ListWatchesResponse
-   * @throws \Google\Service\Exception
    */
   public function listFormsWatches($formId, $optParams = [])
   {
@@ -94,7 +91,6 @@ class FormsWatches extends \Google\Service\Resource
    * @param RenewWatchRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Watch
-   * @throws \Google\Service\Exception
    */
   public function renew($formId, $watchId, RenewWatchRequest $postBody, $optParams = [])
   {

@@ -35,7 +35,6 @@ class Smarttap extends \Google\Service\Resource
    * @param SmartTapModel $postBody
    * @param array $optParams Optional parameters.
    * @return SmartTapModel
-   * @throws \Google\Service\Exception
    */
   public function insert(SmartTapModel $postBody, $optParams = [])
   {

@@ -20,14 +20,12 @@ namespace Google\Service\CloudAsset;
 class GoogleCloudAssetV1GovernedContainer extends \Google\Collection
 {
   protected $collection_key = 'policyBundle';
+  /**
+   * @var AnalyzerOrgPolicy
+   */
+  public $consolidatedPolicy;
   protected $consolidatedPolicyType = AnalyzerOrgPolicy::class;
   protected $consolidatedPolicyDataType = '';
-  protected $effectiveTagsType = EffectiveTagDetails::class;
-  protected $effectiveTagsDataType = 'array';
-  /**
-   * @var string[]
-   */
-  public $folders;
   /**
    * @var string
    */
@@ -35,17 +33,13 @@ class GoogleCloudAssetV1GovernedContainer extends \Google\Collection
   /**
    * @var string
    */
-  public $organization;
-  /**
-   * @var string
-   */
   public $parent;
+  /**
+   * @var AnalyzerOrgPolicy[]
+   */
+  public $policyBundle;
   protected $policyBundleType = AnalyzerOrgPolicy::class;
   protected $policyBundleDataType = 'array';
-  /**
-   * @var string
-   */
-  public $project;
 
   /**
    * @param AnalyzerOrgPolicy
@@ -62,34 +56,6 @@ class GoogleCloudAssetV1GovernedContainer extends \Google\Collection
     return $this->consolidatedPolicy;
   }
   /**
-   * @param EffectiveTagDetails[]
-   */
-  public function setEffectiveTags($effectiveTags)
-  {
-    $this->effectiveTags = $effectiveTags;
-  }
-  /**
-   * @return EffectiveTagDetails[]
-   */
-  public function getEffectiveTags()
-  {
-    return $this->effectiveTags;
-  }
-  /**
-   * @param string[]
-   */
-  public function setFolders($folders)
-  {
-    $this->folders = $folders;
-  }
-  /**
-   * @return string[]
-   */
-  public function getFolders()
-  {
-    return $this->folders;
-  }
-  /**
    * @param string
    */
   public function setFullResourceName($fullResourceName)
@@ -102,20 +68,6 @@ class GoogleCloudAssetV1GovernedContainer extends \Google\Collection
   public function getFullResourceName()
   {
     return $this->fullResourceName;
-  }
-  /**
-   * @param string
-   */
-  public function setOrganization($organization)
-  {
-    $this->organization = $organization;
-  }
-  /**
-   * @return string
-   */
-  public function getOrganization()
-  {
-    return $this->organization;
   }
   /**
    * @param string
@@ -144,20 +96,6 @@ class GoogleCloudAssetV1GovernedContainer extends \Google\Collection
   public function getPolicyBundle()
   {
     return $this->policyBundle;
-  }
-  /**
-   * @param string
-   */
-  public function setProject($project)
-  {
-    $this->project = $project;
-  }
-  /**
-   * @return string
-   */
-  public function getProject()
-  {
-    return $this->project;
   }
 }
 

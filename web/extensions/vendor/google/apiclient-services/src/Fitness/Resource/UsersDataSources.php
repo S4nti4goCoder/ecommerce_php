@@ -62,7 +62,6 @@ class UsersDataSources extends \Google\Service\Resource
    * @param DataSource $postBody
    * @param array $optParams Optional parameters.
    * @return DataSource
-   * @throws \Google\Service\Exception
    */
   public function create($userId, DataSource $postBody, $optParams = [])
   {
@@ -79,7 +78,6 @@ class UsersDataSources extends \Google\Service\Resource
    * @param string $dataSourceId The data stream ID of the data source to delete.
    * @param array $optParams Optional parameters.
    * @return DataSource
-   * @throws \Google\Service\Exception
    */
   public function delete($userId, $dataSourceId, $optParams = [])
   {
@@ -96,7 +94,6 @@ class UsersDataSources extends \Google\Service\Resource
    * retrieve.
    * @param array $optParams Optional parameters.
    * @return DataSource
-   * @throws \Google\Service\Exception
    */
   public function get($userId, $dataSourceId, $optParams = [])
   {
@@ -117,7 +114,6 @@ class UsersDataSources extends \Google\Service\Resource
    * @opt_param string dataTypeName The names of data types to include in the
    * list. If not specified, all data sources will be returned.
    * @return ListDataSourcesResponse
-   * @throws \Google\Service\Exception
    */
   public function listUsersDataSources($userId, $optParams = [])
   {
@@ -137,7 +133,6 @@ class UsersDataSources extends \Google\Service\Resource
    * @param DataSource $postBody
    * @param array $optParams Optional parameters.
    * @return DataSource
-   * @throws \Google\Service\Exception
    */
   public function update($userId, $dataSourceId, DataSource $postBody, $optParams = [])
   {

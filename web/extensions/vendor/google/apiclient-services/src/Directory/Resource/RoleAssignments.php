@@ -36,7 +36,6 @@ class RoleAssignments extends \Google\Service\Resource
    * @param string $customer Immutable ID of the Google Workspace account.
    * @param string $roleAssignmentId Immutable ID of the role assignment.
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function delete($customer, $roleAssignmentId, $optParams = [])
   {
@@ -57,7 +56,6 @@ class RoleAssignments extends \Google\Service\Resource
    * @param string $roleAssignmentId Immutable ID of the role assignment.
    * @param array $optParams Optional parameters.
    * @return RoleAssignment
-   * @throws \Google\Service\Exception
    */
   public function get($customer, $roleAssignmentId, $optParams = [])
   {
@@ -72,7 +70,6 @@ class RoleAssignments extends \Google\Service\Resource
    * @param RoleAssignment $postBody
    * @param array $optParams Optional parameters.
    * @return RoleAssignment
-   * @throws \Google\Service\Exception
    */
   public function insert($customer, RoleAssignment $postBody, $optParams = [])
   {
@@ -105,7 +102,6 @@ class RoleAssignments extends \Google\Service\Resource
    * unique user or group ID. If included in the request, returns role assignments
    * only for this user or group.
    * @return RoleAssignmentsModel
-   * @throws \Google\Service\Exception
    */
   public function listRoleAssignments($customer, $optParams = [])
   {

@@ -21,17 +21,15 @@ class GoogleCloudConnectorsV1Connection extends \Google\Collection
 {
   protected $collection_key = 'destinationConfigs';
   /**
-   * @var bool
+   * @var GoogleCloudConnectorsV1AuthConfig
    */
-  public $asyncOperationsEnabled;
+  public $authConfig;
   protected $authConfigType = GoogleCloudConnectorsV1AuthConfig::class;
   protected $authConfigDataType = '';
   /**
-   * @var bool
+   * @var GoogleCloudConnectorsV1ConfigVariable[]
    */
-  public $authOverrideEnabled;
-  protected $billingConfigType = GoogleCloudConnectorsV1BillingConfig::class;
-  protected $billingConfigDataType = '';
+  public $configVariables;
   protected $configVariablesType = GoogleCloudConnectorsV1ConfigVariable::class;
   protected $configVariablesDataType = 'array';
   /**
@@ -42,6 +40,10 @@ class GoogleCloudConnectorsV1Connection extends \Google\Collection
    * @var string
    */
   public $connectorVersion;
+  /**
+   * @var GoogleCloudConnectorsV1ConnectorVersionInfraConfig
+   */
+  public $connectorVersionInfraConfig;
   protected $connectorVersionInfraConfigType = GoogleCloudConnectorsV1ConnectorVersionInfraConfig::class;
   protected $connectorVersionInfraConfigDataType = '';
   /**
@@ -56,24 +58,32 @@ class GoogleCloudConnectorsV1Connection extends \Google\Collection
    * @var string
    */
   public $description;
+  /**
+   * @var GoogleCloudConnectorsV1DestinationConfig[]
+   */
+  public $destinationConfigs;
   protected $destinationConfigsType = GoogleCloudConnectorsV1DestinationConfig::class;
   protected $destinationConfigsDataType = 'array';
   /**
    * @var string
    */
   public $envoyImageLocation;
+  /**
+   * @var GoogleCloudConnectorsV1EventingConfig
+   */
+  public $eventingConfig;
   protected $eventingConfigType = GoogleCloudConnectorsV1EventingConfig::class;
   protected $eventingConfigDataType = '';
   /**
    * @var string
    */
   public $eventingEnablementType;
+  /**
+   * @var GoogleCloudConnectorsV1EventingRuntimeData
+   */
+  public $eventingRuntimeData;
   protected $eventingRuntimeDataType = GoogleCloudConnectorsV1EventingRuntimeData::class;
   protected $eventingRuntimeDataDataType = '';
-  /**
-   * @var string
-   */
-  public $host;
   /**
    * @var string
    */
@@ -86,14 +96,26 @@ class GoogleCloudConnectorsV1Connection extends \Google\Collection
    * @var string[]
    */
   public $labels;
+  /**
+   * @var GoogleCloudConnectorsV1LockConfig
+   */
+  public $lockConfig;
   protected $lockConfigType = GoogleCloudConnectorsV1LockConfig::class;
   protected $lockConfigDataType = '';
+  /**
+   * @var GoogleCloudConnectorsV1LogConfig
+   */
+  public $logConfig;
   protected $logConfigType = GoogleCloudConnectorsV1LogConfig::class;
   protected $logConfigDataType = '';
   /**
    * @var string
    */
   public $name;
+  /**
+   * @var GoogleCloudConnectorsV1NodeConfig
+   */
+  public $nodeConfig;
   protected $nodeConfigType = GoogleCloudConnectorsV1NodeConfig::class;
   protected $nodeConfigDataType = '';
   /**
@@ -104,8 +126,16 @@ class GoogleCloudConnectorsV1Connection extends \Google\Collection
    * @var string
    */
   public $serviceDirectory;
+  /**
+   * @var GoogleCloudConnectorsV1SslConfig
+   */
+  public $sslConfig;
   protected $sslConfigType = GoogleCloudConnectorsV1SslConfig::class;
   protected $sslConfigDataType = '';
+  /**
+   * @var GoogleCloudConnectorsV1ConnectionStatus
+   */
+  public $status;
   protected $statusType = GoogleCloudConnectorsV1ConnectionStatus::class;
   protected $statusDataType = '';
   /**
@@ -119,26 +149,8 @@ class GoogleCloudConnectorsV1Connection extends \Google\Collection
   /**
    * @var string
    */
-  public $tlsServiceDirectory;
-  /**
-   * @var string
-   */
   public $updateTime;
 
-  /**
-   * @param bool
-   */
-  public function setAsyncOperationsEnabled($asyncOperationsEnabled)
-  {
-    $this->asyncOperationsEnabled = $asyncOperationsEnabled;
-  }
-  /**
-   * @return bool
-   */
-  public function getAsyncOperationsEnabled()
-  {
-    return $this->asyncOperationsEnabled;
-  }
   /**
    * @param GoogleCloudConnectorsV1AuthConfig
    */
@@ -152,34 +164,6 @@ class GoogleCloudConnectorsV1Connection extends \Google\Collection
   public function getAuthConfig()
   {
     return $this->authConfig;
-  }
-  /**
-   * @param bool
-   */
-  public function setAuthOverrideEnabled($authOverrideEnabled)
-  {
-    $this->authOverrideEnabled = $authOverrideEnabled;
-  }
-  /**
-   * @return bool
-   */
-  public function getAuthOverrideEnabled()
-  {
-    return $this->authOverrideEnabled;
-  }
-  /**
-   * @param GoogleCloudConnectorsV1BillingConfig
-   */
-  public function setBillingConfig(GoogleCloudConnectorsV1BillingConfig $billingConfig)
-  {
-    $this->billingConfig = $billingConfig;
-  }
-  /**
-   * @return GoogleCloudConnectorsV1BillingConfig
-   */
-  public function getBillingConfig()
-  {
-    return $this->billingConfig;
   }
   /**
    * @param GoogleCloudConnectorsV1ConfigVariable[]
@@ -348,20 +332,6 @@ class GoogleCloudConnectorsV1Connection extends \Google\Collection
   public function getEventingRuntimeData()
   {
     return $this->eventingRuntimeData;
-  }
-  /**
-   * @param string
-   */
-  public function setHost($host)
-  {
-    $this->host = $host;
-  }
-  /**
-   * @return string
-   */
-  public function getHost()
-  {
-    return $this->host;
   }
   /**
    * @param string
@@ -544,20 +514,6 @@ class GoogleCloudConnectorsV1Connection extends \Google\Collection
   public function getSuspended()
   {
     return $this->suspended;
-  }
-  /**
-   * @param string
-   */
-  public function setTlsServiceDirectory($tlsServiceDirectory)
-  {
-    $this->tlsServiceDirectory = $tlsServiceDirectory;
-  }
-  /**
-   * @return string
-   */
-  public function getTlsServiceDirectory()
-  {
-    return $this->tlsServiceDirectory;
   }
   /**
    * @param string

@@ -41,7 +41,6 @@ class ProjectsPatchJobs extends \Google\Service\Resource
    * @param CancelPatchJobRequest $postBody
    * @param array $optParams Optional parameters.
    * @return PatchJob
-   * @throws \Google\Service\Exception
    */
   public function cancel($name, CancelPatchJobRequest $postBody, $optParams = [])
   {
@@ -57,7 +56,6 @@ class ProjectsPatchJobs extends \Google\Service\Resource
    * @param ExecutePatchJobRequest $postBody
    * @param array $optParams Optional parameters.
    * @return PatchJob
-   * @throws \Google\Service\Exception
    */
   public function execute($parent, ExecutePatchJobRequest $postBody, $optParams = [])
   {
@@ -73,7 +71,6 @@ class ProjectsPatchJobs extends \Google\Service\Resource
    * `projects/patchJobs`
    * @param array $optParams Optional parameters.
    * @return PatchJob
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -94,7 +91,6 @@ class ProjectsPatchJobs extends \Google\Service\Resource
    * @opt_param string pageToken A pagination token returned from a previous call
    * that indicates where this listing should continue from.
    * @return ListPatchJobsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsPatchJobs($parent, $optParams = [])
   {

@@ -20,6 +20,10 @@ namespace Google\Service\Compute;
 class FirewallPolicy extends \Google\Collection
 {
   protected $collection_key = 'rules';
+  /**
+   * @var FirewallPolicyAssociation[]
+   */
+  public $associations;
   protected $associationsType = FirewallPolicyAssociation::class;
   protected $associationsDataType = 'array';
   /**
@@ -50,8 +54,6 @@ class FirewallPolicy extends \Google\Collection
    * @var string
    */
   public $name;
-  protected $packetMirroringRulesType = FirewallPolicyRule::class;
-  protected $packetMirroringRulesDataType = 'array';
   /**
    * @var string
    */
@@ -64,6 +66,10 @@ class FirewallPolicy extends \Google\Collection
    * @var int
    */
   public $ruleTupleCount;
+  /**
+   * @var FirewallPolicyRule[]
+   */
+  public $rules;
   protected $rulesType = FirewallPolicyRule::class;
   protected $rulesDataType = 'array';
   /**
@@ -190,20 +196,6 @@ class FirewallPolicy extends \Google\Collection
   public function getName()
   {
     return $this->name;
-  }
-  /**
-   * @param FirewallPolicyRule[]
-   */
-  public function setPacketMirroringRules($packetMirroringRules)
-  {
-    $this->packetMirroringRules = $packetMirroringRules;
-  }
-  /**
-   * @return FirewallPolicyRule[]
-   */
-  public function getPacketMirroringRules()
-  {
-    return $this->packetMirroringRules;
   }
   /**
    * @param string

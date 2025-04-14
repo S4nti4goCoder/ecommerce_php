@@ -17,7 +17,6 @@
 
 namespace Google\Service\Batch\Resource;
 
-use Google\Service\Batch\CancelJobRequest;
 use Google\Service\Batch\Job;
 use Google\Service\Batch\ListJobsResponse;
 use Google\Service\Batch\Operation;
@@ -32,21 +31,6 @@ use Google\Service\Batch\Operation;
  */
 class ProjectsLocationsJobs extends \Google\Service\Resource
 {
-  /**
-   * Cancel a Job. (jobs.cancel)
-   *
-   * @param string $name Required. Job name.
-   * @param CancelJobRequest $postBody
-   * @param array $optParams Optional parameters.
-   * @return Operation
-   * @throws \Google\Service\Exception
-   */
-  public function cancel($name, CancelJobRequest $postBody, $optParams = [])
-  {
-    $params = ['name' => $name, 'postBody' => $postBody];
-    $params = array_merge($params, $optParams);
-    return $this->call('cancel', [$params], Operation::class);
-  }
   /**
    * Create a Job. (jobs.create)
    *
@@ -74,7 +58,6 @@ class ProjectsLocationsJobs extends \Google\Service\Resource
    * be a valid UUID with the exception that zero UUID is not supported
    * (00000000-0000-0000-0000-000000000000).
    * @return Job
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Job $postBody, $optParams = [])
   {
@@ -101,7 +84,6 @@ class ProjectsLocationsJobs extends \Google\Service\Resource
    * be a valid UUID with the exception that zero UUID is not supported
    * (00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -115,7 +97,6 @@ class ProjectsLocationsJobs extends \Google\Service\Resource
    * @param string $name Required. Job name.
    * @param array $optParams Optional parameters.
    * @return Job
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -135,7 +116,6 @@ class ProjectsLocationsJobs extends \Google\Service\Resource
    * @opt_param int pageSize Page size.
    * @opt_param string pageToken Page token.
    * @return ListJobsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsJobs($parent, $optParams = [])
   {

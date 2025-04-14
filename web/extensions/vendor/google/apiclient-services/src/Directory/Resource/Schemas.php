@@ -36,7 +36,6 @@ class Schemas extends \Google\Service\Resource
    * @param string $customerId Immutable ID of the Google Workspace account.
    * @param string $schemaKey Name or immutable ID of the schema.
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function delete($customerId, $schemaKey, $optParams = [])
   {
@@ -57,7 +56,6 @@ class Schemas extends \Google\Service\Resource
    * @param string $schemaKey Name or immutable ID of the schema.
    * @param array $optParams Optional parameters.
    * @return Schema
-   * @throws \Google\Service\Exception
    */
   public function get($customerId, $schemaKey, $optParams = [])
   {
@@ -72,7 +70,6 @@ class Schemas extends \Google\Service\Resource
    * @param Schema $postBody
    * @param array $optParams Optional parameters.
    * @return Schema
-   * @throws \Google\Service\Exception
    */
   public function insert($customerId, Schema $postBody, $optParams = [])
   {
@@ -92,7 +89,6 @@ class Schemas extends \Google\Service\Resource
    * `customer` or the `domain` parameter.
    * @param array $optParams Optional parameters.
    * @return SchemasModel
-   * @throws \Google\Service\Exception
    */
   public function listSchemas($customerId, $optParams = [])
   {
@@ -108,7 +104,6 @@ class Schemas extends \Google\Service\Resource
    * @param Schema $postBody
    * @param array $optParams Optional parameters.
    * @return Schema
-   * @throws \Google\Service\Exception
    */
   public function patch($customerId, $schemaKey, Schema $postBody, $optParams = [])
   {
@@ -124,7 +119,6 @@ class Schemas extends \Google\Service\Resource
    * @param Schema $postBody
    * @param array $optParams Optional parameters.
    * @return Schema
-   * @throws \Google\Service\Exception
    */
   public function update($customerId, $schemaKey, Schema $postBody, $optParams = [])
   {

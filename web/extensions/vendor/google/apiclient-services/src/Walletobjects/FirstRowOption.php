@@ -19,6 +19,10 @@ namespace Google\Service\Walletobjects;
 
 class FirstRowOption extends \Google\Model
 {
+  /**
+   * @var FieldSelector
+   */
+  public $fieldOption;
   protected $fieldOptionType = FieldSelector::class;
   protected $fieldOptionDataType = '';
   /**

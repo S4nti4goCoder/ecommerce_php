@@ -51,7 +51,6 @@ class Labels extends \Google\Service\Resource
    * privileges. The server will verify the user is an admin before allowing
    * access.
    * @return GoogleAppsDriveLabelsV2Label
-   * @throws \Google\Service\Exception
    */
   public function create(GoogleAppsDriveLabelsV2Label $postBody, $optParams = [])
   {
@@ -75,7 +74,6 @@ class Labels extends \Google\Service\Resource
    * revision of the label, the request will not be processed and will return a
    * 400 Bad Request error.
    * @return GoogleProtobufEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -94,7 +92,6 @@ class Labels extends \Google\Service\Resource
    * @param GoogleAppsDriveLabelsV2DeltaUpdateLabelRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleAppsDriveLabelsV2DeltaUpdateLabelResponse
-   * @throws \Google\Service\Exception
    */
   public function delta($name, GoogleAppsDriveLabelsV2DeltaUpdateLabelRequest $postBody, $optParams = [])
   {
@@ -113,7 +110,6 @@ class Labels extends \Google\Service\Resource
    * @param GoogleAppsDriveLabelsV2DisableLabelRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleAppsDriveLabelsV2Label
-   * @throws \Google\Service\Exception
    */
   public function disable($name, GoogleAppsDriveLabelsV2DisableLabelRequest $postBody, $optParams = [])
   {
@@ -131,7 +127,6 @@ class Labels extends \Google\Service\Resource
    * @param GoogleAppsDriveLabelsV2EnableLabelRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleAppsDriveLabelsV2Label
-   * @throws \Google\Service\Exception
    */
   public function enable($name, GoogleAppsDriveLabelsV2EnableLabelRequest $postBody, $optParams = [])
   {
@@ -160,7 +155,6 @@ class Labels extends \Google\Service\Resource
    * @opt_param string view When specified, only certain fields belonging to the
    * indicated view are returned.
    * @return GoogleAppsDriveLabelsV2Label
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -197,7 +191,6 @@ class Labels extends \Google\Service\Resource
    * @opt_param string view When specified, only certain fields belonging to the
    * indicated view are returned.
    * @return GoogleAppsDriveLabelsV2ListLabelsResponse
-   * @throws \Google\Service\Exception
    */
   public function listLabels($optParams = [])
   {
@@ -223,7 +216,6 @@ class Labels extends \Google\Service\Resource
    * @param GoogleAppsDriveLabelsV2PublishLabelRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleAppsDriveLabelsV2Label
-   * @throws \Google\Service\Exception
    */
   public function publish($name, GoogleAppsDriveLabelsV2PublishLabelRequest $postBody, $optParams = [])
   {
@@ -240,7 +232,6 @@ class Labels extends \Google\Service\Resource
    * @param GoogleAppsDriveLabelsV2UpdateLabelCopyModeRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleAppsDriveLabelsV2Label
-   * @throws \Google\Service\Exception
    */
   public function updateLabelCopyMode($name, GoogleAppsDriveLabelsV2UpdateLabelCopyModeRequest $postBody, $optParams = [])
   {
@@ -262,7 +253,6 @@ class Labels extends \Google\Service\Resource
    * credentials. The server will verify the user is an admin for the Label before
    * allowing access.
    * @return GoogleAppsDriveLabelsV2LabelPermission
-   * @throws \Google\Service\Exception
    */
   public function updatePermissions($parent, GoogleAppsDriveLabelsV2LabelPermission $postBody, $optParams = [])
   {

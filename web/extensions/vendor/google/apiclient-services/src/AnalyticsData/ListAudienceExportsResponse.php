@@ -20,6 +20,10 @@ namespace Google\Service\AnalyticsData;
 class ListAudienceExportsResponse extends \Google\Collection
 {
   protected $collection_key = 'audienceExports';
+  /**
+   * @var AudienceExport[]
+   */
+  public $audienceExports;
   protected $audienceExportsType = AudienceExport::class;
   protected $audienceExportsDataType = 'array';
   /**

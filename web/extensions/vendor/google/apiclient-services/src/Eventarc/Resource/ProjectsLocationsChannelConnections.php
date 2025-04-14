@@ -47,7 +47,6 @@ class ProjectsLocationsChannelConnections extends \Google\Service\Resource
    * @opt_param string channelConnectionId Required. The user-provided ID to be
    * assigned to the channel connection.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, ChannelConnection $postBody, $optParams = [])
   {
@@ -61,7 +60,6 @@ class ProjectsLocationsChannelConnections extends \Google\Service\Resource
    * @param string $name Required. The name of the channel connection to delete.
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -75,7 +73,6 @@ class ProjectsLocationsChannelConnections extends \Google\Service\Resource
    * @param string $name Required. The name of the channel connection to get.
    * @param array $optParams Optional parameters.
    * @return ChannelConnection
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -107,7 +104,6 @@ class ProjectsLocationsChannelConnections extends \Google\Service\Resource
    * documentation](https://cloud.google.com/iam/help/conditions/resource-
    * policies).
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, $optParams = [])
   {
@@ -130,7 +126,6 @@ class ProjectsLocationsChannelConnections extends \Google\Service\Resource
    * retrieve the subsequent page. When paginating, all other parameters provided
    * to `ListChannelConnetions` match the call that provided the page token.
    * @return ListChannelConnectionsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsChannelConnections($parent, $optParams = [])
   {
@@ -150,7 +145,6 @@ class ProjectsLocationsChannelConnections extends \Google\Service\Resource
    * @param SetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, SetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -173,7 +167,6 @@ class ProjectsLocationsChannelConnections extends \Google\Service\Resource
    * @param TestIamPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestIamPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, TestIamPermissionsRequest $postBody, $optParams = [])
   {

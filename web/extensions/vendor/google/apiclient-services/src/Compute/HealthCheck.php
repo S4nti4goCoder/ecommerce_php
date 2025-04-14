@@ -17,9 +17,8 @@
 
 namespace Google\Service\Compute;
 
-class HealthCheck extends \Google\Collection
+class HealthCheck extends \Google\Model
 {
-  protected $collection_key = 'sourceRegions';
   /**
    * @var int
    */
@@ -32,16 +31,32 @@ class HealthCheck extends \Google\Collection
    * @var string
    */
   public $description;
+  /**
+   * @var GRPCHealthCheck
+   */
+  public $grpcHealthCheck;
   protected $grpcHealthCheckType = GRPCHealthCheck::class;
   protected $grpcHealthCheckDataType = '';
   /**
    * @var int
    */
   public $healthyThreshold;
+  /**
+   * @var HTTP2HealthCheck
+   */
+  public $http2HealthCheck;
   protected $http2HealthCheckType = HTTP2HealthCheck::class;
   protected $http2HealthCheckDataType = '';
+  /**
+   * @var HTTPHealthCheck
+   */
+  public $httpHealthCheck;
   protected $httpHealthCheckType = HTTPHealthCheck::class;
   protected $httpHealthCheckDataType = '';
+  /**
+   * @var HTTPSHealthCheck
+   */
+  public $httpsHealthCheck;
   protected $httpsHealthCheckType = HTTPSHealthCheck::class;
   protected $httpsHealthCheckDataType = '';
   /**
@@ -52,6 +67,10 @@ class HealthCheck extends \Google\Collection
    * @var string
    */
   public $kind;
+  /**
+   * @var HealthCheckLogConfig
+   */
+  public $logConfig;
   protected $logConfigType = HealthCheckLogConfig::class;
   protected $logConfigDataType = '';
   /**
@@ -67,11 +86,15 @@ class HealthCheck extends \Google\Collection
    */
   public $selfLink;
   /**
-   * @var string[]
+   * @var SSLHealthCheck
    */
-  public $sourceRegions;
+  public $sslHealthCheck;
   protected $sslHealthCheckType = SSLHealthCheck::class;
   protected $sslHealthCheckDataType = '';
+  /**
+   * @var TCPHealthCheck
+   */
+  public $tcpHealthCheck;
   protected $tcpHealthCheckType = TCPHealthCheck::class;
   protected $tcpHealthCheckDataType = '';
   /**
@@ -282,20 +305,6 @@ class HealthCheck extends \Google\Collection
   public function getSelfLink()
   {
     return $this->selfLink;
-  }
-  /**
-   * @param string[]
-   */
-  public function setSourceRegions($sourceRegions)
-  {
-    $this->sourceRegions = $sourceRegions;
-  }
-  /**
-   * @return string[]
-   */
-  public function getSourceRegions()
-  {
-    return $this->sourceRegions;
   }
   /**
    * @param SSLHealthCheck

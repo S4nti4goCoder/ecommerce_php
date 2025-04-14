@@ -55,7 +55,6 @@ class Networks extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function addPeering($project, $network, NetworksAddPeeringRequest $postBody, $optParams = [])
   {
@@ -81,7 +80,6 @@ class Networks extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($project, $network, $optParams = [])
   {
@@ -96,7 +94,6 @@ class Networks extends \Google\Service\Resource
    * @param string $network Name of the network to return.
    * @param array $optParams Optional parameters.
    * @return Network
-   * @throws \Google\Service\Exception
    */
   public function get($project, $network, $optParams = [])
   {
@@ -112,7 +109,6 @@ class Networks extends \Google\Service\Resource
    * @param string $network Name of the network for this request.
    * @param array $optParams Optional parameters.
    * @return NetworksGetEffectiveFirewallsResponse
-   * @throws \Google\Service\Exception
    */
   public function getEffectiveFirewalls($project, $network, $optParams = [])
   {
@@ -139,7 +135,6 @@ class Networks extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function insert($project, Network $postBody, $optParams = [])
   {
@@ -204,11 +199,8 @@ class Networks extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
+   * false.
    * @return NetworkList
-   * @throws \Google\Service\Exception
    */
   public function listNetworks($project, $optParams = [])
   {
@@ -279,11 +271,8 @@ class Networks extends \Google\Service\Resource
    * all subnet routes, static routes and dynamic routes in the region.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
+   * false.
    * @return ExchangedPeeringRoutesList
-   * @throws \Google\Service\Exception
    */
   public function listPeeringRoutes($project, $network, $optParams = [])
   {
@@ -292,8 +281,8 @@ class Networks extends \Google\Service\Resource
     return $this->call('listPeeringRoutes', [$params], ExchangedPeeringRoutesList::class);
   }
   /**
-   * Patches the specified network with the data included in the request. Only
-   * routingConfig can be modified. (networks.patch)
+   * Patches the specified network with the data included in the request. Only the
+   * following fields can be modified: routingConfig.routingMode. (networks.patch)
    *
    * @param string $project Project ID for this request.
    * @param string $network Name of the network to update.
@@ -311,7 +300,6 @@ class Networks extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($project, $network, Network $postBody, $optParams = [])
   {
@@ -338,7 +326,6 @@ class Networks extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function removePeering($project, $network, NetworksRemovePeeringRequest $postBody, $optParams = [])
   {
@@ -365,7 +352,6 @@ class Networks extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function switchToCustomMode($project, $network, $optParams = [])
   {
@@ -395,7 +381,6 @@ class Networks extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function updatePeering($project, $network, NetworksUpdatePeeringRequest $postBody, $optParams = [])
   {

@@ -19,14 +19,12 @@ namespace Google\Service\ShoppingContent;
 
 class Installment extends \Google\Model
 {
+  /**
+   * @var Price
+   */
+  public $amount;
   protected $amountType = Price::class;
   protected $amountDataType = '';
-  /**
-   * @var string
-   */
-  public $creditType;
-  protected $downpaymentType = Price::class;
-  protected $downpaymentDataType = '';
   /**
    * @var string
    */
@@ -45,34 +43,6 @@ class Installment extends \Google\Model
   public function getAmount()
   {
     return $this->amount;
-  }
-  /**
-   * @param string
-   */
-  public function setCreditType($creditType)
-  {
-    $this->creditType = $creditType;
-  }
-  /**
-   * @return string
-   */
-  public function getCreditType()
-  {
-    return $this->creditType;
-  }
-  /**
-   * @param Price
-   */
-  public function setDownpayment(Price $downpayment)
-  {
-    $this->downpayment = $downpayment;
-  }
-  /**
-   * @return Price
-   */
-  public function getDownpayment()
-  {
-    return $this->downpayment;
   }
   /**
    * @param string

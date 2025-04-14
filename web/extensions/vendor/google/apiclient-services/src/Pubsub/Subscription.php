@@ -17,19 +17,28 @@
 
 namespace Google\Service\Pubsub;
 
-class Subscription extends \Google\Collection
+class Subscription extends \Google\Model
 {
-  protected $collection_key = 'messageTransforms';
   /**
    * @var int
    */
   public $ackDeadlineSeconds;
-  protected $analyticsHubSubscriptionInfoType = AnalyticsHubSubscriptionInfo::class;
-  protected $analyticsHubSubscriptionInfoDataType = '';
+  /**
+   * @var BigQueryConfig
+   */
+  public $bigqueryConfig;
   protected $bigqueryConfigType = BigQueryConfig::class;
   protected $bigqueryConfigDataType = '';
+  /**
+   * @var CloudStorageConfig
+   */
+  public $cloudStorageConfig;
   protected $cloudStorageConfigType = CloudStorageConfig::class;
   protected $cloudStorageConfigDataType = '';
+  /**
+   * @var DeadLetterPolicy
+   */
+  public $deadLetterPolicy;
   protected $deadLetterPolicyType = DeadLetterPolicy::class;
   protected $deadLetterPolicyDataType = '';
   /**
@@ -44,6 +53,10 @@ class Subscription extends \Google\Collection
    * @var bool
    */
   public $enableMessageOrdering;
+  /**
+   * @var ExpirationPolicy
+   */
+  public $expirationPolicy;
   protected $expirationPolicyType = ExpirationPolicy::class;
   protected $expirationPolicyDataType = '';
   /**
@@ -58,18 +71,24 @@ class Subscription extends \Google\Collection
    * @var string
    */
   public $messageRetentionDuration;
-  protected $messageTransformsType = MessageTransform::class;
-  protected $messageTransformsDataType = 'array';
   /**
    * @var string
    */
   public $name;
+  /**
+   * @var PushConfig
+   */
+  public $pushConfig;
   protected $pushConfigType = PushConfig::class;
   protected $pushConfigDataType = '';
   /**
    * @var bool
    */
   public $retainAckedMessages;
+  /**
+   * @var RetryPolicy
+   */
+  public $retryPolicy;
   protected $retryPolicyType = RetryPolicy::class;
   protected $retryPolicyDataType = '';
   /**
@@ -98,20 +117,6 @@ class Subscription extends \Google\Collection
   public function getAckDeadlineSeconds()
   {
     return $this->ackDeadlineSeconds;
-  }
-  /**
-   * @param AnalyticsHubSubscriptionInfo
-   */
-  public function setAnalyticsHubSubscriptionInfo(AnalyticsHubSubscriptionInfo $analyticsHubSubscriptionInfo)
-  {
-    $this->analyticsHubSubscriptionInfo = $analyticsHubSubscriptionInfo;
-  }
-  /**
-   * @return AnalyticsHubSubscriptionInfo
-   */
-  public function getAnalyticsHubSubscriptionInfo()
-  {
-    return $this->analyticsHubSubscriptionInfo;
   }
   /**
    * @param BigQueryConfig
@@ -252,20 +257,6 @@ class Subscription extends \Google\Collection
   public function getMessageRetentionDuration()
   {
     return $this->messageRetentionDuration;
-  }
-  /**
-   * @param MessageTransform[]
-   */
-  public function setMessageTransforms($messageTransforms)
-  {
-    $this->messageTransforms = $messageTransforms;
-  }
-  /**
-   * @return MessageTransform[]
-   */
-  public function getMessageTransforms()
-  {
-    return $this->messageTransforms;
   }
   /**
    * @param string

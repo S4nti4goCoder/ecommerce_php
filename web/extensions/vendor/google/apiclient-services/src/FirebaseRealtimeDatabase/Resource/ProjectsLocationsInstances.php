@@ -52,7 +52,6 @@ class ProjectsLocationsInstances extends \Google\Service\Resource
    * @opt_param bool validateOnly When set to true, the request will be validated
    * but not submitted.
    * @return DatabaseInstance
-   * @throws \Google\Service\Exception
    */
   public function create($parent, DatabaseInstance $postBody, $optParams = [])
   {
@@ -72,7 +71,6 @@ class ProjectsLocationsInstances extends \Google\Service\Resource
    * number}/locations/{location-id}/instances/{database-id}`
    * @param array $optParams Optional parameters.
    * @return DatabaseInstance
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -92,7 +90,6 @@ class ProjectsLocationsInstances extends \Google\Service\Resource
    * @param DisableDatabaseInstanceRequest $postBody
    * @param array $optParams Optional parameters.
    * @return DatabaseInstance
-   * @throws \Google\Service\Exception
    */
   public function disable($name, DisableDatabaseInstanceRequest $postBody, $optParams = [])
   {
@@ -114,7 +111,6 @@ class ProjectsLocationsInstances extends \Google\Service\Resource
    * `projects/-/locations/-/instances/{database-id}`.
    * @param array $optParams Optional parameters.
    * @return DatabaseInstance
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -146,7 +142,6 @@ class ProjectsLocationsInstances extends \Google\Service\Resource
    * @opt_param bool showDeleted Indicate that DatabaseInstances in the `DELETED`
    * state should also be returned.
    * @return ListDatabaseInstancesResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsInstances($parent, $optParams = [])
   {
@@ -165,7 +160,6 @@ class ProjectsLocationsInstances extends \Google\Service\Resource
    * @param ReenableDatabaseInstanceRequest $postBody
    * @param array $optParams Optional parameters.
    * @return DatabaseInstance
-   * @throws \Google\Service\Exception
    */
   public function reenable($name, ReenableDatabaseInstanceRequest $postBody, $optParams = [])
   {
@@ -187,7 +181,6 @@ class ProjectsLocationsInstances extends \Google\Service\Resource
    * @param UndeleteDatabaseInstanceRequest $postBody
    * @param array $optParams Optional parameters.
    * @return DatabaseInstance
-   * @throws \Google\Service\Exception
    */
   public function undelete($name, UndeleteDatabaseInstanceRequest $postBody, $optParams = [])
   {

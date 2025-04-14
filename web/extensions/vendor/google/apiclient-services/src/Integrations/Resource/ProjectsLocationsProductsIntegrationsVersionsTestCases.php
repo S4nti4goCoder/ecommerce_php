@@ -53,7 +53,6 @@ class ProjectsLocationsProductsIntegrationsVersionsTestCases extends \Google\Ser
    * @opt_param string readMask Optional. The mask which specifies fields that
    * need to be returned in the TestCases's response.
    * @return GoogleCloudIntegrationsV1alphaListTestCasesResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsProductsIntegrationsVersionsTestCases($parent, $optParams = [])
   {

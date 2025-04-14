@@ -52,12 +52,18 @@ class GoogleCloudIntegrationsV1alphaTestCase extends \Google\Collection
    * @var string
    */
   public $name;
+  /**
+   * @var GoogleCloudIntegrationsV1alphaIntegrationParameter[]
+   */
+  public $testInputParameters;
   protected $testInputParametersType = GoogleCloudIntegrationsV1alphaIntegrationParameter::class;
   protected $testInputParametersDataType = 'array';
+  /**
+   * @var GoogleCloudIntegrationsV1alphaTestTaskConfig[]
+   */
+  public $testTaskConfigs;
   protected $testTaskConfigsType = GoogleCloudIntegrationsV1alphaTestTaskConfig::class;
   protected $testTaskConfigsDataType = 'array';
-  protected $triggerConfigType = GoogleCloudIntegrationsV1alphaTriggerConfig::class;
-  protected $triggerConfigDataType = '';
   /**
    * @var string
    */
@@ -66,6 +72,10 @@ class GoogleCloudIntegrationsV1alphaTestCase extends \Google\Collection
    * @var string
    */
   public $updateTime;
+  /**
+   * @var string
+   */
+  public $workflowId;
 
   /**
    * @param string
@@ -208,20 +218,6 @@ class GoogleCloudIntegrationsV1alphaTestCase extends \Google\Collection
     return $this->testTaskConfigs;
   }
   /**
-   * @param GoogleCloudIntegrationsV1alphaTriggerConfig
-   */
-  public function setTriggerConfig(GoogleCloudIntegrationsV1alphaTriggerConfig $triggerConfig)
-  {
-    $this->triggerConfig = $triggerConfig;
-  }
-  /**
-   * @return GoogleCloudIntegrationsV1alphaTriggerConfig
-   */
-  public function getTriggerConfig()
-  {
-    return $this->triggerConfig;
-  }
-  /**
    * @param string
    */
   public function setTriggerId($triggerId)
@@ -248,6 +244,20 @@ class GoogleCloudIntegrationsV1alphaTestCase extends \Google\Collection
   public function getUpdateTime()
   {
     return $this->updateTime;
+  }
+  /**
+   * @param string
+   */
+  public function setWorkflowId($workflowId)
+  {
+    $this->workflowId = $workflowId;
+  }
+  /**
+   * @return string
+   */
+  public function getWorkflowId()
+  {
+    return $this->workflowId;
   }
 }
 

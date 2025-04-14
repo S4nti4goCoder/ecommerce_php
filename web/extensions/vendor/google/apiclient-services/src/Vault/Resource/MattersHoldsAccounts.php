@@ -41,7 +41,6 @@ class MattersHoldsAccounts extends \Google\Service\Resource
    * @param HeldAccount $postBody
    * @param array $optParams Optional parameters.
    * @return HeldAccount
-   * @throws \Google\Service\Exception
    */
   public function create($matterId, $holdId, HeldAccount $postBody, $optParams = [])
   {
@@ -57,7 +56,6 @@ class MattersHoldsAccounts extends \Google\Service\Resource
    * @param string $accountId The ID of the account to remove from the hold.
    * @param array $optParams Optional parameters.
    * @return VaultEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($matterId, $holdId, $accountId, $optParams = [])
   {
@@ -76,7 +74,6 @@ class MattersHoldsAccounts extends \Google\Service\Resource
    * @param string $holdId The hold ID.
    * @param array $optParams Optional parameters.
    * @return ListHeldAccountsResponse
-   * @throws \Google\Service\Exception
    */
   public function listMattersHoldsAccounts($matterId, $holdId, $optParams = [])
   {

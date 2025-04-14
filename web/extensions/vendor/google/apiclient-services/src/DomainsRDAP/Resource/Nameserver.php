@@ -36,7 +36,6 @@ class Nameserver extends \Google\Service\Resource
    * @param string $nameserverId
    * @param array $optParams Optional parameters.
    * @return RdapResponse
-   * @throws \Google\Service\Exception
    */
   public function get($nameserverId, $optParams = [])
   {

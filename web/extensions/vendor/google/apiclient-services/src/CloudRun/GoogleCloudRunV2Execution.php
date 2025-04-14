@@ -32,16 +32,16 @@ class GoogleCloudRunV2Execution extends \Google\Collection
    * @var string
    */
   public $completionTime;
+  /**
+   * @var GoogleCloudRunV2Condition[]
+   */
+  public $conditions;
   protected $conditionsType = GoogleCloudRunV2Condition::class;
   protected $conditionsDataType = 'array';
   /**
    * @var string
    */
   public $createTime;
-  /**
-   * @var string
-   */
-  public $creator;
   /**
    * @var string
    */
@@ -118,6 +118,10 @@ class GoogleCloudRunV2Execution extends \Google\Collection
    * @var int
    */
   public $taskCount;
+  /**
+   * @var GoogleCloudRunV2TaskTemplate
+   */
+  public $template;
   protected $templateType = GoogleCloudRunV2TaskTemplate::class;
   protected $templateDataType = '';
   /**
@@ -198,20 +202,6 @@ class GoogleCloudRunV2Execution extends \Google\Collection
   public function getCreateTime()
   {
     return $this->createTime;
-  }
-  /**
-   * @param string
-   */
-  public function setCreator($creator)
-  {
-    $this->creator = $creator;
-  }
-  /**
-   * @return string
-   */
-  public function getCreator()
-  {
-    return $this->creator;
   }
   /**
    * @param string

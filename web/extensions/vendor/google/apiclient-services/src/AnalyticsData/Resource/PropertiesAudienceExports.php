@@ -58,7 +58,6 @@ class PropertiesAudienceExports extends \Google\Service\Resource
    * @param AudienceExport $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, AudienceExport $postBody, $optParams = [])
   {
@@ -81,7 +80,6 @@ class PropertiesAudienceExports extends \Google\Service\Resource
    * `properties/{property}/audienceExports/{audience_export}`
    * @param array $optParams Optional parameters.
    * @return AudienceExport
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -116,7 +114,6 @@ class PropertiesAudienceExports extends \Google\Service\Resource
    * When paginating, all other parameters provided to `ListAudienceExports` must
    * match the call that provided the page token.
    * @return ListAudienceExportsResponse
-   * @throws \Google\Service\Exception
    */
   public function listPropertiesAudienceExports($parent, $optParams = [])
   {
@@ -145,7 +142,6 @@ class PropertiesAudienceExports extends \Google\Service\Resource
    * @param QueryAudienceExportRequest $postBody
    * @param array $optParams Optional parameters.
    * @return QueryAudienceExportResponse
-   * @throws \Google\Service\Exception
    */
   public function query($name, QueryAudienceExportRequest $postBody, $optParams = [])
   {

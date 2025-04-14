@@ -39,7 +39,6 @@ class CustomBiddingAlgorithms extends \Google\Service\Resource
    * @param CustomBiddingAlgorithm $postBody
    * @param array $optParams Optional parameters.
    * @return CustomBiddingAlgorithm
-   * @throws \Google\Service\Exception
    */
   public function create(CustomBiddingAlgorithm $postBody, $optParams = [])
   {
@@ -59,7 +58,6 @@ class CustomBiddingAlgorithms extends \Google\Service\Resource
    * @opt_param string partnerId The ID of the DV360 partner that has access to
    * the custom bidding algorithm.
    * @return CustomBiddingAlgorithm
-   * @throws \Google\Service\Exception
    */
   public function get($customBiddingAlgorithmId, $optParams = [])
   {
@@ -103,7 +101,6 @@ class CustomBiddingAlgorithms extends \Google\Service\Resource
    * @opt_param string partnerId The ID of the DV360 partner that has access to
    * the custom bidding algorithm.
    * @return ListCustomBiddingAlgorithmsResponse
-   * @throws \Google\Service\Exception
    */
   public function listCustomBiddingAlgorithms($optParams = [])
   {
@@ -113,11 +110,7 @@ class CustomBiddingAlgorithms extends \Google\Service\Resource
   }
   /**
    * Updates an existing custom bidding algorithm. Returns the updated custom
-   * bidding algorithm if successful. *Warning*: Starting **April 1, 2025**,
-   * requests updating custom bidding algorithms that are assigned to line items
-   * will return an error. [Read more about this announced change](/display-
-   * video/api/deprecations#features.custom_bidding_floodlight).
-   * (customBiddingAlgorithms.patch)
+   * bidding algorithm if successful. (customBiddingAlgorithms.patch)
    *
    * @param string $customBiddingAlgorithmId Output only. The unique ID of the
    * custom bidding algorithm. Assigned by the system.
@@ -127,7 +120,6 @@ class CustomBiddingAlgorithms extends \Google\Service\Resource
    * @opt_param string updateMask Required. The mask to control which fields to
    * update.
    * @return CustomBiddingAlgorithm
-   * @throws \Google\Service\Exception
    */
   public function patch($customBiddingAlgorithmId, CustomBiddingAlgorithm $postBody, $optParams = [])
   {
@@ -151,7 +143,6 @@ class CustomBiddingAlgorithms extends \Google\Service\Resource
    * @opt_param string partnerId The ID of the partner that owns the parent custom
    * bidding algorithm.
    * @return CustomBiddingAlgorithmRulesRef
-   * @throws \Google\Service\Exception
    */
   public function uploadRules($customBiddingAlgorithmId, $optParams = [])
   {
@@ -175,7 +166,6 @@ class CustomBiddingAlgorithms extends \Google\Service\Resource
    * bidding algorithm. Only this partner will have write access to this custom
    * bidding script.
    * @return CustomBiddingScriptRef
-   * @throws \Google\Service\Exception
    */
   public function uploadScript($customBiddingAlgorithmId, $optParams = [])
   {

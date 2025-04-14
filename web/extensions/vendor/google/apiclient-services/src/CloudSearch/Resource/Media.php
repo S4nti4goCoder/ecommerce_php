@@ -51,7 +51,6 @@ class Media extends \Google\Service\Resource
    * @param MediaModel $postBody
    * @param array $optParams Optional parameters.
    * @return MediaModel
-   * @throws \Google\Service\Exception
    */
   public function upload($resourceName, MediaModel $postBody, $optParams = [])
   {

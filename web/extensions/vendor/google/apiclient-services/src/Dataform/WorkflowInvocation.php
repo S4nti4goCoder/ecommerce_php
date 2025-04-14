@@ -23,14 +23,16 @@ class WorkflowInvocation extends \Google\Model
    * @var string
    */
   public $compilationResult;
-  protected $dataEncryptionStateType = DataEncryptionState::class;
-  protected $dataEncryptionStateDataType = '';
   /**
-   * @var string
+   * @var InvocationConfig
    */
-  public $internalMetadata;
+  public $invocationConfig;
   protected $invocationConfigType = InvocationConfig::class;
   protected $invocationConfigDataType = '';
+  /**
+   * @var Interval
+   */
+  public $invocationTiming;
   protected $invocationTimingType = Interval::class;
   protected $invocationTimingDataType = '';
   /**
@@ -63,34 +65,6 @@ class WorkflowInvocation extends \Google\Model
   public function getCompilationResult()
   {
     return $this->compilationResult;
-  }
-  /**
-   * @param DataEncryptionState
-   */
-  public function setDataEncryptionState(DataEncryptionState $dataEncryptionState)
-  {
-    $this->dataEncryptionState = $dataEncryptionState;
-  }
-  /**
-   * @return DataEncryptionState
-   */
-  public function getDataEncryptionState()
-  {
-    return $this->dataEncryptionState;
-  }
-  /**
-   * @param string
-   */
-  public function setInternalMetadata($internalMetadata)
-  {
-    $this->internalMetadata = $internalMetadata;
-  }
-  /**
-   * @return string
-   */
-  public function getInternalMetadata()
-  {
-    return $this->internalMetadata;
   }
   /**
    * @param InvocationConfig

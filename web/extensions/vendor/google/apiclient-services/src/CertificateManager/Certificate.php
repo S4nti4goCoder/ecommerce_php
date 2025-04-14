@@ -19,7 +19,7 @@ namespace Google\Service\CertificateManager;
 
 class Certificate extends \Google\Collection
 {
-  protected $collection_key = 'usedBy';
+  protected $collection_key = 'sanDnsnames';
   /**
    * @var string
    */
@@ -36,6 +36,10 @@ class Certificate extends \Google\Collection
    * @var string[]
    */
   public $labels;
+  /**
+   * @var ManagedCertificate
+   */
+  public $managed;
   protected $managedType = ManagedCertificate::class;
   protected $managedDataType = '';
   /**
@@ -54,14 +58,16 @@ class Certificate extends \Google\Collection
    * @var string
    */
   public $scope;
+  /**
+   * @var SelfManagedCertificate
+   */
+  public $selfManaged;
   protected $selfManagedType = SelfManagedCertificate::class;
   protected $selfManagedDataType = '';
   /**
    * @var string
    */
   public $updateTime;
-  protected $usedByType = UsedBy::class;
-  protected $usedByDataType = 'array';
 
   /**
    * @param string
@@ -216,20 +222,6 @@ class Certificate extends \Google\Collection
   public function getUpdateTime()
   {
     return $this->updateTime;
-  }
-  /**
-   * @param UsedBy[]
-   */
-  public function setUsedBy($usedBy)
-  {
-    $this->usedBy = $usedBy;
-  }
-  /**
-   * @return UsedBy[]
-   */
-  public function getUsedBy()
-  {
-    return $this->usedBy;
   }
 }
 

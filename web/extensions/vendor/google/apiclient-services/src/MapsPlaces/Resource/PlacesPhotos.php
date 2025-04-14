@@ -66,7 +66,6 @@ class PlacesPhotos extends \Google\Service\Resource
    * redirect the call to the image media. This option is ignored for non-HTTP
    * requests.
    * @return GoogleMapsPlacesV1PhotoMedia
-   * @throws \Google\Service\Exception
    */
   public function getMedia($name, $optParams = [])
   {

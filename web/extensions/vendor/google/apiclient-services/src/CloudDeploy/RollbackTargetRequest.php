@@ -17,17 +17,16 @@
 
 namespace Google\Service\CloudDeploy;
 
-class RollbackTargetRequest extends \Google\Collection
+class RollbackTargetRequest extends \Google\Model
 {
-  protected $collection_key = 'overrideDeployPolicy';
-  /**
-   * @var string[]
-   */
-  public $overrideDeployPolicy;
   /**
    * @var string
    */
   public $releaseId;
+  /**
+   * @var RollbackTargetConfig
+   */
+  public $rollbackConfig;
   protected $rollbackConfigType = RollbackTargetConfig::class;
   protected $rollbackConfigDataType = '';
   /**
@@ -47,20 +46,6 @@ class RollbackTargetRequest extends \Google\Collection
    */
   public $validateOnly;
 
-  /**
-   * @param string[]
-   */
-  public function setOverrideDeployPolicy($overrideDeployPolicy)
-  {
-    $this->overrideDeployPolicy = $overrideDeployPolicy;
-  }
-  /**
-   * @return string[]
-   */
-  public function getOverrideDeployPolicy()
-  {
-    return $this->overrideDeployPolicy;
-  }
   /**
    * @param string
    */

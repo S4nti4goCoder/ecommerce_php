@@ -17,8 +17,6 @@
 
 namespace Google\Service\Directory\Resource;
 
-use Google\Service\Directory\BatchChangeChromeOsDeviceStatusRequest;
-use Google\Service\Directory\BatchChangeChromeOsDeviceStatusResponse;
 use Google\Service\Directory\DirectoryChromeosdevicesIssueCommandRequest;
 use Google\Service\Directory\DirectoryChromeosdevicesIssueCommandResponse;
 
@@ -33,25 +31,6 @@ use Google\Service\Directory\DirectoryChromeosdevicesIssueCommandResponse;
 class CustomerDevicesChromeos extends \Google\Service\Resource
 {
   /**
-   * Changes the status of a batch of ChromeOS devices. For more information about
-   * changing a ChromeOS device state [Repair, repurpose, or retire ChromeOS
-   * devices](https://support.google.com/chrome/a/answer/3523633).
-   * (chromeos.batchChangeStatus)
-   *
-   * @param string $customerId Required. Immutable ID of the Google Workspace
-   * account.
-   * @param BatchChangeChromeOsDeviceStatusRequest $postBody
-   * @param array $optParams Optional parameters.
-   * @return BatchChangeChromeOsDeviceStatusResponse
-   * @throws \Google\Service\Exception
-   */
-  public function batchChangeStatus($customerId, BatchChangeChromeOsDeviceStatusRequest $postBody, $optParams = [])
-  {
-    $params = ['customerId' => $customerId, 'postBody' => $postBody];
-    $params = array_merge($params, $optParams);
-    return $this->call('batchChangeStatus', [$params], BatchChangeChromeOsDeviceStatusResponse::class);
-  }
-  /**
    * Issues a command for the device to execute. (chromeos.issueCommand)
    *
    * @param string $customerId Immutable. ID of the Google Workspace account.
@@ -59,7 +38,6 @@ class CustomerDevicesChromeos extends \Google\Service\Resource
    * @param DirectoryChromeosdevicesIssueCommandRequest $postBody
    * @param array $optParams Optional parameters.
    * @return DirectoryChromeosdevicesIssueCommandResponse
-   * @throws \Google\Service\Exception
    */
   public function issueCommand($customerId, $deviceId, DirectoryChromeosdevicesIssueCommandRequest $postBody, $optParams = [])
   {

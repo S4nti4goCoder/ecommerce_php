@@ -19,10 +19,22 @@ namespace Google\Service\Dataform;
 
 class CompilationResultAction extends \Google\Model
 {
+  /**
+   * @var Assertion
+   */
+  public $assertion;
   protected $assertionType = Assertion::class;
   protected $assertionDataType = '';
+  /**
+   * @var Target
+   */
+  public $canonicalTarget;
   protected $canonicalTargetType = Target::class;
   protected $canonicalTargetDataType = '';
+  /**
+   * @var Declaration
+   */
+  public $declaration;
   protected $declarationType = Declaration::class;
   protected $declarationDataType = '';
   /**
@@ -30,15 +42,21 @@ class CompilationResultAction extends \Google\Model
    */
   public $filePath;
   /**
-   * @var string
+   * @var Operations
    */
-  public $internalMetadata;
-  protected $notebookType = Notebook::class;
-  protected $notebookDataType = '';
+  public $operations;
   protected $operationsType = Operations::class;
   protected $operationsDataType = '';
+  /**
+   * @var Relation
+   */
+  public $relation;
   protected $relationType = Relation::class;
   protected $relationDataType = '';
+  /**
+   * @var Target
+   */
+  public $target;
   protected $targetType = Target::class;
   protected $targetDataType = '';
 
@@ -97,34 +115,6 @@ class CompilationResultAction extends \Google\Model
   public function getFilePath()
   {
     return $this->filePath;
-  }
-  /**
-   * @param string
-   */
-  public function setInternalMetadata($internalMetadata)
-  {
-    $this->internalMetadata = $internalMetadata;
-  }
-  /**
-   * @return string
-   */
-  public function getInternalMetadata()
-  {
-    return $this->internalMetadata;
-  }
-  /**
-   * @param Notebook
-   */
-  public function setNotebook(Notebook $notebook)
-  {
-    $this->notebook = $notebook;
-  }
-  /**
-   * @return Notebook
-   */
-  public function getNotebook()
-  {
-    return $this->notebook;
   }
   /**
    * @param Operations

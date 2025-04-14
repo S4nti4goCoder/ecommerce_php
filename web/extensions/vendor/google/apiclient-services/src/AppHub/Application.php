@@ -19,6 +19,10 @@ namespace Google\Service\AppHub;
 
 class Application extends \Google\Model
 {
+  /**
+   * @var Attributes
+   */
+  public $attributes;
   protected $attributesType = Attributes::class;
   protected $attributesDataType = '';
   /**
@@ -37,6 +41,10 @@ class Application extends \Google\Model
    * @var string
    */
   public $name;
+  /**
+   * @var Scope
+   */
+  public $scope;
   protected $scopeType = Scope::class;
   protected $scopeDataType = '';
   /**

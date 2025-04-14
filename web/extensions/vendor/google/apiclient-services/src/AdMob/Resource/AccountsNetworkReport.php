@@ -40,7 +40,6 @@ class AccountsNetworkReport extends \Google\Service\Resource
    * @param GenerateNetworkReportRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GenerateNetworkReportResponse
-   * @throws \Google\Service\Exception
    */
   public function generate($parent, GenerateNetworkReportRequest $postBody, $optParams = [])
   {

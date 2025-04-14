@@ -45,7 +45,6 @@ class Settlementtransactions extends \Google\Service\Resource
    * @opt_param string transactionIds The list of transactions to return. If not
    * set, all transactions will be returned.
    * @return SettlementtransactionsListResponse
-   * @throws \Google\Service\Exception
    */
   public function listSettlementtransactions($merchantId, $settlementId, $optParams = [])
   {

@@ -35,7 +35,6 @@ class LiveChatModerators extends \Google\Service\Resource
    *
    * @param string $id
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function delete($id, $optParams = [])
   {
@@ -53,7 +52,6 @@ class LiveChatModerators extends \Google\Service\Resource
    * @param LiveChatModerator $postBody
    * @param array $optParams Optional parameters.
    * @return LiveChatModerator
-   * @throws \Google\Service\Exception
    */
   public function insert($part, LiveChatModerator $postBody, $optParams = [])
   {
@@ -79,7 +77,6 @@ class LiveChatModerators extends \Google\Service\Resource
    * nextPageToken and prevPageToken properties identify other pages that could be
    * retrieved.
    * @return LiveChatModeratorListResponse
-   * @throws \Google\Service\Exception
    */
   public function listLiveChatModerators($liveChatId, $part, $optParams = [])
   {

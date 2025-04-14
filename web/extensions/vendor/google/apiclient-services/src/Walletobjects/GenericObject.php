@@ -19,11 +19,23 @@ namespace Google\Service\Walletobjects;
 
 class GenericObject extends \Google\Collection
 {
-  protected $collection_key = 'valueAddedModuleData';
+  protected $collection_key = 'textModulesData';
+  /**
+   * @var AppLinkData
+   */
+  public $appLinkData;
   protected $appLinkDataType = AppLinkData::class;
   protected $appLinkDataDataType = '';
+  /**
+   * @var Barcode
+   */
+  public $barcode;
   protected $barcodeType = Barcode::class;
   protected $barcodeDataType = '';
+  /**
+   * @var LocalizedString
+   */
+  public $cardTitle;
   protected $cardTitleType = LocalizedString::class;
   protected $cardTitleDataType = '';
   /**
@@ -34,14 +46,26 @@ class GenericObject extends \Google\Collection
    * @var string
    */
   public $genericType;
+  /**
+   * @var GroupingInfo
+   */
+  public $groupingInfo;
   protected $groupingInfoType = GroupingInfo::class;
   protected $groupingInfoDataType = '';
   /**
    * @var bool
    */
   public $hasUsers;
+  /**
+   * @var LocalizedString
+   */
+  public $header;
   protected $headerType = LocalizedString::class;
   protected $headerDataType = '';
+  /**
+   * @var Image
+   */
+  public $heroImage;
   protected $heroImageType = Image::class;
   protected $heroImageDataType = '';
   /**
@@ -52,28 +76,42 @@ class GenericObject extends \Google\Collection
    * @var string
    */
   public $id;
+  /**
+   * @var ImageModuleData[]
+   */
+  public $imageModulesData;
   protected $imageModulesDataType = ImageModuleData::class;
   protected $imageModulesDataDataType = 'array';
   /**
-   * @var string[]
+   * @var LinksModuleData
    */
-  public $linkedObjectIds;
+  public $linksModuleData;
   protected $linksModuleDataType = LinksModuleData::class;
   protected $linksModuleDataDataType = '';
+  /**
+   * @var Image
+   */
+  public $logo;
   protected $logoType = Image::class;
   protected $logoDataType = '';
-  protected $merchantLocationsType = MerchantLocation::class;
-  protected $merchantLocationsDataType = 'array';
-  protected $messagesType = Message::class;
-  protected $messagesDataType = 'array';
+  /**
+   * @var Notifications
+   */
+  public $notifications;
   protected $notificationsType = Notifications::class;
   protected $notificationsDataType = '';
+  /**
+   * @var PassConstraints
+   */
+  public $passConstraints;
   protected $passConstraintsType = PassConstraints::class;
   protected $passConstraintsDataType = '';
+  /**
+   * @var RotatingBarcode
+   */
+  public $rotatingBarcode;
   protected $rotatingBarcodeType = RotatingBarcode::class;
   protected $rotatingBarcodeDataType = '';
-  protected $saveRestrictionsType = SaveRestrictions::class;
-  protected $saveRestrictionsDataType = '';
   /**
    * @var string
    */
@@ -82,14 +120,28 @@ class GenericObject extends \Google\Collection
    * @var string
    */
   public $state;
+  /**
+   * @var LocalizedString
+   */
+  public $subheader;
   protected $subheaderType = LocalizedString::class;
   protected $subheaderDataType = '';
+  /**
+   * @var TextModuleData[]
+   */
+  public $textModulesData;
   protected $textModulesDataType = TextModuleData::class;
   protected $textModulesDataDataType = 'array';
+  /**
+   * @var TimeInterval
+   */
+  public $validTimeInterval;
   protected $validTimeIntervalType = TimeInterval::class;
   protected $validTimeIntervalDataType = '';
-  protected $valueAddedModuleDataType = ValueAddedModuleData::class;
-  protected $valueAddedModuleDataDataType = 'array';
+  /**
+   * @var Image
+   */
+  public $wideLogo;
   protected $wideLogoType = Image::class;
   protected $wideLogoDataType = '';
 
@@ -262,20 +314,6 @@ class GenericObject extends \Google\Collection
     return $this->imageModulesData;
   }
   /**
-   * @param string[]
-   */
-  public function setLinkedObjectIds($linkedObjectIds)
-  {
-    $this->linkedObjectIds = $linkedObjectIds;
-  }
-  /**
-   * @return string[]
-   */
-  public function getLinkedObjectIds()
-  {
-    return $this->linkedObjectIds;
-  }
-  /**
    * @param LinksModuleData
    */
   public function setLinksModuleData(LinksModuleData $linksModuleData)
@@ -302,34 +340,6 @@ class GenericObject extends \Google\Collection
   public function getLogo()
   {
     return $this->logo;
-  }
-  /**
-   * @param MerchantLocation[]
-   */
-  public function setMerchantLocations($merchantLocations)
-  {
-    $this->merchantLocations = $merchantLocations;
-  }
-  /**
-   * @return MerchantLocation[]
-   */
-  public function getMerchantLocations()
-  {
-    return $this->merchantLocations;
-  }
-  /**
-   * @param Message[]
-   */
-  public function setMessages($messages)
-  {
-    $this->messages = $messages;
-  }
-  /**
-   * @return Message[]
-   */
-  public function getMessages()
-  {
-    return $this->messages;
   }
   /**
    * @param Notifications
@@ -372,20 +382,6 @@ class GenericObject extends \Google\Collection
   public function getRotatingBarcode()
   {
     return $this->rotatingBarcode;
-  }
-  /**
-   * @param SaveRestrictions
-   */
-  public function setSaveRestrictions(SaveRestrictions $saveRestrictions)
-  {
-    $this->saveRestrictions = $saveRestrictions;
-  }
-  /**
-   * @return SaveRestrictions
-   */
-  public function getSaveRestrictions()
-  {
-    return $this->saveRestrictions;
   }
   /**
    * @param string
@@ -456,20 +452,6 @@ class GenericObject extends \Google\Collection
   public function getValidTimeInterval()
   {
     return $this->validTimeInterval;
-  }
-  /**
-   * @param ValueAddedModuleData[]
-   */
-  public function setValueAddedModuleData($valueAddedModuleData)
-  {
-    $this->valueAddedModuleData = $valueAddedModuleData;
-  }
-  /**
-   * @return ValueAddedModuleData[]
-   */
-  public function getValueAddedModuleData()
-  {
-    return $this->valueAddedModuleData;
   }
   /**
    * @param Image

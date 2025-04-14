@@ -37,7 +37,6 @@ class Accounts extends \Google\Service\Resource
    * accounts/{account_id}
    * @param array $optParams Optional parameters.
    * @return Account
-   * @throws \Google\Service\Exception
    */
   public function get($path, $optParams = [])
   {
@@ -55,7 +54,6 @@ class Accounts extends \Google\Service\Resource
    * @opt_param string pageToken Continuation token for fetching the next page of
    * results.
    * @return ListAccountsResponse
-   * @throws \Google\Service\Exception
    */
   public function listAccounts($optParams = [])
   {
@@ -74,7 +72,6 @@ class Accounts extends \Google\Service\Resource
    * @opt_param string fingerprint When provided, this fingerprint must match the
    * fingerprint of the account in storage.
    * @return Account
-   * @throws \Google\Service\Exception
    */
   public function update($path, Account $postBody, $optParams = [])
   {

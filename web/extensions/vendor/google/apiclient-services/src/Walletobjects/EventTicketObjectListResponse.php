@@ -20,8 +20,16 @@ namespace Google\Service\Walletobjects;
 class EventTicketObjectListResponse extends \Google\Collection
 {
   protected $collection_key = 'resources';
+  /**
+   * @var Pagination
+   */
+  public $pagination;
   protected $paginationType = Pagination::class;
   protected $paginationDataType = '';
+  /**
+   * @var EventTicketObject[]
+   */
+  public $resources;
   protected $resourcesType = EventTicketObject::class;
   protected $resourcesDataType = 'array';
 

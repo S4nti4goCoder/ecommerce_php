@@ -38,7 +38,6 @@ class ProjectsLocationsNasJobsNasTrialDetails extends \Google\Service\Resource
    * tails/{nas_trial_detail}`
    * @param array $optParams Optional parameters.
    * @return GoogleCloudAiplatformV1NasTrialDetail
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -59,7 +58,6 @@ class ProjectsLocationsNasJobsNasTrialDetails extends \Google\Service\Resource
    * via ListNasTrialDetailsResponse.next_page_token of the previous
    * JobService.ListNasTrialDetails call.
    * @return GoogleCloudAiplatformV1ListNasTrialDetailsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsNasJobsNasTrialDetails($parent, $optParams = [])
   {

@@ -46,7 +46,6 @@ class Devices extends \Google\Service\Resource
    * @param QueryRequest $postBody
    * @param array $optParams Optional parameters.
    * @return QueryResponse
-   * @throws \Google\Service\Exception
    */
   public function query(QueryRequest $postBody, $optParams = [])
   {
@@ -71,7 +70,6 @@ class Devices extends \Google\Service\Resource
    * @param ReportStateAndNotificationRequest $postBody
    * @param array $optParams Optional parameters.
    * @return ReportStateAndNotificationResponse
-   * @throws \Google\Service\Exception
    */
   public function reportStateAndNotification(ReportStateAndNotificationRequest $postBody, $optParams = [])
   {
@@ -90,7 +88,6 @@ class Devices extends \Google\Service\Resource
    * @param RequestSyncDevicesRequest $postBody
    * @param array $optParams Optional parameters.
    * @return RequestSyncDevicesResponse
-   * @throws \Google\Service\Exception
    */
   public function requestSync(RequestSyncDevicesRequest $postBody, $optParams = [])
   {
@@ -107,7 +104,6 @@ class Devices extends \Google\Service\Resource
    * @param SyncRequest $postBody
    * @param array $optParams Optional parameters.
    * @return SyncResponse
-   * @throws \Google\Service\Exception
    */
   public function sync(SyncRequest $postBody, $optParams = [])
   {

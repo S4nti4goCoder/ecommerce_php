@@ -19,12 +19,12 @@ namespace Google\Service\ServiceConsumerManagement;
 
 class GoSettings extends \Google\Model
 {
+  /**
+   * @var CommonLanguageSettings
+   */
+  public $common;
   protected $commonType = CommonLanguageSettings::class;
   protected $commonDataType = '';
-  /**
-   * @var string[]
-   */
-  public $renamedServices;
 
   /**
    * @param CommonLanguageSettings
@@ -39,20 +39,6 @@ class GoSettings extends \Google\Model
   public function getCommon()
   {
     return $this->common;
-  }
-  /**
-   * @param string[]
-   */
-  public function setRenamedServices($renamedServices)
-  {
-    $this->renamedServices = $renamedServices;
-  }
-  /**
-   * @return string[]
-   */
-  public function getRenamedServices()
-  {
-    return $this->renamedServices;
   }
 }
 

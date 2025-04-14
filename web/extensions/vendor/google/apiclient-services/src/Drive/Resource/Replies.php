@@ -38,7 +38,6 @@ class Replies extends \Google\Service\Resource
    * @param Reply $postBody
    * @param array $optParams Optional parameters.
    * @return Reply
-   * @throws \Google\Service\Exception
    */
   public function create($fileId, $commentId, Reply $postBody, $optParams = [])
   {
@@ -53,7 +52,6 @@ class Replies extends \Google\Service\Resource
    * @param string $commentId The ID of the comment.
    * @param string $replyId The ID of the reply.
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function delete($fileId, $commentId, $replyId, $optParams = [])
   {
@@ -72,7 +70,6 @@ class Replies extends \Google\Service\Resource
    * @opt_param bool includeDeleted Whether to return deleted replies. Deleted
    * replies will not include their original content.
    * @return Reply
-   * @throws \Google\Service\Exception
    */
   public function get($fileId, $commentId, $replyId, $optParams = [])
   {
@@ -94,7 +91,6 @@ class Replies extends \Google\Service\Resource
    * on the next page. This should be set to the value of 'nextPageToken' from the
    * previous response.
    * @return ReplyList
-   * @throws \Google\Service\Exception
    */
   public function listReplies($fileId, $commentId, $optParams = [])
   {
@@ -111,7 +107,6 @@ class Replies extends \Google\Service\Resource
    * @param Reply $postBody
    * @param array $optParams Optional parameters.
    * @return Reply
-   * @throws \Google\Service\Exception
    */
   public function update($fileId, $commentId, $replyId, Reply $postBody, $optParams = [])
   {

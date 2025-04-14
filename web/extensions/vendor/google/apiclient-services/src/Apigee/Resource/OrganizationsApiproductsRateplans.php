@@ -47,7 +47,6 @@ class OrganizationsApiproductsRateplans extends \Google\Service\Resource
    * @param GoogleCloudApigeeV1RatePlan $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudApigeeV1RatePlan
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudApigeeV1RatePlan $postBody, $optParams = [])
   {
@@ -63,7 +62,6 @@ class OrganizationsApiproductsRateplans extends \Google\Service\Resource
    * `organizations/{org}/apiproducts/{apiproduct}/rateplans/{rateplan}`
    * @param array $optParams Optional parameters.
    * @return GoogleCloudApigeeV1RatePlan
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -79,7 +77,6 @@ class OrganizationsApiproductsRateplans extends \Google\Service\Resource
    * `organizations/{org}/apiproducts/{apiproduct}/rateplans/{rateplan}`
    * @param array $optParams Optional parameters.
    * @return GoogleCloudApigeeV1RatePlan
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -115,7 +112,6 @@ class OrganizationsApiproductsRateplans extends \Google\Service\Resource
    * @opt_param string state State of the rate plans (`DRAFT`, `PUBLISHED`) that
    * you want to display.
    * @return GoogleCloudApigeeV1ListRatePlansResponse
-   * @throws \Google\Service\Exception
    */
   public function listOrganizationsApiproductsRateplans($parent, $optParams = [])
   {
@@ -132,7 +128,6 @@ class OrganizationsApiproductsRateplans extends \Google\Service\Resource
    * @param GoogleCloudApigeeV1RatePlan $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudApigeeV1RatePlan
-   * @throws \Google\Service\Exception
    */
   public function update($name, GoogleCloudApigeeV1RatePlan $postBody, $optParams = [])
   {

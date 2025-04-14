@@ -19,15 +19,21 @@ namespace Google\Service\Walletobjects;
 
 class EventTicketClass extends \Google\Collection
 {
-  protected $collection_key = 'valueAddedModuleData';
+  protected $collection_key = 'textModulesData';
   /**
    * @var bool
    */
   public $allowMultipleUsersPerObject;
-  protected $appLinkDataType = AppLinkData::class;
-  protected $appLinkDataDataType = '';
+  /**
+   * @var CallbackOptions
+   */
+  public $callbackOptions;
   protected $callbackOptionsType = CallbackOptions::class;
   protected $callbackOptionsDataType = '';
+  /**
+   * @var ClassTemplateInfo
+   */
+  public $classTemplateInfo;
   protected $classTemplateInfoType = ClassTemplateInfo::class;
   protected $classTemplateInfoDataType = '';
   /**
@@ -38,16 +44,40 @@ class EventTicketClass extends \Google\Collection
    * @var string
    */
   public $countryCode;
+  /**
+   * @var LocalizedString
+   */
+  public $customConfirmationCodeLabel;
   protected $customConfirmationCodeLabelType = LocalizedString::class;
   protected $customConfirmationCodeLabelDataType = '';
+  /**
+   * @var LocalizedString
+   */
+  public $customGateLabel;
   protected $customGateLabelType = LocalizedString::class;
   protected $customGateLabelDataType = '';
+  /**
+   * @var LocalizedString
+   */
+  public $customRowLabel;
   protected $customRowLabelType = LocalizedString::class;
   protected $customRowLabelDataType = '';
+  /**
+   * @var LocalizedString
+   */
+  public $customSeatLabel;
   protected $customSeatLabelType = LocalizedString::class;
   protected $customSeatLabelDataType = '';
+  /**
+   * @var LocalizedString
+   */
+  public $customSectionLabel;
   protected $customSectionLabelType = LocalizedString::class;
   protected $customSectionLabelDataType = '';
+  /**
+   * @var EventDateTime
+   */
+  public $dateTime;
   protected $dateTimeType = EventDateTime::class;
   protected $dateTimeDataType = '';
   /**
@@ -58,28 +88,52 @@ class EventTicketClass extends \Google\Collection
    * @var string
    */
   public $eventId;
+  /**
+   * @var LocalizedString
+   */
+  public $eventName;
   protected $eventNameType = LocalizedString::class;
   protected $eventNameDataType = '';
+  /**
+   * @var LocalizedString
+   */
+  public $finePrint;
   protected $finePrintType = LocalizedString::class;
   protected $finePrintDataType = '';
   /**
    * @var string
    */
   public $gateLabel;
+  /**
+   * @var Image
+   */
+  public $heroImage;
   protected $heroImageType = Image::class;
   protected $heroImageDataType = '';
   /**
    * @var string
    */
   public $hexBackgroundColor;
+  /**
+   * @var Uri
+   */
+  public $homepageUri;
   protected $homepageUriType = Uri::class;
   protected $homepageUriDataType = '';
   /**
    * @var string
    */
   public $id;
+  /**
+   * @var ImageModuleData[]
+   */
+  public $imageModulesData;
   protected $imageModulesDataType = ImageModuleData::class;
   protected $imageModulesDataDataType = 'array';
+  /**
+   * @var InfoModuleData
+   */
+  public $infoModuleData;
   protected $infoModuleDataType = InfoModuleData::class;
   protected $infoModuleDataDataType = '';
   /**
@@ -90,16 +144,34 @@ class EventTicketClass extends \Google\Collection
    * @var string
    */
   public $kind;
+  /**
+   * @var LinksModuleData
+   */
+  public $linksModuleData;
   protected $linksModuleDataType = LinksModuleData::class;
   protected $linksModuleDataDataType = '';
+  /**
+   * @var LocalizedString
+   */
+  public $localizedIssuerName;
   protected $localizedIssuerNameType = LocalizedString::class;
   protected $localizedIssuerNameDataType = '';
+  /**
+   * @var LatLongPoint[]
+   */
+  public $locations;
   protected $locationsType = LatLongPoint::class;
   protected $locationsDataType = 'array';
+  /**
+   * @var Image
+   */
+  public $logo;
   protected $logoType = Image::class;
   protected $logoDataType = '';
-  protected $merchantLocationsType = MerchantLocation::class;
-  protected $merchantLocationsDataType = 'array';
+  /**
+   * @var Message[]
+   */
+  public $messages;
   protected $messagesType = Message::class;
   protected $messagesDataType = 'array';
   /**
@@ -107,13 +179,13 @@ class EventTicketClass extends \Google\Collection
    */
   public $multipleDevicesAndHoldersAllowedStatus;
   /**
-   * @var string
-   */
-  public $notifyPreference;
-  /**
    * @var string[]
    */
   public $redemptionIssuers;
+  /**
+   * @var Review
+   */
+  public $review;
   protected $reviewType = Review::class;
   protected $reviewDataType = '';
   /**
@@ -132,12 +204,22 @@ class EventTicketClass extends \Google\Collection
    * @var string
    */
   public $sectionLabel;
+  /**
+   * @var SecurityAnimation
+   */
+  public $securityAnimation;
   protected $securityAnimationType = SecurityAnimation::class;
   protected $securityAnimationDataType = '';
+  /**
+   * @var TextModuleData[]
+   */
+  public $textModulesData;
   protected $textModulesDataType = TextModuleData::class;
   protected $textModulesDataDataType = 'array';
-  protected $valueAddedModuleDataType = ValueAddedModuleData::class;
-  protected $valueAddedModuleDataDataType = 'array';
+  /**
+   * @var EventVenue
+   */
+  public $venue;
   protected $venueType = EventVenue::class;
   protected $venueDataType = '';
   /**
@@ -148,8 +230,16 @@ class EventTicketClass extends \Google\Collection
    * @var string
    */
   public $viewUnlockRequirement;
+  /**
+   * @var Image
+   */
+  public $wideLogo;
   protected $wideLogoType = Image::class;
   protected $wideLogoDataType = '';
+  /**
+   * @var Image
+   */
+  public $wordMark;
   protected $wordMarkType = Image::class;
   protected $wordMarkDataType = '';
 
@@ -166,20 +256,6 @@ class EventTicketClass extends \Google\Collection
   public function getAllowMultipleUsersPerObject()
   {
     return $this->allowMultipleUsersPerObject;
-  }
-  /**
-   * @param AppLinkData
-   */
-  public function setAppLinkData(AppLinkData $appLinkData)
-  {
-    $this->appLinkData = $appLinkData;
-  }
-  /**
-   * @return AppLinkData
-   */
-  public function getAppLinkData()
-  {
-    return $this->appLinkData;
   }
   /**
    * @param CallbackOptions
@@ -560,20 +636,6 @@ class EventTicketClass extends \Google\Collection
     return $this->logo;
   }
   /**
-   * @param MerchantLocation[]
-   */
-  public function setMerchantLocations($merchantLocations)
-  {
-    $this->merchantLocations = $merchantLocations;
-  }
-  /**
-   * @return MerchantLocation[]
-   */
-  public function getMerchantLocations()
-  {
-    return $this->merchantLocations;
-  }
-  /**
    * @param Message[]
    */
   public function setMessages($messages)
@@ -600,20 +662,6 @@ class EventTicketClass extends \Google\Collection
   public function getMultipleDevicesAndHoldersAllowedStatus()
   {
     return $this->multipleDevicesAndHoldersAllowedStatus;
-  }
-  /**
-   * @param string
-   */
-  public function setNotifyPreference($notifyPreference)
-  {
-    $this->notifyPreference = $notifyPreference;
-  }
-  /**
-   * @return string
-   */
-  public function getNotifyPreference()
-  {
-    return $this->notifyPreference;
   }
   /**
    * @param string[]
@@ -726,20 +774,6 @@ class EventTicketClass extends \Google\Collection
   public function getTextModulesData()
   {
     return $this->textModulesData;
-  }
-  /**
-   * @param ValueAddedModuleData[]
-   */
-  public function setValueAddedModuleData($valueAddedModuleData)
-  {
-    $this->valueAddedModuleData = $valueAddedModuleData;
-  }
-  /**
-   * @return ValueAddedModuleData[]
-   */
-  public function getValueAddedModuleData()
-  {
-    return $this->valueAddedModuleData;
   }
   /**
    * @param EventVenue

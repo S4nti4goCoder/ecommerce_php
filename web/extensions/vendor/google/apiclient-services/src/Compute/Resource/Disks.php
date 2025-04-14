@@ -66,7 +66,6 @@ class Disks extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function addResourcePolicies($project, $zone, $disk, DisksAddResourcePoliciesRequest $postBody, $optParams = [])
   {
@@ -75,9 +74,7 @@ class Disks extends \Google\Service\Resource
     return $this->call('addResourcePolicies', [$params], Operation::class);
   }
   /**
-   * Retrieves an aggregated list of persistent disks. To prevent failure, Google
-   * recommends that you set the `returnPartialSuccess` parameter to `true`.
-   * (disks.aggregatedList)
+   * Retrieves an aggregated list of persistent disks. (disks.aggregatedList)
    *
    * @param string $project Project ID for this request.
    * @param array $optParams Optional parameters.
@@ -139,14 +136,9 @@ class Disks extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
-   * @opt_param string serviceProjectNumber The Shared VPC service project id or
-   * service project number for which aggregated list request is invoked for
-   * subnetworks list-usable api.
+   * false.
+   * @opt_param string serviceProjectNumber
    * @return DiskAggregatedList
-   * @throws \Google\Service\Exception
    */
   public function aggregatedList($project, $optParams = [])
   {
@@ -173,7 +165,6 @@ class Disks extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function bulkInsert($project, $zone, BulkInsertDiskResource $postBody, $optParams = [])
   {
@@ -206,7 +197,6 @@ class Disks extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function createSnapshot($project, $zone, $disk, Snapshot $postBody, $optParams = [])
   {
@@ -236,7 +226,6 @@ class Disks extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($project, $zone, $disk, $optParams = [])
   {
@@ -252,7 +241,6 @@ class Disks extends \Google\Service\Resource
    * @param string $disk Name of the persistent disk to return.
    * @param array $optParams Optional parameters.
    * @return Disk
-   * @throws \Google\Service\Exception
    */
   public function get($project, $zone, $disk, $optParams = [])
   {
@@ -271,7 +259,6 @@ class Disks extends \Google\Service\Resource
    *
    * @opt_param int optionsRequestedPolicyVersion Requested IAM Policy version.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($project, $zone, $resource, $optParams = [])
   {
@@ -304,7 +291,6 @@ class Disks extends \Google\Service\Resource
    * @opt_param string sourceImage Source image to restore onto a disk. This field
    * is optional.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function insert($project, $zone, Disk $postBody, $optParams = [])
   {
@@ -370,11 +356,8 @@ class Disks extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
+   * false.
    * @return DiskList
-   * @throws \Google\Service\Exception
    */
   public function listDisks($project, $zone, $optParams = [])
   {
@@ -402,7 +385,6 @@ class Disks extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function removeResourcePolicies($project, $zone, $disk, DisksRemoveResourcePoliciesRequest $postBody, $optParams = [])
   {
@@ -431,7 +413,6 @@ class Disks extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function resize($project, $zone, $disk, DisksResizeRequest $postBody, $optParams = [])
   {
@@ -449,7 +430,6 @@ class Disks extends \Google\Service\Resource
    * @param ZoneSetPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($project, $zone, $resource, ZoneSetPolicyRequest $postBody, $optParams = [])
   {
@@ -478,7 +458,6 @@ class Disks extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function setLabels($project, $zone, $resource, ZoneSetLabelsRequest $postBody, $optParams = [])
   {
@@ -507,7 +486,6 @@ class Disks extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function startAsyncReplication($project, $zone, $disk, DisksStartAsyncReplicationRequest $postBody, $optParams = [])
   {
@@ -535,7 +513,6 @@ class Disks extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function stopAsyncReplication($project, $zone, $disk, $optParams = [])
   {
@@ -565,7 +542,6 @@ class Disks extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function stopGroupAsyncReplication($project, $zone, DisksStopGroupAsyncReplicationResource $postBody, $optParams = [])
   {
@@ -583,7 +559,6 @@ class Disks extends \Google\Service\Resource
    * @param TestPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($project, $zone, $resource, TestPermissionsRequest $postBody, $optParams = [])
   {
@@ -616,7 +591,6 @@ class Disks extends \Google\Service\Resource
    * @opt_param string updateMask update_mask indicates fields to be updated as
    * part of this request.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function update($project, $zone, $disk, Disk $postBody, $optParams = [])
   {

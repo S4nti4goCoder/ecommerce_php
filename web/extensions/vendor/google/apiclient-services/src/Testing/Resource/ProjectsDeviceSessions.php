@@ -44,7 +44,6 @@ class ProjectsDeviceSessions extends \Google\Service\Resource
    * @param CancelDeviceSessionRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestingEmpty
-   * @throws \Google\Service\Exception
    */
   public function cancel($name, CancelDeviceSessionRequest $postBody, $optParams = [])
   {
@@ -60,7 +59,6 @@ class ProjectsDeviceSessions extends \Google\Service\Resource
    * @param DeviceSession $postBody
    * @param array $optParams Optional parameters.
    * @return DeviceSession
-   * @throws \Google\Service\Exception
    */
   public function create($parent, DeviceSession $postBody, $optParams = [])
   {
@@ -78,7 +76,6 @@ class ProjectsDeviceSessions extends \Google\Service\Resource
    * "projects/{project_id}/deviceSessions/{session_id}"
    * @param array $optParams Optional parameters.
    * @return DeviceSession
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -100,7 +97,6 @@ class ProjectsDeviceSessions extends \Google\Service\Resource
    * return.
    * @opt_param string pageToken Optional. A continuation token for paging.
    * @return ListDeviceSessionsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsDeviceSessions($parent, $optParams = [])
   {
@@ -121,7 +117,6 @@ class ProjectsDeviceSessions extends \Google\Service\Resource
    *
    * @opt_param string updateMask Required. The list of fields to update.
    * @return DeviceSession
-   * @throws \Google\Service\Exception
    */
   public function patch($name, DeviceSession $postBody, $optParams = [])
   {

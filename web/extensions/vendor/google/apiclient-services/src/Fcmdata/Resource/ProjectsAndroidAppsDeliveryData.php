@@ -47,7 +47,6 @@ class ProjectsAndroidAppsDeliveryData extends \Google\Service\Resource
    * `ListAndroidDeliveryDataRequest` must match the call that provided the page
    * token.
    * @return GoogleFirebaseFcmDataV1beta1ListAndroidDeliveryDataResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsAndroidAppsDeliveryData($parent, $optParams = [])
   {

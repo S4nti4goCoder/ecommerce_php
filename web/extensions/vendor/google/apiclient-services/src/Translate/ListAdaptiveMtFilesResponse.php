@@ -20,6 +20,10 @@ namespace Google\Service\Translate;
 class ListAdaptiveMtFilesResponse extends \Google\Collection
 {
   protected $collection_key = 'adaptiveMtFiles';
+  /**
+   * @var AdaptiveMtFile[]
+   */
+  public $adaptiveMtFiles;
   protected $adaptiveMtFilesType = AdaptiveMtFile::class;
   protected $adaptiveMtFilesDataType = 'array';
   /**

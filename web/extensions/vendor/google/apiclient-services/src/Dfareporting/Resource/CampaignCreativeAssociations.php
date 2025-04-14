@@ -40,7 +40,6 @@ class CampaignCreativeAssociations extends \Google\Service\Resource
    * @param CampaignCreativeAssociation $postBody
    * @param array $optParams Optional parameters.
    * @return CampaignCreativeAssociation
-   * @throws \Google\Service\Exception
    */
   public function insert($profileId, $campaignId, CampaignCreativeAssociation $postBody, $optParams = [])
   {
@@ -62,7 +61,6 @@ class CampaignCreativeAssociations extends \Google\Service\Resource
    * result page.
    * @opt_param string sortOrder Order of sorted results.
    * @return CampaignCreativeAssociationsListResponse
-   * @throws \Google\Service\Exception
    */
   public function listCampaignCreativeAssociations($profileId, $campaignId, $optParams = [])
   {

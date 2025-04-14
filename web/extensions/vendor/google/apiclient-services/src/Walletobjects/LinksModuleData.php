@@ -20,6 +20,10 @@ namespace Google\Service\Walletobjects;
 class LinksModuleData extends \Google\Collection
 {
   protected $collection_key = 'uris';
+  /**
+   * @var Uri[]
+   */
+  public $uris;
   protected $urisType = Uri::class;
   protected $urisDataType = 'array';
 

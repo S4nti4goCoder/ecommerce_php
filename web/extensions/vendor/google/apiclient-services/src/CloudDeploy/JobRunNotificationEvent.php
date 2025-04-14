@@ -34,15 +34,7 @@ class JobRunNotificationEvent extends \Google\Model
   /**
    * @var string
    */
-  public $release;
-  /**
-   * @var string
-   */
   public $releaseUid;
-  /**
-   * @var string
-   */
-  public $rollout;
   /**
    * @var string
    */
@@ -101,20 +93,6 @@ class JobRunNotificationEvent extends \Google\Model
   /**
    * @param string
    */
-  public function setRelease($release)
-  {
-    $this->release = $release;
-  }
-  /**
-   * @return string
-   */
-  public function getRelease()
-  {
-    return $this->release;
-  }
-  /**
-   * @param string
-   */
   public function setReleaseUid($releaseUid)
   {
     $this->releaseUid = $releaseUid;
@@ -125,20 +103,6 @@ class JobRunNotificationEvent extends \Google\Model
   public function getReleaseUid()
   {
     return $this->releaseUid;
-  }
-  /**
-   * @param string
-   */
-  public function setRollout($rollout)
-  {
-    $this->rollout = $rollout;
-  }
-  /**
-   * @return string
-   */
-  public function getRollout()
-  {
-    return $this->rollout;
   }
   /**
    * @param string

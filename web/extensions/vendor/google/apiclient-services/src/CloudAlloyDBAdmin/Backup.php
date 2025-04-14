@@ -51,14 +51,26 @@ class Backup extends \Google\Model
    * @var string
    */
   public $displayName;
+  /**
+   * @var EncryptionConfig
+   */
+  public $encryptionConfig;
   protected $encryptionConfigType = EncryptionConfig::class;
   protected $encryptionConfigDataType = '';
+  /**
+   * @var EncryptionInfo
+   */
+  public $encryptionInfo;
   protected $encryptionInfoType = EncryptionInfo::class;
   protected $encryptionInfoDataType = '';
   /**
    * @var string
    */
   public $etag;
+  /**
+   * @var QuantityBasedExpiry
+   */
+  public $expiryQuantity;
   protected $expiryQuantityType = QuantityBasedExpiry::class;
   protected $expiryQuantityDataType = '';
   /**
@@ -89,10 +101,6 @@ class Backup extends \Google\Model
    * @var string
    */
   public $state;
-  /**
-   * @var string[]
-   */
-  public $tags;
   /**
    * @var string
    */
@@ -371,20 +379,6 @@ class Backup extends \Google\Model
   public function getState()
   {
     return $this->state;
-  }
-  /**
-   * @param string[]
-   */
-  public function setTags($tags)
-  {
-    $this->tags = $tags;
-  }
-  /**
-   * @return string[]
-   */
-  public function getTags()
-  {
-    return $this->tags;
   }
   /**
    * @param string

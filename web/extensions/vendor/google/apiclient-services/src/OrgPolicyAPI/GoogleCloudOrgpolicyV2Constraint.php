@@ -19,6 +19,10 @@ namespace Google\Service\OrgPolicyAPI;
 
 class GoogleCloudOrgpolicyV2Constraint extends \Google\Model
 {
+  /**
+   * @var GoogleCloudOrgpolicyV2ConstraintBooleanConstraint
+   */
+  public $booleanConstraint;
   protected $booleanConstraintType = GoogleCloudOrgpolicyV2ConstraintBooleanConstraint::class;
   protected $booleanConstraintDataType = '';
   /**
@@ -33,6 +37,10 @@ class GoogleCloudOrgpolicyV2Constraint extends \Google\Model
    * @var string
    */
   public $displayName;
+  /**
+   * @var GoogleCloudOrgpolicyV2ConstraintListConstraint
+   */
+  public $listConstraint;
   protected $listConstraintType = GoogleCloudOrgpolicyV2ConstraintListConstraint::class;
   protected $listConstraintDataType = '';
   /**
@@ -43,10 +51,6 @@ class GoogleCloudOrgpolicyV2Constraint extends \Google\Model
    * @var bool
    */
   public $supportsDryRun;
-  /**
-   * @var bool
-   */
-  public $supportsSimulation;
 
   /**
    * @param GoogleCloudOrgpolicyV2ConstraintBooleanConstraint
@@ -145,20 +149,6 @@ class GoogleCloudOrgpolicyV2Constraint extends \Google\Model
   public function getSupportsDryRun()
   {
     return $this->supportsDryRun;
-  }
-  /**
-   * @param bool
-   */
-  public function setSupportsSimulation($supportsSimulation)
-  {
-    $this->supportsSimulation = $supportsSimulation;
-  }
-  /**
-   * @return bool
-   */
-  public function getSupportsSimulation()
-  {
-    return $this->supportsSimulation;
   }
 }
 

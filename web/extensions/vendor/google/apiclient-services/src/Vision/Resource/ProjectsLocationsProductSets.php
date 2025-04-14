@@ -46,7 +46,6 @@ class ProjectsLocationsProductSets extends \Google\Service\Resource
    * @param AddProductToProductSetRequest $postBody
    * @param array $optParams Optional parameters.
    * @return VisionEmpty
-   * @throws \Google\Service\Exception
    */
   public function addProduct($name, AddProductToProductSetRequest $postBody, $optParams = [])
   {
@@ -69,7 +68,6 @@ class ProjectsLocationsProductSets extends \Google\Service\Resource
    * id. If it is already in use, an error is returned with code ALREADY_EXISTS.
    * Must be at most 128 characters long. It cannot contain the character `/`.
    * @return ProductSet
-   * @throws \Google\Service\Exception
    */
   public function create($parent, ProductSet $postBody, $optParams = [])
   {
@@ -86,7 +84,6 @@ class ProjectsLocationsProductSets extends \Google\Service\Resource
    * Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
    * @param array $optParams Optional parameters.
    * @return VisionEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -102,7 +99,6 @@ class ProjectsLocationsProductSets extends \Google\Service\Resource
    * is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
    * @param array $optParams Optional parameters.
    * @return ProductSet
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -125,7 +121,6 @@ class ProjectsLocationsProductSets extends \Google\Service\Resource
    * @param ImportProductSetsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function import($parent, ImportProductSetsRequest $postBody, $optParams = [])
   {
@@ -147,7 +142,6 @@ class ProjectsLocationsProductSets extends \Google\Service\Resource
    * @opt_param string pageToken The next_page_token returned from a previous List
    * request, if any.
    * @return ListProductSetsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsProductSets($parent, $optParams = [])
   {
@@ -172,7 +166,6 @@ class ProjectsLocationsProductSets extends \Google\Service\Resource
    * update. If update_mask isn't specified, all mutable fields are to be updated.
    * Valid mask path is `display_name`.
    * @return ProductSet
-   * @throws \Google\Service\Exception
    */
   public function patch($name, ProductSet $postBody, $optParams = [])
   {
@@ -188,7 +181,6 @@ class ProjectsLocationsProductSets extends \Google\Service\Resource
    * @param RemoveProductFromProductSetRequest $postBody
    * @param array $optParams Optional parameters.
    * @return VisionEmpty
-   * @throws \Google\Service\Exception
    */
   public function removeProduct($name, RemoveProductFromProductSetRequest $postBody, $optParams = [])
   {

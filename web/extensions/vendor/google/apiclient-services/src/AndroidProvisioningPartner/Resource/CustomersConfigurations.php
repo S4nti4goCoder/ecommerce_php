@@ -41,7 +41,6 @@ class CustomersConfigurations extends \Google\Service\Resource
    * @param Configuration $postBody
    * @param array $optParams Optional parameters.
    * @return Configuration
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Configuration $postBody, $optParams = [])
   {
@@ -59,7 +58,6 @@ class CustomersConfigurations extends \Google\Service\Resource
    * configuration is applied to any devices, the API call fails.
    * @param array $optParams Optional parameters.
    * @return AndroiddeviceprovisioningEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -74,7 +72,6 @@ class CustomersConfigurations extends \Google\Service\Resource
    * in the format `customers/[CUSTOMER_ID]/configurations/[CONFIGURATION_ID]`.
    * @param array $optParams Optional parameters.
    * @return Configuration
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -90,7 +87,6 @@ class CustomersConfigurations extends \Google\Service\Resource
    * configurations. An API resource name in the format `customers/[CUSTOMER_ID]`.
    * @param array $optParams Optional parameters.
    * @return CustomerListConfigurationsResponse
-   * @throws \Google\Service\Exception
    */
   public function listCustomersConfigurations($parent, $optParams = [])
   {
@@ -113,7 +109,6 @@ class CustomersConfigurations extends \Google\Service\Resource
    * buffers/docs/reference/google.protobuf#fieldmask) in the Protocol Buffers
    * documentation.
    * @return Configuration
-   * @throws \Google\Service\Exception
    */
   public function patch($name, Configuration $postBody, $optParams = [])
   {

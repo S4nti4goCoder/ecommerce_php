@@ -19,10 +19,16 @@ namespace Google\Service\HangoutsChat;
 
 class DeprecatedEvent extends \Google\Model
 {
+  /**
+   * @var FormAction
+   */
+  public $action;
   protected $actionType = FormAction::class;
   protected $actionDataType = '';
-  protected $appCommandMetadataType = AppCommandMetadata::class;
-  protected $appCommandMetadataDataType = '';
+  /**
+   * @var CommonEventObject
+   */
+  public $common;
   protected $commonType = CommonEventObject::class;
   protected $commonDataType = '';
   /**
@@ -41,12 +47,18 @@ class DeprecatedEvent extends \Google\Model
    * @var bool
    */
   public $isDialogEvent;
+  /**
+   * @var Message
+   */
+  public $message;
   protected $messageType = Message::class;
   protected $messageDataType = '';
+  /**
+   * @var Space
+   */
+  public $space;
   protected $spaceType = Space::class;
   protected $spaceDataType = '';
-  protected $threadType = Thread::class;
-  protected $threadDataType = '';
   /**
    * @var string
    */
@@ -59,6 +71,10 @@ class DeprecatedEvent extends \Google\Model
    * @var string
    */
   public $type;
+  /**
+   * @var User
+   */
+  public $user;
   protected $userType = User::class;
   protected $userDataType = '';
 
@@ -75,20 +91,6 @@ class DeprecatedEvent extends \Google\Model
   public function getAction()
   {
     return $this->action;
-  }
-  /**
-   * @param AppCommandMetadata
-   */
-  public function setAppCommandMetadata(AppCommandMetadata $appCommandMetadata)
-  {
-    $this->appCommandMetadata = $appCommandMetadata;
-  }
-  /**
-   * @return AppCommandMetadata
-   */
-  public function getAppCommandMetadata()
-  {
-    return $this->appCommandMetadata;
   }
   /**
    * @param CommonEventObject
@@ -187,20 +189,6 @@ class DeprecatedEvent extends \Google\Model
   public function getSpace()
   {
     return $this->space;
-  }
-  /**
-   * @param Thread
-   */
-  public function setThread(Thread $thread)
-  {
-    $this->thread = $thread;
-  }
-  /**
-   * @return Thread
-   */
-  public function getThread()
-  {
-    return $this->thread;
   }
   /**
    * @param string

@@ -39,7 +39,6 @@ class SettingsDatasources extends \Google\Service\Resource
    * @param DataSource $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create(DataSource $postBody, $optParams = [])
   {
@@ -58,7 +57,6 @@ class SettingsDatasources extends \Google\Service\Resource
    * @opt_param bool debugOptions.enableDebugging If you are asked by Google to
    * help with debugging, set this field. Otherwise, ignore this field.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -77,7 +75,6 @@ class SettingsDatasources extends \Google\Service\Resource
    * @opt_param bool debugOptions.enableDebugging If you are asked by Google to
    * help with debugging, set this field. Otherwise, ignore this field.
    * @return DataSource
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -97,7 +94,6 @@ class SettingsDatasources extends \Google\Service\Resource
    * The max value is 1000. The default value is 1000.
    * @opt_param string pageToken Starting index of the results.
    * @return ListDataSourceResponse
-   * @throws \Google\Service\Exception
    */
   public function listSettingsDatasources($optParams = [])
   {
@@ -126,7 +122,6 @@ class SettingsDatasources extends \Google\Service\Resource
    * `update_mask` is not present or empty or has the value `*`, then all fields
    * are updated.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, DataSource $postBody, $optParams = [])
   {
@@ -143,7 +138,6 @@ class SettingsDatasources extends \Google\Service\Resource
    * @param UpdateDataSourceRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function update($name, UpdateDataSourceRequest $postBody, $optParams = [])
   {

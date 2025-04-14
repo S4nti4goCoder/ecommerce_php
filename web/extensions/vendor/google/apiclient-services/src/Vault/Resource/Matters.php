@@ -48,7 +48,6 @@ class Matters extends \Google\Service\Resource
    * @param AddMatterPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return MatterPermission
-   * @throws \Google\Service\Exception
    */
   public function addPermissions($matterId, AddMatterPermissionsRequest $postBody, $optParams = [])
   {
@@ -64,7 +63,6 @@ class Matters extends \Google\Service\Resource
    * @param CloseMatterRequest $postBody
    * @param array $optParams Optional parameters.
    * @return CloseMatterResponse
-   * @throws \Google\Service\Exception
    */
   public function close($matterId, CloseMatterRequest $postBody, $optParams = [])
   {
@@ -79,7 +77,6 @@ class Matters extends \Google\Service\Resource
    * @param CountArtifactsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function count($matterId, CountArtifactsRequest $postBody, $optParams = [])
   {
@@ -95,7 +92,6 @@ class Matters extends \Google\Service\Resource
    * @param Matter $postBody
    * @param array $optParams Optional parameters.
    * @return Matter
-   * @throws \Google\Service\Exception
    */
   public function create(Matter $postBody, $optParams = [])
   {
@@ -110,7 +106,6 @@ class Matters extends \Google\Service\Resource
    * @param string $matterId The matter ID
    * @param array $optParams Optional parameters.
    * @return Matter
-   * @throws \Google\Service\Exception
    */
   public function delete($matterId, $optParams = [])
   {
@@ -127,7 +122,6 @@ class Matters extends \Google\Service\Resource
    * @opt_param string view Specifies how much information about the matter to
    * return in the response.
    * @return Matter
-   * @throws \Google\Service\Exception
    */
   public function get($matterId, $optParams = [])
   {
@@ -148,7 +142,6 @@ class Matters extends \Google\Service\Resource
    * @opt_param string view Specifies how much information about the matter to
    * return in response.
    * @return ListMattersResponse
-   * @throws \Google\Service\Exception
    */
   public function listMatters($optParams = [])
   {
@@ -163,7 +156,6 @@ class Matters extends \Google\Service\Resource
    * @param RemoveMatterPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return VaultEmpty
-   * @throws \Google\Service\Exception
    */
   public function removePermissions($matterId, RemoveMatterPermissionsRequest $postBody, $optParams = [])
   {
@@ -179,7 +171,6 @@ class Matters extends \Google\Service\Resource
    * @param ReopenMatterRequest $postBody
    * @param array $optParams Optional parameters.
    * @return ReopenMatterResponse
-   * @throws \Google\Service\Exception
    */
   public function reopen($matterId, ReopenMatterRequest $postBody, $optParams = [])
   {
@@ -195,7 +186,6 @@ class Matters extends \Google\Service\Resource
    * @param UndeleteMatterRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Matter
-   * @throws \Google\Service\Exception
    */
   public function undelete($matterId, UndeleteMatterRequest $postBody, $optParams = [])
   {
@@ -212,7 +202,6 @@ class Matters extends \Google\Service\Resource
    * @param Matter $postBody
    * @param array $optParams Optional parameters.
    * @return Matter
-   * @throws \Google\Service\Exception
    */
   public function update($matterId, Matter $postBody, $optParams = [])
   {

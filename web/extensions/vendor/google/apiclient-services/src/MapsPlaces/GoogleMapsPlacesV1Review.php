@@ -19,20 +19,20 @@ namespace Google\Service\MapsPlaces;
 
 class GoogleMapsPlacesV1Review extends \Google\Model
 {
+  /**
+   * @var GoogleMapsPlacesV1AuthorAttribution
+   */
+  public $authorAttribution;
   protected $authorAttributionType = GoogleMapsPlacesV1AuthorAttribution::class;
   protected $authorAttributionDataType = '';
   /**
    * @var string
    */
-  public $flagContentUri;
-  /**
-   * @var string
-   */
-  public $googleMapsUri;
-  /**
-   * @var string
-   */
   public $name;
+  /**
+   * @var GoogleTypeLocalizedText
+   */
+  public $originalText;
   protected $originalTextType = GoogleTypeLocalizedText::class;
   protected $originalTextDataType = '';
   /**
@@ -44,6 +44,10 @@ class GoogleMapsPlacesV1Review extends \Google\Model
    * @var string
    */
   public $relativePublishTimeDescription;
+  /**
+   * @var GoogleTypeLocalizedText
+   */
+  public $text;
   protected $textType = GoogleTypeLocalizedText::class;
   protected $textDataType = '';
 
@@ -60,34 +64,6 @@ class GoogleMapsPlacesV1Review extends \Google\Model
   public function getAuthorAttribution()
   {
     return $this->authorAttribution;
-  }
-  /**
-   * @param string
-   */
-  public function setFlagContentUri($flagContentUri)
-  {
-    $this->flagContentUri = $flagContentUri;
-  }
-  /**
-   * @return string
-   */
-  public function getFlagContentUri()
-  {
-    return $this->flagContentUri;
-  }
-  /**
-   * @param string
-   */
-  public function setGoogleMapsUri($googleMapsUri)
-  {
-    $this->googleMapsUri = $googleMapsUri;
-  }
-  /**
-   * @return string
-   */
-  public function getGoogleMapsUri()
-  {
-    return $this->googleMapsUri;
   }
   /**
    * @param string

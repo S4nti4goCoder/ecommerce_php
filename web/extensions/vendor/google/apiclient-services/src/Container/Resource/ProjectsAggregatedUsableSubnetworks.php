@@ -50,7 +50,6 @@ class ProjectsAggregatedUsableSubnetworks extends \Google\Service\Resource
    * nextPageToken returned by previous list requests to get the next page of
    * results.
    * @return ListUsableSubnetworksResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsAggregatedUsableSubnetworks($parent, $optParams = [])
   {

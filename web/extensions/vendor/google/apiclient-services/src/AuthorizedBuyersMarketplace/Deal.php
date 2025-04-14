@@ -17,9 +17,8 @@
 
 namespace Google\Service\AuthorizedBuyersMarketplace;
 
-class Deal extends \Google\Collection
+class Deal extends \Google\Model
 {
-  protected $collection_key = 'eligibleSeatIds';
   /**
    * @var string
    */
@@ -36,12 +35,20 @@ class Deal extends \Google\Collection
    * @var string
    */
   public $createTime;
+  /**
+   * @var CreativeRequirements
+   */
+  public $creativeRequirements;
   protected $creativeRequirementsType = CreativeRequirements::class;
   protected $creativeRequirementsDataType = '';
   /**
    * @var string
    */
   public $dealType;
+  /**
+   * @var DeliveryControl
+   */
+  public $deliveryControl;
   protected $deliveryControlType = DeliveryControl::class;
   protected $deliveryControlDataType = '';
   /**
@@ -53,9 +60,9 @@ class Deal extends \Google\Collection
    */
   public $displayName;
   /**
-   * @var string[]
+   * @var Money
    */
-  public $eligibleSeatIds;
+  public $estimatedGrossSpend;
   protected $estimatedGrossSpendType = Money::class;
   protected $estimatedGrossSpendDataType = '';
   /**
@@ -66,16 +73,26 @@ class Deal extends \Google\Collection
    * @var string
    */
   public $flightStartTime;
-  protected $mediaPlannerType = MediaPlanner::class;
-  protected $mediaPlannerDataType = '';
   /**
    * @var string
    */
   public $name;
+  /**
+   * @var PreferredDealTerms
+   */
+  public $preferredDealTerms;
   protected $preferredDealTermsType = PreferredDealTerms::class;
   protected $preferredDealTermsDataType = '';
+  /**
+   * @var PrivateAuctionTerms
+   */
+  public $privateAuctionTerms;
   protected $privateAuctionTermsType = PrivateAuctionTerms::class;
   protected $privateAuctionTermsDataType = '';
+  /**
+   * @var ProgrammaticGuaranteedTerms
+   */
+  public $programmaticGuaranteedTerms;
   protected $programmaticGuaranteedTermsType = ProgrammaticGuaranteedTerms::class;
   protected $programmaticGuaranteedTermsDataType = '';
   /**
@@ -86,8 +103,16 @@ class Deal extends \Google\Collection
    * @var string
    */
   public $publisherProfile;
+  /**
+   * @var TimeZone
+   */
+  public $sellerTimeZone;
   protected $sellerTimeZoneType = TimeZone::class;
   protected $sellerTimeZoneDataType = '';
+  /**
+   * @var MarketplaceTargeting
+   */
+  public $targeting;
   protected $targetingType = MarketplaceTargeting::class;
   protected $targetingDataType = '';
   /**
@@ -222,20 +247,6 @@ class Deal extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * @param string[]
-   */
-  public function setEligibleSeatIds($eligibleSeatIds)
-  {
-    $this->eligibleSeatIds = $eligibleSeatIds;
-  }
-  /**
-   * @return string[]
-   */
-  public function getEligibleSeatIds()
-  {
-    return $this->eligibleSeatIds;
-  }
-  /**
    * @param Money
    */
   public function setEstimatedGrossSpend(Money $estimatedGrossSpend)
@@ -276,20 +287,6 @@ class Deal extends \Google\Collection
   public function getFlightStartTime()
   {
     return $this->flightStartTime;
-  }
-  /**
-   * @param MediaPlanner
-   */
-  public function setMediaPlanner(MediaPlanner $mediaPlanner)
-  {
-    $this->mediaPlanner = $mediaPlanner;
-  }
-  /**
-   * @return MediaPlanner
-   */
-  public function getMediaPlanner()
-  {
-    return $this->mediaPlanner;
   }
   /**
    * @param string

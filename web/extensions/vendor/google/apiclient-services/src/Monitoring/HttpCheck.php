@@ -20,8 +20,16 @@ namespace Google\Service\Monitoring;
 class HttpCheck extends \Google\Collection
 {
   protected $collection_key = 'acceptedResponseStatusCodes';
+  /**
+   * @var ResponseStatusCode[]
+   */
+  public $acceptedResponseStatusCodes;
   protected $acceptedResponseStatusCodesType = ResponseStatusCode::class;
   protected $acceptedResponseStatusCodesDataType = 'array';
+  /**
+   * @var BasicAuthentication
+   */
+  public $authInfo;
   protected $authInfoType = BasicAuthentication::class;
   protected $authInfoDataType = '';
   /**
@@ -48,6 +56,10 @@ class HttpCheck extends \Google\Collection
    * @var string
    */
   public $path;
+  /**
+   * @var PingConfig
+   */
+  public $pingConfig;
   protected $pingConfigType = PingConfig::class;
   protected $pingConfigDataType = '';
   /**
@@ -58,8 +70,6 @@ class HttpCheck extends \Google\Collection
    * @var string
    */
   public $requestMethod;
-  protected $serviceAgentAuthenticationType = ServiceAgentAuthentication::class;
-  protected $serviceAgentAuthenticationDataType = '';
   /**
    * @var bool
    */
@@ -222,20 +232,6 @@ class HttpCheck extends \Google\Collection
   public function getRequestMethod()
   {
     return $this->requestMethod;
-  }
-  /**
-   * @param ServiceAgentAuthentication
-   */
-  public function setServiceAgentAuthentication(ServiceAgentAuthentication $serviceAgentAuthentication)
-  {
-    $this->serviceAgentAuthentication = $serviceAgentAuthentication;
-  }
-  /**
-   * @return ServiceAgentAuthentication
-   */
-  public function getServiceAgentAuthentication()
-  {
-    return $this->serviceAgentAuthentication;
   }
   /**
    * @param bool

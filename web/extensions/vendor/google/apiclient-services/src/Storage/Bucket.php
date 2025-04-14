@@ -20,22 +20,50 @@ namespace Google\Service\Storage;
 class Bucket extends \Google\Collection
 {
   protected $collection_key = 'defaultObjectAcl';
+  /**
+   * @var BucketAccessControl[]
+   */
+  public $acl;
   protected $aclType = BucketAccessControl::class;
   protected $aclDataType = 'array';
+  /**
+   * @var BucketAutoclass
+   */
+  public $autoclass;
   protected $autoclassType = BucketAutoclass::class;
   protected $autoclassDataType = '';
+  /**
+   * @var BucketBilling
+   */
+  public $billing;
   protected $billingType = BucketBilling::class;
   protected $billingDataType = '';
+  /**
+   * @var BucketCors[]
+   */
+  public $cors;
   protected $corsType = BucketCors::class;
   protected $corsDataType = 'array';
+  /**
+   * @var BucketCustomPlacementConfig
+   */
+  public $customPlacementConfig;
   protected $customPlacementConfigType = BucketCustomPlacementConfig::class;
   protected $customPlacementConfigDataType = '';
   /**
    * @var bool
    */
   public $defaultEventBasedHold;
+  /**
+   * @var ObjectAccessControl[]
+   */
+  public $defaultObjectAcl;
   protected $defaultObjectAclType = ObjectAccessControl::class;
   protected $defaultObjectAclDataType = 'array';
+  /**
+   * @var BucketEncryption
+   */
+  public $encryption;
   protected $encryptionType = BucketEncryption::class;
   protected $encryptionDataType = '';
   /**
@@ -43,23 +71,15 @@ class Bucket extends \Google\Collection
    */
   public $etag;
   /**
-   * @var string
+   * @var BucketIamConfiguration
    */
-  public $generation;
-  /**
-   * @var string
-   */
-  public $hardDeleteTime;
-  protected $hierarchicalNamespaceType = BucketHierarchicalNamespace::class;
-  protected $hierarchicalNamespaceDataType = '';
+  public $iamConfiguration;
   protected $iamConfigurationType = BucketIamConfiguration::class;
   protected $iamConfigurationDataType = '';
   /**
    * @var string
    */
   public $id;
-  protected $ipFilterType = BucketIpFilter::class;
-  protected $ipFilterDataType = '';
   /**
    * @var string
    */
@@ -68,6 +88,10 @@ class Bucket extends \Google\Collection
    * @var string[]
    */
   public $labels;
+  /**
+   * @var BucketLifecycle
+   */
+  public $lifecycle;
   protected $lifecycleType = BucketLifecycle::class;
   protected $lifecycleDataType = '';
   /**
@@ -78,6 +102,10 @@ class Bucket extends \Google\Collection
    * @var string
    */
   public $locationType;
+  /**
+   * @var BucketLogging
+   */
+  public $logging;
   protected $loggingType = BucketLogging::class;
   protected $loggingDataType = '';
   /**
@@ -88,14 +116,26 @@ class Bucket extends \Google\Collection
    * @var string
    */
   public $name;
+  /**
+   * @var BucketObjectRetention
+   */
+  public $objectRetention;
   protected $objectRetentionType = BucketObjectRetention::class;
   protected $objectRetentionDataType = '';
+  /**
+   * @var BucketOwner
+   */
+  public $owner;
   protected $ownerType = BucketOwner::class;
   protected $ownerDataType = '';
   /**
    * @var string
    */
   public $projectNumber;
+  /**
+   * @var BucketRetentionPolicy
+   */
+  public $retentionPolicy;
   protected $retentionPolicyType = BucketRetentionPolicy::class;
   protected $retentionPolicyDataType = '';
   /**
@@ -105,21 +145,17 @@ class Bucket extends \Google\Collection
   /**
    * @var bool
    */
-  public $satisfiesPZI;
-  /**
-   * @var bool
-   */
   public $satisfiesPZS;
   /**
    * @var string
    */
   public $selfLink;
+  /**
+   * @var BucketSoftDeletePolicy
+   */
+  public $softDeletePolicy;
   protected $softDeletePolicyType = BucketSoftDeletePolicy::class;
   protected $softDeletePolicyDataType = '';
-  /**
-   * @var string
-   */
-  public $softDeleteTime;
   /**
    * @var string
    */
@@ -132,8 +168,16 @@ class Bucket extends \Google\Collection
    * @var string
    */
   public $updated;
+  /**
+   * @var BucketVersioning
+   */
+  public $versioning;
   protected $versioningType = BucketVersioning::class;
   protected $versioningDataType = '';
+  /**
+   * @var BucketWebsite
+   */
+  public $website;
   protected $websiteType = BucketWebsite::class;
   protected $websiteDataType = '';
 
@@ -264,48 +308,6 @@ class Bucket extends \Google\Collection
     return $this->etag;
   }
   /**
-   * @param string
-   */
-  public function setGeneration($generation)
-  {
-    $this->generation = $generation;
-  }
-  /**
-   * @return string
-   */
-  public function getGeneration()
-  {
-    return $this->generation;
-  }
-  /**
-   * @param string
-   */
-  public function setHardDeleteTime($hardDeleteTime)
-  {
-    $this->hardDeleteTime = $hardDeleteTime;
-  }
-  /**
-   * @return string
-   */
-  public function getHardDeleteTime()
-  {
-    return $this->hardDeleteTime;
-  }
-  /**
-   * @param BucketHierarchicalNamespace
-   */
-  public function setHierarchicalNamespace(BucketHierarchicalNamespace $hierarchicalNamespace)
-  {
-    $this->hierarchicalNamespace = $hierarchicalNamespace;
-  }
-  /**
-   * @return BucketHierarchicalNamespace
-   */
-  public function getHierarchicalNamespace()
-  {
-    return $this->hierarchicalNamespace;
-  }
-  /**
    * @param BucketIamConfiguration
    */
   public function setIamConfiguration(BucketIamConfiguration $iamConfiguration)
@@ -332,20 +334,6 @@ class Bucket extends \Google\Collection
   public function getId()
   {
     return $this->id;
-  }
-  /**
-   * @param BucketIpFilter
-   */
-  public function setIpFilter(BucketIpFilter $ipFilter)
-  {
-    $this->ipFilter = $ipFilter;
-  }
-  /**
-   * @return BucketIpFilter
-   */
-  public function getIpFilter()
-  {
-    return $this->ipFilter;
   }
   /**
    * @param string
@@ -532,20 +520,6 @@ class Bucket extends \Google\Collection
   /**
    * @param bool
    */
-  public function setSatisfiesPZI($satisfiesPZI)
-  {
-    $this->satisfiesPZI = $satisfiesPZI;
-  }
-  /**
-   * @return bool
-   */
-  public function getSatisfiesPZI()
-  {
-    return $this->satisfiesPZI;
-  }
-  /**
-   * @param bool
-   */
   public function setSatisfiesPZS($satisfiesPZS)
   {
     $this->satisfiesPZS = $satisfiesPZS;
@@ -584,20 +558,6 @@ class Bucket extends \Google\Collection
   public function getSoftDeletePolicy()
   {
     return $this->softDeletePolicy;
-  }
-  /**
-   * @param string
-   */
-  public function setSoftDeleteTime($softDeleteTime)
-  {
-    $this->softDeleteTime = $softDeleteTime;
-  }
-  /**
-   * @return string
-   */
-  public function getSoftDeleteTime()
-  {
-    return $this->softDeleteTime;
   }
   /**
    * @param string

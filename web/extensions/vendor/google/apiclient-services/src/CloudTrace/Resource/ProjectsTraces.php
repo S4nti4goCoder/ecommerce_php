@@ -39,7 +39,6 @@ class ProjectsTraces extends \Google\Service\Resource
    * @param BatchWriteSpansRequest $postBody
    * @param array $optParams Optional parameters.
    * @return CloudtraceEmpty
-   * @throws \Google\Service\Exception
    */
   public function batchWrite($name, BatchWriteSpansRequest $postBody, $optParams = [])
   {

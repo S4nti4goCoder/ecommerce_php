@@ -30,12 +30,8 @@ use Google\Service\Compute\InstanceGroupManagersListManagedInstancesResponse;
 use Google\Service\Compute\InstanceGroupManagersListPerInstanceConfigsResp;
 use Google\Service\Compute\InstanceGroupManagersPatchPerInstanceConfigsReq;
 use Google\Service\Compute\InstanceGroupManagersRecreateInstancesRequest;
-use Google\Service\Compute\InstanceGroupManagersResumeInstancesRequest;
 use Google\Service\Compute\InstanceGroupManagersSetInstanceTemplateRequest;
 use Google\Service\Compute\InstanceGroupManagersSetTargetPoolsRequest;
-use Google\Service\Compute\InstanceGroupManagersStartInstancesRequest;
-use Google\Service\Compute\InstanceGroupManagersStopInstancesRequest;
-use Google\Service\Compute\InstanceGroupManagersSuspendInstancesRequest;
 use Google\Service\Compute\InstanceGroupManagersUpdatePerInstanceConfigsReq;
 use Google\Service\Compute\Operation;
 
@@ -81,7 +77,6 @@ class InstanceGroupManagers extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function abandonInstances($project, $zone, $instanceGroupManager, InstanceGroupManagersAbandonInstancesRequest $postBody, $optParams = [])
   {
@@ -90,9 +85,8 @@ class InstanceGroupManagers extends \Google\Service\Resource
     return $this->call('abandonInstances', [$params], Operation::class);
   }
   /**
-   * Retrieves the list of managed instance groups and groups them by zone. To
-   * prevent failure, Google recommends that you set the `returnPartialSuccess`
-   * parameter to `true`. (instanceGroupManagers.aggregatedList)
+   * Retrieves the list of managed instance groups and groups them by zone.
+   * (instanceGroupManagers.aggregatedList)
    *
    * @param string $project Project ID for this request.
    * @param array $optParams Optional parameters.
@@ -154,14 +148,9 @@ class InstanceGroupManagers extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
-   * @opt_param string serviceProjectNumber The Shared VPC service project id or
-   * service project number for which aggregated list request is invoked for
-   * subnetworks list-usable api.
+   * false.
+   * @opt_param string serviceProjectNumber
    * @return InstanceGroupManagerAggregatedList
-   * @throws \Google\Service\Exception
    */
   public function aggregatedList($project, $optParams = [])
   {
@@ -182,7 +171,6 @@ class InstanceGroupManagers extends \Google\Service\Resource
    * @param InstanceGroupManagersApplyUpdatesRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function applyUpdatesToInstances($project, $zone, $instanceGroupManager, InstanceGroupManagersApplyUpdatesRequest $postBody, $optParams = [])
   {
@@ -216,7 +204,6 @@ class InstanceGroupManagers extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function createInstances($project, $zone, $instanceGroupManager, InstanceGroupManagersCreateInstancesRequest $postBody, $optParams = [])
   {
@@ -248,7 +235,6 @@ class InstanceGroupManagers extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($project, $zone, $instanceGroupManager, $optParams = [])
   {
@@ -287,7 +273,6 @@ class InstanceGroupManagers extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function deleteInstances($project, $zone, $instanceGroupManager, InstanceGroupManagersDeleteInstancesRequest $postBody, $optParams = [])
   {
@@ -307,7 +292,6 @@ class InstanceGroupManagers extends \Google\Service\Resource
    * @param InstanceGroupManagersDeletePerInstanceConfigsReq $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function deletePerInstanceConfigs($project, $zone, $instanceGroupManager, InstanceGroupManagersDeletePerInstanceConfigsReq $postBody, $optParams = [])
   {
@@ -325,7 +309,6 @@ class InstanceGroupManagers extends \Google\Service\Resource
    * @param string $instanceGroupManager The name of the managed instance group.
    * @param array $optParams Optional parameters.
    * @return InstanceGroupManager
-   * @throws \Google\Service\Exception
    */
   public function get($project, $zone, $instanceGroupManager, $optParams = [])
   {
@@ -360,7 +343,6 @@ class InstanceGroupManagers extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function insert($project, $zone, InstanceGroupManager $postBody, $optParams = [])
   {
@@ -427,11 +409,8 @@ class InstanceGroupManagers extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
+   * false.
    * @return InstanceGroupManagerList
-   * @throws \Google\Service\Exception
    */
   public function listInstanceGroupManagers($project, $zone, $optParams = [])
   {
@@ -503,11 +482,8 @@ class InstanceGroupManagers extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
+   * false.
    * @return InstanceGroupManagersListErrorsResponse
-   * @throws \Google\Service\Exception
    */
   public function listErrors($project, $zone, $instanceGroupManager, $optParams = [])
   {
@@ -581,11 +557,8 @@ class InstanceGroupManagers extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
+   * false.
    * @return InstanceGroupManagersListManagedInstancesResponse
-   * @throws \Google\Service\Exception
    */
   public function listManagedInstances($project, $zone, $instanceGroupManager, $optParams = [])
   {
@@ -655,11 +628,8 @@ class InstanceGroupManagers extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
+   * false.
    * @return InstanceGroupManagersListPerInstanceConfigsResp
-   * @throws \Google\Service\Exception
    */
   public function listPerInstanceConfigs($project, $zone, $instanceGroupManager, $optParams = [])
   {
@@ -697,7 +667,6 @@ class InstanceGroupManagers extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($project, $zone, $instanceGroupManager, InstanceGroupManager $postBody, $optParams = [])
   {
@@ -729,7 +698,6 @@ class InstanceGroupManagers extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patchPerInstanceConfigs($project, $zone, $instanceGroupManager, InstanceGroupManagersPatchPerInstanceConfigsReq $postBody, $optParams = [])
   {
@@ -768,7 +736,6 @@ class InstanceGroupManagers extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function recreateInstances($project, $zone, $instanceGroupManager, InstanceGroupManagersRecreateInstancesRequest $postBody, $optParams = [])
   {
@@ -814,54 +781,12 @@ class InstanceGroupManagers extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function resize($project, $zone, $instanceGroupManager, $size, $optParams = [])
   {
     $params = ['project' => $project, 'zone' => $zone, 'instanceGroupManager' => $instanceGroupManager, 'size' => $size];
     $params = array_merge($params, $optParams);
     return $this->call('resize', [$params], Operation::class);
-  }
-  /**
-   * Flags the specified instances in the managed instance group to be resumed.
-   * This method increases the targetSize and decreases the targetSuspendedSize of
-   * the managed instance group by the number of instances that you resume. The
-   * resumeInstances operation is marked DONE if the resumeInstances request is
-   * successful. The underlying actions take additional time. You must separately
-   * verify the status of the RESUMING action with the listmanagedinstances
-   * method. In this request, you can only specify instances that are suspended.
-   * For example, if an instance was previously suspended using the
-   * suspendInstances method, it can be resumed using the resumeInstances method.
-   * If a health check is attached to the managed instance group, the specified
-   * instances will be verified as healthy after they are resumed. You can specify
-   * a maximum of 1000 instances with this method per request.
-   * (instanceGroupManagers.resumeInstances)
-   *
-   * @param string $project Project ID for this request.
-   * @param string $zone The name of the zone where the managed instance group is
-   * located.
-   * @param string $instanceGroupManager The name of the managed instance group.
-   * @param InstanceGroupManagersResumeInstancesRequest $postBody
-   * @param array $optParams Optional parameters.
-   *
-   * @opt_param string requestId An optional request ID to identify requests.
-   * Specify a unique request ID so that if you must retry your request, the
-   * server will know to ignore the request if it has already been completed. For
-   * example, consider a situation where you make an initial request and the
-   * request times out. If you make the request again with the same request ID,
-   * the server can check if original operation with the same request ID was
-   * received, and if so, will ignore the second request. This prevents clients
-   * from accidentally creating duplicate commitments. The request ID must be a
-   * valid UUID with the exception that zero UUID is not supported (
-   * 00000000-0000-0000-0000-000000000000).
-   * @return Operation
-   * @throws \Google\Service\Exception
-   */
-  public function resumeInstances($project, $zone, $instanceGroupManager, InstanceGroupManagersResumeInstancesRequest $postBody, $optParams = [])
-  {
-    $params = ['project' => $project, 'zone' => $zone, 'instanceGroupManager' => $instanceGroupManager, 'postBody' => $postBody];
-    $params = array_merge($params, $optParams);
-    return $this->call('resumeInstances', [$params], Operation::class);
   }
   /**
    * Specifies the instance template to use when creating new instances in this
@@ -887,7 +812,6 @@ class InstanceGroupManagers extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function setInstanceTemplate($project, $zone, $instanceGroupManager, InstanceGroupManagersSetInstanceTemplateRequest $postBody, $optParams = [])
   {
@@ -922,147 +846,12 @@ class InstanceGroupManagers extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function setTargetPools($project, $zone, $instanceGroupManager, InstanceGroupManagersSetTargetPoolsRequest $postBody, $optParams = [])
   {
     $params = ['project' => $project, 'zone' => $zone, 'instanceGroupManager' => $instanceGroupManager, 'postBody' => $postBody];
     $params = array_merge($params, $optParams);
     return $this->call('setTargetPools', [$params], Operation::class);
-  }
-  /**
-   * Flags the specified instances in the managed instance group to be started.
-   * This method increases the targetSize and decreases the targetStoppedSize of
-   * the managed instance group by the number of instances that you start. The
-   * startInstances operation is marked DONE if the startInstances request is
-   * successful. The underlying actions take additional time. You must separately
-   * verify the status of the STARTING action with the listmanagedinstances
-   * method. In this request, you can only specify instances that are stopped. For
-   * example, if an instance was previously stopped using the stopInstances
-   * method, it can be started using the startInstances method. If a health check
-   * is attached to the managed instance group, the specified instances will be
-   * verified as healthy after they are started. You can specify a maximum of 1000
-   * instances with this method per request.
-   * (instanceGroupManagers.startInstances)
-   *
-   * @param string $project Project ID for this request.
-   * @param string $zone The name of the zone where the managed instance group is
-   * located.
-   * @param string $instanceGroupManager The name of the managed instance group.
-   * @param InstanceGroupManagersStartInstancesRequest $postBody
-   * @param array $optParams Optional parameters.
-   *
-   * @opt_param string requestId An optional request ID to identify requests.
-   * Specify a unique request ID so that if you must retry your request, the
-   * server will know to ignore the request if it has already been completed. For
-   * example, consider a situation where you make an initial request and the
-   * request times out. If you make the request again with the same request ID,
-   * the server can check if original operation with the same request ID was
-   * received, and if so, will ignore the second request. This prevents clients
-   * from accidentally creating duplicate commitments. The request ID must be a
-   * valid UUID with the exception that zero UUID is not supported (
-   * 00000000-0000-0000-0000-000000000000).
-   * @return Operation
-   * @throws \Google\Service\Exception
-   */
-  public function startInstances($project, $zone, $instanceGroupManager, InstanceGroupManagersStartInstancesRequest $postBody, $optParams = [])
-  {
-    $params = ['project' => $project, 'zone' => $zone, 'instanceGroupManager' => $instanceGroupManager, 'postBody' => $postBody];
-    $params = array_merge($params, $optParams);
-    return $this->call('startInstances', [$params], Operation::class);
-  }
-  /**
-   * Flags the specified instances in the managed instance group to be immediately
-   * stopped. You can only specify instances that are running in this request.
-   * This method reduces the targetSize and increases the targetStoppedSize of the
-   * managed instance group by the number of instances that you stop. The
-   * stopInstances operation is marked DONE if the stopInstances request is
-   * successful. The underlying actions take additional time. You must separately
-   * verify the status of the STOPPING action with the listmanagedinstances
-   * method. If the standbyPolicy.initialDelaySec field is set, the group delays
-   * stopping the instances until initialDelaySec have passed from
-   * instance.creationTimestamp (that is, when the instance was created). This
-   * delay gives your application time to set itself up and initialize on the
-   * instance. If more than initialDelaySec seconds have passed since
-   * instance.creationTimestamp when this method is called, there will be zero
-   * delay. If the group is part of a backend service that has enabled connection
-   * draining, it can take up to 60 seconds after the connection draining duration
-   * has elapsed before the VM instance is stopped. Stopped instances can be
-   * started using the startInstances method. You can specify a maximum of 1000
-   * instances with this method per request. (instanceGroupManagers.stopInstances)
-   *
-   * @param string $project Project ID for this request.
-   * @param string $zone The name of the zone where the managed instance group is
-   * located.
-   * @param string $instanceGroupManager The name of the managed instance group.
-   * @param InstanceGroupManagersStopInstancesRequest $postBody
-   * @param array $optParams Optional parameters.
-   *
-   * @opt_param string requestId An optional request ID to identify requests.
-   * Specify a unique request ID so that if you must retry your request, the
-   * server will know to ignore the request if it has already been completed. For
-   * example, consider a situation where you make an initial request and the
-   * request times out. If you make the request again with the same request ID,
-   * the server can check if original operation with the same request ID was
-   * received, and if so, will ignore the second request. This prevents clients
-   * from accidentally creating duplicate commitments. The request ID must be a
-   * valid UUID with the exception that zero UUID is not supported (
-   * 00000000-0000-0000-0000-000000000000).
-   * @return Operation
-   * @throws \Google\Service\Exception
-   */
-  public function stopInstances($project, $zone, $instanceGroupManager, InstanceGroupManagersStopInstancesRequest $postBody, $optParams = [])
-  {
-    $params = ['project' => $project, 'zone' => $zone, 'instanceGroupManager' => $instanceGroupManager, 'postBody' => $postBody];
-    $params = array_merge($params, $optParams);
-    return $this->call('stopInstances', [$params], Operation::class);
-  }
-  /**
-   * Flags the specified instances in the managed instance group to be immediately
-   * suspended. You can only specify instances that are running in this request.
-   * This method reduces the targetSize and increases the targetSuspendedSize of
-   * the managed instance group by the number of instances that you suspend. The
-   * suspendInstances operation is marked DONE if the suspendInstances request is
-   * successful. The underlying actions take additional time. You must separately
-   * verify the status of the SUSPENDING action with the listmanagedinstances
-   * method. If the standbyPolicy.initialDelaySec field is set, the group delays
-   * suspension of the instances until initialDelaySec have passed from
-   * instance.creationTimestamp (that is, when the instance was created). This
-   * delay gives your application time to set itself up and initialize on the
-   * instance. If more than initialDelaySec seconds have passed since
-   * instance.creationTimestamp when this method is called, there will be zero
-   * delay. If the group is part of a backend service that has enabled connection
-   * draining, it can take up to 60 seconds after the connection draining duration
-   * has elapsed before the VM instance is suspended. Suspended instances can be
-   * resumed using the resumeInstances method. You can specify a maximum of 1000
-   * instances with this method per request.
-   * (instanceGroupManagers.suspendInstances)
-   *
-   * @param string $project Project ID for this request.
-   * @param string $zone The name of the zone where the managed instance group is
-   * located.
-   * @param string $instanceGroupManager The name of the managed instance group.
-   * @param InstanceGroupManagersSuspendInstancesRequest $postBody
-   * @param array $optParams Optional parameters.
-   *
-   * @opt_param string requestId An optional request ID to identify requests.
-   * Specify a unique request ID so that if you must retry your request, the
-   * server will know to ignore the request if it has already been completed. For
-   * example, consider a situation where you make an initial request and the
-   * request times out. If you make the request again with the same request ID,
-   * the server can check if original operation with the same request ID was
-   * received, and if so, will ignore the second request. This prevents clients
-   * from accidentally creating duplicate commitments. The request ID must be a
-   * valid UUID with the exception that zero UUID is not supported (
-   * 00000000-0000-0000-0000-000000000000).
-   * @return Operation
-   * @throws \Google\Service\Exception
-   */
-  public function suspendInstances($project, $zone, $instanceGroupManager, InstanceGroupManagersSuspendInstancesRequest $postBody, $optParams = [])
-  {
-    $params = ['project' => $project, 'zone' => $zone, 'instanceGroupManager' => $instanceGroupManager, 'postBody' => $postBody];
-    $params = array_merge($params, $optParams);
-    return $this->call('suspendInstances', [$params], Operation::class);
   }
   /**
    * Inserts or updates per-instance configurations for the managed instance
@@ -1088,7 +877,6 @@ class InstanceGroupManagers extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function updatePerInstanceConfigs($project, $zone, $instanceGroupManager, InstanceGroupManagersUpdatePerInstanceConfigsReq $postBody, $optParams = [])
   {

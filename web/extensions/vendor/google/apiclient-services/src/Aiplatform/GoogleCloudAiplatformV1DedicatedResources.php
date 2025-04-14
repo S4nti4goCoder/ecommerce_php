@@ -20,8 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1DedicatedResources extends \Google\Collection
 {
   protected $collection_key = 'autoscalingMetricSpecs';
+  /**
+   * @var GoogleCloudAiplatformV1AutoscalingMetricSpec[]
+   */
+  public $autoscalingMetricSpecs;
   protected $autoscalingMetricSpecsType = GoogleCloudAiplatformV1AutoscalingMetricSpec::class;
   protected $autoscalingMetricSpecsDataType = 'array';
+  /**
+   * @var GoogleCloudAiplatformV1MachineSpec
+   */
+  public $machineSpec;
   protected $machineSpecType = GoogleCloudAiplatformV1MachineSpec::class;
   protected $machineSpecDataType = '';
   /**
@@ -32,14 +40,6 @@ class GoogleCloudAiplatformV1DedicatedResources extends \Google\Collection
    * @var int
    */
   public $minReplicaCount;
-  /**
-   * @var int
-   */
-  public $requiredReplicaCount;
-  /**
-   * @var bool
-   */
-  public $spot;
 
   /**
    * @param GoogleCloudAiplatformV1AutoscalingMetricSpec[]
@@ -96,34 +96,6 @@ class GoogleCloudAiplatformV1DedicatedResources extends \Google\Collection
   public function getMinReplicaCount()
   {
     return $this->minReplicaCount;
-  }
-  /**
-   * @param int
-   */
-  public function setRequiredReplicaCount($requiredReplicaCount)
-  {
-    $this->requiredReplicaCount = $requiredReplicaCount;
-  }
-  /**
-   * @return int
-   */
-  public function getRequiredReplicaCount()
-  {
-    return $this->requiredReplicaCount;
-  }
-  /**
-   * @param bool
-   */
-  public function setSpot($spot)
-  {
-    $this->spot = $spot;
-  }
-  /**
-   * @return bool
-   */
-  public function getSpot()
-  {
-    return $this->spot;
   }
 }
 

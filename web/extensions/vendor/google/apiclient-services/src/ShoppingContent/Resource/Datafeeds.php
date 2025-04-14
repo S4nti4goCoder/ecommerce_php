@@ -40,7 +40,6 @@ class Datafeeds extends \Google\Service\Resource
    * @param DatafeedsCustomBatchRequest $postBody
    * @param array $optParams Optional parameters.
    * @return DatafeedsCustomBatchResponse
-   * @throws \Google\Service\Exception
    */
   public function custombatch(DatafeedsCustomBatchRequest $postBody, $optParams = [])
   {
@@ -56,7 +55,6 @@ class Datafeeds extends \Google\Service\Resource
    * This account cannot be a multi-client account.
    * @param string $datafeedId The ID of the datafeed.
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function delete($merchantId, $datafeedId, $optParams = [])
   {
@@ -76,7 +74,6 @@ class Datafeeds extends \Google\Service\Resource
    * @param string $datafeedId The ID of the datafeed to be fetched.
    * @param array $optParams Optional parameters.
    * @return DatafeedsFetchNowResponse
-   * @throws \Google\Service\Exception
    */
   public function fetchnow($merchantId, $datafeedId, $optParams = [])
   {
@@ -93,7 +90,6 @@ class Datafeeds extends \Google\Service\Resource
    * @param string $datafeedId The ID of the datafeed.
    * @param array $optParams Optional parameters.
    * @return Datafeed
-   * @throws \Google\Service\Exception
    */
   public function get($merchantId, $datafeedId, $optParams = [])
   {
@@ -110,7 +106,6 @@ class Datafeeds extends \Google\Service\Resource
    * @param Datafeed $postBody
    * @param array $optParams Optional parameters.
    * @return Datafeed
-   * @throws \Google\Service\Exception
    */
   public function insert($merchantId, Datafeed $postBody, $optParams = [])
   {
@@ -130,7 +125,6 @@ class Datafeeds extends \Google\Service\Resource
    * response, used for paging.
    * @opt_param string pageToken The token returned by the previous request.
    * @return DatafeedsListResponse
-   * @throws \Google\Service\Exception
    */
   public function listDatafeeds($merchantId, $optParams = [])
   {
@@ -148,7 +142,6 @@ class Datafeeds extends \Google\Service\Resource
    * @param Datafeed $postBody
    * @param array $optParams Optional parameters.
    * @return Datafeed
-   * @throws \Google\Service\Exception
    */
   public function update($merchantId, $datafeedId, Datafeed $postBody, $optParams = [])
   {

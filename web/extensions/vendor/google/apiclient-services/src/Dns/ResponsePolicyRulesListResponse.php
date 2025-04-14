@@ -21,12 +21,36 @@ class ResponsePolicyRulesListResponse extends \Google\Collection
 {
   protected $collection_key = 'responsePolicyRules';
   /**
+   * @var ResponseHeader
+   */
+  public $header;
+  protected $headerType = ResponseHeader::class;
+  protected $headerDataType = '';
+  /**
    * @var string
    */
   public $nextPageToken;
+  /**
+   * @var ResponsePolicyRule[]
+   */
+  public $responsePolicyRules;
   protected $responsePolicyRulesType = ResponsePolicyRule::class;
   protected $responsePolicyRulesDataType = 'array';
 
+  /**
+   * @param ResponseHeader
+   */
+  public function setHeader(ResponseHeader $header)
+  {
+    $this->header = $header;
+  }
+  /**
+   * @return ResponseHeader
+   */
+  public function getHeader()
+  {
+    return $this->header;
+  }
   /**
    * @param string
    */

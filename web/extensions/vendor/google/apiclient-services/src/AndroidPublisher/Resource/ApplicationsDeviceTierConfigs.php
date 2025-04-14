@@ -40,7 +40,6 @@ class ApplicationsDeviceTierConfigs extends \Google\Service\Resource
    * @opt_param bool allowUnknownDevices Whether the service should accept device
    * IDs that are unknown to Play's device catalog.
    * @return DeviceTierConfig
-   * @throws \Google\Service\Exception
    */
   public function create($packageName, DeviceTierConfig $postBody, $optParams = [])
   {
@@ -56,7 +55,6 @@ class ApplicationsDeviceTierConfigs extends \Google\Service\Resource
    * config.
    * @param array $optParams Optional parameters.
    * @return DeviceTierConfig
-   * @throws \Google\Service\Exception
    */
   public function get($packageName, $deviceTierConfigId, $optParams = [])
   {
@@ -79,7 +77,6 @@ class ApplicationsDeviceTierConfigs extends \Google\Service\Resource
    * @opt_param string pageToken A page token, received from a previous
    * `ListDeviceTierConfigs` call. Provide this to retrieve the subsequent page.
    * @return ListDeviceTierConfigsResponse
-   * @throws \Google\Service\Exception
    */
   public function listApplicationsDeviceTierConfigs($packageName, $optParams = [])
   {

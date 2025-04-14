@@ -37,7 +37,6 @@ class OperatingSystemVersions extends \Google\Service\Resource
    * @param string $id Operating system version ID.
    * @param array $optParams Optional parameters.
    * @return OperatingSystemVersion
-   * @throws \Google\Service\Exception
    */
   public function get($profileId, $id, $optParams = [])
   {
@@ -52,7 +51,6 @@ class OperatingSystemVersions extends \Google\Service\Resource
    * @param string $profileId User profile ID associated with this request.
    * @param array $optParams Optional parameters.
    * @return OperatingSystemVersionsListResponse
-   * @throws \Google\Service\Exception
    */
   public function listOperatingSystemVersions($profileId, $optParams = [])
   {

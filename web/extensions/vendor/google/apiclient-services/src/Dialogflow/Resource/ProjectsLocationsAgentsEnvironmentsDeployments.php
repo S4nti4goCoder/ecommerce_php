@@ -37,7 +37,6 @@ class ProjectsLocationsAgentsEnvironmentsDeployments extends \Google\Service\Res
    * `projects//locations//agents//environments//deployments/`.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudDialogflowCxV3Deployment
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -58,7 +57,6 @@ class ProjectsLocationsAgentsEnvironmentsDeployments extends \Google\Service\Res
    * @opt_param string pageToken The next_page_token value returned from a
    * previous list request.
    * @return GoogleCloudDialogflowCxV3ListDeploymentsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsAgentsEnvironmentsDeployments($parent, $optParams = [])
   {

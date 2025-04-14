@@ -19,6 +19,10 @@ namespace Google\Service\CloudComposer;
 
 class Environment extends \Google\Model
 {
+  /**
+   * @var EnvironmentConfig
+   */
+  public $config;
   protected $configType = EnvironmentConfig::class;
   protected $configDataType = '';
   /**
@@ -36,15 +40,15 @@ class Environment extends \Google\Model
   /**
    * @var bool
    */
-  public $satisfiesPzi;
-  /**
-   * @var bool
-   */
   public $satisfiesPzs;
   /**
    * @var string
    */
   public $state;
+  /**
+   * @var StorageConfig
+   */
+  public $storageConfig;
   protected $storageConfigType = StorageConfig::class;
   protected $storageConfigDataType = '';
   /**
@@ -111,20 +115,6 @@ class Environment extends \Google\Model
   public function getName()
   {
     return $this->name;
-  }
-  /**
-   * @param bool
-   */
-  public function setSatisfiesPzi($satisfiesPzi)
-  {
-    $this->satisfiesPzi = $satisfiesPzi;
-  }
-  /**
-   * @return bool
-   */
-  public function getSatisfiesPzi()
-  {
-    return $this->satisfiesPzi;
   }
   /**
    * @param bool

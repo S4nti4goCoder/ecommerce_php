@@ -50,7 +50,6 @@ class BiddersFilterSetsLosingBids extends \Google\Service\Resource
    * ListLosingBidsResponse.nextPageToken returned from the previous call to the
    * losingBids.list method.
    * @return ListLosingBidsResponse
-   * @throws \Google\Service\Exception
    */
   public function listBiddersFilterSetsLosingBids($filterSetName, $optParams = [])
   {

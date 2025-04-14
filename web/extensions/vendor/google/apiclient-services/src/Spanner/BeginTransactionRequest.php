@@ -19,27 +19,19 @@ namespace Google\Service\Spanner;
 
 class BeginTransactionRequest extends \Google\Model
 {
-  protected $mutationKeyType = Mutation::class;
-  protected $mutationKeyDataType = '';
+  /**
+   * @var TransactionOptions
+   */
+  public $options;
   protected $optionsType = TransactionOptions::class;
   protected $optionsDataType = '';
+  /**
+   * @var RequestOptions
+   */
+  public $requestOptions;
   protected $requestOptionsType = RequestOptions::class;
   protected $requestOptionsDataType = '';
 
-  /**
-   * @param Mutation
-   */
-  public function setMutationKey(Mutation $mutationKey)
-  {
-    $this->mutationKey = $mutationKey;
-  }
-  /**
-   * @return Mutation
-   */
-  public function getMutationKey()
-  {
-    return $this->mutationKey;
-  }
   /**
    * @param TransactionOptions
    */

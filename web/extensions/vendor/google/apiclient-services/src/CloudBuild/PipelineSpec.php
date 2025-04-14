@@ -20,18 +20,32 @@ namespace Google\Service\CloudBuild;
 class PipelineSpec extends \Google\Collection
 {
   protected $collection_key = 'workspaces';
+  /**
+   * @var PipelineTask[]
+   */
+  public $finallyTasks;
   protected $finallyTasksType = PipelineTask::class;
   protected $finallyTasksDataType = 'array';
   /**
    * @var string
    */
   public $generatedYaml;
+  /**
+   * @var ParamSpec[]
+   */
+  public $params;
   protected $paramsType = ParamSpec::class;
   protected $paramsDataType = 'array';
-  protected $resultsType = PipelineResult::class;
-  protected $resultsDataType = 'array';
+  /**
+   * @var PipelineTask[]
+   */
+  public $tasks;
   protected $tasksType = PipelineTask::class;
   protected $tasksDataType = 'array';
+  /**
+   * @var PipelineWorkspaceDeclaration[]
+   */
+  public $workspaces;
   protected $workspacesType = PipelineWorkspaceDeclaration::class;
   protected $workspacesDataType = 'array';
 
@@ -76,20 +90,6 @@ class PipelineSpec extends \Google\Collection
   public function getParams()
   {
     return $this->params;
-  }
-  /**
-   * @param PipelineResult[]
-   */
-  public function setResults($results)
-  {
-    $this->results = $results;
-  }
-  /**
-   * @return PipelineResult[]
-   */
-  public function getResults()
-  {
-    return $this->results;
   }
   /**
    * @param PipelineTask[]

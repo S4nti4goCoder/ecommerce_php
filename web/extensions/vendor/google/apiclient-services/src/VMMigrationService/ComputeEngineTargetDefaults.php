@@ -24,16 +24,20 @@ class ComputeEngineTargetDefaults extends \Google\Collection
    * @var string[]
    */
   public $additionalLicenses;
+  /**
+   * @var AppliedLicense
+   */
+  public $appliedLicense;
   protected $appliedLicenseType = AppliedLicense::class;
   protected $appliedLicenseDataType = '';
   /**
    * @var string
    */
-  public $bootConversion;
-  /**
-   * @var string
-   */
   public $bootOption;
+  /**
+   * @var ComputeScheduling
+   */
+  public $computeScheduling;
   protected $computeSchedulingType = ComputeScheduling::class;
   protected $computeSchedulingDataType = '';
   /**
@@ -41,13 +45,9 @@ class ComputeEngineTargetDefaults extends \Google\Collection
    */
   public $diskType;
   /**
-   * @var bool
+   * @var Encryption
    */
-  public $enableIntegrityMonitoring;
-  /**
-   * @var bool
-   */
-  public $enableVtpm;
+  public $encryption;
   protected $encryptionType = Encryption::class;
   protected $encryptionDataType = '';
   /**
@@ -74,6 +74,10 @@ class ComputeEngineTargetDefaults extends \Google\Collection
    * @var string[]
    */
   public $metadata;
+  /**
+   * @var NetworkInterface[]
+   */
+  public $networkInterfaces;
   protected $networkInterfacesType = NetworkInterface::class;
   protected $networkInterfacesDataType = 'array';
   /**
@@ -132,20 +136,6 @@ class ComputeEngineTargetDefaults extends \Google\Collection
   /**
    * @param string
    */
-  public function setBootConversion($bootConversion)
-  {
-    $this->bootConversion = $bootConversion;
-  }
-  /**
-   * @return string
-   */
-  public function getBootConversion()
-  {
-    return $this->bootConversion;
-  }
-  /**
-   * @param string
-   */
   public function setBootOption($bootOption)
   {
     $this->bootOption = $bootOption;
@@ -184,34 +174,6 @@ class ComputeEngineTargetDefaults extends \Google\Collection
   public function getDiskType()
   {
     return $this->diskType;
-  }
-  /**
-   * @param bool
-   */
-  public function setEnableIntegrityMonitoring($enableIntegrityMonitoring)
-  {
-    $this->enableIntegrityMonitoring = $enableIntegrityMonitoring;
-  }
-  /**
-   * @return bool
-   */
-  public function getEnableIntegrityMonitoring()
-  {
-    return $this->enableIntegrityMonitoring;
-  }
-  /**
-   * @param bool
-   */
-  public function setEnableVtpm($enableVtpm)
-  {
-    $this->enableVtpm = $enableVtpm;
-  }
-  /**
-   * @return bool
-   */
-  public function getEnableVtpm()
-  {
-    return $this->enableVtpm;
   }
   /**
    * @param Encryption

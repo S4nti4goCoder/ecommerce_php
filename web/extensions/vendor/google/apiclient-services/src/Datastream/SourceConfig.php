@@ -19,20 +19,28 @@ namespace Google\Service\Datastream;
 
 class SourceConfig extends \Google\Model
 {
+  /**
+   * @var MysqlSourceConfig
+   */
+  public $mysqlSourceConfig;
   protected $mysqlSourceConfigType = MysqlSourceConfig::class;
   protected $mysqlSourceConfigDataType = '';
+  /**
+   * @var OracleSourceConfig
+   */
+  public $oracleSourceConfig;
   protected $oracleSourceConfigType = OracleSourceConfig::class;
   protected $oracleSourceConfigDataType = '';
+  /**
+   * @var PostgresqlSourceConfig
+   */
+  public $postgresqlSourceConfig;
   protected $postgresqlSourceConfigType = PostgresqlSourceConfig::class;
   protected $postgresqlSourceConfigDataType = '';
-  protected $salesforceSourceConfigType = SalesforceSourceConfig::class;
-  protected $salesforceSourceConfigDataType = '';
   /**
    * @var string
    */
   public $sourceConnectionProfile;
-  protected $sqlServerSourceConfigType = SqlServerSourceConfig::class;
-  protected $sqlServerSourceConfigDataType = '';
 
   /**
    * @param MysqlSourceConfig
@@ -77,20 +85,6 @@ class SourceConfig extends \Google\Model
     return $this->postgresqlSourceConfig;
   }
   /**
-   * @param SalesforceSourceConfig
-   */
-  public function setSalesforceSourceConfig(SalesforceSourceConfig $salesforceSourceConfig)
-  {
-    $this->salesforceSourceConfig = $salesforceSourceConfig;
-  }
-  /**
-   * @return SalesforceSourceConfig
-   */
-  public function getSalesforceSourceConfig()
-  {
-    return $this->salesforceSourceConfig;
-  }
-  /**
    * @param string
    */
   public function setSourceConnectionProfile($sourceConnectionProfile)
@@ -103,20 +97,6 @@ class SourceConfig extends \Google\Model
   public function getSourceConnectionProfile()
   {
     return $this->sourceConnectionProfile;
-  }
-  /**
-   * @param SqlServerSourceConfig
-   */
-  public function setSqlServerSourceConfig(SqlServerSourceConfig $sqlServerSourceConfig)
-  {
-    $this->sqlServerSourceConfig = $sqlServerSourceConfig;
-  }
-  /**
-   * @return SqlServerSourceConfig
-   */
-  public function getSqlServerSourceConfig()
-  {
-    return $this->sqlServerSourceConfig;
   }
 }
 

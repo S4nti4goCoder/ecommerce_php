@@ -40,7 +40,6 @@ class ProjectsLocationsRepositoriesGoModules extends \Google\Service\Resource
    * @param UploadGoModuleRequest $postBody
    * @param array $optParams Optional parameters.
    * @return UploadGoModuleMediaResponse
-   * @throws \Google\Service\Exception
    */
   public function upload($parent, UploadGoModuleRequest $postBody, $optParams = [])
   {

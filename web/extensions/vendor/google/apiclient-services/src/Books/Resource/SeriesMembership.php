@@ -40,7 +40,6 @@ class SeriesMembership extends \Google\Service\Resource
    * @opt_param string page_token The value of the nextToken from the previous
    * page.
    * @return SeriesmembershipModel
-   * @throws \Google\Service\Exception
    */
   public function get($seriesId, $optParams = [])
   {

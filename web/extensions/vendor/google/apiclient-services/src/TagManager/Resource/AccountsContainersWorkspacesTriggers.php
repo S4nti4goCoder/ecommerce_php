@@ -39,7 +39,6 @@ class AccountsContainersWorkspacesTriggers extends \Google\Service\Resource
    * @param Trigger $postBody
    * @param array $optParams Optional parameters.
    * @return Trigger
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Trigger $postBody, $optParams = [])
   {
@@ -54,7 +53,6 @@ class AccountsContainersWorkspacesTriggers extends \Google\Service\Resource
    * nt_id}/containers/{container_id}/workspaces/{workspace_id}/triggers/{trigger_
    * id}
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function delete($path, $optParams = [])
   {
@@ -70,7 +68,6 @@ class AccountsContainersWorkspacesTriggers extends \Google\Service\Resource
    * id}
    * @param array $optParams Optional parameters.
    * @return Trigger
-   * @throws \Google\Service\Exception
    */
   public function get($path, $optParams = [])
   {
@@ -89,7 +86,6 @@ class AccountsContainersWorkspacesTriggers extends \Google\Service\Resource
    * @opt_param string pageToken Continuation token for fetching the next page of
    * results.
    * @return ListTriggersResponse
-   * @throws \Google\Service\Exception
    */
   public function listAccountsContainersWorkspacesTriggers($parent, $optParams = [])
   {
@@ -108,7 +104,6 @@ class AccountsContainersWorkspacesTriggers extends \Google\Service\Resource
    * @opt_param string fingerprint When provided, this fingerprint must match the
    * fingerprint of the trigger in storage.
    * @return RevertTriggerResponse
-   * @throws \Google\Service\Exception
    */
   public function revert($path, $optParams = [])
   {
@@ -128,7 +123,6 @@ class AccountsContainersWorkspacesTriggers extends \Google\Service\Resource
    * @opt_param string fingerprint When provided, this fingerprint must match the
    * fingerprint of the trigger in storage.
    * @return Trigger
-   * @throws \Google\Service\Exception
    */
   public function update($path, Trigger $postBody, $optParams = [])
   {

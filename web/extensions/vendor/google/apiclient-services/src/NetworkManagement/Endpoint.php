@@ -19,10 +19,22 @@ namespace Google\Service\NetworkManagement;
 
 class Endpoint extends \Google\Model
 {
+  /**
+   * @var AppEngineVersionEndpoint
+   */
+  public $appEngineVersion;
   protected $appEngineVersionType = AppEngineVersionEndpoint::class;
   protected $appEngineVersionDataType = '';
+  /**
+   * @var CloudFunctionEndpoint
+   */
+  public $cloudFunction;
   protected $cloudFunctionType = CloudFunctionEndpoint::class;
   protected $cloudFunctionDataType = '';
+  /**
+   * @var CloudRunRevisionEndpoint
+   */
+  public $cloudRunRevision;
   protected $cloudRunRevisionType = CloudRunRevisionEndpoint::class;
   protected $cloudRunRevisionDataType = '';
   /**
@@ -37,10 +49,6 @@ class Endpoint extends \Google\Model
    * @var string
    */
   public $forwardingRuleTarget;
-  /**
-   * @var string
-   */
-  public $fqdn;
   /**
    * @var string
    */
@@ -77,14 +85,6 @@ class Endpoint extends \Google\Model
    * @var string
    */
   public $projectId;
-  /**
-   * @var string
-   */
-  public $redisCluster;
-  /**
-   * @var string
-   */
-  public $redisInstance;
 
   /**
    * @param AppEngineVersionEndpoint
@@ -169,20 +169,6 @@ class Endpoint extends \Google\Model
   public function getForwardingRuleTarget()
   {
     return $this->forwardingRuleTarget;
-  }
-  /**
-   * @param string
-   */
-  public function setFqdn($fqdn)
-  {
-    $this->fqdn = $fqdn;
-  }
-  /**
-   * @return string
-   */
-  public function getFqdn()
-  {
-    return $this->fqdn;
   }
   /**
    * @param string
@@ -309,34 +295,6 @@ class Endpoint extends \Google\Model
   public function getProjectId()
   {
     return $this->projectId;
-  }
-  /**
-   * @param string
-   */
-  public function setRedisCluster($redisCluster)
-  {
-    $this->redisCluster = $redisCluster;
-  }
-  /**
-   * @return string
-   */
-  public function getRedisCluster()
-  {
-    return $this->redisCluster;
-  }
-  /**
-   * @param string
-   */
-  public function setRedisInstance($redisInstance)
-  {
-    $this->redisInstance = $redisInstance;
-  }
-  /**
-   * @return string
-   */
-  public function getRedisInstance()
-  {
-    return $this->redisInstance;
   }
 }
 

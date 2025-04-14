@@ -34,10 +34,6 @@ class GoogleAnalyticsAdminV1betaAccount extends \Google\Model
   /**
    * @var string
    */
-  public $gmpOrganization;
-  /**
-   * @var string
-   */
   public $name;
   /**
    * @var string
@@ -89,20 +85,6 @@ class GoogleAnalyticsAdminV1betaAccount extends \Google\Model
   public function getDisplayName()
   {
     return $this->displayName;
-  }
-  /**
-   * @param string
-   */
-  public function setGmpOrganization($gmpOrganization)
-  {
-    $this->gmpOrganization = $gmpOrganization;
-  }
-  /**
-   * @return string
-   */
-  public function getGmpOrganization()
-  {
-    return $this->gmpOrganization;
   }
   /**
    * @param string

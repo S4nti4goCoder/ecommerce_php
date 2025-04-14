@@ -37,7 +37,6 @@ class Grants extends \Google\Service\Resource
    * @param Grant $postBody
    * @param array $optParams Optional parameters.
    * @return Grant
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Grant $postBody, $optParams = [])
   {
@@ -52,7 +51,6 @@ class Grants extends \Google\Service\Resource
    * @param string $name Required. The name of the grant to delete. Format:
    * developers/{developer}/users/{email}/grants/{package_name}
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -72,7 +70,6 @@ class Grants extends \Google\Service\Resource
    *
    * @opt_param string updateMask Optional. The list of fields to be updated.
    * @return Grant
-   * @throws \Google\Service\Exception
    */
   public function patch($name, Grant $postBody, $optParams = [])
   {

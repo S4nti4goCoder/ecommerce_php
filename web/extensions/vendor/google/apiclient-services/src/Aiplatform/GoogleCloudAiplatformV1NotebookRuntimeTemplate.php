@@ -17,13 +17,16 @@
 
 namespace Google\Service\Aiplatform;
 
-class GoogleCloudAiplatformV1NotebookRuntimeTemplate extends \Google\Collection
+class GoogleCloudAiplatformV1NotebookRuntimeTemplate extends \Google\Model
 {
-  protected $collection_key = 'networkTags';
   /**
    * @var string
    */
   public $createTime;
+  /**
+   * @var GoogleCloudAiplatformV1PersistentDiskSpec
+   */
+  public $dataPersistentDiskSpec;
   protected $dataPersistentDiskSpecType = GoogleCloudAiplatformV1PersistentDiskSpec::class;
   protected $dataPersistentDiskSpecDataType = '';
   /**
@@ -34,14 +37,20 @@ class GoogleCloudAiplatformV1NotebookRuntimeTemplate extends \Google\Collection
    * @var string
    */
   public $displayName;
-  protected $encryptionSpecType = GoogleCloudAiplatformV1EncryptionSpec::class;
-  protected $encryptionSpecDataType = '';
   /**
    * @var string
    */
   public $etag;
+  /**
+   * @var GoogleCloudAiplatformV1NotebookEucConfig
+   */
+  public $eucConfig;
   protected $eucConfigType = GoogleCloudAiplatformV1NotebookEucConfig::class;
   protected $eucConfigDataType = '';
+  /**
+   * @var GoogleCloudAiplatformV1NotebookIdleShutdownConfig
+   */
+  public $idleShutdownConfig;
   protected $idleShutdownConfigType = GoogleCloudAiplatformV1NotebookIdleShutdownConfig::class;
   protected $idleShutdownConfigDataType = '';
   /**
@@ -52,18 +61,22 @@ class GoogleCloudAiplatformV1NotebookRuntimeTemplate extends \Google\Collection
    * @var string[]
    */
   public $labels;
+  /**
+   * @var GoogleCloudAiplatformV1MachineSpec
+   */
+  public $machineSpec;
   protected $machineSpecType = GoogleCloudAiplatformV1MachineSpec::class;
   protected $machineSpecDataType = '';
   /**
    * @var string
    */
   public $name;
+  /**
+   * @var GoogleCloudAiplatformV1NetworkSpec
+   */
+  public $networkSpec;
   protected $networkSpecType = GoogleCloudAiplatformV1NetworkSpec::class;
   protected $networkSpecDataType = '';
-  /**
-   * @var string[]
-   */
-  public $networkTags;
   /**
    * @var string
    */
@@ -72,10 +85,6 @@ class GoogleCloudAiplatformV1NotebookRuntimeTemplate extends \Google\Collection
    * @var string
    */
   public $serviceAccount;
-  protected $shieldedVmConfigType = GoogleCloudAiplatformV1ShieldedVmConfig::class;
-  protected $shieldedVmConfigDataType = '';
-  protected $softwareConfigType = GoogleCloudAiplatformV1NotebookSoftwareConfig::class;
-  protected $softwareConfigDataType = '';
   /**
    * @var string
    */
@@ -136,20 +145,6 @@ class GoogleCloudAiplatformV1NotebookRuntimeTemplate extends \Google\Collection
   public function getDisplayName()
   {
     return $this->displayName;
-  }
-  /**
-   * @param GoogleCloudAiplatformV1EncryptionSpec
-   */
-  public function setEncryptionSpec(GoogleCloudAiplatformV1EncryptionSpec $encryptionSpec)
-  {
-    $this->encryptionSpec = $encryptionSpec;
-  }
-  /**
-   * @return GoogleCloudAiplatformV1EncryptionSpec
-   */
-  public function getEncryptionSpec()
-  {
-    return $this->encryptionSpec;
   }
   /**
    * @param string
@@ -264,20 +259,6 @@ class GoogleCloudAiplatformV1NotebookRuntimeTemplate extends \Google\Collection
     return $this->networkSpec;
   }
   /**
-   * @param string[]
-   */
-  public function setNetworkTags($networkTags)
-  {
-    $this->networkTags = $networkTags;
-  }
-  /**
-   * @return string[]
-   */
-  public function getNetworkTags()
-  {
-    return $this->networkTags;
-  }
-  /**
    * @param string
    */
   public function setNotebookRuntimeType($notebookRuntimeType)
@@ -304,34 +285,6 @@ class GoogleCloudAiplatformV1NotebookRuntimeTemplate extends \Google\Collection
   public function getServiceAccount()
   {
     return $this->serviceAccount;
-  }
-  /**
-   * @param GoogleCloudAiplatformV1ShieldedVmConfig
-   */
-  public function setShieldedVmConfig(GoogleCloudAiplatformV1ShieldedVmConfig $shieldedVmConfig)
-  {
-    $this->shieldedVmConfig = $shieldedVmConfig;
-  }
-  /**
-   * @return GoogleCloudAiplatformV1ShieldedVmConfig
-   */
-  public function getShieldedVmConfig()
-  {
-    return $this->shieldedVmConfig;
-  }
-  /**
-   * @param GoogleCloudAiplatformV1NotebookSoftwareConfig
-   */
-  public function setSoftwareConfig(GoogleCloudAiplatformV1NotebookSoftwareConfig $softwareConfig)
-  {
-    $this->softwareConfig = $softwareConfig;
-  }
-  /**
-   * @return GoogleCloudAiplatformV1NotebookSoftwareConfig
-   */
-  public function getSoftwareConfig()
-  {
-    return $this->softwareConfig;
   }
   /**
    * @param string

@@ -19,7 +19,7 @@ namespace Google\Service\BackupforGKE;
 
 class RestoreConfig extends \Google\Collection
 {
-  protected $collection_key = 'volumeDataRestorePolicyBindings';
+  protected $collection_key = 'transformationRules';
   /**
    * @var bool
    */
@@ -28,8 +28,16 @@ class RestoreConfig extends \Google\Collection
    * @var string
    */
   public $clusterResourceConflictPolicy;
+  /**
+   * @var ClusterResourceRestoreScope
+   */
+  public $clusterResourceRestoreScope;
   protected $clusterResourceRestoreScopeType = ClusterResourceRestoreScope::class;
   protected $clusterResourceRestoreScopeDataType = '';
+  /**
+   * @var Namespaces
+   */
+  public $excludedNamespaces;
   protected $excludedNamespacesType = Namespaces::class;
   protected $excludedNamespacesDataType = '';
   /**
@@ -40,22 +48,34 @@ class RestoreConfig extends \Google\Collection
    * @var bool
    */
   public $noNamespaces;
-  protected $restoreOrderType = RestoreOrder::class;
-  protected $restoreOrderDataType = '';
+  /**
+   * @var NamespacedNames
+   */
+  public $selectedApplications;
   protected $selectedApplicationsType = NamespacedNames::class;
   protected $selectedApplicationsDataType = '';
+  /**
+   * @var Namespaces
+   */
+  public $selectedNamespaces;
   protected $selectedNamespacesType = Namespaces::class;
   protected $selectedNamespacesDataType = '';
+  /**
+   * @var SubstitutionRule[]
+   */
+  public $substitutionRules;
   protected $substitutionRulesType = SubstitutionRule::class;
   protected $substitutionRulesDataType = 'array';
+  /**
+   * @var TransformationRule[]
+   */
+  public $transformationRules;
   protected $transformationRulesType = TransformationRule::class;
   protected $transformationRulesDataType = 'array';
   /**
    * @var string
    */
   public $volumeDataRestorePolicy;
-  protected $volumeDataRestorePolicyBindingsType = VolumeDataRestorePolicyBinding::class;
-  protected $volumeDataRestorePolicyBindingsDataType = 'array';
 
   /**
    * @param bool
@@ -142,20 +162,6 @@ class RestoreConfig extends \Google\Collection
     return $this->noNamespaces;
   }
   /**
-   * @param RestoreOrder
-   */
-  public function setRestoreOrder(RestoreOrder $restoreOrder)
-  {
-    $this->restoreOrder = $restoreOrder;
-  }
-  /**
-   * @return RestoreOrder
-   */
-  public function getRestoreOrder()
-  {
-    return $this->restoreOrder;
-  }
-  /**
    * @param NamespacedNames
    */
   public function setSelectedApplications(NamespacedNames $selectedApplications)
@@ -224,20 +230,6 @@ class RestoreConfig extends \Google\Collection
   public function getVolumeDataRestorePolicy()
   {
     return $this->volumeDataRestorePolicy;
-  }
-  /**
-   * @param VolumeDataRestorePolicyBinding[]
-   */
-  public function setVolumeDataRestorePolicyBindings($volumeDataRestorePolicyBindings)
-  {
-    $this->volumeDataRestorePolicyBindings = $volumeDataRestorePolicyBindings;
-  }
-  /**
-   * @return VolumeDataRestorePolicyBinding[]
-   */
-  public function getVolumeDataRestorePolicyBindings()
-  {
-    return $this->volumeDataRestorePolicyBindings;
   }
 }
 

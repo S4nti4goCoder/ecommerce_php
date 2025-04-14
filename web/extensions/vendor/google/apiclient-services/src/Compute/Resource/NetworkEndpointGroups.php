@@ -39,9 +39,8 @@ use Google\Service\Compute\TestPermissionsResponse;
 class NetworkEndpointGroups extends \Google\Service\Resource
 {
   /**
-   * Retrieves the list of network endpoint groups and sorts them by zone. To
-   * prevent failure, Google recommends that you set the `returnPartialSuccess`
-   * parameter to `true`. (networkEndpointGroups.aggregatedList)
+   * Retrieves the list of network endpoint groups and sorts them by zone.
+   * (networkEndpointGroups.aggregatedList)
    *
    * @param string $project Project ID for this request.
    * @param array $optParams Optional parameters.
@@ -103,14 +102,9 @@ class NetworkEndpointGroups extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
-   * @opt_param string serviceProjectNumber The Shared VPC service project id or
-   * service project number for which aggregated list request is invoked for
-   * subnetworks list-usable api.
+   * false.
+   * @opt_param string serviceProjectNumber
    * @return NetworkEndpointGroupAggregatedList
-   * @throws \Google\Service\Exception
    */
   public function aggregatedList($project, $optParams = [])
   {
@@ -141,7 +135,6 @@ class NetworkEndpointGroups extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function attachNetworkEndpoints($project, $zone, $networkEndpointGroup, NetworkEndpointGroupsAttachEndpointsRequest $postBody, $optParams = [])
   {
@@ -173,7 +166,6 @@ class NetworkEndpointGroups extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($project, $zone, $networkEndpointGroup, $optParams = [])
   {
@@ -204,7 +196,6 @@ class NetworkEndpointGroups extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function detachNetworkEndpoints($project, $zone, $networkEndpointGroup, NetworkEndpointGroupsDetachEndpointsRequest $postBody, $optParams = [])
   {
@@ -222,7 +213,6 @@ class NetworkEndpointGroups extends \Google\Service\Resource
    * It should comply with RFC1035.
    * @param array $optParams Optional parameters.
    * @return NetworkEndpointGroup
-   * @throws \Google\Service\Exception
    */
   public function get($project, $zone, $networkEndpointGroup, $optParams = [])
   {
@@ -251,7 +241,6 @@ class NetworkEndpointGroups extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function insert($project, $zone, NetworkEndpointGroup $postBody, $optParams = [])
   {
@@ -318,11 +307,8 @@ class NetworkEndpointGroups extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
+   * false.
    * @return NetworkEndpointGroupList
-   * @throws \Google\Service\Exception
    */
   public function listNetworkEndpointGroups($project, $zone, $optParams = [])
   {
@@ -393,11 +379,8 @@ class NetworkEndpointGroups extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
+   * false.
    * @return NetworkEndpointGroupsListNetworkEndpoints
-   * @throws \Google\Service\Exception
    */
   public function listNetworkEndpoints($project, $zone, $networkEndpointGroup, NetworkEndpointGroupsListEndpointsRequest $postBody, $optParams = [])
   {
@@ -415,7 +398,6 @@ class NetworkEndpointGroups extends \Google\Service\Resource
    * @param TestPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($project, $zone, $resource, TestPermissionsRequest $postBody, $optParams = [])
   {

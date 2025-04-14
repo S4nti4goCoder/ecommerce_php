@@ -51,7 +51,6 @@ class BuyersFilterSetsBidResponseErrors extends \Google\Service\Resource
    * ListBidResponseErrorsResponse.nextPageToken returned from the previous call
    * to the bidResponseErrors.list method.
    * @return ListBidResponseErrorsResponse
-   * @throws \Google\Service\Exception
    */
   public function listBuyersFilterSetsBidResponseErrors($filterSetName, $optParams = [])
   {

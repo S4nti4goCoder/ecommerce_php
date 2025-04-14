@@ -39,7 +39,6 @@ class Scores extends \Google\Service\Resource
    * @param string $leaderboardId The ID of the leaderboard.
    * @param array $optParams Optional parameters.
    * @return PlayerScoreResetResponse
-   * @throws \Google\Service\Exception
    */
   public function reset($leaderboardId, $optParams = [])
   {
@@ -54,7 +53,6 @@ class Scores extends \Google\Service\Resource
    *
    * @param array $optParams Optional parameters.
    * @return PlayerScoreResetAllResponse
-   * @throws \Google\Service\Exception
    */
   public function resetAll($optParams = [])
   {
@@ -68,7 +66,6 @@ class Scores extends \Google\Service\Resource
    * (scores.resetAllForAllPlayers)
    *
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function resetAllForAllPlayers($optParams = [])
   {
@@ -83,7 +80,6 @@ class Scores extends \Google\Service\Resource
    *
    * @param string $leaderboardId The ID of the leaderboard.
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function resetForAllPlayers($leaderboardId, $optParams = [])
   {
@@ -98,7 +94,6 @@ class Scores extends \Google\Service\Resource
    *
    * @param ScoresResetMultipleForAllRequest $postBody
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function resetMultipleForAllPlayers(ScoresResetMultipleForAllRequest $postBody, $optParams = [])
   {

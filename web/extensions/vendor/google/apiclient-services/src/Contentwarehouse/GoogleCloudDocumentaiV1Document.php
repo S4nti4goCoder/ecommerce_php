@@ -20,36 +20,64 @@ namespace Google\Service\Contentwarehouse;
 class GoogleCloudDocumentaiV1Document extends \Google\Collection
 {
   protected $collection_key = 'textStyles';
-  protected $chunkedDocumentType = GoogleCloudDocumentaiV1DocumentChunkedDocument::class;
-  protected $chunkedDocumentDataType = '';
   /**
    * @var string
    */
   public $content;
-  protected $documentLayoutType = GoogleCloudDocumentaiV1DocumentDocumentLayout::class;
-  protected $documentLayoutDataType = '';
+  /**
+   * @var GoogleCloudDocumentaiV1DocumentEntity[]
+   */
+  public $entities;
   protected $entitiesType = GoogleCloudDocumentaiV1DocumentEntity::class;
   protected $entitiesDataType = 'array';
+  /**
+   * @var GoogleCloudDocumentaiV1DocumentEntityRelation[]
+   */
+  public $entityRelations;
   protected $entityRelationsType = GoogleCloudDocumentaiV1DocumentEntityRelation::class;
   protected $entityRelationsDataType = 'array';
+  /**
+   * @var GoogleRpcStatus
+   */
+  public $error;
   protected $errorType = GoogleRpcStatus::class;
   protected $errorDataType = '';
   /**
    * @var string
    */
   public $mimeType;
+  /**
+   * @var GoogleCloudDocumentaiV1DocumentPage[]
+   */
+  public $pages;
   protected $pagesType = GoogleCloudDocumentaiV1DocumentPage::class;
   protected $pagesDataType = 'array';
+  /**
+   * @var GoogleCloudDocumentaiV1DocumentRevision[]
+   */
+  public $revisions;
   protected $revisionsType = GoogleCloudDocumentaiV1DocumentRevision::class;
   protected $revisionsDataType = 'array';
+  /**
+   * @var GoogleCloudDocumentaiV1DocumentShardInfo
+   */
+  public $shardInfo;
   protected $shardInfoType = GoogleCloudDocumentaiV1DocumentShardInfo::class;
   protected $shardInfoDataType = '';
   /**
    * @var string
    */
   public $text;
+  /**
+   * @var GoogleCloudDocumentaiV1DocumentTextChange[]
+   */
+  public $textChanges;
   protected $textChangesType = GoogleCloudDocumentaiV1DocumentTextChange::class;
   protected $textChangesDataType = 'array';
+  /**
+   * @var GoogleCloudDocumentaiV1DocumentStyle[]
+   */
+  public $textStyles;
   protected $textStylesType = GoogleCloudDocumentaiV1DocumentStyle::class;
   protected $textStylesDataType = 'array';
   /**
@@ -57,20 +85,6 @@ class GoogleCloudDocumentaiV1Document extends \Google\Collection
    */
   public $uri;
 
-  /**
-   * @param GoogleCloudDocumentaiV1DocumentChunkedDocument
-   */
-  public function setChunkedDocument(GoogleCloudDocumentaiV1DocumentChunkedDocument $chunkedDocument)
-  {
-    $this->chunkedDocument = $chunkedDocument;
-  }
-  /**
-   * @return GoogleCloudDocumentaiV1DocumentChunkedDocument
-   */
-  public function getChunkedDocument()
-  {
-    return $this->chunkedDocument;
-  }
   /**
    * @param string
    */
@@ -84,20 +98,6 @@ class GoogleCloudDocumentaiV1Document extends \Google\Collection
   public function getContent()
   {
     return $this->content;
-  }
-  /**
-   * @param GoogleCloudDocumentaiV1DocumentDocumentLayout
-   */
-  public function setDocumentLayout(GoogleCloudDocumentaiV1DocumentDocumentLayout $documentLayout)
-  {
-    $this->documentLayout = $documentLayout;
-  }
-  /**
-   * @return GoogleCloudDocumentaiV1DocumentDocumentLayout
-   */
-  public function getDocumentLayout()
-  {
-    return $this->documentLayout;
   }
   /**
    * @param GoogleCloudDocumentaiV1DocumentEntity[]

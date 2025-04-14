@@ -39,7 +39,6 @@ class V1 extends \Google\Service\Resource
    * @param DecodeIntegrityTokenRequest $postBody
    * @param array $optParams Optional parameters.
    * @return DecodeIntegrityTokenResponse
-   * @throws \Google\Service\Exception
    */
   public function decodeIntegrityToken($packageName, DecodeIntegrityTokenRequest $postBody, $optParams = [])
   {

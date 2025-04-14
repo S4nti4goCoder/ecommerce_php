@@ -39,7 +39,6 @@ class FloodlightGroups extends \Google\Service\Resource
    * @opt_param string partnerId Required. The partner context by which the
    * Floodlight group is being accessed.
    * @return FloodlightGroup
-   * @throws \Google\Service\Exception
    */
   public function get($floodlightGroupId, $optParams = [])
   {
@@ -61,7 +60,6 @@ class FloodlightGroups extends \Google\Service\Resource
    * @opt_param string updateMask Required. The mask to control which fields to
    * update.
    * @return FloodlightGroup
-   * @throws \Google\Service\Exception
    */
   public function patch($floodlightGroupId, FloodlightGroup $postBody, $optParams = [])
   {

@@ -20,12 +20,18 @@ namespace Google\Service\Dataproc;
 class InstanceFlexibilityPolicy extends \Google\Collection
 {
   protected $collection_key = 'instanceSelectionResults';
+  /**
+   * @var InstanceSelection[]
+   */
+  public $instanceSelectionList;
   protected $instanceSelectionListType = InstanceSelection::class;
   protected $instanceSelectionListDataType = 'array';
+  /**
+   * @var InstanceSelectionResult[]
+   */
+  public $instanceSelectionResults;
   protected $instanceSelectionResultsType = InstanceSelectionResult::class;
   protected $instanceSelectionResultsDataType = 'array';
-  protected $provisioningModelMixType = ProvisioningModelMix::class;
-  protected $provisioningModelMixDataType = '';
 
   /**
    * @param InstanceSelection[]
@@ -54,20 +60,6 @@ class InstanceFlexibilityPolicy extends \Google\Collection
   public function getInstanceSelectionResults()
   {
     return $this->instanceSelectionResults;
-  }
-  /**
-   * @param ProvisioningModelMix
-   */
-  public function setProvisioningModelMix(ProvisioningModelMix $provisioningModelMix)
-  {
-    $this->provisioningModelMix = $provisioningModelMix;
-  }
-  /**
-   * @return ProvisioningModelMix
-   */
-  public function getProvisioningModelMix()
-  {
-    return $this->provisioningModelMix;
   }
 }
 

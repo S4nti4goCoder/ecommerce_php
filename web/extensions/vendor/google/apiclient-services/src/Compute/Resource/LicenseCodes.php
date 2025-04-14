@@ -42,7 +42,6 @@ class LicenseCodes extends \Google\Service\Resource
    * to return.
    * @param array $optParams Optional parameters.
    * @return LicenseCode
-   * @throws \Google\Service\Exception
    */
   public function get($project, $licenseCode, $optParams = [])
   {
@@ -60,7 +59,6 @@ class LicenseCodes extends \Google\Service\Resource
    * @param TestPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($project, $resource, TestPermissionsRequest $postBody, $optParams = [])
   {

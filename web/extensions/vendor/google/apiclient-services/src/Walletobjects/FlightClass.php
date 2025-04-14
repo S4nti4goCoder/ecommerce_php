@@ -19,49 +19,83 @@ namespace Google\Service\Walletobjects;
 
 class FlightClass extends \Google\Collection
 {
-  protected $collection_key = 'valueAddedModuleData';
+  protected $collection_key = 'textModulesData';
   /**
    * @var bool
    */
   public $allowMultipleUsersPerObject;
-  protected $appLinkDataType = AppLinkData::class;
-  protected $appLinkDataDataType = '';
+  /**
+   * @var BoardingAndSeatingPolicy
+   */
+  public $boardingAndSeatingPolicy;
   protected $boardingAndSeatingPolicyType = BoardingAndSeatingPolicy::class;
   protected $boardingAndSeatingPolicyDataType = '';
+  /**
+   * @var CallbackOptions
+   */
+  public $callbackOptions;
   protected $callbackOptionsType = CallbackOptions::class;
   protected $callbackOptionsDataType = '';
+  /**
+   * @var ClassTemplateInfo
+   */
+  public $classTemplateInfo;
   protected $classTemplateInfoType = ClassTemplateInfo::class;
   protected $classTemplateInfoDataType = '';
   /**
    * @var string
    */
   public $countryCode;
+  /**
+   * @var AirportInfo
+   */
+  public $destination;
   protected $destinationType = AirportInfo::class;
   protected $destinationDataType = '';
   /**
    * @var bool
    */
   public $enableSmartTap;
+  /**
+   * @var FlightHeader
+   */
+  public $flightHeader;
   protected $flightHeaderType = FlightHeader::class;
   protected $flightHeaderDataType = '';
   /**
    * @var string
    */
   public $flightStatus;
+  /**
+   * @var Image
+   */
+  public $heroImage;
   protected $heroImageType = Image::class;
   protected $heroImageDataType = '';
   /**
    * @var string
    */
   public $hexBackgroundColor;
+  /**
+   * @var Uri
+   */
+  public $homepageUri;
   protected $homepageUriType = Uri::class;
   protected $homepageUriDataType = '';
   /**
    * @var string
    */
   public $id;
+  /**
+   * @var ImageModuleData[]
+   */
+  public $imageModulesData;
   protected $imageModulesDataType = ImageModuleData::class;
   protected $imageModulesDataDataType = 'array';
+  /**
+   * @var InfoModuleData
+   */
+  public $infoModuleData;
   protected $infoModuleDataType = InfoModuleData::class;
   protected $infoModuleDataDataType = '';
   /**
@@ -76,6 +110,10 @@ class FlightClass extends \Google\Collection
    * @var string
    */
   public $languageOverride;
+  /**
+   * @var LinksModuleData
+   */
+  public $linksModuleData;
   protected $linksModuleDataType = LinksModuleData::class;
   protected $linksModuleDataDataType = '';
   /**
@@ -102,12 +140,22 @@ class FlightClass extends \Google\Collection
    * @var string
    */
   public $localScheduledDepartureDateTime;
+  /**
+   * @var LocalizedString
+   */
+  public $localizedIssuerName;
   protected $localizedIssuerNameType = LocalizedString::class;
   protected $localizedIssuerNameDataType = '';
+  /**
+   * @var LatLongPoint[]
+   */
+  public $locations;
   protected $locationsType = LatLongPoint::class;
   protected $locationsDataType = 'array';
-  protected $merchantLocationsType = MerchantLocation::class;
-  protected $merchantLocationsDataType = 'array';
+  /**
+   * @var Message[]
+   */
+  public $messages;
   protected $messagesType = Message::class;
   protected $messagesDataType = 'array';
   /**
@@ -115,27 +163,37 @@ class FlightClass extends \Google\Collection
    */
   public $multipleDevicesAndHoldersAllowedStatus;
   /**
-   * @var string
+   * @var AirportInfo
    */
-  public $notifyPreference;
+  public $origin;
   protected $originType = AirportInfo::class;
   protected $originDataType = '';
   /**
    * @var string[]
    */
   public $redemptionIssuers;
+  /**
+   * @var Review
+   */
+  public $review;
   protected $reviewType = Review::class;
   protected $reviewDataType = '';
   /**
    * @var string
    */
   public $reviewStatus;
+  /**
+   * @var SecurityAnimation
+   */
+  public $securityAnimation;
   protected $securityAnimationType = SecurityAnimation::class;
   protected $securityAnimationDataType = '';
+  /**
+   * @var TextModuleData[]
+   */
+  public $textModulesData;
   protected $textModulesDataType = TextModuleData::class;
   protected $textModulesDataDataType = 'array';
-  protected $valueAddedModuleDataType = ValueAddedModuleData::class;
-  protected $valueAddedModuleDataDataType = 'array';
   /**
    * @var string
    */
@@ -144,6 +202,10 @@ class FlightClass extends \Google\Collection
    * @var string
    */
   public $viewUnlockRequirement;
+  /**
+   * @var Image
+   */
+  public $wordMark;
   protected $wordMarkType = Image::class;
   protected $wordMarkDataType = '';
 
@@ -160,20 +222,6 @@ class FlightClass extends \Google\Collection
   public function getAllowMultipleUsersPerObject()
   {
     return $this->allowMultipleUsersPerObject;
-  }
-  /**
-   * @param AppLinkData
-   */
-  public function setAppLinkData(AppLinkData $appLinkData)
-  {
-    $this->appLinkData = $appLinkData;
-  }
-  /**
-   * @return AppLinkData
-   */
-  public function getAppLinkData()
-  {
-    return $this->appLinkData;
   }
   /**
    * @param BoardingAndSeatingPolicy
@@ -540,20 +588,6 @@ class FlightClass extends \Google\Collection
     return $this->locations;
   }
   /**
-   * @param MerchantLocation[]
-   */
-  public function setMerchantLocations($merchantLocations)
-  {
-    $this->merchantLocations = $merchantLocations;
-  }
-  /**
-   * @return MerchantLocation[]
-   */
-  public function getMerchantLocations()
-  {
-    return $this->merchantLocations;
-  }
-  /**
    * @param Message[]
    */
   public function setMessages($messages)
@@ -580,20 +614,6 @@ class FlightClass extends \Google\Collection
   public function getMultipleDevicesAndHoldersAllowedStatus()
   {
     return $this->multipleDevicesAndHoldersAllowedStatus;
-  }
-  /**
-   * @param string
-   */
-  public function setNotifyPreference($notifyPreference)
-  {
-    $this->notifyPreference = $notifyPreference;
-  }
-  /**
-   * @return string
-   */
-  public function getNotifyPreference()
-  {
-    return $this->notifyPreference;
   }
   /**
    * @param AirportInfo
@@ -678,20 +698,6 @@ class FlightClass extends \Google\Collection
   public function getTextModulesData()
   {
     return $this->textModulesData;
-  }
-  /**
-   * @param ValueAddedModuleData[]
-   */
-  public function setValueAddedModuleData($valueAddedModuleData)
-  {
-    $this->valueAddedModuleData = $valueAddedModuleData;
-  }
-  /**
-   * @return ValueAddedModuleData[]
-   */
-  public function getValueAddedModuleData()
-  {
-    return $this->valueAddedModuleData;
   }
   /**
    * @param string

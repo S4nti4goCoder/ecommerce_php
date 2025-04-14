@@ -37,7 +37,6 @@ class FloodlightConfigurations extends \Google\Service\Resource
    * @param string $id Floodlight configuration ID.
    * @param array $optParams Optional parameters.
    * @return FloodlightConfiguration
-   * @throws \Google\Service\Exception
    */
   public function get($profileId, $id, $optParams = [])
   {
@@ -55,7 +54,6 @@ class FloodlightConfigurations extends \Google\Service\Resource
    * @opt_param string ids Set of IDs of floodlight configurations to retrieve.
    * Required field; otherwise an empty list will be returned.
    * @return FloodlightConfigurationsListResponse
-   * @throws \Google\Service\Exception
    */
   public function listFloodlightConfigurations($profileId, $optParams = [])
   {
@@ -64,15 +62,14 @@ class FloodlightConfigurations extends \Google\Service\Resource
     return $this->call('list', [$params], FloodlightConfigurationsListResponse::class);
   }
   /**
-   * Updates an existing floodlight configuration. This method supports patch
-   * semantics. (floodlightConfigurations.patch)
+   * Updates an existing event tag. This method supports patch semantics.
+   * (floodlightConfigurations.patch)
    *
    * @param string $profileId User profile ID associated with this request.
    * @param string $id Required. EventTag ID.
    * @param FloodlightConfiguration $postBody
    * @param array $optParams Optional parameters.
    * @return FloodlightConfiguration
-   * @throws \Google\Service\Exception
    */
   public function patch($profileId, $id, FloodlightConfiguration $postBody, $optParams = [])
   {
@@ -88,7 +85,6 @@ class FloodlightConfigurations extends \Google\Service\Resource
    * @param FloodlightConfiguration $postBody
    * @param array $optParams Optional parameters.
    * @return FloodlightConfiguration
-   * @throws \Google\Service\Exception
    */
   public function update($profileId, FloodlightConfiguration $postBody, $optParams = [])
   {

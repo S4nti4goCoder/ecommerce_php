@@ -21,34 +21,28 @@ class ExecuteBatchDmlRequest extends \Google\Collection
 {
   protected $collection_key = 'statements';
   /**
-   * @var bool
+   * @var RequestOptions
    */
-  public $lastStatements;
+  public $requestOptions;
   protected $requestOptionsType = RequestOptions::class;
   protected $requestOptionsDataType = '';
   /**
    * @var string
    */
   public $seqno;
+  /**
+   * @var Statement[]
+   */
+  public $statements;
   protected $statementsType = Statement::class;
   protected $statementsDataType = 'array';
+  /**
+   * @var TransactionSelector
+   */
+  public $transaction;
   protected $transactionType = TransactionSelector::class;
   protected $transactionDataType = '';
 
-  /**
-   * @param bool
-   */
-  public function setLastStatements($lastStatements)
-  {
-    $this->lastStatements = $lastStatements;
-  }
-  /**
-   * @return bool
-   */
-  public function getLastStatements()
-  {
-    return $this->lastStatements;
-  }
   /**
    * @param RequestOptions
    */

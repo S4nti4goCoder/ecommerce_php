@@ -37,7 +37,6 @@ class Notes extends \Google\Service\Resource
    * @param Note $postBody
    * @param array $optParams Optional parameters.
    * @return Note
-   * @throws \Google\Service\Exception
    */
   public function create(Note $postBody, $optParams = [])
   {
@@ -53,7 +52,6 @@ class Notes extends \Google\Service\Resource
    * @param string $name Required. Name of the note to delete.
    * @param array $optParams Optional parameters.
    * @return KeepEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -67,7 +65,6 @@ class Notes extends \Google\Service\Resource
    * @param string $name Required. Name of the resource.
    * @param array $optParams Optional parameters.
    * @return Note
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -96,7 +93,6 @@ class Notes extends \Google\Service\Resource
    * @opt_param int pageSize The maximum number of results to return.
    * @opt_param string pageToken The previous page's `next_page_token` field.
    * @return ListNotesResponse
-   * @throws \Google\Service\Exception
    */
   public function listNotes($optParams = [])
   {

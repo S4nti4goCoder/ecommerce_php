@@ -21,10 +21,6 @@ class ConnectivityTest extends \Google\Collection
 {
   protected $collection_key = 'relatedProjects';
   /**
-   * @var bool
-   */
-  public $bypassFirewallChecks;
-  /**
    * @var string
    */
   public $createTime;
@@ -32,6 +28,10 @@ class ConnectivityTest extends \Google\Collection
    * @var string
    */
   public $description;
+  /**
+   * @var Endpoint
+   */
+  public $destination;
   protected $destinationType = Endpoint::class;
   protected $destinationDataType = '';
   /**
@@ -46,24 +46,30 @@ class ConnectivityTest extends \Google\Collection
    * @var string
    */
   public $name;
+  /**
+   * @var ProbingDetails
+   */
+  public $probingDetails;
   protected $probingDetailsType = ProbingDetails::class;
   protected $probingDetailsDataType = '';
   /**
    * @var string
    */
   public $protocol;
+  /**
+   * @var ReachabilityDetails
+   */
+  public $reachabilityDetails;
   protected $reachabilityDetailsType = ReachabilityDetails::class;
   protected $reachabilityDetailsDataType = '';
   /**
    * @var string[]
    */
   public $relatedProjects;
-  protected $returnReachabilityDetailsType = ReachabilityDetails::class;
-  protected $returnReachabilityDetailsDataType = '';
   /**
-   * @var bool
+   * @var Endpoint
    */
-  public $roundTrip;
+  public $source;
   protected $sourceType = Endpoint::class;
   protected $sourceDataType = '';
   /**
@@ -71,20 +77,6 @@ class ConnectivityTest extends \Google\Collection
    */
   public $updateTime;
 
-  /**
-   * @param bool
-   */
-  public function setBypassFirewallChecks($bypassFirewallChecks)
-  {
-    $this->bypassFirewallChecks = $bypassFirewallChecks;
-  }
-  /**
-   * @return bool
-   */
-  public function getBypassFirewallChecks()
-  {
-    return $this->bypassFirewallChecks;
-  }
   /**
    * @param string
    */
@@ -224,34 +216,6 @@ class ConnectivityTest extends \Google\Collection
   public function getRelatedProjects()
   {
     return $this->relatedProjects;
-  }
-  /**
-   * @param ReachabilityDetails
-   */
-  public function setReturnReachabilityDetails(ReachabilityDetails $returnReachabilityDetails)
-  {
-    $this->returnReachabilityDetails = $returnReachabilityDetails;
-  }
-  /**
-   * @return ReachabilityDetails
-   */
-  public function getReturnReachabilityDetails()
-  {
-    return $this->returnReachabilityDetails;
-  }
-  /**
-   * @param bool
-   */
-  public function setRoundTrip($roundTrip)
-  {
-    $this->roundTrip = $roundTrip;
-  }
-  /**
-   * @return bool
-   */
-  public function getRoundTrip()
-  {
-    return $this->roundTrip;
   }
   /**
    * @param Endpoint

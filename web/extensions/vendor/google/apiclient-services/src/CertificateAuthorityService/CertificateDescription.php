@@ -24,24 +24,44 @@ class CertificateDescription extends \Google\Collection
    * @var string[]
    */
   public $aiaIssuingCertificateUrls;
+  /**
+   * @var KeyId
+   */
+  public $authorityKeyId;
   protected $authorityKeyIdType = KeyId::class;
   protected $authorityKeyIdDataType = '';
+  /**
+   * @var CertificateFingerprint
+   */
+  public $certFingerprint;
   protected $certFingerprintType = CertificateFingerprint::class;
   protected $certFingerprintDataType = '';
   /**
    * @var string[]
    */
   public $crlDistributionPoints;
+  /**
+   * @var PublicKey
+   */
+  public $publicKey;
   protected $publicKeyType = PublicKey::class;
   protected $publicKeyDataType = '';
+  /**
+   * @var SubjectDescription
+   */
+  public $subjectDescription;
   protected $subjectDescriptionType = SubjectDescription::class;
   protected $subjectDescriptionDataType = '';
+  /**
+   * @var KeyId
+   */
+  public $subjectKeyId;
   protected $subjectKeyIdType = KeyId::class;
   protected $subjectKeyIdDataType = '';
   /**
-   * @var string
+   * @var X509Parameters
    */
-  public $tbsCertificateDigest;
+  public $x509Description;
   protected $x509DescriptionType = X509Parameters::class;
   protected $x509DescriptionDataType = '';
 
@@ -142,20 +162,6 @@ class CertificateDescription extends \Google\Collection
   public function getSubjectKeyId()
   {
     return $this->subjectKeyId;
-  }
-  /**
-   * @param string
-   */
-  public function setTbsCertificateDigest($tbsCertificateDigest)
-  {
-    $this->tbsCertificateDigest = $tbsCertificateDigest;
-  }
-  /**
-   * @return string
-   */
-  public function getTbsCertificateDigest()
-  {
-    return $this->tbsCertificateDigest;
   }
   /**
    * @param X509Parameters

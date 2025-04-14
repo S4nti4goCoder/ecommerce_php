@@ -17,56 +17,17 @@
 
 namespace Google\Service\Container;
 
-class DatabaseEncryption extends \Google\Collection
+class DatabaseEncryption extends \Google\Model
 {
-  protected $collection_key = 'lastOperationErrors';
-  /**
-   * @var string
-   */
-  public $currentState;
-  /**
-   * @var string[]
-   */
-  public $decryptionKeys;
   /**
    * @var string
    */
   public $keyName;
-  protected $lastOperationErrorsType = OperationError::class;
-  protected $lastOperationErrorsDataType = 'array';
   /**
    * @var string
    */
   public $state;
 
-  /**
-   * @param string
-   */
-  public function setCurrentState($currentState)
-  {
-    $this->currentState = $currentState;
-  }
-  /**
-   * @return string
-   */
-  public function getCurrentState()
-  {
-    return $this->currentState;
-  }
-  /**
-   * @param string[]
-   */
-  public function setDecryptionKeys($decryptionKeys)
-  {
-    $this->decryptionKeys = $decryptionKeys;
-  }
-  /**
-   * @return string[]
-   */
-  public function getDecryptionKeys()
-  {
-    return $this->decryptionKeys;
-  }
   /**
    * @param string
    */
@@ -80,20 +41,6 @@ class DatabaseEncryption extends \Google\Collection
   public function getKeyName()
   {
     return $this->keyName;
-  }
-  /**
-   * @param OperationError[]
-   */
-  public function setLastOperationErrors($lastOperationErrors)
-  {
-    $this->lastOperationErrors = $lastOperationErrors;
-  }
-  /**
-   * @return OperationError[]
-   */
-  public function getLastOperationErrors()
-  {
-    return $this->lastOperationErrors;
   }
   /**
    * @param string

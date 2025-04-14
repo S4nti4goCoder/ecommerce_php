@@ -20,9 +20,12 @@ namespace Google\Service\Bigquery;
 class Job extends \Google\Model
 {
   protected $internal_gapi_mappings = [
-        "principalSubject" => "principal_subject",
         "userEmail" => "user_email",
   ];
+  /**
+   * @var JobConfiguration
+   */
+  public $configuration;
   protected $configurationType = JobConfiguration::class;
   protected $configurationDataType = '';
   /**
@@ -33,8 +36,14 @@ class Job extends \Google\Model
    * @var string
    */
   public $id;
-  protected $jobCreationReasonType = JobCreationReason::class;
-  protected $jobCreationReasonDataType = '';
+  /**
+   * @var array
+   */
+  public $jobCreationReason;
+  /**
+   * @var JobReference
+   */
+  public $jobReference;
   protected $jobReferenceType = JobReference::class;
   protected $jobReferenceDataType = '';
   /**
@@ -44,13 +53,17 @@ class Job extends \Google\Model
   /**
    * @var string
    */
-  public $principalSubject;
-  /**
-   * @var string
-   */
   public $selfLink;
+  /**
+   * @var JobStatistics
+   */
+  public $statistics;
   protected $statisticsType = JobStatistics::class;
   protected $statisticsDataType = '';
+  /**
+   * @var JobStatus
+   */
+  public $status;
   protected $statusType = JobStatus::class;
   protected $statusDataType = '';
   /**
@@ -101,14 +114,14 @@ class Job extends \Google\Model
     return $this->id;
   }
   /**
-   * @param JobCreationReason
+   * @param array
    */
-  public function setJobCreationReason(JobCreationReason $jobCreationReason)
+  public function setJobCreationReason($jobCreationReason)
   {
     $this->jobCreationReason = $jobCreationReason;
   }
   /**
-   * @return JobCreationReason
+   * @return array
    */
   public function getJobCreationReason()
   {
@@ -141,20 +154,6 @@ class Job extends \Google\Model
   public function getKind()
   {
     return $this->kind;
-  }
-  /**
-   * @param string
-   */
-  public function setPrincipalSubject($principalSubject)
-  {
-    $this->principalSubject = $principalSubject;
-  }
-  /**
-   * @return string
-   */
-  public function getPrincipalSubject()
-  {
-    return $this->principalSubject;
   }
   /**
    * @param string

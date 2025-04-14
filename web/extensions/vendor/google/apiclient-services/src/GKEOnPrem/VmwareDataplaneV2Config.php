@@ -28,10 +28,6 @@ class VmwareDataplaneV2Config extends \Google\Model
    */
   public $dataplaneV2Enabled;
   /**
-   * @var string
-   */
-  public $forwardMode;
-  /**
    * @var bool
    */
   public $windowsDataplaneV2Enabled;
@@ -63,20 +59,6 @@ class VmwareDataplaneV2Config extends \Google\Model
   public function getDataplaneV2Enabled()
   {
     return $this->dataplaneV2Enabled;
-  }
-  /**
-   * @param string
-   */
-  public function setForwardMode($forwardMode)
-  {
-    $this->forwardMode = $forwardMode;
-  }
-  /**
-   * @return string
-   */
-  public function getForwardMode()
-  {
-    return $this->forwardMode;
   }
   /**
    * @param bool

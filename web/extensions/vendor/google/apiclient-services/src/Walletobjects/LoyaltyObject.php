@@ -19,7 +19,7 @@ namespace Google\Service\Walletobjects;
 
 class LoyaltyObject extends \Google\Collection
 {
-  protected $collection_key = 'valueAddedModuleData';
+  protected $collection_key = 'textModulesData';
   /**
    * @var string
    */
@@ -28,20 +28,36 @@ class LoyaltyObject extends \Google\Collection
    * @var string
    */
   public $accountName;
+  /**
+   * @var AppLinkData
+   */
+  public $appLinkData;
   protected $appLinkDataType = AppLinkData::class;
   protected $appLinkDataDataType = '';
+  /**
+   * @var Barcode
+   */
+  public $barcode;
   protected $barcodeType = Barcode::class;
   protected $barcodeDataType = '';
   /**
    * @var string
    */
   public $classId;
+  /**
+   * @var LoyaltyClass
+   */
+  public $classReference;
   protected $classReferenceType = LoyaltyClass::class;
   protected $classReferenceDataType = '';
   /**
    * @var bool
    */
   public $disableExpirationNotification;
+  /**
+   * @var GroupingInfo
+   */
+  public $groupingInfo;
   protected $groupingInfoType = GroupingInfo::class;
   protected $groupingInfoDataType = '';
   /**
@@ -52,14 +68,26 @@ class LoyaltyObject extends \Google\Collection
    * @var bool
    */
   public $hasUsers;
+  /**
+   * @var Image
+   */
+  public $heroImage;
   protected $heroImageType = Image::class;
   protected $heroImageDataType = '';
   /**
    * @var string
    */
   public $id;
+  /**
+   * @var ImageModuleData[]
+   */
+  public $imageModulesData;
   protected $imageModulesDataType = ImageModuleData::class;
   protected $imageModulesDataDataType = 'array';
+  /**
+   * @var InfoModuleData
+   */
+  public $infoModuleData;
   protected $infoModuleDataType = InfoModuleData::class;
   protected $infoModuleDataDataType = '';
   /**
@@ -69,31 +97,47 @@ class LoyaltyObject extends \Google\Collection
   /**
    * @var string[]
    */
-  public $linkedObjectIds;
-  /**
-   * @var string[]
-   */
   public $linkedOfferIds;
+  /**
+   * @var LinksModuleData
+   */
+  public $linksModuleData;
   protected $linksModuleDataType = LinksModuleData::class;
   protected $linksModuleDataDataType = '';
+  /**
+   * @var LatLongPoint[]
+   */
+  public $locations;
   protected $locationsType = LatLongPoint::class;
   protected $locationsDataType = 'array';
+  /**
+   * @var LoyaltyPoints
+   */
+  public $loyaltyPoints;
   protected $loyaltyPointsType = LoyaltyPoints::class;
   protected $loyaltyPointsDataType = '';
-  protected $merchantLocationsType = MerchantLocation::class;
-  protected $merchantLocationsDataType = 'array';
+  /**
+   * @var Message[]
+   */
+  public $messages;
   protected $messagesType = Message::class;
   protected $messagesDataType = 'array';
   /**
-   * @var string
+   * @var PassConstraints
    */
-  public $notifyPreference;
+  public $passConstraints;
   protected $passConstraintsType = PassConstraints::class;
   protected $passConstraintsDataType = '';
+  /**
+   * @var RotatingBarcode
+   */
+  public $rotatingBarcode;
   protected $rotatingBarcodeType = RotatingBarcode::class;
   protected $rotatingBarcodeDataType = '';
-  protected $saveRestrictionsType = SaveRestrictions::class;
-  protected $saveRestrictionsDataType = '';
+  /**
+   * @var LoyaltyPoints
+   */
+  public $secondaryLoyaltyPoints;
   protected $secondaryLoyaltyPointsType = LoyaltyPoints::class;
   protected $secondaryLoyaltyPointsDataType = '';
   /**
@@ -104,12 +148,18 @@ class LoyaltyObject extends \Google\Collection
    * @var string
    */
   public $state;
+  /**
+   * @var TextModuleData[]
+   */
+  public $textModulesData;
   protected $textModulesDataType = TextModuleData::class;
   protected $textModulesDataDataType = 'array';
+  /**
+   * @var TimeInterval
+   */
+  public $validTimeInterval;
   protected $validTimeIntervalType = TimeInterval::class;
   protected $validTimeIntervalDataType = '';
-  protected $valueAddedModuleDataType = ValueAddedModuleData::class;
-  protected $valueAddedModuleDataDataType = 'array';
   /**
    * @var string
    */
@@ -328,20 +378,6 @@ class LoyaltyObject extends \Google\Collection
   /**
    * @param string[]
    */
-  public function setLinkedObjectIds($linkedObjectIds)
-  {
-    $this->linkedObjectIds = $linkedObjectIds;
-  }
-  /**
-   * @return string[]
-   */
-  public function getLinkedObjectIds()
-  {
-    return $this->linkedObjectIds;
-  }
-  /**
-   * @param string[]
-   */
   public function setLinkedOfferIds($linkedOfferIds)
   {
     $this->linkedOfferIds = $linkedOfferIds;
@@ -396,20 +432,6 @@ class LoyaltyObject extends \Google\Collection
     return $this->loyaltyPoints;
   }
   /**
-   * @param MerchantLocation[]
-   */
-  public function setMerchantLocations($merchantLocations)
-  {
-    $this->merchantLocations = $merchantLocations;
-  }
-  /**
-   * @return MerchantLocation[]
-   */
-  public function getMerchantLocations()
-  {
-    return $this->merchantLocations;
-  }
-  /**
    * @param Message[]
    */
   public function setMessages($messages)
@@ -422,20 +444,6 @@ class LoyaltyObject extends \Google\Collection
   public function getMessages()
   {
     return $this->messages;
-  }
-  /**
-   * @param string
-   */
-  public function setNotifyPreference($notifyPreference)
-  {
-    $this->notifyPreference = $notifyPreference;
-  }
-  /**
-   * @return string
-   */
-  public function getNotifyPreference()
-  {
-    return $this->notifyPreference;
   }
   /**
    * @param PassConstraints
@@ -464,20 +472,6 @@ class LoyaltyObject extends \Google\Collection
   public function getRotatingBarcode()
   {
     return $this->rotatingBarcode;
-  }
-  /**
-   * @param SaveRestrictions
-   */
-  public function setSaveRestrictions(SaveRestrictions $saveRestrictions)
-  {
-    $this->saveRestrictions = $saveRestrictions;
-  }
-  /**
-   * @return SaveRestrictions
-   */
-  public function getSaveRestrictions()
-  {
-    return $this->saveRestrictions;
   }
   /**
    * @param LoyaltyPoints
@@ -548,20 +542,6 @@ class LoyaltyObject extends \Google\Collection
   public function getValidTimeInterval()
   {
     return $this->validTimeInterval;
-  }
-  /**
-   * @param ValueAddedModuleData[]
-   */
-  public function setValueAddedModuleData($valueAddedModuleData)
-  {
-    $this->valueAddedModuleData = $valueAddedModuleData;
-  }
-  /**
-   * @return ValueAddedModuleData[]
-   */
-  public function getValueAddedModuleData()
-  {
-    return $this->valueAddedModuleData;
   }
   /**
    * @param string

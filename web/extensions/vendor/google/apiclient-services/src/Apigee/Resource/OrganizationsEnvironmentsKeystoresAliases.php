@@ -66,7 +66,6 @@ class OrganizationsEnvironmentsKeystoresAliases extends \Google\Service\Resource
    * contains a certificate chain with no newline between each certificate.
    * Defaults to `false`.
    * @return GoogleCloudApigeeV1Alias
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleApiHttpBody $postBody, $optParams = [])
   {
@@ -83,7 +82,6 @@ class OrganizationsEnvironmentsKeystoresAliases extends \Google\Service\Resource
    * iases/{alias}`.
    * @param array $optParams Optional parameters.
    * @return GoogleApiHttpBody
-   * @throws \Google\Service\Exception
    */
   public function csr($name, $optParams = [])
   {
@@ -99,7 +97,6 @@ class OrganizationsEnvironmentsKeystoresAliases extends \Google\Service\Resource
    * iases/{alias}`.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudApigeeV1Alias
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -115,7 +112,6 @@ class OrganizationsEnvironmentsKeystoresAliases extends \Google\Service\Resource
    * iases/{alias}`.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudApigeeV1Alias
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -132,7 +128,6 @@ class OrganizationsEnvironmentsKeystoresAliases extends \Google\Service\Resource
    * iases/{alias}`.
    * @param array $optParams Optional parameters.
    * @return GoogleApiHttpBody
-   * @throws \Google\Service\Exception
    */
   public function getCertificate($name, $optParams = [])
   {
@@ -157,7 +152,6 @@ class OrganizationsEnvironmentsKeystoresAliases extends \Google\Service\Resource
    * contains a certificate chain with no newline between each certificate.
    * Defaults to `false`.
    * @return GoogleCloudApigeeV1Alias
-   * @throws \Google\Service\Exception
    */
   public function update($name, GoogleApiHttpBody $postBody, $optParams = [])
   {

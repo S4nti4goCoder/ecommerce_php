@@ -40,7 +40,6 @@ class Projects extends \Google\Service\Resource
    * billing information is retrieved. For example, `projects/tokyo-rain-123`.
    * @param array $optParams Optional parameters.
    * @return ProjectBillingInfo
-   * @throws \Google\Service\Exception
    */
   public function getBillingInfo($name, $optParams = [])
   {
@@ -81,7 +80,6 @@ class Projects extends \Google\Service\Resource
    * @param ProjectBillingInfo $postBody
    * @param array $optParams Optional parameters.
    * @return ProjectBillingInfo
-   * @throws \Google\Service\Exception
    */
   public function updateBillingInfo($name, ProjectBillingInfo $postBody, $optParams = [])
   {

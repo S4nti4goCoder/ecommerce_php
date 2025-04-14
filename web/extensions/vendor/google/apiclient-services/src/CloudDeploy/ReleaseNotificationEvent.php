@@ -26,15 +26,7 @@ class ReleaseNotificationEvent extends \Google\Model
   /**
    * @var string
    */
-  public $pipelineUid;
-  /**
-   * @var string
-   */
   public $release;
-  /**
-   * @var string
-   */
-  public $releaseUid;
   /**
    * @var string
    */
@@ -57,20 +49,6 @@ class ReleaseNotificationEvent extends \Google\Model
   /**
    * @param string
    */
-  public function setPipelineUid($pipelineUid)
-  {
-    $this->pipelineUid = $pipelineUid;
-  }
-  /**
-   * @return string
-   */
-  public function getPipelineUid()
-  {
-    return $this->pipelineUid;
-  }
-  /**
-   * @param string
-   */
   public function setRelease($release)
   {
     $this->release = $release;
@@ -81,20 +59,6 @@ class ReleaseNotificationEvent extends \Google\Model
   public function getRelease()
   {
     return $this->release;
-  }
-  /**
-   * @param string
-   */
-  public function setReleaseUid($releaseUid)
-  {
-    $this->releaseUid = $releaseUid;
-  }
-  /**
-   * @return string
-   */
-  public function getReleaseUid()
-  {
-    return $this->releaseUid;
   }
   /**
    * @param string

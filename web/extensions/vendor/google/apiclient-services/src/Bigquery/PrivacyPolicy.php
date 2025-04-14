@@ -19,12 +19,12 @@ namespace Google\Service\Bigquery;
 
 class PrivacyPolicy extends \Google\Model
 {
+  /**
+   * @var AggregationThresholdPolicy
+   */
+  public $aggregationThresholdPolicy;
   protected $aggregationThresholdPolicyType = AggregationThresholdPolicy::class;
   protected $aggregationThresholdPolicyDataType = '';
-  protected $differentialPrivacyPolicyType = DifferentialPrivacyPolicy::class;
-  protected $differentialPrivacyPolicyDataType = '';
-  protected $joinRestrictionPolicyType = JoinRestrictionPolicy::class;
-  protected $joinRestrictionPolicyDataType = '';
 
   /**
    * @param AggregationThresholdPolicy
@@ -39,34 +39,6 @@ class PrivacyPolicy extends \Google\Model
   public function getAggregationThresholdPolicy()
   {
     return $this->aggregationThresholdPolicy;
-  }
-  /**
-   * @param DifferentialPrivacyPolicy
-   */
-  public function setDifferentialPrivacyPolicy(DifferentialPrivacyPolicy $differentialPrivacyPolicy)
-  {
-    $this->differentialPrivacyPolicy = $differentialPrivacyPolicy;
-  }
-  /**
-   * @return DifferentialPrivacyPolicy
-   */
-  public function getDifferentialPrivacyPolicy()
-  {
-    return $this->differentialPrivacyPolicy;
-  }
-  /**
-   * @param JoinRestrictionPolicy
-   */
-  public function setJoinRestrictionPolicy(JoinRestrictionPolicy $joinRestrictionPolicy)
-  {
-    $this->joinRestrictionPolicy = $joinRestrictionPolicy;
-  }
-  /**
-   * @return JoinRestrictionPolicy
-   */
-  public function getJoinRestrictionPolicy()
-  {
-    return $this->joinRestrictionPolicy;
   }
 }
 

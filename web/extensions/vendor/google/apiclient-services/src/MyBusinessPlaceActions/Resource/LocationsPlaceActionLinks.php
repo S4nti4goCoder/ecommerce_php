@@ -42,7 +42,6 @@ class LocationsPlaceActionLinks extends \Google\Service\Resource
    * @param PlaceActionLink $postBody
    * @param array $optParams Optional parameters.
    * @return PlaceActionLink
-   * @throws \Google\Service\Exception
    */
   public function create($parent, PlaceActionLink $postBody, $optParams = [])
   {
@@ -58,7 +57,6 @@ class LocationsPlaceActionLinks extends \Google\Service\Resource
    * remove from the location.
    * @param array $optParams Optional parameters.
    * @return MybusinessplaceactionsEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -72,7 +70,6 @@ class LocationsPlaceActionLinks extends \Google\Service\Resource
    * @param string $name Required. The name of the place action link to fetch.
    * @param array $optParams Optional parameters.
    * @return PlaceActionLink
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -97,7 +94,6 @@ class LocationsPlaceActionLinks extends \Google\Service\Resource
    * @opt_param string pageToken Optional. If specified, returns the next page of
    * place action links.
    * @return ListPlaceActionLinksResponse
-   * @throws \Google\Service\Exception
    */
   public function listLocationsPlaceActionLinks($parent, $optParams = [])
   {
@@ -124,7 +120,6 @@ class LocationsPlaceActionLinks extends \Google\Service\Resource
    * the updated link already exists at the same location with the same
    * `place_action_type` and `uri`, fails with an `ALREADY_EXISTS` error.
    * @return PlaceActionLink
-   * @throws \Google\Service\Exception
    */
   public function patch($name, PlaceActionLink $postBody, $optParams = [])
   {

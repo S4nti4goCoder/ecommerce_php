@@ -38,7 +38,6 @@ class AccountsContainersEnvironments extends \Google\Service\Resource
    * @param Environment $postBody
    * @param array $optParams Optional parameters.
    * @return Environment
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Environment $postBody, $optParams = [])
   {
@@ -52,7 +51,6 @@ class AccountsContainersEnvironments extends \Google\Service\Resource
    * @param string $path GTM Environment's API relative path. Example:
    * accounts/{account_id}/containers/{container_id}/environments/{environment_id}
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function delete($path, $optParams = [])
   {
@@ -67,7 +65,6 @@ class AccountsContainersEnvironments extends \Google\Service\Resource
    * accounts/{account_id}/containers/{container_id}/environments/{environment_id}
    * @param array $optParams Optional parameters.
    * @return Environment
-   * @throws \Google\Service\Exception
    */
   public function get($path, $optParams = [])
   {
@@ -86,7 +83,6 @@ class AccountsContainersEnvironments extends \Google\Service\Resource
    * @opt_param string pageToken Continuation token for fetching the next page of
    * results.
    * @return ListEnvironmentsResponse
-   * @throws \Google\Service\Exception
    */
   public function listAccountsContainersEnvironments($parent, $optParams = [])
   {
@@ -103,7 +99,6 @@ class AccountsContainersEnvironments extends \Google\Service\Resource
    * @param Environment $postBody
    * @param array $optParams Optional parameters.
    * @return Environment
-   * @throws \Google\Service\Exception
    */
   public function reauthorize($path, Environment $postBody, $optParams = [])
   {
@@ -122,7 +117,6 @@ class AccountsContainersEnvironments extends \Google\Service\Resource
    * @opt_param string fingerprint When provided, this fingerprint must match the
    * fingerprint of the environment in storage.
    * @return Environment
-   * @throws \Google\Service\Exception
    */
   public function update($path, Environment $postBody, $optParams = [])
   {

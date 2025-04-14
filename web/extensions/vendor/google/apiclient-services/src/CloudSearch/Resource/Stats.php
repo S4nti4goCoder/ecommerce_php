@@ -50,7 +50,6 @@ class Stats extends \Google\Service\Resource
    * @opt_param int toDate.month Month of date. Must be from 1 to 12.
    * @opt_param int toDate.year Year of date. Must be from 1 to 9999.
    * @return GetCustomerIndexStatsResponse
-   * @throws \Google\Service\Exception
    */
   public function getIndex($optParams = [])
   {
@@ -73,7 +72,6 @@ class Stats extends \Google\Service\Resource
    * @opt_param int toDate.month Month of date. Must be from 1 to 12.
    * @opt_param int toDate.year Year of date. Must be from 1 to 9999.
    * @return GetCustomerQueryStatsResponse
-   * @throws \Google\Service\Exception
    */
   public function getQuery($optParams = [])
   {
@@ -96,7 +94,6 @@ class Stats extends \Google\Service\Resource
    * @opt_param int startDate.month Month of date. Must be from 1 to 12.
    * @opt_param int startDate.year Year of date. Must be from 1 to 9999.
    * @return GetCustomerSearchApplicationStatsResponse
-   * @throws \Google\Service\Exception
    */
   public function getSearchapplication($optParams = [])
   {
@@ -120,7 +117,6 @@ class Stats extends \Google\Service\Resource
    * @opt_param int toDate.month Month of date. Must be from 1 to 12.
    * @opt_param int toDate.year Year of date. Must be from 1 to 9999.
    * @return GetCustomerSessionStatsResponse
-   * @throws \Google\Service\Exception
    */
   public function getSession($optParams = [])
   {
@@ -143,7 +139,6 @@ class Stats extends \Google\Service\Resource
    * @opt_param int toDate.month Month of date. Must be from 1 to 12.
    * @opt_param int toDate.year Year of date. Must be from 1 to 9999.
    * @return GetCustomerUserStatsResponse
-   * @throws \Google\Service\Exception
    */
   public function getUser($optParams = [])
   {

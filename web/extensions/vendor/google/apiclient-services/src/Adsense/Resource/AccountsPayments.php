@@ -37,7 +37,6 @@ class AccountsPayments extends \Google\Service\Resource
    * payments. Format: accounts/{account}
    * @param array $optParams Optional parameters.
    * @return ListPaymentsResponse
-   * @throws \Google\Service\Exception
    */
   public function listAccountsPayments($parent, $optParams = [])
   {

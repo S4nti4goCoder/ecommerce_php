@@ -23,18 +23,28 @@ class Insight extends \Google\Model
    * @var string
    */
   public $instanceId;
+  /**
+   * @var SapDiscovery
+   */
+  public $sapDiscovery;
   protected $sapDiscoveryType = SapDiscovery::class;
   protected $sapDiscoveryDataType = '';
+  /**
+   * @var SapValidation
+   */
+  public $sapValidation;
   protected $sapValidationType = SapValidation::class;
   protected $sapValidationDataType = '';
   /**
    * @var string
    */
   public $sentTime;
+  /**
+   * @var SqlserverValidation
+   */
+  public $sqlserverValidation;
   protected $sqlserverValidationType = SqlserverValidation::class;
   protected $sqlserverValidationDataType = '';
-  protected $torsoValidationType = TorsoValidation::class;
-  protected $torsoValidationDataType = '';
 
   /**
    * @param string
@@ -105,20 +115,6 @@ class Insight extends \Google\Model
   public function getSqlserverValidation()
   {
     return $this->sqlserverValidation;
-  }
-  /**
-   * @param TorsoValidation
-   */
-  public function setTorsoValidation(TorsoValidation $torsoValidation)
-  {
-    $this->torsoValidation = $torsoValidation;
-  }
-  /**
-   * @return TorsoValidation
-   */
-  public function getTorsoValidation()
-  {
-    return $this->torsoValidation;
   }
 }
 

@@ -53,7 +53,6 @@ class RegionTargetHttpProxies extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($project, $region, $targetHttpProxy, $optParams = [])
   {
@@ -71,7 +70,6 @@ class RegionTargetHttpProxies extends \Google\Service\Resource
    * return.
    * @param array $optParams Optional parameters.
    * @return TargetHttpProxy
-   * @throws \Google\Service\Exception
    */
   public function get($project, $region, $targetHttpProxy, $optParams = [])
   {
@@ -99,7 +97,6 @@ class RegionTargetHttpProxies extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function insert($project, $region, TargetHttpProxy $postBody, $optParams = [])
   {
@@ -166,11 +163,8 @@ class RegionTargetHttpProxies extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
+   * false.
    * @return TargetHttpProxyList
-   * @throws \Google\Service\Exception
    */
   public function listRegionTargetHttpProxies($project, $region, $optParams = [])
   {
@@ -199,7 +193,6 @@ class RegionTargetHttpProxies extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported (
    * 00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function setUrlMap($project, $region, $targetHttpProxy, UrlMapReference $postBody, $optParams = [])
   {

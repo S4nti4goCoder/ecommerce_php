@@ -38,7 +38,6 @@ class ProjectsLocationsConnectionsEntityTypes extends \Google\Service\Resource
    * tyType}
    * @param array $optParams Optional parameters.
    * @return EntityType
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -61,7 +60,6 @@ class ProjectsLocationsConnectionsEntityTypes extends \Google\Service\Resource
    * @opt_param string view Specifies which fields of the Entity Type are returned
    * in the response.
    * @return ListEntityTypesResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsConnectionsEntityTypes($parent, $optParams = [])
   {

@@ -39,7 +39,6 @@ class Shoppingadsprogram extends \Google\Service\Resource
    * @param string $merchantId Required. The ID of the account.
    * @param array $optParams Optional parameters.
    * @return ShoppingAdsProgramStatus
-   * @throws \Google\Service\Exception
    */
   public function get($merchantId, $optParams = [])
   {
@@ -55,7 +54,6 @@ class Shoppingadsprogram extends \Google\Service\Resource
    * @param string $merchantId Required. The ID of the account.
    * @param RequestReviewShoppingAdsRequest $postBody
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function requestreview($merchantId, RequestReviewShoppingAdsRequest $postBody, $optParams = [])
   {

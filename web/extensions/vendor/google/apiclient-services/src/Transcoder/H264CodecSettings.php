@@ -52,10 +52,6 @@ class H264CodecSettings extends \Google\Model
   /**
    * @var string
    */
-  public $frameRateConversionStrategy;
-  /**
-   * @var string
-   */
   public $gopDuration;
   /**
    * @var int
@@ -65,8 +61,6 @@ class H264CodecSettings extends \Google\Model
    * @var int
    */
   public $heightPixels;
-  protected $hlgType = H264ColorFormatHLG::class;
-  protected $hlgDataType = '';
   /**
    * @var string
    */
@@ -83,8 +77,6 @@ class H264CodecSettings extends \Google\Model
    * @var string
    */
   public $rateControlMode;
-  protected $sdrType = H264ColorFormatSDR::class;
-  protected $sdrDataType = '';
   /**
    * @var string
    */
@@ -219,20 +211,6 @@ class H264CodecSettings extends \Google\Model
   /**
    * @param string
    */
-  public function setFrameRateConversionStrategy($frameRateConversionStrategy)
-  {
-    $this->frameRateConversionStrategy = $frameRateConversionStrategy;
-  }
-  /**
-   * @return string
-   */
-  public function getFrameRateConversionStrategy()
-  {
-    return $this->frameRateConversionStrategy;
-  }
-  /**
-   * @param string
-   */
   public function setGopDuration($gopDuration)
   {
     $this->gopDuration = $gopDuration;
@@ -271,20 +249,6 @@ class H264CodecSettings extends \Google\Model
   public function getHeightPixels()
   {
     return $this->heightPixels;
-  }
-  /**
-   * @param H264ColorFormatHLG
-   */
-  public function setHlg(H264ColorFormatHLG $hlg)
-  {
-    $this->hlg = $hlg;
-  }
-  /**
-   * @return H264ColorFormatHLG
-   */
-  public function getHlg()
-  {
-    return $this->hlg;
   }
   /**
    * @param string
@@ -341,20 +305,6 @@ class H264CodecSettings extends \Google\Model
   public function getRateControlMode()
   {
     return $this->rateControlMode;
-  }
-  /**
-   * @param H264ColorFormatSDR
-   */
-  public function setSdr(H264ColorFormatSDR $sdr)
-  {
-    $this->sdr = $sdr;
-  }
-  /**
-   * @return H264ColorFormatSDR
-   */
-  public function getSdr()
-  {
-    return $this->sdr;
   }
   /**
    * @param string

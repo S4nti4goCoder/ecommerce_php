@@ -45,7 +45,6 @@ class Buyongoogleprograms extends \Google\Service\Resource
    * is available.
    * @param ActivateBuyOnGoogleProgramRequest $postBody
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function activate($merchantId, $regionCode, ActivateBuyOnGoogleProgramRequest $postBody, $optParams = [])
   {
@@ -63,7 +62,6 @@ class Buyongoogleprograms extends \Google\Service\Resource
    * is available.
    * @param array $optParams Optional parameters.
    * @return BuyOnGoogleProgramStatus
-   * @throws \Google\Service\Exception
    */
   public function get($merchantId, $regionCode, $optParams = [])
   {
@@ -85,7 +83,6 @@ class Buyongoogleprograms extends \Google\Service\Resource
    * is available.
    * @param OnboardBuyOnGoogleProgramRequest $postBody
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function onboard($merchantId, $regionCode, OnboardBuyOnGoogleProgramRequest $postBody, $optParams = [])
   {
@@ -108,7 +105,6 @@ class Buyongoogleprograms extends \Google\Service\Resource
    * is not provided, then all the fields set in buyOnGoogleProgramStatus will be
    * updated. Clearing fields is only possible if update mask is provided.
    * @return BuyOnGoogleProgramStatus
-   * @throws \Google\Service\Exception
    */
   public function patch($merchantId, $regionCode, BuyOnGoogleProgramStatus $postBody, $optParams = [])
   {
@@ -126,7 +122,6 @@ class Buyongoogleprograms extends \Google\Service\Resource
    * is available.
    * @param PauseBuyOnGoogleProgramRequest $postBody
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function pause($merchantId, $regionCode, PauseBuyOnGoogleProgramRequest $postBody, $optParams = [])
   {
@@ -146,7 +141,6 @@ class Buyongoogleprograms extends \Google\Service\Resource
    * is available.
    * @param RequestReviewBuyOnGoogleProgramRequest $postBody
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function requestreview($merchantId, $regionCode, RequestReviewBuyOnGoogleProgramRequest $postBody, $optParams = [])
   {

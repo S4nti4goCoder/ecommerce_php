@@ -20,14 +20,20 @@ namespace Google\Service\CloudWorkstations;
 class WorkstationConfig extends \Google\Collection
 {
   protected $collection_key = 'replicaZones';
-  protected $allowedPortsType = PortRange::class;
-  protected $allowedPortsDataType = 'array';
   /**
    * @var string[]
    */
   public $annotations;
+  /**
+   * @var Status[]
+   */
+  public $conditions;
   protected $conditionsType = Status::class;
   protected $conditionsDataType = 'array';
+  /**
+   * @var Container
+   */
+  public $container;
   protected $containerType = Container::class;
   protected $containerDataType = '';
   /**
@@ -43,29 +49,23 @@ class WorkstationConfig extends \Google\Collection
    */
   public $deleteTime;
   /**
-   * @var bool
-   */
-  public $disableTcpConnections;
-  /**
    * @var string
    */
   public $displayName;
   /**
-   * @var bool
+   * @var CustomerEncryptionKey
    */
-  public $enableAuditAgent;
+  public $encryptionKey;
   protected $encryptionKeyType = CustomerEncryptionKey::class;
   protected $encryptionKeyDataType = '';
-  protected $ephemeralDirectoriesType = EphemeralDirectory::class;
-  protected $ephemeralDirectoriesDataType = 'array';
   /**
    * @var string
    */
   public $etag;
   /**
-   * @var bool
+   * @var Host
    */
-  public $grantWorkstationAdminRoleOnCreate;
+  public $host;
   protected $hostType = Host::class;
   protected $hostDataType = '';
   /**
@@ -77,15 +77,19 @@ class WorkstationConfig extends \Google\Collection
    */
   public $labels;
   /**
-   * @var int
-   */
-  public $maxUsableWorkstations;
-  /**
    * @var string
    */
   public $name;
+  /**
+   * @var PersistentDirectory[]
+   */
+  public $persistentDirectories;
   protected $persistentDirectoriesType = PersistentDirectory::class;
   protected $persistentDirectoriesDataType = 'array';
+  /**
+   * @var ReadinessCheck[]
+   */
+  public $readinessChecks;
   protected $readinessChecksType = ReadinessCheck::class;
   protected $readinessChecksDataType = 'array';
   /**
@@ -109,20 +113,6 @@ class WorkstationConfig extends \Google\Collection
    */
   public $updateTime;
 
-  /**
-   * @param PortRange[]
-   */
-  public function setAllowedPorts($allowedPorts)
-  {
-    $this->allowedPorts = $allowedPorts;
-  }
-  /**
-   * @return PortRange[]
-   */
-  public function getAllowedPorts()
-  {
-    return $this->allowedPorts;
-  }
   /**
    * @param string[]
    */
@@ -208,20 +198,6 @@ class WorkstationConfig extends \Google\Collection
     return $this->deleteTime;
   }
   /**
-   * @param bool
-   */
-  public function setDisableTcpConnections($disableTcpConnections)
-  {
-    $this->disableTcpConnections = $disableTcpConnections;
-  }
-  /**
-   * @return bool
-   */
-  public function getDisableTcpConnections()
-  {
-    return $this->disableTcpConnections;
-  }
-  /**
    * @param string
    */
   public function setDisplayName($displayName)
@@ -234,20 +210,6 @@ class WorkstationConfig extends \Google\Collection
   public function getDisplayName()
   {
     return $this->displayName;
-  }
-  /**
-   * @param bool
-   */
-  public function setEnableAuditAgent($enableAuditAgent)
-  {
-    $this->enableAuditAgent = $enableAuditAgent;
-  }
-  /**
-   * @return bool
-   */
-  public function getEnableAuditAgent()
-  {
-    return $this->enableAuditAgent;
   }
   /**
    * @param CustomerEncryptionKey
@@ -264,20 +226,6 @@ class WorkstationConfig extends \Google\Collection
     return $this->encryptionKey;
   }
   /**
-   * @param EphemeralDirectory[]
-   */
-  public function setEphemeralDirectories($ephemeralDirectories)
-  {
-    $this->ephemeralDirectories = $ephemeralDirectories;
-  }
-  /**
-   * @return EphemeralDirectory[]
-   */
-  public function getEphemeralDirectories()
-  {
-    return $this->ephemeralDirectories;
-  }
-  /**
    * @param string
    */
   public function setEtag($etag)
@@ -290,20 +238,6 @@ class WorkstationConfig extends \Google\Collection
   public function getEtag()
   {
     return $this->etag;
-  }
-  /**
-   * @param bool
-   */
-  public function setGrantWorkstationAdminRoleOnCreate($grantWorkstationAdminRoleOnCreate)
-  {
-    $this->grantWorkstationAdminRoleOnCreate = $grantWorkstationAdminRoleOnCreate;
-  }
-  /**
-   * @return bool
-   */
-  public function getGrantWorkstationAdminRoleOnCreate()
-  {
-    return $this->grantWorkstationAdminRoleOnCreate;
   }
   /**
    * @param Host
@@ -346,20 +280,6 @@ class WorkstationConfig extends \Google\Collection
   public function getLabels()
   {
     return $this->labels;
-  }
-  /**
-   * @param int
-   */
-  public function setMaxUsableWorkstations($maxUsableWorkstations)
-  {
-    $this->maxUsableWorkstations = $maxUsableWorkstations;
-  }
-  /**
-   * @return int
-   */
-  public function getMaxUsableWorkstations()
-  {
-    return $this->maxUsableWorkstations;
   }
   /**
    * @param string

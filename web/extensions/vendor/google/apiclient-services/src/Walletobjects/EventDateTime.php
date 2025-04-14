@@ -19,6 +19,10 @@ namespace Google\Service\Walletobjects;
 
 class EventDateTime extends \Google\Model
 {
+  /**
+   * @var LocalizedString
+   */
+  public $customDoorsOpenLabel;
   protected $customDoorsOpenLabelType = LocalizedString::class;
   protected $customDoorsOpenLabelDataType = '';
   /**

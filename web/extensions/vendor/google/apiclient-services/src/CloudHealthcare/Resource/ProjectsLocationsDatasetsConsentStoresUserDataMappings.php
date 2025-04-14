@@ -41,7 +41,6 @@ class ProjectsLocationsDatasetsConsentStoresUserDataMappings extends \Google\Ser
    * @param ArchiveUserDataMappingRequest $postBody
    * @param array $optParams Optional parameters.
    * @return ArchiveUserDataMappingResponse
-   * @throws \Google\Service\Exception
    */
   public function archive($name, ArchiveUserDataMappingRequest $postBody, $optParams = [])
   {
@@ -57,7 +56,6 @@ class ProjectsLocationsDatasetsConsentStoresUserDataMappings extends \Google\Ser
    * @param UserDataMapping $postBody
    * @param array $optParams Optional parameters.
    * @return UserDataMapping
-   * @throws \Google\Service\Exception
    */
   public function create($parent, UserDataMapping $postBody, $optParams = [])
   {
@@ -72,7 +70,6 @@ class ProjectsLocationsDatasetsConsentStoresUserDataMappings extends \Google\Ser
    * delete.
    * @param array $optParams Optional parameters.
    * @return HealthcareEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -87,7 +84,6 @@ class ProjectsLocationsDatasetsConsentStoresUserDataMappings extends \Google\Ser
    * retrieve.
    * @param array $optParams Optional parameters.
    * @return UserDataMapping
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -133,7 +129,6 @@ class ProjectsLocationsDatasetsConsentStoresUserDataMappings extends \Google\Ser
    * @opt_param string pageToken Optional. Token to retrieve the next page of
    * results, or empty to get the first page.
    * @return ListUserDataMappingsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsDatasetsConsentStoresUserDataMappings($parent, $optParams = [])
   {
@@ -156,7 +151,6 @@ class ProjectsLocationsDatasetsConsentStoresUserDataMappings extends \Google\Ser
    * buffers/docs/reference/google.protobuf#fieldmask. Only the `data_id`,
    * `user_id` and `resource_attributes` fields can be updated.
    * @return UserDataMapping
-   * @throws \Google\Service\Exception
    */
   public function patch($name, UserDataMapping $postBody, $optParams = [])
   {

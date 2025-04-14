@@ -20,16 +20,16 @@ namespace Google\Service\SA360;
 class GoogleAdsSearchads360V0ResourcesAdGroupAd extends \Google\Collection
 {
   protected $collection_key = 'labels';
+  /**
+   * @var GoogleAdsSearchads360V0ResourcesAd
+   */
+  public $ad;
   protected $adType = GoogleAdsSearchads360V0ResourcesAd::class;
   protected $adDataType = '';
   /**
    * @var string
    */
   public $creationTime;
-  /**
-   * @var string[]
-   */
-  public $effectiveLabels;
   /**
    * @var string
    */
@@ -82,20 +82,6 @@ class GoogleAdsSearchads360V0ResourcesAdGroupAd extends \Google\Collection
   public function getCreationTime()
   {
     return $this->creationTime;
-  }
-  /**
-   * @param string[]
-   */
-  public function setEffectiveLabels($effectiveLabels)
-  {
-    $this->effectiveLabels = $effectiveLabels;
-  }
-  /**
-   * @return string[]
-   */
-  public function getEffectiveLabels()
-  {
-    return $this->effectiveLabels;
   }
   /**
    * @param string

@@ -45,7 +45,6 @@ class ProjectsLocationsInstances extends \Google\Service\Resource
    * @opt_param string instanceId Required. Identifier to assign to the Instance.
    * Must be unique within scope of the parent resource.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Instance $postBody, $optParams = [])
   {
@@ -60,7 +59,6 @@ class ProjectsLocationsInstances extends \Google\Service\Resource
    * `projects/locations/instances`.
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -75,7 +73,6 @@ class ProjectsLocationsInstances extends \Google\Service\Resource
    * `projects/locations/instances`.
    * @param array $optParams Optional parameters.
    * @return Instance
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -106,7 +103,6 @@ class ProjectsLocationsInstances extends \Google\Service\Resource
    * documentation](https://cloud.google.com/iam/help/conditions/resource-
    * policies).
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, $optParams = [])
   {
@@ -126,7 +122,6 @@ class ProjectsLocationsInstances extends \Google\Service\Resource
    * @param SetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, SetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -149,7 +144,6 @@ class ProjectsLocationsInstances extends \Google\Service\Resource
    * @param TestIamPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestIamPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, TestIamPermissionsRequest $postBody, $optParams = [])
   {

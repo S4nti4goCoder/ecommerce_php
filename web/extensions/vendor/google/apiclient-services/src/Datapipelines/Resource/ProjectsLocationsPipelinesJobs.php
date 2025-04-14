@@ -46,7 +46,6 @@ class ProjectsLocationsPipelinesJobs extends \Google\Service\Resource
    * other parameters provided to `ListJobs` must match the call that provided the
    * page token.
    * @return GoogleCloudDatapipelinesV1ListJobsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsPipelinesJobs($parent, $optParams = [])
   {

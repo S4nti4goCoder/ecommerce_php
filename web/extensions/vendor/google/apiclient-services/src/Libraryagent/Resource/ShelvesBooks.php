@@ -39,7 +39,6 @@ class ShelvesBooks extends \Google\Service\Resource
    * @param string $name Required. The name of the book to borrow.
    * @param array $optParams Optional parameters.
    * @return GoogleExampleLibraryagentV1Book
-   * @throws \Google\Service\Exception
    */
   public function borrow($name, $optParams = [])
   {
@@ -53,7 +52,6 @@ class ShelvesBooks extends \Google\Service\Resource
    * @param string $name Required. The name of the book to retrieve.
    * @param array $optParams Optional parameters.
    * @return GoogleExampleLibraryagentV1Book
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -77,7 +75,6 @@ class ShelvesBooks extends \Google\Service\Resource
    * ListBooksResponse.next_page_token. returned from the previous call to
    * `ListBooks` method.
    * @return GoogleExampleLibraryagentV1ListBooksResponse
-   * @throws \Google\Service\Exception
    */
   public function listShelvesBooks($parent, $optParams = [])
   {
@@ -93,7 +90,6 @@ class ShelvesBooks extends \Google\Service\Resource
    * @param string $name Required. The name of the book to return.
    * @param array $optParams Optional parameters.
    * @return GoogleExampleLibraryagentV1Book
-   * @throws \Google\Service\Exception
    */
   public function returnShelvesBooks($name, $optParams = [])
   {

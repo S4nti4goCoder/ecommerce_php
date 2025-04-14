@@ -46,7 +46,6 @@ class ServicesConfigs extends \Google\Service\Resource
    * @param Service $postBody
    * @param array $optParams Optional parameters.
    * @return Service
-   * @throws \Google\Service\Exception
    */
   public function create($serviceName, Service $postBody, $optParams = [])
   {
@@ -68,7 +67,6 @@ class ServicesConfigs extends \Google\Service\Resource
    * @opt_param string view Specifies which parts of the Service Config should be
    * returned in the response.
    * @return Service
-   * @throws \Google\Service\Exception
    */
   public function get($serviceName, $configId, $optParams = [])
   {
@@ -89,7 +87,6 @@ class ServicesConfigs extends \Google\Service\Resource
    * list. Page size is 50 if not specified. Maximum value is 100.
    * @opt_param string pageToken The token of the page to retrieve.
    * @return ListServiceConfigsResponse
-   * @throws \Google\Service\Exception
    */
   public function listServicesConfigs($serviceName, $optParams = [])
   {
@@ -113,7 +110,6 @@ class ServicesConfigs extends \Google\Service\Resource
    * @param SubmitConfigSourceRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function submit($serviceName, SubmitConfigSourceRequest $postBody, $optParams = [])
   {

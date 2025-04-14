@@ -36,10 +36,6 @@ class Session extends \Google\Model
    */
   public $labels;
   /**
-   * @var bool
-   */
-  public $multiplexed;
-  /**
    * @var string
    */
   public $name;
@@ -99,20 +95,6 @@ class Session extends \Google\Model
   public function getLabels()
   {
     return $this->labels;
-  }
-  /**
-   * @param bool
-   */
-  public function setMultiplexed($multiplexed)
-  {
-    $this->multiplexed = $multiplexed;
-  }
-  /**
-   * @return bool
-   */
-  public function getMultiplexed()
-  {
-    return $this->multiplexed;
   }
   /**
    * @param string

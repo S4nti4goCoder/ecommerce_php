@@ -38,7 +38,6 @@ class ProjectsLocations extends \Google\Service\Resource
    * `projects/{project_id}/locations/{location_id}/biReservation`
    * @param array $optParams Optional parameters.
    * @return BiReservation
-   * @throws \Google\Service\Exception
    */
   public function getBiReservation($name, $optParams = [])
   {
@@ -71,7 +70,6 @@ class ProjectsLocations extends \Google\Service\Resource
    * query. Examples: * `assignee=projects/myproject` * `assignee=folders/123` *
    * `assignee=organizations/456`
    * @return SearchAllAssignmentsResponse
-   * @throws \Google\Service\Exception
    */
   public function searchAllAssignments($parent, $optParams = [])
   {
@@ -105,7 +103,6 @@ class ProjectsLocations extends \Google\Service\Resource
    * query. Examples: * `assignee=projects/myproject` * `assignee=folders/123` *
    * `assignee=organizations/456`
    * @return SearchAssignmentsResponse
-   * @throws \Google\Service\Exception
    */
   public function searchAssignments($parent, $optParams = [])
   {
@@ -128,7 +125,6 @@ class ProjectsLocations extends \Google\Service\Resource
    *
    * @opt_param string updateMask A list of fields to be updated in this request.
    * @return BiReservation
-   * @throws \Google\Service\Exception
    */
   public function updateBiReservation($name, BiReservation $postBody, $optParams = [])
   {

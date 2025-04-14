@@ -38,7 +38,6 @@ class HybridIssuers extends \Google\Service\Resource
    * @param string $name Required. Must be of the form `hybrid/issuers`.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudApigeeV1ListHybridIssuersResponse
-   * @throws \Google\Service\Exception
    */
   public function listHybridIssuers($name, $optParams = [])
   {

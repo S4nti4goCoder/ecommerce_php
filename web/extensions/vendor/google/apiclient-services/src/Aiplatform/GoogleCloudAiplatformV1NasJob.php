@@ -31,12 +31,20 @@ class GoogleCloudAiplatformV1NasJob extends \Google\Model
    * @var bool
    */
   public $enableRestrictedImageTraining;
+  /**
+   * @var GoogleCloudAiplatformV1EncryptionSpec
+   */
+  public $encryptionSpec;
   protected $encryptionSpecType = GoogleCloudAiplatformV1EncryptionSpec::class;
   protected $encryptionSpecDataType = '';
   /**
    * @var string
    */
   public $endTime;
+  /**
+   * @var GoogleRpcStatus
+   */
+  public $error;
   protected $errorType = GoogleRpcStatus::class;
   protected $errorDataType = '';
   /**
@@ -47,18 +55,18 @@ class GoogleCloudAiplatformV1NasJob extends \Google\Model
    * @var string
    */
   public $name;
+  /**
+   * @var GoogleCloudAiplatformV1NasJobOutput
+   */
+  public $nasJobOutput;
   protected $nasJobOutputType = GoogleCloudAiplatformV1NasJobOutput::class;
   protected $nasJobOutputDataType = '';
+  /**
+   * @var GoogleCloudAiplatformV1NasJobSpec
+   */
+  public $nasJobSpec;
   protected $nasJobSpecType = GoogleCloudAiplatformV1NasJobSpec::class;
   protected $nasJobSpecDataType = '';
-  /**
-   * @var bool
-   */
-  public $satisfiesPzi;
-  /**
-   * @var bool
-   */
-  public $satisfiesPzs;
   /**
    * @var string
    */
@@ -211,34 +219,6 @@ class GoogleCloudAiplatformV1NasJob extends \Google\Model
   public function getNasJobSpec()
   {
     return $this->nasJobSpec;
-  }
-  /**
-   * @param bool
-   */
-  public function setSatisfiesPzi($satisfiesPzi)
-  {
-    $this->satisfiesPzi = $satisfiesPzi;
-  }
-  /**
-   * @return bool
-   */
-  public function getSatisfiesPzi()
-  {
-    return $this->satisfiesPzi;
-  }
-  /**
-   * @param bool
-   */
-  public function setSatisfiesPzs($satisfiesPzs)
-  {
-    $this->satisfiesPzs = $satisfiesPzs;
-  }
-  /**
-   * @return bool
-   */
-  public function getSatisfiesPzs()
-  {
-    return $this->satisfiesPzs;
   }
   /**
    * @param string

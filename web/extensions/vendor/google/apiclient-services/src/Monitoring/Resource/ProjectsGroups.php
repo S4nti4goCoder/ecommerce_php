@@ -43,7 +43,6 @@ class ProjectsGroups extends \Google\Service\Resource
    * @opt_param bool validateOnly If true, validate this request but do not create
    * the group.
    * @return Group
-   * @throws \Google\Service\Exception
    */
   public function create($name, Group $postBody, $optParams = [])
   {
@@ -62,7 +61,6 @@ class ProjectsGroups extends \Google\Service\Resource
    * delete a group with all its descendants. Otherwise, the request means to
    * delete a group only when it has no descendants. The default value is false.
    * @return MonitoringEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -77,7 +75,6 @@ class ProjectsGroups extends \Google\Service\Resource
    * projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
    * @param array $optParams Optional parameters.
    * @return Group
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -113,7 +110,6 @@ class ProjectsGroups extends \Google\Service\Resource
    * this field causes the method to return additional results from the previous
    * method call.
    * @return ListGroupsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsGroups($name, $optParams = [])
   {
@@ -136,7 +132,6 @@ class ProjectsGroups extends \Google\Service\Resource
    * @opt_param bool validateOnly If true, validate this request but do not update
    * the existing group.
    * @return Group
-   * @throws \Google\Service\Exception
    */
   public function update($name, Group $postBody, $optParams = [])
   {

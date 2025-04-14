@@ -66,7 +66,6 @@ class ProjectsLocationsPrivateCloudsHcxActivationKeys extends \Google\Service\Re
    * request ID must be a valid UUID with the exception that zero UUID is not
    * supported (00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, HcxActivationKey $postBody, $optParams = [])
   {
@@ -85,7 +84,6 @@ class ProjectsLocationsPrivateCloudsHcxActivationKeys extends \Google\Service\Re
    * cloud/hcxActivationKeys/my-key`
    * @param array $optParams Optional parameters.
    * @return HcxActivationKey
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -117,7 +115,6 @@ class ProjectsLocationsPrivateCloudsHcxActivationKeys extends \Google\Service\Re
    * documentation](https://cloud.google.com/iam/help/conditions/resource-
    * policies).
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, $optParams = [])
   {
@@ -144,7 +141,6 @@ class ProjectsLocationsPrivateCloudsHcxActivationKeys extends \Google\Service\Re
    * When paginating, all other parameters provided to `ListHcxActivationKeys`
    * must match the call that provided the page token.
    * @return ListHcxActivationKeysResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsPrivateCloudsHcxActivationKeys($parent, $optParams = [])
   {
@@ -164,7 +160,6 @@ class ProjectsLocationsPrivateCloudsHcxActivationKeys extends \Google\Service\Re
    * @param SetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, SetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -187,7 +182,6 @@ class ProjectsLocationsPrivateCloudsHcxActivationKeys extends \Google\Service\Re
    * @param TestIamPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestIamPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, TestIamPermissionsRequest $postBody, $optParams = [])
   {

@@ -43,7 +43,6 @@ class ProjectsLocationsWorkstationClusters extends \Google\Service\Resource
    * @opt_param string workstationClusterId Required. ID to use for the
    * workstation cluster.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, WorkstationCluster $postBody, $optParams = [])
   {
@@ -67,7 +66,6 @@ class ProjectsLocationsWorkstationClusters extends \Google\Service\Resource
    * @opt_param bool validateOnly Optional. If set, validate the request and
    * preview the review, but do not apply it.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -81,7 +79,6 @@ class ProjectsLocationsWorkstationClusters extends \Google\Service\Resource
    * @param string $name Required. Name of the requested resource.
    * @param array $optParams Optional parameters.
    * @return WorkstationCluster
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -100,7 +97,6 @@ class ProjectsLocationsWorkstationClusters extends \Google\Service\Resource
    * @opt_param string pageToken Optional. next_page_token value returned from a
    * previous List request, if any.
    * @return ListWorkstationClustersResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsWorkstationClusters($parent, $optParams = [])
   {
@@ -123,7 +119,6 @@ class ProjectsLocationsWorkstationClusters extends \Google\Service\Resource
    * @opt_param bool validateOnly Optional. If set, validate the request and
    * preview the review, but do not actually apply it.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, WorkstationCluster $postBody, $optParams = [])
   {

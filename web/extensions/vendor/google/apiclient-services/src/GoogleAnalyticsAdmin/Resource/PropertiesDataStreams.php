@@ -38,7 +38,6 @@ class PropertiesDataStreams extends \Google\Service\Resource
    * @param GoogleAnalyticsAdminV1betaDataStream $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleAnalyticsAdminV1betaDataStream
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleAnalyticsAdminV1betaDataStream $postBody, $optParams = [])
   {
@@ -53,7 +52,6 @@ class PropertiesDataStreams extends \Google\Service\Resource
    * format: properties/1234/dataStreams/5678
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -68,7 +66,6 @@ class PropertiesDataStreams extends \Google\Service\Resource
    * format: properties/1234/dataStreams/5678
    * @param array $optParams Optional parameters.
    * @return GoogleAnalyticsAdminV1betaDataStream
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -90,7 +87,6 @@ class PropertiesDataStreams extends \Google\Service\Resource
    * paginating, all other parameters provided to `ListDataStreams` must match the
    * call that provided the page token.
    * @return GoogleAnalyticsAdminV1betaListDataStreamsResponse
-   * @throws \Google\Service\Exception
    */
   public function listPropertiesDataStreams($parent, $optParams = [])
   {
@@ -111,7 +107,6 @@ class PropertiesDataStreams extends \Google\Service\Resource
    * Omitted fields will not be updated. To replace the entire entity, use one
    * path with the string "*" to match all fields.
    * @return GoogleAnalyticsAdminV1betaDataStream
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleAnalyticsAdminV1betaDataStream $postBody, $optParams = [])
   {

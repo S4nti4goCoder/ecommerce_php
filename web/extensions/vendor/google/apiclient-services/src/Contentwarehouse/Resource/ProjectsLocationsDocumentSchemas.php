@@ -39,7 +39,6 @@ class ProjectsLocationsDocumentSchemas extends \Google\Service\Resource
    * @param GoogleCloudContentwarehouseV1DocumentSchema $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudContentwarehouseV1DocumentSchema
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudContentwarehouseV1DocumentSchema $postBody, $optParams = [])
   {
@@ -55,7 +54,6 @@ class ProjectsLocationsDocumentSchemas extends \Google\Service\Resource
    * @param string $name Required. The name of the document schema to delete.
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -70,7 +68,6 @@ class ProjectsLocationsDocumentSchemas extends \Google\Service\Resource
    * @param string $name Required. The name of the document schema to retrieve.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudContentwarehouseV1DocumentSchema
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -95,7 +92,6 @@ class ProjectsLocationsDocumentSchemas extends \Google\Service\Resource
    * When paginating, all other parameters provided to `ListDocumentSchemas` must
    * match the call that provided the page token.
    * @return GoogleCloudContentwarehouseV1ListDocumentSchemasResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsDocumentSchemas($parent, $optParams = [])
   {
@@ -117,7 +113,6 @@ class ProjectsLocationsDocumentSchemas extends \Google\Service\Resource
    * @param GoogleCloudContentwarehouseV1UpdateDocumentSchemaRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudContentwarehouseV1DocumentSchema
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleCloudContentwarehouseV1UpdateDocumentSchemaRequest $postBody, $optParams = [])
   {

@@ -42,7 +42,6 @@ class DimensionValues extends \Google\Service\Resource
    * @opt_param string pageToken The value of the nextToken from the previous
    * result page.
    * @return DimensionValueList
-   * @throws \Google\Service\Exception
    */
   public function query($profileId, DimensionValueRequest $postBody, $optParams = [])
   {

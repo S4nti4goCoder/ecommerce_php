@@ -51,7 +51,6 @@ class AdvertisersNegativeKeywordListsNegativeKeywords extends \Google\Service\Re
    * @param BulkEditNegativeKeywordsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return BulkEditNegativeKeywordsResponse
-   * @throws \Google\Service\Exception
    */
   public function bulkEdit($advertiserId, $negativeKeywordListId, BulkEditNegativeKeywordsRequest $postBody, $optParams = [])
   {
@@ -70,7 +69,6 @@ class AdvertisersNegativeKeywordListsNegativeKeywords extends \Google\Service\Re
    * @param NegativeKeyword $postBody
    * @param array $optParams Optional parameters.
    * @return NegativeKeyword
-   * @throws \Google\Service\Exception
    */
   public function create($advertiserId, $negativeKeywordListId, NegativeKeyword $postBody, $optParams = [])
   {
@@ -90,7 +88,6 @@ class AdvertisersNegativeKeywordListsNegativeKeywords extends \Google\Service\Re
    * keyword to delete.
    * @param array $optParams Optional parameters.
    * @return DisplayvideoEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($advertiserId, $negativeKeywordListId, $keywordValue, $optParams = [])
   {
@@ -129,7 +126,6 @@ class AdvertisersNegativeKeywordListsNegativeKeywords extends \Google\Service\Re
    * the previous call to `ListNegativeKeywords` method. If not specified, the
    * first page of results will be returned.
    * @return ListNegativeKeywordsResponse
-   * @throws \Google\Service\Exception
    */
   public function listAdvertisersNegativeKeywordListsNegativeKeywords($advertiserId, $negativeKeywordListId, $optParams = [])
   {
@@ -150,7 +146,6 @@ class AdvertisersNegativeKeywordListsNegativeKeywords extends \Google\Service\Re
    * @param ReplaceNegativeKeywordsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return ReplaceNegativeKeywordsResponse
-   * @throws \Google\Service\Exception
    */
   public function replace($advertiserId, $negativeKeywordListId, ReplaceNegativeKeywordsRequest $postBody, $optParams = [])
   {

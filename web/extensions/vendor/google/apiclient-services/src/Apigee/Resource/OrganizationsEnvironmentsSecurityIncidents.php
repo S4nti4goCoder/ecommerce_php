@@ -43,7 +43,6 @@ class OrganizationsEnvironmentsSecurityIncidents extends \Google\Service\Resourc
    * @param GoogleCloudApigeeV1BatchUpdateSecurityIncidentsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudApigeeV1BatchUpdateSecurityIncidentsResponse
-   * @throws \Google\Service\Exception
    */
   public function batchUpdate($parent, GoogleCloudApigeeV1BatchUpdateSecurityIncidentsRequest $postBody, $optParams = [])
   {
@@ -62,7 +61,6 @@ class OrganizationsEnvironmentsSecurityIncidents extends \Google\Service\Resourc
    * 4567-890-111
    * @param array $optParams Optional parameters.
    * @return GoogleCloudApigeeV1SecurityIncident
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -88,7 +86,6 @@ class OrganizationsEnvironmentsSecurityIncidents extends \Google\Service\Resourc
    * @opt_param string pageToken Optional. A page token, received from a previous
    * `ListSecurityIncident` call. Provide this to retrieve the subsequent page.
    * @return GoogleCloudApigeeV1ListSecurityIncidentsResponse
-   * @throws \Google\Service\Exception
    */
   public function listOrganizationsEnvironmentsSecurityIncidents($parent, $optParams = [])
   {
@@ -112,7 +109,6 @@ class OrganizationsEnvironmentsSecurityIncidents extends \Google\Service\Resourc
    * fields are: LINT.IfChange(allowed_update_fields_comment) - observability
    * LINT.ThenChange()
    * @return GoogleCloudApigeeV1SecurityIncident
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleCloudApigeeV1SecurityIncident $postBody, $optParams = [])
   {

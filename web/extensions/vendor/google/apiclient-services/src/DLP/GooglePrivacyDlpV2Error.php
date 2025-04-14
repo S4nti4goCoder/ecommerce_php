@@ -20,12 +20,12 @@ namespace Google\Service\DLP;
 class GooglePrivacyDlpV2Error extends \Google\Collection
 {
   protected $collection_key = 'timestamps';
+  /**
+   * @var GoogleRpcStatus
+   */
+  public $details;
   protected $detailsType = GoogleRpcStatus::class;
   protected $detailsDataType = '';
-  /**
-   * @var string
-   */
-  public $extraInfo;
   /**
    * @var string[]
    */
@@ -44,20 +44,6 @@ class GooglePrivacyDlpV2Error extends \Google\Collection
   public function getDetails()
   {
     return $this->details;
-  }
-  /**
-   * @param string
-   */
-  public function setExtraInfo($extraInfo)
-  {
-    $this->extraInfo = $extraInfo;
-  }
-  /**
-   * @return string
-   */
-  public function getExtraInfo()
-  {
-    return $this->extraInfo;
   }
   /**
    * @param string[]

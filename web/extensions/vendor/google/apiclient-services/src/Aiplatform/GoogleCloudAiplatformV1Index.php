@@ -24,6 +24,10 @@ class GoogleCloudAiplatformV1Index extends \Google\Collection
    * @var string
    */
   public $createTime;
+  /**
+   * @var GoogleCloudAiplatformV1DeployedIndexRef[]
+   */
+  public $deployedIndexes;
   protected $deployedIndexesType = GoogleCloudAiplatformV1DeployedIndexRef::class;
   protected $deployedIndexesDataType = 'array';
   /**
@@ -34,12 +38,20 @@ class GoogleCloudAiplatformV1Index extends \Google\Collection
    * @var string
    */
   public $displayName;
+  /**
+   * @var GoogleCloudAiplatformV1EncryptionSpec
+   */
+  public $encryptionSpec;
   protected $encryptionSpecType = GoogleCloudAiplatformV1EncryptionSpec::class;
   protected $encryptionSpecDataType = '';
   /**
    * @var string
    */
   public $etag;
+  /**
+   * @var GoogleCloudAiplatformV1IndexStats
+   */
+  public $indexStats;
   protected $indexStatsType = GoogleCloudAiplatformV1IndexStats::class;
   protected $indexStatsDataType = '';
   /**
@@ -62,14 +74,6 @@ class GoogleCloudAiplatformV1Index extends \Google\Collection
    * @var string
    */
   public $name;
-  /**
-   * @var bool
-   */
-  public $satisfiesPzi;
-  /**
-   * @var bool
-   */
-  public $satisfiesPzs;
   /**
    * @var string
    */
@@ -242,34 +246,6 @@ class GoogleCloudAiplatformV1Index extends \Google\Collection
   public function getName()
   {
     return $this->name;
-  }
-  /**
-   * @param bool
-   */
-  public function setSatisfiesPzi($satisfiesPzi)
-  {
-    $this->satisfiesPzi = $satisfiesPzi;
-  }
-  /**
-   * @return bool
-   */
-  public function getSatisfiesPzi()
-  {
-    return $this->satisfiesPzi;
-  }
-  /**
-   * @param bool
-   */
-  public function setSatisfiesPzs($satisfiesPzs)
-  {
-    $this->satisfiesPzs = $satisfiesPzs;
-  }
-  /**
-   * @return bool
-   */
-  public function getSatisfiesPzs()
-  {
-    return $this->satisfiesPzs;
   }
   /**
    * @param string

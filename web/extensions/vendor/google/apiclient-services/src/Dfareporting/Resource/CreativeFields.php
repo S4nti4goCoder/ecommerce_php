@@ -36,7 +36,6 @@ class CreativeFields extends \Google\Service\Resource
    * @param string $profileId User profile ID associated with this request.
    * @param string $id Creative Field ID
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function delete($profileId, $id, $optParams = [])
   {
@@ -51,7 +50,6 @@ class CreativeFields extends \Google\Service\Resource
    * @param string $id Creative Field ID
    * @param array $optParams Optional parameters.
    * @return CreativeField
-   * @throws \Google\Service\Exception
    */
   public function get($profileId, $id, $optParams = [])
   {
@@ -66,7 +64,6 @@ class CreativeFields extends \Google\Service\Resource
    * @param CreativeField $postBody
    * @param array $optParams Optional parameters.
    * @return CreativeField
-   * @throws \Google\Service\Exception
    */
   public function insert($profileId, CreativeField $postBody, $optParams = [])
   {
@@ -98,7 +95,6 @@ class CreativeFields extends \Google\Service\Resource
    * @opt_param string sortField Field by which to sort the list.
    * @opt_param string sortOrder Order of sorted results.
    * @return CreativeFieldsListResponse
-   * @throws \Google\Service\Exception
    */
   public function listCreativeFields($profileId, $optParams = [])
   {
@@ -115,7 +111,6 @@ class CreativeFields extends \Google\Service\Resource
    * @param CreativeField $postBody
    * @param array $optParams Optional parameters.
    * @return CreativeField
-   * @throws \Google\Service\Exception
    */
   public function patch($profileId, $id, CreativeField $postBody, $optParams = [])
   {
@@ -130,7 +125,6 @@ class CreativeFields extends \Google\Service\Resource
    * @param CreativeField $postBody
    * @param array $optParams Optional parameters.
    * @return CreativeField
-   * @throws \Google\Service\Exception
    */
   public function update($profileId, CreativeField $postBody, $optParams = [])
   {

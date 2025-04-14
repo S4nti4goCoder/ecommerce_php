@@ -20,12 +20,20 @@ namespace Google\Service\Compute;
 class ServiceAttachment extends \Google\Collection
 {
   protected $collection_key = 'natSubnets';
+  /**
+   * @var ServiceAttachmentConnectedEndpoint[]
+   */
+  public $connectedEndpoints;
   protected $connectedEndpointsType = ServiceAttachmentConnectedEndpoint::class;
   protected $connectedEndpointsDataType = 'array';
   /**
    * @var string
    */
   public $connectionPreference;
+  /**
+   * @var ServiceAttachmentConsumerProjectLimit[]
+   */
+  public $consumerAcceptLists;
   protected $consumerAcceptListsType = ServiceAttachmentConsumerProjectLimit::class;
   protected $consumerAcceptListsDataType = 'array';
   /**
@@ -73,9 +81,9 @@ class ServiceAttachment extends \Google\Collection
    */
   public $producerForwardingRule;
   /**
-   * @var string
+   * @var Uint128
    */
-  public $propagatedConnectionLimit;
+  public $pscServiceAttachmentId;
   protected $pscServiceAttachmentIdType = Uint128::class;
   protected $pscServiceAttachmentIdDataType = '';
   /**
@@ -290,20 +298,6 @@ class ServiceAttachment extends \Google\Collection
   public function getProducerForwardingRule()
   {
     return $this->producerForwardingRule;
-  }
-  /**
-   * @param string
-   */
-  public function setPropagatedConnectionLimit($propagatedConnectionLimit)
-  {
-    $this->propagatedConnectionLimit = $propagatedConnectionLimit;
-  }
-  /**
-   * @return string
-   */
-  public function getPropagatedConnectionLimit()
-  {
-    return $this->propagatedConnectionLimit;
   }
   /**
    * @param Uint128

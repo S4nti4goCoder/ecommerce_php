@@ -46,7 +46,6 @@ class LicenseAssignments extends \Google\Service\Resource
    * changes. If the `userId` is suspended, the license status changes.
    * @param array $optParams Optional parameters.
    * @return LicensingEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($productId, $skuId, $userId, $optParams = [])
   {
@@ -68,7 +67,6 @@ class LicenseAssignments extends \Google\Service\Resource
    * changes. If the `userId` is suspended, the license status changes.
    * @param array $optParams Optional parameters.
    * @return LicenseAssignment
-   * @throws \Google\Service\Exception
    */
   public function get($productId, $skuId, $userId, $optParams = [])
   {
@@ -86,7 +84,6 @@ class LicenseAssignments extends \Google\Service\Resource
    * @param LicenseAssignmentInsert $postBody
    * @param array $optParams Optional parameters.
    * @return LicenseAssignment
-   * @throws \Google\Service\Exception
    */
   public function insert($productId, $skuId, LicenseAssignmentInsert $postBody, $optParams = [])
   {
@@ -113,7 +110,6 @@ class LicenseAssignments extends \Google\Service\Resource
    * determines how many entries are returned on each page. This is an optional
    * query string. If not specified, the server returns the first page.
    * @return LicenseAssignmentList
-   * @throws \Google\Service\Exception
    */
   public function listForProduct($productId, $customerId, $optParams = [])
   {
@@ -142,7 +138,6 @@ class LicenseAssignments extends \Google\Service\Resource
    * determines how many entries are returned on each page. This is an optional
    * query string. If not specified, the server returns the first page.
    * @return LicenseAssignmentList
-   * @throws \Google\Service\Exception
    */
   public function listForProductAndSku($productId, $skuId, $customerId, $optParams = [])
   {
@@ -166,7 +161,6 @@ class LicenseAssignments extends \Google\Service\Resource
    * @param LicenseAssignment $postBody
    * @param array $optParams Optional parameters.
    * @return LicenseAssignment
-   * @throws \Google\Service\Exception
    */
   public function patch($productId, $skuId, $userId, LicenseAssignment $postBody, $optParams = [])
   {
@@ -190,7 +184,6 @@ class LicenseAssignments extends \Google\Service\Resource
    * @param LicenseAssignment $postBody
    * @param array $optParams Optional parameters.
    * @return LicenseAssignment
-   * @throws \Google\Service\Exception
    */
   public function update($productId, $skuId, $userId, LicenseAssignment $postBody, $optParams = [])
   {

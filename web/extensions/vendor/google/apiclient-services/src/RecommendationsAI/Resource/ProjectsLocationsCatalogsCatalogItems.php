@@ -41,7 +41,6 @@ class ProjectsLocationsCatalogsCatalogItems extends \Google\Service\Resource
    * @param GoogleCloudRecommendationengineV1beta1CatalogItem $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudRecommendationengineV1beta1CatalogItem
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudRecommendationengineV1beta1CatalogItem $postBody, $optParams = [])
   {
@@ -57,7 +56,6 @@ class ProjectsLocationsCatalogsCatalogItems extends \Google\Service\Resource
    * em_id`.
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -73,7 +71,6 @@ class ProjectsLocationsCatalogsCatalogItems extends \Google\Service\Resource
    * em_id`.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudRecommendationengineV1beta1CatalogItem
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -94,7 +91,6 @@ class ProjectsLocationsCatalogsCatalogItems extends \Google\Service\Resource
    * @param GoogleCloudRecommendationengineV1beta1ImportCatalogItemsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function import($parent, GoogleCloudRecommendationengineV1beta1ImportCatalogItemsRequest $postBody, $optParams = [])
   {
@@ -117,7 +113,6 @@ class ProjectsLocationsCatalogsCatalogItems extends \Google\Service\Resource
    * @opt_param string pageToken Optional. The previous
    * ListCatalogItemsResponse.next_page_token.
    * @return GoogleCloudRecommendationengineV1beta1ListCatalogItemsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsCatalogsCatalogItems($parent, $optParams = [])
   {
@@ -138,7 +133,6 @@ class ProjectsLocationsCatalogsCatalogItems extends \Google\Service\Resource
    * @opt_param string updateMask Optional. Indicates which fields in the provided
    * 'item' to update. If not set, will by default update all fields.
    * @return GoogleCloudRecommendationengineV1beta1CatalogItem
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleCloudRecommendationengineV1beta1CatalogItem $postBody, $optParams = [])
   {

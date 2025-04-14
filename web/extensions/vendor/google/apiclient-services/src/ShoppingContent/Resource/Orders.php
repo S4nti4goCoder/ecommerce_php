@@ -76,7 +76,6 @@ class Orders extends \Google\Service\Resource
    * @param OrdersAcknowledgeRequest $postBody
    * @param array $optParams Optional parameters.
    * @return OrdersAcknowledgeResponse
-   * @throws \Google\Service\Exception
    */
   public function acknowledge($merchantId, $orderId, OrdersAcknowledgeRequest $postBody, $optParams = [])
   {
@@ -93,7 +92,6 @@ class Orders extends \Google\Service\Resource
    * @param string $orderId The ID of the test order to modify.
    * @param array $optParams Optional parameters.
    * @return OrdersAdvanceTestOrderResponse
-   * @throws \Google\Service\Exception
    */
   public function advancetestorder($merchantId, $orderId, $optParams = [])
   {
@@ -110,7 +108,6 @@ class Orders extends \Google\Service\Resource
    * @param OrdersCancelRequest $postBody
    * @param array $optParams Optional parameters.
    * @return OrdersCancelResponse
-   * @throws \Google\Service\Exception
    */
   public function cancel($merchantId, $orderId, OrdersCancelRequest $postBody, $optParams = [])
   {
@@ -127,7 +124,6 @@ class Orders extends \Google\Service\Resource
    * @param OrdersCancelLineItemRequest $postBody
    * @param array $optParams Optional parameters.
    * @return OrdersCancelLineItemResponse
-   * @throws \Google\Service\Exception
    */
   public function cancellineitem($merchantId, $orderId, OrdersCancelLineItemRequest $postBody, $optParams = [])
   {
@@ -145,7 +141,6 @@ class Orders extends \Google\Service\Resource
    * @param OrdersCancelTestOrderByCustomerRequest $postBody
    * @param array $optParams Optional parameters.
    * @return OrdersCancelTestOrderByCustomerResponse
-   * @throws \Google\Service\Exception
    */
   public function canceltestorderbycustomer($merchantId, $orderId, OrdersCancelTestOrderByCustomerRequest $postBody, $optParams = [])
   {
@@ -173,7 +168,6 @@ class Orders extends \Google\Service\Resource
    * @param CaptureOrderRequest $postBody
    * @param array $optParams Optional parameters.
    * @return CaptureOrderResponse
-   * @throws \Google\Service\Exception
    */
   public function captureOrder($merchantId, $orderId, CaptureOrderRequest $postBody, $optParams = [])
   {
@@ -189,7 +183,6 @@ class Orders extends \Google\Service\Resource
    * @param OrdersCreateTestOrderRequest $postBody
    * @param array $optParams Optional parameters.
    * @return OrdersCreateTestOrderResponse
-   * @throws \Google\Service\Exception
    */
   public function createtestorder($merchantId, OrdersCreateTestOrderRequest $postBody, $optParams = [])
   {
@@ -206,7 +199,6 @@ class Orders extends \Google\Service\Resource
    * @param OrdersCreateTestReturnRequest $postBody
    * @param array $optParams Optional parameters.
    * @return OrdersCreateTestReturnResponse
-   * @throws \Google\Service\Exception
    */
   public function createtestreturn($merchantId, $orderId, OrdersCreateTestReturnRequest $postBody, $optParams = [])
   {
@@ -222,7 +214,6 @@ class Orders extends \Google\Service\Resource
    * @param string $orderId The ID of the order.
    * @param array $optParams Optional parameters.
    * @return Order
-   * @throws \Google\Service\Exception
    */
   public function get($merchantId, $orderId, $optParams = [])
   {
@@ -238,7 +229,6 @@ class Orders extends \Google\Service\Resource
    * @param string $merchantOrderId The merchant order ID to be looked for.
    * @param array $optParams Optional parameters.
    * @return OrdersGetByMerchantOrderIdResponse
-   * @throws \Google\Service\Exception
    */
   public function getbymerchantorderid($merchantId, $merchantOrderId, $optParams = [])
   {
@@ -258,7 +248,6 @@ class Orders extends \Google\Service\Resource
    * @opt_param string country The country of the template to retrieve. Defaults
    * to "`US`".
    * @return OrdersGetTestOrderTemplateResponse
-   * @throws \Google\Service\Exception
    */
   public function gettestordertemplate($merchantId, $templateName, $optParams = [])
   {
@@ -283,7 +272,6 @@ class Orders extends \Google\Service\Resource
    * @param OrdersInStoreRefundLineItemRequest $postBody
    * @param array $optParams Optional parameters.
    * @return OrdersInStoreRefundLineItemResponse
-   * @throws \Google\Service\Exception
    */
   public function instorerefundlineitem($merchantId, $orderId, OrdersInStoreRefundLineItemRequest $postBody, $optParams = [])
   {
@@ -319,7 +307,6 @@ class Orders extends \Google\Service\Resource
    * `partiallyDelivered`, `delivered`, `partiallyReturned`, `returned`, and
    * `canceled`.
    * @return OrdersListResponse
-   * @throws \Google\Service\Exception
    */
   public function listOrders($merchantId, $optParams = [])
   {
@@ -336,7 +323,6 @@ class Orders extends \Google\Service\Resource
    * @param OrdersRefundItemRequest $postBody
    * @param array $optParams Optional parameters.
    * @return OrdersRefundItemResponse
-   * @throws \Google\Service\Exception
    */
   public function refunditem($merchantId, $orderId, OrdersRefundItemRequest $postBody, $optParams = [])
   {
@@ -353,7 +339,6 @@ class Orders extends \Google\Service\Resource
    * @param OrdersRefundOrderRequest $postBody
    * @param array $optParams Optional parameters.
    * @return OrdersRefundOrderResponse
-   * @throws \Google\Service\Exception
    */
   public function refundorder($merchantId, $orderId, OrdersRefundOrderRequest $postBody, $optParams = [])
   {
@@ -370,7 +355,6 @@ class Orders extends \Google\Service\Resource
    * @param OrdersRejectReturnLineItemRequest $postBody
    * @param array $optParams Optional parameters.
    * @return OrdersRejectReturnLineItemResponse
-   * @throws \Google\Service\Exception
    */
   public function rejectreturnlineitem($merchantId, $orderId, OrdersRejectReturnLineItemRequest $postBody, $optParams = [])
   {
@@ -393,7 +377,6 @@ class Orders extends \Google\Service\Resource
    * @param OrdersReturnRefundLineItemRequest $postBody
    * @param array $optParams Optional parameters.
    * @return OrdersReturnRefundLineItemResponse
-   * @throws \Google\Service\Exception
    */
   public function returnrefundlineitem($merchantId, $orderId, OrdersReturnRefundLineItemRequest $postBody, $optParams = [])
   {
@@ -414,7 +397,6 @@ class Orders extends \Google\Service\Resource
    * @param OrdersSetLineItemMetadataRequest $postBody
    * @param array $optParams Optional parameters.
    * @return OrdersSetLineItemMetadataResponse
-   * @throws \Google\Service\Exception
    */
   public function setlineitemmetadata($merchantId, $orderId, OrdersSetLineItemMetadataRequest $postBody, $optParams = [])
   {
@@ -431,7 +413,6 @@ class Orders extends \Google\Service\Resource
    * @param OrdersShipLineItemsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return OrdersShipLineItemsResponse
-   * @throws \Google\Service\Exception
    */
   public function shiplineitems($merchantId, $orderId, OrdersShipLineItemsRequest $postBody, $optParams = [])
   {
@@ -449,7 +430,6 @@ class Orders extends \Google\Service\Resource
    * @param OrdersUpdateLineItemShippingDetailsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return OrdersUpdateLineItemShippingDetailsResponse
-   * @throws \Google\Service\Exception
    */
   public function updatelineitemshippingdetails($merchantId, $orderId, OrdersUpdateLineItemShippingDetailsRequest $postBody, $optParams = [])
   {
@@ -467,7 +447,6 @@ class Orders extends \Google\Service\Resource
    * @param OrdersUpdateMerchantOrderIdRequest $postBody
    * @param array $optParams Optional parameters.
    * @return OrdersUpdateMerchantOrderIdResponse
-   * @throws \Google\Service\Exception
    */
   public function updatemerchantorderid($merchantId, $orderId, OrdersUpdateMerchantOrderIdRequest $postBody, $optParams = [])
   {
@@ -485,7 +464,6 @@ class Orders extends \Google\Service\Resource
    * @param OrdersUpdateShipmentRequest $postBody
    * @param array $optParams Optional parameters.
    * @return OrdersUpdateShipmentResponse
-   * @throws \Google\Service\Exception
    */
   public function updateshipment($merchantId, $orderId, OrdersUpdateShipmentRequest $postBody, $optParams = [])
   {

@@ -37,7 +37,6 @@ class ConnectionTypes extends \Google\Service\Resource
    * @param string $id Connection type ID.
    * @param array $optParams Optional parameters.
    * @return ConnectionType
-   * @throws \Google\Service\Exception
    */
   public function get($profileId, $id, $optParams = [])
   {
@@ -51,7 +50,6 @@ class ConnectionTypes extends \Google\Service\Resource
    * @param string $profileId User profile ID associated with this request.
    * @param array $optParams Optional parameters.
    * @return ConnectionTypesListResponse
-   * @throws \Google\Service\Exception
    */
   public function listConnectionTypes($profileId, $optParams = [])
   {

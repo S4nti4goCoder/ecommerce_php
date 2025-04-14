@@ -40,7 +40,6 @@ class ProjectsMetrics extends \Google\Service\Resource
    * @param LogMetric $postBody
    * @param array $optParams Optional parameters.
    * @return LogMetric
-   * @throws \Google\Service\Exception
    */
   public function create($parent, LogMetric $postBody, $optParams = [])
   {
@@ -55,7 +54,6 @@ class ProjectsMetrics extends \Google\Service\Resource
    * delete: "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
    * @param array $optParams Optional parameters.
    * @return LoggingEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($metricName, $optParams = [])
   {
@@ -70,7 +68,6 @@ class ProjectsMetrics extends \Google\Service\Resource
    * "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
    * @param array $optParams Optional parameters.
    * @return LogMetric
-   * @throws \Google\Service\Exception
    */
   public function get($metricName, $optParams = [])
   {
@@ -93,7 +90,6 @@ class ProjectsMetrics extends \Google\Service\Resource
    * the value of nextPageToken from the previous response. The values of other
    * method parameters should be identical to those in the previous call.
    * @return ListLogMetricsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsMetrics($parent, $optParams = [])
   {
@@ -112,7 +108,6 @@ class ProjectsMetrics extends \Google\Service\Resource
    * @param LogMetric $postBody
    * @param array $optParams Optional parameters.
    * @return LogMetric
-   * @throws \Google\Service\Exception
    */
   public function update($metricName, LogMetric $postBody, $optParams = [])
   {

@@ -39,7 +39,6 @@ class ProjectsLocationsSecuritySettings extends \Google\Service\Resource
    * @param GoogleCloudDialogflowCxV3SecuritySettings $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudDialogflowCxV3SecuritySettings
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudDialogflowCxV3SecuritySettings $postBody, $optParams = [])
   {
@@ -54,7 +53,6 @@ class ProjectsLocationsSecuritySettings extends \Google\Service\Resource
    * Format: `projects//locations//securitySettings/`.
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -70,7 +68,6 @@ class ProjectsLocationsSecuritySettings extends \Google\Service\Resource
    * `projects//locations//securitySettings/`.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudDialogflowCxV3SecuritySettings
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -91,7 +88,6 @@ class ProjectsLocationsSecuritySettings extends \Google\Service\Resource
    * @opt_param string pageToken The next_page_token value returned from a
    * previous list request.
    * @return GoogleCloudDialogflowCxV3ListSecuritySettingsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsSecuritySettings($parent, $optParams = [])
   {
@@ -112,7 +108,6 @@ class ProjectsLocationsSecuritySettings extends \Google\Service\Resource
    * @opt_param string updateMask Required. The mask to control which fields get
    * updated. If the mask is not present, all fields will be updated.
    * @return GoogleCloudDialogflowCxV3SecuritySettings
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleCloudDialogflowCxV3SecuritySettings $postBody, $optParams = [])
   {

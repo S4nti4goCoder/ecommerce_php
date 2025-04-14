@@ -19,14 +19,28 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowV2SuggestionResult extends \Google\Model
 {
+  /**
+   * @var GoogleRpcStatus
+   */
+  public $error;
   protected $errorType = GoogleRpcStatus::class;
   protected $errorDataType = '';
+  /**
+   * @var GoogleCloudDialogflowV2SuggestArticlesResponse
+   */
+  public $suggestArticlesResponse;
   protected $suggestArticlesResponseType = GoogleCloudDialogflowV2SuggestArticlesResponse::class;
   protected $suggestArticlesResponseDataType = '';
+  /**
+   * @var GoogleCloudDialogflowV2SuggestFaqAnswersResponse
+   */
+  public $suggestFaqAnswersResponse;
   protected $suggestFaqAnswersResponseType = GoogleCloudDialogflowV2SuggestFaqAnswersResponse::class;
   protected $suggestFaqAnswersResponseDataType = '';
-  protected $suggestKnowledgeAssistResponseType = GoogleCloudDialogflowV2SuggestKnowledgeAssistResponse::class;
-  protected $suggestKnowledgeAssistResponseDataType = '';
+  /**
+   * @var GoogleCloudDialogflowV2SuggestSmartRepliesResponse
+   */
+  public $suggestSmartRepliesResponse;
   protected $suggestSmartRepliesResponseType = GoogleCloudDialogflowV2SuggestSmartRepliesResponse::class;
   protected $suggestSmartRepliesResponseDataType = '';
 
@@ -71,20 +85,6 @@ class GoogleCloudDialogflowV2SuggestionResult extends \Google\Model
   public function getSuggestFaqAnswersResponse()
   {
     return $this->suggestFaqAnswersResponse;
-  }
-  /**
-   * @param GoogleCloudDialogflowV2SuggestKnowledgeAssistResponse
-   */
-  public function setSuggestKnowledgeAssistResponse(GoogleCloudDialogflowV2SuggestKnowledgeAssistResponse $suggestKnowledgeAssistResponse)
-  {
-    $this->suggestKnowledgeAssistResponse = $suggestKnowledgeAssistResponse;
-  }
-  /**
-   * @return GoogleCloudDialogflowV2SuggestKnowledgeAssistResponse
-   */
-  public function getSuggestKnowledgeAssistResponse()
-  {
-    return $this->suggestKnowledgeAssistResponse;
   }
   /**
    * @param GoogleCloudDialogflowV2SuggestSmartRepliesResponse

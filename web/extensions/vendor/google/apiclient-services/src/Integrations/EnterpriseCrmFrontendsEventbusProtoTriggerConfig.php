@@ -20,8 +20,16 @@ namespace Google\Service\Integrations;
 class EnterpriseCrmFrontendsEventbusProtoTriggerConfig extends \Google\Collection
 {
   protected $collection_key = 'startTasks';
+  /**
+   * @var EnterpriseCrmEventbusProtoWorkflowAlertConfig[]
+   */
+  public $alertConfig;
   protected $alertConfigType = EnterpriseCrmEventbusProtoWorkflowAlertConfig::class;
   protected $alertConfigDataType = 'array';
+  /**
+   * @var EnterpriseCrmEventbusProtoCloudSchedulerConfig
+   */
+  public $cloudSchedulerConfig;
   protected $cloudSchedulerConfigType = EnterpriseCrmEventbusProtoCloudSchedulerConfig::class;
   protected $cloudSchedulerConfigDataType = '';
   /**
@@ -36,8 +44,6 @@ class EnterpriseCrmFrontendsEventbusProtoTriggerConfig extends \Google\Collectio
    * @var string
    */
   public $errorCatcherId;
-  protected $inputVariablesType = EnterpriseCrmFrontendsEventbusProtoTriggerConfigVariables::class;
-  protected $inputVariablesDataType = '';
   /**
    * @var string
    */
@@ -46,20 +52,30 @@ class EnterpriseCrmFrontendsEventbusProtoTriggerConfig extends \Google\Collectio
    * @var string
    */
   public $nextTasksExecutionPolicy;
-  protected $outputVariablesType = EnterpriseCrmFrontendsEventbusProtoTriggerConfigVariables::class;
-  protected $outputVariablesDataType = '';
   /**
    * @var bool
    */
   public $pauseWorkflowExecutions;
+  /**
+   * @var EnterpriseCrmEventbusProtoCoordinate
+   */
+  public $position;
   protected $positionType = EnterpriseCrmEventbusProtoCoordinate::class;
   protected $positionDataType = '';
   /**
    * @var string[]
    */
   public $properties;
+  /**
+   * @var EnterpriseCrmEventbusProtoNextTask[]
+   */
+  public $startTasks;
   protected $startTasksType = EnterpriseCrmEventbusProtoNextTask::class;
   protected $startTasksDataType = 'array';
+  /**
+   * @var EnterpriseCrmEventbusProtoTriggerCriteria
+   */
+  public $triggerCriteria;
   protected $triggerCriteriaType = EnterpriseCrmEventbusProtoTriggerCriteria::class;
   protected $triggerCriteriaDataType = '';
   /**
@@ -150,20 +166,6 @@ class EnterpriseCrmFrontendsEventbusProtoTriggerConfig extends \Google\Collectio
     return $this->errorCatcherId;
   }
   /**
-   * @param EnterpriseCrmFrontendsEventbusProtoTriggerConfigVariables
-   */
-  public function setInputVariables(EnterpriseCrmFrontendsEventbusProtoTriggerConfigVariables $inputVariables)
-  {
-    $this->inputVariables = $inputVariables;
-  }
-  /**
-   * @return EnterpriseCrmFrontendsEventbusProtoTriggerConfigVariables
-   */
-  public function getInputVariables()
-  {
-    return $this->inputVariables;
-  }
-  /**
    * @param string
    */
   public function setLabel($label)
@@ -190,20 +192,6 @@ class EnterpriseCrmFrontendsEventbusProtoTriggerConfig extends \Google\Collectio
   public function getNextTasksExecutionPolicy()
   {
     return $this->nextTasksExecutionPolicy;
-  }
-  /**
-   * @param EnterpriseCrmFrontendsEventbusProtoTriggerConfigVariables
-   */
-  public function setOutputVariables(EnterpriseCrmFrontendsEventbusProtoTriggerConfigVariables $outputVariables)
-  {
-    $this->outputVariables = $outputVariables;
-  }
-  /**
-   * @return EnterpriseCrmFrontendsEventbusProtoTriggerConfigVariables
-   */
-  public function getOutputVariables()
-  {
-    return $this->outputVariables;
   }
   /**
    * @param bool

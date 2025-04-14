@@ -41,7 +41,6 @@ class BuyersCreatives extends \Google\Service\Resource
    * @param Creative $postBody
    * @param array $optParams Optional parameters.
    * @return Creative
-   * @throws \Google\Service\Exception
    */
   public function create($parent, Creative $postBody, $optParams = [])
   {
@@ -61,7 +60,6 @@ class BuyersCreatives extends \Google\Service\Resource
    * the entire creative resource (including the declared fields and the creative
    * content) specify the view as "FULL".
    * @return Creative
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -110,7 +108,6 @@ class BuyersCreatives extends \Google\Service\Resource
    * the entire creative resource (including the declared fields and the creative
    * content) specify the view as "FULL".
    * @return ListCreativesResponse
-   * @throws \Google\Service\Exception
    */
   public function listBuyersCreatives($parent, $optParams = [])
   {
@@ -130,7 +127,6 @@ class BuyersCreatives extends \Google\Service\Resource
    *
    * @opt_param string updateMask Field mask to use for partial in-place updates.
    * @return Creative
-   * @throws \Google\Service\Exception
    */
   public function patch($name, Creative $postBody, $optParams = [])
   {

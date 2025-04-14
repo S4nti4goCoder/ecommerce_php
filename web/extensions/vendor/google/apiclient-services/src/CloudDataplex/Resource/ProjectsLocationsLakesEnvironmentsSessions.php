@@ -54,7 +54,6 @@ class ProjectsLocationsLakesEnvironmentsSessions extends \Google\Service\Resourc
    * paginating, all other parameters provided to ListSessions must match the call
    * that provided the page token.
    * @return GoogleCloudDataplexV1ListSessionsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsLakesEnvironmentsSessions($parent, $optParams = [])
   {

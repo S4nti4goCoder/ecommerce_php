@@ -48,7 +48,6 @@ class Captions extends \Google\Service\Resource
    * without having to provide authentication credentials for each individual
    * channel. The actual CMS account that the user authenticates with must be
    * linked to the specified YouTube content owner.
-   * @throws \Google\Service\Exception
    */
   public function delete($id, $optParams = [])
   {
@@ -79,7 +78,6 @@ class Captions extends \Google\Service\Resource
    * options are sbv, srt, and vtt.
    * @opt_param string tlang tlang is the language code; machine translate the
    * captions into this language.
-   * @throws \Google\Service\Exception
    */
   public function download($id, $optParams = [])
   {
@@ -110,7 +108,6 @@ class Captions extends \Google\Service\Resource
    * @opt_param bool sync Extra parameter to allow automatically syncing the
    * uploaded caption/transcript with the audio.
    * @return Caption
-   * @throws \Google\Service\Exception
    */
   public function insert($part, Caption $postBody, $optParams = [])
   {
@@ -143,7 +140,6 @@ class Captions extends \Google\Service\Resource
    * channel. The actual CMS account that the user authenticates with must be
    * linked to the specified YouTube content owner.
    * @return CaptionListResponse
-   * @throws \Google\Service\Exception
    */
   public function listCaptions($part, $videoId, $optParams = [])
   {
@@ -176,7 +172,6 @@ class Captions extends \Google\Service\Resource
    * @opt_param bool sync Extra parameter to allow automatically syncing the
    * uploaded caption/transcript with the audio.
    * @return Caption
-   * @throws \Google\Service\Exception
    */
   public function update($part, Caption $postBody, $optParams = [])
   {

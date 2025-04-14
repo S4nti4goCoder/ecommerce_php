@@ -154,7 +154,6 @@ class OrganizationsTimeSeries extends \Google\Service\Resource
    * @opt_param string view Required. Specifies which information is returned
    * about the time series.
    * @return ListTimeSeriesResponse
-   * @throws \Google\Service\Exception
    */
   public function listOrganizationsTimeSeries($name, $optParams = [])
   {

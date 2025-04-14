@@ -44,7 +44,6 @@ class ManagedShortLinks extends \Google\Service\Resource
    * @param CreateManagedShortLinkRequest $postBody
    * @param array $optParams Optional parameters.
    * @return CreateManagedShortLinkResponse
-   * @throws \Google\Service\Exception
    */
   public function create(CreateManagedShortLinkRequest $postBody, $optParams = [])
   {

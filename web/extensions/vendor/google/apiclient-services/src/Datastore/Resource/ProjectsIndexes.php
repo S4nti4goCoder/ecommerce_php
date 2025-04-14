@@ -45,7 +45,6 @@ class ProjectsIndexes extends \Google\Service\Resource
    * @param GoogleDatastoreAdminV1Index $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function create($projectId, GoogleDatastoreAdminV1Index $postBody, $optParams = [])
   {
@@ -66,7 +65,6 @@ class ProjectsIndexes extends \Google\Service\Resource
    * @param string $indexId The resource ID of the index to delete.
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function delete($projectId, $indexId, $optParams = [])
   {
@@ -81,7 +79,6 @@ class ProjectsIndexes extends \Google\Service\Resource
    * @param string $indexId The resource ID of the index to get.
    * @param array $optParams Optional parameters.
    * @return GoogleDatastoreAdminV1Index
-   * @throws \Google\Service\Exception
    */
   public function get($projectId, $indexId, $optParams = [])
   {
@@ -103,7 +100,6 @@ class ProjectsIndexes extends \Google\Service\Resource
    * @opt_param string pageToken The next_page_token value returned from a
    * previous List request, if any.
    * @return GoogleDatastoreAdminV1ListIndexesResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsIndexes($projectId, $optParams = [])
   {

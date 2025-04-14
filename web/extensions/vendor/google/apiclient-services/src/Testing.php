@@ -28,7 +28,7 @@ use Google\Client;
  *
  * <p>
  * For more information about this service, see the API
- * <a href="https://firebase.google.com/docs/test-lab/" target="_blank">Documentation</a>
+ * <a href="https://developers.google.com/cloud-test-lab/" target="_blank">Documentation</a>
  * </p>
  *
  * @author Google, Inc.
@@ -46,7 +46,6 @@ class Testing extends \Google\Service
   public $projects_deviceSessions;
   public $projects_testMatrices;
   public $testEnvironmentCatalog;
-  public $rootUrlTemplate;
 
   /**
    * Constructs the internal representation of the Testing service.
@@ -59,7 +58,6 @@ class Testing extends \Google\Service
   {
     parent::__construct($clientOrConfig);
     $this->rootUrl = $rootUrl ?: 'https://testing.googleapis.com/';
-    $this->rootUrlTemplate = $rootUrl ?: 'https://testing.UNIVERSE_DOMAIN/';
     $this->servicePath = '';
     $this->batchPath = 'batch';
     $this->version = 'v1';
@@ -74,12 +72,7 @@ class Testing extends \Google\Service
             'getApkDetails' => [
               'path' => 'v1/applicationDetailService/getApkDetails',
               'httpMethod' => 'POST',
-              'parameters' => [
-                'bundleLocation.gcsPath' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
+              'parameters' => [],
             ],
           ]
         ]

@@ -19,8 +19,16 @@ namespace Google\Service\Document;
 
 class GoogleCloudDocumentaiV1beta3Dataset extends \Google\Model
 {
+  /**
+   * @var GoogleCloudDocumentaiV1beta3DatasetDocumentWarehouseConfig
+   */
+  public $documentWarehouseConfig;
   protected $documentWarehouseConfigType = GoogleCloudDocumentaiV1beta3DatasetDocumentWarehouseConfig::class;
   protected $documentWarehouseConfigDataType = '';
+  /**
+   * @var GoogleCloudDocumentaiV1beta3DatasetGCSManagedConfig
+   */
+  public $gcsManagedConfig;
   protected $gcsManagedConfigType = GoogleCloudDocumentaiV1beta3DatasetGCSManagedConfig::class;
   protected $gcsManagedConfigDataType = '';
   /**
@@ -28,19 +36,19 @@ class GoogleCloudDocumentaiV1beta3Dataset extends \Google\Model
    */
   public $name;
   /**
-   * @var bool
+   * @var GoogleCloudDocumentaiV1beta3DatasetSpannerIndexingConfig
    */
-  public $satisfiesPzi;
-  /**
-   * @var bool
-   */
-  public $satisfiesPzs;
+  public $spannerIndexingConfig;
   protected $spannerIndexingConfigType = GoogleCloudDocumentaiV1beta3DatasetSpannerIndexingConfig::class;
   protected $spannerIndexingConfigDataType = '';
   /**
    * @var string
    */
   public $state;
+  /**
+   * @var GoogleCloudDocumentaiV1beta3DatasetUnmanagedDatasetConfig
+   */
+  public $unmanagedDatasetConfig;
   protected $unmanagedDatasetConfigType = GoogleCloudDocumentaiV1beta3DatasetUnmanagedDatasetConfig::class;
   protected $unmanagedDatasetConfigDataType = '';
 
@@ -85,34 +93,6 @@ class GoogleCloudDocumentaiV1beta3Dataset extends \Google\Model
   public function getName()
   {
     return $this->name;
-  }
-  /**
-   * @param bool
-   */
-  public function setSatisfiesPzi($satisfiesPzi)
-  {
-    $this->satisfiesPzi = $satisfiesPzi;
-  }
-  /**
-   * @return bool
-   */
-  public function getSatisfiesPzi()
-  {
-    return $this->satisfiesPzi;
-  }
-  /**
-   * @param bool
-   */
-  public function setSatisfiesPzs($satisfiesPzs)
-  {
-    $this->satisfiesPzs = $satisfiesPzs;
-  }
-  /**
-   * @return bool
-   */
-  public function getSatisfiesPzs()
-  {
-    return $this->satisfiesPzs;
   }
   /**
    * @param GoogleCloudDocumentaiV1beta3DatasetSpannerIndexingConfig

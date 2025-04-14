@@ -43,7 +43,6 @@ class Policies extends \Google\Service\Resource
    * optional identifier specified by the client. Must be unique for operation
    * resources in the Operations collection.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function create($project, Policy $postBody, $optParams = [])
   {
@@ -63,7 +62,6 @@ class Policies extends \Google\Service\Resource
    * @opt_param string clientOperationId For mutating operation requests only. An
    * optional identifier specified by the client. Must be unique for operation
    * resources in the Operations collection.
-   * @throws \Google\Service\Exception
    */
   public function delete($project, $policy, $optParams = [])
   {
@@ -83,7 +81,6 @@ class Policies extends \Google\Service\Resource
    * optional identifier specified by the client. Must be unique for operation
    * resources in the Operations collection.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function get($project, $policy, $optParams = [])
   {
@@ -103,7 +100,6 @@ class Policies extends \Google\Service\Resource
    * request that was truncated. Use this parameter to continue a previous list
    * request.
    * @return PoliciesListResponse
-   * @throws \Google\Service\Exception
    */
   public function listPolicies($project, $optParams = [])
   {
@@ -124,7 +120,6 @@ class Policies extends \Google\Service\Resource
    * optional identifier specified by the client. Must be unique for operation
    * resources in the Operations collection.
    * @return PoliciesPatchResponse
-   * @throws \Google\Service\Exception
    */
   public function patch($project, $policy, Policy $postBody, $optParams = [])
   {
@@ -145,7 +140,6 @@ class Policies extends \Google\Service\Resource
    * optional identifier specified by the client. Must be unique for operation
    * resources in the Operations collection.
    * @return PoliciesUpdateResponse
-   * @throws \Google\Service\Exception
    */
   public function update($project, $policy, Policy $postBody, $optParams = [])
   {

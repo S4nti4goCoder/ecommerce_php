@@ -46,7 +46,6 @@ class AccountsProducts extends \Google\Service\Resource
    * https://support.google.com/manufacturers/answer/6124116#id.
    * @param array $optParams Optional parameters.
    * @return ManufacturersEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($parent, $name, $optParams = [])
   {
@@ -75,7 +74,6 @@ class AccountsProducts extends \Google\Service\Resource
    * @opt_param string include The information to be included in the response.
    * Only sections listed here will be returned.
    * @return Product
-   * @throws \Google\Service\Exception
    */
   public function get($parent, $name, $optParams = [])
   {
@@ -97,7 +95,6 @@ class AccountsProducts extends \Google\Service\Resource
    * response, used for paging.
    * @opt_param string pageToken The token returned by the previous request.
    * @return ListProductsResponse
-   * @throws \Google\Service\Exception
    */
   public function listAccountsProducts($parent, $optParams = [])
   {
@@ -131,7 +128,6 @@ class AccountsProducts extends \Google\Service\Resource
    * @param Attributes $postBody
    * @param array $optParams Optional parameters.
    * @return ManufacturersEmpty
-   * @throws \Google\Service\Exception
    */
   public function update($parent, $name, Attributes $postBody, $optParams = [])
   {

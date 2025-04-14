@@ -48,7 +48,6 @@ class ProjectsLocationsPipelines extends \Google\Service\Resource
    * @param RunPipelineRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function run($parent, RunPipelineRequest $postBody, $optParams = [])
   {

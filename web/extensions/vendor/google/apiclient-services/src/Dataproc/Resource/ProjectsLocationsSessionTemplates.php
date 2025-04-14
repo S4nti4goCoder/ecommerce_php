@@ -39,7 +39,6 @@ class ProjectsLocationsSessionTemplates extends \Google\Service\Resource
    * @param SessionTemplate $postBody
    * @param array $optParams Optional parameters.
    * @return SessionTemplate
-   * @throws \Google\Service\Exception
    */
   public function create($parent, SessionTemplate $postBody, $optParams = [])
   {
@@ -54,7 +53,6 @@ class ProjectsLocationsSessionTemplates extends \Google\Service\Resource
    * delete.
    * @param array $optParams Optional parameters.
    * @return DataprocEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -69,7 +67,6 @@ class ProjectsLocationsSessionTemplates extends \Google\Service\Resource
    * @param string $name Required. The name of the session template to retrieve.
    * @param array $optParams Optional parameters.
    * @return SessionTemplate
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -93,7 +90,6 @@ class ProjectsLocationsSessionTemplates extends \Google\Service\Resource
    * @opt_param string pageToken Optional. A page token received from a previous
    * ListSessions call. Provide this token to retrieve the subsequent page.
    * @return ListSessionTemplatesResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsSessionTemplates($parent, $optParams = [])
   {
@@ -108,7 +104,6 @@ class ProjectsLocationsSessionTemplates extends \Google\Service\Resource
    * @param SessionTemplate $postBody
    * @param array $optParams Optional parameters.
    * @return SessionTemplate
-   * @throws \Google\Service\Exception
    */
   public function patch($name, SessionTemplate $postBody, $optParams = [])
   {

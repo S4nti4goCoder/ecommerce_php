@@ -19,7 +19,7 @@ namespace Google\Service\SA360;
 
 class GoogleAdsSearchads360V0CommonMetrics extends \Google\Collection
 {
-  protected $collection_key = 'rawEventConversionMetrics';
+  protected $collection_key = 'interactionEventTypes';
   public $absoluteTopImpressionPercentage;
   public $allConversions;
   public $allConversionsByConversionDate;
@@ -38,7 +38,6 @@ class GoogleAdsSearchads360V0CommonMetrics extends \Google\Collection
   public $averageCost;
   public $averageCpc;
   public $averageCpm;
-  public $averageQualityScore;
   /**
    * @var string
    */
@@ -78,8 +77,6 @@ class GoogleAdsSearchads360V0CommonMetrics extends \Google\Collection
   public $contentBudgetLostImpressionShare;
   public $contentImpressionShare;
   public $contentRankLostImpressionShare;
-  protected $conversionCustomMetricsType = GoogleAdsSearchads360V0CommonValue::class;
-  protected $conversionCustomMetricsDataType = 'array';
   public $conversions;
   public $conversionsByConversionDate;
   public $conversionsFromInteractionsRate;
@@ -95,9 +92,7 @@ class GoogleAdsSearchads360V0CommonMetrics extends \Google\Collection
   public $costPerConversion;
   public $costPerCurrentModelAttributedConversion;
   public $crossDeviceConversions;
-  public $crossDeviceConversionsByConversionDate;
   public $crossDeviceConversionsValue;
-  public $crossDeviceConversionsValueByConversionDate;
   /**
    * @var string
    */
@@ -112,11 +107,6 @@ class GoogleAdsSearchads360V0CommonMetrics extends \Google\Collection
   public $crossSellRevenueMicros;
   public $crossSellUnitsSold;
   public $ctr;
-  public $generalInvalidClickRate;
-  /**
-   * @var string
-   */
-  public $generalInvalidClicks;
   /**
    * @var string
    */
@@ -165,8 +155,6 @@ class GoogleAdsSearchads360V0CommonMetrics extends \Google\Collection
   public $leadRevenueMicros;
   public $leadUnitsSold;
   public $mobileFriendlyClicksPercentage;
-  protected $rawEventConversionMetricsType = GoogleAdsSearchads360V0CommonValue::class;
-  protected $rawEventConversionMetricsDataType = 'array';
   public $searchAbsoluteTopImpressionShare;
   public $searchBudgetLostAbsoluteTopImpressionShare;
   public $searchBudgetLostImpressionShare;
@@ -328,14 +316,6 @@ class GoogleAdsSearchads360V0CommonMetrics extends \Google\Collection
   public function getAverageCpm()
   {
     return $this->averageCpm;
-  }
-  public function setAverageQualityScore($averageQualityScore)
-  {
-    $this->averageQualityScore = $averageQualityScore;
-  }
-  public function getAverageQualityScore()
-  {
-    return $this->averageQualityScore;
   }
   /**
    * @param string
@@ -505,20 +485,6 @@ class GoogleAdsSearchads360V0CommonMetrics extends \Google\Collection
   {
     return $this->contentRankLostImpressionShare;
   }
-  /**
-   * @param GoogleAdsSearchads360V0CommonValue[]
-   */
-  public function setConversionCustomMetrics($conversionCustomMetrics)
-  {
-    $this->conversionCustomMetrics = $conversionCustomMetrics;
-  }
-  /**
-   * @return GoogleAdsSearchads360V0CommonValue[]
-   */
-  public function getConversionCustomMetrics()
-  {
-    return $this->conversionCustomMetrics;
-  }
   public function setConversions($conversions)
   {
     $this->conversions = $conversions;
@@ -621,14 +587,6 @@ class GoogleAdsSearchads360V0CommonMetrics extends \Google\Collection
   {
     return $this->crossDeviceConversions;
   }
-  public function setCrossDeviceConversionsByConversionDate($crossDeviceConversionsByConversionDate)
-  {
-    $this->crossDeviceConversionsByConversionDate = $crossDeviceConversionsByConversionDate;
-  }
-  public function getCrossDeviceConversionsByConversionDate()
-  {
-    return $this->crossDeviceConversionsByConversionDate;
-  }
   public function setCrossDeviceConversionsValue($crossDeviceConversionsValue)
   {
     $this->crossDeviceConversionsValue = $crossDeviceConversionsValue;
@@ -636,14 +594,6 @@ class GoogleAdsSearchads360V0CommonMetrics extends \Google\Collection
   public function getCrossDeviceConversionsValue()
   {
     return $this->crossDeviceConversionsValue;
-  }
-  public function setCrossDeviceConversionsValueByConversionDate($crossDeviceConversionsValueByConversionDate)
-  {
-    $this->crossDeviceConversionsValueByConversionDate = $crossDeviceConversionsValueByConversionDate;
-  }
-  public function getCrossDeviceConversionsValueByConversionDate()
-  {
-    return $this->crossDeviceConversionsValueByConversionDate;
   }
   /**
    * @param string
@@ -702,28 +652,6 @@ class GoogleAdsSearchads360V0CommonMetrics extends \Google\Collection
   public function getCtr()
   {
     return $this->ctr;
-  }
-  public function setGeneralInvalidClickRate($generalInvalidClickRate)
-  {
-    $this->generalInvalidClickRate = $generalInvalidClickRate;
-  }
-  public function getGeneralInvalidClickRate()
-  {
-    return $this->generalInvalidClickRate;
-  }
-  /**
-   * @param string
-   */
-  public function setGeneralInvalidClicks($generalInvalidClicks)
-  {
-    $this->generalInvalidClicks = $generalInvalidClicks;
-  }
-  /**
-   * @return string
-   */
-  public function getGeneralInvalidClicks()
-  {
-    return $this->generalInvalidClicks;
   }
   /**
    * @param string
@@ -910,20 +838,6 @@ class GoogleAdsSearchads360V0CommonMetrics extends \Google\Collection
   public function getMobileFriendlyClicksPercentage()
   {
     return $this->mobileFriendlyClicksPercentage;
-  }
-  /**
-   * @param GoogleAdsSearchads360V0CommonValue[]
-   */
-  public function setRawEventConversionMetrics($rawEventConversionMetrics)
-  {
-    $this->rawEventConversionMetrics = $rawEventConversionMetrics;
-  }
-  /**
-   * @return GoogleAdsSearchads360V0CommonValue[]
-   */
-  public function getRawEventConversionMetrics()
-  {
-    return $this->rawEventConversionMetrics;
   }
   public function setSearchAbsoluteTopImpressionShare($searchAbsoluteTopImpressionShare)
   {

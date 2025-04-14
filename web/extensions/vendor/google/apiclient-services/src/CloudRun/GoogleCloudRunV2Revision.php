@@ -24,18 +24,22 @@ class GoogleCloudRunV2Revision extends \Google\Collection
    * @var string[]
    */
   public $annotations;
+  /**
+   * @var GoogleCloudRunV2Condition[]
+   */
+  public $conditions;
   protected $conditionsType = GoogleCloudRunV2Condition::class;
   protected $conditionsDataType = 'array';
+  /**
+   * @var GoogleCloudRunV2Container[]
+   */
+  public $containers;
   protected $containersType = GoogleCloudRunV2Container::class;
   protected $containersDataType = 'array';
   /**
    * @var string
    */
   public $createTime;
-  /**
-   * @var string
-   */
-  public $creator;
   /**
    * @var string
    */
@@ -88,8 +92,6 @@ class GoogleCloudRunV2Revision extends \Google\Collection
    * @var string
    */
   public $name;
-  protected $nodeSelectorType = GoogleCloudRunV2NodeSelector::class;
-  protected $nodeSelectorDataType = '';
   /**
    * @var string
    */
@@ -102,8 +104,16 @@ class GoogleCloudRunV2Revision extends \Google\Collection
    * @var bool
    */
   public $satisfiesPzs;
+  /**
+   * @var GoogleCloudRunV2RevisionScaling
+   */
+  public $scaling;
   protected $scalingType = GoogleCloudRunV2RevisionScaling::class;
   protected $scalingDataType = '';
+  /**
+   * @var GoogleCloudRunV2RevisionScalingStatus
+   */
+  public $scalingStatus;
   protected $scalingStatusType = GoogleCloudRunV2RevisionScalingStatus::class;
   protected $scalingStatusDataType = '';
   /**
@@ -114,8 +124,6 @@ class GoogleCloudRunV2Revision extends \Google\Collection
    * @var string
    */
   public $serviceAccount;
-  protected $serviceMeshType = GoogleCloudRunV2ServiceMesh::class;
-  protected $serviceMeshDataType = '';
   /**
    * @var bool
    */
@@ -132,8 +140,16 @@ class GoogleCloudRunV2Revision extends \Google\Collection
    * @var string
    */
   public $updateTime;
+  /**
+   * @var GoogleCloudRunV2Volume[]
+   */
+  public $volumes;
   protected $volumesType = GoogleCloudRunV2Volume::class;
   protected $volumesDataType = 'array';
+  /**
+   * @var GoogleCloudRunV2VpcAccess
+   */
+  public $vpcAccess;
   protected $vpcAccessType = GoogleCloudRunV2VpcAccess::class;
   protected $vpcAccessDataType = '';
 
@@ -192,20 +208,6 @@ class GoogleCloudRunV2Revision extends \Google\Collection
   public function getCreateTime()
   {
     return $this->createTime;
-  }
-  /**
-   * @param string
-   */
-  public function setCreator($creator)
-  {
-    $this->creator = $creator;
-  }
-  /**
-   * @return string
-   */
-  public function getCreator()
-  {
-    return $this->creator;
   }
   /**
    * @param string
@@ -390,20 +392,6 @@ class GoogleCloudRunV2Revision extends \Google\Collection
     return $this->name;
   }
   /**
-   * @param GoogleCloudRunV2NodeSelector
-   */
-  public function setNodeSelector(GoogleCloudRunV2NodeSelector $nodeSelector)
-  {
-    $this->nodeSelector = $nodeSelector;
-  }
-  /**
-   * @return GoogleCloudRunV2NodeSelector
-   */
-  public function getNodeSelector()
-  {
-    return $this->nodeSelector;
-  }
-  /**
    * @param string
    */
   public function setObservedGeneration($observedGeneration)
@@ -500,20 +488,6 @@ class GoogleCloudRunV2Revision extends \Google\Collection
   public function getServiceAccount()
   {
     return $this->serviceAccount;
-  }
-  /**
-   * @param GoogleCloudRunV2ServiceMesh
-   */
-  public function setServiceMesh(GoogleCloudRunV2ServiceMesh $serviceMesh)
-  {
-    $this->serviceMesh = $serviceMesh;
-  }
-  /**
-   * @return GoogleCloudRunV2ServiceMesh
-   */
-  public function getServiceMesh()
-  {
-    return $this->serviceMesh;
   }
   /**
    * @param bool

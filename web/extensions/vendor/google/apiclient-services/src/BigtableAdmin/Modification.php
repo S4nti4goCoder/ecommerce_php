@@ -19,6 +19,10 @@ namespace Google\Service\BigtableAdmin;
 
 class Modification extends \Google\Model
 {
+  /**
+   * @var ColumnFamily
+   */
+  public $create;
   protected $createType = ColumnFamily::class;
   protected $createDataType = '';
   /**
@@ -29,12 +33,12 @@ class Modification extends \Google\Model
    * @var string
    */
   public $id;
+  /**
+   * @var ColumnFamily
+   */
+  public $update;
   protected $updateType = ColumnFamily::class;
   protected $updateDataType = '';
-  /**
-   * @var string
-   */
-  public $updateMask;
 
   /**
    * @param ColumnFamily
@@ -91,20 +95,6 @@ class Modification extends \Google\Model
   public function getUpdate()
   {
     return $this->update;
-  }
-  /**
-   * @param string
-   */
-  public function setUpdateMask($updateMask)
-  {
-    $this->updateMask = $updateMask;
-  }
-  /**
-   * @return string
-   */
-  public function getUpdateMask()
-  {
-    return $this->updateMask;
   }
 }
 

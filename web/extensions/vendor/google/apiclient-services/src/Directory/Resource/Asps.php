@@ -37,7 +37,6 @@ class Asps extends \Google\Service\Resource
    * be the user's primary email address, alias email address, or unique user ID.
    * @param int $codeId The unique ID of the ASP to be deleted.
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function delete($userKey, $codeId, $optParams = [])
   {
@@ -53,7 +52,6 @@ class Asps extends \Google\Service\Resource
    * @param int $codeId The unique ID of the ASP.
    * @param array $optParams Optional parameters.
    * @return Asp
-   * @throws \Google\Service\Exception
    */
   public function get($userKey, $codeId, $optParams = [])
   {
@@ -68,7 +66,6 @@ class Asps extends \Google\Service\Resource
    * be the user's primary email address, alias email address, or unique user ID.
    * @param array $optParams Optional parameters.
    * @return AspsModel
-   * @throws \Google\Service\Exception
    */
   public function listAsps($userKey, $optParams = [])
   {

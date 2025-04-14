@@ -44,7 +44,6 @@ class ProjectsIapTunnelLocationsDestGroups extends \Google\Service\Resource
    * TunnelDestGroup, which becomes the final component of the resource name. This
    * value must be 4-63 characters, and valid characters are `[a-z]-`.
    * @return TunnelDestGroup
-   * @throws \Google\Service\Exception
    */
   public function create($parent, TunnelDestGroup $postBody, $optParams = [])
   {
@@ -60,7 +59,6 @@ class ProjectsIapTunnelLocationsDestGroups extends \Google\Service\Resource
    * n}/destGroups/{dest_group}`.
    * @param array $optParams Optional parameters.
    * @return IapEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -76,7 +74,6 @@ class ProjectsIapTunnelLocationsDestGroups extends \Google\Service\Resource
    * ation}/destGroups/{dest_group}`.
    * @param array $optParams Optional parameters.
    * @return TunnelDestGroup
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -104,7 +101,6 @@ class ProjectsIapTunnelLocationsDestGroups extends \Google\Service\Resource
    * When paginating, all other parameters provided to `ListTunnelDestGroups` must
    * match the call that provided the page token.
    * @return ListTunnelDestGroupsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsIapTunnelLocationsDestGroups($parent, $optParams = [])
   {
@@ -115,9 +111,9 @@ class ProjectsIapTunnelLocationsDestGroups extends \Google\Service\Resource
   /**
    * Updates a TunnelDestGroup. (destGroups.patch)
    *
-   * @param string $name Identifier. Identifier for the TunnelDestGroup. Must be
-   * unique within the project and contain only lower case letters (a-z) and
-   * dashes (-).
+   * @param string $name Required. Immutable. Identifier for the TunnelDestGroup.
+   * Must be unique within the project and contain only lower case letters (a-z)
+   * and dashes (-).
    * @param TunnelDestGroup $postBody
    * @param array $optParams Optional parameters.
    *
@@ -126,7 +122,6 @@ class ProjectsIapTunnelLocationsDestGroups extends \Google\Service\Resource
    * https://developers.google.com/protocol-
    * buffers/docs/reference/google.protobuf#fieldmask
    * @return TunnelDestGroup
-   * @throws \Google\Service\Exception
    */
   public function patch($name, TunnelDestGroup $postBody, $optParams = [])
   {

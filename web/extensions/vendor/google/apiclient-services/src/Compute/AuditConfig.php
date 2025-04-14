@@ -19,9 +19,17 @@ namespace Google\Service\Compute;
 
 class AuditConfig extends \Google\Collection
 {
-  protected $collection_key = 'auditLogConfigs';
+  protected $collection_key = 'exemptedMembers';
+  /**
+   * @var AuditLogConfig[]
+   */
+  public $auditLogConfigs;
   protected $auditLogConfigsType = AuditLogConfig::class;
   protected $auditLogConfigsDataType = 'array';
+  /**
+   * @var string[]
+   */
+  public $exemptedMembers;
   /**
    * @var string
    */
@@ -40,6 +48,20 @@ class AuditConfig extends \Google\Collection
   public function getAuditLogConfigs()
   {
     return $this->auditLogConfigs;
+  }
+  /**
+   * @param string[]
+   */
+  public function setExemptedMembers($exemptedMembers)
+  {
+    $this->exemptedMembers = $exemptedMembers;
+  }
+  /**
+   * @return string[]
+   */
+  public function getExemptedMembers()
+  {
+    return $this->exemptedMembers;
   }
   /**
    * @param string

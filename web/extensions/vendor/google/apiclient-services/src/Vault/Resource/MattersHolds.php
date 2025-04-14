@@ -45,7 +45,6 @@ class MattersHolds extends \Google\Service\Resource
    * @param AddHeldAccountsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return AddHeldAccountsResponse
-   * @throws \Google\Service\Exception
    */
   public function addHeldAccounts($matterId, $holdId, AddHeldAccountsRequest $postBody, $optParams = [])
   {
@@ -60,7 +59,6 @@ class MattersHolds extends \Google\Service\Resource
    * @param Hold $postBody
    * @param array $optParams Optional parameters.
    * @return Hold
-   * @throws \Google\Service\Exception
    */
   public function create($matterId, Hold $postBody, $optParams = [])
   {
@@ -77,7 +75,6 @@ class MattersHolds extends \Google\Service\Resource
    * @param string $holdId The hold ID.
    * @param array $optParams Optional parameters.
    * @return VaultEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($matterId, $holdId, $optParams = [])
   {
@@ -94,7 +91,6 @@ class MattersHolds extends \Google\Service\Resource
    *
    * @opt_param string view The amount of detail to return for a hold.
    * @return Hold
-   * @throws \Google\Service\Exception
    */
   public function get($matterId, $holdId, $optParams = [])
   {
@@ -115,7 +111,6 @@ class MattersHolds extends \Google\Service\Resource
    * An empty token means start from the beginning.
    * @opt_param string view The amount of detail to return for a hold.
    * @return ListHoldsResponse
-   * @throws \Google\Service\Exception
    */
   public function listMattersHolds($matterId, $optParams = [])
   {
@@ -132,7 +127,6 @@ class MattersHolds extends \Google\Service\Resource
    * @param RemoveHeldAccountsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return RemoveHeldAccountsResponse
-   * @throws \Google\Service\Exception
    */
   public function removeHeldAccounts($matterId, $holdId, RemoveHeldAccountsRequest $postBody, $optParams = [])
   {
@@ -151,7 +145,6 @@ class MattersHolds extends \Google\Service\Resource
    * @param Hold $postBody
    * @param array $optParams Optional parameters.
    * @return Hold
-   * @throws \Google\Service\Exception
    */
   public function update($matterId, $holdId, Hold $postBody, $optParams = [])
   {

@@ -35,8 +35,6 @@ class GoogleAppsCardV1Icon extends \Google\Model
    * @var string
    */
   public $knownIcon;
-  protected $materialIconType = GoogleAppsCardV1MaterialIcon::class;
-  protected $materialIconDataType = '';
 
   /**
    * @param string
@@ -93,20 +91,6 @@ class GoogleAppsCardV1Icon extends \Google\Model
   public function getKnownIcon()
   {
     return $this->knownIcon;
-  }
-  /**
-   * @param GoogleAppsCardV1MaterialIcon
-   */
-  public function setMaterialIcon(GoogleAppsCardV1MaterialIcon $materialIcon)
-  {
-    $this->materialIcon = $materialIcon;
-  }
-  /**
-   * @return GoogleAppsCardV1MaterialIcon
-   */
-  public function getMaterialIcon()
-  {
-    return $this->materialIcon;
   }
 }
 

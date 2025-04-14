@@ -19,14 +19,18 @@ namespace Google\Service\AccessContextManager;
 
 class EgressPolicy extends \Google\Model
 {
+  /**
+   * @var EgressFrom
+   */
+  public $egressFrom;
   protected $egressFromType = EgressFrom::class;
   protected $egressFromDataType = '';
+  /**
+   * @var EgressTo
+   */
+  public $egressTo;
   protected $egressToType = EgressTo::class;
   protected $egressToDataType = '';
-  /**
-   * @var string
-   */
-  public $title;
 
   /**
    * @param EgressFrom
@@ -55,20 +59,6 @@ class EgressPolicy extends \Google\Model
   public function getEgressTo()
   {
     return $this->egressTo;
-  }
-  /**
-   * @param string
-   */
-  public function setTitle($title)
-  {
-    $this->title = $title;
-  }
-  /**
-   * @return string
-   */
-  public function getTitle()
-  {
-    return $this->title;
   }
 }
 

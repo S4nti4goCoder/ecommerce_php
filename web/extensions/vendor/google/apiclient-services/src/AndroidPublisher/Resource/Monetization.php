@@ -39,7 +39,6 @@ class Monetization extends \Google\Service\Resource
    * @param ConvertRegionPricesRequest $postBody
    * @param array $optParams Optional parameters.
    * @return ConvertRegionPricesResponse
-   * @throws \Google\Service\Exception
    */
   public function convertRegionPrices($packageName, ConvertRegionPricesRequest $postBody, $optParams = [])
   {

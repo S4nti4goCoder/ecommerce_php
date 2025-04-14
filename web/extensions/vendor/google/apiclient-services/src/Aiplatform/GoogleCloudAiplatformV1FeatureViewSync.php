@@ -23,24 +23,22 @@ class GoogleCloudAiplatformV1FeatureViewSync extends \Google\Model
    * @var string
    */
   public $createTime;
+  /**
+   * @var GoogleRpcStatus
+   */
+  public $finalStatus;
   protected $finalStatusType = GoogleRpcStatus::class;
   protected $finalStatusDataType = '';
   /**
    * @var string
    */
   public $name;
+  /**
+   * @var GoogleTypeInterval
+   */
+  public $runTime;
   protected $runTimeType = GoogleTypeInterval::class;
   protected $runTimeDataType = '';
-  /**
-   * @var bool
-   */
-  public $satisfiesPzi;
-  /**
-   * @var bool
-   */
-  public $satisfiesPzs;
-  protected $syncSummaryType = GoogleCloudAiplatformV1FeatureViewSyncSyncSummary::class;
-  protected $syncSummaryDataType = '';
 
   /**
    * @param string
@@ -97,48 +95,6 @@ class GoogleCloudAiplatformV1FeatureViewSync extends \Google\Model
   public function getRunTime()
   {
     return $this->runTime;
-  }
-  /**
-   * @param bool
-   */
-  public function setSatisfiesPzi($satisfiesPzi)
-  {
-    $this->satisfiesPzi = $satisfiesPzi;
-  }
-  /**
-   * @return bool
-   */
-  public function getSatisfiesPzi()
-  {
-    return $this->satisfiesPzi;
-  }
-  /**
-   * @param bool
-   */
-  public function setSatisfiesPzs($satisfiesPzs)
-  {
-    $this->satisfiesPzs = $satisfiesPzs;
-  }
-  /**
-   * @return bool
-   */
-  public function getSatisfiesPzs()
-  {
-    return $this->satisfiesPzs;
-  }
-  /**
-   * @param GoogleCloudAiplatformV1FeatureViewSyncSyncSummary
-   */
-  public function setSyncSummary(GoogleCloudAiplatformV1FeatureViewSyncSyncSummary $syncSummary)
-  {
-    $this->syncSummary = $syncSummary;
-  }
-  /**
-   * @return GoogleCloudAiplatformV1FeatureViewSyncSyncSummary
-   */
-  public function getSyncSummary()
-  {
-    return $this->syncSummary;
   }
 }
 

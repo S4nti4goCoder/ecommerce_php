@@ -19,6 +19,10 @@ namespace Google\Service\Storagetransfer;
 
 class AwsS3Data extends \Google\Model
 {
+  /**
+   * @var AwsAccessKey
+   */
+  public $awsAccessKey;
   protected $awsAccessKeyType = AwsAccessKey::class;
   protected $awsAccessKeyDataType = '';
   /**
@@ -33,10 +37,6 @@ class AwsS3Data extends \Google\Model
    * @var string
    */
   public $credentialsSecret;
-  /**
-   * @var bool
-   */
-  public $managedPrivateNetwork;
   /**
    * @var string
    */
@@ -101,20 +101,6 @@ class AwsS3Data extends \Google\Model
   public function getCredentialsSecret()
   {
     return $this->credentialsSecret;
-  }
-  /**
-   * @param bool
-   */
-  public function setManagedPrivateNetwork($managedPrivateNetwork)
-  {
-    $this->managedPrivateNetwork = $managedPrivateNetwork;
-  }
-  /**
-   * @return bool
-   */
-  public function getManagedPrivateNetwork()
-  {
-    return $this->managedPrivateNetwork;
   }
   /**
    * @param string

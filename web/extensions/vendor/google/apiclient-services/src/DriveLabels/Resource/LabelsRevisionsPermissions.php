@@ -45,7 +45,6 @@ class LabelsRevisionsPermissions extends \Google\Service\Resource
    * @param GoogleAppsDriveLabelsV2BatchDeleteLabelPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty
-   * @throws \Google\Service\Exception
    */
   public function batchDelete($parent, GoogleAppsDriveLabelsV2BatchDeleteLabelPermissionsRequest $postBody, $optParams = [])
   {
@@ -66,7 +65,6 @@ class LabelsRevisionsPermissions extends \Google\Service\Resource
    * @param GoogleAppsDriveLabelsV2BatchUpdateLabelPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleAppsDriveLabelsV2BatchUpdateLabelPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function batchUpdate($parent, GoogleAppsDriveLabelsV2BatchUpdateLabelPermissionsRequest $postBody, $optParams = [])
   {
@@ -89,7 +87,6 @@ class LabelsRevisionsPermissions extends \Google\Service\Resource
    * credentials. The server will verify the user is an admin for the Label before
    * allowing access.
    * @return GoogleAppsDriveLabelsV2LabelPermission
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleAppsDriveLabelsV2LabelPermission $postBody, $optParams = [])
   {
@@ -109,7 +106,6 @@ class LabelsRevisionsPermissions extends \Google\Service\Resource
    * credentials. The server will verify the user is an admin for the Label before
    * allowing access.
    * @return GoogleProtobufEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -131,7 +127,6 @@ class LabelsRevisionsPermissions extends \Google\Service\Resource
    * credentials. The server will verify the user is an admin for the Label before
    * allowing access.
    * @return GoogleAppsDriveLabelsV2ListLabelPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function listLabelsRevisionsPermissions($parent, $optParams = [])
   {

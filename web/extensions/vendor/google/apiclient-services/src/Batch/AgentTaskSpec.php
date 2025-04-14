@@ -20,16 +20,26 @@ namespace Google\Service\Batch;
 class AgentTaskSpec extends \Google\Collection
 {
   protected $collection_key = 'runnables';
+  /**
+   * @var AgentEnvironment
+   */
+  public $environment;
   protected $environmentType = AgentEnvironment::class;
   protected $environmentDataType = '';
-  protected $loggingOptionType = AgentTaskLoggingOption::class;
-  protected $loggingOptionDataType = '';
   /**
    * @var string
    */
   public $maxRunDuration;
+  /**
+   * @var AgentTaskRunnable[]
+   */
+  public $runnables;
   protected $runnablesType = AgentTaskRunnable::class;
   protected $runnablesDataType = 'array';
+  /**
+   * @var AgentTaskUserAccount
+   */
+  public $userAccount;
   protected $userAccountType = AgentTaskUserAccount::class;
   protected $userAccountDataType = '';
 
@@ -46,20 +56,6 @@ class AgentTaskSpec extends \Google\Collection
   public function getEnvironment()
   {
     return $this->environment;
-  }
-  /**
-   * @param AgentTaskLoggingOption
-   */
-  public function setLoggingOption(AgentTaskLoggingOption $loggingOption)
-  {
-    $this->loggingOption = $loggingOption;
-  }
-  /**
-   * @return AgentTaskLoggingOption
-   */
-  public function getLoggingOption()
-  {
-    return $this->loggingOption;
   }
   /**
    * @param string

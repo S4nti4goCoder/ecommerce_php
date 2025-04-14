@@ -23,6 +23,10 @@ class BackupConfig extends \Google\Model
    * @var bool
    */
   public $allNamespaces;
+  /**
+   * @var EncryptionKey
+   */
+  public $encryptionKey;
   protected $encryptionKeyType = EncryptionKey::class;
   protected $encryptionKeyDataType = '';
   /**
@@ -34,11 +38,15 @@ class BackupConfig extends \Google\Model
    */
   public $includeVolumeData;
   /**
-   * @var bool
+   * @var NamespacedNames
    */
-  public $permissiveMode;
+  public $selectedApplications;
   protected $selectedApplicationsType = NamespacedNames::class;
   protected $selectedApplicationsDataType = '';
+  /**
+   * @var Namespaces
+   */
+  public $selectedNamespaces;
   protected $selectedNamespacesType = Namespaces::class;
   protected $selectedNamespacesDataType = '';
 
@@ -97,20 +105,6 @@ class BackupConfig extends \Google\Model
   public function getIncludeVolumeData()
   {
     return $this->includeVolumeData;
-  }
-  /**
-   * @param bool
-   */
-  public function setPermissiveMode($permissiveMode)
-  {
-    $this->permissiveMode = $permissiveMode;
-  }
-  /**
-   * @return bool
-   */
-  public function getPermissiveMode()
-  {
-    return $this->permissiveMode;
   }
   /**
    * @param NamespacedNames

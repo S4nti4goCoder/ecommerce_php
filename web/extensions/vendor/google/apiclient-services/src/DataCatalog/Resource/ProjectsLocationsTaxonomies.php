@@ -49,7 +49,6 @@ class ProjectsLocationsTaxonomies extends \Google\Service\Resource
    * @param GoogleCloudDatacatalogV1Taxonomy $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudDatacatalogV1Taxonomy
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudDatacatalogV1Taxonomy $postBody, $optParams = [])
   {
@@ -66,7 +65,6 @@ class ProjectsLocationsTaxonomies extends \Google\Service\Resource
    * All policy tags in this taxonomy are also deleted.
    * @param array $optParams Optional parameters.
    * @return DatacatalogEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -90,7 +88,6 @@ class ProjectsLocationsTaxonomies extends \Google\Service\Resource
    * @opt_param string taxonomies Required. Resource names of the taxonomies to
    * export.
    * @return GoogleCloudDatacatalogV1ExportTaxonomiesResponse
-   * @throws \Google\Service\Exception
    */
   public function export($parent, $optParams = [])
   {
@@ -104,7 +101,6 @@ class ProjectsLocationsTaxonomies extends \Google\Service\Resource
    * @param string $name Required. Resource name of the taxonomy to get.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudDatacatalogV1Taxonomy
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -122,7 +118,6 @@ class ProjectsLocationsTaxonomies extends \Google\Service\Resource
    * @param GetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, GetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -142,7 +137,6 @@ class ProjectsLocationsTaxonomies extends \Google\Service\Resource
    * @param GoogleCloudDatacatalogV1ImportTaxonomiesRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudDatacatalogV1ImportTaxonomiesResponse
-   * @throws \Google\Service\Exception
    */
   public function import($parent, GoogleCloudDatacatalogV1ImportTaxonomiesRequest $postBody, $optParams = [])
   {
@@ -166,7 +160,6 @@ class ProjectsLocationsTaxonomies extends \Google\Service\Resource
    * not set, the first page is returned. The token is returned in the response to
    * a previous list request.
    * @return GoogleCloudDatacatalogV1ListTaxonomiesResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsTaxonomies($parent, $optParams = [])
   {
@@ -188,7 +181,6 @@ class ProjectsLocationsTaxonomies extends \Google\Service\Resource
    * (https://developers.google.com/protocol-
    * buffers/docs/reference/google.protobuf#fieldmask).
    * @return GoogleCloudDatacatalogV1Taxonomy
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleCloudDatacatalogV1Taxonomy $postBody, $optParams = [])
   {
@@ -209,7 +201,6 @@ class ProjectsLocationsTaxonomies extends \Google\Service\Resource
    * @param GoogleCloudDatacatalogV1ReplaceTaxonomyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudDatacatalogV1Taxonomy
-   * @throws \Google\Service\Exception
    */
   public function replace($name, GoogleCloudDatacatalogV1ReplaceTaxonomyRequest $postBody, $optParams = [])
   {
@@ -227,7 +218,6 @@ class ProjectsLocationsTaxonomies extends \Google\Service\Resource
    * @param SetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, SetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -246,7 +236,6 @@ class ProjectsLocationsTaxonomies extends \Google\Service\Resource
    * @param TestIamPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestIamPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, TestIamPermissionsRequest $postBody, $optParams = [])
   {

@@ -21,19 +21,31 @@ class TimeSeries extends \Google\Collection
 {
   protected $collection_key = 'points';
   /**
-   * @var string
+   * @var MonitoredResourceMetadata
    */
-  public $description;
+  public $metadata;
   protected $metadataType = MonitoredResourceMetadata::class;
   protected $metadataDataType = '';
+  /**
+   * @var Metric
+   */
+  public $metric;
   protected $metricType = Metric::class;
   protected $metricDataType = '';
   /**
    * @var string
    */
   public $metricKind;
+  /**
+   * @var Point[]
+   */
+  public $points;
   protected $pointsType = Point::class;
   protected $pointsDataType = 'array';
+  /**
+   * @var MonitoredResource
+   */
+  public $resource;
   protected $resourceType = MonitoredResource::class;
   protected $resourceDataType = '';
   /**
@@ -45,20 +57,6 @@ class TimeSeries extends \Google\Collection
    */
   public $valueType;
 
-  /**
-   * @param string
-   */
-  public function setDescription($description)
-  {
-    $this->description = $description;
-  }
-  /**
-   * @return string
-   */
-  public function getDescription()
-  {
-    return $this->description;
-  }
   /**
    * @param MonitoredResourceMetadata
    */

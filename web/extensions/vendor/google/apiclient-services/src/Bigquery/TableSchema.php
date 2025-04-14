@@ -20,10 +20,12 @@ namespace Google\Service\Bigquery;
 class TableSchema extends \Google\Collection
 {
   protected $collection_key = 'fields';
+  /**
+   * @var TableFieldSchema[]
+   */
+  public $fields;
   protected $fieldsType = TableFieldSchema::class;
   protected $fieldsDataType = 'array';
-  protected $foreignTypeInfoType = ForeignTypeInfo::class;
-  protected $foreignTypeInfoDataType = '';
 
   /**
    * @param TableFieldSchema[]
@@ -38,20 +40,6 @@ class TableSchema extends \Google\Collection
   public function getFields()
   {
     return $this->fields;
-  }
-  /**
-   * @param ForeignTypeInfo
-   */
-  public function setForeignTypeInfo(ForeignTypeInfo $foreignTypeInfo)
-  {
-    $this->foreignTypeInfo = $foreignTypeInfo;
-  }
-  /**
-   * @return ForeignTypeInfo
-   */
-  public function getForeignTypeInfo()
-  {
-    return $this->foreignTypeInfo;
   }
 }
 

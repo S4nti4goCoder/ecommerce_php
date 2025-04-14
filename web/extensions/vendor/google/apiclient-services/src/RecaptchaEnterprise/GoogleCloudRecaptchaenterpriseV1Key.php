@@ -19,6 +19,10 @@ namespace Google\Service\RecaptchaEnterprise;
 
 class GoogleCloudRecaptchaenterpriseV1Key extends \Google\Model
 {
+  /**
+   * @var GoogleCloudRecaptchaenterpriseV1AndroidKeySettings
+   */
+  public $androidSettings;
   protected $androidSettingsType = GoogleCloudRecaptchaenterpriseV1AndroidKeySettings::class;
   protected $androidSettingsDataType = '';
   /**
@@ -29,8 +33,10 @@ class GoogleCloudRecaptchaenterpriseV1Key extends \Google\Model
    * @var string
    */
   public $displayName;
-  protected $expressSettingsType = GoogleCloudRecaptchaenterpriseV1ExpressKeySettings::class;
-  protected $expressSettingsDataType = '';
+  /**
+   * @var GoogleCloudRecaptchaenterpriseV1IOSKeySettings
+   */
+  public $iosSettings;
   protected $iosSettingsType = GoogleCloudRecaptchaenterpriseV1IOSKeySettings::class;
   protected $iosSettingsDataType = '';
   /**
@@ -41,10 +47,22 @@ class GoogleCloudRecaptchaenterpriseV1Key extends \Google\Model
    * @var string
    */
   public $name;
+  /**
+   * @var GoogleCloudRecaptchaenterpriseV1TestingOptions
+   */
+  public $testingOptions;
   protected $testingOptionsType = GoogleCloudRecaptchaenterpriseV1TestingOptions::class;
   protected $testingOptionsDataType = '';
+  /**
+   * @var GoogleCloudRecaptchaenterpriseV1WafSettings
+   */
+  public $wafSettings;
   protected $wafSettingsType = GoogleCloudRecaptchaenterpriseV1WafSettings::class;
   protected $wafSettingsDataType = '';
+  /**
+   * @var GoogleCloudRecaptchaenterpriseV1WebKeySettings
+   */
+  public $webSettings;
   protected $webSettingsType = GoogleCloudRecaptchaenterpriseV1WebKeySettings::class;
   protected $webSettingsDataType = '';
 
@@ -89,20 +107,6 @@ class GoogleCloudRecaptchaenterpriseV1Key extends \Google\Model
   public function getDisplayName()
   {
     return $this->displayName;
-  }
-  /**
-   * @param GoogleCloudRecaptchaenterpriseV1ExpressKeySettings
-   */
-  public function setExpressSettings(GoogleCloudRecaptchaenterpriseV1ExpressKeySettings $expressSettings)
-  {
-    $this->expressSettings = $expressSettings;
-  }
-  /**
-   * @return GoogleCloudRecaptchaenterpriseV1ExpressKeySettings
-   */
-  public function getExpressSettings()
-  {
-    return $this->expressSettings;
   }
   /**
    * @param GoogleCloudRecaptchaenterpriseV1IOSKeySettings

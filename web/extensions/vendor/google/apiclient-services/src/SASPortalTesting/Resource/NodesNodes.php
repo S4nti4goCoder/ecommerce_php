@@ -41,7 +41,6 @@ class NodesNodes extends \Google\Service\Resource
    * @param SasPortalNode $postBody
    * @param array $optParams Optional parameters.
    * @return SasPortalNode
-   * @throws \Google\Service\Exception
    */
   public function create($parent, SasPortalNode $postBody, $optParams = [])
   {
@@ -55,7 +54,6 @@ class NodesNodes extends \Google\Service\Resource
    * @param string $name Required. The name of the node.
    * @param array $optParams Optional parameters.
    * @return SasPortalEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -69,7 +67,6 @@ class NodesNodes extends \Google\Service\Resource
    * @param string $name Required. The name of the node.
    * @param array $optParams Optional parameters.
    * @return SasPortalNode
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -92,7 +89,6 @@ class NodesNodes extends \Google\Service\Resource
    * @opt_param string pageToken A pagination token returned from a previous call
    * to ListNodes that indicates where this listing should continue from.
    * @return SasPortalListNodesResponse
-   * @throws \Google\Service\Exception
    */
   public function listNodesNodes($parent, $optParams = [])
   {
@@ -107,7 +103,6 @@ class NodesNodes extends \Google\Service\Resource
    * @param SasPortalMoveNodeRequest $postBody
    * @param array $optParams Optional parameters.
    * @return SasPortalOperation
-   * @throws \Google\Service\Exception
    */
   public function move($name, SasPortalMoveNodeRequest $postBody, $optParams = [])
   {
@@ -124,7 +119,6 @@ class NodesNodes extends \Google\Service\Resource
    *
    * @opt_param string updateMask Fields to be updated.
    * @return SasPortalNode
-   * @throws \Google\Service\Exception
    */
   public function patch($name, SasPortalNode $postBody, $optParams = [])
   {

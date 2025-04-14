@@ -42,7 +42,6 @@ class ServicesRoles extends \Google\Service\Resource
    * @param AddRolesRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function add($parent, AddRolesRequest $postBody, $optParams = [])
   {

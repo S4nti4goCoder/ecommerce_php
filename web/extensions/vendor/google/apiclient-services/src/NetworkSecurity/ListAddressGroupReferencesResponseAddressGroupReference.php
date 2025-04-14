@@ -27,10 +27,6 @@ class ListAddressGroupReferencesResponseAddressGroupReference extends \Google\Mo
    * @var int
    */
   public $rulePriority;
-  /**
-   * @var string
-   */
-  public $securityPolicy;
 
   /**
    * @param string
@@ -59,20 +55,6 @@ class ListAddressGroupReferencesResponseAddressGroupReference extends \Google\Mo
   public function getRulePriority()
   {
     return $this->rulePriority;
-  }
-  /**
-   * @param string
-   */
-  public function setSecurityPolicy($securityPolicy)
-  {
-    $this->securityPolicy = $securityPolicy;
-  }
-  /**
-   * @return string
-   */
-  public function getSecurityPolicy()
-  {
-    return $this->securityPolicy;
   }
 }
 

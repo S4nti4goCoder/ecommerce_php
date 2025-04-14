@@ -37,7 +37,6 @@ class AccountPermissionGroups extends \Google\Service\Resource
    * @param string $id Account permission group ID.
    * @param array $optParams Optional parameters.
    * @return AccountPermissionGroup
-   * @throws \Google\Service\Exception
    */
   public function get($profileId, $id, $optParams = [])
   {
@@ -52,7 +51,6 @@ class AccountPermissionGroups extends \Google\Service\Resource
    * @param string $profileId User profile ID associated with this request.
    * @param array $optParams Optional parameters.
    * @return AccountPermissionGroupsListResponse
-   * @throws \Google\Service\Exception
    */
   public function listAccountPermissionGroups($profileId, $optParams = [])
   {

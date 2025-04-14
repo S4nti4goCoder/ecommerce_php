@@ -21,23 +21,23 @@ class GoogleMapsPlacesV1PlaceOpeningHours extends \Google\Collection
 {
   protected $collection_key = 'weekdayDescriptions';
   /**
-   * @var string
-   */
-  public $nextCloseTime;
-  /**
-   * @var string
-   */
-  public $nextOpenTime;
-  /**
    * @var bool
    */
   public $openNow;
+  /**
+   * @var GoogleMapsPlacesV1PlaceOpeningHoursPeriod[]
+   */
+  public $periods;
   protected $periodsType = GoogleMapsPlacesV1PlaceOpeningHoursPeriod::class;
   protected $periodsDataType = 'array';
   /**
    * @var string
    */
   public $secondaryHoursType;
+  /**
+   * @var GoogleMapsPlacesV1PlaceOpeningHoursSpecialDay[]
+   */
+  public $specialDays;
   protected $specialDaysType = GoogleMapsPlacesV1PlaceOpeningHoursSpecialDay::class;
   protected $specialDaysDataType = 'array';
   /**
@@ -45,34 +45,6 @@ class GoogleMapsPlacesV1PlaceOpeningHours extends \Google\Collection
    */
   public $weekdayDescriptions;
 
-  /**
-   * @param string
-   */
-  public function setNextCloseTime($nextCloseTime)
-  {
-    $this->nextCloseTime = $nextCloseTime;
-  }
-  /**
-   * @return string
-   */
-  public function getNextCloseTime()
-  {
-    return $this->nextCloseTime;
-  }
-  /**
-   * @param string
-   */
-  public function setNextOpenTime($nextOpenTime)
-  {
-    $this->nextOpenTime = $nextOpenTime;
-  }
-  /**
-   * @return string
-   */
-  public function getNextOpenTime()
-  {
-    return $this->nextOpenTime;
-  }
   /**
    * @param bool
    */

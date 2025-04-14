@@ -36,7 +36,6 @@ class UrlInspectionIndex extends \Google\Service\Resource
    * @param InspectUrlIndexRequest $postBody
    * @param array $optParams Optional parameters.
    * @return InspectUrlIndexResponse
-   * @throws \Google\Service\Exception
    */
   public function inspect(InspectUrlIndexRequest $postBody, $optParams = [])
   {

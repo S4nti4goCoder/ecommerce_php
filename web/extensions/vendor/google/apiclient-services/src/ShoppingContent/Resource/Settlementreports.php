@@ -39,7 +39,6 @@ class Settlementreports extends \Google\Service\Resource
    * @param string $settlementId The Google-provided ID of the settlement.
    * @param array $optParams Optional parameters.
    * @return SettlementReport
-   * @throws \Google\Service\Exception
    */
   public function get($merchantId, $settlementId, $optParams = [])
   {
@@ -64,7 +63,6 @@ class Settlementreports extends \Google\Service\Resource
    * @opt_param string transferStartDate Obtains settlements which have
    * transactions after this date (inclusively), in ISO 8601 format.
    * @return SettlementreportsListResponse
-   * @throws \Google\Service\Exception
    */
   public function listSettlementreports($merchantId, $optParams = [])
   {

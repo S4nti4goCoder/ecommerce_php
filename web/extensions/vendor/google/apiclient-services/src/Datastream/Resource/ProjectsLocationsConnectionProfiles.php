@@ -60,7 +60,6 @@ class ProjectsLocationsConnectionProfiles extends \Google\Service\Resource
    * @opt_param bool validateOnly Optional. Only validate the connection profile,
    * but don't create any resources. The default is false.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, ConnectionProfile $postBody, $optParams = [])
   {
@@ -87,7 +86,6 @@ class ProjectsLocationsConnectionProfiles extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported
    * (00000000-0000-0000-0000-000000000000).
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -106,7 +104,6 @@ class ProjectsLocationsConnectionProfiles extends \Google\Service\Resource
    * @param DiscoverConnectionProfileRequest $postBody
    * @param array $optParams Optional parameters.
    * @return DiscoverConnectionProfileResponse
-   * @throws \Google\Service\Exception
    */
   public function discover($parent, DiscoverConnectionProfileRequest $postBody, $optParams = [])
   {
@@ -122,7 +119,6 @@ class ProjectsLocationsConnectionProfiles extends \Google\Service\Resource
    * get.
    * @param array $optParams Optional parameters.
    * @return ConnectionProfile
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -148,7 +144,6 @@ class ProjectsLocationsConnectionProfiles extends \Google\Service\Resource
    * When paginating, all other parameters provided to `ListConnectionProfiles`
    * must match the call that provided the page token.
    * @return ListConnectionProfilesResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsConnectionProfiles($parent, $optParams = [])
   {
@@ -160,7 +155,7 @@ class ProjectsLocationsConnectionProfiles extends \Google\Service\Resource
    * Use this method to update the parameters of a connection profile.
    * (connectionProfiles.patch)
    *
-   * @param string $name Output only. Identifier. The resource's name.
+   * @param string $name Output only. The resource's name.
    * @param ConnectionProfile $postBody
    * @param array $optParams Optional parameters.
    *
@@ -185,7 +180,6 @@ class ProjectsLocationsConnectionProfiles extends \Google\Service\Resource
    * @opt_param bool validateOnly Optional. Only validate the connection profile,
    * but don't update any resources. The default is false.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, ConnectionProfile $postBody, $optParams = [])
   {

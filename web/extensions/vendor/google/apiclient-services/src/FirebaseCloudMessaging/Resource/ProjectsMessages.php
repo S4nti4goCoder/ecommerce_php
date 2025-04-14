@@ -41,7 +41,6 @@ class ProjectsMessages extends \Google\Service\Resource
    * @param SendMessageRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Message
-   * @throws \Google\Service\Exception
    */
   public function send($parent, SendMessageRequest $postBody, $optParams = [])
   {

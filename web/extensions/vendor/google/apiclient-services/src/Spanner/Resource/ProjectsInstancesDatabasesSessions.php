@@ -60,7 +60,6 @@ class ProjectsInstancesDatabasesSessions extends \Google\Service\Resource
    * @param BatchCreateSessionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return BatchCreateSessionsResponse
-   * @throws \Google\Service\Exception
    */
   public function batchCreate($database, BatchCreateSessionsRequest $postBody, $optParams = [])
   {
@@ -89,7 +88,6 @@ class ProjectsInstancesDatabasesSessions extends \Google\Service\Resource
    * @param BatchWriteRequest $postBody
    * @param array $optParams Optional parameters.
    * @return BatchWriteResponse
-   * @throws \Google\Service\Exception
    */
   public function batchWrite($session, BatchWriteRequest $postBody, $optParams = [])
   {
@@ -106,7 +104,6 @@ class ProjectsInstancesDatabasesSessions extends \Google\Service\Resource
    * @param BeginTransactionRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Transaction
-   * @throws \Google\Service\Exception
    */
   public function beginTransaction($session, BeginTransactionRequest $postBody, $optParams = [])
   {
@@ -132,7 +129,6 @@ class ProjectsInstancesDatabasesSessions extends \Google\Service\Resource
    * @param CommitRequest $postBody
    * @param array $optParams Optional parameters.
    * @return CommitResponse
-   * @throws \Google\Service\Exception
    */
   public function commit($session, CommitRequest $postBody, $optParams = [])
   {
@@ -159,7 +155,6 @@ class ProjectsInstancesDatabasesSessions extends \Google\Service\Resource
    * @param CreateSessionRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Session
-   * @throws \Google\Service\Exception
    */
   public function create($database, CreateSessionRequest $postBody, $optParams = [])
   {
@@ -175,7 +170,6 @@ class ProjectsInstancesDatabasesSessions extends \Google\Service\Resource
    * @param string $name Required. The name of the session to delete.
    * @param array $optParams Optional parameters.
    * @return SpannerEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -198,7 +192,6 @@ class ProjectsInstancesDatabasesSessions extends \Google\Service\Resource
    * @param ExecuteBatchDmlRequest $postBody
    * @param array $optParams Optional parameters.
    * @return ExecuteBatchDmlResponse
-   * @throws \Google\Service\Exception
    */
   public function executeBatchDml($session, ExecuteBatchDmlRequest $postBody, $optParams = [])
   {
@@ -213,17 +206,14 @@ class ProjectsInstancesDatabasesSessions extends \Google\Service\Resource
    * error. Operations inside read-write transactions might return `ABORTED`. If
    * this occurs, the application should restart the transaction from the
    * beginning. See Transaction for more details. Larger result sets can be
-   * fetched in streaming fashion by calling ExecuteStreamingSql instead. The
-   * query string can be SQL or [Graph Query Language
-   * (GQL)](https://cloud.google.com/spanner/docs/reference/standard-sql/graph-
-   * intro). (sessions.executeSql)
+   * fetched in streaming fashion by calling ExecuteStreamingSql instead.
+   * (sessions.executeSql)
    *
    * @param string $session Required. The session in which the SQL query should be
    * performed.
    * @param ExecuteSqlRequest $postBody
    * @param array $optParams Optional parameters.
    * @return ResultSet
-   * @throws \Google\Service\Exception
    */
   public function executeSql($session, ExecuteSqlRequest $postBody, $optParams = [])
   {
@@ -235,16 +225,13 @@ class ProjectsInstancesDatabasesSessions extends \Google\Service\Resource
    * Like ExecuteSql, except returns the result set as a stream. Unlike
    * ExecuteSql, there is no limit on the size of the returned result set.
    * However, no individual row in the result set can exceed 100 MiB, and no
-   * column value can exceed 10 MiB. The query string can be SQL or [Graph Query
-   * Language (GQL)](https://cloud.google.com/spanner/docs/reference/standard-
-   * sql/graph-intro). (sessions.executeStreamingSql)
+   * column value can exceed 10 MiB. (sessions.executeStreamingSql)
    *
    * @param string $session Required. The session in which the SQL query should be
    * performed.
    * @param ExecuteSqlRequest $postBody
    * @param array $optParams Optional parameters.
    * @return PartialResultSet
-   * @throws \Google\Service\Exception
    */
   public function executeStreamingSql($session, ExecuteSqlRequest $postBody, $optParams = [])
   {
@@ -260,7 +247,6 @@ class ProjectsInstancesDatabasesSessions extends \Google\Service\Resource
    * @param string $name Required. The name of the session to retrieve.
    * @param array $optParams Optional parameters.
    * @return Session
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -286,7 +272,6 @@ class ProjectsInstancesDatabasesSessions extends \Google\Service\Resource
    * @opt_param string pageToken If non-empty, `page_token` should contain a
    * next_page_token from a previous ListSessionsResponse.
    * @return ListSessionsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsInstancesDatabasesSessions($database, $optParams = [])
   {
@@ -310,7 +295,6 @@ class ProjectsInstancesDatabasesSessions extends \Google\Service\Resource
    * @param PartitionQueryRequest $postBody
    * @param array $optParams Optional parameters.
    * @return PartitionResponse
-   * @throws \Google\Service\Exception
    */
   public function partitionQuery($session, PartitionQueryRequest $postBody, $optParams = [])
   {
@@ -336,7 +320,6 @@ class ProjectsInstancesDatabasesSessions extends \Google\Service\Resource
    * @param PartitionReadRequest $postBody
    * @param array $optParams Optional parameters.
    * @return PartitionResponse
-   * @throws \Google\Service\Exception
    */
   public function partitionRead($session, PartitionReadRequest $postBody, $optParams = [])
   {
@@ -359,7 +342,6 @@ class ProjectsInstancesDatabasesSessions extends \Google\Service\Resource
    * @param ReadRequest $postBody
    * @param array $optParams Optional parameters.
    * @return ResultSet
-   * @throws \Google\Service\Exception
    */
   public function read($session, ReadRequest $postBody, $optParams = [])
   {
@@ -380,7 +362,6 @@ class ProjectsInstancesDatabasesSessions extends \Google\Service\Resource
    * @param RollbackRequest $postBody
    * @param array $optParams Optional parameters.
    * @return SpannerEmpty
-   * @throws \Google\Service\Exception
    */
   public function rollback($session, RollbackRequest $postBody, $optParams = [])
   {
@@ -399,7 +380,6 @@ class ProjectsInstancesDatabasesSessions extends \Google\Service\Resource
    * @param ReadRequest $postBody
    * @param array $optParams Optional parameters.
    * @return PartialResultSet
-   * @throws \Google\Service\Exception
    */
   public function streamingRead($session, ReadRequest $postBody, $optParams = [])
   {

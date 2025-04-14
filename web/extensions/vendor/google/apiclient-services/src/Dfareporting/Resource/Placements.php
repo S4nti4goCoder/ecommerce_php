@@ -43,7 +43,6 @@ class Placements extends \Google\Service\Resource
    * @opt_param string tagFormats Tag formats to generate for these placements.
    * *Note:* PLACEMENT_TAG_STANDARD can only be generated for 1x1 placements.
    * @return PlacementsGenerateTagsResponse
-   * @throws \Google\Service\Exception
    */
   public function generatetags($profileId, $optParams = [])
   {
@@ -58,7 +57,6 @@ class Placements extends \Google\Service\Resource
    * @param string $id Placement ID.
    * @param array $optParams Optional parameters.
    * @return Placement
-   * @throws \Google\Service\Exception
    */
   public function get($profileId, $id, $optParams = [])
   {
@@ -73,7 +71,6 @@ class Placements extends \Google\Service\Resource
    * @param Placement $postBody
    * @param array $optParams Optional parameters.
    * @return Placement
-   * @throws \Google\Service\Exception
    */
   public function insert($profileId, Placement $postBody, $optParams = [])
   {
@@ -142,7 +139,6 @@ class Placements extends \Google\Service\Resource
    * @opt_param string sortField Field by which to sort the list.
    * @opt_param string sortOrder Order of sorted results.
    * @return PlacementsListResponse
-   * @throws \Google\Service\Exception
    */
   public function listPlacements($profileId, $optParams = [])
   {
@@ -159,7 +155,6 @@ class Placements extends \Google\Service\Resource
    * @param Placement $postBody
    * @param array $optParams Optional parameters.
    * @return Placement
-   * @throws \Google\Service\Exception
    */
   public function patch($profileId, $id, Placement $postBody, $optParams = [])
   {
@@ -174,7 +169,6 @@ class Placements extends \Google\Service\Resource
    * @param Placement $postBody
    * @param array $optParams Optional parameters.
    * @return Placement
-   * @throws \Google\Service\Exception
    */
   public function update($profileId, Placement $postBody, $optParams = [])
   {

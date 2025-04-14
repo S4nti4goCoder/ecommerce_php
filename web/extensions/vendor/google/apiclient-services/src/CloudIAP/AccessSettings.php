@@ -17,27 +17,44 @@
 
 namespace Google\Service\CloudIAP;
 
-class AccessSettings extends \Google\Collection
+class AccessSettings extends \Google\Model
 {
-  protected $collection_key = 'identitySources';
+  /**
+   * @var AllowedDomainsSettings
+   */
+  public $allowedDomainsSettings;
   protected $allowedDomainsSettingsType = AllowedDomainsSettings::class;
   protected $allowedDomainsSettingsDataType = '';
+  /**
+   * @var CorsSettings
+   */
+  public $corsSettings;
   protected $corsSettingsType = CorsSettings::class;
   protected $corsSettingsDataType = '';
+  /**
+   * @var GcipSettings
+   */
+  public $gcipSettings;
   protected $gcipSettingsType = GcipSettings::class;
   protected $gcipSettingsDataType = '';
   /**
-   * @var string[]
+   * @var OAuthSettings
    */
-  public $identitySources;
+  public $oauthSettings;
   protected $oauthSettingsType = OAuthSettings::class;
   protected $oauthSettingsDataType = '';
+  /**
+   * @var PolicyDelegationSettings
+   */
+  public $policyDelegationSettings;
   protected $policyDelegationSettingsType = PolicyDelegationSettings::class;
   protected $policyDelegationSettingsDataType = '';
+  /**
+   * @var ReauthSettings
+   */
+  public $reauthSettings;
   protected $reauthSettingsType = ReauthSettings::class;
   protected $reauthSettingsDataType = '';
-  protected $workforceIdentitySettingsType = WorkforceIdentitySettings::class;
-  protected $workforceIdentitySettingsDataType = '';
 
   /**
    * @param AllowedDomainsSettings
@@ -82,20 +99,6 @@ class AccessSettings extends \Google\Collection
     return $this->gcipSettings;
   }
   /**
-   * @param string[]
-   */
-  public function setIdentitySources($identitySources)
-  {
-    $this->identitySources = $identitySources;
-  }
-  /**
-   * @return string[]
-   */
-  public function getIdentitySources()
-  {
-    return $this->identitySources;
-  }
-  /**
    * @param OAuthSettings
    */
   public function setOauthSettings(OAuthSettings $oauthSettings)
@@ -136,20 +139,6 @@ class AccessSettings extends \Google\Collection
   public function getReauthSettings()
   {
     return $this->reauthSettings;
-  }
-  /**
-   * @param WorkforceIdentitySettings
-   */
-  public function setWorkforceIdentitySettings(WorkforceIdentitySettings $workforceIdentitySettings)
-  {
-    $this->workforceIdentitySettings = $workforceIdentitySettings;
-  }
-  /**
-   * @return WorkforceIdentitySettings
-   */
-  public function getWorkforceIdentitySettings()
-  {
-    return $this->workforceIdentitySettings;
   }
 }
 

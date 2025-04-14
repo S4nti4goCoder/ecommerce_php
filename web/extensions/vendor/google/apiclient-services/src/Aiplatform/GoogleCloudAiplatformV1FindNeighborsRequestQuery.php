@@ -23,6 +23,10 @@ class GoogleCloudAiplatformV1FindNeighborsRequestQuery extends \Google\Model
    * @var int
    */
   public $approximateNeighborCount;
+  /**
+   * @var GoogleCloudAiplatformV1IndexDatapoint
+   */
+  public $datapoint;
   protected $datapointType = GoogleCloudAiplatformV1IndexDatapoint::class;
   protected $datapointDataType = '';
   public $fractionLeafNodesToSearchOverride;
@@ -34,8 +38,6 @@ class GoogleCloudAiplatformV1FindNeighborsRequestQuery extends \Google\Model
    * @var int
    */
   public $perCrowdingAttributeNeighborCount;
-  protected $rrfType = GoogleCloudAiplatformV1FindNeighborsRequestQueryRRF::class;
-  protected $rrfDataType = '';
 
   /**
    * @param int
@@ -100,20 +102,6 @@ class GoogleCloudAiplatformV1FindNeighborsRequestQuery extends \Google\Model
   public function getPerCrowdingAttributeNeighborCount()
   {
     return $this->perCrowdingAttributeNeighborCount;
-  }
-  /**
-   * @param GoogleCloudAiplatformV1FindNeighborsRequestQueryRRF
-   */
-  public function setRrf(GoogleCloudAiplatformV1FindNeighborsRequestQueryRRF $rrf)
-  {
-    $this->rrf = $rrf;
-  }
-  /**
-   * @return GoogleCloudAiplatformV1FindNeighborsRequestQueryRRF
-   */
-  public function getRrf()
-  {
-    return $this->rrf;
   }
 }
 

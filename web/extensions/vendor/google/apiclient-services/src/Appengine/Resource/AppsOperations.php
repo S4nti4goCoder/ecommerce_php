@@ -39,7 +39,6 @@ class AppsOperations extends \Google\Service\Resource
    * @param string $operationsId Part of `name`. See documentation of `appsId`.
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function get($appsId, $operationsId, $optParams = [])
   {
@@ -60,7 +59,6 @@ class AppsOperations extends \Google\Service\Resource
    * @opt_param int pageSize The standard list page size.
    * @opt_param string pageToken The standard list page token.
    * @return ListOperationsResponse
-   * @throws \Google\Service\Exception
    */
   public function listAppsOperations($appsId, $optParams = [])
   {

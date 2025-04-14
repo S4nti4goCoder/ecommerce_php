@@ -43,7 +43,6 @@ class ResponsePolicies extends \Google\Service\Resource
    * optional identifier specified by the client. Must be unique for operation
    * resources in the Operations collection.
    * @return ResponsePolicy
-   * @throws \Google\Service\Exception
    */
   public function create($project, ResponsePolicy $postBody, $optParams = [])
   {
@@ -63,7 +62,6 @@ class ResponsePolicies extends \Google\Service\Resource
    * @opt_param string clientOperationId For mutating operation requests only. An
    * optional identifier specified by the client. Must be unique for operation
    * resources in the Operations collection.
-   * @throws \Google\Service\Exception
    */
   public function delete($project, $responsePolicy, $optParams = [])
   {
@@ -84,7 +82,6 @@ class ResponsePolicies extends \Google\Service\Resource
    * optional identifier specified by the client. Must be unique for operation
    * resources in the Operations collection.
    * @return ResponsePolicy
-   * @throws \Google\Service\Exception
    */
   public function get($project, $responsePolicy, $optParams = [])
   {
@@ -105,7 +102,6 @@ class ResponsePolicies extends \Google\Service\Resource
    * request that was truncated. Use this parameter to continue a previous list
    * request.
    * @return ResponsePoliciesListResponse
-   * @throws \Google\Service\Exception
    */
   public function listResponsePolicies($project, $optParams = [])
   {
@@ -127,7 +123,6 @@ class ResponsePolicies extends \Google\Service\Resource
    * optional identifier specified by the client. Must be unique for operation
    * resources in the Operations collection.
    * @return ResponsePoliciesPatchResponse
-   * @throws \Google\Service\Exception
    */
   public function patch($project, $responsePolicy, ResponsePolicy $postBody, $optParams = [])
   {
@@ -148,7 +143,6 @@ class ResponsePolicies extends \Google\Service\Resource
    * optional identifier specified by the client. Must be unique for operation
    * resources in the Operations collection.
    * @return ResponsePoliciesUpdateResponse
-   * @throws \Google\Service\Exception
    */
   public function update($project, $responsePolicy, ResponsePolicy $postBody, $optParams = [])
   {

@@ -51,7 +51,6 @@ class ProjectsLocationsDataTaxonomiesAttributes extends \Google\Service\Resource
    * @opt_param bool validateOnly Optional. Only validate the request, but do not
    * perform mutations. The default is false.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudDataplexV1DataAttribute $postBody, $optParams = [])
   {
@@ -71,7 +70,6 @@ class ProjectsLocationsDataTaxonomiesAttributes extends \Google\Service\Resource
    * match the current etag value, the DeleteDataAttribute method returns an
    * ABORTED error response.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -87,7 +85,6 @@ class ProjectsLocationsDataTaxonomiesAttributes extends \Google\Service\Resource
    * ibutes/{data_attribute_id}
    * @param array $optParams Optional parameters.
    * @return GoogleCloudDataplexV1DataAttribute
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -117,7 +114,6 @@ class ProjectsLocationsDataTaxonomiesAttributes extends \Google\Service\Resource
    * IAM policies, see the IAM documentation
    * (https://cloud.google.com/iam/help/conditions/resource-policies).
    * @return GoogleIamV1Policy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, $optParams = [])
   {
@@ -144,7 +140,6 @@ class ProjectsLocationsDataTaxonomiesAttributes extends \Google\Service\Resource
    * paginating, all other parameters provided to ListDataAttributes must match
    * the call that provided the page token.
    * @return GoogleCloudDataplexV1ListDataAttributesResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsDataTaxonomiesAttributes($parent, $optParams = [])
   {
@@ -165,7 +160,6 @@ class ProjectsLocationsDataTaxonomiesAttributes extends \Google\Service\Resource
    * @opt_param bool validateOnly Optional. Only validate the request, but do not
    * perform mutations. The default is false.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleCloudDataplexV1DataAttribute $postBody, $optParams = [])
   {
@@ -185,7 +179,6 @@ class ProjectsLocationsDataTaxonomiesAttributes extends \Google\Service\Resource
    * @param GoogleIamV1SetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleIamV1Policy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, GoogleIamV1SetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -208,7 +201,6 @@ class ProjectsLocationsDataTaxonomiesAttributes extends \Google\Service\Resource
    * @param GoogleIamV1TestIamPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleIamV1TestIamPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, GoogleIamV1TestIamPermissionsRequest $postBody, $optParams = [])
   {

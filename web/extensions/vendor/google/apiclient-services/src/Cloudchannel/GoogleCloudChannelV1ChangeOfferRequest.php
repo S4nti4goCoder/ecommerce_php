@@ -28,12 +28,12 @@ class GoogleCloudChannelV1ChangeOfferRequest extends \Google\Collection
    * @var string
    */
   public $offer;
+  /**
+   * @var GoogleCloudChannelV1Parameter[]
+   */
+  public $parameters;
   protected $parametersType = GoogleCloudChannelV1Parameter::class;
   protected $parametersDataType = 'array';
-  /**
-   * @var string
-   */
-  public $priceReferenceId;
   /**
    * @var string
    */
@@ -84,20 +84,6 @@ class GoogleCloudChannelV1ChangeOfferRequest extends \Google\Collection
   public function getParameters()
   {
     return $this->parameters;
-  }
-  /**
-   * @param string
-   */
-  public function setPriceReferenceId($priceReferenceId)
-  {
-    $this->priceReferenceId = $priceReferenceId;
-  }
-  /**
-   * @return string
-   */
-  public function getPriceReferenceId()
-  {
-    return $this->priceReferenceId;
   }
   /**
    * @param string

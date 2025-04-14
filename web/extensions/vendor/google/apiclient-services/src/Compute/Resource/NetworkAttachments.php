@@ -38,9 +38,7 @@ class NetworkAttachments extends \Google\Service\Resource
 {
   /**
    * Retrieves the list of all NetworkAttachment resources, regional and global,
-   * available to the specified project. To prevent failure, Google recommends
-   * that you set the `returnPartialSuccess` parameter to `true`.
-   * (networkAttachments.aggregatedList)
+   * available to the specified project. (networkAttachments.aggregatedList)
    *
    * @param string $project Project ID for this request.
    * @param array $optParams Optional parameters.
@@ -102,14 +100,9 @@ class NetworkAttachments extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
-   * @opt_param string serviceProjectNumber The Shared VPC service project id or
-   * service project number for which aggregated list request is invoked for
-   * subnetworks list-usable api.
+   * false.
+   * @opt_param string serviceProjectNumber
    * @return NetworkAttachmentAggregatedList
-   * @throws \Google\Service\Exception
    */
   public function aggregatedList($project, $optParams = [])
   {
@@ -139,7 +132,6 @@ class NetworkAttachments extends \Google\Service\Resource
    * 00000000-0000-0000-0000-000000000000). end_interface:
    * MixerMutationRequestBuilder
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function delete($project, $region, $networkAttachment, $optParams = [])
   {
@@ -157,7 +149,6 @@ class NetworkAttachments extends \Google\Service\Resource
    * return.
    * @param array $optParams Optional parameters.
    * @return NetworkAttachment
-   * @throws \Google\Service\Exception
    */
   public function get($project, $region, $networkAttachment, $optParams = [])
   {
@@ -176,7 +167,6 @@ class NetworkAttachments extends \Google\Service\Resource
    *
    * @opt_param int optionsRequestedPolicyVersion Requested IAM Policy version.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($project, $region, $resource, $optParams = [])
   {
@@ -205,7 +195,6 @@ class NetworkAttachments extends \Google\Service\Resource
    * 00000000-0000-0000-0000-000000000000). end_interface:
    * MixerMutationRequestBuilder
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function insert($project, $region, NetworkAttachment $postBody, $optParams = [])
   {
@@ -271,11 +260,8 @@ class NetworkAttachments extends \Google\Service\Resource
    * of results.
    * @opt_param bool returnPartialSuccess Opt-in for partial success behavior
    * which provides partial results in case of failure. The default value is
-   * false. For example, when partial success behavior is enabled, aggregatedList
-   * for a single zone scope either returns all resources in the zone or no
-   * resources, with an error code.
+   * false.
    * @return NetworkAttachmentList
-   * @throws \Google\Service\Exception
    */
   public function listNetworkAttachments($project, $region, $optParams = [])
   {
@@ -307,7 +293,6 @@ class NetworkAttachments extends \Google\Service\Resource
    * 00000000-0000-0000-0000-000000000000). end_interface:
    * MixerMutationRequestBuilder
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function patch($project, $region, $networkAttachment, NetworkAttachment $postBody, $optParams = [])
   {
@@ -325,7 +310,6 @@ class NetworkAttachments extends \Google\Service\Resource
    * @param RegionSetPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($project, $region, $resource, RegionSetPolicyRequest $postBody, $optParams = [])
   {
@@ -343,7 +327,6 @@ class NetworkAttachments extends \Google\Service\Resource
    * @param TestPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($project, $region, $resource, TestPermissionsRequest $postBody, $optParams = [])
   {

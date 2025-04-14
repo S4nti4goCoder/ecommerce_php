@@ -51,7 +51,6 @@ class Presentations extends \Google\Service\Resource
    * @param BatchUpdatePresentationRequest $postBody
    * @param array $optParams Optional parameters.
    * @return BatchUpdatePresentationResponse
-   * @throws \Google\Service\Exception
    */
   public function batchUpdate($presentationId, BatchUpdatePresentationRequest $postBody, $optParams = [])
   {
@@ -69,7 +68,6 @@ class Presentations extends \Google\Service\Resource
    * @param Presentation $postBody
    * @param array $optParams Optional parameters.
    * @return Presentation
-   * @throws \Google\Service\Exception
    */
   public function create(Presentation $postBody, $optParams = [])
   {
@@ -83,7 +81,6 @@ class Presentations extends \Google\Service\Resource
    * @param string $presentationId The ID of the presentation to retrieve.
    * @param array $optParams Optional parameters.
    * @return Presentation
-   * @throws \Google\Service\Exception
    */
   public function get($presentationId, $optParams = [])
   {

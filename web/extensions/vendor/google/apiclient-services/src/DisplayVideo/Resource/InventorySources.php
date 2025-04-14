@@ -44,7 +44,6 @@ class InventorySources extends \Google\Service\Resource
    * @opt_param string partnerId The ID of the partner that the request is being
    * made within.
    * @return InventorySource
-   * @throws \Google\Service\Exception
    */
   public function create(InventorySource $postBody, $optParams = [])
   {
@@ -62,7 +61,6 @@ class InventorySources extends \Google\Service\Resource
    * @param EditInventorySourceReadWriteAccessorsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return InventorySourceAccessors
-   * @throws \Google\Service\Exception
    */
   public function editInventorySourceReadWriteAccessors($inventorySourceId, EditInventorySourceReadWriteAccessorsRequest $postBody, $optParams = [])
   {
@@ -84,7 +82,6 @@ class InventorySources extends \Google\Service\Resource
    * @opt_param string partnerId Required. The ID of the DV360 partner to which
    * the fetched inventory source is permissioned.
    * @return InventorySource
-   * @throws \Google\Service\Exception
    */
   public function get($inventorySourceId, $optParams = [])
   {
@@ -129,7 +126,6 @@ class InventorySources extends \Google\Service\Resource
    * @opt_param string partnerId The ID of the partner that has access to the
    * inventory source.
    * @return ListInventorySourcesResponse
-   * @throws \Google\Service\Exception
    */
   public function listInventorySources($optParams = [])
   {
@@ -153,7 +149,6 @@ class InventorySources extends \Google\Service\Resource
    * @opt_param string updateMask Required. The mask to control which fields to
    * update.
    * @return InventorySource
-   * @throws \Google\Service\Exception
    */
   public function patch($inventorySourceId, InventorySource $postBody, $optParams = [])
   {

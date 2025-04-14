@@ -47,7 +47,6 @@ class ProjectsLocationsAssets extends \Google\Service\Resource
    * @param AggregateAssetsValuesRequest $postBody
    * @param array $optParams Optional parameters.
    * @return AggregateAssetsValuesResponse
-   * @throws \Google\Service\Exception
    */
   public function aggregateValues($parent, AggregateAssetsValuesRequest $postBody, $optParams = [])
   {
@@ -62,7 +61,6 @@ class ProjectsLocationsAssets extends \Google\Service\Resource
    * @param BatchDeleteAssetsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return MigrationcenterEmpty
-   * @throws \Google\Service\Exception
    */
   public function batchDelete($parent, BatchDeleteAssetsRequest $postBody, $optParams = [])
   {
@@ -77,7 +75,6 @@ class ProjectsLocationsAssets extends \Google\Service\Resource
    * @param BatchUpdateAssetsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return BatchUpdateAssetsResponse
-   * @throws \Google\Service\Exception
    */
   public function batchUpdate($parent, BatchUpdateAssetsRequest $postBody, $optParams = [])
   {
@@ -103,7 +100,6 @@ class ProjectsLocationsAssets extends \Google\Service\Resource
    * be a valid UUID with the exception that zero UUID is not supported
    * (00000000-0000-0000-0000-000000000000).
    * @return MigrationcenterEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -119,7 +115,6 @@ class ProjectsLocationsAssets extends \Google\Service\Resource
    *
    * @opt_param string view View of the assets. Defaults to BASIC.
    * @return Asset
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -143,7 +138,6 @@ class ProjectsLocationsAssets extends \Google\Service\Resource
    * should return.
    * @opt_param string view View of the assets. Defaults to BASIC.
    * @return ListAssetsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsAssets($parent, $optParams = [])
   {
@@ -175,7 +169,6 @@ class ProjectsLocationsAssets extends \Google\Service\Resource
    * full request. A field will be overwritten if it is in the mask. A single *
    * value in the mask lets you to overwrite all fields.
    * @return Asset
-   * @throws \Google\Service\Exception
    */
   public function patch($name, Asset $postBody, $optParams = [])
   {
@@ -192,7 +185,6 @@ class ProjectsLocationsAssets extends \Google\Service\Resource
    *
    * @opt_param string source Required. Reference to a source.
    * @return ReportAssetFramesResponse
-   * @throws \Google\Service\Exception
    */
   public function reportAssetFrames($parent, Frames $postBody, $optParams = [])
   {

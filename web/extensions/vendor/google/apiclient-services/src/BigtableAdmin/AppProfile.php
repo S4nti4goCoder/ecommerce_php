@@ -19,8 +19,6 @@ namespace Google\Service\BigtableAdmin;
 
 class AppProfile extends \Google\Model
 {
-  protected $dataBoostIsolationReadOnlyType = DataBoostIsolationReadOnly::class;
-  protected $dataBoostIsolationReadOnlyDataType = '';
   /**
    * @var string
    */
@@ -29,6 +27,10 @@ class AppProfile extends \Google\Model
    * @var string
    */
   public $etag;
+  /**
+   * @var MultiClusterRoutingUseAny
+   */
+  public $multiClusterRoutingUseAny;
   protected $multiClusterRoutingUseAnyType = MultiClusterRoutingUseAny::class;
   protected $multiClusterRoutingUseAnyDataType = '';
   /**
@@ -39,25 +41,19 @@ class AppProfile extends \Google\Model
    * @var string
    */
   public $priority;
+  /**
+   * @var SingleClusterRouting
+   */
+  public $singleClusterRouting;
   protected $singleClusterRoutingType = SingleClusterRouting::class;
   protected $singleClusterRoutingDataType = '';
+  /**
+   * @var StandardIsolation
+   */
+  public $standardIsolation;
   protected $standardIsolationType = StandardIsolation::class;
   protected $standardIsolationDataType = '';
 
-  /**
-   * @param DataBoostIsolationReadOnly
-   */
-  public function setDataBoostIsolationReadOnly(DataBoostIsolationReadOnly $dataBoostIsolationReadOnly)
-  {
-    $this->dataBoostIsolationReadOnly = $dataBoostIsolationReadOnly;
-  }
-  /**
-   * @return DataBoostIsolationReadOnly
-   */
-  public function getDataBoostIsolationReadOnly()
-  {
-    return $this->dataBoostIsolationReadOnly;
-  }
   /**
    * @param string
    */

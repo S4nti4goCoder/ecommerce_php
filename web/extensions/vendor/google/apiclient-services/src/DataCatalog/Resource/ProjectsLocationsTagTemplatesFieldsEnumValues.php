@@ -38,7 +38,6 @@ class ProjectsLocationsTagTemplatesFieldsEnumValues extends \Google\Service\Reso
    * @param GoogleCloudDatacatalogV1RenameTagTemplateFieldEnumValueRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudDatacatalogV1TagTemplateField
-   * @throws \Google\Service\Exception
    */
   public function rename($name, GoogleCloudDatacatalogV1RenameTagTemplateFieldEnumValueRequest $postBody, $optParams = [])
   {

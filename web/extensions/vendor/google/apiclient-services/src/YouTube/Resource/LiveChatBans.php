@@ -34,7 +34,6 @@ class LiveChatBans extends \Google\Service\Resource
    *
    * @param string $id
    * @param array $optParams Optional parameters.
-   * @throws \Google\Service\Exception
    */
   public function delete($id, $optParams = [])
   {
@@ -52,7 +51,6 @@ class LiveChatBans extends \Google\Service\Resource
    * @param LiveChatBan $postBody
    * @param array $optParams Optional parameters.
    * @return LiveChatBan
-   * @throws \Google\Service\Exception
    */
   public function insert($part, LiveChatBan $postBody, $optParams = [])
   {

@@ -20,14 +20,24 @@ namespace Google\Service\Integrations;
 class GoogleCloudConnectorsV1EventingConfig extends \Google\Collection
 {
   protected $collection_key = 'additionalVariables';
+  /**
+   * @var GoogleCloudConnectorsV1ConfigVariable[]
+   */
+  public $additionalVariables;
   protected $additionalVariablesType = GoogleCloudConnectorsV1ConfigVariable::class;
   protected $additionalVariablesDataType = 'array';
+  /**
+   * @var GoogleCloudConnectorsV1AuthConfig
+   */
+  public $authConfig;
   protected $authConfigType = GoogleCloudConnectorsV1AuthConfig::class;
   protected $authConfigDataType = '';
-  protected $deadLetterConfigType = GoogleCloudConnectorsV1EventingConfigDeadLetterConfig::class;
-  protected $deadLetterConfigDataType = '';
-  protected $enrichmentConfigType = GoogleCloudConnectorsV1EnrichmentConfig::class;
-  protected $enrichmentConfigDataType = '';
+  /**
+   * @var GoogleCloudConnectorsV1ConfigVariable
+   */
+  public $encryptionKey;
+  protected $encryptionKeyType = GoogleCloudConnectorsV1ConfigVariable::class;
+  protected $encryptionKeyDataType = '';
   /**
    * @var bool
    */
@@ -36,14 +46,14 @@ class GoogleCloudConnectorsV1EventingConfig extends \Google\Collection
    * @var string
    */
   public $eventsListenerIngressEndpoint;
-  protected $listenerAuthConfigType = GoogleCloudConnectorsV1AuthConfig::class;
-  protected $listenerAuthConfigDataType = '';
   /**
    * @var bool
    */
   public $privateConnectivityEnabled;
-  protected $proxyDestinationConfigType = GoogleCloudConnectorsV1DestinationConfig::class;
-  protected $proxyDestinationConfigDataType = '';
+  /**
+   * @var GoogleCloudConnectorsV1DestinationConfig
+   */
+  public $registrationDestinationConfig;
   protected $registrationDestinationConfigType = GoogleCloudConnectorsV1DestinationConfig::class;
   protected $registrationDestinationConfigDataType = '';
 
@@ -76,32 +86,18 @@ class GoogleCloudConnectorsV1EventingConfig extends \Google\Collection
     return $this->authConfig;
   }
   /**
-   * @param GoogleCloudConnectorsV1EventingConfigDeadLetterConfig
+   * @param GoogleCloudConnectorsV1ConfigVariable
    */
-  public function setDeadLetterConfig(GoogleCloudConnectorsV1EventingConfigDeadLetterConfig $deadLetterConfig)
+  public function setEncryptionKey(GoogleCloudConnectorsV1ConfigVariable $encryptionKey)
   {
-    $this->deadLetterConfig = $deadLetterConfig;
+    $this->encryptionKey = $encryptionKey;
   }
   /**
-   * @return GoogleCloudConnectorsV1EventingConfigDeadLetterConfig
+   * @return GoogleCloudConnectorsV1ConfigVariable
    */
-  public function getDeadLetterConfig()
+  public function getEncryptionKey()
   {
-    return $this->deadLetterConfig;
-  }
-  /**
-   * @param GoogleCloudConnectorsV1EnrichmentConfig
-   */
-  public function setEnrichmentConfig(GoogleCloudConnectorsV1EnrichmentConfig $enrichmentConfig)
-  {
-    $this->enrichmentConfig = $enrichmentConfig;
-  }
-  /**
-   * @return GoogleCloudConnectorsV1EnrichmentConfig
-   */
-  public function getEnrichmentConfig()
-  {
-    return $this->enrichmentConfig;
+    return $this->encryptionKey;
   }
   /**
    * @param bool
@@ -132,20 +128,6 @@ class GoogleCloudConnectorsV1EventingConfig extends \Google\Collection
     return $this->eventsListenerIngressEndpoint;
   }
   /**
-   * @param GoogleCloudConnectorsV1AuthConfig
-   */
-  public function setListenerAuthConfig(GoogleCloudConnectorsV1AuthConfig $listenerAuthConfig)
-  {
-    $this->listenerAuthConfig = $listenerAuthConfig;
-  }
-  /**
-   * @return GoogleCloudConnectorsV1AuthConfig
-   */
-  public function getListenerAuthConfig()
-  {
-    return $this->listenerAuthConfig;
-  }
-  /**
    * @param bool
    */
   public function setPrivateConnectivityEnabled($privateConnectivityEnabled)
@@ -158,20 +140,6 @@ class GoogleCloudConnectorsV1EventingConfig extends \Google\Collection
   public function getPrivateConnectivityEnabled()
   {
     return $this->privateConnectivityEnabled;
-  }
-  /**
-   * @param GoogleCloudConnectorsV1DestinationConfig
-   */
-  public function setProxyDestinationConfig(GoogleCloudConnectorsV1DestinationConfig $proxyDestinationConfig)
-  {
-    $this->proxyDestinationConfig = $proxyDestinationConfig;
-  }
-  /**
-   * @return GoogleCloudConnectorsV1DestinationConfig
-   */
-  public function getProxyDestinationConfig()
-  {
-    return $this->proxyDestinationConfig;
   }
   /**
    * @param GoogleCloudConnectorsV1DestinationConfig

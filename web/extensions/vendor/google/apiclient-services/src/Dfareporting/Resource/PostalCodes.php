@@ -37,7 +37,6 @@ class PostalCodes extends \Google\Service\Resource
    * @param string $code Postal code ID.
    * @param array $optParams Optional parameters.
    * @return PostalCode
-   * @throws \Google\Service\Exception
    */
   public function get($profileId, $code, $optParams = [])
   {
@@ -51,7 +50,6 @@ class PostalCodes extends \Google\Service\Resource
    * @param string $profileId User profile ID associated with this request.
    * @param array $optParams Optional parameters.
    * @return PostalCodesListResponse
-   * @throws \Google\Service\Exception
    */
   public function listPostalCodes($profileId, $optParams = [])
   {

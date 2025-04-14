@@ -20,12 +20,28 @@ namespace Google\Service\AIPlatformNotebooks;
 class GceSetup extends \Google\Collection
 {
   protected $collection_key = 'tags';
+  /**
+   * @var AcceleratorConfig[]
+   */
+  public $acceleratorConfigs;
   protected $acceleratorConfigsType = AcceleratorConfig::class;
   protected $acceleratorConfigsDataType = 'array';
+  /**
+   * @var BootDisk
+   */
+  public $bootDisk;
   protected $bootDiskType = BootDisk::class;
   protected $bootDiskDataType = '';
+  /**
+   * @var ContainerImage
+   */
+  public $containerImage;
   protected $containerImageType = ContainerImage::class;
   protected $containerImageDataType = '';
+  /**
+   * @var DataDisk[]
+   */
+  public $dataDisks;
   protected $dataDisksType = DataDisk::class;
   protected $dataDisksDataType = 'array';
   /**
@@ -36,6 +52,10 @@ class GceSetup extends \Google\Collection
    * @var bool
    */
   public $enableIpForwarding;
+  /**
+   * @var GPUDriverConfig
+   */
+  public $gpuDriverConfig;
   protected $gpuDriverConfigType = GPUDriverConfig::class;
   protected $gpuDriverConfigDataType = '';
   /**
@@ -47,19 +67,31 @@ class GceSetup extends \Google\Collection
    */
   public $metadata;
   /**
-   * @var string
+   * @var NetworkInterface[]
    */
-  public $minCpuPlatform;
+  public $networkInterfaces;
   protected $networkInterfacesType = NetworkInterface::class;
   protected $networkInterfacesDataType = 'array';
+  /**
+   * @var ServiceAccount[]
+   */
+  public $serviceAccounts;
   protected $serviceAccountsType = ServiceAccount::class;
   protected $serviceAccountsDataType = 'array';
+  /**
+   * @var ShieldedInstanceConfig
+   */
+  public $shieldedInstanceConfig;
   protected $shieldedInstanceConfigType = ShieldedInstanceConfig::class;
   protected $shieldedInstanceConfigDataType = '';
   /**
    * @var string[]
    */
   public $tags;
+  /**
+   * @var VmImage
+   */
+  public $vmImage;
   protected $vmImageType = VmImage::class;
   protected $vmImageDataType = '';
 
@@ -188,20 +220,6 @@ class GceSetup extends \Google\Collection
   public function getMetadata()
   {
     return $this->metadata;
-  }
-  /**
-   * @param string
-   */
-  public function setMinCpuPlatform($minCpuPlatform)
-  {
-    $this->minCpuPlatform = $minCpuPlatform;
-  }
-  /**
-   * @return string
-   */
-  public function getMinCpuPlatform()
-  {
-    return $this->minCpuPlatform;
   }
   /**
    * @param NetworkInterface[]

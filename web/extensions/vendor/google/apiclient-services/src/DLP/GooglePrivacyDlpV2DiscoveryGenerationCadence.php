@@ -19,45 +19,19 @@ namespace Google\Service\DLP;
 
 class GooglePrivacyDlpV2DiscoveryGenerationCadence extends \Google\Model
 {
-  protected $inspectTemplateModifiedCadenceType = GooglePrivacyDlpV2DiscoveryInspectTemplateModifiedCadence::class;
-  protected $inspectTemplateModifiedCadenceDataType = '';
   /**
-   * @var string
+   * @var GooglePrivacyDlpV2DiscoverySchemaModifiedCadence
    */
-  public $refreshFrequency;
+  public $schemaModifiedCadence;
   protected $schemaModifiedCadenceType = GooglePrivacyDlpV2DiscoverySchemaModifiedCadence::class;
   protected $schemaModifiedCadenceDataType = '';
+  /**
+   * @var GooglePrivacyDlpV2DiscoveryTableModifiedCadence
+   */
+  public $tableModifiedCadence;
   protected $tableModifiedCadenceType = GooglePrivacyDlpV2DiscoveryTableModifiedCadence::class;
   protected $tableModifiedCadenceDataType = '';
 
-  /**
-   * @param GooglePrivacyDlpV2DiscoveryInspectTemplateModifiedCadence
-   */
-  public function setInspectTemplateModifiedCadence(GooglePrivacyDlpV2DiscoveryInspectTemplateModifiedCadence $inspectTemplateModifiedCadence)
-  {
-    $this->inspectTemplateModifiedCadence = $inspectTemplateModifiedCadence;
-  }
-  /**
-   * @return GooglePrivacyDlpV2DiscoveryInspectTemplateModifiedCadence
-   */
-  public function getInspectTemplateModifiedCadence()
-  {
-    return $this->inspectTemplateModifiedCadence;
-  }
-  /**
-   * @param string
-   */
-  public function setRefreshFrequency($refreshFrequency)
-  {
-    $this->refreshFrequency = $refreshFrequency;
-  }
-  /**
-   * @return string
-   */
-  public function getRefreshFrequency()
-  {
-    return $this->refreshFrequency;
-  }
   /**
    * @param GooglePrivacyDlpV2DiscoverySchemaModifiedCadence
    */

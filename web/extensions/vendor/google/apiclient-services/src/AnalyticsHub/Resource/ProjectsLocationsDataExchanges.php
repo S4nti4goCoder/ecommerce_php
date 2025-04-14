@@ -52,7 +52,6 @@ class ProjectsLocationsDataExchanges extends \Google\Service\Resource
    * characters that require URL-escaping, or characters outside of ASCII, spaces.
    * Max length: 100 bytes.
    * @return DataExchange
-   * @throws \Google\Service\Exception
    */
   public function create($parent, DataExchange $postBody, $optParams = [])
   {
@@ -68,7 +67,6 @@ class ProjectsLocationsDataExchanges extends \Google\Service\Resource
    * `projects/myproject/locations/US/dataExchanges/123`.
    * @param array $optParams Optional parameters.
    * @return AnalyticshubEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -83,7 +81,6 @@ class ProjectsLocationsDataExchanges extends \Google\Service\Resource
    * `projects/myproject/locations/US/dataExchanges/123`.
    * @param array $optParams Optional parameters.
    * @return DataExchange
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -101,7 +98,6 @@ class ProjectsLocationsDataExchanges extends \Google\Service\Resource
    * @param GetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, GetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -123,7 +119,6 @@ class ProjectsLocationsDataExchanges extends \Google\Service\Resource
    * @opt_param string pageToken Page token, returned by a previous call, to
    * request the next page of results.
    * @return ListDataExchangesResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsDataExchanges($parent, $optParams = [])
   {
@@ -147,7 +142,6 @@ class ProjectsLocationsDataExchanges extends \Google\Service\Resource
    * response page.
    * @opt_param string pageToken Page token, returned by a previous call.
    * @return ListSharedResourceSubscriptionsResponse
-   * @throws \Google\Service\Exception
    */
   public function listSubscriptions($resource, $optParams = [])
   {
@@ -167,7 +161,6 @@ class ProjectsLocationsDataExchanges extends \Google\Service\Resource
    * update in the data exchange resource. The fields specified in the
    * `updateMask` are relative to the resource and are not a full request.
    * @return DataExchange
-   * @throws \Google\Service\Exception
    */
   public function patch($name, DataExchange $postBody, $optParams = [])
   {
@@ -185,7 +178,6 @@ class ProjectsLocationsDataExchanges extends \Google\Service\Resource
    * @param SetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
-   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, SetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -194,7 +186,7 @@ class ProjectsLocationsDataExchanges extends \Google\Service\Resource
     return $this->call('setIamPolicy', [$params], Policy::class);
   }
   /**
-   * Creates a Subscription to a Data Clean Room. This is a long-running operation
+   * Creates a Subscription to a Data Exchange. This is a long-running operation
    * as it will create one or more linked datasets. (dataExchanges.subscribe)
    *
    * @param string $name Required. Resource name of the Data Exchange. e.g.
@@ -202,7 +194,6 @@ class ProjectsLocationsDataExchanges extends \Google\Service\Resource
    * @param SubscribeDataExchangeRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function subscribe($name, SubscribeDataExchangeRequest $postBody, $optParams = [])
   {
@@ -220,7 +211,6 @@ class ProjectsLocationsDataExchanges extends \Google\Service\Resource
    * @param TestIamPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestIamPermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, TestIamPermissionsRequest $postBody, $optParams = [])
   {

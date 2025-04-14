@@ -47,7 +47,6 @@ class ProjectsPatchDeployments extends \Google\Service\Resource
    * letter. * Must be between 1-63 characters. * Must end with a number or a
    * letter. * Must be unique within the project.
    * @return PatchDeployment
-   * @throws \Google\Service\Exception
    */
   public function create($parent, PatchDeployment $postBody, $optParams = [])
   {
@@ -62,7 +61,6 @@ class ProjectsPatchDeployments extends \Google\Service\Resource
    * the form `projects/patchDeployments`.
    * @param array $optParams Optional parameters.
    * @return OsconfigEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -77,7 +75,6 @@ class ProjectsPatchDeployments extends \Google\Service\Resource
    * the form `projects/patchDeployments`.
    * @param array $optParams Optional parameters.
    * @return PatchDeployment
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -99,7 +96,6 @@ class ProjectsPatchDeployments extends \Google\Service\Resource
    * previous call to ListPatchDeployments that indicates where this listing
    * should continue from.
    * @return ListPatchDeploymentsResponse
-   * @throws \Google\Service\Exception
    */
   public function listProjectsPatchDeployments($parent, $optParams = [])
   {
@@ -120,7 +116,6 @@ class ProjectsPatchDeployments extends \Google\Service\Resource
    * @opt_param string updateMask Optional. Field mask that controls which fields
    * of the patch deployment should be updated.
    * @return PatchDeployment
-   * @throws \Google\Service\Exception
    */
   public function patch($name, PatchDeployment $postBody, $optParams = [])
   {
@@ -137,7 +132,6 @@ class ProjectsPatchDeployments extends \Google\Service\Resource
    * @param PausePatchDeploymentRequest $postBody
    * @param array $optParams Optional parameters.
    * @return PatchDeployment
-   * @throws \Google\Service\Exception
    */
   public function pause($name, PausePatchDeploymentRequest $postBody, $optParams = [])
   {
@@ -154,7 +148,6 @@ class ProjectsPatchDeployments extends \Google\Service\Resource
    * @param ResumePatchDeploymentRequest $postBody
    * @param array $optParams Optional parameters.
    * @return PatchDeployment
-   * @throws \Google\Service\Exception
    */
   public function resume($name, ResumePatchDeploymentRequest $postBody, $optParams = [])
   {

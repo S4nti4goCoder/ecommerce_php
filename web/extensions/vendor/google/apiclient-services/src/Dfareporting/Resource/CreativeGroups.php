@@ -37,7 +37,6 @@ class CreativeGroups extends \Google\Service\Resource
    * @param string $id Creative group ID.
    * @param array $optParams Optional parameters.
    * @return CreativeGroup
-   * @throws \Google\Service\Exception
    */
   public function get($profileId, $id, $optParams = [])
   {
@@ -52,7 +51,6 @@ class CreativeGroups extends \Google\Service\Resource
    * @param CreativeGroup $postBody
    * @param array $optParams Optional parameters.
    * @return CreativeGroup
-   * @throws \Google\Service\Exception
    */
   public function insert($profileId, CreativeGroup $postBody, $optParams = [])
   {
@@ -86,7 +84,6 @@ class CreativeGroups extends \Google\Service\Resource
    * @opt_param string sortField Field by which to sort the list.
    * @opt_param string sortOrder Order of sorted results.
    * @return CreativeGroupsListResponse
-   * @throws \Google\Service\Exception
    */
   public function listCreativeGroups($profileId, $optParams = [])
   {
@@ -103,7 +100,6 @@ class CreativeGroups extends \Google\Service\Resource
    * @param CreativeGroup $postBody
    * @param array $optParams Optional parameters.
    * @return CreativeGroup
-   * @throws \Google\Service\Exception
    */
   public function patch($profileId, $id, CreativeGroup $postBody, $optParams = [])
   {
@@ -118,7 +114,6 @@ class CreativeGroups extends \Google\Service\Resource
    * @param CreativeGroup $postBody
    * @param array $optParams Optional parameters.
    * @return CreativeGroup
-   * @throws \Google\Service\Exception
    */
   public function update($profileId, CreativeGroup $postBody, $optParams = [])
   {

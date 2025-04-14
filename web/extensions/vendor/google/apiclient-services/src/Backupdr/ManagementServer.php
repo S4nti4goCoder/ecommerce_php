@@ -21,10 +21,6 @@ class ManagementServer extends \Google\Collection
 {
   protected $collection_key = 'networks';
   /**
-   * @var string[]
-   */
-  public $baProxyUri;
-  /**
    * @var string
    */
   public $createTime;
@@ -40,26 +36,26 @@ class ManagementServer extends \Google\Collection
    * @var string[]
    */
   public $labels;
+  /**
+   * @var ManagementURI
+   */
+  public $managementUri;
   protected $managementUriType = ManagementURI::class;
   protected $managementUriDataType = '';
   /**
    * @var string
    */
   public $name;
+  /**
+   * @var NetworkConfig[]
+   */
+  public $networks;
   protected $networksType = NetworkConfig::class;
   protected $networksDataType = 'array';
   /**
    * @var string
    */
   public $oauth2ClientId;
-  /**
-   * @var bool
-   */
-  public $satisfiesPzi;
-  /**
-   * @var bool
-   */
-  public $satisfiesPzs;
   /**
    * @var string
    */
@@ -72,25 +68,19 @@ class ManagementServer extends \Google\Collection
    * @var string
    */
   public $updateTime;
+  /**
+   * @var WorkforceIdentityBasedManagementURI
+   */
+  public $workforceIdentityBasedManagementUri;
   protected $workforceIdentityBasedManagementUriType = WorkforceIdentityBasedManagementURI::class;
   protected $workforceIdentityBasedManagementUriDataType = '';
+  /**
+   * @var WorkforceIdentityBasedOAuth2ClientID
+   */
+  public $workforceIdentityBasedOauth2ClientId;
   protected $workforceIdentityBasedOauth2ClientIdType = WorkforceIdentityBasedOAuth2ClientID::class;
   protected $workforceIdentityBasedOauth2ClientIdDataType = '';
 
-  /**
-   * @param string[]
-   */
-  public function setBaProxyUri($baProxyUri)
-  {
-    $this->baProxyUri = $baProxyUri;
-  }
-  /**
-   * @return string[]
-   */
-  public function getBaProxyUri()
-  {
-    return $this->baProxyUri;
-  }
   /**
    * @param string
    */
@@ -202,34 +192,6 @@ class ManagementServer extends \Google\Collection
   public function getOauth2ClientId()
   {
     return $this->oauth2ClientId;
-  }
-  /**
-   * @param bool
-   */
-  public function setSatisfiesPzi($satisfiesPzi)
-  {
-    $this->satisfiesPzi = $satisfiesPzi;
-  }
-  /**
-   * @return bool
-   */
-  public function getSatisfiesPzi()
-  {
-    return $this->satisfiesPzi;
-  }
-  /**
-   * @param bool
-   */
-  public function setSatisfiesPzs($satisfiesPzs)
-  {
-    $this->satisfiesPzs = $satisfiesPzs;
-  }
-  /**
-   * @return bool
-   */
-  public function getSatisfiesPzs()
-  {
-    return $this->satisfiesPzs;
   }
   /**
    * @param string

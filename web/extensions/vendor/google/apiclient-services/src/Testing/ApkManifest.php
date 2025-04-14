@@ -19,17 +19,25 @@ namespace Google\Service\Testing;
 
 class ApkManifest extends \Google\Collection
 {
-  protected $collection_key = 'usesPermissionTags';
+  protected $collection_key = 'usesPermission';
   /**
    * @var string
    */
   public $applicationLabel;
+  /**
+   * @var IntentFilter[]
+   */
+  public $intentFilters;
   protected $intentFiltersType = IntentFilter::class;
   protected $intentFiltersDataType = 'array';
   /**
    * @var int
    */
   public $maxSdkVersion;
+  /**
+   * @var Metadata[]
+   */
+  public $metadata;
   protected $metadataType = Metadata::class;
   protected $metadataDataType = 'array';
   /**
@@ -40,20 +48,26 @@ class ApkManifest extends \Google\Collection
    * @var string
    */
   public $packageName;
+  /**
+   * @var Service[]
+   */
+  public $services;
   protected $servicesType = Service::class;
   protected $servicesDataType = 'array';
   /**
    * @var int
    */
   public $targetSdkVersion;
+  /**
+   * @var UsesFeature[]
+   */
+  public $usesFeature;
   protected $usesFeatureType = UsesFeature::class;
   protected $usesFeatureDataType = 'array';
   /**
    * @var string[]
    */
   public $usesPermission;
-  protected $usesPermissionTagsType = UsesPermissionTag::class;
-  protected $usesPermissionTagsDataType = 'array';
   /**
    * @var string
    */
@@ -202,20 +216,6 @@ class ApkManifest extends \Google\Collection
   public function getUsesPermission()
   {
     return $this->usesPermission;
-  }
-  /**
-   * @param UsesPermissionTag[]
-   */
-  public function setUsesPermissionTags($usesPermissionTags)
-  {
-    $this->usesPermissionTags = $usesPermissionTags;
-  }
-  /**
-   * @return UsesPermissionTag[]
-   */
-  public function getUsesPermissionTags()
-  {
-    return $this->usesPermissionTags;
   }
   /**
    * @param string

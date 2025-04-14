@@ -54,7 +54,6 @@ class AccountsCustomers extends \Google\Service\Resource
    * @param GoogleCloudChannelV1Customer $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudChannelV1Customer
-   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudChannelV1Customer $postBody, $optParams = [])
   {
@@ -72,7 +71,6 @@ class AccountsCustomers extends \Google\Service\Resource
    * @param string $name Required. The resource name of the customer to delete.
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -92,7 +90,6 @@ class AccountsCustomers extends \Google\Service\Resource
    * Name uses the format: accounts/{account_id}/customers/{customer_id}
    * @param array $optParams Optional parameters.
    * @return GoogleCloudChannelV1Customer
-   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -119,7 +116,6 @@ class AccountsCustomers extends \Google\Service\Resource
    * @param GoogleCloudChannelV1ImportCustomerRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudChannelV1Customer
-   * @throws \Google\Service\Exception
    */
   public function import($parent, GoogleCloudChannelV1ImportCustomerRequest $postBody, $optParams = [])
   {
@@ -150,7 +146,6 @@ class AccountsCustomers extends \Google\Service\Resource
    * ListCustomersResponse.next_page_token of the previous
    * CloudChannelService.ListCustomers call.
    * @return GoogleCloudChannelV1ListCustomersResponse
-   * @throws \Google\Service\Exception
    */
   public function listAccountsCustomers($parent, $optParams = [])
   {
@@ -197,7 +192,6 @@ class AccountsCustomers extends \Google\Service\Resource
    * @opt_param string pageToken Optional. A token for a page of results other
    * than the first page.
    * @return GoogleCloudChannelV1ListPurchasableOffersResponse
-   * @throws \Google\Service\Exception
    */
   public function listPurchasableOffers($customer, $optParams = [])
   {
@@ -233,7 +227,6 @@ class AccountsCustomers extends \Google\Service\Resource
    * @opt_param string pageToken Optional. A token for a page of results other
    * than the first page.
    * @return GoogleCloudChannelV1ListPurchasableSkusResponse
-   * @throws \Google\Service\Exception
    */
   public function listPurchasableSkus($customer, $optParams = [])
   {
@@ -257,7 +250,6 @@ class AccountsCustomers extends \Google\Service\Resource
    * @opt_param string updateMask The update mask that applies to the resource.
    * Optional.
    * @return GoogleCloudChannelV1Customer
-   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleCloudChannelV1Customer $postBody, $optParams = [])
   {
@@ -286,7 +278,6 @@ class AccountsCustomers extends \Google\Service\Resource
    * @param GoogleCloudChannelV1ProvisionCloudIdentityRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function provisionCloudIdentity($customer, GoogleCloudChannelV1ProvisionCloudIdentityRequest $postBody, $optParams = [])
   {
@@ -312,7 +303,6 @@ class AccountsCustomers extends \Google\Service\Resource
    * accounts for. At least one SKU is required. Format:
    * products/{product_id}/skus/{sku_id}.
    * @return GoogleCloudChannelV1QueryEligibleBillingAccountsResponse
-   * @throws \Google\Service\Exception
    */
   public function queryEligibleBillingAccounts($customer, $optParams = [])
   {
@@ -347,7 +337,6 @@ class AccountsCustomers extends \Google\Service\Resource
    * @param GoogleCloudChannelV1TransferEntitlementsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function transferEntitlements($parent, GoogleCloudChannelV1TransferEntitlementsRequest $postBody, $optParams = [])
   {
@@ -381,7 +370,6 @@ class AccountsCustomers extends \Google\Service\Resource
    * @param GoogleCloudChannelV1TransferEntitlementsToGoogleRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
-   * @throws \Google\Service\Exception
    */
   public function transferEntitlementsToGoogle($parent, GoogleCloudChannelV1TransferEntitlementsToGoogleRequest $postBody, $optParams = [])
   {

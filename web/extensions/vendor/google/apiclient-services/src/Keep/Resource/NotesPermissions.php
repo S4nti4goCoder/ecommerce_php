@@ -43,7 +43,6 @@ class NotesPermissions extends \Google\Service\Resource
    * @param BatchCreatePermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return BatchCreatePermissionsResponse
-   * @throws \Google\Service\Exception
    */
   public function batchCreate($parent, BatchCreatePermissionsRequest $postBody, $optParams = [])
   {
@@ -65,7 +64,6 @@ class NotesPermissions extends \Google\Service\Resource
    * @param BatchDeletePermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return KeepEmpty
-   * @throws \Google\Service\Exception
    */
   public function batchDelete($parent, BatchDeletePermissionsRequest $postBody, $optParams = [])
   {

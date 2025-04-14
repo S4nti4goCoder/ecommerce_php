@@ -23,10 +23,6 @@ class ScannedResource extends \Google\Model
    * @var string
    */
   public $resource;
-  /**
-   * @var string
-   */
-  public $type;
 
   /**
    * @param string
@@ -41,20 +37,6 @@ class ScannedResource extends \Google\Model
   public function getResource()
   {
     return $this->resource;
-  }
-  /**
-   * @param string
-   */
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  /**
-   * @return string
-   */
-  public function getType()
-  {
-    return $this->type;
   }
 }
 

@@ -20,12 +20,20 @@ namespace Google\Service\Walletobjects;
 class LocalizedString extends \Google\Collection
 {
   protected $collection_key = 'translatedValues';
+  /**
+   * @var TranslatedString
+   */
+  public $defaultValue;
   protected $defaultValueType = TranslatedString::class;
   protected $defaultValueDataType = '';
   /**
    * @var string
    */
   public $kind;
+  /**
+   * @var TranslatedString[]
+   */
+  public $translatedValues;
   protected $translatedValuesType = TranslatedString::class;
   protected $translatedValuesDataType = 'array';
 

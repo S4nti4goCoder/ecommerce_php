@@ -20,6 +20,10 @@ namespace Google\Service\Storage;
 class StorageObject extends \Google\Collection
 {
   protected $collection_key = 'acl';
+  /**
+   * @var ObjectAccessControl[]
+   */
+  public $acl;
   protected $aclType = ObjectAccessControl::class;
   protected $aclDataType = 'array';
   /**
@@ -58,6 +62,10 @@ class StorageObject extends \Google\Collection
    * @var string
    */
   public $customTime;
+  /**
+   * @var StorageObjectCustomerEncryption
+   */
+  public $customerEncryption;
   protected $customerEncryptionType = StorageObjectCustomerEncryption::class;
   protected $customerEncryptionDataType = '';
   /**
@@ -108,12 +116,16 @@ class StorageObject extends \Google\Collection
    * @var string
    */
   public $name;
+  /**
+   * @var StorageObjectOwner
+   */
+  public $owner;
   protected $ownerType = StorageObjectOwner::class;
   protected $ownerDataType = '';
   /**
-   * @var string
+   * @var StorageObjectRetention
    */
-  public $restoreToken;
+  public $retention;
   protected $retentionType = StorageObjectRetention::class;
   protected $retentionDataType = '';
   /**
@@ -148,10 +160,6 @@ class StorageObject extends \Google\Collection
    * @var string
    */
   public $timeDeleted;
-  /**
-   * @var string
-   */
-  public $timeFinalized;
   /**
    * @var string
    */
@@ -498,20 +506,6 @@ class StorageObject extends \Google\Collection
     return $this->owner;
   }
   /**
-   * @param string
-   */
-  public function setRestoreToken($restoreToken)
-  {
-    $this->restoreToken = $restoreToken;
-  }
-  /**
-   * @return string
-   */
-  public function getRestoreToken()
-  {
-    return $this->restoreToken;
-  }
-  /**
    * @param StorageObjectRetention
    */
   public function setRetention(StorageObjectRetention $retention)
@@ -636,20 +630,6 @@ class StorageObject extends \Google\Collection
   public function getTimeDeleted()
   {
     return $this->timeDeleted;
-  }
-  /**
-   * @param string
-   */
-  public function setTimeFinalized($timeFinalized)
-  {
-    $this->timeFinalized = $timeFinalized;
-  }
-  /**
-   * @return string
-   */
-  public function getTimeFinalized()
-  {
-    return $this->timeFinalized;
   }
   /**
    * @param string

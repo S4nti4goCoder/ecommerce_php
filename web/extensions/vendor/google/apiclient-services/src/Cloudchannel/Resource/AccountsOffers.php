@@ -55,7 +55,6 @@ class AccountsOffers extends \Google\Service\Resource
    * is true, the response will only contain offers that are scheduled to be
    * available 30 days from now.
    * @return GoogleCloudChannelV1ListOffersResponse
-   * @throws \Google\Service\Exception
    */
   public function listAccountsOffers($parent, $optParams = [])
   {

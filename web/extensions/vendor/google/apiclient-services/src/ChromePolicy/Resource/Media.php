@@ -39,7 +39,6 @@ class Media extends \Google\Service\Resource
    * @param GoogleChromePolicyVersionsV1UploadPolicyFileRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleChromePolicyVersionsV1UploadPolicyFileResponse
-   * @throws \Google\Service\Exception
    */
   public function upload($customer, GoogleChromePolicyVersionsV1UploadPolicyFileRequest $postBody, $optParams = [])
   {

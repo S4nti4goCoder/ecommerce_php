@@ -38,7 +38,6 @@ class MattersSavedQueries extends \Google\Service\Resource
    * @param SavedQuery $postBody
    * @param array $optParams Optional parameters.
    * @return SavedQuery
-   * @throws \Google\Service\Exception
    */
   public function create($matterId, SavedQuery $postBody, $optParams = [])
   {
@@ -53,7 +52,6 @@ class MattersSavedQueries extends \Google\Service\Resource
    * @param string $savedQueryId ID of the saved query to delete.
    * @param array $optParams Optional parameters.
    * @return VaultEmpty
-   * @throws \Google\Service\Exception
    */
   public function delete($matterId, $savedQueryId, $optParams = [])
   {
@@ -68,7 +66,6 @@ class MattersSavedQueries extends \Google\Service\Resource
    * @param string $savedQueryId ID of the saved query to retrieve.
    * @param array $optParams Optional parameters.
    * @return SavedQuery
-   * @throws \Google\Service\Exception
    */
   public function get($matterId, $savedQueryId, $optParams = [])
   {
@@ -86,7 +83,6 @@ class MattersSavedQueries extends \Google\Service\Resource
    * @opt_param string pageToken The pagination token as returned in the previous
    * response. An empty token means start from the beginning.
    * @return ListSavedQueriesResponse
-   * @throws \Google\Service\Exception
    */
   public function listMattersSavedQueries($matterId, $optParams = [])
   {

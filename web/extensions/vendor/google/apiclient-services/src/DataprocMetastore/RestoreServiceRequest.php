@@ -26,10 +26,6 @@ class RestoreServiceRequest extends \Google\Model
   /**
    * @var string
    */
-  public $backupLocation;
-  /**
-   * @var string
-   */
   public $requestId;
   /**
    * @var string
@@ -49,20 +45,6 @@ class RestoreServiceRequest extends \Google\Model
   public function getBackup()
   {
     return $this->backup;
-  }
-  /**
-   * @param string
-   */
-  public function setBackupLocation($backupLocation)
-  {
-    $this->backupLocation = $backupLocation;
-  }
-  /**
-   * @return string
-   */
-  public function getBackupLocation()
-  {
-    return $this->backupLocation;
   }
   /**
    * @param string

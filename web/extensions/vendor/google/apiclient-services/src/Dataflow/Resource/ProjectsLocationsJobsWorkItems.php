@@ -43,7 +43,6 @@ class ProjectsLocationsJobsWorkItems extends \Google\Service\Resource
    * @param LeaseWorkItemRequest $postBody
    * @param array $optParams Optional parameters.
    * @return LeaseWorkItemResponse
-   * @throws \Google\Service\Exception
    */
   public function lease($projectId, $location, $jobId, LeaseWorkItemRequest $postBody, $optParams = [])
   {
@@ -63,7 +62,6 @@ class ProjectsLocationsJobsWorkItems extends \Google\Service\Resource
    * @param ReportWorkItemStatusRequest $postBody
    * @param array $optParams Optional parameters.
    * @return ReportWorkItemStatusResponse
-   * @throws \Google\Service\Exception
    */
   public function reportStatus($projectId, $location, $jobId, ReportWorkItemStatusRequest $postBody, $optParams = [])
   {

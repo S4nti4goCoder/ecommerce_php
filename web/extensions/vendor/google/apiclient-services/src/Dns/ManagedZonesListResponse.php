@@ -21,9 +21,19 @@ class ManagedZonesListResponse extends \Google\Collection
 {
   protected $collection_key = 'managedZones';
   /**
+   * @var ResponseHeader
+   */
+  public $header;
+  protected $headerType = ResponseHeader::class;
+  protected $headerDataType = '';
+  /**
    * @var string
    */
   public $kind;
+  /**
+   * @var ManagedZone[]
+   */
+  public $managedZones;
   protected $managedZonesType = ManagedZone::class;
   protected $managedZonesDataType = 'array';
   /**
@@ -31,6 +41,20 @@ class ManagedZonesListResponse extends \Google\Collection
    */
   public $nextPageToken;
 
+  /**
+   * @param ResponseHeader
+   */
+  public function setHeader(ResponseHeader $header)
+  {
+    $this->header = $header;
+  }
+  /**
+   * @return ResponseHeader
+   */
+  public function getHeader()
+  {
+    return $this->header;
+  }
   /**
    * @param string
    */

@@ -19,14 +19,14 @@ namespace Google\Service\HangoutsChat;
 
 class Annotation extends \Google\Model
 {
-  protected $customEmojiMetadataType = CustomEmojiMetadata::class;
-  protected $customEmojiMetadataDataType = '';
   /**
    * @var int
    */
   public $length;
-  protected $richLinkMetadataType = RichLinkMetadata::class;
-  protected $richLinkMetadataDataType = '';
+  /**
+   * @var SlashCommandMetadata
+   */
+  public $slashCommand;
   protected $slashCommandType = SlashCommandMetadata::class;
   protected $slashCommandDataType = '';
   /**
@@ -37,23 +37,13 @@ class Annotation extends \Google\Model
    * @var string
    */
   public $type;
+  /**
+   * @var UserMentionMetadata
+   */
+  public $userMention;
   protected $userMentionType = UserMentionMetadata::class;
   protected $userMentionDataType = '';
 
-  /**
-   * @param CustomEmojiMetadata
-   */
-  public function setCustomEmojiMetadata(CustomEmojiMetadata $customEmojiMetadata)
-  {
-    $this->customEmojiMetadata = $customEmojiMetadata;
-  }
-  /**
-   * @return CustomEmojiMetadata
-   */
-  public function getCustomEmojiMetadata()
-  {
-    return $this->customEmojiMetadata;
-  }
   /**
    * @param int
    */
@@ -67,20 +57,6 @@ class Annotation extends \Google\Model
   public function getLength()
   {
     return $this->length;
-  }
-  /**
-   * @param RichLinkMetadata
-   */
-  public function setRichLinkMetadata(RichLinkMetadata $richLinkMetadata)
-  {
-    $this->richLinkMetadata = $richLinkMetadata;
-  }
-  /**
-   * @return RichLinkMetadata
-   */
-  public function getRichLinkMetadata()
-  {
-    return $this->richLinkMetadata;
   }
   /**
    * @param SlashCommandMetadata

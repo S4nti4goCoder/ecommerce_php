@@ -20,6 +20,10 @@ namespace Google\Service\DLP;
 class GooglePrivacyDlpV2DiscoveryConfig extends \Google\Collection
 {
   protected $collection_key = 'targets';
+  /**
+   * @var GooglePrivacyDlpV2DataProfileAction[]
+   */
+  public $actions;
   protected $actionsType = GooglePrivacyDlpV2DataProfileAction::class;
   protected $actionsDataType = 'array';
   /**
@@ -30,6 +34,10 @@ class GooglePrivacyDlpV2DiscoveryConfig extends \Google\Collection
    * @var string
    */
   public $displayName;
+  /**
+   * @var GooglePrivacyDlpV2Error[]
+   */
+  public $errors;
   protected $errorsType = GooglePrivacyDlpV2Error::class;
   protected $errorsDataType = 'array';
   /**
@@ -44,16 +52,20 @@ class GooglePrivacyDlpV2DiscoveryConfig extends \Google\Collection
    * @var string
    */
   public $name;
+  /**
+   * @var GooglePrivacyDlpV2OrgConfig
+   */
+  public $orgConfig;
   protected $orgConfigType = GooglePrivacyDlpV2OrgConfig::class;
   protected $orgConfigDataType = '';
-  protected $otherCloudStartingLocationType = GooglePrivacyDlpV2OtherCloudDiscoveryStartingLocation::class;
-  protected $otherCloudStartingLocationDataType = '';
-  protected $processingLocationType = GooglePrivacyDlpV2ProcessingLocation::class;
-  protected $processingLocationDataType = '';
   /**
    * @var string
    */
   public $status;
+  /**
+   * @var GooglePrivacyDlpV2DiscoveryTarget[]
+   */
+  public $targets;
   protected $targetsType = GooglePrivacyDlpV2DiscoveryTarget::class;
   protected $targetsDataType = 'array';
   /**
@@ -172,34 +184,6 @@ class GooglePrivacyDlpV2DiscoveryConfig extends \Google\Collection
   public function getOrgConfig()
   {
     return $this->orgConfig;
-  }
-  /**
-   * @param GooglePrivacyDlpV2OtherCloudDiscoveryStartingLocation
-   */
-  public function setOtherCloudStartingLocation(GooglePrivacyDlpV2OtherCloudDiscoveryStartingLocation $otherCloudStartingLocation)
-  {
-    $this->otherCloudStartingLocation = $otherCloudStartingLocation;
-  }
-  /**
-   * @return GooglePrivacyDlpV2OtherCloudDiscoveryStartingLocation
-   */
-  public function getOtherCloudStartingLocation()
-  {
-    return $this->otherCloudStartingLocation;
-  }
-  /**
-   * @param GooglePrivacyDlpV2ProcessingLocation
-   */
-  public function setProcessingLocation(GooglePrivacyDlpV2ProcessingLocation $processingLocation)
-  {
-    $this->processingLocation = $processingLocation;
-  }
-  /**
-   * @return GooglePrivacyDlpV2ProcessingLocation
-   */
-  public function getProcessingLocation()
-  {
-    return $this->processingLocation;
   }
   /**
    * @param string

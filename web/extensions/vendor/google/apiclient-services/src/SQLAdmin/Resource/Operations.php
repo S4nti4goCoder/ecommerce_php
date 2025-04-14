@@ -39,7 +39,6 @@ class Operations extends \Google\Service\Resource
    * @param string $operation Instance operation ID.
    * @param array $optParams Optional parameters.
    * @return SqladminEmpty
-   * @throws \Google\Service\Exception
    */
   public function cancel($project, $operation, $optParams = [])
   {
@@ -55,7 +54,6 @@ class Operations extends \Google\Service\Resource
    * @param string $operation Instance operation ID.
    * @param array $optParams Optional parameters.
    * @return Operation
-   * @throws \Google\Service\Exception
    */
   public function get($project, $operation, $optParams = [])
   {
@@ -77,7 +75,6 @@ class Operations extends \Google\Service\Resource
    * @opt_param string pageToken A previously-returned page token representing
    * part of the larger set of results to view.
    * @return OperationsListResponse
-   * @throws \Google\Service\Exception
    */
   public function listOperations($project, $optParams = [])
   {

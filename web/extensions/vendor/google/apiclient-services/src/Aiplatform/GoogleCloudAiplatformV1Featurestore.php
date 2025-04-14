@@ -23,6 +23,10 @@ class GoogleCloudAiplatformV1Featurestore extends \Google\Model
    * @var string
    */
   public $createTime;
+  /**
+   * @var GoogleCloudAiplatformV1EncryptionSpec
+   */
+  public $encryptionSpec;
   protected $encryptionSpecType = GoogleCloudAiplatformV1EncryptionSpec::class;
   protected $encryptionSpecDataType = '';
   /**
@@ -37,20 +41,16 @@ class GoogleCloudAiplatformV1Featurestore extends \Google\Model
    * @var string
    */
   public $name;
+  /**
+   * @var GoogleCloudAiplatformV1FeaturestoreOnlineServingConfig
+   */
+  public $onlineServingConfig;
   protected $onlineServingConfigType = GoogleCloudAiplatformV1FeaturestoreOnlineServingConfig::class;
   protected $onlineServingConfigDataType = '';
   /**
    * @var int
    */
   public $onlineStorageTtlDays;
-  /**
-   * @var bool
-   */
-  public $satisfiesPzi;
-  /**
-   * @var bool
-   */
-  public $satisfiesPzs;
   /**
    * @var string
    */
@@ -157,34 +157,6 @@ class GoogleCloudAiplatformV1Featurestore extends \Google\Model
   public function getOnlineStorageTtlDays()
   {
     return $this->onlineStorageTtlDays;
-  }
-  /**
-   * @param bool
-   */
-  public function setSatisfiesPzi($satisfiesPzi)
-  {
-    $this->satisfiesPzi = $satisfiesPzi;
-  }
-  /**
-   * @return bool
-   */
-  public function getSatisfiesPzi()
-  {
-    return $this->satisfiesPzi;
-  }
-  /**
-   * @param bool
-   */
-  public function setSatisfiesPzs($satisfiesPzs)
-  {
-    $this->satisfiesPzs = $satisfiesPzs;
-  }
-  /**
-   * @return bool
-   */
-  public function getSatisfiesPzs()
-  {
-    return $this->satisfiesPzs;
   }
   /**
    * @param string
