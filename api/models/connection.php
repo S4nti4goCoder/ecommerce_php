@@ -28,7 +28,7 @@ class Connection{
 
 	static public function apikey(){
 
-		return "SSDFzdg235dsgsdfAsa44SDFGDFDadg";
+		return "e3up0RQg8DI7NCBdCJQMqUoLqC9XN0T4f5G";
 
 	}
 

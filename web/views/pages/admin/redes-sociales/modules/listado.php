@@ -53,10 +53,10 @@
 
 								<td>
 									<div class="btn-group">
-										<button href="" class="btn bg-purple border-0 rounded-pill mr-2 btn-sm px-3 modalEditSocial" data-social='<?php echo json_encode($value) ?>'>
+										<button class="btn bg-purple border-0 rounded-pill mr-2 btn-sm px-3 modalEditSocial" data-social='<?php echo json_encode($value) ?>'>
 											<i class="fas fa-pencil-alt text-white"></i>
 										</button>
-										<button href="" class="btn btn-dark border-0 rounded-pill mr-2 btn-sm px-3 deleteItem" rol="admin" table="socials" column="social" idItem="<?php echo base64_encode($value->id_social) ?>">
+										<button class="btn btn-dark border-0 rounded-pill mr-2 btn-sm px-3 deleteItem" rol="admin" table="socials" column="social" idItem="<?php echo base64_encode($value->id_social) ?>">
 											<i class="fas fa-trash-alt text-white"></i>
 										</button>
 									</div>

@@ -5,7 +5,6 @@ class AdminsController{
 	/*=============================================
 	Login de adminstradores
 	=============================================*/	
-
 	public function login(){
 
 		if(isset($_POST["loginAdminEmail"])){
@@ -75,9 +74,6 @@ class AdminsController{
 				echo '<div class="alert alert-danger mt-3">Error de sintaxis en los campos</div>
 
 				<script>
-
-					//fncNotie("error", "Error al ingresar: '.$error.'");
-					//fncSweetAlert("error","Error al ingresar: '.$error.'", "");
 				    fncToastr("error","Error de sintaxis en los campos");
 					fncMatPreloader("off");
 					fncFormatInputs();

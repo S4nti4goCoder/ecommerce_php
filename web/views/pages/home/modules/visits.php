@@ -1,16 +1,4 @@
-<div class="container-fluid bg-light border">
-
-	<div class="container clearfix">
-		
-		<div class="btn-group float-end p-2">
-
-			<p class="pt-3 lead">Tu eres nuestro visitante #0000</p>
-			
-		</div>		
-
-	</div>
-
-</div>
+<hr style="border-color: gray;">
 
 <div class="container py-3 pb-5">
 	
