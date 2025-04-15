@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-05-2024 a las 23:31:59
--- Versión del servidor: 10.4.21-MariaDB
--- Versión de PHP: 8.0.10
+-- Tiempo de generación: 15-04-2025 a las 06:53:18
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `ecommerce`
+-- Base de datos: `ecommerce_db_php`
 --
 
 -- --------------------------------------------------------
@@ -37,14 +37,14 @@ CREATE TABLE `admins` (
   `token_exp_admin` text DEFAULT NULL,
   `date_created_admin` date DEFAULT NULL,
   `date_updated_admin` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `admins`
 --
 
 INSERT INTO `admins` (`id_admin`, `rol_admin`, `name_admin`, `email_admin`, `password_admin`, `token_admin`, `token_exp_admin`, `date_created_admin`, `date_updated_admin`) VALUES
-(1, 'admin', 'Jose Tienda', 'admin@ecommerce.com', '$2a$07$azybxcags23425sdg23sdeanQZqjaf6Birm2NvcYTNtJw24CsO5uq', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MTY0NzU4NDEsImV4cCI6MTcxNjU2MjI0MSwiZGF0YSI6eyJpZCI6IjEiLCJlbWFpbCI6ImFkbWluQGVjb21tZXJjZS5jb20ifX0.q-sDbXY3axhqiKsVznD07-_j_yyHRS_1-pBj2H1WEww', '1716562241', '2022-09-21', '2024-05-23 21:25:44');
+(1, 'admin', 'Jose Tienda', 'admin@ecommerce.com', '$2a$07$azybxcags23425sdg23sdeanQZqjaf6Birm2NvcYTNtJw24CsO5uq', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDQ2ODYzMjUsImV4cCI6MTc0NDc3MjcyNSwiZGF0YSI6eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBlY29tbWVyY2UuY29tIn19.DBF2MhZ1Zzuv_q8uFrzep_dXCSovmEYh3m_DwLFLltM', '1744772725', '2022-09-21', '2025-04-15 03:24:20');
 
 -- --------------------------------------------------------
 
@@ -64,17 +64,17 @@ CREATE TABLE `banners` (
   `status_banner` int(11) NOT NULL DEFAULT 1,
   `date_created_banner` date DEFAULT NULL,
   `date_updated_banner` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `banners`
 --
 
 INSERT INTO `banners` (`id_banner`, `location_banner`, `id_category_banner`, `id_subcategory_banner`, `background_banner`, `text_banner`, `discount_banner`, `end_banner`, `status_banner`, `date_created_banner`, `date_updated_banner`) VALUES
-(1, 'HOME', 0, 0, 'default.jpg', 'Ofertas especiales', '50', '2030-04-30', 1, '2024-05-22', '2024-05-22 21:24:48'),
-(3, 'CATEGORÍA', 1, 0, 'bg.jpg', 'Descuentos Especiales', '50', '2030-12-31', 1, '2024-05-22', '2024-05-22 21:28:53'),
-(4, 'CATEGORÍA', 5, 0, 'bg.jpg', 'Ofertas de Cursos', '50', '2029-12-20', 1, '2024-05-22', '2024-05-22 21:30:00'),
-(5, 'SUBCATEGORÍA', 0, 6, 'bg.jpg', 'Ofertas en Calzado Hombre', '30', '2028-11-22', 1, '2024-05-22', '2024-05-22 21:38:03');
+(1, 'HOME', 0, 0, 'default.jpg', 'Ofertas especiales', '50', '2030-04-30', 1, '2024-05-22', '2025-04-15 03:12:57'),
+(3, 'CATEGORÍA', 1, 0, 'bg.jpg', 'Descuentos Especiales', '50', '2030-12-31', 1, '2024-05-22', '2025-04-15 03:16:49'),
+(4, 'CATEGORÍA', 5, 0, 'bg.jpg', 'Ofertas de Cursos', '50', '2029-12-20', 1, '2024-05-22', '2025-04-15 03:12:56'),
+(5, 'SUBCATEGORÍA', 0, 6, 'bg.jpg', 'Ofertas en Calzado Hombre', '30', '2028-11-22', 1, '2024-05-22', '2025-04-15 03:16:50');
 
 -- --------------------------------------------------------
 
@@ -94,7 +94,7 @@ CREATE TABLE `carts` (
   `method_cart` text DEFAULT NULL,
   `date_created_cart` date DEFAULT NULL,
   `date_updated_cart` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `carts`
@@ -123,7 +123,7 @@ CREATE TABLE `categories` (
   `status_category` int(11) DEFAULT 1,
   `date_created_category` date DEFAULT NULL,
   `date_updated_category` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `categories`
@@ -148,7 +148,7 @@ CREATE TABLE `favorites` (
   `id_product_favorite` int(11) NOT NULL DEFAULT 0,
   `date_created_favorite` date DEFAULT NULL,
   `date_updated_favorite` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `favorites`
@@ -184,7 +184,7 @@ CREATE TABLE `orders` (
   `end_date_order` date DEFAULT NULL,
   `date_created_order` date DEFAULT NULL,
   `date_updated_order` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `orders`
@@ -199,7 +199,10 @@ INSERT INTO `orders` (`id_order`, `uniqid_order`, `id_user_order`, `id_product_o
 (6, '664fa2259fbf3', 5, 39, 73, 1, 19, '22851707161999', '4EH513729J348331A', 'paypal', 7, 2, NULL, '2024-02-05', NULL, NULL, '2024-02-05', '2024-05-23 20:08:12'),
 (7, '664fa22f822e5', 4, 17, 41, 2, 300, '65631712934911', '97W699981W093833Y', 'paypal', 7, 0, NULL, '2024-04-12', NULL, NULL, '2024-04-12', '2024-05-23 20:08:22'),
 (8, '664fa2385c534', 4, 22, 52, 2, 300, '65631712934911', '97W699981W093833Y', 'paypal', 7, 0, NULL, '2024-04-12', NULL, NULL, '2024-04-12', '2024-05-23 20:08:30'),
-(9, '664fa2412a85f', 4, 42, 76, 1, 19, '65631712934911', '97W699981W093833Y', 'paypal', 7, 2, NULL, '2024-04-12', NULL, NULL, '2024-04-12', '2024-05-23 20:08:39');
+(9, '664fa2412a85f', 4, 42, 76, 1, 19, '65631712934911', '97W699981W093833Y', 'paypal', 7, 2, NULL, '2024-04-12', NULL, NULL, '2024-04-12', '2024-05-23 20:08:39'),
+(10, '67fdcaea52857', 2, 44, 78, 1, 600, '13241744685768', '4JS74518RG428901Y', 'paypal', 7, 3, '', '2025-04-14', '0000-00-00', '0000-00-00', '2025-04-14', '2025-04-15 03:08:25'),
+(11, '67fdcaea9a6ce', 2, 21, 50, 2, 600, '13241744685768', '4JS74518RG428901Y', 'paypal', 7, 2, '235u4-02358-03485-0', '2025-04-14', '2025-04-15', '2025-04-16', '2025-04-14', '2025-04-15 03:06:27'),
+(12, '67fdcaeacb640', 2, 21, 49, 2, 600, '13241744685768', '4JS74518RG428901Y', 'paypal', 7, 2, '32487320409238', '2025-04-14', '2025-04-16', '2025-04-15', '2025-04-14', '2025-04-15 03:04:28');
 
 -- --------------------------------------------------------
 
@@ -222,7 +225,7 @@ CREATE TABLE `products` (
   `status_product` int(11) NOT NULL DEFAULT 1,
   `date_created_product` date DEFAULT NULL,
   `date_updated_product` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `products`
@@ -294,16 +297,16 @@ CREATE TABLE `slides` (
   `status_slide` int(11) NOT NULL DEFAULT 1,
   `date_created_slide` date DEFAULT NULL,
   `date_updated_slide` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `slides`
 --
 
 INSERT INTO `slides` (`id_slide`, `background_slide`, `direction_slide`, `img_png_slide`, `coord_img_slide`, `text_slide`, `coord_text_slide`, `link_slide`, `text_btn_slide`, `status_slide`, `date_created_slide`, `date_updated_slide`) VALUES
-(1, 'back_default.jpg', 'opt1', 'calzado.png', 'top:15%; right:10%; width:45%', '[{\"text\":\"Lorem Ipsum\",\"color\":\"#333\"},{\"text\":\"Lorem ipsum dolor sit\",\"color\":\"#777\"},{\"text\":\"Lorem ipsum dolor sit\",\"color\":\"#888\"}]', 'top:20%; left:10%; width:40%', 'http://ecommerce.com/calzado', 'VER PRODUCTO', 1, '2024-05-22', '2024-05-22 19:00:50'),
-(2, 'fondo2.jpg', 'opt2', 'iphone.png', 'bottom:0%; left:15%; width:28%', '[{\"text\":\"Lorem Ipsum\",\"color\":\"#ffffff\"},{\"text\":\"Lorem ipsum dolor sit\",\"color\":\"#e8e8e8\"},{\"text\":\"Lorem ipsum dolor sit\",\"color\":\"#d6d6d6\"}]', 'top:20%; right:15%; width:40%', 'http://ecommerce.com/no-found', 'VER PRODUCTO', 1, '2024-05-22', '2024-05-22 19:00:49'),
-(4, 'bg.jpg', '', '', '', '', '', '', '', 1, '2024-05-22', '2024-05-22 19:00:48');
+(1, 'back_default.jpg', 'opt1', 'calzado.png', 'top:15%; right:10%; width:45%', '[{\"text\":\"Lorem Ipsum\",\"color\":\"#333\"},{\"text\":\"Lorem ipsum dolor sit\",\"color\":\"#777\"},{\"text\":\"Lorem ipsum dolor sit\",\"color\":\"#888\"}]', 'top:20%; left:10%; width:40%', 'http://ecommerce.com/calzado', 'VER PRODUCTO', 1, '2024-05-22', '2025-04-15 03:09:47'),
+(2, 'fondo2.jpg', 'opt2', 'iphone.png', 'bottom:0%; left:15%; width:28%', '[{\"text\":\"Lorem Ipsum\",\"color\":\"#ffffff\"},{\"text\":\"Lorem ipsum dolor sit\",\"color\":\"#e8e8e8\"},{\"text\":\"Lorem ipsum dolor sit\",\"color\":\"#d6d6d6\"}]', 'top:20%; right:15%; width:40%', 'http://ecommerce.com/no-found', 'VER PRODUCTO', 1, '2024-05-22', '2025-04-15 03:09:47'),
+(4, 'bg.jpg', '', '', '', '', '', '', '', 1, '2024-05-22', '2025-04-15 03:09:46');
 
 -- --------------------------------------------------------
 
@@ -319,7 +322,7 @@ CREATE TABLE `socials` (
   `color_social` text DEFAULT NULL,
   `date_created_social` date DEFAULT NULL,
   `date_updated_social` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `socials`
@@ -350,7 +353,7 @@ CREATE TABLE `subcategories` (
   `status_subcategory` int(11) NOT NULL DEFAULT 1,
   `date_created_subcategory` date DEFAULT NULL,
   `date_updated_subcategory` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `subcategories`
@@ -394,15 +397,15 @@ CREATE TABLE `templates` (
   `active_template` text DEFAULT NULL,
   `date_created_template` date DEFAULT NULL,
   `date_updated_template` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `templates`
 --
 
 INSERT INTO `templates` (`id_template`, `logo_template`, `icon_template`, `cover_template`, `title_template`, `description_template`, `keywords_template`, `fonts_template`, `colors_template`, `active_template`, `date_created_template`, `date_updated_template`) VALUES
-(1, 'logo.png', 'icono.png', 'cover.jpg', 'Sistema Ecommerce', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin tempor sem, at rutrum leo aliquet in. Phasellus et gravida magna. ', 'ecommerce,comercio electrónico,moda,sistemas', '{\"fontFamily\":\"%20%3Clink%20rel%3D%22preconnect%22%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%22%3E%0A%20%20%3Clink%20rel%3D%22preconnect%22%20href%3D%22https%3A%2F%2Ffonts.gstatic.com%22%20crossorigin%3E%0A%20%20%3Clink%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DUbuntu%2BCondensed%26family%3DUbuntu%3Aital%2Cwght%400%2C300%3B0%2C400%3B0%2C500%3B0%2C700%3B1%2C300%3B1%2C400%3B1%2C500%3B1%2C700%26display%3Dswap%22%20rel%3D%22stylesheet%22%3E\",\"fontBody\":\"Ubuntu\",\"fontSlide\":\"Ubuntu Condensed\"}', '[{\"top\":{\"background\":\"black\",\"color\":\"white\"}},{\"template\":\n{\"background\":\"#47BAC1\",\"color\":\"white\"}}]', 'ok', '2022-09-22', '2024-05-20 22:22:47'),
-(2, 'logo.png', 'icono.png', 'cover.jpg', 'Sistema Ecommerce', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin tempor sem, at rutrum leo aliquet in. Phasellus et gravida magna. ', 'ecommerce,comercio electrónico,moda,sistemas', '{\"fontFamily\":\"%3Clink%20rel%3D%22preconnect%22%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%22%3E%0A%3Clink%20rel%3D%22preconnect%22%20href%3D%22https%3A%2F%2Ffonts.gstatic.com%22%20crossorigin%3E%0A%3Clink%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DMontserrat%3Awght%40300%3B700%26display%3Dswap%22%20rel%3D%22stylesheet%22%3E\",\"fontBody\":\"Montserrat\",\"fontSlide\":\"Montserrat\"}', '[{\"top\":{\"background\":\"#03f9b6\",\"color\":\"black\"}},{\"template\":{\"background\":\"#c147b5\",\"color\":\"white\"}}]', 'Null', '2022-09-22', '2024-05-20 22:22:47');
+(1, 'logo.png', 'icono.png', 'cover.jpg', 'Sistema Ecommerce', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin tempor sem, at rutrum leo aliquet in. Phasellus et gravida magna.', 'ecommerce,comercio electrónico,moda,sistemas', '{\"fontFamily\":\"%20%3Clink%20rel%3D%22preconnect%22%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%22%3E%0A%20%20%3Clink%20rel%3D%22preconnect%22%20href%3D%22https%3A%2F%2Ffonts.gstatic.com%22%20crossorigin%3E%0A%20%20%3Clink%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DUbuntu%2BCondensed%26family%3DUbuntu%3Aital%2Cwght%400%2C300%3B0%2C400%3B0%2C500%3B0%2C700%3B1%2C300%3B1%2C400%3B1%2C500%3B1%2C700%26display%3Dswap%22%20rel%3D%22stylesheet%22%3E\",\"fontBody\":\"Ubuntu\",\"fontSlide\":\"Ubuntu Condensed\"}', '[{\"top\":{\"background\":\"#000000\",\"color\":\"#ffffff\"}},{\"template\":{\"background\":\"#00a6fb\",\"color\":\"#ffffff\"}}]', 'ok', '2022-09-22', '2025-04-15 03:24:14'),
+(2, 'logo.png', 'icono.png', 'cover.jpg', 'Sistema Ecommerce', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin tempor sem, at rutrum leo aliquet in. Phasellus et gravida magna. ', 'ecommerce,comercio electrónico,moda,sistemas', '{\"fontFamily\":\"%3Clink%20rel%3D%22preconnect%22%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%22%3E%0A%3Clink%20rel%3D%22preconnect%22%20href%3D%22https%3A%2F%2Ffonts.gstatic.com%22%20crossorigin%3E%0A%3Clink%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DMontserrat%3Awght%40300%3B700%26display%3Dswap%22%20rel%3D%22stylesheet%22%3E\",\"fontBody\":\"Montserrat\",\"fontSlide\":\"Montserrat\"}', '[{\"top\":{\"background\":\"#03f9b6\",\"color\":\"black\"}},{\"template\":{\"background\":\"#c147b5\",\"color\":\"white\"}}]', 'Null', '2022-09-22', '2025-04-15 03:24:14');
 
 -- --------------------------------------------------------
 
@@ -427,15 +430,15 @@ CREATE TABLE `users` (
   `phone_user` text DEFAULT NULL,
   `date_created_user` date DEFAULT NULL,
   `date_updated_user` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `users`
 --
 
 INSERT INTO `users` (`id_user`, `name_user`, `email_user`, `password_user`, `token_user`, `token_exp_user`, `method_user`, `verification_user`, `confirm_user`, `country_user`, `department_user`, `city_user`, `address_user`, `phone_user`, `date_created_user`, `date_updated_user`) VALUES
-(4, 'Tutoriales A Tu Alcance', 'correo.tutorialesatualcance@gmail.com', NULL, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MTY0OTI5OTksImV4cCI6MTcxNjU3OTM5OSwiZGF0YSI6eyJpZCI6IjQiLCJlbWFpbCI6ImNvcnJlby50dXRvcmlhbGVzYXR1YWxjYW5jZUBnbWFpbC5jb20ifX0.WVbFc_uTmjmaUB8F7cJD8Ls5MPwCkn0ZZCjb0yBfJ6o', '1716579399', 'google', 1, NULL, 'Colombia', 'Antioquia', 'Envigado', 'Calle 43 # 33', '57_2352562436', '2024-01-24', '2024-05-23 21:25:44'),
-(5, 'Juan Urrego', 'juanu@gmail.com', '$2a$07$azybxcags23425sdg23sdeanQZqjaf6Birm2NvcYTNtJw24CsO5uq', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDcxNjIwNjcsImV4cCI6MTcwNzI0ODQ2NywiZGF0YSI6eyJpZCI6IjUiLCJlbWFpbCI6Imp1YW51QGdtYWlsLmNvbSJ9fQ.Gykr20dbITTQzMtxeGvqzaZ-bTXKGoClEjMvdiUnACk', '1707248467', 'directo', 1, 'fc42ho3p8elrd91t6kb0', 'Colombia', 'Cundinamarca', 'Bogotá', 'Calle 34 # 45', '57_1354135213', '2024-01-25', '2024-02-05 19:58:38');
+(1, 'Santiago Quintero', 'quintiagogarciadev@gmail.com', '$2a$07$azybxcags23425sdg23sdeanQZqjaf6Birm2NvcYTNtJw24CsO5uq', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDQ2ODE1NDIsImV4cCI6MTc0NDc2Nzk0MiwiZGF0YSI6eyJpZCI6MSwiZW1haWwiOiJxdWludGlhZ29nYXJjaWFkZXZAZ21haWwuY29tIn19.jVzMeiYxa5yBt-8PtFVCt597r49e6uku689zZ1EFPA4', '1744767942', 'directo', 1, 'z9clo7xg48vn3uwdp2sh', NULL, NULL, NULL, NULL, NULL, '2025-04-14', '2025-04-15 01:46:15'),
+(2, 'Santiago David Garcia Quintero', 'santiagoquintero.softdev.code@gmail.com', NULL, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDQ2ODY0MTMsImV4cCI6MTc0NDc3MjgxMywiZGF0YSI6eyJpZCI6MiwiZW1haWwiOiJzYW50aWFnb3F1aW50ZXJvLnNvZnRkZXYuY29kZUBnbWFpbC5jb20ifX0.rxcBMX00VPMU4vzPhsfGAkMjwWKdMZZAst4AxlIlLLY', '1744772813', 'google', 1, NULL, 'Colombia', 'Cundinamarca', 'Bogotá', 'calle 57', '57_3118374982', '2025-04-15', '2025-04-15 03:28:07');
 
 -- --------------------------------------------------------
 
@@ -456,7 +459,7 @@ CREATE TABLE `variants` (
   `stock_variant` int(11) NOT NULL DEFAULT 0,
   `date_created_variant` date DEFAULT NULL,
   `date_updated_variant` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `variants`
@@ -641,37 +644,37 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT de la tabla `banners`
 --
 ALTER TABLE `banners`
-  MODIFY `id_banner` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_banner` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id_category` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_category` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `favorites`
 --
 ALTER TABLE `favorites`
-  MODIFY `id_favorite` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_favorite` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de la tabla `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT de la tabla `slides`
@@ -683,13 +686,13 @@ ALTER TABLE `slides`
 -- AUTO_INCREMENT de la tabla `socials`
 --
 ALTER TABLE `socials`
-  MODIFY `id_social` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_social` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `subcategories`
 --
 ALTER TABLE `subcategories`
-  MODIFY `id_subcategory` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_subcategory` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `templates`
@@ -701,13 +704,13 @@ ALTER TABLE `templates`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `variants`
 --
 ALTER TABLE `variants`
-  MODIFY `id_variant` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `id_variant` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- Restricciones para tablas volcadas
