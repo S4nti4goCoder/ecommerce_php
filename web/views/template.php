@@ -1,30 +1,33 @@
 <?php
 
 /*=============================================
-Iniciar variables de sesión
+Iniciar variables de sesión y buffer de salida
 =============================================*/
 ob_start();
 session_start();
 
 /*=============================================
-validar si el token está expirado
+Establecer zona horaria global (¡aquí lo ponemos una sola vez!)
+=============================================*/
+date_default_timezone_set('America/Bogota');
+
+/*=============================================
+Validar si el token está expirado
 =============================================*/
 if (isset($_SESSION["user"])) {
-  date_default_timezone_set("America/Bogota");
   $url = "users?id=" . $_SESSION["user"]->id_user . "&nameId=id_user&token=" . $_SESSION["user"]->token_user . "&table=users&suffix=user";
   $method = "PUT";
-  $fields = "date_updated_user=" . date("Y-m-d G:i:s");
+  $fields = "date_updated_user=" . date("Y-m-d H:i:s");  // ← formato estándar con ceros
 
   $update = CurlController::request($url, $method, $fields);
   if ($update->status == 303) {
     session_destroy();
     echo '<script>
-      window.location = "/";
-    </script>';
+            window.location = "/";
+        </script>';
     return;
   }
 }
-
 
 /*=============================================
 Variable Path
@@ -38,7 +41,6 @@ Capturar las rutas de la URL
 $routesArray = explode("/", $_SERVER["REQUEST_URI"]);
 array_shift($routesArray);
 
-
 /*=============================================
 Cuando utilizamos localhost
 =============================================*/
@@ -46,7 +48,6 @@ if ($_SERVER["SERVER_NAME"] == "localhost") {
   $routesArray = array_slice($routesArray, 2);
   $path = $path . "ecommerce_php/web/";
   // echo '<pre>'; print_r($routesArray); echo '</pre>';
-
 }
 
 foreach ($routesArray as $key => $value) {
@@ -203,8 +204,7 @@ $templateColor = json_decode($template->colors_template)[1]->template;
     !empty($routesArray[0]) && $routesArray[0] == "admin" &&
     !empty($routesArray[1]) && $routesArray[1] == "productos" &&
     !empty($routesArray[2]) && $routesArray[2] == "gestion"
-  ):
-  ?>
+  ): ?>
 
     <!-- Bootstrap 4 -->
     <script src="<?php echo $path ?>views/assets/js/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
