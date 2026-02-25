@@ -10,6 +10,7 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
+SET FOREIGN_KEY_CHECKS = 0;
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -150,14 +151,6 @@ CREATE TABLE `favorites` (
   `date_updated_favorite` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
---
--- Volcado de datos para la tabla `favorites`
---
-
-INSERT INTO `favorites` (`id_favorite`, `id_user_favorite`, `id_product_favorite`, `date_created_favorite`, `date_updated_favorite`) VALUES
-(10, 4, 21, '2024-01-25', '2024-01-25 17:58:52'),
-(12, 4, 40, '2024-01-25', '2024-01-25 18:01:10'),
-(13, 4, 21, '2024-01-25', '2024-01-25 19:44:07');
 
 -- --------------------------------------------------------
 
@@ -747,6 +740,7 @@ ALTER TABLE `subcategories`
 --
 ALTER TABLE `variants`
   ADD CONSTRAINT `variants_ibfk_1` FOREIGN KEY (`id_product_variant`) REFERENCES `products` (`id_product`);
+SET FOREIGN_KEY_CHECKS = 1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
